@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "word": "変更",
+    "reading": "へんこう",
+    "meaning": "sự thay đổi",
+    "level": "N3",
+    "example": "会議の時間が変更になりました。"
+  },
+  {
+    "id": 2,
+    "word": "確認",
+    "reading": "かくにん",
+    "meaning": "sự xác nhận",
+    "level": "N3",
+    "example": "添付ファイルをご確認ください。"
+  },
+  {
+    "id": 3,
+    "word": "報告",
+    "reading": "ほうこく",
+    "meaning": "báo cáo",
+    "level": "N3",
+    "example": "進捗状況を報告します。"
+  },
+  {
+    "id": 4,
+    "word": "依頼",
+    "reading": "いらい",
+    "meaning": "yêu cầu, nhờ vả",
+    "level": "N3",
+    "example": "資料の作成を依頼する。"
+  },
+  {
+    "id": 5,
+    "word": "延期",
+    "reading": "えんき",
+    "meaning": "trì hoãn",
+    "level": "N3",
+    "example": "スケジュールが延期された。"
+  }
+]

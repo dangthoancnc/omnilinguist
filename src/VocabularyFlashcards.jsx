@@ -1,0 +1,508 @@
+// v9.2.0 — Flashcards: FSRS Engine + Auto-repair IndexedDB khi thiếu dữ liệu
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from './db.js';
+import { Rating } from './fsrs.js';
+import { getCard, reviewCard, getDueCards, getStats, getNextDueInfo, getCustomCards, isBookmarked, toggleBookmark } from './studyStore.js';
+import { syncMasterData } from './syncMasterData.js';
+import { Eye, EyeOff, Volume2, ChevronLeft, ChevronRight, Brain, CheckCircle2, AlertCircle, RotateCcw, Target, Bookmark, Filter, Shuffle, ListOrdered } from 'lucide-react';
+import FuriganaText from './components/FuriganaText';
+import localMasterDb from './data/jlpt_master_db.json';
+
+const LEVELS = ['N5','N4','N3','N2','N1'];
+const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
+
+const speak = (t) => {
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(t);
+  u.lang = 'ja-JP'; u.rate = 0.82;
+  window.speechSynthesis.speak(u);
+};
+
+const StatsBar = ({ stats, levelColor }) => (
+  <div style={{ display:'flex', gap:12, padding:'10px 14px', background:'rgba(0,0,0,0.2)', borderRadius:8, marginBottom:16, fontSize:'0.83rem' }}>
+    <span style={{ color:'#60a5fa' }}>📘 Mới: <strong>{stats.newCount}</strong></span>
+    <span style={{ color:'#f59e0b' }}>⏰ Đến hạn: <strong>{stats.dueCount}</strong></span>
+    <span style={{ color:'#10b981' }}>✅ Đã học: <strong>{stats.learnedCount}</strong></span>
+    <span style={{ color:'var(--text-secondary)', marginLeft:'auto' }}>Tổng: {stats.total}</span>
+  </div>
+);
+
+const VocabularyFlashcards = () => {
+  const vocabData = useLiveQuery(() => db.vocab.toArray()) || [];
+  const [level, setLevel] = useState('N3');
+  const [filterMode, setFilterMode] = useState('all');
+  const [autoPlay, setAutoPlay] = useState(true);
+  const [queue, setQueue] = useState([]);
+  const [queueIdx, setQueueIdx] = useState(0);
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [lastRating, setLastRating] = useState(null);
+  const [stats, setStats] = useState({ newCount:0, dueCount:0, learnedCount:0, total:0 });
+  const [sessionLog, setSessionLog] = useState({ easy:0, hard:0, again:0 });
+  const [hideListDetails, setHideListDetails] = useState(true);
+  
+  const [studyMode, setStudyMode] = useState('fsrs');
+  const [isRandom, setIsRandom] = useState(false);
+  const [quizOptions, setQuizOptions] = useState([]);
+  const [quizAnswered, setQuizAnswered] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(30);
+  const hasTriedRepair = useRef(false);
+
+  // === AUTO-REPAIR: Nếu IndexedDB chưa đạt 10,000 từ vựng, force re-sync nạp đủ 10,000 từ ===
+  useEffect(() => {
+    if (vocabData.length > 0 && vocabData.length < 10000 && !hasTriedRepair.current) {
+      hasTriedRepair.current = true;
+      console.warn(`⚠️ IndexedDB đang có ${vocabData.length}/10000 từ vựng — đang tự động nâng cấp...`);
+      db.vocab.clear().then(() => db.kanji.clear()).then(() => {
+        return syncMasterData();
+      }).then(() => {
+        console.log('✅ Auto-repair hoàn tất! 10,000 từ vựng đã được nạp.');
+      });
+    }
+  }, [vocabData.length]);
+
+  const levelVocab = useMemo(() => {
+    const customCards = getCustomCards();
+    const seen = new Set();
+    // THUẦN DỮ LIỆU TRỰC TIẾP: Sử dụng trực tiếp dữ liệu 10,000 từ nếu IndexedDB đang trống hoặc chưa nạp xong
+    const masterVocab = (localMasterDb.vocabulary || []).map((v, i) => ({
+      id: v.id || `v_${i}`,
+      level: v.level || 'N3',
+      word: v.word,
+      reading: v.reading || '',
+      vi: v.vi || v.meaning || '',
+      meaning: v.vi || v.meaning || '',
+      type: v.type || (Array.isArray(v.tags) ? v.tags[0] : 'Từ vựng'),
+      tags: v.tags || [],
+      examples: v.examples || v.example || []
+    }));
+    const effectiveVocab = vocabData.length >= 50 ? vocabData : masterVocab;
+    const allSources = [...effectiveVocab, ...customCards];
+    
+    return allSources.filter(v => {
+      if (v.level !== level) return false;
+      if (seen.has(v.word)) return false;
+      seen.add(v.word);
+      return true;
+    });
+  }, [level, vocabData]);
+
+  const allIds = useMemo(() => levelVocab.map(v => v.id), [levelVocab]);
+  const refreshStats = () => setStats(getStats(allIds));
+
+  const buildQueue = () => {
+    refreshStats();
+    let ids;
+    if (filterMode === 'due') {
+      ids = getDueCards(allIds);
+    } else if (filterMode === 'bookmark') {
+      ids = allIds.filter(id => isBookmarked(id));
+    } else if (filterMode === 'again') {
+      ids = allIds.filter(id => { const c = getCard(id); return c && c.last_rating === Rating.Again; });
+    } else if (filterMode === 'hard') {
+      ids = allIds.filter(id => { const c = getCard(id); return c && c.last_rating === Rating.Hard; });
+    } else {
+      const dueSet = new Set(getDueCards(allIds));
+      ids = allIds.filter(id => {
+        const card = getCard(id);
+        if (!card) return true;
+        if (dueSet.has(id)) return true;
+        return false;
+      });
+      ids = ids.slice(0, 30);
+    }
+    
+    let finalQueue;
+    if (isRandom) {
+      finalQueue = [...ids];
+      for (let i = finalQueue.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [finalQueue[i], finalQueue[j]] = [finalQueue[j], finalQueue[i]];
+      }
+    } else {
+      const dueSet = new Set(getDueCards(allIds));
+      finalQueue = [...ids].sort((a, b) => {
+        const aD = dueSet.has(a) ? 0 : 1;
+        const bD = dueSet.has(b) ? 0 : 1;
+        return aD - bD;
+      });
+    }
+
+    setQueue(finalQueue);
+    setQueueIdx(0);
+    setShowAnswer(false);
+    setLastRating(null);
+    setQuizAnswered(null);
+    setVisibleCount(30);
+  };
+
+  useEffect(() => { buildQueue(); }, [level, levelVocab, filterMode, isRandom]);
+
+  useEffect(() => {
+    return () => {
+      if (typeof window !== 'undefined' && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
+  const currentId = queue[queueIdx];
+  const currentCard = levelVocab.find(v => v.id === currentId);
+  const fsrsCard = currentId ? getCard(currentId) : null;
+  const nextDue = currentId ? getNextDueInfo(currentId) : null;
+
+  useEffect(() => {
+    if (studyMode === 'quiz' && currentCard && levelVocab.length > 3) {
+      const correctVi = currentCard.vi;
+      const wrongCards = [...levelVocab].filter(v => v.id !== currentId).sort(() => 0.5 - Math.random()).slice(0, 3);
+      const options = [correctVi, ...wrongCards.map(c => c.vi)].sort(() => 0.5 - Math.random());
+      setQuizOptions(options);
+      setQuizAnswered(null);
+    }
+  }, [currentId, studyMode, levelVocab]);
+
+  // Auto-play khi chuyển thẻ
+  useEffect(() => {
+    if (autoPlay && currentCard && !showAnswer) {
+      speak(currentCard.word);
+    }
+  }, [currentId, autoPlay, currentCard]);
+
+  const handleRating = (rating) => {
+    if (!currentId) return;
+    reviewCard(currentId, rating);
+    setLastRating(rating);
+    setSessionLog(s => ({
+      ...s,
+      again: s.again + (rating === Rating.Again ? 1 : 0),
+      hard: s.hard + (rating === Rating.Hard ? 1 : 0),
+      easy: s.easy + (rating === Rating.Good || rating === Rating.Easy ? 1 : 0),
+    }));
+    setTimeout(() => {
+      setShowAnswer(false);
+      setLastRating(null);
+      setQuizAnswered(null);
+      if (queueIdx < queue.length - 1) {
+        setQueueIdx(i => i + 1);
+      } else {
+        buildQueue();
+      }
+    }, 400);
+  };
+
+  if (!currentCard && queue.length === 0) return (
+    <div style={{ maxWidth:840, margin:'0 auto' }}>
+      <StatsBar stats={stats} levelColor={LEVEL_COLORS[level]}/>
+      <div className="glass-panel" style={{ textAlign:'center', padding:60, display:'flex', flexDirection:'column', alignItems:'center' }}>
+        <CheckCircle2 size={60} color="#10b981" style={{ marginBottom:20 }}/>
+        <h2 style={{ marginBottom:10, color:'#10b981' }}>Tuyệt vời! Bạn đã hoàn thành mục tiêu.</h2>
+        <p style={{ color:'var(--text-secondary)', marginBottom:30 }}>Không còn từ vựng nào đến hạn trong cấp độ {level} hôm nay.</p>
+        <button className="btn btn-primary" onClick={() => setFilterMode('all')} style={{ padding:'12px 24px', fontSize:'1.05rem', display:'flex', alignItems:'center', gap:8 }}>
+          <RotateCcw size={18}/> Bấm để học thêm thẻ khác
+        </button>
+      </div>
+    </div>
+  );
+
+  if (!currentCard) return (
+    <div className="glass-panel" style={{ textAlign:'center', padding:40 }}>
+      Đang tải từ vựng...
+    </div>
+  );
+
+  const examples = Array.isArray(currentCard.examples) ? currentCard.examples : [];
+  const lc = LEVEL_COLORS[level] || 'var(--accent-primary)';
+
+  return (
+    <div style={{ padding: '20px 40px', maxWidth: 1600, margin: '0 auto', height: '100%', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
+      {/* Header Controls */}
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:20, flexWrap:'wrap', gap:14 }}>
+        <div style={{ display:'flex', gap:8, alignItems: 'center' }}>
+          <select 
+            value={level} 
+            onChange={(e)=>setLevel(e.target.value)} 
+            style={{ padding:'8px 16px', borderRadius:8, background: LEVEL_COLORS[level] || '#6366f1', border:'none', color:'white', fontWeight:700, outline:'none', cursor:'pointer', boxShadow:`0 4px 12px ${(LEVEL_COLORS[level]||'#6366f1')}55` }}
+          >
+            {[...LEVELS, 'Khác'].map(l => <option key={l} value={l} style={{ background: '#1e293b' }}>Thẻ {l}</option>)}
+          </select>
+
+          <div style={{ display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: 8, padding: 4 }}>
+            <button onClick={() => setStudyMode('fsrs')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: studyMode === 'fsrs' ? 'rgba(255,255,255,0.1)' : 'transparent', color: studyMode === 'fsrs' ? 'white' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+              <Brain size={16}/> FSRS
+            </button>
+            <button onClick={() => setStudyMode('quiz')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: studyMode === 'quiz' ? 'rgba(255,255,255,0.1)' : 'transparent', color: studyMode === 'quiz' ? 'white' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+              <Target size={16}/> Trắc nghiệm
+            </button>
+          </div>
+        </div>
+        
+        <div style={{ display:'flex', alignItems:'center', flexWrap: 'wrap', gap:16 }}>
+          {studyMode === 'fsrs' && (
+            <div style={{ display:'flex', alignItems:'center', flexWrap: 'wrap', gap: 16, background: 'rgba(255,255,255,0.03)', padding: '6px 14px', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
+              <div style={{ display:'flex', alignItems:'center', gap:6, fontSize:'0.85rem', color:'var(--text-secondary)' }}>
+                <Filter size={16}/>
+                <select 
+                  value={filterMode} 
+                  onChange={e => setFilterMode(e.target.value)}
+                  style={{ background:'transparent', border:'none', color:'var(--text-secondary)', cursor:'pointer', outline:'none', fontWeight: 500 }}
+                >
+                  <option value="all">Học thông thường ({allIds.length})</option>
+                  <option value="due">Chỉ thẻ đến hạn ({getDueCards(allIds).length})</option>
+                  <option value="bookmark">Thẻ đã Bookmark ({allIds.filter(id => isBookmarked(id)).length})</option>
+                  <option value="again">Thẻ đánh giá: Lại</option>
+                  <option value="hard">Thẻ đánh giá: Khó</option>
+                </select>
+              </div>
+              
+              <div style={{ width: 1, height: 16, background: 'var(--glass-border)' }}></div>
+
+              <button 
+                onClick={() => setIsRandom(!isRandom)}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  color: isRandom ? 'var(--accent-primary)' : 'var(--text-secondary)',
+                  cursor: 'pointer',
+                  fontSize: '0.85rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  fontWeight: 600
+                }}
+                title="Đổi chế độ danh sách theo thứ tự hoặc ngẫu nhiên"
+              >
+                {isRandom ? <Shuffle size={16}/> : <ListOrdered size={16}/>}
+                {isRandom ? 'Ngẫu nhiên' : 'Thứ tự'}
+              </button>
+
+              <div style={{ width: 1, height: 16, background: 'var(--glass-border)' }}></div>
+
+              <label style={{ display:'flex', alignItems:'center', gap:6, fontSize:'0.85rem', color:'var(--text-secondary)', cursor:'pointer' }}>
+                <input type="checkbox" checked={autoPlay} onChange={e => setAutoPlay(e.target.checked)} style={{ cursor:'pointer' }}/>
+                Tự động phát âm
+              </label>
+            </div>
+          )}
+          <div style={{ display:'flex', gap:12, fontSize:'0.85rem', background: 'rgba(0,0,0,0.2)', padding: '8px 14px', borderRadius: 8 }}>
+            <span style={{ color:'#10b981', fontWeight: 600 }}>✅ {sessionLog.easy}</span>
+            <span style={{ color:'#f59e0b', fontWeight: 600 }}>😅 {sessionLog.hard}</span>
+            <span style={{ color:'#ef4444', fontWeight: 600 }}>🔁 {sessionLog.again}</span>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', flex: 1 }}>
+        {/* LEFT COLUMN: MAIN CARD & STATS */}
+        <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: 16, minWidth: 320 }}>
+          <StatsBar stats={stats} levelColor={lc}/>
+
+          {fsrsCard && nextDue && (
+            <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'10px 16px', background:`${lc}11`, border:`1px solid ${lc}33`, borderRadius:10, fontSize:'0.85rem' }}>
+              <span style={{ color:lc, fontWeight: 600 }}>
+                <Brain size={14} style={{ verticalAlign:'middle', marginRight:6 }}/>
+                Trạng thái FSRS: {['Chưa học','Đang học','Học','Ôn lại','Học lại'][fsrsCard.state || 0]}
+              </span>
+              <span style={{ color: nextDue.days === 0 ? '#f59e0b' : 'var(--text-secondary)', fontWeight: 500 }}>
+                Đến hạn: {nextDue.label}
+              </span>
+            </div>
+          )}
+
+      <div className="glass-panel" style={{ textAlign:'center', padding:'44px 28px', minHeight:360, display:'flex', flexDirection:'column', justifyContent:'center', position:'relative' }}>
+        <div style={{ position:'absolute', top:16, left:18, display:'flex', gap:6 }}>
+          <span style={{ fontSize:'0.78rem', padding:'3px 10px', borderRadius:4, background:`${lc}22`, color:lc, fontWeight:700 }}>{level}</span>
+          {currentCard.type && <span style={{ fontSize:'0.78rem', padding:'3px 10px', borderRadius:4, background:'rgba(255,255,255,0.06)', color:'var(--text-secondary)' }}>{currentCard.type}</span>}
+        </div>
+
+        {/* Word + TTS */}
+        <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:14, marginBottom:24 }}>
+          <span className="jp-text" style={{ fontSize: currentCard.word.length > 6 ? '2.5rem' : '3.8rem', fontWeight:800, cursor:'pointer', lineHeight: 1.3 }} onClick={()=>speak(currentCard.word)}>
+            <FuriganaText text={currentCard.word} />
+          </span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <button onClick={()=>speak(currentCard.word)} style={{ background:'none', border:'1px solid var(--glass-border)', borderRadius:8, padding:'7px 9px', cursor:'pointer', color:'var(--text-secondary)' }}>
+              <Volume2 size={16}/>
+            </button>
+            <button 
+              onClick={(e) => { e.stopPropagation(); toggleBookmark(currentId); setQueue([...queue]); /* re-render */ }} 
+              style={{ background:'none', border:'1px solid var(--glass-border)', borderRadius:8, padding:'7px 9px', cursor:'pointer', color: isBookmarked(currentId) ? '#f59e0b' : 'var(--text-secondary)' }}
+            >
+              <Bookmark size={16} fill={isBookmarked(currentId) ? '#f59e0b' : 'none'}/>
+            </button>
+          </div>
+        </div>
+
+        <div onClick={() => { if (!showAnswer && studyMode === 'fsrs') { setShowAnswer(true); speak(currentCard.word); } }} style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', cursor: (!showAnswer && studyMode === 'fsrs') ? 'pointer' : 'default' }}>
+          {(showAnswer || studyMode === 'quiz') ? (
+            <div className="fade-in">
+              <div style={{ fontSize:'1.35rem', color:'var(--accent-primary)', marginBottom:10 }}>
+                【{currentCard.reading}】
+              </div>
+              
+              {studyMode === 'quiz' && !showAnswer ? (
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginTop: 20 }}>
+                  {quizOptions.map((opt, idx) => (
+                    <button 
+                      key={idx}
+                      onClick={(e) => { e.stopPropagation(); setQuizAnswered(opt); setShowAnswer(true); }}
+                      style={{ padding: '14px', borderRadius: 10, border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.3)', color: 'white', cursor: 'pointer', fontSize: '1rem', transition: 'all 0.2s' }}
+                      onMouseOver={e => e.currentTarget.style.background='rgba(255,255,255,0.1)'}
+                      onMouseOut={e => e.currentTarget.style.background='rgba(0,0,0,0.3)'}
+                    >
+                      {String.fromCharCode(65 + idx)}. {opt}
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <>
+                  <div style={{ fontSize:'1.3rem', fontWeight:600, marginBottom:20 }}>
+                    {currentCard.vi}
+                  </div>
+                  
+                  {studyMode === 'quiz' && quizAnswered && (
+                    <div style={{ padding: '10px', borderRadius: 8, background: quizAnswered === currentCard.vi ? 'rgba(16,185,129,0.2)' : 'rgba(239,68,68,0.2)', color: quizAnswered === currentCard.vi ? '#10b981' : '#ef4444', marginBottom: 20, fontWeight: 600 }}>
+                      {quizAnswered === currentCard.vi ? '🎉 Chính xác!' : `❌ Sai rồi! Bạn đã chọn: ${quizAnswered}`}
+                    </div>
+                  )}
+
+                  {examples.length > 0 && (
+                    <div style={{ textAlign:'left', background:'rgba(0,0,0,0.2)', borderRadius:10, padding:'14px 16px' }}>
+                      <div style={{ fontSize:'0.78rem', color:'var(--text-secondary)', marginBottom:10 }}>✏️ Ví dụ (bấm để nghe)</div>
+                      {examples.map((ex, i) => {
+                        const textStr = typeof ex === 'string' ? ex : (ex?.jp || ex?.japanese || ex?.text || String(ex || ''));
+                        const parts = textStr.split('(');
+                        return (
+                          <div key={i} style={{ marginBottom: i < examples.length - 1 ? 12 : 0 }}>
+                            <div onClick={(e) => { e.stopPropagation(); speak(parts[0]); }} className="jp-text" style={{ cursor:'pointer', fontSize:'1.05rem', fontWeight:500, marginBottom:2 }}>
+                              {parts[0]}
+                            </div>
+                            {parts[1] && <div style={{ fontSize:'0.85rem', color:'var(--text-secondary)', fontStyle:'italic' }}>({parts[1]}</div>}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+          ) : (
+            <div style={{ color:'var(--text-secondary)' }}>
+              <Eye size={40} style={{ opacity:0.2, marginBottom:10 }}/>
+              <p style={{ fontSize:'0.9rem' }}>Bấm vào vùng này để xem đáp án</p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Controls - LUÔN HIỂN THỊ */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 16 }}>
+        {/* Navigation Row */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <button className="btn btn-outline" style={{ padding:'12px 20px', display: 'flex', alignItems: 'center', gap: 8 }} onClick={()=>{ setQueueIdx(i=>(i-1+queue.length)%queue.length); setShowAnswer(false); setQuizAnswered(null); }}>
+            <ChevronLeft size={18}/> <span style={{ fontSize: '0.9rem', display: 'none' }} className="mobile-hide">Lùi</span>
+          </button>
+          
+          <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: 600 }}>{queueIdx + 1} / {queue.length}</span>
+
+          <button className="btn btn-outline" style={{ padding:'12px 20px', display: 'flex', alignItems: 'center', gap: 8 }} onClick={()=>{ setQueueIdx(i=>(i+1)%queue.length); setShowAnswer(false); setQuizAnswered(null); }}>
+            <span style={{ fontSize: '0.9rem', display: 'none' }} className="mobile-hide">Tiếp</span> <ChevronRight size={18}/>
+          </button>
+        </div>
+
+        {/* Rating Row */}
+        {studyMode === 'fsrs' ? (
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            <button onClick={()=>handleRating(Rating.Again)} style={{ flex: '1 1 60px', padding:'13px 4px', borderRadius:8, cursor:'pointer', background:'rgba(239,68,68,0.15)', color:'#fca5a5', fontWeight:600, fontSize:'0.88rem', border:'1px solid rgba(239,68,68,0.3)' }}>
+              🔁 Lại<br/><span style={{ fontSize:'0.72rem', opacity:0.7 }}>1 ngày</span>
+            </button>
+            <button onClick={()=>handleRating(Rating.Hard)} style={{ flex: '1 1 60px', padding:'13px 4px', borderRadius:8, cursor:'pointer', background:'rgba(245,158,11,0.15)', color:'#fcd34d', fontWeight:600, fontSize:'0.88rem', border:'1px solid rgba(245,158,11,0.3)' }}>
+              😅 Khó<br/><span style={{ fontSize:'0.72rem', opacity:0.7 }}>~2-3 ngày</span>
+            </button>
+            <button onClick={()=>handleRating(Rating.Good)} style={{ flex: '1 1 60px', padding:'13px 4px', borderRadius:8, cursor:'pointer', background:'rgba(16,185,129,0.15)', color:'#6ee7b7', fontWeight:600, fontSize:'0.88rem', border:'1px solid rgba(16,185,129,0.3)' }}>
+              ✅ Tốt<br/><span style={{ fontSize:'0.72rem', opacity:0.7 }}>~4-7 ngày</span>
+            </button>
+            <button onClick={()=>handleRating(Rating.Easy)} style={{ flex: '1 1 60px', padding:'13px 4px', borderRadius:8, cursor:'pointer', background:'rgba(99,102,241,0.15)', color:'#a5b4fc', fontWeight:600, fontSize:'0.88rem', border:'1px solid rgba(99,102,241,0.3)' }}>
+              ⚡ Dễ<br/><span style={{ fontSize:'0.72rem', opacity:0.7 }}>~14+ ngày</span>
+            </button>
+          </div>
+        ) : (
+          <div style={{ display: 'flex', gap: 10 }}>
+            <button onClick={() => { setQueueIdx(i=>(i+1)%queue.length); setShowAnswer(false); setQuizAnswered(null); }} style={{ flex:1, padding:'14px 4px', borderRadius:8, cursor:'pointer', background:'rgba(59,130,246,0.15)', color:'#93c5fd', fontWeight:600, fontSize:'1.1rem', border:'1px solid rgba(59,130,246,0.3)' }}>
+              Bỏ qua / Tiếp theo
+            </button>
+          </div>
+        )}
+      </div>
+
+      </div>
+      
+      {/* RIGHT COLUMN: List View of current queue */}
+      {queue.length > 0 && (
+        <div className="glass-panel" style={{ flex: '1 1 300px', maxWidth: 400, minWidth: 280, padding: 20, display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <h3 style={{ margin: '0 0 16px 0', fontSize: '1.1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span>Danh sách thẻ ({queue.length})</span>
+            <button 
+              onClick={() => setHideListDetails(!hideListDetails)} 
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: hideListDetails ? 'var(--text-secondary)' : '#3b82f6', display: 'flex', alignItems: 'center', padding: 4 }}
+              title={hideListDetails ? "Hiển thị chi tiết" : "Làm mờ chi tiết"}
+            >
+              {hideListDetails ? <EyeOff size={18} /> : <Eye size={18} />}
+            </button>
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1, overflowY: 'auto', paddingRight: 6 }} className="custom-scrollbar">
+            {queue.slice(0, visibleCount).map((id, index) => {
+              const c = levelVocab.find(v => v.id === id);
+              if (!c) return null;
+              return (
+                <div 
+                  key={id} 
+                  onClick={() => { setQueueIdx(index); setShowAnswer(false); }} 
+                  style={{ 
+                    padding: '12px 16px', borderRadius: 10, 
+                    background: queueIdx === index ? 'rgba(99,102,241,0.15)' : 'rgba(255,255,255,0.03)', 
+                    border: queueIdx === index ? '1px solid rgba(99,102,241,0.3)' : '1px solid transparent', 
+                    cursor: 'pointer', transition: 'all 0.2s', display: 'flex', flexDirection: 'column', gap: 6 
+                  }}
+                  onMouseOver={e => e.currentTarget.style.background = queueIdx === index ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.08)'}
+                  onMouseOut={e => e.currentTarget.style.background = queueIdx === index ? 'rgba(99,102,241,0.15)' : 'rgba(255,255,255,0.03)'}
+                >
+                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                     <span className="jp-text" style={{ fontSize: '1.15rem', fontWeight: 700, color: queueIdx === index ? '#818cf8' : 'var(--text-primary)' }}>{c.word}</span>
+                     {isBookmarked(id) && <Bookmark size={14} color="#f59e0b" fill="#f59e0b" />}
+                   </div>
+                   <div style={{ filter: (!hideListDetails || queueIdx === index) ? 'none' : 'blur(4px)', opacity: (!hideListDetails || queueIdx === index) ? 1 : 0.6, transition: 'all 0.3s' }}>
+                     {c.reading && <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{c.reading}</span>}
+                     <span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', display: 'block' }}>{c.vi}</span>
+                   </div>
+                </div>
+              );
+            })}
+            {queue.length > visibleCount && (
+              <button
+                onClick={() => setVisibleCount(v => v + 30)}
+                style={{
+                  width: '100%',
+                  padding: '10px 14px',
+                  borderRadius: 8,
+                  border: '1px border var(--glass-border)',
+                  background: 'rgba(59,130,246,0.1)',
+                  color: '#60a5fa',
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  marginTop: 6,
+                  transition: 'all 0.2s'
+                }}
+              >
+                ⚡ Tải thêm thẻ ({visibleCount} / {queue.length})
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+      </div>
+    </div>
+  );
+};
+
+export default VocabularyFlashcards;

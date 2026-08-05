@@ -1,0 +1,32 @@
+[
+  {
+    "id": "mock_n3_01",
+    "level": "N3",
+    "title": "JLPT N3 - Đề mô phỏng chuẩn",
+    "timeLimit": 105,
+    "sections": [
+      {
+        "id": "sec_vocab",
+        "title": "言語知識（文字・語彙）",
+        "questions": [
+          {
+            "id": "q_v1",
+            "type": "reading",
+            "instruction": "言葉の読み方として最もよいものを一つ選びなさい。",
+            "text": "会議の【日程】を変更する。",
+            "highlight": "日程",
+            "options": [
+              "にちてい",
+              "にってい",
+              "ひてい",
+              "じってい"
+            ],
+            "correctIndex": 1,
+            "points": 2,
+            "explanation": "日程 (にってい) - Lịch trình"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,111 @@
+[
+  {
+    "id": "D001",
+    "word": "食べる",
+    "reading": "たべる",
+    "pos": "Động từ nhóm 2 (V2)",
+    "meanings": [
+      {
+        "en": "to eat",
+        "vi": "ăn"
+      }
+    ],
+    "examples": [
+      "ご飯を食べる。",
+      "何を食べたいですか。"
+    ]
+  },
+  {
+    "id": "D002",
+    "word": "確認",
+    "reading": "かくにん",
+    "pos": "Danh từ, Động từ する",
+    "meanings": [
+      {
+        "en": "confirmation, verification",
+        "vi": "xác nhận, kiểm tra"
+      }
+    ],
+    "examples": [
+      "メールを確認してください。",
+      "確認が取れました。"
+    ]
+  },
+  {
+    "id": "D003",
+    "word": "申し訳ない",
+    "reading": "もうしわけない",
+    "pos": "Tính từ -い (Keigo)",
+    "meanings": [
+      {
+        "en": "inexcusable, I am sorry",
+        "vi": "thực sự xin lỗi, không biết nói sao"
+      }
+    ],
+    "examples": [
+      "大変申し訳ございません。",
+      "申し訳なく思っています。"
+    ]
+  },
+  {
+    "id": "D004",
+    "word": "承知",
+    "reading": "しょうち",
+    "pos": "Danh từ, Động từ する",
+    "meanings": [
+      {
+        "en": "understood, acknowledgement",
+        "vi": "hiểu rõ, đã rõ (lịch sự)"
+      }
+    ],
+    "examples": [
+      "承知しました。(Dạ, tôi hiểu rồi ạ.)",
+      "承知いたしました。(Văn phong trang trọng nhất.)"
+    ]
+  },
+  {
+    "id": "D005",
+    "word": "伺う",
+    "reading": "うかがう",
+    "pos": "Động từ nhóm 1 (Kemprego)",
+    "meanings": [
+      {
+        "en": "to visit, to ask (humble)",
+        "vi": "đến thăm/hỏi (kính ngữ khiêm nhường)"
+      }
+    ],
+    "examples": [
+      "明日、伺ってもよろしいですか。(Ngày mai tôi có thể đến thăm được không ạ?)"
+    ]
+  },
+  {
+    "id": "D006",
+    "word": "お世話になる",
+    "reading": "おせわになる",
+    "pos": "Cụm động từ (Keigo)",
+    "meanings": [
+      {
+        "en": "to be in someone's care, thank you for your support",
+        "vi": "nhờ ơn, cảm ơn sự hỗ trợ"
+      }
+    ],
+    "examples": [
+      "お世話になっております。(Cảm ơn sự quan tâm của bạn — câu mở đầu email chuẩn)"
+    ]
+  },
+  {
+    "id": "D007",
+    "word": "よろしくお願いします",
+    "reading": "よろしくおねがいします",
+    "pos": "Cụm cố định (Keigo)",
+    "meanings": [
+      {
+        "en": "please treat me well, best regards",
+        "vi": "nhờ bạn nhiều / trân trọng"
+      }
+    ],
+    "examples": [
+      "どうぞよろしくお願いいたします。(Rất mong được hợp tác.)"
+    ]
+  }
+]

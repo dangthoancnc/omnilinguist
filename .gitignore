@@ -1,0 +1,68 @@
+# Logs & transient files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node & Python dependencies
+node_modules/
+_trash_node_modules/
+.turbo/
+dist/
+dist-ssr/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Environment & Secret files
+*.local
+.env
+.env.*
+.env-old
+
+# Archives, Binaries & Executables
+*.rar
+*.zip
+*.7z
+*.tar
+*.gz
+*.exe
+*.apkg
+
+# Media & CDN files
+audio-cdn/
+omni-media-engine/media/
+omni-media-engine/temp/
+omni-media-engine/workspace/
+*.mp3
+*.mp4
+*.wav
+*.avi
+*.mov
+
+# Session history & non-essential document logs in root
+[0-9].*.md
+[0-9]* *.md
+Session_History_Recovery.md
+Restoring Language Learning Platform.md
+Building A Language Learning Platform.md
+Analyzing Deer-Flow Agent Capabilities.md
+AI_SYSTEM_RULES.md
+MIGRATION_LOG.md
+scratch_*
+console.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
