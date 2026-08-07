@@ -10,6 +10,8 @@ import uvicorn
 import uuid
 import requests
 
+import time
+
 # Lazy load services to prevent startup crashes if modules are missing
 from services.stt_service import transcribe_media
 from services.tts_service import generate_tts
@@ -34,6 +36,24 @@ app.add_middleware(
 
 os.makedirs("temp", exist_ok=True)
 os.makedirs("media", exist_ok=True)
+
+def cleanup_temp_files(max_age_seconds: int = 86400):
+    """Removes temporary files older than max_age_seconds (default 24h)"""
+    for folder in ["temp", os.path.join("temp", "uploads"), os.path.join("temp", "voice_refs")]:
+        if os.path.exists(folder):
+            now = time.time()
+            for filename in os.listdir(folder):
+                file_path = os.path.join(folder, filename)
+                if os.path.isfile(file_path):
+                    try:
+                        if now - os.path.getmtime(file_path) > max_age_seconds:
+                            os.remove(file_path)
+                    except Exception:
+                        pass
+
+@app.on_event("startup")
+def on_startup():
+    cleanup_temp_files(86400)
 
 class TTSRequest(BaseModel):
     text: str
@@ -168,9 +188,19 @@ def proxy_jisho(keyword: str):
     """
     try:
         url = f"https://jisho.org/api/v1/search/words?keyword={keyword}"
-        res = requests.get(url, timeout=10)
+        headers = {"User-Agent": "OmniLinguist/1.0 (Language Learning Platform; +https://github.com/dangthoancnc/omnilinguist)"}
+        res = requests.get(url, headers=headers, timeout=10)
         res.raise_for_status()
         return res.json()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/api/media/clean-temp")
+def api_clean_temp(max_age_hours: int = 24):
+    """Manual trigger to clean old temporary files"""
+    try:
+        cleanup_temp_files(max_age_hours * 3600)
+        return {"status": "success", "message": f"Cleaned temp files older than {max_age_hours}h"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

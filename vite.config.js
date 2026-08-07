@@ -6,6 +6,7 @@ import { spawn } from 'child_process';
 import path from 'path';
 
 let pythonProcess = null;
+const isWin = process.platform === 'win32';
 
 const mediaStudioPlugin = () => ({
   name: 'media-studio-plugin',
@@ -21,12 +22,20 @@ const mediaStudioPlugin = () => ({
         if (!pythonProcess || pythonProcess.killed) {
           console.log('Starting Omni Media Engine...');
           const rootDir = __dirname;
-          const batFile = path.join(rootDir, 'start-media-engine.bat');
           
-          pythonProcess = spawn('cmd.exe', ['/c', batFile], {
-            cwd: rootDir,
-            env: { ...process.env }
-          });
+          if (isWin) {
+            const batFile = path.join(rootDir, 'start-media-engine.bat');
+            pythonProcess = spawn('cmd.exe', ['/c', batFile], {
+              cwd: rootDir,
+              env: { ...process.env }
+            });
+          } else {
+            const engineFile = path.join(rootDir, 'omni-media-engine', 'main.py');
+            pythonProcess = spawn('python3', [engineFile], {
+              cwd: path.join(rootDir, 'omni-media-engine'),
+              env: { ...process.env }
+            });
+          }
           
           pythonProcess.stdout.on('data', (data) => {
             console.log(`[MediaStudio]: ${data}`);
@@ -54,11 +63,16 @@ const mediaStudioPlugin = () => ({
       if (req.url === '/api/system/stop-engine') {
         if (pythonProcess && !pythonProcess.killed) {
           console.log('Stopping Omni Media Engine...');
-          // Dừng tiến trình port 8000
-          spawn('cmd.exe', ['/c', 'FOR /F "tokens=5" %a IN (\'netstat -aon ^| find ":8000" ^| find "LISTENING"\') DO taskkill /F /PID %a']);
-          try {
-            spawn('taskkill', ['/pid', pythonProcess.pid, '/f', '/t']);
-          } catch(e) {}
+          if (isWin) {
+            spawn('cmd.exe', ['/c', 'FOR /F "tokens=5" %a IN (\'netstat -aon ^| find ":8000" ^| find "LISTENING"\') DO taskkill /F /PID %a']);
+            try {
+              spawn('taskkill', ['/pid', pythonProcess.pid, '/f', '/t']);
+            } catch(e) {}
+          } else {
+            try {
+              pythonProcess.kill('SIGTERM');
+            } catch(e) {}
+          }
           pythonProcess = null;
         }
         res.setHeader('Content-Type', 'application/json');
@@ -87,7 +101,9 @@ const mediaStudioPlugin = () => ({
             child.on('close', (code) => {
               if (code === 0) {
                 console.log('[Anki] Pushing to GitHub CDN...');
-                const git = spawn('cmd.exe', ['/c', 'git add . && git commit -m "Auto upload media from Anki" && git push'], { cwd: path.join(__dirname, 'audio-cdn') });
+                const gitCmd = isWin ? 'cmd.exe' : 'sh';
+                const gitArgs = isWin ? ['/c', 'git add . && git commit -m "Auto upload media from Anki" && git push'] : ['-c', 'git add . && git commit -m "Auto upload media from Anki" && git push'];
+                const git = spawn(gitCmd, gitArgs, { cwd: path.join(__dirname, 'audio-cdn') });
                 git.stdout.on('data', d => console.log(`[Git]: ${d}`));
                 git.on('close', gitCode => {
                   try {

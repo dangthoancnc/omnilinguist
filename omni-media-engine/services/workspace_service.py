@@ -108,9 +108,25 @@ def add_to_playlist(source: str, item_type: str, title: str = None):
     playlist_queue.append(task)
     return task_id
 
+import re
+
+def sanitize_item_id(item_id: str) -> str:
+    """Sanitize item_id to prevent directory traversal"""
+    if not item_id:
+        raise ValueError("Item ID cannot be empty")
+    cleaned = re.sub(r'[^a-zA-Z0-9_\-]', '', str(item_id))
+    if not cleaned:
+        raise ValueError("Invalid Item ID format")
+    return cleaned
+
 def delete_workspace_item(item_id: str):
     """Delete an item from queue or disk"""
     global playlist_queue
+    try:
+        item_id = sanitize_item_id(item_id)
+    except ValueError:
+        return False
+
     playlist_queue = [t for t in playlist_queue if t["id"] != item_id]
     
     for category_dir in [ONLINE_DIR, OFFLINE_DIR]:
@@ -124,14 +140,17 @@ def delete_workspace_item(item_id: str):
                         with open(meta_file, 'r', encoding='utf-8') as f:
                             meta = json.load(f)
                             if meta.get("id") == item_id or item_name == item_id:
-                                shutil.rmtree(item_path)
-                                return True
+                                # Extra safety check: item_path must be inside category_dir
+                                if os.path.abspath(item_path).startswith(os.path.abspath(category_dir)):
+                                    shutil.rmtree(item_path)
+                                    return True
                     except:
                         pass
     return True
 
 def load_workspace_item(item_id: str):
     """Load transcript segments for a completed item"""
+    item_id = sanitize_item_id(item_id)
     for category_dir in [ONLINE_DIR, OFFLINE_DIR]:
         if not os.path.exists(category_dir): continue
         for item_name in os.listdir(category_dir):
@@ -152,6 +171,7 @@ def load_workspace_item(item_id: str):
 def save_workspace_item(item_id: str, segments: list, metadata: dict):
     """Save a session to disk"""
     _init_dirs()
+    item_id = sanitize_item_id(item_id)
     cat = metadata.get("type", "online")
     target_dir = ONLINE_DIR if cat in ("youtube", "online") else OFFLINE_DIR
     item_path = os.path.join(target_dir, item_id)
