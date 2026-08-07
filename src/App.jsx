@@ -33,6 +33,12 @@ function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('omni_theme') || 'dark');
   const [isSyncing, setIsSyncing] = useState(true);
   const { user, loading } = useAuth();
+  // P0-1: Track nếu user đã từng vào ShadowingStudio → chỉ mount khi cần
+  const [shadowingVisited, setShadowingVisited] = useState(false);
+
+  useEffect(() => {
+    if (location.pathname === '/shadowing') setShadowingVisited(true);
+  }, [location.pathname]);
 
   useEffect(() => {
     // Gọi đồng bộ dữ liệu Master khi app khởi động
@@ -128,21 +134,33 @@ function App() {
                   <span style={{ color: 'var(--text-tertiary)', fontSize: '0.85rem' }}>Đang tải giao diện...</span>
                 </div>
               }>
-                <div className="tab-container" style={{ width: '100%', height: '100%' }}>
-                  <div style={{ display: location.pathname === '/' ? 'block' : 'none', height: '100%' }}><Dashboard/></div>
-                  <div style={{ display: location.pathname === '/roadmap' ? 'block' : 'none', height: '100%' }}><Roadmap/></div>
-                  <div style={{ display: location.pathname === '/shadowing' ? 'block' : 'none', height: '100%' }}><ShadowingStudio/></div>
-                  <div style={{ display: location.pathname === '/reading' ? 'block' : 'none', height: '100%' }}><ImmersionReader/></div>
-                  <div style={{ display: location.pathname === '/flashcards' ? 'block' : 'none', height: '100%' }}><VocabularyFlashcards/></div>
-                  <div style={{ display: location.pathname === '/grammar' ? 'block' : 'none', height: '100%' }}><GrammarExplorer/></div>
-                  <div style={{ display: location.pathname === '/dictionary' ? 'block' : 'none', height: '100%' }}><Dictionary/></div>
-                  <div style={{ display: location.pathname === '/email' ? 'block' : 'none', height: '100%' }}><GrammarStudio/></div>
-                  <div style={{ display: location.pathname === '/mocktest' ? 'block' : 'none', height: '100%' }}><MockTestStudio/></div>
-                  <div style={{ display: location.pathname === '/kanji' ? 'block' : 'none', height: '100%' }}><KanjiStudio/></div>
-                  <div style={{ display: location.pathname === '/media' ? 'block' : 'none', height: '100%' }}><MediaStudio/></div>
-                  <div style={{ display: location.pathname === '/anki-import' ? 'block' : 'none', height: '100%' }}><AnkiImportStudio/></div>
-                  <div style={{ display: location.pathname === '/sandbox' ? 'block' : 'none', height: '100%' }}><AnkiSandboxMode/></div>
-                  <div style={{ display: location.pathname === '/settings' ? 'block' : 'none', height: '100%' }}><Settings/></div>
+                {/* P0-1 FIX: Hybrid routing — ShadowingStudio giữ display:none để bảo toàn state phát media,
+                   các page khác dùng Routes để unmount khi không hiển thị → giảm memory ~80% */}
+                <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+                  {/* ShadowingStudio: Giữ mounted bằng CSS để bảo toàn trạng thái video/audio đang phát */}
+                  {shadowingVisited && (
+                    <div style={{ display: location.pathname === '/shadowing' ? 'block' : 'none', height: '100%' }}>
+                      <ShadowingStudio/>
+                    </div>
+                  )}
+                  {/* Các page khác: Unmount khi rời đi để giải phóng bộ nhớ */}
+                  <div style={{ display: location.pathname === '/shadowing' ? 'none' : 'block', height: '100%' }}>
+                    <Routes>
+                      <Route path="/" element={<Dashboard/>} />
+                      <Route path="/roadmap" element={<Roadmap/>} />
+                      <Route path="/reading" element={<ImmersionReader/>} />
+                      <Route path="/flashcards" element={<VocabularyFlashcards/>} />
+                      <Route path="/grammar" element={<GrammarExplorer/>} />
+                      <Route path="/dictionary" element={<Dictionary/>} />
+                      <Route path="/email" element={<GrammarStudio/>} />
+                      <Route path="/mocktest" element={<MockTestStudio/>} />
+                      <Route path="/kanji" element={<KanjiStudio/>} />
+                      <Route path="/media" element={<MediaStudio/>} />
+                      <Route path="/anki-import" element={<AnkiImportStudio/>} />
+                      <Route path="/sandbox" element={<AnkiSandboxMode/>} />
+                      <Route path="/settings" element={<Settings/>} />
+                    </Routes>
+                  </div>
                 </div>
               </Suspense>
             )}

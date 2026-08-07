@@ -48,15 +48,31 @@ const VocabularyFlashcards = () => {
   const [visibleCount, setVisibleCount] = useState(30);
   const hasTriedRepair = useRef(false);
 
-  // === AUTO-REPAIR: Nếu IndexedDB chưa đạt 10,000 từ vựng, force re-sync nạp đủ 10,000 từ ===
+  // === P0-2 FIX: Auto-repair với double guard (ref + localStorage) để chặn vòng lặp vô hạn ===
+  // Nếu IndexedDB chưa đạt 10,000 từ vựng, force re-sync MỘT LẦN DUY NHẤT
   useEffect(() => {
     if (vocabData.length > 0 && vocabData.length < 10000 && !hasTriedRepair.current) {
+      // Guard 1: ref chặn chạy lại trong cùng 1 session
       hasTriedRepair.current = true;
+      // Guard 2: localStorage chặn chạy lại sau page reload
+      const repairKey = 'omni_vocab_repaired';
+      const lastRepair = localStorage.getItem(repairKey);
+      if (lastRepair) {
+        const elapsed = Date.now() - parseInt(lastRepair, 10);
+        // Chỉ cho phép repair lại sau 24 giờ
+        if (elapsed < 24 * 60 * 60 * 1000) {
+          console.log(`ℹ️ Auto-repair đã chạy ${Math.round(elapsed/60000)} phút trước. Bỏ qua.`);
+          return;
+        }
+      }
       console.warn(`⚠️ IndexedDB đang có ${vocabData.length}/10000 từ vựng — đang tự động nâng cấp...`);
+      localStorage.setItem(repairKey, Date.now().toString());
       db.vocab.clear().then(() => db.kanji.clear()).then(() => {
         return syncMasterData();
       }).then(() => {
         console.log('✅ Auto-repair hoàn tất! 10,000 từ vựng đã được nạp.');
+      }).catch((err) => {
+        console.error('❌ Auto-repair thất bại:', err);
       });
     }
   }, [vocabData.length]);

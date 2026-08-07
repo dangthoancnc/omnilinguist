@@ -1,5 +1,6 @@
 import os
 import json
+import shutil
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
@@ -93,8 +94,8 @@ async def api_transcribe(
     """
     file_path = f"temp/{uuid.uuid4().hex}_{file.filename}"
     try:
-        with open(file_path, "wb") as f:
-            f.write(await file.read())
+        with open(file_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
             
         result = transcribe_media(file_path, lang, model_size)
         return {"status": "success", "data": result}
@@ -238,8 +239,8 @@ async def api_playlist_add_file(
         os.makedirs(item_dir, exist_ok=True)
         
         file_path = os.path.join(item_dir, file.filename)
-        with open(file_path, "wb") as f:
-            f.write(await file.read())
+        with open(file_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
         
         add_to_playlist(file_path, "local", file.filename)
         # Store extra info for processing
@@ -264,8 +265,8 @@ async def api_media_upload(file: UploadFile = File(...)):
         os.makedirs(upload_dir, exist_ok=True)
         file_id = uuid.uuid4().hex[:8]
         file_path = os.path.join(upload_dir, f"{file_id}_{file.filename}")
-        with open(file_path, "wb") as f:
-            f.write(await file.read())
+        with open(file_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
         
         from services.media_service import get_media_info
         info = get_media_info(file_path)
@@ -291,8 +292,8 @@ async def api_media_extract_clips(
             upload_dir = os.path.abspath(os.path.join("temp", "uploads"))
             os.makedirs(upload_dir, exist_ok=True)
             path = os.path.join(upload_dir, f"{uuid.uuid4().hex[:8]}_{file.filename}")
-            with open(path, "wb") as f:
-                f.write(await file.read())
+            with open(path, "wb") as buffer:
+                shutil.copyfileobj(file.file, buffer)
         elif file_path:
             path = file_path
         else:
@@ -319,8 +320,8 @@ async def api_media_create_muted(
             upload_dir = os.path.abspath(os.path.join("temp", "uploads"))
             os.makedirs(upload_dir, exist_ok=True)
             path = os.path.join(upload_dir, f"{uuid.uuid4().hex[:8]}_{file.filename}")
-            with open(path, "wb") as f:
-                f.write(await file.read())
+            with open(path, "wb") as buffer:
+                shutil.copyfileobj(file.file, buffer)
         elif file_path:
             path = file_path
         else:
@@ -351,12 +352,12 @@ async def api_media_merge(
         
         if video and video.filename:
             v_path = os.path.join(upload_dir, f"{uuid.uuid4().hex[:8]}_{video.filename}")
-            with open(v_path, "wb") as f:
-                f.write(await video.read())
+            with open(v_path, "wb") as buffer:
+                shutil.copyfileobj(video.file, buffer)
         if audio and audio.filename:
             a_path = os.path.join(upload_dir, f"{uuid.uuid4().hex[:8]}_{audio.filename}")
-            with open(a_path, "wb") as f:
-                f.write(await audio.read())
+            with open(a_path, "wb") as buffer:
+                shutil.copyfileobj(audio.file, buffer)
         
         result = merge_audio_video(v_path, a_path, overlay_mode=mode)
         filename = os.path.basename(result)
@@ -389,8 +390,8 @@ async def api_media_extract_audio(
             upload_dir = os.path.abspath(os.path.join("temp", "uploads"))
             os.makedirs(upload_dir, exist_ok=True)
             path = os.path.join(upload_dir, f"{uuid.uuid4().hex[:8]}_{file.filename}")
-            with open(path, "wb") as f:
-                f.write(await file.read())
+            with open(path, "wb") as buffer:
+                shutil.copyfileobj(file.file, buffer)
         elif file_path:
             path = file_path
         else:
@@ -452,8 +453,8 @@ async def api_voice_clone(
             upload_dir = os.path.abspath(os.path.join("temp", "voice_refs"))
             os.makedirs(upload_dir, exist_ok=True)
             ref_path = os.path.join(upload_dir, f"{uuid.uuid4().hex[:8]}_{ref_audio.filename}")
-            with open(ref_path, "wb") as f:
-                f.write(await ref_audio.read())
+            with open(ref_path, "wb") as buffer:
+                shutil.copyfileobj(ref_audio.file, buffer)
         elif ref_audio_url:
             ref_path = ref_audio_url
         
