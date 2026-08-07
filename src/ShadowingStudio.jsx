@@ -4,6 +4,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
 import { Mic, Globe, Video, Upload, HardDrive, Loader, AlertCircle, Plus, Minus, Settings2, SkipBack, Play, Repeat, SkipForward, Pause, Square, List, Trash2, Save, FolderOpen, Volume2, Cpu } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
+import { API_BASE_URL } from './config.js';
 
 const scoreMatch = (target, got) => {
   if (!got) return 0;
@@ -143,8 +144,18 @@ const ShadowingStudio = () => {
 
   const fetchWorkspaceItems = async () => {
     try {
-      const items = JSON.parse(localStorage.getItem('omni_shadowing_workspace') || '[]');
-      setWorkspaceItems(items);
+      const localItems = JSON.parse(localStorage.getItem('omni_shadowing_workspace') || '[]');
+      try {
+        const res = await fetch(`${API_BASE_URL}/api/workspace/list`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data.status === 'success' && Array.isArray(data.data)) {
+            setWorkspaceItems([...localItems, ...data.data]);
+            return;
+          }
+        }
+      } catch(e) {}
+      setWorkspaceItems(localItems);
     } catch(e) {}
   };
 
@@ -158,11 +169,36 @@ const ShadowingStudio = () => {
   }, [activeTab]);
 
   const fetchWorkspaceDir = async () => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/workspace/config`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.status === 'success' && data.path) {
+          setWorkspaceDir(data.path);
+          return;
+        }
+      }
+    } catch(e) {}
     setWorkspaceDir('Trình duyệt (Local Storage)');
   };
 
   const changeWorkspaceDir = async () => {
-    alert('Tính năng này không khả dụng ở chế độ Serverless.');
+    const newDir = prompt('Nhập đường dẫn thư mục workspace mới cho Media Engine:');
+    if (!newDir) return;
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/workspace/config`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path: newDir })
+      });
+      const data = await res.json();
+      if (data.status === 'success') {
+        setWorkspaceDir(data.path);
+        alert('Đã cập nhật thư mục workspace!');
+      }
+    } catch(e) {
+      alert('Không thể kết nối Backend Omni Media Engine.');
+    }
   };
 
   const saveCurrentSessionToWorkspace = async () => {
@@ -193,7 +229,7 @@ const ShadowingStudio = () => {
   const handlePlaylistAddUrl = async () => {
     if (!playlistInput.trim()) return;
     try {
-      const res = await fetch('http://127.0.0.1:8000/api/playlist/add', {
+      const res = await fetch(`${API_BASE_URL}/api/playlist/add`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ source: playlistInput.trim(), type: 'youtube', title: null })
@@ -202,8 +238,11 @@ const ShadowingStudio = () => {
       if (data.status === 'success') {
         setPlaylistInput('');
         fetchWorkspaceItems();
+        alert('Đã thêm vào danh sách xử lý!');
+      } else {
+        alert(data.detail || 'Lỗi thêm bài.');
       }
-    } catch(e) { alert('Lỗi kết nối.'); }
+    } catch(e) { alert('Không thể kết nối Backend Omni Media Engine.'); }
   };
 
   const handlePlaylistAddFile = async (e) => {
@@ -214,15 +253,18 @@ const ShadowingStudio = () => {
       formData.append('file', file);
       formData.append('lang', sttLang);
       formData.append('model_size', sttModel);
-      const res = await fetch('http://127.0.0.1:8000/api/playlist/add-file', {
+      const res = await fetch(`${API_BASE_URL}/api/playlist/add-file`, {
         method: 'POST',
         body: formData
       });
       const data = await res.json();
       if (data.status === 'success') {
         fetchWorkspaceItems();
+        alert('Đã tải file lên danh sách xử lý!');
+      } else {
+        alert(data.detail || 'Lỗi tải file.');
       }
-    } catch(e) { alert('Lỗi tải file.'); }
+    } catch(e) { alert('Không thể kết nối Backend Omni Media Engine.'); }
     e.target.value = '';
   };
 
@@ -391,12 +433,48 @@ const ShadowingStudio = () => {
 
   const handleFetchYouTube = async () => {
     if (!urlInput.trim()) return;
-    alert('Tính năng trích xuất phụ đề YouTube đã được chuyển sang chế độ Serverless. Vui lòng cấu hình API Key trong Settings.');
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/fetch-link`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: urlInput.trim() })
+      });
+      const data = await res.json();
+      if (data.status === 'success' && data.data) {
+        const segs = data.data.segments || data.data.subtitles;
+        if (segs && segs.length > 0) {
+          setSessionStore(prev => ({
+            ...prev,
+            youtube: { segments: segs, currentSegIdx: 0, scores: {} }
+          }));
+          alert('Đã trích xuất phụ đề YouTube thành công!');
+          return;
+        }
+      }
+      alert('Không tìm thấy phụ đề cho video này từ Backend.');
+    } catch(e) {
+      alert('Chưa kết nối Backend Omni Media Engine hoặc Serverless Mode. Bạn có thể nhập/dán phụ đề thủ công hoặc cấu hình Groq API Key trong Settings.');
+    }
   };
 
   const handleAddToPlaylist = async () => {
     if (!urlInput.trim()) return;
-    alert('Playlist ngầm đã bị vô hiệu hóa trong chế độ Serverless.');
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/playlist/add`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ source: urlInput.trim(), type: 'youtube', title: null })
+      });
+      const data = await res.json();
+      if (data.status === 'success') {
+        alert('Đã thêm vào Playlist ngầm của Omni Media Engine!');
+        fetchWorkspaceItems();
+      } else {
+        alert(data.detail || 'Lỗi thêm bài.');
+      }
+    } catch(e) {
+      alert('Không thể kết nối Backend Omni Media Engine.');
+    }
   };
 
   const loadWorkspaceItem = async (id) => {
@@ -423,6 +501,27 @@ const ShadowingStudio = () => {
             setTimeout(() => initPlayer(meta.video_id), 500);
         }
       } else {
+        // Try loading from server if item id is remote
+        try {
+          const res = await fetch(`${API_BASE_URL}/api/workspace/load/${id}`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data.status === 'success' && data.data) {
+              const meta = data.data.metadata || {};
+              const targetTab = meta.type === 'youtube' ? 'youtube' : 'local';
+              setSessionStore(prev => ({
+                ...prev,
+                [targetTab]: {
+                  segments: data.data.segments || [],
+                  currentSegIdx: 0,
+                  scores: {}
+                }
+              }));
+              setActiveTab(targetTab);
+              return;
+            }
+          }
+        } catch(err) {}
         alert('Không tìm thấy mục này.');
       }
     } catch(e) { alert('Không thể tải mục này.'); }
@@ -431,9 +530,14 @@ const ShadowingStudio = () => {
   const deleteWorkspaceItem = async (id) => {
     if (!confirm('Bạn có chắc chắn muốn xóa bài học này?')) return;
     try {
+      // Try local
       const items = JSON.parse(localStorage.getItem('omni_shadowing_workspace') || '[]');
       const newItems = items.filter(item => item.id !== id);
       localStorage.setItem('omni_shadowing_workspace', JSON.stringify(newItems));
+      // Try server delete
+      try {
+        await fetch(`${API_BASE_URL}/api/workspace/${id}`, { method: 'DELETE' });
+      } catch(err) {}
       fetchWorkspaceItems();
     } catch(e) {}
   };
@@ -446,7 +550,28 @@ const ShadowingStudio = () => {
     setLocalMediaUrl(url);
     setLocalMediaType(file.type.startsWith('video') ? 'video' : 'audio');
     
-    alert('Tính năng tách phụ đề (Transcribe) đã được chuyển sang Serverless. Vui lòng thêm Groq API Key trong Settings.');
+    // Attempt transcription if backend engine is available
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('lang', sttLang);
+      formData.append('model_size', sttModel);
+      
+      const res = await fetch(`${API_BASE_URL}/api/transcribe`, {
+        method: 'POST',
+        body: formData
+      });
+      const data = await res.json();
+      if (data.status === 'success' && data.data && data.data.segments) {
+        setSessionStore(prev => ({
+          ...prev,
+          local: { segments: data.data.segments, currentSegIdx: 0, scores: {} }
+        }));
+        alert('Đã trích xuất phụ đề (STT Whisper) thành công!');
+      }
+    } catch(err) {
+      console.log('Backend Media Engine STT offline - file preview ready.');
+    }
   };
 
   const jumpToSegment = (idx) => {

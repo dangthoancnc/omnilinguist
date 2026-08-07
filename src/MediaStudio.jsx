@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Film, Upload, Cpu, HardDrive, Search, Scissors, Image, Volume2, VolumeX, Mic, Download, Loader, Play, Pause, Trash2, Send, Settings2, ChevronRight } from 'lucide-react';
 
-const API = 'http://127.0.0.1:8000';
+import { API_BASE_URL as API } from './config.js';
 
 const MediaStudio = () => {
   // Media Bin

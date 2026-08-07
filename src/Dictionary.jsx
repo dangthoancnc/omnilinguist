@@ -3,9 +3,11 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
 import { Search, BookA, Bookmark, ArrowRight, LayoutGrid, Type } from 'lucide-react';
 
+import { API_BASE_URL } from './config.js';
+
 const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
 
-// Auto-Translate component with caching
+// Auto-Translate component with caching, backend proxy & AbortController timeout
 const translateToVi = async (enText) => {
   if (!enText) return '';
   const cacheKey = `trans_${enText}`;
@@ -14,8 +16,36 @@ const translateToVi = async (enText) => {
   
   if (!navigator.onLine) return enText;
   
+  // Try local backend proxy first
   try {
-    const res = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&q=${encodeURIComponent(enText)}`);
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 2000);
+    const res = await fetch(`${API_BASE_URL}/api/translate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: enText, target_lang: 'vi' }),
+      signal: controller.signal
+    });
+    clearTimeout(timer);
+    if (res.ok) {
+      const data = await res.json();
+      if (data.status === 'success' && data.data) {
+        localStorage.setItem(cacheKey, data.data);
+        return data.data;
+      }
+    }
+  } catch (e) {
+    // Backend offline, fallback to direct Google Translate
+  }
+
+  // Fallback to client-side fetch with AbortController timeout
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 3000);
+    const res = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&q=${encodeURIComponent(enText)}`, {
+      signal: controller.signal
+    });
+    clearTimeout(timer);
     const data = await res.json();
     const viText = data[0][0][0];
     localStorage.setItem(cacheKey, viText);
@@ -68,7 +98,12 @@ const CrossDictEnVn = ({ query }) => {
     const fetchDict = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=vi&dt=t&dt=bd&q=${encodeURIComponent(query)}`);
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+        const res = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=vi&dt=t&dt=bd&q=${encodeURIComponent(query)}`, {
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
         const json = await res.json();
         if (isMounted) setData(json);
       } catch (e) { }
