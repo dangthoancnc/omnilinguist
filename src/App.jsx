@@ -14,6 +14,7 @@ import './index.css';
 // Lazy load heavy components to optimize web bundle size (<300KB initial chunk)
 const Dashboard = lazy(() => import('./Dashboard'));
 const ShadowingStudio = lazy(() => import('./ShadowingStudio'));
+const JapanNewsHub = lazy(() => import('./JapanNewsHub'));
 const VocabularyFlashcards = lazy(() => import('./VocabularyFlashcards'));
 const GrammarExplorer = lazy(() => import('./GrammarExplorer'));
 const Dictionary = lazy(() => import('./Dictionary'));
@@ -148,6 +149,7 @@ function App() {
                     <Routes>
                       <Route path="/" element={<Dashboard/>} />
                       <Route path="/roadmap" element={<Roadmap/>} />
+                      <Route path="/news" element={<JapanNewsHub/>} />
                       <Route path="/reading" element={<ImmersionReader/>} />
                       <Route path="/flashcards" element={<VocabularyFlashcards/>} />
                       <Route path="/grammar" element={<GrammarExplorer/>} />

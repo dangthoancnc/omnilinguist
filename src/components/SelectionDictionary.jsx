@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { db } from './db.js';
+import { db } from '../db.js';
 import { Search, Book, Type, X, ExternalLink } from 'lucide-react';
 
 const SelectionDictionary = () => {

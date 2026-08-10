@@ -1,7 +1,7 @@
 // v10.0.0 - Drawer Sidebar with Theme Toggle
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Map, Mic, Volume2, BookA, BookOpen, Search, PencilLine, Settings, Film, ListChecks, Sun, Moon, X, ChevronLeft, LogOut, User, Database, Play } from 'lucide-react';
+import { LayoutDashboard, Map, Mic, Volume2, BookA, BookOpen, Search, PencilLine, Settings, Film, ListChecks, Sun, Moon, X, ChevronLeft, LogOut, User, Database, Play, Newspaper } from 'lucide-react';
 import { useAuth } from './AuthContext';
 import { supabase } from './lib/supabaseClient';
 
@@ -16,6 +16,7 @@ const SECTIONS = [
   {
     label: 'インプット',
     items: [
+      { jp:'ニュース Hub', sub:'Tin tức & Đời sống Nhật', icon:<Newspaper size={17}/>, path:'/news' },
       { jp:'多読 (Immersion)', sub:'Tắm ngôn ngữ', icon:<BookOpen size={17}/>, path:'/reading' },
       { jp:'シャドーイング', sub:'Shadowing', icon:<Volume2 size={17}/>, path:'/shadowing' },
     ]
