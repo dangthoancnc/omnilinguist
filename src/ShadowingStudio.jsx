@@ -6,7 +6,8 @@ import {
   Mic, Globe, Video, Upload, HardDrive, Loader, AlertCircle, Plus, Minus, 
   Settings2, SkipBack, Play, Repeat, SkipForward, Pause, Square, List, Trash2, 
   Save, FolderOpen, Volume2, Cpu, Eye, EyeOff, FileText, Download, Edit3, 
-  FolderPlus, RefreshCw, Bookmark, Sparkles, HelpCircle, Check, X, BookOpen, Layers
+  FolderPlus, RefreshCw, Bookmark, Sparkles, HelpCircle, Check, X, BookOpen, Layers,
+  Newspaper, ExternalLink, Link2, Wand2
 } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 import { API_BASE_URL } from './config.js';
@@ -68,11 +69,31 @@ const parseSRT = (srtText) => {
   return segments;
 };
 
+// Split raw text into Japanese Shadowing Segments
+const parseRawTextToSegments = (rawText) => {
+  if (!rawText) return [];
+  const rawSentences = rawText.split(/[。！？\n]/).map(s => s.trim()).filter(s => s.length > 2);
+  let currentTime = 0;
+  return rawSentences.map((st) => {
+    const duration = Math.max(3, Math.round(st.length * 0.28 * 10) / 10);
+    const seg = {
+      start: currentTime,
+      duration: duration,
+      text: st.endsWith('。') ? st : st + '。',
+      vi: '',
+      startOffset: 0,
+      endOffset: 0
+    };
+    currentTime += duration + 0.5;
+    return seg;
+  });
+};
+
 // Preset Curated Shadowing Lessons
 const PRESET_LESSONS = [
   {
     id: 'preset_momotaro',
-    title: '🍑 Truyện Cổ Tích: Momotaro (桃太郎)',
+    title: '桃太郎 (Truyện cổ tích Momotaro)',
     category: 'Fairy Tale / Cổ tích',
     type: 'preset',
     segments: [
@@ -84,7 +105,7 @@ const PRESET_LESSONS = [
   },
   {
     id: 'preset_business',
-    title: '💼 Nhật Ngữ Công Sở: Chào Hỏi & Giới Thiệu (ビジネス挨拶)',
+    title: 'ビジネス挨拶 (Nhật ngữ công sở chào hỏi)',
     category: 'Business / Công sở',
     type: 'preset',
     segments: [
@@ -96,7 +117,7 @@ const PRESET_LESSONS = [
   },
   {
     id: 'preset_nhk_news',
-    title: '📰 NHK Easy News: Tin Tức Văn Hóa Nhật Bản',
+    title: 'NHK Easy News (Tin tức văn hóa Nhật)',
     category: 'News / Tin tức',
     type: 'preset',
     segments: [
@@ -107,7 +128,7 @@ const PRESET_LESSONS = [
   },
   {
     id: 'preset_jlpt_n3',
-    title: '🎧 JLPT N3: Luyện Nghe Hội Thoại Hàng Ngày',
+    title: 'JLPT N3 (Nghe hội thoại hàng ngày)',
     category: 'JLPT N3 / Chokai',
     type: 'preset',
     segments: [
@@ -119,27 +140,36 @@ const PRESET_LESSONS = [
   }
 ];
 
+// Open Web Channels
+const OPEN_NEWS_CHANNELS = [
+  { title: '📰 NHK News Web Easy', url: 'https://www3.nhk.or.jp/news/easy/', desc: 'Tin tức tiếng Nhật dễ đọc cho người học' },
+  { title: '🍵 Matcha Japan Magazine', url: 'https://matcha-jp.com/easy', desc: 'Văn hóa, ẩm thực & du lịch Nhật Bản' },
+  { title: '🌸 Easy Japanese Stories', url: 'https://hukumusume.com/douwa/', desc: 'Kho tàng truyện dân gian Nhật Bản' },
+  { title: '⛩️ Asahi Easy News', url: 'https://www.asahi.com/', desc: 'Tin tức thời sự Nhật Bản' }
+];
+
 const ShadowingStudio = () => {
   // Live Dexie Database Queries
   const storedPlaylists = useLiveQuery(() => db.playlists?.toArray()) || [];
   const storedMediaFiles = useLiveQuery(() => db.mediaFiles?.toArray()) || [];
 
-  // Active Main Tab
-  const [activeTab, setActiveTab] = useState('presets'); // 'presets', 'youtube', 'local', 'workspace'
+  // Active Main Tab: 'presets', 'web', 'youtube', 'local', 'workspace'
+  const [activeTab, setActiveTab] = useState('presets');
 
   // Shadowing Mode: 'text' (Text-Guided), 'blind' (Blind Shadowing), 'echo' (Echoing Method), 'record' (Record & Compare)
   const [shadowingMode, setShadowingMode] = useState('text');
   const [isBlindRevealed, setIsBlindRevealed] = useState(false);
 
-  // Per-tab session store: isolates YouTube, Local media, Presets
+  // Per-tab session store: isolates Web Open Materials, YouTube, Local media, Presets
   const [sessionStore, setSessionStore] = useState({
     presets: { title: PRESET_LESSONS[0].title, segments: PRESET_LESSONS[0].segments, currentSegIdx: 0, scores: {} },
+    web: { title: '', segments: [], currentSegIdx: 0, scores: {} },
     youtube: { title: '', segments: [], currentSegIdx: 0, scores: {} },
     local: { title: '', segments: [], currentSegIdx: 0, scores: {} }
   });
 
   // Active Session derived getters
-  const activeTabStoreKey = activeTab === 'youtube' || activeTab === 'local' ? activeTab : 'presets';
+  const activeTabStoreKey = activeTab === 'youtube' || activeTab === 'local' || activeTab === 'web' ? activeTab : 'presets';
   const activeSession = sessionStore[activeTabStoreKey] || sessionStore.presets;
   const segments = activeSession.segments || [];
   const currentSegIdx = activeSession.currentSegIdx || 0;
@@ -173,6 +203,11 @@ const ShadowingStudio = () => {
       [activeTabStoreKey]: { ...prev[activeTabStoreKey], title }
     }));
   };
+
+  // Web & Open Materials States
+  const [webUrlInput, setWebUrlInput] = useState('');
+  const [customTextInput, setCustomTextInput] = useState('');
+  const [customTextTitle, setCustomTextTitle] = useState('');
 
   // YouTube States
   const [urlInput, setUrlInput] = useState('');
@@ -288,7 +323,6 @@ const ShadowingStudio = () => {
   // Keyboard Shortcuts Support for High Speed Shadowing Practice
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Avoid hotkeys when typing in input fields
       if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
 
       if (e.code === 'Space') {
@@ -338,6 +372,63 @@ const ShadowingStudio = () => {
       presets: { title: preset.title, segments: preset.segments, currentSegIdx: 0, scores: {} }
     }));
     setActiveTab('presets');
+  };
+
+  // OPEN WEB MATERIALS: Fetch Web Article URL
+  const handleFetchWebArticle = async (targetUrl = null) => {
+    const url = targetUrl || webUrlInput.trim();
+    if (!url) return;
+    setIsFetching(true);
+    try {
+      const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`);
+      const data = await res.json();
+      if (data && data.contents) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data.contents, 'text/html');
+        const title = doc.title || 'Bài báo Web Online';
+        
+        // Clean unwanted tags
+        const scripts = doc.querySelectorAll('script, style, nav, footer, header, iframe');
+        scripts.forEach(s => s.remove());
+        const bodyText = doc.body ? doc.body.innerText.replace(/\n\s*\n/g, '\n').trim() : '';
+
+        const newSegs = parseRawTextToSegments(bodyText);
+        if (newSegs.length > 0) {
+          setSessionStore(prev => ({
+            ...prev,
+            web: { title, segments: newSegs, currentSegIdx: 0, scores: {} }
+          }));
+          setActiveTab('web');
+          alert(`✅ Đã trích xuất thành công ${newSegs.length} câu Shadowing từ bài báo Online!`);
+        } else {
+          alert('Không trích xuất được câu tiếng Nhật phù hợp từ URL này.');
+        }
+      } else {
+        alert('Không thể kết nối tải trang Web.');
+      }
+    } catch(err) {
+      alert('Lỗi tải bài báo Web: ' + err.message);
+    }
+    setIsFetching(false);
+  };
+
+  // OPEN WEB MATERIALS: Parse Custom Pasted Text
+  const handleParseCustomText = () => {
+    if (!customTextInput.trim()) { alert('Vui lòng nhập hoặc dán văn bản tiếng Nhật.'); return; }
+    const title = customTextTitle.trim() || 'Tài liệu tự do ' + new Date().toLocaleDateString();
+    const newSegs = parseRawTextToSegments(customTextInput.trim());
+    if (newSegs.length > 0) {
+      setSessionStore(prev => ({
+        ...prev,
+        web: { title, segments: newSegs, currentSegIdx: 0, scores: {} }
+      }));
+      setActiveTab('web');
+      setCustomTextInput('');
+      setCustomTextTitle('');
+      alert(`✅ Đã chuyển đổi ${newSegs.length} câu thành bài học Shadowing!`);
+    } else {
+      alert('Vui lòng nhập văn bản tiếng Nhật có dấu chấm [。] hoặc xuống dòng.');
+    }
   };
 
   // YouTube Player Setup
@@ -438,7 +529,6 @@ const ShadowingStudio = () => {
                playFn();
             } else {
                loopCountRef.current = 0;
-               // Echoing Mode or Wait Mode
                const isEchoingMode = shadowingModeRef.current === 'echo';
                const effectiveWaitMode = isEchoingMode ? (waitModeRef.current === 'Off' ? '100' : waitModeRef.current) : waitModeRef.current;
 
@@ -529,7 +619,6 @@ const ShadowingStudio = () => {
     setLocalMediaType(isVid ? 'video' : 'audio');
     setActiveTitle(file.name);
 
-    // Save File ArrayBuffer / Blob to Dexie IndexedDB for robust browser reload restore
     try {
       if (db.mediaFiles) {
         await db.mediaFiles.put({
@@ -542,7 +631,6 @@ const ShadowingStudio = () => {
       }
     } catch(err){}
 
-    // Try Backend Speech-to-Text Whisper
     setIsFetching(true);
     try {
       const formData = new FormData();
@@ -615,7 +703,7 @@ const ShadowingStudio = () => {
     URL.revokeObjectURL(url);
   };
 
-  // CLEAR / DELETE CURRENT MEDIA & RESET PLAYER (UX Fix)
+  // CLEAR / DELETE CURRENT MEDIA & RESET PLAYER
   const handleClearCurrentMedia = () => {
     if (!confirm('Bạn có chắc chắn muốn xóa bài học media này khỏi trình phát hiện tại?')) return;
     pauseAllPlayers();
@@ -654,11 +742,12 @@ const ShadowingStudio = () => {
         playerRef.current.seekTo(start);
         playerRef.current.playVideo();
       }
+    } else if (activeTab === 'local' && localPlayerRef.current) {
+      localPlayerRef.current.currentTime = start;
+      localPlayerRef.current.play();
     } else {
-      if (localPlayerRef.current) {
-        localPlayerRef.current.currentTime = start;
-        localPlayerRef.current.play();
-      }
+      // Preset / Web Open Material TTS playback
+      playTTS(seg.text);
     }
   };
 
@@ -668,10 +757,12 @@ const ShadowingStudio = () => {
         if (isPlaying) playerRef.current.pauseVideo();
         else playerRef.current.playVideo();
       }
+    } else if (activeTab === 'local' && localPlayerRef.current) {
+      if (isPlaying) localPlayerRef.current.pause();
+      else localPlayerRef.current.play();
     } else {
-      if (localPlayerRef.current) {
-        if (isPlaying) localPlayerRef.current.pause();
-        else localPlayerRef.current.play();
+      if (segments[currentSegIdx]) {
+        playTTS(segments[currentSegIdx].text);
       }
     }
   };
@@ -680,8 +771,8 @@ const ShadowingStudio = () => {
     setPlaybackRate(rate);
     if (activeTab === 'youtube') {
       if (isPlayerReady.current && playerRef.current) playerRef.current.setPlaybackRate(rate);
-    } else {
-      if (localPlayerRef.current) localPlayerRef.current.playbackRate = rate;
+    } else if (activeTab === 'local' && localPlayerRef.current) {
+      localPlayerRef.current.playbackRate = rate;
     }
   };
 
@@ -715,7 +806,6 @@ const ShadowingStudio = () => {
   // Real Audio Voice Recording & Speech Recognition
   const toggleRecording = async (idx, textTarget) => {
     if (listening && recordingIdx === idx) {
-      // Stop recording
       if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
         mediaRecorderRef.current.stop();
       }
@@ -724,7 +814,6 @@ const ShadowingStudio = () => {
       const sc = scoreMatch(textTarget, transcript);
       setScores(prev => ({ ...prev, [idx]: sc }));
     } else {
-      // Start recording MediaRecorder audio blob + SpeechRecognition
       try {
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         audioChunksRef.current = [];
@@ -820,9 +909,9 @@ const ShadowingStudio = () => {
           playlistId: targetPlaylistId || selectedPlaylistId || 'all',
           metadata: {
             title,
-            type: activeTab === 'youtube' ? 'youtube' : 'local',
+            type: activeTab,
             video_id: videoId || null,
-            source: activeTab === 'youtube' ? urlInput : (localFile?.name || 'local')
+            source: activeTab === 'youtube' ? urlInput : (localFile?.name || 'online_web')
           },
           segments: segments,
           created_at: new Date().toISOString()
@@ -868,7 +957,7 @@ const ShadowingStudio = () => {
       const item = items.find(i => i.id === id);
       if (item) {
         const meta = item.metadata || {};
-        const targetTab = meta.type === 'youtube' ? 'youtube' : 'local';
+        const targetTab = meta.type === 'youtube' ? 'youtube' : (meta.type === 'local' ? 'local' : 'web');
         setSessionStore(prev => ({
           ...prev,
           [targetTab]: { title: item.title, segments: item.segments || [], currentSegIdx: 0, scores: {} }
@@ -921,7 +1010,14 @@ const ShadowingStudio = () => {
             onClick={() => handleTabChange('presets')}
             style={{ padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}
           >
-            <Sparkles size={15} /> Bài Học Mẫu (Presets)
+            <Sparkles size={15} /> Bài Học Mẫu
+          </button>
+          <button 
+            className={`btn ${activeTab === 'web' ? 'btn-primary' : 'btn-outline'}`}
+            onClick={() => handleTabChange('web')}
+            style={{ padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}
+          >
+            <Newspaper size={15} /> Web & Tin Tức Online
           </button>
           <button 
             className={`btn ${activeTab === 'youtube' ? 'btn-primary' : 'btn-outline'}`}
@@ -1008,6 +1104,69 @@ const ShadowingStudio = () => {
                 {p.title}
               </button>
             ))}
+          </div>
+        )}
+
+        {/* OPEN WEB MATERIALS & NEWS FETCHER */}
+        {activeTab === 'web' && (
+          <div className="glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: 12, padding: 14 }}>
+            
+            {/* Direct URL Fetcher & News Feeds */}
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
+              <div style={{ display: 'flex', gap: 8, flex: 1, minWidth: 260 }}>
+                <input 
+                  type="text" 
+                  placeholder="Dán URL Bài báo / Tin tức / Blog tiếng Nhật bất kỳ vào đây..."
+                  value={webUrlInput}
+                  onChange={e => setWebUrlInput(e.target.value)}
+                  onKeyDown={e => { if(e.key === 'Enter') handleFetchWebArticle(); }}
+                  style={{ flex: 1, padding: '8px 12px', borderRadius: 8, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', outline: 'none', fontSize: '0.85rem' }}
+                />
+                <button className="btn btn-primary" onClick={() => handleFetchWebArticle()} disabled={isFetching} style={{ display: 'flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap', fontSize: '0.85rem' }}>
+                  {isFetching ? <Loader size={14} className="spin" /> : <Link2 size={14} />} Trích Xuất Web
+                </button>
+              </div>
+
+              {/* Quick Preset News Channels */}
+              <div style={{ display: 'flex', gap: 6, overflowX: 'auto', alignItems: 'center' }}>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', fontWeight: 600 }}>KÊNH TIN TỨC:</span>
+                {OPEN_NEWS_CHANNELS.map(ch => (
+                  <button 
+                    key={ch.title}
+                    className="btn btn-outline"
+                    onClick={() => handleFetchWebArticle(ch.url)}
+                    disabled={isFetching}
+                    style={{ padding: '4px 8px', fontSize: '0.75rem', whiteSpace: 'nowrap' }}
+                    title={ch.desc}
+                  >
+                    {ch.title}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Custom Raw Text Importer */}
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'flex-start', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: 10 }}>
+               <input 
+                 type="text" 
+                 placeholder="Tiêu đề bài viết..."
+                 value={customTextTitle}
+                 onChange={e => setCustomTextTitle(e.target.value)}
+                 style={{ width: 220, padding: '6px 10px', borderRadius: 6, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', fontSize: '0.8rem' }}
+               />
+               <input 
+                 type="text"
+                 placeholder="Dán bất kỳ đoạn văn bản, tin tức, bài hội thoại tiếng Nhật nào vào đây..."
+                 value={customTextInput}
+                 onChange={e => setCustomTextInput(e.target.value)}
+                 onKeyDown={e => { if(e.key === 'Enter') handleParseCustomText(); }}
+                 style={{ flex: 1, minWidth: 200, padding: '6px 10px', borderRadius: 6, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', fontSize: '0.8rem' }}
+               />
+               <button className="btn btn-primary" onClick={handleParseCustomText} style={{ padding: '6px 14px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: 4, whiteSpace: 'nowrap' }}>
+                 <Wand2 size={13}/> Biến Thành Bài Shadowing
+               </button>
+            </div>
+
           </div>
         )}
 
@@ -1205,12 +1364,12 @@ const ShadowingStudio = () => {
                )}
             </div>
 
-            {/* Presets Player Banner */}
-            {activeTab === 'presets' && (
+            {/* Presets & Web Open Materials Player Banner */}
+            {(activeTab === 'presets' || activeTab === 'web') && (
               <div className="glass-panel" style={{ padding: 16, textAlign: 'center', background: 'linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1))', border: '1px solid rgba(59,130,246,0.3)', borderRadius: 12 }}>
-                <Sparkles size={32} color="#60a5fa" style={{ marginBottom: 8 }} />
+                <Newspaper size={32} color="#60a5fa" style={{ marginBottom: 8 }} />
                 <h3 style={{ margin: '0 0 4px 0', fontSize: '1rem', color: 'white' }}>{activeTitle}</h3>
-                <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Bài học mẫu tích hợp sẵn audio đọc tự động AI & Furigana.</p>
+                <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Bài học tự do tích hợp sẵn đọc tự động AI TTS & Furigana.</p>
               </div>
             )}
 
@@ -1293,7 +1452,7 @@ const ShadowingStudio = () => {
 
           {/* RIGHT PANE: TRANSCRIPT LIST WITH AUTO-SCROLL & INTERACTIVE SEGMENTS */}
           <div className="glass-panel" style={{ flex: 1, overflowY: 'auto', padding: '14px 18px', display: 'flex', flexDirection: 'column', gap: 8 }}>
-              {!segments.length && <div style={{ color: 'var(--text-secondary)', textAlign: 'center', marginTop: 40 }}>Chưa có phụ đề. Vui lòng chọn bài học mẫu hoặc nạp file phụ đề.</div>}
+              {!segments.length && <div style={{ color: 'var(--text-secondary)', textAlign: 'center', marginTop: 40 }}>Chưa có bài học. Chọn bài học mẫu, dán URL bài báo hoặc dán văn bản tùy ý ở trên.</div>}
               
               {segments.map((seg, idx) => {
                   const isCurrent = currentSegIdx === idx;
