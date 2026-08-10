@@ -1,138 +1,232 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
-import { Mic, Globe, Video, Upload, HardDrive, Loader, AlertCircle, Plus, Minus, Settings2, SkipBack, Play, Repeat, SkipForward, Pause, Square, List, Trash2, Save, FolderOpen, Volume2, Cpu } from 'lucide-react';
+import { 
+  Mic, Globe, Video, Upload, HardDrive, Loader, AlertCircle, Plus, Minus, 
+  Settings2, SkipBack, Play, Repeat, SkipForward, Pause, Square, List, Trash2, 
+  Save, FolderOpen, Volume2, Cpu, Eye, EyeOff, FileText, Download, Edit3, 
+  FolderPlus, RefreshCw, Bookmark, Sparkles, HelpCircle, Check, X, BookOpen, Layers
+} from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 import { API_BASE_URL } from './config.js';
 
+// Algorithm for speech score calculation
 const scoreMatch = (target, got) => {
-  if (!got) return 0;
+  if (!got || !target) return 0;
   const t = target.replace(/[。、！？\s]/g, '');
   const g = got.replace(/[。、！？\s]/g, '');
+  if (!t) return 0;
   let match = 0;
   for (const ch of g) { if (t.includes(ch)) match++; }
   return Math.min(100, Math.round((match / t.length) * 120));
 };
 
+// Subtitle Parsers (SRT / VTT)
+const parseSRT = (srtText) => {
+  if (!srtText) return [];
+  const normalized = srtText.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  const blocks = normalized.split('\n\n');
+  const segments = [];
+  
+  for (const block of blocks) {
+    const lines = block.trim().split('\n');
+    if (lines.length >= 2) {
+      let timeLine = lines.find(l => l.includes('-->'));
+      if (!timeLine) continue;
+      
+      const parts = timeLine.split('-->').map(s => s.trim());
+      if (parts.length < 2) continue;
+
+      const parseTime = (str) => {
+        const clean = str.replace(',', '.');
+        const tParts = clean.split(':');
+        if (tParts.length === 3) {
+          return parseFloat(tParts[0]) * 3600 + parseFloat(tParts[1]) * 60 + parseFloat(tParts[2]);
+        } else if (tParts.length === 2) {
+          return parseFloat(tParts[0]) * 60 + parseFloat(tParts[1]);
+        }
+        return 0;
+      };
+      
+      const start = parseTime(parts[0]);
+      const end = parseTime(parts[1]);
+      const textLines = lines.slice(lines.indexOf(timeLine) + 1).join(' ');
+      
+      if (textLines.trim()) {
+        segments.push({
+          start,
+          duration: Math.max(0.5, end - start),
+          text: textLines.trim(),
+          vi: '',
+          startOffset: 0,
+          endOffset: 0
+        });
+      }
+    }
+  }
+  return segments;
+};
+
+// Preset Curated Shadowing Lessons
+const PRESET_LESSONS = [
+  {
+    id: 'preset_momotaro',
+    title: '🍑 Truyện Cổ Tích: Momotaro (桃太郎)',
+    category: 'Fairy Tale / Cổ tích',
+    type: 'preset',
+    segments: [
+      { start: 0, duration: 4.5, text: 'むかしむかし、あるところに、おじいさんとおばあさんがいました。', vi: 'Ngày xửa ngày xưa, ở một nơi nọ, có một ông lão và một bà lão.' },
+      { start: 4.8, duration: 5.2, text: 'おじいさんは山へしばかりに、おばあさんは川へせんたくに行きました。', vi: 'Ông lão lên núi đốn củi, còn bà lão ra sông giặt quần áo.' },
+      { start: 10.2, duration: 6.0, text: 'おばあさんが川でせんたくをしていると、大きな桃がどんぶらこ、どんぶらこと流れてきました。', vi: 'Khi bà lão đang giặt đồ ở sông, một quả đào lớn trôi bồng bềnh bồng bềnh tới.' },
+      { start: 16.5, duration: 5.5, text: '「なんと大きな桃でしょう！家に持って帰っておじいさんと食べましょう。」', vi: '「Quả đào mới to làm sao! Hãy mang về nhà cùng ăn với ông lão nào.」' }
+    ]
+  },
+  {
+    id: 'preset_business',
+    title: '💼 Nhật Ngữ Công Sở: Chào Hỏi & Giới Thiệu (ビジネス挨拶)',
+    category: 'Business / Công sở',
+    type: 'preset',
+    segments: [
+      { start: 0, duration: 4.0, text: 'いつもお世話になっております。ABC会社の山田でございます。', vi: 'Cảm ơn anh/chị đã luôn giúp đỡ. Tôi là Yamada đến từ công ty ABC.' },
+      { start: 4.2, duration: 4.8, text: '本日はお忙しい中、お時間をいただき誠にありがとうございます。', vi: 'Chân thành cảm ơn anh/chị đã dành thời gian quý báu ngày hôm nay.' },
+      { start: 9.2, duration: 5.0, text: '新プロジェクトの進捗状況について、ご報告させていただきます。', vi: 'Tôi xin phép được báo cáo về tiến độ của dự án mới.' },
+      { start: 14.5, duration: 4.5, text: '今後とも何卒よろしくお願い申し上げます。', vi: 'Rất mong tiếp tục nhận được sự hợp tác của anh/chị.' }
+    ]
+  },
+  {
+    id: 'preset_nhk_news',
+    title: '📰 NHK Easy News: Tin Tức Văn Hóa Nhật Bản',
+    category: 'News / Tin tức',
+    type: 'preset',
+    segments: [
+      { start: 0, duration: 5.2, text: '日本で桜の花が咲き始めました。多くの人が公園でお花見を楽しんでいます。', vi: 'Hoa anh đào đã bắt đầu nở ở Nhật Bản. Nhiều người đang tận hưởng việc ngắm hoa ở công viên.' },
+      { start: 5.5, duration: 5.0, text: '気象庁によると、今年の開花は例年より少し早いということです。', vi: 'Theo Cơ quan Khí tượng, hoa nở năm nay sớm hơn một chút so với mọi năm.' },
+      { start: 10.8, duration: 5.8, text: '外国人観光客も増えており、日本の春の cảnh sắc を写真に収めています。', vi: 'Khách du lịch nước ngoài cũng tăng lên, họ đang chụp ảnh phong cảnh mùa xuân Nhật Bản.' }
+    ]
+  },
+  {
+    id: 'preset_jlpt_n3',
+    title: '🎧 JLPT N3: Luyện Nghe Hội Thoại Hàng Ngày',
+    category: 'JLPT N3 / Chokai',
+    type: 'preset',
+    segments: [
+      { start: 0, duration: 3.8, text: 'すみません、この近くに図書館はありますか。', vi: 'Xin lỗi, gần đây có thư viện nào không ạ?' },
+      { start: 4.0, duration: 4.5, text: 'はい、この道をまっすぐ行って、二つ目の信号を右に曲がるとありますよ。', vi: 'Có chứ, đi thẳng đường này, rẽ右 ở đèn giao thông thứ hai là tới.' },
+      { start: 8.8, duration: 3.5, text: '歩いてどのくらいかかりますか。', vi: 'Đi bộ mất khoảng bao lâu ạ?' },
+      { start: 12.5, duration: 4.0, text: '10分くらいですよ。気をつけていってらっしゃい。', vi: 'Khoảng 10 phút thôi. Đi cẩn thận nhé.' }
+    ]
+  }
+];
+
 const ShadowingStudio = () => {
-  const shadowingData = useLiveQuery(() => db.shadowing.toArray()) || [];
-  
-  const [activeTab, setActiveTab] = useState('youtube');
-  
-  // Per-tab session store: each tab preserves its own segments independently
+  // Live Dexie Database Queries
+  const storedPlaylists = useLiveQuery(() => db.playlists?.toArray()) || [];
+  const storedMediaFiles = useLiveQuery(() => db.mediaFiles?.toArray()) || [];
+
+  // Active Main Tab
+  const [activeTab, setActiveTab] = useState('presets'); // 'presets', 'youtube', 'local', 'workspace'
+
+  // Shadowing Mode: 'text' (Text-Guided), 'blind' (Blind Shadowing), 'echo' (Echoing Method), 'record' (Record & Compare)
+  const [shadowingMode, setShadowingMode] = useState('text');
+  const [isBlindRevealed, setIsBlindRevealed] = useState(false);
+
+  // Per-tab session store: isolates YouTube, Local media, Presets
   const [sessionStore, setSessionStore] = useState({
-    youtube: { segments: [], currentSegIdx: 0, scores: {} },
-    local: { segments: [], currentSegIdx: 0, scores: {} }
+    presets: { title: PRESET_LESSONS[0].title, segments: PRESET_LESSONS[0].segments, currentSegIdx: 0, scores: {} },
+    youtube: { title: '', segments: [], currentSegIdx: 0, scores: {} },
+    local: { title: '', segments: [], currentSegIdx: 0, scores: {} }
   });
-  
-  // Active derived states (from current tab's store)
-  const activeSession = sessionStore[activeTab] || sessionStore.youtube;
-  const segments = activeSession.segments;
-  const currentSegIdx = activeSession.currentSegIdx;
-  const scores = activeSession.scores;
-  
+
+  // Active Session derived getters
+  const activeTabStoreKey = activeTab === 'youtube' || activeTab === 'local' ? activeTab : 'presets';
+  const activeSession = sessionStore[activeTabStoreKey] || sessionStore.presets;
+  const segments = activeSession.segments || [];
+  const currentSegIdx = activeSession.currentSegIdx || 0;
+  const scores = activeSession.scores || {};
+  const activeTitle = activeSession.title || 'Bài học Shadowing';
+
+  // Setters for Active Session
   const setSegments = (segsOrFn) => {
     setSessionStore(prev => {
-      const tab = activeTab === 'youtube' || activeTab === 'local' ? activeTab : 'youtube';
-      const newSegs = typeof segsOrFn === 'function' ? segsOrFn(prev[tab].segments) : segsOrFn;
-      return { ...prev, [tab]: { ...prev[tab], segments: newSegs } };
+      const tabKey = activeTabStoreKey;
+      const newSegs = typeof segsOrFn === 'function' ? segsOrFn(prev[tabKey].segments) : segsOrFn;
+      return { ...prev, [tabKey]: { ...prev[tabKey], segments: newSegs } };
     });
   };
   const setCurrentSegIdx = (idx) => {
     setSessionStore(prev => {
-      const tab = activeTab === 'youtube' || activeTab === 'local' ? activeTab : 'youtube';
-      return { ...prev, [tab]: { ...prev[tab], currentSegIdx: idx } };
+      const tabKey = activeTabStoreKey;
+      return { ...prev, [tabKey]: { ...prev[tabKey], currentSegIdx: Math.max(0, Math.min(idx, (prev[tabKey].segments.length || 1) - 1)) } };
     });
   };
   const setScores = (scOrFn) => {
     setSessionStore(prev => {
-      const tab = activeTab === 'youtube' || activeTab === 'local' ? activeTab : 'youtube';
-      const newSc = typeof scOrFn === 'function' ? scOrFn(prev[tab].scores) : scOrFn;
-      return { ...prev, [tab]: { ...prev[tab], scores: newSc } };
+      const tabKey = activeTabStoreKey;
+      const newSc = typeof scOrFn === 'function' ? scOrFn(prev[tabKey].scores) : scOrFn;
+      return { ...prev, [tabKey]: { ...prev[tabKey], scores: newSc } };
     });
   };
-  
-  const [isFetching, setIsFetching] = useState(false);
-  const [showVi, setShowVi] = useState(false);
-  
+  const setActiveTitle = (title) => {
+    setSessionStore(prev => ({
+      ...prev,
+      [activeTabStoreKey]: { ...prev[activeTabStoreKey], title }
+    }));
+  };
+
   // YouTube States
   const [urlInput, setUrlInput] = useState('');
   const [videoId, setVideoId] = useState(null);
-  
+  const [isFetching, setIsFetching] = useState(false);
+
   // Local Media States
   const [localFile, setLocalFile] = useState(null);
   const [localMediaUrl, setLocalMediaUrl] = useState(null);
   const [localMediaType, setLocalMediaType] = useState('video');
   const [sttLang, setSttLang] = useState('ja');
   const [sttModel, setSttModel] = useState('base');
-  
-  // Workspace States
+
+  // Playlist & Workspace States
   const [workspaceItems, setWorkspaceItems] = useState([]);
-  const [workspaceDir, setWorkspaceDir] = useState('');
-  const [playlistInput, setPlaylistInput] = useState('');
-  
-  // New Shadowing Controls
+  const [newPlaylistTitle, setNewPlaylistTitle] = useState('');
+  const [selectedPlaylistId, setSelectedPlaylistId] = useState('all');
+
+  // Shadowing Audio Controls
   const [playbackRate, setPlaybackRate] = useState(1);
   const [repeatCount, setRepeatCount] = useState(1);
   const [waitMode, setWaitMode] = useState('Manual'); // 'Off', 'Manual', '50', '80', '100', '120'
   const [subSync, setSubSync] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  
+  const [showVi, setShowVi] = useState(true);
+
   // TTS State
-  const [ttsVoice, setTtsVoice] = useState(() => localStorage.getItem('omni_shadowing_tts_voice') || 'ja-JP-NanamiNeural');
   const [isTtsPlaying, setIsTtsPlaying] = useState(false);
-  const ttsAudioRef = useRef(null);
 
-  // Engine Manager
-  const [engineRunning, setEngineRunning] = useState(false);
-  const [engineToggling, setEngineToggling] = useState(false);
+  // MediaRecorder Real Audio Blobs
+  const mediaRecorderRef = useRef(null);
+  const audioChunksRef = useRef([]);
+  const [userAudioBlobs, setUserAudioBlobs] = useState({}); // idx -> blobUrl
+  const userAudioPlayerRef = useRef(null);
 
-  useEffect(() => {
-    // Vô hiệu hóa kiểm tra engine cục bộ cho chế độ Serverless
-    setEngineRunning(true);
-  }, []);
-
-  const toggleEngine = async () => {
-    alert('Không áp dụng ở chế độ Serverless.');
-  };
-
-  useEffect(() => {
-    localStorage.setItem('omni_shadowing_tts_voice', ttsVoice);
-  }, [ttsVoice]);
-
-  const playTTS = (text) => {
-    if (!text || !window.speechSynthesis) return;
-    setIsTtsPlaying(true);
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'ja-JP';
-    utterance.rate = 0.9;
-    const voices = window.speechSynthesis.getVoices();
-    const jpVoice = voices.find(v => v.lang === 'ja-JP' || v.lang === 'ja_JP');
-    if (jpVoice) utterance.voice = jpVoice;
-    
-    utterance.onend = () => setIsTtsPlaying(false);
-    utterance.onerror = () => setIsTtsPlaying(false);
-    window.speechSynthesis.speak(utterance);
-  };
-
-  // Refs
+  // Refs for Players & Sync
   const playerRef = useRef(null);
   const localPlayerRef = useRef(null);
   const reqFrameRef = useRef(null);
   const isPlayerReady = useRef(false);
-  
+  const segmentRefs = useRef([]);
+
   const segmentsRef = useRef([]);
   const currentSegIdxRef = useRef(0);
   const repeatCountRef = useRef(1);
   const waitModeRef = useRef('Manual');
   const subSyncRef = useRef(0);
-  
+  const shadowingModeRef = useRef('text');
+
   const loopCountRef = useRef(0);
   const isWaitingRef = useRef(false);
   const waitTimeoutRef = useRef(null);
-  
-  // Recording
+
+  // Speech Recognition Recording
   const [recordingIdx, setRecordingIdx] = useState(null);
   const { transcript, listening, resetTranscript, browserSupportsSpeechRecognition } = useSpeechRecognition();
 
@@ -141,8 +235,17 @@ const ShadowingStudio = () => {
   useEffect(() => { repeatCountRef.current = repeatCount; }, [repeatCount]);
   useEffect(() => { waitModeRef.current = waitMode; }, [waitMode]);
   useEffect(() => { subSyncRef.current = subSync; }, [subSync]);
+  useEffect(() => { shadowingModeRef.current = shadowingMode; }, [shadowingMode]);
 
-  const fetchWorkspaceItems = async () => {
+  // Auto-scroll active segment smoothly into center view
+  useEffect(() => {
+    if (segmentRefs.current[currentSegIdx]) {
+      segmentRefs.current[currentSegIdx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [currentSegIdx]);
+
+  // Load Saved Workspace Items
+  const fetchWorkspaceItems = useCallback(async () => {
     try {
       const localItems = JSON.parse(localStorage.getItem('omni_shadowing_workspace') || '[]');
       try {
@@ -154,156 +257,90 @@ const ShadowingStudio = () => {
             return;
           }
         }
-      } catch(e) {}
+      } catch (e) {}
       setWorkspaceItems(localItems);
-    } catch(e) {}
-  };
-
-  useEffect(() => {
-    if (activeTab === 'workspace') {
-      fetchWorkspaceItems();
-      fetchWorkspaceDir();
-      const interval = setInterval(fetchWorkspaceItems, 5000); // Poll for background processing updates
-      return () => clearInterval(interval);
-    }
-  }, [activeTab]);
-
-  const fetchWorkspaceDir = async () => {
-    try {
-      const res = await fetch(`${API_BASE_URL}/api/workspace/config`);
-      if (res.ok) {
-        const data = await res.json();
-        if (data.status === 'success' && data.path) {
-          setWorkspaceDir(data.path);
-          return;
-        }
-      }
-    } catch(e) {}
-    setWorkspaceDir('Trình duyệt (Local Storage)');
-  };
-
-  const changeWorkspaceDir = async () => {
-    const newDir = prompt('Nhập đường dẫn thư mục workspace mới cho Media Engine:');
-    if (!newDir) return;
-    try {
-      const res = await fetch(`${API_BASE_URL}/api/workspace/config`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ path: newDir })
-      });
-      const data = await res.json();
-      if (data.status === 'success') {
-        setWorkspaceDir(data.path);
-        alert('Đã cập nhật thư mục workspace!');
-      }
-    } catch(e) {
-      alert('Không thể kết nối Backend Omni Media Engine.');
-    }
-  };
-
-  const saveCurrentSessionToWorkspace = async () => {
-    if (segments.length === 0) { alert('Chưa có nội dung để lưu.'); return; }
-    const title = prompt('Đặt tên cho bài học:', videoId ? `YouTube ${videoId}` : (localFile?.name || 'Bài học'));
-    if (!title) return;
-    try {
-      const newItem = {
-          id: Date.now().toString(),
-          title,
-          metadata: {
-            title,
-            type: activeTab === 'youtube' ? 'youtube' : 'local',
-            video_id: videoId || null,
-            source: activeTab === 'youtube' ? urlInput : (localFile?.name || 'local')
-          },
-          segments: segments,
-          created_at: new Date().toISOString()
-      };
-      const items = JSON.parse(localStorage.getItem('omni_shadowing_workspace') || '[]');
-      items.push(newItem);
-      localStorage.setItem('omni_shadowing_workspace', JSON.stringify(items));
-      alert('Đã lưu vào bộ nhớ trình duyệt!');
-      fetchWorkspaceItems();
-    } catch(e) { alert('Lỗi lưu.'); }
-  };
-
-  const handlePlaylistAddUrl = async () => {
-    if (!playlistInput.trim()) return;
-    try {
-      const res = await fetch(`${API_BASE_URL}/api/playlist/add`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ source: playlistInput.trim(), type: 'youtube', title: null })
-      });
-      const data = await res.json();
-      if (data.status === 'success') {
-        setPlaylistInput('');
-        fetchWorkspaceItems();
-        alert('Đã thêm vào danh sách xử lý!');
-      } else {
-        alert(data.detail || 'Lỗi thêm bài.');
-      }
-    } catch(e) { alert('Không thể kết nối Backend Omni Media Engine.'); }
-  };
-
-  const handlePlaylistAddFile = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-      formData.append('lang', sttLang);
-      formData.append('model_size', sttModel);
-      const res = await fetch(`${API_BASE_URL}/api/playlist/add-file`, {
-        method: 'POST',
-        body: formData
-      });
-      const data = await res.json();
-      if (data.status === 'success') {
-        fetchWorkspaceItems();
-        alert('Đã tải file lên danh sách xử lý!');
-      } else {
-        alert(data.detail || 'Lỗi tải file.');
-      }
-    } catch(e) { alert('Không thể kết nối Backend Omni Media Engine.'); }
-    e.target.value = '';
-  };
-
-  // Load Session
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem('omni_shadowing_session_v2');
-      if (saved) {
-        const data = JSON.parse(saved);
-        if (data.sessionStore) {
-          setSessionStore(data.sessionStore);
-        }
-        setActiveTab(data.activeTab || 'youtube');
-        if (data.playbackRate) setPlaybackRate(data.playbackRate);
-        if (data.repeatCount) setRepeatCount(data.repeatCount);
-        if (data.waitMode) setWaitMode(data.waitMode);
-        if (data.subSync !== undefined) setSubSync(data.subSync);
-        if (data.sttLang) setSttLang(data.sttLang);
-        if (data.sttModel) setSttModel(data.sttModel);
-        
-        if (data.videoId) {
-          setVideoId(data.videoId);
-          setUrlInput(data.urlInput || '');
-          setTimeout(() => initPlayer(data.videoId), 500);
-        }
-      }
     } catch (e) {}
   }, []);
 
-  // Save Session
+  useEffect(() => {
+    fetchWorkspaceItems();
+  }, [fetchWorkspaceItems]);
+
+  // Cleanup players when switching main tabs to prevent audio state leaks
+  const pauseAllPlayers = () => {
+    if (playerRef.current && isPlayerReady.current && playerRef.current.pauseVideo) {
+      try { playerRef.current.pauseVideo(); } catch(e){}
+    }
+    if (localPlayerRef.current && localPlayerRef.current.pause) {
+      try { localPlayerRef.current.pause(); } catch(e){}
+    }
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (userAudioPlayerRef.current) userAudioPlayerRef.current.pause();
+    setIsPlaying(false);
+  };
+
+  const handleTabChange = (newTab) => {
+    pauseAllPlayers();
+    setActiveTab(newTab);
+    if (reqFrameRef.current) cancelAnimationFrame(reqFrameRef.current);
+  };
+
+  // Keyboard Shortcuts Support for High Speed Shadowing Practice
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Avoid hotkeys when typing in input fields
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
+
+      if (e.code === 'Space') {
+        e.preventDefault();
+        togglePlayPause();
+      } else if (e.code === 'ArrowDown' || e.code === 'ArrowRight') {
+        e.preventDefault();
+        jumpToSegment(currentSegIdxRef.current + 1);
+      } else if (e.code === 'ArrowUp' || e.code === 'ArrowLeft') {
+        e.preventDefault();
+        jumpToSegment(currentSegIdxRef.current - 1);
+      } else if (e.key === 'r' || e.key === 'R') {
+        e.preventDefault();
+        jumpToSegment(currentSegIdxRef.current);
+      } else if (e.key === 'm' || e.key === 'M') {
+        e.preventDefault();
+        setShowVi(prev => !prev);
+      } else if (e.key === 'b' || e.key === 'B') {
+        e.preventDefault();
+        setShadowingMode(prev => prev === 'blind' ? 'text' : 'blind');
+      } else if (e.key === 'g' || e.key === 'G' || e.key === 'v' || e.key === 'V') {
+        e.preventDefault();
+        if (segmentsRef.current[currentSegIdxRef.current]) {
+          toggleRecording(currentSegIdxRef.current, segmentsRef.current[currentSegIdxRef.current].text);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // Save Session State locally
   useEffect(() => {
     const session = {
-      activeTab, sessionStore, videoId, urlInput, hasLocalMedia: !!localMediaUrl,
-      playbackRate, repeatCount, waitMode, subSync, sttLang, sttModel
+      activeTab, sessionStore, videoId, urlInput,
+      playbackRate, repeatCount, waitMode, subSync, shadowingMode, showVi
     };
-    localStorage.setItem('omni_shadowing_session_v2', JSON.stringify(session));
-  }, [activeTab, sessionStore, videoId, urlInput, localMediaUrl, playbackRate, repeatCount, waitMode, subSync, sttLang, sttModel]);
+    localStorage.setItem('omni_shadowing_session_v3', JSON.stringify(session));
+  }, [activeTab, sessionStore, videoId, urlInput, playbackRate, repeatCount, waitMode, subSync, shadowingMode, showVi]);
 
-  // Init YouTube
+  // Load Presets
+  const loadPresetLesson = (preset) => {
+    pauseAllPlayers();
+    setSessionStore(prev => ({
+      ...prev,
+      presets: { title: preset.title, segments: preset.segments, currentSegIdx: 0, scores: {} }
+    }));
+    setActiveTab('presets');
+  };
+
+  // YouTube Player Setup
   useEffect(() => {
     if (!window.YT) {
       const tag = document.createElement('script');
@@ -316,7 +353,7 @@ const ShadowingStudio = () => {
     };
   }, []);
 
-  const initPlayer = (vId) => {
+  const initYTPlayer = (vId) => {
     if (reqFrameRef.current) cancelAnimationFrame(reqFrameRef.current);
     if (playerRef.current && playerRef.current.destroy) {
       try { playerRef.current.destroy(); } catch(e){}
@@ -341,6 +378,7 @@ const ShadowingStudio = () => {
     });
   };
 
+  // Media Synchronization Loop
   const checkSync = () => {
     if (isWaitingRef.current) {
        reqFrameRef.current = requestAnimationFrame(checkSync);
@@ -400,19 +438,24 @@ const ShadowingStudio = () => {
                playFn();
             } else {
                loopCountRef.current = 0;
-               if (waitModeRef.current === 'Off') {
+               // Echoing Mode or Wait Mode
+               const isEchoingMode = shadowingModeRef.current === 'echo';
+               const effectiveWaitMode = isEchoingMode ? (waitModeRef.current === 'Off' ? '100' : waitModeRef.current) : waitModeRef.current;
+
+               if (effectiveWaitMode === 'Off') {
                   if (activeIdx + 1 < segs.length) {
                       setCurrentSegIdx(activeIdx + 1);
                       seekFn(segs[activeIdx + 1].start + (segs[activeIdx + 1].startOffset || 0) + (subSyncRef.current / 1000));
                       playFn();
                   }
-               } else if (waitModeRef.current === 'Manual') {
+               } else if (effectiveWaitMode === 'Manual') {
                   // Stay paused
                } else {
-                  const waitPercent = parseInt(waitModeRef.current) / 100;
+                  const waitPercent = parseInt(effectiveWaitMode) / 100;
                   const waitTime = (seg.duration + (seg.endOffset||0) - (seg.startOffset||0)) * waitPercent * 1000;
                   isWaitingRef.current = true;
                   if (waitTimeoutRef.current) clearTimeout(waitTimeoutRef.current);
+                  
                   waitTimeoutRef.current = setTimeout(() => {
                       isWaitingRef.current = false;
                       if (currentSegIdxRef.current + 1 < segs.length) {
@@ -431,8 +474,22 @@ const ShadowingStudio = () => {
     reqFrameRef.current = requestAnimationFrame(checkSync);
   };
 
+  // YouTube Link Fetching
   const handleFetchYouTube = async () => {
     if (!urlInput.trim()) return;
+    setIsFetching(true);
+    let extractedVideoId = null;
+    try {
+      const reg = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+      const match = urlInput.trim().match(reg);
+      if (match) extractedVideoId = match[1];
+    } catch(e){}
+
+    if (extractedVideoId) {
+      setVideoId(extractedVideoId);
+      setTimeout(() => initYTPlayer(extractedVideoId), 500);
+    }
+
     try {
       const res = await fetch(`${API_BASE_URL}/api/fetch-link`, {
         method: 'POST',
@@ -443,114 +500,50 @@ const ShadowingStudio = () => {
       if (data.status === 'success' && data.data) {
         const segs = data.data.segments || data.data.subtitles;
         if (segs && segs.length > 0) {
+          const title = data.data.title || `YouTube ${extractedVideoId || 'Video'}`;
           setSessionStore(prev => ({
             ...prev,
-            youtube: { segments: segs, currentSegIdx: 0, scores: {} }
+            youtube: { title, segments: segs, currentSegIdx: 0, scores: {} }
           }));
-          alert('Đã trích xuất phụ đề YouTube thành công!');
+          alert('✅ Đã trích xuất phụ đề YouTube thành công!');
+          setIsFetching(false);
           return;
         }
       }
-      alert('Không tìm thấy phụ đề cho video này từ Backend.');
-    } catch(e) {
-      alert('Chưa kết nối Backend Omni Media Engine hoặc Serverless Mode. Bạn có thể nhập/dán phụ đề thủ công hoặc cấu hình Groq API Key trong Settings.');
-    }
-  };
-
-  const handleAddToPlaylist = async () => {
-    if (!urlInput.trim()) return;
-    try {
-      const res = await fetch(`${API_BASE_URL}/api/playlist/add`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ source: urlInput.trim(), type: 'youtube', title: null })
-      });
-      const data = await res.json();
-      if (data.status === 'success') {
-        alert('Đã thêm vào Playlist ngầm của Omni Media Engine!');
-        fetchWorkspaceItems();
-      } else {
-        alert(data.detail || 'Lỗi thêm bài.');
-      }
-    } catch(e) {
-      alert('Không thể kết nối Backend Omni Media Engine.');
-    }
-  };
-
-  const loadWorkspaceItem = async (id) => {
-    try {
-      const items = JSON.parse(localStorage.getItem('omni_shadowing_workspace') || '[]');
-      const item = items.find(i => i.id === id);
-      if (item) {
-        const meta = item.metadata;
-        const targetTab = meta.type === 'youtube' ? 'youtube' : 'local';
-        
-        // Store segments into the correct tab's session
-        setSessionStore(prev => ({
-          ...prev,
-          [targetTab]: {
-            segments: item.segments,
-            currentSegIdx: 0,
-            scores: {}
-          }
-        }));
-        setActiveTab(targetTab);
-        
-        if (meta.type === 'youtube' && meta.video_id) {
-            setVideoId(meta.video_id);
-            setTimeout(() => initPlayer(meta.video_id), 500);
-        }
-      } else {
-        // Try loading from server if item id is remote
-        try {
-          const res = await fetch(`${API_BASE_URL}/api/workspace/load/${id}`);
-          if (res.ok) {
-            const data = await res.json();
-            if (data.status === 'success' && data.data) {
-              const meta = data.data.metadata || {};
-              const targetTab = meta.type === 'youtube' ? 'youtube' : 'local';
-              setSessionStore(prev => ({
-                ...prev,
-                [targetTab]: {
-                  segments: data.data.segments || [],
-                  currentSegIdx: 0,
-                  scores: {}
-                }
-              }));
-              setActiveTab(targetTab);
-              return;
-            }
-          }
-        } catch(err) {}
-        alert('Không tìm thấy mục này.');
-      }
-    } catch(e) { alert('Không thể tải mục này.'); }
-  };
-
-  const deleteWorkspaceItem = async (id) => {
-    if (!confirm('Bạn có chắc chắn muốn xóa bài học này?')) return;
-    try {
-      // Try local
-      const items = JSON.parse(localStorage.getItem('omni_shadowing_workspace') || '[]');
-      const newItems = items.filter(item => item.id !== id);
-      localStorage.setItem('omni_shadowing_workspace', JSON.stringify(newItems));
-      // Try server delete
-      try {
-        await fetch(`${API_BASE_URL}/api/workspace/${id}`, { method: 'DELETE' });
-      } catch(err) {}
-      fetchWorkspaceItems();
     } catch(e) {}
+    
+    setIsFetching(false);
+    if (!extractedVideoId) {
+      alert('Không thể trích xuất phụ đề. Bạn có thể nạp file phụ đề .srt thủ công bằng nút [📤 Nạp phụ đề SRT].');
+    }
   };
 
+  // Upload Local Audio/Video File & Save to IndexedDB
   const handleUploadLocal = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
     setLocalFile(file);
     const url = URL.createObjectURL(file);
     setLocalMediaUrl(url);
-    setLocalMediaType(file.type.startsWith('video') ? 'video' : 'audio');
-    
-    // Attempt transcription if backend engine is available
+    const isVid = file.type.startsWith('video');
+    setLocalMediaType(isVid ? 'video' : 'audio');
+    setActiveTitle(file.name);
+
+    // Save File ArrayBuffer / Blob to Dexie IndexedDB for robust browser reload restore
+    try {
+      if (db.mediaFiles) {
+        await db.mediaFiles.put({
+          id: file.name,
+          name: file.name,
+          blob: file,
+          type: isVid ? 'video' : 'audio',
+          date: new Date().toISOString()
+        });
+      }
+    } catch(err){}
+
+    // Try Backend Speech-to-Text Whisper
+    setIsFetching(true);
     try {
       const formData = new FormData();
       formData.append('file', file);
@@ -565,15 +558,87 @@ const ShadowingStudio = () => {
       if (data.status === 'success' && data.data && data.data.segments) {
         setSessionStore(prev => ({
           ...prev,
-          local: { segments: data.data.segments, currentSegIdx: 0, scores: {} }
+          local: { title: file.name, segments: data.data.segments, currentSegIdx: 0, scores: {} }
         }));
-        alert('Đã trích xuất phụ đề (STT Whisper) thành công!');
+        alert('✅ Đã trích xuất phụ đề tự động từ Whisper AI!');
       }
     } catch(err) {
-      console.log('Backend Media Engine STT offline - file preview ready.');
+      console.log('Backend Media Engine STT offline - sẵn sàng nạp phụ đề SRT thủ công.');
+    }
+    setIsFetching(false);
+  };
+
+  // Import SRT / VTT Subtitle File Manually
+  const handleImportSRTFile = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (evt) => {
+      const text = evt.target.result;
+      const parsedSegs = parseSRT(text);
+      if (parsedSegs.length > 0) {
+        setSegments(parsedSegs);
+        alert(`✅ Đã nạp thành công ${parsedSegs.length} đoạn phụ đề từ file ${file.name}!`);
+      } else {
+        alert('Không thể đọc định dạng phụ đề. Vui lòng chọn file .srt hoặc .vtt hợp lệ.');
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  };
+
+  // Export Subtitles to SRT File
+  const handleExportSRT = () => {
+    if (!segments || segments.length === 0) { alert('Chưa có phụ đề để xuất.'); return; }
+    const formatTime = (seconds) => {
+      const pad = (num, size = 2) => String(num).padStart(size, '0');
+      const hrs = Math.floor(seconds / 3600);
+      const mins = Math.floor((seconds % 3600) / 60);
+      const secs = Math.floor(seconds % 60);
+      const ms = Math.floor((seconds % 1) * 1000);
+      return `${pad(hrs)}:${pad(mins)}:${pad(secs)},${pad(ms, 3)}`;
+    };
+    
+    let srtContent = '';
+    segments.forEach((seg, idx) => {
+      const start = seg.start + (seg.startOffset || 0);
+      const end = start + seg.duration + (seg.endOffset || 0);
+      srtContent += `${idx + 1}\n${formatTime(start)} --> ${formatTime(end)}\n${seg.text}\n${seg.vi ? seg.vi + '\n' : ''}\n`;
+    });
+    
+    const blob = new Blob([srtContent], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${activeTitle.replace(/\s+/g, '_')}.srt`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  // CLEAR / DELETE CURRENT MEDIA & RESET PLAYER (UX Fix)
+  const handleClearCurrentMedia = () => {
+    if (!confirm('Bạn có chắc chắn muốn xóa bài học media này khỏi trình phát hiện tại?')) return;
+    pauseAllPlayers();
+    if (localMediaUrl) URL.revokeObjectURL(localMediaUrl);
+    setLocalFile(null);
+    setLocalMediaUrl(null);
+    setVideoId(null);
+    setUrlInput('');
+    setSessionStore(prev => ({
+      ...prev,
+      [activeTabStoreKey]: { title: '', segments: [], currentSegIdx: 0, scores: {} }
+    }));
+  };
+
+  // Rename Active Lesson Title
+  const handleRenameActiveLesson = () => {
+    const newTitle = prompt('Nhập tên mới cho bài học:', activeTitle);
+    if (newTitle && newTitle.trim()) {
+      setActiveTitle(newTitle.trim());
     }
   };
 
+  // Jump To Segment
   const jumpToSegment = (idx) => {
     if (idx < 0 || idx >= segments.length) return;
     setCurrentSegIdx(idx);
@@ -614,9 +679,9 @@ const ShadowingStudio = () => {
   const changeRate = (rate) => {
     setPlaybackRate(rate);
     if (activeTab === 'youtube') {
-      if(isPlayerReady.current && playerRef.current) playerRef.current.setPlaybackRate(rate);
+      if (isPlayerReady.current && playerRef.current) playerRef.current.setPlaybackRate(rate);
     } else {
-      if(localPlayerRef.current) localPlayerRef.current.playbackRate = rate;
+      if (localPlayerRef.current) localPlayerRef.current.playbackRate = rate;
     }
   };
 
@@ -647,197 +712,425 @@ const ShadowingStudio = () => {
     });
   };
 
-  const toggleRecording = (idx, textTarget) => {
+  // Real Audio Voice Recording & Speech Recognition
+  const toggleRecording = async (idx, textTarget) => {
     if (listening && recordingIdx === idx) {
+      // Stop recording
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+        mediaRecorderRef.current.stop();
+      }
       SpeechRecognition.stopListening();
       setRecordingIdx(null);
       const sc = scoreMatch(textTarget, transcript);
       setScores(prev => ({ ...prev, [idx]: sc }));
     } else {
-      resetTranscript();
-      setRecordingIdx(idx);
-      SpeechRecognition.startListening({ continuous: true, language: 'ja-JP' });
+      // Start recording MediaRecorder audio blob + SpeechRecognition
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunksRef.current = [];
+        const mediaRecorder = new MediaRecorder(stream);
+        mediaRecorderRef.current = mediaRecorder;
+        
+        mediaRecorder.ondataavailable = (e) => {
+          if (e.data.size > 0) audioChunksRef.current.push(e.data);
+        };
+        
+        mediaRecorder.onstop = () => {
+          const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
+          const audioUrl = URL.createObjectURL(audioBlob);
+          setUserAudioBlobs(prev => ({ ...prev, [idx]: audioUrl }));
+          stream.getTracks().forEach(track => track.stop());
+        };
+        
+        mediaRecorder.start();
+        resetTranscript();
+        setRecordingIdx(idx);
+        SpeechRecognition.startListening({ continuous: true, language: 'ja-JP' });
+      } catch (err) {
+        alert('Không thể khởi động Microphone: ' + err.message);
+      }
     }
+  };
+
+  const playUserRecordedAudio = (idx) => {
+    const url = userAudioBlobs[idx];
+    if (!url) return;
+    if (userAudioPlayerRef.current) {
+      userAudioPlayerRef.current.pause();
+    }
+    const audio = new Audio(url);
+    userAudioPlayerRef.current = audio;
+    audio.play();
+  };
+
+  // TTS Speech Synthesis
+  const playTTS = (text) => {
+    if (!text || !window.speechSynthesis) return;
+    setIsTtsPlaying(true);
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ja-JP';
+    utterance.rate = playbackRate * 0.9;
+    const voices = window.speechSynthesis.getVoices();
+    const jpVoice = voices.find(v => v.lang === 'ja-JP' || v.lang === 'ja_JP');
+    if (jpVoice) utterance.voice = jpVoice;
+    
+    utterance.onend = () => setIsTtsPlaying(false);
+    utterance.onerror = () => setIsTtsPlaying(false);
+    window.speechSynthesis.speak(utterance);
+  };
+
+  // Save Word to FSRS Flashcards in db.vocab
+  const handleSaveWordToFlashcards = async (wordText) => {
+    if (!wordText || !wordText.trim()) return;
+    const word = wordText.trim();
+    try {
+      const existing = await db.vocab.filter(v => v.word === word).first();
+      if (existing) {
+        alert(`Từ "${word}" đã có trong bộ thẻ Flashcards của bạn!`);
+        return;
+      }
+      const newCard = {
+        id: Date.now().toString(),
+        word: word,
+        kanji: word,
+        level: 'N3',
+        meaning: 'Lưu từ Shadowing Studio',
+        status: 'learning',
+        interval: 1,
+        repetition: 0,
+        easeFactor: 2.5,
+        dueDate: new Date().toISOString()
+      };
+      await db.vocab.add(newCard);
+      alert(`✅ Đã thêm từ "${word}" vào bộ thẻ Flashcards (FSRS)!`);
+    } catch(e) {
+      alert('Lỗi lưu từ vào Flashcards: ' + e.message);
+    }
+  };
+
+  // Save Current Session to Workspace & Custom Playlist
+  const saveCurrentSessionToWorkspace = async (targetPlaylistId = null) => {
+    if (segments.length === 0) { alert('Chưa có nội dung để lưu.'); return; }
+    const title = prompt('Đặt tên cho bài học này:', activeTitle || 'Bài học Shadowing');
+    if (!title) return;
+    try {
+      const newItem = {
+          id: Date.now().toString(),
+          title,
+          playlistId: targetPlaylistId || selectedPlaylistId || 'all',
+          metadata: {
+            title,
+            type: activeTab === 'youtube' ? 'youtube' : 'local',
+            video_id: videoId || null,
+            source: activeTab === 'youtube' ? urlInput : (localFile?.name || 'local')
+          },
+          segments: segments,
+          created_at: new Date().toISOString()
+      };
+      const items = JSON.parse(localStorage.getItem('omni_shadowing_workspace') || '[]');
+      items.push(newItem);
+      localStorage.setItem('omni_shadowing_workspace', JSON.stringify(items));
+      alert('✅ Đã lưu bài học vào Workspace & Playlist!');
+      fetchWorkspaceItems();
+    } catch(e) { alert('Lỗi lưu bài học.'); }
+  };
+
+  // Create New Playlist
+  const handleCreatePlaylist = async () => {
+    if (!newPlaylistTitle.trim()) return;
+    try {
+      if (db.playlists) {
+        const newPl = {
+          id: 'pl_' + Date.now(),
+          title: newPlaylistTitle.trim(),
+          createdAt: new Date().toISOString()
+        };
+        await db.playlists.add(newPl);
+        setNewPlaylistTitle('');
+        alert(`✅ Đã tạo Danh sách phát "${newPl.title}"!`);
+      }
+    } catch(e) {
+      alert('Lỗi tạo Playlist: ' + e.message);
+    }
+  };
+
+  const handleDeletePlaylist = async (id, title) => {
+    if (!confirm(`Bạn có chắc chắn muốn xóa Playlist "${title}"?`)) return;
+    try {
+      if (db.playlists) await db.playlists.delete(id);
+      if (selectedPlaylistId === id) setSelectedPlaylistId('all');
+    } catch(e){}
+  };
+
+  const loadWorkspaceItem = (id) => {
+    try {
+      const items = JSON.parse(localStorage.getItem('omni_shadowing_workspace') || '[]');
+      const item = items.find(i => i.id === id);
+      if (item) {
+        const meta = item.metadata || {};
+        const targetTab = meta.type === 'youtube' ? 'youtube' : 'local';
+        setSessionStore(prev => ({
+          ...prev,
+          [targetTab]: { title: item.title, segments: item.segments || [], currentSegIdx: 0, scores: {} }
+        }));
+        setActiveTab(targetTab);
+        if (meta.type === 'youtube' && meta.video_id) {
+          setVideoId(meta.video_id);
+          setTimeout(() => initYTPlayer(meta.video_id), 500);
+        }
+      }
+    } catch(e){}
+  };
+
+  const deleteWorkspaceItem = (id) => {
+    if (!confirm('Bạn có chắc chắn muốn xóa bài học này khỏi Workspace?')) return;
+    try {
+      const items = JSON.parse(localStorage.getItem('omni_shadowing_workspace') || '[]');
+      const newItems = items.filter(item => item.id !== id);
+      localStorage.setItem('omni_shadowing_workspace', JSON.stringify(newItems));
+      fetchWorkspaceItems();
+    } catch(e){}
   };
 
   if (!browserSupportsSpeechRecognition) return (
     <div className="glass-panel" style={{ textAlign: 'center', padding: 40 }}>
       <AlertCircle size={40} color="var(--accent-danger)" style={{ marginBottom: 12 }}/>
-      <h2>Yêu cầu Google Chrome</h2>
-      <p style={{ color: 'var(--text-secondary)' }}>Web Speech API chỉ hoạt động trên Chrome.</p>
+      <h2>Yêu cầu Trình duyệt Google Chrome</h2>
+      <p style={{ color: 'var(--text-secondary)' }}>Tính năng nhận diện giọng nói Web Speech API yêu cầu Chrome.</p>
     </div>
   );
 
-  const completedCount = currentSegIdx; // roughly
+  const completedCount = currentSegIdx;
   const progressPercent = segments.length > 0 ? Math.round((completedCount / segments.length) * 100) : 0;
 
+  // Filter workspace items by active playlist
+  const filteredWorkspaceItems = selectedPlaylistId === 'all' 
+    ? workspaceItems 
+    : workspaceItems.filter(i => i.playlistId === selectedPlaylistId);
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, height: '85vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 14, height: '88vh' }}>
       
-      {/* TABS */}
-      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
-        <button 
-          className={`btn ${activeTab === 'youtube' ? 'btn-primary' : 'btn-outline'}`}
-          onClick={() => { setActiveTab('youtube'); if(reqFrameRef.current) cancelAnimationFrame(reqFrameRef.current); }}
-          style={{ padding: '8px 16px', display: 'flex', alignItems: 'center', gap: 8 }}
-        >
-          <Globe size={16} /> Online YouTube
-        </button>
-        <button 
-          className={`btn ${activeTab === 'local' ? 'btn-primary' : 'btn-outline'}`}
-          onClick={() => { setActiveTab('local'); if(reqFrameRef.current) cancelAnimationFrame(reqFrameRef.current); }}
-          style={{ padding: '8px 16px', display: 'flex', alignItems: 'center', gap: 8 }}
-        >
-          <HardDrive size={16} /> Offline Media (Máy Tính)
-        </button>
-        <button 
-          className={`btn ${activeTab === 'workspace' ? 'btn-primary' : 'btn-outline'}`}
-          onClick={() => { setActiveTab('workspace'); if(reqFrameRef.current) cancelAnimationFrame(reqFrameRef.current); }}
-          style={{ padding: '8px 16px', display: 'flex', alignItems: 'center', gap: 8 }}
-        >
-          <List size={16} /> Playlist & Workspace
-        </button>
-        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 10 }}>
-           {(activeTab === 'youtube' || activeTab === 'local') && segments.length > 0 && (
-             <button className="btn btn-outline" onClick={saveCurrentSessionToWorkspace} style={{ padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}>
-               <Save size={14}/> Lưu vào Workspace
-             </button>
-           )}
-           <div style={{ display:'flex', alignItems:'center', gap: 10, background:'rgba(0,0,0,0.2)', padding:'4px 10px', borderRadius:8, border:'1px solid var(--glass-border)' }}>
-             <div style={{ display:'flex', alignItems:'center', gap: 6 }}>
-               <div style={{ width:8, height:8, borderRadius:'50%', background: engineRunning ? '#10b981' : '#ef4444', boxShadow: `0 0 8px ${engineRunning ? '#10b981' : '#ef4444'}` }} />
-               <span style={{ fontSize:'0.75rem', color: engineRunning ? '#10b981' : '#ef4444', fontWeight:600 }}>
-                 AI {engineRunning ? 'Online' : 'Offline'}
-               </span>
-             </div>
-             <button className={`btn ${engineRunning ? 'btn-outline' : 'btn-primary'}`} onClick={toggleEngine} disabled={engineToggling} style={{ padding:'2px 8px', fontSize:'0.7rem', display:'flex', alignItems:'center', gap:4 }}>
-               {engineToggling ? <Loader size={10} className="spin" /> : <Cpu size={10} />}
-               {engineRunning ? 'Tắt' : 'Bật'}
-             </button>
-           </div>
+      {/* TOP HEADER: NAVIGATION & SHADOWING MODES */}
+      <div className="glass-panel" style={{ display: 'flex', gap: 12, padding: '10px 16px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+        
+        {/* Source Tabs */}
+        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
+          <button 
+            className={`btn ${activeTab === 'presets' ? 'btn-primary' : 'btn-outline'}`}
+            onClick={() => handleTabChange('presets')}
+            style={{ padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}
+          >
+            <Sparkles size={15} /> Bài Học Mẫu (Presets)
+          </button>
+          <button 
+            className={`btn ${activeTab === 'youtube' ? 'btn-primary' : 'btn-outline'}`}
+            onClick={() => handleTabChange('youtube')}
+            style={{ padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}
+          >
+            <Globe size={15} /> Online YouTube
+          </button>
+          <button 
+            className={`btn ${activeTab === 'local' ? 'btn-primary' : 'btn-outline'}`}
+            onClick={() => handleTabChange('local')}
+            style={{ padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}
+          >
+            <HardDrive size={15} /> Offline Media (Máy Tính)
+          </button>
+          <button 
+            className={`btn ${activeTab === 'workspace' ? 'btn-primary' : 'btn-outline'}`}
+            onClick={() => handleTabChange('workspace')}
+            style={{ padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}
+          >
+            <List size={15} /> Playlist & Workspace ({workspaceItems.length})
+          </button>
         </div>
+
+        {/* 4 Scientific Shadowing Modes Selector */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(0,0,0,0.3)', padding: '4px 8px', borderRadius: 10, border: '1px solid var(--glass-border)' }}>
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', fontWeight: 600, marginRight: 4 }}>CHẾ ĐỘ:</span>
+          
+          <button 
+            onClick={() => setShadowingMode('text')} 
+            className={`btn ${shadowingMode === 'text' ? 'btn-primary' : 'btn-ghost'}`} 
+            style={{ padding: '4px 10px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4 }}
+            title="Text-Guided: Nghe + Phụ đề tiếng Nhật + Furigana"
+          >
+            <FileText size={13}/> Text-Guided
+          </button>
+
+          <button 
+            onClick={() => setShadowingMode('blind')} 
+            className={`btn ${shadowingMode === 'blind' ? 'btn-primary' : 'btn-ghost'}`} 
+            style={{ padding: '4px 10px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4, background: shadowingMode === 'blind' ? '#8b5cf6' : 'transparent', color: 'white' }}
+            title="Blind Shadowing: Làm mờ phụ đề luyện phản xạ nghe trực tiếp"
+          >
+            <EyeOff size={13}/> Blind (Ẩn Chữ)
+          </button>
+
+          <button 
+            onClick={() => setShadowingMode('echo')} 
+            className={`btn ${shadowingMode === 'echo' ? 'btn-primary' : 'btn-ghost'}`} 
+            style={{ padding: '4px 10px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4, background: shadowingMode === 'echo' ? '#f59e0b' : 'transparent', color: 'white' }}
+            title="Echoing Method (Dr. Karen Chung): Tự động dừng sau từng câu để nhại lại"
+          >
+            <Repeat size={13}/> Echoing
+          </button>
+
+          <button 
+            onClick={() => setShadowingMode('record')} 
+            className={`btn ${shadowingMode === 'record' ? 'btn-primary' : 'btn-ghost'}`} 
+            style={{ padding: '4px 10px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4, background: shadowingMode === 'record' ? '#ef4444' : 'transparent', color: 'white' }}
+            title="Record & Compare: Thu âm giọng thực tế và nghe lại đối chiếu"
+          >
+            <Mic size={13}/> Ghi Âm & Đối Chiếu
+          </button>
+        </div>
+
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 16, height: '100%' }}>
+      {/* TAB CONTENTS */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, flex: 1, minHeight: 0 }}>
           
-        {/* INPUT BAR */}
+        {/* INPUT / CONTROL BARS */}
+        {activeTab === 'presets' && (
+          <div className="glass-panel" style={{ display: 'flex', gap: 10, padding: '10px 16px', alignItems: 'center', overflowX: 'auto' }}>
+            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--accent-primary)', display: 'flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap' }}>
+              <Sparkles size={16}/> Chọn Bài Học Mẫu:
+            </span>
+            {PRESET_LESSONS.map(p => (
+              <button 
+                key={p.id}
+                className={`btn ${activeTitle === p.title ? 'btn-primary' : 'btn-outline'}`}
+                onClick={() => loadPresetLesson(p)}
+                style={{ padding: '6px 12px', fontSize: '0.8rem', whiteSpace: 'nowrap' }}
+              >
+                {p.title}
+              </button>
+            ))}
+          </div>
+        )}
+
         {activeTab === 'youtube' && (
-          <div className="glass-panel" style={{ display: 'flex', gap: 12, padding: 12 }}>
+          <div className="glass-panel" style={{ display: 'flex', gap: 10, padding: 10 }}>
             <input 
               type="text" 
-              placeholder="Dán link YouTube tiếng Nhật có phụ đề (CC) vào đây..."
+              placeholder="Dán link YouTube tiếng Nhật có phụ đề vào đây..."
               value={urlInput}
               onChange={e => setUrlInput(e.target.value)}
-              style={{ flex: 1, padding: '10px 14px', borderRadius: 8, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', outline: 'none' }}
+              onKeyDown={e => { if(e.key === 'Enter') handleFetchYouTube(); }}
+              style={{ flex: 1, padding: '8px 12px', borderRadius: 8, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', outline: 'none', fontSize: '0.9rem' }}
             />
-            <button className="btn btn-outline" onClick={handleAddToPlaylist} disabled={isFetching} style={{ display: 'flex', alignItems: 'center', gap: 8, whiteSpace: 'nowrap' }} title="Tải ngầm vào Workspace">
-              <List size={16} /> Thêm vào Playlist
-            </button>
-            <button className="btn btn-primary" onClick={handleFetchYouTube} disabled={isFetching} style={{ display: 'flex', alignItems: 'center', gap: 8, whiteSpace: 'nowrap' }}>
-              {isFetching ? <Loader size={16} className="spin" /> : <Globe size={16} />} Học Ngay
+            <button className="btn btn-primary" onClick={handleFetchYouTube} disabled={isFetching} style={{ display: 'flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap' }}>
+              {isFetching ? <Loader size={15} className="spin" /> : <Globe size={15} />} Học Ngay
             </button>
           </div>
         )}
+
         {activeTab === 'local' && (
-          <div className="glass-panel" style={{ display: 'flex', gap: 12, padding: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-             <label className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer' }}>
-                <Upload size={16} /> {isFetching ? 'Đang trích xuất Whisper...' : 'Tải lên Video/Audio'}
+          <div className="glass-panel" style={{ display: 'flex', gap: 10, padding: 10, alignItems: 'center', flexWrap: 'wrap' }}>
+             <label className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer', fontSize: '0.85rem' }}>
+                <Upload size={15} /> {isFetching ? 'Đang trích xuất Whisper...' : 'Tải lên Video/Audio'}
                 <input type="file" accept="video/*,audio/*" onChange={handleUploadLocal} disabled={isFetching} style={{ display: 'none' }} />
              </label>
-             <select value={sttLang} onChange={e => setSttLang(e.target.value)} style={{ padding: '8px 12px', borderRadius: 8, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white' }}>
-                <option value="auto">🌐 Auto</option>
+
+             <select value={sttLang} onChange={e => setSttLang(e.target.value)} style={{ padding: '6px 10px', borderRadius: 6, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', fontSize: '0.8rem' }}>
                 <option value="ja">🇯🇵 Tiếng Nhật</option>
                 <option value="en">🇺🇸 Tiếng Anh</option>
                 <option value="vi">🇻🇳 Tiếng Việt</option>
-                <option value="zh">🇨🇳 Tiếng Trung</option>
-                <option value="ko">🇰🇷 Tiếng Hàn</option>
              </select>
-             <select value={sttModel} onChange={e => setSttModel(e.target.value)} style={{ padding: '8px 12px', borderRadius: 8, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white' }}>
-                <option value="base">⚡ Base (nhanh, ~21% lỗi)</option>
-                <option value="small">📊 Small (vừa, ~14% lỗi)</option>
-                <option value="medium">🎯 Medium (chậm, ~10% lỗi)</option>
+
+             <select value={sttModel} onChange={e => setSttModel(e.target.value)} style={{ padding: '6px 10px', borderRadius: 6, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', fontSize: '0.8rem' }}>
+                <option value="base">⚡ Whisper Base</option>
+                <option value="small">📊 Whisper Small</option>
+                <option value="medium">🎯 Whisper Medium</option>
              </select>
-             <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                {localFile ? localFile.name : 'Chưa chọn file (Hỗ trợ MP4, MP3, WAV...)'}
+
+             <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                {localFile ? `📄 ${localFile.name}` : 'Hỗ trợ MP4, MP3, WAV, AAC...'}
              </span>
              {isFetching && <Loader size={16} className="spin" style={{ color: 'var(--accent-primary)' }} />}
           </div>
         )}
 
+        {/* WORKSPACE & PLAYLIST TAB */}
         {activeTab === 'workspace' && (
-           <div className="glass-panel" style={{ flex: 1, padding: 24, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 20 }}>
+           <div className="glass-panel" style={{ flex: 1, padding: 20, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
 
-              {/* Header + Workspace Dir */}
+              {/* Playlists Management Header */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
-                 <h2 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: 10 }}><HardDrive size={24}/> Playlist & Workspace</h2>
-                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
-                    <FolderOpen size={14}/>
-                    <span style={{ maxWidth: 300, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{workspaceDir || '...'}</span>
-                    <button className="btn btn-outline" onClick={changeWorkspaceDir} style={{ padding: '4px 10px', fontSize: '0.75rem' }}>Đổi thư mục</button>
+                 <h2 style={{ margin: 0, fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: 8 }}><List size={20}/> Danh Sách Phát & Thư Mục (Playlists)</h2>
+                 
+                 <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                    <input 
+                      type="text"
+                      placeholder="Tên Playlist mới..."
+                      value={newPlaylistTitle}
+                      onChange={e => setNewPlaylistTitle(e.target.value)}
+                      style={{ padding: '6px 12px', borderRadius: 6, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', fontSize: '0.85rem' }}
+                    />
+                    <button className="btn btn-primary" onClick={handleCreatePlaylist} style={{ padding: '6px 12px', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 4 }}>
+                      <FolderPlus size={15}/> Tạo Playlist
+                    </button>
                  </div>
               </div>
 
-              {/* Add new item bar */}
-              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', padding: 16, background: 'rgba(255,255,255,0.02)', borderRadius: 12, border: '1px dashed rgba(255,255,255,0.1)' }}>
-                 <input
-                   type="text"
-                   placeholder="Dán link YouTube vào đây..."
-                   value={playlistInput}
-                   onChange={e => setPlaylistInput(e.target.value)}
-                   onKeyDown={e => { if(e.key === 'Enter') handlePlaylistAddUrl(); }}
-                   style={{ flex: 1, minWidth: 200, padding: '10px 14px', borderRadius: 8, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', outline: 'none' }}
-                 />
-                 <button className="btn btn-primary" onClick={handlePlaylistAddUrl} style={{ display: 'flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap' }}>
-                   <Plus size={16}/> Thêm Link
+              {/* Playlist Filter Chips */}
+              <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 6 }}>
+                 <button 
+                   className={`btn ${selectedPlaylistId === 'all' ? 'btn-primary' : 'btn-outline'}`}
+                   onClick={() => setSelectedPlaylistId('all')}
+                   style={{ padding: '4px 12px', fontSize: '0.8rem', whiteSpace: 'nowrap' }}
+                 >
+                   Tất cả bài học ({workspaceItems.length})
                  </button>
-                 <label className="btn btn-outline" style={{ display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer', whiteSpace: 'nowrap' }}>
-                   <Upload size={16}/> Thêm File
-                   <input type="file" accept="video/*,audio/*" onChange={handlePlaylistAddFile} style={{ display: 'none' }} />
-                 </label>
+
+                 {storedPlaylists.map(pl => (
+                   <div key={pl.id} style={{ display: 'flex', alignItems: 'center' }}>
+                     <button 
+                       className={`btn ${selectedPlaylistId === pl.id ? 'btn-primary' : 'btn-outline'}`}
+                       onClick={() => setSelectedPlaylistId(pl.id)}
+                       style={{ padding: '4px 12px', fontSize: '0.8rem', whiteSpace: 'nowrap', borderRadius: '6px 0 0 6px' }}
+                     >
+                       📁 {pl.title}
+                     </button>
+                     <button 
+                       className="btn-ghost" 
+                       onClick={() => handleDeletePlaylist(pl.id, pl.title)}
+                       style={{ padding: '4px 6px', background: 'rgba(239,68,68,0.1)', color: 'var(--accent-danger)', borderRadius: '0 6px 6px 0', border: '1px solid var(--glass-border)' }}
+                     >
+                       <X size={12}/>
+                     </button>
+                   </div>
+                 ))}
               </div>
 
-              {/* Items list */}
-              {workspaceItems.length === 0 ? (
+              {/* Lessons List inside Workspace */}
+              {filteredWorkspaceItems.length === 0 ? (
                  <div style={{ textAlign: 'center', padding: 40, color: 'var(--text-secondary)' }}>
-                     <List size={48} style={{ opacity: 0.2, marginBottom: 16 }} />
-                     <p>Chưa có mục nào. Thêm link hoặc file ở trên.</p>
+                     <List size={40} style={{ opacity: 0.2, marginBottom: 12 }} />
+                     <p>Chưa có bài học nào trong Playlist này. Thêm link YouTube hoặc Upload file từ máy tính để lưu bài.</p>
                  </div>
               ) : (
-                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                    {workspaceItems.map((item, idx) => (
+                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    {filteredWorkspaceItems.map((item) => (
                        <div key={item.id}
-                           onDoubleClick={() => item.status === 'completed' && loadWorkspaceItem(item.id)}
-                           style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 16, background: 'rgba(255,255,255,0.03)', borderRadius: 12, border: '1px solid rgba(255,255,255,0.05)', cursor: item.status === 'completed' ? 'pointer' : 'default', transition: 'background 0.2s' }}
-                           onMouseEnter={e => { if(item.status === 'completed') e.currentTarget.style.background = 'rgba(59,130,246,0.08)'; }}
-                           onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; }}
+                           style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 14, background: 'rgba(255,255,255,0.03)', borderRadius: 10, border: '1px solid rgba(255,255,255,0.05)', transition: 'background 0.2s' }}
                        >
                            <div style={{ flex: 1 }}>
-                               <div style={{ fontWeight: 600, fontSize: '1.1rem', marginBottom: 4 }}>{item.title}</div>
-                               <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                                   <span style={{ textTransform: 'uppercase', background: item.type === 'youtube' ? 'rgba(239,68,68,0.15)' : 'rgba(59,130,246,0.15)', padding: '1px 6px', borderRadius: 4 }}>[{item.type}]</span>
-                                   <span>{new Date(item.date).toLocaleString()}</span>
-                                   <span style={{ color: item.status === 'completed' ? 'var(--accent-success)' : item.status === 'failed' ? 'var(--accent-danger)' : 'var(--accent-warning)' }}>
-                                       {item.status === 'completed' ? '🟢' : item.status === 'processing' ? '🟡' : item.status === 'failed' ? '🔴' : '⚪'} {item.status} {item.progress > 0 && item.progress < 100 ? `(${item.progress}%)` : ''}
-                                   </span>
+                               <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: 2 }}>{item.title}</div>
+                               <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
+                                   <span style={{ textTransform: 'uppercase', background: 'rgba(59,130,246,0.15)', padding: '1px 6px', borderRadius: 4, fontSize: '0.75rem' }}>[{item.metadata?.type || 'media'}]</span>
+                                   <span>{item.segments?.length || 0} đoạn phụ đề</span>
+                                   <span>{new Date(item.created_at).toLocaleDateString()}</span>
                                </div>
-                               {item.status === 'completed' && <div style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)', marginTop: 4 }}>Nháy đúp để mở bài học</div>}
                            </div>
                            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                               {item.status === 'completed' && (
-                                   <button className="btn btn-primary" onClick={(e) => { e.stopPropagation(); loadWorkspaceItem(item.id); }} style={{ padding: '8px 16px', borderRadius: 8, display: 'flex', gap: 6, alignItems: 'center', fontSize: '0.85rem' }}>
-                                       <Play size={16}/> Học ngay
-                                   </button>
-                               )}
-                               {(item.status === 'pending' || item.status === 'failed') && (
-                                   <button className="btn btn-outline" style={{ padding: '6px 12px', borderRadius: 8, display: 'flex', gap: 6, alignItems: 'center', fontSize: '0.85rem' }} title="Bóc tách media này">
-                                       <Play size={14}/> Bóc tách
-                                   </button>
-                               )}
-                               {item.status === 'processing' && (
-                                   <Loader size={20} className="spin" style={{ color: 'var(--accent-warning)' }} />
-                               )}
-                               <button className="btn-ghost" onClick={(e) => { e.stopPropagation(); deleteWorkspaceItem(item.id); }} style={{ padding: 8, color: 'var(--accent-danger)' }}>
-                                   <Trash2 size={18}/>
+                               <button className="btn btn-primary" onClick={() => loadWorkspaceItem(item.id)} style={{ padding: '6px 14px', borderRadius: 6, display: 'flex', gap: 6, alignItems: 'center', fontSize: '0.85rem' }}>
+                                   <Play size={14}/> Học ngay
+                               </button>
+                               <button className="btn-ghost" onClick={() => deleteWorkspaceItem(item.id)} style={{ padding: 6, color: 'var(--accent-danger)' }} title="Xóa bài học này">
+                                   <Trash2 size={16}/>
                                </button>
                            </div>
                        </div>
@@ -847,258 +1140,314 @@ const ShadowingStudio = () => {
            </div>
         )}
 
-        <div style={{ display: (activeTab === 'youtube' || activeTab === 'local') ? 'flex' : 'none', gap: 16, flex: 1, minHeight: 0 }}>
-          {/* LEFT PANE: VIDEO & CONTROLS */}
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16, maxWidth: '45%' }}>
+        {/* MAIN STUDIO PLAYER & TRANSCRIPT SPLIT VIEW */}
+        <div style={{ display: (activeTab === 'workspace') ? 'none' : 'flex', gap: 16, flex: 1, minHeight: 0 }}>
+          
+          {/* LEFT PANE: MEDIA PLAYER & UNIFIED MEDIA CONTROL BAR */}
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12, maxWidth: '44%' }}>
             
-            {/* YouTube Player */}
-            <div style={{ display: activeTab === 'youtube' && videoId ? 'block' : 'none', position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 12, overflow: 'hidden', background: '#000', boxShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
+            {/* UNIFIED MEDIA BAR (UX FIX: Clear/Delete, Rename, Export/Import Subtitles) */}
+            <div className="glass-panel" style={{ padding: '10px 14px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+              
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, marginRight: 8 }} title={activeTitle}>
+                  {activeTitle}
+                </div>
+
+                <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+                  <button className="btn-ghost" onClick={handleRenameActiveLesson} style={{ padding: 4 }} title="Đổi tên bài học">
+                    <Edit3 size={14}/>
+                  </button>
+                  <button className="btn-ghost" onClick={() => saveCurrentSessionToWorkspace()} style={{ padding: 4, color: 'var(--accent-primary)' }} title="Lưu vào Workspace">
+                    <Save size={14}/>
+                  </button>
+                  <button className="btn-ghost" onClick={handleClearCurrentMedia} style={{ padding: 4, color: 'var(--accent-danger)' }} title="🗑️ Xóa Media này / Tải bài mới">
+                    <Trash2 size={14}/>
+                  </button>
+                </div>
+              </div>
+
+              {/* Subtitle Action Toolbar */}
+              <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: 6 }}>
+                <label className="btn btn-outline" style={{ padding: '3px 8px', fontSize: '0.75rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4 }}>
+                  <Upload size={12}/> 📤 Nạp Sub SRT
+                  <input type="file" accept=".srt,.vtt" onChange={handleImportSRTFile} style={{ display: 'none' }} />
+                </label>
+
+                <button className="btn btn-outline" onClick={handleExportSRT} style={{ padding: '3px 8px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4 }}>
+                  <Download size={12}/> 📥 Xuất SRT
+                </button>
+
+                {shadowingMode === 'blind' && (
+                  <button 
+                    className="btn btn-outline" 
+                    onClick={() => setIsBlindRevealed(prev => !prev)}
+                    style={{ padding: '3px 8px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4, marginLeft: 'auto', background: isBlindRevealed ? 'rgba(139,92,246,0.2)' : 'transparent' }}
+                  >
+                    {isBlindRevealed ? <Eye size={12}/> : <EyeOff size={12}/>} {isBlindRevealed ? 'Ẩn lại' : 'Xem chữ nhanh'}
+                  </button>
+                )}
+              </div>
+
+            </div>
+
+            {/* YouTube Player Element */}
+            <div style={{ display: activeTab === 'youtube' && videoId ? 'block' : 'none', position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 10, overflow: 'hidden', background: '#000', boxShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
               <div id="yt-player" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}></div>
             </div>
             
-            {/* Local Media Player */}
-            <div style={{ display: activeTab === 'local' && localMediaUrl ? 'flex' : 'none', position: 'relative', borderRadius: 12, overflow: 'hidden', background: '#000', boxShadow: '0 4px 20px rgba(0,0,0,0.5)', alignItems: 'center', justifyContent: 'center', minHeight: 250 }}>
+            {/* Local Media Player Element */}
+            <div style={{ display: activeTab === 'local' && localMediaUrl ? 'flex' : 'none', position: 'relative', borderRadius: 10, overflow: 'hidden', background: '#000', boxShadow: '0 4px 20px rgba(0,0,0,0.5)', alignItems: 'center', justifyContent: 'center', minHeight: 220 }}>
                {localMediaType === 'video' ? (
-                  <video ref={localPlayerRef} src={localMediaUrl} controls style={{ width: '100%', maxHeight: '50vh' }} onPlay={() => { setIsPlaying(true); if(!reqFrameRef.current) checkSync(); }} onPause={() => setIsPlaying(false)} />
+                  <video ref={localPlayerRef} src={localMediaUrl} controls style={{ width: '100%', maxHeight: '45vh' }} onPlay={() => { setIsPlaying(true); if(!reqFrameRef.current) checkSync(); }} onPause={() => setIsPlaying(false)} />
                ) : (
-                  <audio ref={localPlayerRef} src={localMediaUrl} controls style={{ width: '80%', marginTop: 20, marginBottom: 20 }} onPlay={() => { setIsPlaying(true); if(!reqFrameRef.current) checkSync(); }} onPause={() => setIsPlaying(false)} />
+                  <audio ref={localPlayerRef} src={localMediaUrl} controls style={{ width: '85%', marginTop: 20, marginBottom: 20 }} onPlay={() => { setIsPlaying(true); if(!reqFrameRef.current) checkSync(); }} onPause={() => setIsPlaying(false)} />
                )}
             </div>
 
-            {/* Empty states */}
+            {/* Presets Player Banner */}
+            {activeTab === 'presets' && (
+              <div className="glass-panel" style={{ padding: 16, textAlign: 'center', background: 'linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1))', border: '1px solid rgba(59,130,246,0.3)', borderRadius: 12 }}>
+                <Sparkles size={32} color="#60a5fa" style={{ marginBottom: 8 }} />
+                <h3 style={{ margin: '0 0 4px 0', fontSize: '1rem', color: 'white' }}>{activeTitle}</h3>
+                <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Bài học mẫu tích hợp sẵn audio đọc tự động AI & Furigana.</p>
+              </div>
+            )}
+
+            {/* Empty States */}
             {activeTab === 'youtube' && !videoId && (
-              <div className="glass-panel" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--text-secondary)' }}>
-                <Video size={64} style={{ opacity: 0.2, marginBottom: 16 }} />
-                <p>Bắt đầu bằng cách dán link YouTube</p>
+              <div className="glass-panel" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--text-secondary)', padding: 20 }}>
+                <Video size={48} style={{ opacity: 0.2, marginBottom: 12 }} />
+                <p style={{ fontSize: '0.9rem' }}>Dán link YouTube ở trên để bắt đầu Shadowing</p>
               </div>
             )}
             {activeTab === 'local' && !localMediaUrl && (
               <div className="glass-panel" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--text-secondary)', textAlign: 'center', padding: 20 }}>
-                <HardDrive size={64} style={{ opacity: 0.2, marginBottom: 16 }} />
-                <p>Tải lên File từ máy tính để phân tích bằng AI Whisper.</p>
-                <p style={{ fontSize: '0.8rem', marginTop: 10, opacity: 0.7 }}>File của bạn được xử lý hoàn toàn Offline, bảo mật 100%.</p>
+                <HardDrive size={48} style={{ opacity: 0.2, marginBottom: 12 }} />
+                <p style={{ fontSize: '0.9rem' }}>Tải lên file Video hoặc Audio từ máy tính.</p>
+                <p style={{ fontSize: '0.75rem', marginTop: 6, opacity: 0.6 }}>Hỗ trợ Whisper AI tự động phân tích hoặc Nạp file phụ đề .srt sẵn có.</p>
               </div>
             )}
 
-            {/* Advanced Controls */}
-            {((activeTab === 'youtube' && videoId) || (activeTab === 'local' && segments.length > 0)) && (
-                <div className="glass-panel" style={{ padding: 16, display: 'flex', flexDirection: 'column', gap: 16, overflowY: 'auto' }}>
+            {/* ADVANCED SHADOWING AUDIO CONTROLS */}
+            <div className="glass-panel" style={{ padding: 14, display: 'flex', flexDirection: 'column', gap: 12, overflowY: 'auto' }}>
+               
+               {/* Progress Bar */}
+               <div>
+                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: 4 }}>
+                       <span>TIẾN ĐỘ SHADOWING</span>
+                       <span>{progressPercent}% ({completedCount}/{segments.length})</span>
+                   </div>
+                   <div style={{ height: 6, background: 'rgba(255,255,255,0.1)', borderRadius: 3, overflow: 'hidden' }}>
+                       <div style={{ height: '100%', width: `${progressPercent}%`, background: 'var(--accent-primary)', transition: 'width 0.3s' }}></div>
+                   </div>
+               </div>
+
+               {/* Transport Control Buttons */}
+               <div style={{ display: 'flex', justifyContent: 'center', gap: 10, alignItems: 'center' }}>
+                   <button className="btn-ghost" onClick={() => jumpToSegment(currentSegIdx - 1)} style={{ padding: 8 }} title="Câu trước (Mũi tên Trái/Lên)"><SkipBack size={18}/></button>
+                   <button className="btn-primary" onClick={togglePlayPause} style={{ padding: '8px 20px', borderRadius: 20 }}>
+                       {isPlaying ? <Pause size={18}/> : <Play size={18}/>}
+                   </button>
+                   <button className="btn-ghost" onClick={() => jumpToSegment(currentSegIdx)} style={{ padding: 8 }} title="Phát lại câu này (Phím R)"><Repeat size={18}/></button>
+                   <button className="btn-ghost" onClick={() => jumpToSegment(currentSegIdx + 1)} style={{ padding: 8 }} title="Câu tiếp theo (Mũi tên Phải/Xuống)"><SkipForward size={18}/></button>
+               </div>
+
+               {/* Control Settings Grid */}
+               <div style={{ display: 'grid', gridTemplateColumns: '75px 1fr', gap: '8px 12px', alignItems: 'center', fontSize: '0.8rem' }}>
                    
-                   {/* Progress */}
+                   <div style={{ color: 'var(--text-secondary)' }}>Tốc độ</div>
+                   <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
+                       {[0.5, 0.75, 1, 1.25, 1.5].map(r => (
+                           <button key={r} onClick={() => changeRate(r)} className={`btn ${playbackRate === r ? 'btn-primary' : 'btn-outline'}`} style={{ padding: '3px 6px', fontSize: '0.75rem', flex: 1 }}>{r}x</button>
+                       ))}
+                   </div>
+
+                   <div style={{ color: 'var(--text-secondary)' }}>Lặp câu</div>
+                   <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
+                       {[1, 2, 3, 5, 10].map(c => (
+                           <button key={c} onClick={() => setRepeatCount(c)} className={`btn ${repeatCount === c ? 'btn-primary' : 'btn-outline'}`} style={{ padding: '3px 6px', fontSize: '0.75rem', flex: 1 }}>{c} lần</button>
+                       ))}
+                   </div>
+
+                   <div style={{ color: 'var(--text-secondary)' }}>Chờ nhại</div>
+                   <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
+                       {['Off', 'Manual', '50', '80', '100', '120'].map(m => (
+                           <button key={m} onClick={() => setWaitMode(m)} className={`btn ${waitMode === m ? 'btn-primary' : 'btn-outline'}`} style={{ padding: '3px 6px', fontSize: '0.75rem', flex: 1 }}>
+                               {m === 'Off' || m === 'Manual' ? m : `+${m}%`}
+                           </button>
+                       ))}
+                   </div>
+
+                   <div style={{ color: 'var(--text-secondary)' }}>Dịch nghĩa</div>
                    <div>
-                       <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: 6 }}>
-                           <span>SHADOWING PROGRESS</span>
-                           <span>{progressPercent}% ({completedCount}/{segments.length})</span>
-                       </div>
-                       <div style={{ height: 6, background: 'rgba(255,255,255,0.1)', borderRadius: 3, overflow: 'hidden' }}>
-                           <div style={{ height: '100%', width: `${progressPercent}%`, background: 'var(--accent-primary)', transition: 'width 0.3s' }}></div>
-                       </div>
+                       <label style={{ display: 'inline-flex', alignItems: 'center', gap: 6, cursor: 'pointer', background: 'rgba(59,130,246,0.1)', padding: '4px 10px', borderRadius: 6 }}>
+                           <input type="checkbox" checked={showVi} onChange={e => setShowVi(e.target.checked)} />
+                           <span>Hiện Tiếng Việt</span>
+                       </label>
                    </div>
+               </div>
 
-                   {/* Navigation Buttons */}
-                   <div style={{ display: 'flex', justifyContent: 'center', gap: 12, margin: '8px 0' }}>
-                       <button className="btn-ghost" onClick={() => jumpToSegment(currentSegIdx - 1)} style={{ padding: 10 }} title="Câu trước"><SkipBack size={20}/></button>
-                       <button className="btn-primary" onClick={togglePlayPause} style={{ padding: '10px 24px', borderRadius: 24 }}>
-                           {isPlaying ? <Pause size={20}/> : <Play size={20}/>}
-                       </button>
-                       <button className="btn-ghost" onClick={() => jumpToSegment(currentSegIdx)} style={{ padding: 10 }} title="Lặp lại câu này"><Repeat size={20}/></button>
-                       <button className="btn-ghost" onClick={() => jumpToSegment(currentSegIdx + 1)} style={{ padding: 10 }} title="Câu tiếp theo"><SkipForward size={20}/></button>
-                   </div>
-
-                   {/* Grid Settings */}
-                   <div style={{ display: 'grid', gridTemplateColumns: '80px 1fr', gap: '12px 16px', alignItems: 'center', fontSize: '0.85rem' }}>
-                       
-                       <div style={{ color: 'var(--text-secondary)' }}>Speed</div>
-                       <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                           {[0.5, 0.75, 1, 1.25, 1.5].map(r => (
-                               <button key={r} onClick={() => changeRate(r)} className={`btn ${playbackRate === r ? 'btn-primary' : 'btn-outline'}`} style={{ padding: '4px 8px', fontSize: '0.8rem', flex: 1 }}>{r}x</button>
-                           ))}
-                       </div>
-
-                       <div style={{ color: 'var(--text-secondary)' }}>Repeat</div>
-                       <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                           {[1, 2, 3, 5, 10].map(c => (
-                               <button key={c} onClick={() => setRepeatCount(c)} className={`btn ${repeatCount === c ? 'btn-primary' : 'btn-outline'}`} style={{ padding: '4px 8px', fontSize: '0.8rem', flex: 1 }}>{c}</button>
-                           ))}
-                       </div>
-
-                       <div style={{ color: 'var(--text-secondary)' }}>Wait Mode</div>
-                       <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                           {['Off', 'Manual', '50', '80', '100', '120'].map(m => (
-                               <button key={m} onClick={() => setWaitMode(m)} className={`btn ${waitMode === m ? 'btn-primary' : 'btn-outline'}`} style={{ padding: '4px 8px', fontSize: '0.8rem', flex: 1 }}>
-                                   {m === 'Off' || m === 'Manual' ? m : `+${m}%`}
-                               </button>
-                           ))}
-                       </div>
-
-                       <div style={{ color: 'var(--text-secondary)' }}>Sub Sync</div>
-                       <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                           {[-100, 0, 100].map(s => (
-                               <button key={s} onClick={() => setSubSync(s)} className={`btn ${subSync === s ? 'btn-primary' : 'btn-outline'}`} style={{ padding: '4px 8px', fontSize: '0.8rem', flex: 1 }}>
-                                   {s > 0 ? `+${s}ms` : s === 0 ? '0ms' : `${s}ms`}
-                               </button>
-                           ))}
-                       </div>
-
-                       <div style={{ color: 'var(--text-secondary)' }}>View</div>
-                       <div>
-                           <label style={{ display: 'inline-flex', alignItems: 'center', gap: 8, cursor: 'pointer', background: 'rgba(59,130,246,0.1)', padding: '6px 12px', borderRadius: 8 }}>
-                               <input type="checkbox" checked={showVi} onChange={e => setShowVi(e.target.checked)} />
-                               <span>Hiện Tiếng Việt</span>
-                           </label>
-                       </div>
-
-                       <div style={{ color: 'var(--text-secondary)' }}>AI Voice</div>
-                       <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                           <select value={ttsVoice} onChange={e => setTtsVoice(e.target.value)} style={{ padding: '4px 8px', borderRadius: 4, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', outline: 'none' }}>
-                               <option value="ja-JP-NanamiNeural">Nanami (Nữ)</option>
-                               <option value="ja-JP-KeitaNeural">Keita (Nam)</option>
-                               <option value="ja-JP-AoiNeural">Aoi (Nữ)</option>
-                               <option value="ja-JP-DaichiNeural">Daichi (Nam)</option>
-                           </select>
-                       </div>
-                   </div>
-
-                </div>
-            )}
+            </div>
           </div>
 
-          {/* RIGHT PANE: TRANSCRIPT */}
-          <div className="glass-panel" style={{ flex: 1, overflowY: 'auto', padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: 8 }}>
-              {!segments.length && <div style={{ color: 'var(--text-secondary)', textAlign: 'center', marginTop: 40 }}>{isFetching ? 'Đang phân tích và dịch...' : 'Chưa có nội dung.'}</div>}
+          {/* RIGHT PANE: TRANSCRIPT LIST WITH AUTO-SCROLL & INTERACTIVE SEGMENTS */}
+          <div className="glass-panel" style={{ flex: 1, overflowY: 'auto', padding: '14px 18px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {!segments.length && <div style={{ color: 'var(--text-secondary)', textAlign: 'center', marginTop: 40 }}>Chưa có phụ đề. Vui lòng chọn bài học mẫu hoặc nạp file phụ đề.</div>}
               
-              {activeTab === 'local' && segments.length > 0 && !localMediaUrl && (
-                  <div style={{ padding: 12, background: 'rgba(239,68,68,0.1)', color: 'var(--accent-danger)', borderRadius: 8, fontSize: '0.9rem', marginBottom: 16 }}>
-                      Phiên làm việc trước đã được lưu, nhưng vì lý do bảo mật trình duyệt, bạn cần <b>tải lại file media</b> để tiếp tục phát.
-                  </div>
-              )}
+              {segments.map((seg, idx) => {
+                  const isCurrent = currentSegIdx === idx;
+                  const isBlind = shadowingMode === 'blind' && !isBlindRevealed;
 
-              {segments.map((seg, idx) => (
-                  <React.Fragment key={idx}>
-                      <div 
-                          style={{
-                              padding: '16px',
-                              borderRadius: 12,
-                              background: currentSegIdx === idx ? 'rgba(59,130,246,0.15)' : 'transparent',
-                              border: `1px solid ${currentSegIdx === idx ? 'rgba(59,130,246,0.4)' : 'transparent'}`,
-                              transition: 'all 0.3s',
-                              display: 'flex',
-                              flexDirection: 'column',
-                              gap: 12
-                          }}
-                      >
-                          {/* Top bar: ID, Time, Trim Controls */}
-                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
-                              <div style={{ display: 'flex', gap: 12 }}>
-                                  <span style={{ background: 'rgba(255,255,255,0.1)', padding: '2px 6px', borderRadius: 4 }}>#{idx + 1}</span>
-                                  <span>{Math.floor(seg.start / 60)}:{(Math.floor(seg.start % 60) + '').padStart(2, '0')}</span>
-                              </div>
-                              
-                              {/* Audio Trim Controls (Hover to reveal or always show tiny) */}
-                              <div style={{ display: 'flex', gap: 16, opacity: currentSegIdx === idx ? 1 : 0.4, transition: 'opacity 0.2s' }}>
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                                      <span>Start</span>
-                                      <button className="btn-ghost" style={{ padding: 2 }} onClick={() => updateSegmentOffset(idx, 'startOffset', -0.2)}><Minus size={12}/></button>
-                                      <span style={{ width: 30, textAlign: 'center', color: (seg.startOffset||0) !== 0 ? 'var(--accent-warning)' : 'inherit' }}>{(seg.startOffset||0).toFixed(1)}s</span>
-                                      <button className="btn-ghost" style={{ padding: 2 }} onClick={() => updateSegmentOffset(idx, 'startOffset', 0.2)}><Plus size={12}/></button>
-                                  </div>
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                                      <span>End</span>
-                                      <button className="btn-ghost" style={{ padding: 2 }} onClick={() => updateSegmentOffset(idx, 'endOffset', -0.2)}><Minus size={12}/></button>
-                                      <span style={{ width: 30, textAlign: 'center', color: (seg.endOffset||0) !== 0 ? 'var(--accent-warning)' : 'inherit' }}>{(seg.endOffset||0).toFixed(1)}s</span>
-                                      <button className="btn-ghost" style={{ padding: 2 }} onClick={() => updateSegmentOffset(idx, 'endOffset', 0.2)}><Plus size={12}/></button>
-                                  </div>
-                              </div>
-                          </div>
-
-                          {/* Text Content */}
-                          <div style={{ cursor: 'pointer' }} onClick={() => jumpToSegment(idx)}>
-                             <div className="jp-text" style={{ fontSize: '1.25rem', lineHeight: 1.8, color: currentSegIdx === idx ? 'white' : '#cbd5e1' }}>
-                                 <FuriganaText text={seg.text} />
-                             </div>
-                             {showVi && seg.vi && (
-                                 <div style={{ fontSize: '0.9rem', color: '#94a3b8', marginTop: 4, fontStyle: 'italic' }}>
-                                     {seg.vi}
-                                 </div>
-                             )}
-                          </div>
-
-                          {/* Recording Controls */}
-                          {currentSegIdx === idx && (
-                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: 10, marginTop: 4 }}>
-                                  <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                                      <Mic size={14} style={{ verticalAlign: 'middle', marginRight: 4 }}/> Nhại âm
+                  return (
+                      <React.Fragment key={idx}>
+                          <div 
+                              ref={el => segmentRefs.current[idx] = el}
+                              style={{
+                                  padding: '14px',
+                                  borderRadius: 10,
+                                  background: isCurrent ? 'rgba(59,130,246,0.15)' : 'transparent',
+                                  border: `1px solid ${isCurrent ? 'rgba(59,130,246,0.4)' : 'rgba(255,255,255,0.03)'}`,
+                                  transition: 'all 0.25s',
+                                  display: 'flex',
+                                  flexDirection: 'column',
+                                  gap: 10
+                              }}
+                          >
+                              {/* Top Bar: ID, Time, Trim Offset Controls */}
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
+                                  <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                                      <span style={{ background: isCurrent ? 'var(--accent-primary)' : 'rgba(255,255,255,0.1)', color: 'white', padding: '1px 6px', borderRadius: 4, fontWeight: 700 }}>#{idx + 1}</span>
+                                      <span>{Math.floor(seg.start / 60)}:{(Math.floor(seg.start % 60) + '').padStart(2, '0')}</span>
                                   </div>
                                   
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                                      {scores[idx] !== undefined && (
-                                          <span style={{ fontSize: '0.9rem', fontWeight: 700, color: scores[idx] > 80 ? 'var(--accent-success)' : scores[idx] > 50 ? '#f59e0b' : 'var(--accent-danger)' }}>
-                                              Điểm: {scores[idx]}%
-                                          </span>
-                                      )}
-                                      <button 
-                                          onClick={() => playTTS(seg.text)}
-                                          disabled={isTtsPlaying}
-                                          style={{ 
-                                              padding: '6px 12px', 
-                                              borderRadius: 20, 
-                                              border: '1px solid var(--glass-border)', 
-                                              cursor: isTtsPlaying ? 'not-allowed' : 'pointer',
-                                              display: 'flex', alignItems: 'center', gap: 6,
-                                              fontWeight: 600,
-                                              fontSize: '0.85rem',
-                                              background: 'rgba(59,130,246,0.1)',
-                                              color: '#60a5fa'
-                                          }}
-                                      >
-                                          {isTtsPlaying ? <Loader size={14} className="spin" /> : <Volume2 size={14}/>} 
-                                          Đọc AI
-                                      </button>
-                                      <button 
-                                          onClick={() => toggleRecording(idx, seg.text)}
-                                          style={{ 
-                                              padding: '6px 12px', 
-                                              borderRadius: 20, 
-                                              border: 'none', 
-                                              cursor: 'pointer',
-                                              display: 'flex', alignItems: 'center', gap: 6,
-                                              fontWeight: 600,
-                                              fontSize: '0.85rem',
-                                              background: recordingIdx === idx ? 'var(--accent-danger)' : 'rgba(255,255,255,0.1)',
-                                              color: 'white',
-                                              animation: recordingIdx === idx ? 'pulse 1.5s infinite' : 'none'
-                                          }}
-                                      >
-                                          {recordingIdx === idx ? <Square size={14}/> : <Mic size={14}/>} 
-                                          {recordingIdx === idx ? 'Dừng' : 'Ghi âm'}
-                                      </button>
+                                  {/* Fine Audio Trim Controls */}
+                                  <div style={{ display: 'flex', gap: 12, opacity: isCurrent ? 1 : 0.4, transition: 'opacity 0.2s' }}>
+                                      <div style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                                          <span>Start</span>
+                                          <button className="btn-ghost" style={{ padding: 1 }} onClick={() => updateSegmentOffset(idx, 'startOffset', -0.2)}><Minus size={11}/></button>
+                                          <span style={{ width: 26, textAlign: 'center' }}>{(seg.startOffset||0).toFixed(1)}s</span>
+                                          <button className="btn-ghost" style={{ padding: 1 }} onClick={() => updateSegmentOffset(idx, 'startOffset', 0.2)}><Plus size={11}/></button>
+                                      </div>
+                                      <div style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                                          <span>End</span>
+                                          <button className="btn-ghost" style={{ padding: 1 }} onClick={() => updateSegmentOffset(idx, 'endOffset', -0.2)}><Minus size={11}/></button>
+                                          <span style={{ width: 26, textAlign: 'center' }}>{(seg.endOffset||0).toFixed(1)}s</span>
+                                          <button className="btn-ghost" style={{ padding: 1 }} onClick={() => updateSegmentOffset(idx, 'endOffset', 0.2)}><Plus size={11}/></button>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              {/* Main Subtitle Text Content */}
+                              <div 
+                                style={{ 
+                                  cursor: 'pointer',
+                                  filter: isBlind ? 'blur(8px)' : 'none',
+                                  transition: 'filter 0.3s'
+                                }} 
+                                onClick={() => jumpToSegment(idx)}
+                              >
+                                 <div className="jp-text" style={{ fontSize: '1.2rem', lineHeight: 1.8, color: isCurrent ? 'white' : '#cbd5e1' }}>
+                                     <FuriganaText text={seg.text} />
+                                 </div>
+                                 {showVi && seg.vi && (
+                                     <div style={{ fontSize: '0.85rem', color: '#94a3b8', marginTop: 4, fontStyle: 'italic' }}>
+                                         {seg.vi}
+                                     </div>
+                                 )}
+                              </div>
+
+                              {/* Interactive Recording & Dual Audio Compare Tools */}
+                              {isCurrent && (
+                                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 8, marginTop: 2, flexWrap: 'wrap', gap: 8 }}>
+                                      
+                                      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                          {scores[idx] !== undefined && (
+                                              <span style={{ fontSize: '0.85rem', fontWeight: 700, color: scores[idx] > 80 ? 'var(--accent-success)' : scores[idx] > 50 ? '#f59e0b' : 'var(--accent-danger)' }}>
+                                                  Điểm: {scores[idx]}%
+                                              </span>
+                                          )}
+                                          <button 
+                                              onClick={() => handleSaveWordToFlashcards(window.getSelection()?.toString() || seg.text.slice(0, 10))}
+                                              className="btn btn-outline"
+                                              style={{ padding: '3px 8px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4 }}
+                                              title="Thêm từ đang chọn vào Flashcards FSRS"
+                                          >
+                                              <BookOpen size={12}/> Lưu FSRS
+                                          </button>
+                                      </div>
+
+                                      <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                                          {/* AI Audio Read */}
+                                          <button 
+                                              onClick={() => playTTS(seg.text)}
+                                              disabled={isTtsPlaying}
+                                              style={{ 
+                                                  padding: '4px 10px', borderRadius: 16, border: '1px solid var(--glass-border)',
+                                                  cursor: isTtsPlaying ? 'not-allowed' : 'pointer',
+                                                  display: 'flex', alignItems: 'center', gap: 4, fontWeight: 600, fontSize: '0.8rem',
+                                                  background: 'rgba(59,130,246,0.1)', color: '#60a5fa'
+                                              }}
+                                          >
+                                              {isTtsPlaying ? <Loader size={12} className="spin" /> : <Volume2 size={12}/>} Giọng AI
+                                          </button>
+
+                                          {/* User Recorded Audio Playback (Record & Compare Mode) */}
+                                          {userAudioBlobs[idx] && (
+                                              <button 
+                                                  onClick={() => playUserRecordedAudio(idx)}
+                                                  style={{ 
+                                                      padding: '4px 10px', borderRadius: 16, border: '1px solid #10b981',
+                                                      cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4, fontWeight: 600, fontSize: '0.8rem',
+                                                      background: 'rgba(16,185,129,0.15)', color: '#34d399'
+                                                  }}
+                                                  title="Phát đối chiếu giọng thu của bạn"
+                                              >
+                                                  <Play size={12}/> Giọng Tôi
+                                              </button>
+                                          )}
+
+                                          {/* Record Voice Button */}
+                                          <button 
+                                              onClick={() => toggleRecording(idx, seg.text)}
+                                              style={{ 
+                                                  padding: '4px 12px', borderRadius: 16, border: 'none', cursor: 'pointer',
+                                                  display: 'flex', alignItems: 'center', gap: 4, fontWeight: 600, fontSize: '0.8rem',
+                                                  background: recordingIdx === idx ? 'var(--accent-danger)' : 'rgba(255,255,255,0.12)',
+                                                  color: 'white'
+                                              }}
+                                          >
+                                              {recordingIdx === idx ? <Square size={12}/> : <Mic size={12}/>} 
+                                              {recordingIdx === idx ? 'Dừng' : 'Thu Âm'}
+                                          </button>
+                                      </div>
+                                  </div>
+                              )}
+
+                              {/* Live Speech Recognition Display */}
+                              {recordingIdx === idx && (
+                                  <div className="jp-text" style={{ fontSize: '0.85rem', padding: 6, background: 'rgba(0,0,0,0.3)', borderRadius: 6, color: '#fca5a5' }}>
+                                      🎙️ {transcript || 'Đang nghe giọng bạn nhại âm...'}
+                                  </div>
+                              )}
+                          </div>
+
+                          {/* Segment Merge Divider */}
+                          {idx < segments.length - 1 && (
+                              <div className="merge-divider" style={{ position: 'relative', height: 2, background: 'rgba(255,255,255,0.05)', margin: '2px 0', display: 'flex', justifyContent: 'center', alignItems: 'center', opacity: 0, transition: 'opacity 0.2s', cursor: 'pointer' }}
+                                   onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
+                                   onMouseLeave={(e) => e.currentTarget.style.opacity = 0}
+                                   onClick={() => mergeWithNext(idx)}
+                                   title="Ghép câu này với câu tiếp theo"
+                              >
+                                  <div style={{ background: 'var(--bg-primary)', border: '1px solid var(--accent-primary)', color: 'var(--accent-primary)', borderRadius: '50%', width: 20, height: 20, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                      <Plus size={12} />
                                   </div>
                               </div>
                           )}
-
-                          {/* Live Transcript Display */}
-                          {recordingIdx === idx && (
-                              <div className="jp-text" style={{ fontSize: '0.9rem', padding: 8, background: 'rgba(0,0,0,0.3)', borderRadius: 6, color: '#fca5a5' }}>
-                                  🎙️ {transcript || 'Đang nghe...'}
-                              </div>
-                          )}
-                      </div>
-
-                      {/* Merge Divider */}
-                      {idx < segments.length - 1 && (
-                          <div className="merge-divider" style={{ position: 'relative', height: 2, background: 'rgba(255,255,255,0.05)', margin: '4px 0', display: 'flex', justifyContent: 'center', alignItems: 'center', opacity: 0, transition: 'opacity 0.2s', cursor: 'pointer' }}
-                               onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
-                               onMouseLeave={(e) => e.currentTarget.style.opacity = 0}
-                               onClick={() => mergeWithNext(idx)}
-                               title="Ghép câu này với câu tiếp theo"
-                          >
-                              <div style={{ background: 'var(--bg-primary)', border: '1px solid var(--accent-primary)', color: 'var(--accent-primary)', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                  <Plus size={14} />
-                              </div>
-                          </div>
-                      )}
-                  </React.Fragment>
-              ))}
+                      </React.Fragment>
+                  );
+              })}
           </div>
         </div>
       </div>

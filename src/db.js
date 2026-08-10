@@ -16,3 +16,12 @@ db.version(2).stores({
   vocab: 'id, level, word, kanji', 
   syncQueue: '++id, table, status, timestamp'
 });
+
+// Version 3: Playlists và Lưu file Media Offline cho Shadowing
+db.version(3).stores({
+  vocab: 'id, level, word, kanji',
+  syncQueue: '++id, table, status, timestamp',
+  playlists: 'id, title, createdAt',
+  mediaFiles: 'id, name, type, date'
+});
+
