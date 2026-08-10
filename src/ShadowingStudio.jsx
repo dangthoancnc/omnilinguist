@@ -89,6 +89,38 @@ const parseRawTextToSegments = (rawText) => {
   });
 };
 
+// Multi-Proxy CORS Fetcher with fallback logic to overcome browser CORS restrictions
+const fetchWebHtmlWithFallbacks = async (targetUrl) => {
+  const proxyStrategies = [
+    async (u) => {
+      const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(u)}`);
+      if (!res.ok) throw new Error('Proxy 1 HTTP error');
+      return await res.text();
+    },
+    async (u) => {
+      const res = await fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`);
+      if (!res.ok) throw new Error('Proxy 2 HTTP error');
+      return await res.text();
+    },
+    async (u) => {
+      const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(u)}`);
+      if (!res.ok) throw new Error('Proxy 3 HTTP error');
+      const data = await res.json();
+      return data.contents;
+    }
+  ];
+
+  for (const proxyFn of proxyStrategies) {
+    try {
+      const html = await proxyFn(targetUrl);
+      if (html && html.trim().length > 100) return html;
+    } catch(err) {
+      console.log('CORS Proxy fallback strategy trying next provider...', err.message);
+    }
+  }
+  throw new Error('Tất cả cổng kết nối Proxy đều bận. Bạn có thể sử dụng các bài tin tức có sẵn ở dưới hoặc dán văn bản bài viết trực tiếp.');
+};
+
 // Preset Curated Shadowing Lessons
 const PRESET_LESSONS = [
   {
@@ -140,12 +172,48 @@ const PRESET_LESSONS = [
   }
 ];
 
-// Open Web Channels
+// Open Web Live Channels & Ready-to-Learn News
 const OPEN_NEWS_CHANNELS = [
-  { title: '📰 NHK News Web Easy', url: 'https://www3.nhk.or.jp/news/easy/', desc: 'Tin tức tiếng Nhật dễ đọc cho người học' },
-  { title: '🍵 Matcha Japan Magazine', url: 'https://matcha-jp.com/easy', desc: 'Văn hóa, ẩm thực & du lịch Nhật Bản' },
-  { title: '🌸 Easy Japanese Stories', url: 'https://hukumusume.com/douwa/', desc: 'Kho tàng truyện dân gian Nhật Bản' },
-  { title: '⛩️ Asahi Easy News', url: 'https://www.asahi.com/', desc: 'Tin tức thời sự Nhật Bản' }
+  {
+    title: '📰 NHK Easy: Tuyết Đầu Mùa Núi Phú Sĩ',
+    url: 'https://www3.nhk.or.jp/news/easy/',
+    desc: 'Tin tức thời sự tiếng Nhật dễ đọc',
+    segments: [
+      { start: 0, duration: 5.0, text: '富士山の山頂の近くで、今年初めて雪が積もったことが確認されました。', vi: 'Tại khu vực gần đỉnh núi Phú Sĩ, lần đầu tiên năm nay đã xác nhận tuyết phủ.' },
+      { start: 5.2, duration: 5.5, text: '甲府地方気象台によると、例年より3日遅く、昨年より12日早い初冠雪となります。', vi: 'Theo Đài khí tượng khu vực Kofu, tuyết đầu mùa năm nay muộn hơn mọi năm 3 ngày và sớm hơn năm ngoái 12 ngày.' },
+      { start: 11.0, duration: 5.8, text: '観光客は「美しい雪化粧の富士山を見ることができてとても嬉しいです」と話していました。', vi: 'Du khách chia sẻ: "Tôi rất vui vì được ngắm nhìn núi Phú Sĩ khoác lên mình lớp áo tuyết tuyệt đẹp".' }
+    ]
+  },
+  {
+    title: '🍵 Matcha: Văn Hóa Trà Đạo Nhật Bản',
+    url: 'https://matcha-jp.com/easy',
+    desc: 'Văn hóa và đời sống sinh hoạt Nhật Bản',
+    segments: [
+      { start: 0, duration: 4.8, text: '茶道は、お茶を立てて客にふるまう日本の伝統的な儀式です。', vi: 'Trà đạo là nghi thức truyền thống của Nhật Bản pha trà và phục vụ khách.' },
+      { start: 5.0, duration: 5.2, text: '心を落ち着かせて、季節の和菓子と一緒においしい抹茶を味わいます。', vi: 'Giữ tâm trí thanh tĩnh, thưởng thức trà xanh thơm ngon cùng bánh quy truyền thống theo mùa.' },
+      { start: 10.5, duration: 5.5, text: '静かな茶室で過ごす時間は、日本の美意識を感じる特別な体験となります。', vi: 'Khoảng thời gian trong phòng trà yên tĩnh là trải nghiệm đặc biệt cảm nhận thẩm mỹ Nhật Bản.' }
+    ]
+  },
+  {
+    title: '🌸 Stories: Truyện Con Hạc Đền Ơn',
+    url: 'https://hukumusume.com/douwa/',
+    desc: 'Kho tàng truyện cổ dân gian Nhật',
+    segments: [
+      { start: 0, duration: 4.5, text: 'むかし、ある貧しい男が罠にかかった鶴を助けてやりました。', vi: 'Ngày xưa, một người đàn ông nghèo đã cứu một con hạc bị mắc bẫy.' },
+      { start: 4.8, duration: 5.8, text: 'ある雪の夜、美しい娘が男の家を訪ねてきて、「妻にしてください」と言いました。', vi: 'Vào một đêm tuyết rơi, một cô gái xinh đẹp đến thăm nhà anh và nói "Hãy cho em làm vợ anh".' },
+      { start: 11.0, duration: 6.2, text: '娘は機織り部屋に入り、「決して中を覗かないでください」と言って美しい布を織りました。', vi: 'Cô gái vào phòng dệt vải, dặn "Tuyệt đối đừng nhìn vào trong nhé" và dệt nên tấm vải tuyệt đẹp.' }
+    ]
+  },
+  {
+    title: '⛩️ Asahi: Kỷ Niệm 50 Năm Shinkansen',
+    url: 'https://www.asahi.com/',
+    desc: 'Thời sự kinh tế xã hội Nhật Bản',
+    segments: [
+      { start: 0, duration: 4.8, text: '日本の東海道新幹線が開業してから、今年で50周年を迎えました。', vi: 'Kể từ khi tàu siêu tốc Tokaido Shinkansen đi vào hoạt động, năm nay đã kỷ niệm 50 năm.' },
+      { start: 5.0, duration: 5.5, text: '最高時速285キロで走り、一度も大きな脱線事故を起こしたことがありません。', vi: 'Chạy với tốc độ tối đa 285 km/h và chưa từng xảy ra sự cố trật đường ray nghiêm trọng nào.' },
+      { start: 10.8, duration: 5.8, text: '世界中で最も安全かつ正確な鉄道システムとして高く評価されています。', vi: 'Được đánh giá cao là hệ thống đường sắt an toàn và chính xác nhất trên thế giới.' }
+    ]
+  }
 ];
 
 const ShadowingStudio = () => {
@@ -163,7 +231,7 @@ const ShadowingStudio = () => {
   // Per-tab session store: isolates Web Open Materials, YouTube, Local media, Presets
   const [sessionStore, setSessionStore] = useState({
     presets: { title: PRESET_LESSONS[0].title, segments: PRESET_LESSONS[0].segments, currentSegIdx: 0, scores: {} },
-    web: { title: '', segments: [], currentSegIdx: 0, scores: {} },
+    web: { title: OPEN_NEWS_CHANNELS[0].title, segments: OPEN_NEWS_CHANNELS[0].segments, currentSegIdx: 0, scores: {} },
     youtube: { title: '', segments: [], currentSegIdx: 0, scores: {} },
     local: { title: '', segments: [], currentSegIdx: 0, scores: {} }
   });
@@ -279,7 +347,7 @@ const ShadowingStudio = () => {
     }
   }, [currentSegIdx]);
 
-  // Load Saved Workspace Items
+  // Load Saved Workspace Items (With quiet fallback if backend server is not running)
   const fetchWorkspaceItems = useCallback(async () => {
     try {
       const localItems = JSON.parse(localStorage.getItem('omni_shadowing_workspace') || '[]');
@@ -301,7 +369,7 @@ const ShadowingStudio = () => {
     fetchWorkspaceItems();
   }, [fetchWorkspaceItems]);
 
-  // Cleanup players when switching main tabs to prevent audio state leaks
+  // Cleanup players when switching main tabs to prevent audio state leaks & AbortErrors
   const pauseAllPlayers = () => {
     if (playerRef.current && isPlayerReady.current && playerRef.current.pauseVideo) {
       try { playerRef.current.pauseVideo(); } catch(e){}
@@ -310,7 +378,9 @@ const ShadowingStudio = () => {
       try { localPlayerRef.current.pause(); } catch(e){}
     }
     if (window.speechSynthesis) window.speechSynthesis.cancel();
-    if (userAudioPlayerRef.current) userAudioPlayerRef.current.pause();
+    if (userAudioPlayerRef.current && userAudioPlayerRef.current.pause) {
+      try { userAudioPlayerRef.current.pause(); } catch(e){}
+    }
     setIsPlaying(false);
   };
 
@@ -374,40 +444,45 @@ const ShadowingStudio = () => {
     setActiveTab('presets');
   };
 
-  // OPEN WEB MATERIALS: Fetch Web Article URL
+  // OPEN WEB MATERIALS: Load Channel Preset News Article
+  const loadNewsChannelPreset = (channel) => {
+    pauseAllPlayers();
+    setSessionStore(prev => ({
+      ...prev,
+      web: { title: channel.title, segments: channel.segments, currentSegIdx: 0, scores: {} }
+    }));
+    setActiveTab('web');
+  };
+
+  // OPEN WEB MATERIALS: Fetch Web Article URL via Robust Multi-Proxy Fallbacks
   const handleFetchWebArticle = async (targetUrl = null) => {
     const url = targetUrl || webUrlInput.trim();
     if (!url) return;
     setIsFetching(true);
     try {
-      const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`);
-      const data = await res.json();
-      if (data && data.contents) {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data.contents, 'text/html');
-        const title = doc.title || 'Bài báo Web Online';
-        
-        // Clean unwanted tags
-        const scripts = doc.querySelectorAll('script, style, nav, footer, header, iframe');
-        scripts.forEach(s => s.remove());
-        const bodyText = doc.body ? doc.body.innerText.replace(/\n\s*\n/g, '\n').trim() : '';
+      const htmlContents = await fetchWebHtmlWithFallbacks(url);
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlContents, 'text/html');
+      const title = doc.title || 'Bài báo Web Online';
+      
+      // Clean unwanted DOM elements
+      const scripts = doc.querySelectorAll('script, style, nav, footer, header, iframe');
+      scripts.forEach(s => s.remove());
+      const bodyText = doc.body ? doc.body.innerText.replace(/\n\s*\n/g, '\n').trim() : '';
 
-        const newSegs = parseRawTextToSegments(bodyText);
-        if (newSegs.length > 0) {
-          setSessionStore(prev => ({
-            ...prev,
-            web: { title, segments: newSegs, currentSegIdx: 0, scores: {} }
-          }));
-          setActiveTab('web');
-          alert(`✅ Đã trích xuất thành công ${newSegs.length} câu Shadowing từ bài báo Online!`);
-        } else {
-          alert('Không trích xuất được câu tiếng Nhật phù hợp từ URL này.');
-        }
+      const newSegs = parseRawTextToSegments(bodyText);
+      if (newSegs.length > 0) {
+        setSessionStore(prev => ({
+          ...prev,
+          web: { title, segments: newSegs, currentSegIdx: 0, scores: {} }
+        }));
+        setActiveTab('web');
+        alert(`✅ Đã trích xuất thành công ${newSegs.length} câu Shadowing từ bài báo Online!`);
       } else {
-        alert('Không thể kết nối tải trang Web.');
+        alert('Không trích xuất được câu tiếng Nhật phù hợp từ URL này.');
       }
     } catch(err) {
-      alert('Lỗi tải bài báo Web: ' + err.message);
+      alert(err.message || 'Lỗi trích xuất bài báo Web.');
     }
     setIsFetching(false);
   };
@@ -744,7 +819,8 @@ const ShadowingStudio = () => {
       }
     } else if (activeTab === 'local' && localPlayerRef.current) {
       localPlayerRef.current.currentTime = start;
-      localPlayerRef.current.play();
+      const promise = localPlayerRef.current.play();
+      if (promise !== undefined) { promise.catch(() => {}); }
     } else {
       // Preset / Web Open Material TTS playback
       playTTS(seg.text);
@@ -758,8 +834,12 @@ const ShadowingStudio = () => {
         else playerRef.current.playVideo();
       }
     } else if (activeTab === 'local' && localPlayerRef.current) {
-      if (isPlaying) localPlayerRef.current.pause();
-      else localPlayerRef.current.play();
+      if (isPlaying) {
+        localPlayerRef.current.pause();
+      } else {
+        const promise = localPlayerRef.current.play();
+        if (promise !== undefined) { promise.catch(() => {}); }
+      }
     } else {
       if (segments[currentSegIdx]) {
         playTTS(segments[currentSegIdx].text);
@@ -849,7 +929,8 @@ const ShadowingStudio = () => {
     }
     const audio = new Audio(url);
     userAudioPlayerRef.current = audio;
-    audio.play();
+    const promise = audio.play();
+    if (promise !== undefined) { promise.catch(() => {}); }
   };
 
   // TTS Speech Synthesis
@@ -1127,14 +1208,14 @@ const ShadowingStudio = () => {
                 </button>
               </div>
 
-              {/* Quick Preset News Channels */}
+              {/* Quick Preset Live News Channels */}
               <div style={{ display: 'flex', gap: 6, overflowX: 'auto', alignItems: 'center' }}>
-                <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', fontWeight: 600 }}>KÊNH TIN TỨC:</span>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', fontWeight: 600 }}>TIN TỨC SẴN CÓ:</span>
                 {OPEN_NEWS_CHANNELS.map(ch => (
                   <button 
                     key={ch.title}
-                    className="btn btn-outline"
-                    onClick={() => handleFetchWebArticle(ch.url)}
+                    className={`btn ${activeTitle === ch.title ? 'btn-primary' : 'btn-outline'}`}
+                    onClick={() => loadNewsChannelPreset(ch)}
                     disabled={isFetching}
                     style={{ padding: '4px 8px', fontSize: '0.75rem', whiteSpace: 'nowrap' }}
                     title={ch.desc}
