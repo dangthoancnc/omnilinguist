@@ -1,7 +1,7 @@
 import { db } from './db.js';
 import localMasterDb from './data/jlpt_master_db.json';
 
-const CURRENT_DATA_VERSION = 'v11.1.0_bunpro_full_2191';
+const CURRENT_DATA_VERSION = 'v11.2.0_kanji_full_dataset';
 const CHUNK_SIZE = 200; // Chia nhỏ 200 bản ghi / đợt để nạp siêu mượt
 
 const parseField = (val) => {

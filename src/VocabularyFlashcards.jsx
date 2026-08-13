@@ -184,10 +184,21 @@ const VocabularyFlashcards = () => {
     }
   }, [currentId, autoPlay, currentCard]);
 
+  const [sessionHistory, setSessionHistory] = useState([]);
+  const [showSessionReview, setShowSessionReview] = useState(false);
+
   const handleRating = (rating) => {
-    if (!currentId) return;
+    if (!currentId || !currentCard) return;
     reviewCard(currentId, rating);
     setLastRating(rating);
+    
+    // Save to session history
+    setSessionHistory(prev => {
+      const exists = prev.find(p => p.id === currentCard.id);
+      if (exists) return prev;
+      return [...prev, { ...currentCard, rating, timestamp: Date.now() }];
+    });
+
     setSessionLog(s => ({
       ...s,
       again: s.again + (rating === Rating.Again ? 1 : 0),
@@ -201,22 +212,143 @@ const VocabularyFlashcards = () => {
       if (queueIdx < queue.length - 1) {
         setQueueIdx(i => i + 1);
       } else {
-        buildQueue();
+        setQueue([]);
       }
     }, 400);
   };
 
+  // Re-study current batch cards
+  const handleRestudyCurrentBatch = () => {
+    if (sessionHistory.length > 0) {
+      setQueue(sessionHistory.map(c => c.id));
+      setQueueIdx(0);
+      setShowAnswer(false);
+    } else {
+      buildQueue();
+    }
+  };
+
+  // Load next 25 new cards batch
+  const handleLoadNextNewBatch = () => {
+    const unlearned = levelVocab.filter(v => {
+      const card = getCard(v.id);
+      return !card || card.repetition === 0;
+    }).slice(0, 25);
+
+    if (unlearned.length > 0) {
+      setQueue(unlearned.map(v => v.id));
+    } else {
+      // Pick next 25 cards regardless of state
+      setQueue(levelVocab.slice(0, 25).map(v => v.id));
+    }
+    setQueueIdx(0);
+    setShowAnswer(false);
+  };
+
+  // COMPLETION SCREEN: Japanese License Test App Style Dashboard
   if (!currentCard && queue.length === 0) return (
-    <div style={{ maxWidth:840, margin:'0 auto' }}>
+    <div style={{ maxWidth:900, margin:'0 auto', padding: 20 }}>
       <StatsBar stats={stats} levelColor={LEVEL_COLORS[level]}/>
-      <div className="glass-panel" style={{ textAlign:'center', padding:60, display:'flex', flexDirection:'column', alignItems:'center' }}>
-        <CheckCircle2 size={60} color="#10b981" style={{ marginBottom:20 }}/>
-        <h2 style={{ marginBottom:10, color:'#10b981' }}>Tuyệt vời! Bạn đã hoàn thành mục tiêu.</h2>
-        <p style={{ color:'var(--text-secondary)', marginBottom:30 }}>Không còn từ vựng nào đến hạn trong cấp độ {level} hôm nay.</p>
-        <button className="btn btn-primary" onClick={() => setFilterMode('all')} style={{ padding:'12px 24px', fontSize:'1.05rem', display:'flex', alignItems:'center', gap:8 }}>
-          <RotateCcw size={18}/> Bấm để học thêm thẻ khác
-        </button>
+      
+      <div className="glass-panel" style={{ textAlign:'center', padding:40, borderRadius: 20, display:'flex', flexDirection:'column', alignItems:'center', border: '1px solid var(--glass-border-strong)', boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}>
+        <div style={{ background: 'rgba(16,185,129,0.15)', padding: 16, borderRadius: '50%', marginBottom: 16 }}>
+          <CheckCircle2 size={54} color="#10b981"/>
+        </div>
+        
+        <h2 style={{ marginBottom:8, color:'#10b981', fontSize: '1.6rem' }}>🎉 Tuyệt vời! Đã hoàn thành đợt học.</h2>
+        <p style={{ color:'var(--text-secondary)', marginBottom:24, fontSize: '0.95rem' }}>
+          Bạn đã hoàn thành mục tiêu ôn luyện hôm nay cho cấp độ <strong>Thẻ {level}</strong>.
+        </p>
+
+        {/* Session Log Quick Stats */}
+        <div style={{ display: 'flex', gap: 16, width: '100%', maxWidth: 500, marginBottom: 28, background: 'rgba(0,0,0,0.3)', padding: '14px 20px', borderRadius: 12, justifyContent: 'space-around' }}>
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: 'white' }}>{sessionHistory.length}</div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>Từ đã học</div>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#10b981' }}>{sessionLog.easy}</div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>Nhớ tốt</div>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#f59e0b' }}>{sessionLog.hard}</div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>Tạm ổn</div>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#ef4444' }}>{sessionLog.again}</div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>Cần xem lại</div>
+          </div>
+        </div>
+
+        {/* Japanese Driving License App Style Action Controls Grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 14, width: '100%', maxWidth: 640 }}>
+          
+          <button 
+            className="btn btn-outline" 
+            onClick={handleRestudyCurrentBatch} 
+            style={{ padding:'14px', fontSize:'0.9rem', display:'flex', alignItems:'center', justifyContent: 'center', gap:8, background: 'rgba(59,130,246,0.1)', color: '#60a5fa', border: '1px solid rgba(59,130,246,0.3)' }}
+          >
+            <RotateCcw size={18}/> 🔄 Học lại đợt này
+          </button>
+
+          <button 
+            className="btn btn-primary" 
+            onClick={handleLoadNextNewBatch} 
+            style={{ padding:'14px', fontSize:'0.9rem', display:'flex', alignItems:'center', justifyContent: 'center', gap:8 }}
+          >
+            <Zap size={18}/> ⚡ Mở bài mới tiếp theo (25 từ)
+          </button>
+
+          <button 
+            className="btn btn-outline" 
+            onClick={() => setShowSessionReview(true)} 
+            style={{ padding:'14px', fontSize:'0.9rem', display:'flex', alignItems:'center', justifyContent: 'center', gap:8, background: 'rgba(16,185,129,0.1)', color: '#34d399', border: '1px solid rgba(16,185,129,0.3)' }}
+          >
+            <BookOpen size={18}/> 📖 Xem nội dung vừa học ({sessionHistory.length})
+          </button>
+
+          <button 
+            className="btn btn-outline" 
+            onClick={() => { setFilterMode('all'); buildQueue(); }} 
+            style={{ padding:'14px', fontSize:'0.9rem', display:'flex', alignItems:'center', justifyContent: 'center', gap:8 }}
+          >
+            <List size={18}/> 📋 Quay lại danh sách ôn luyện
+          </button>
+
+        </div>
+
       </div>
+
+      {/* Session Review Modal */}
+      {showSessionReview && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)', padding: 24, overflowY: 'auto' }}>
+          <div style={{ maxWidth: 840, margin: '0 auto' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
+              <h3 style={{ color: 'white', fontSize: '1.4rem', margin: 0, display: 'flex', alignItems: 'center', gap: 10 }}>
+                <BookOpen size={22} color="#10b981"/> Nội dung từ vựng vừa học trong phiên ({sessionHistory.length} từ)
+              </h3>
+              <button className="btn btn-ghost" onClick={() => setShowSessionReview(false)} style={{ color: 'white' }}>
+                <X size={20}/>
+              </button>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 14 }}>
+              {sessionHistory.map((item, idx) => (
+                <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', padding: 14, borderRadius: 12, border: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div>
+                    <div style={{ fontSize: '1.3rem', fontWeight: 700, color: 'white', marginBottom: 2 }}>{item.word}</div>
+                    {item.reading && <div style={{ fontSize: '0.82rem', color: '#60a5fa', marginBottom: 4 }}>{item.reading}</div>}
+                    <div style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>{item.vi || item.meaning}</div>
+                  </div>
+                  <button className="btn-ghost" onClick={() => speak(item.word)} style={{ padding: 6, color: '#10b981' }}>
+                    <Volume2 size={18}/>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 

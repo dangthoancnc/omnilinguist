@@ -417,21 +417,45 @@ const KanjiStudio = () => {
   };
 
   if (!currentKanji && kanjiList.length === 0) {
-    if (levelKanji.length > 0) {
-      return (
-        <div style={{ padding: '40px', maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
-          <div className="glass-panel" style={{ padding: 60, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <CheckCircle2 size={60} color="#10b981" style={{ marginBottom:20 }}/>
-            <h2 style={{ marginBottom:10, color:'#10b981' }}>Tuyệt vời!</h2>
-            <p style={{ color:'var(--text-secondary)', marginBottom:30 }}>Không còn chữ Kanji nào cần ôn tập trong mục {filterMode}.</p>
-            <button className="btn btn-primary" onClick={() => setFilterMode('all')} style={{ padding:'12px 24px' }}>
-              Quay lại chế độ Thường
+    return (
+      <div style={{ padding: '20px 40px', maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
+        {/* Top Level Bar */}
+        <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginBottom: 24 }}>
+          {LEVELS.map(lvl => (
+            <button 
+              key={lvl}
+              onClick={() => setLevel(lvl)}
+              className={`btn ${level === lvl ? 'btn-primary' : 'btn-outline'}`}
+              style={{ padding: '8px 18px', fontSize: '0.9rem', fontWeight: 700 }}
+            >
+              {lvl} ({kanjiByLevel[lvl] || 0})
             </button>
-          </div>
+          ))}
         </div>
-      );
-    }
-    return <div className="glass-panel" style={{ textAlign: 'center', padding: 40 }}>Đang tải dữ liệu Kanji...</div>;
+
+        <div className="glass-panel" style={{ padding: 50, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          {levelKanji.length > 0 ? (
+            <>
+              <CheckCircle2 size={60} color="#10b981" style={{ marginBottom:20 }}/>
+              <h2 style={{ marginBottom:10, color:'#10b981' }}>Tuyệt vời!</h2>
+              <p style={{ color:'var(--text-secondary)', marginBottom:30 }}>Không còn chữ Kanji nào cần ôn tập trong mục {filterMode} cho cấp độ {level}.</p>
+              <button className="btn btn-primary" onClick={() => setFilterMode('all')} style={{ padding:'12px 24px' }}>
+                Quay lại chế độ Thường
+              </button>
+            </>
+          ) : (
+            <>
+              <RefreshCw size={50} color="#3b82f6" style={{ marginBottom:20, animation: 'spin 2s linear infinite' }}/>
+              <h2 style={{ marginBottom:10, color:'white' }}>Đang nạp dữ liệu Kanji cấp độ {level}...</h2>
+              <p style={{ color:'var(--text-secondary)', marginBottom:30 }}>Nếu danh sách trống, bạn có thể chuyển sang cấp độ khác hoặc bấm nạp lại bên dưới.</p>
+              <button className="btn btn-primary" onClick={() => buildQueue()} style={{ padding:'12px 24px' }}>
+                🔄 Nạp lại dữ liệu Kanji {level}
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+    );
   }
 
   return (
