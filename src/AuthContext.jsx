@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { supabase } from './lib/supabaseClient';
-import { pullCloudData } from './studyStore';
+import { pullCloudData, setUserId } from './studyStore';
 
 const AuthContext = createContext();
 
@@ -12,13 +12,17 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const handleSession = async (session) => {
-      setUser(session?.user || null);
+      const u = session?.user || null;
+      setUser(u);
+      setUserId(u ? u.id : null); // Switch local storage context dynamically
+      
       if (session) {
         const hasUpdates = await pullCloudData();
         if (hasUpdates) {
           window.location.reload(); // Reload to rehydrate the app with cloud data
         }
       }
+
       setLoading(false);
     };
 

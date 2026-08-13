@@ -19,6 +19,11 @@ export async function processSyncQueue() {
     
     console.log(`🔄 Bắt đầu đồng bộ ${queue.length} tác vụ từ hàng đợi Offline...`);
     
+    // Ensure profile exists for FK constraints
+    try {
+      await supabase.from('omni_profiles').upsert({ id: session.user.id }, { onConflict: 'id', ignoreDuplicates: true });
+    } catch (e) {}
+    
     for (const task of queue) {
       const { table, payload, id } = task;
       // Add user_id to payload if missing
@@ -30,7 +35,13 @@ export async function processSyncQueue() {
         await db.syncQueue.delete(id);
       } else {
         console.error(`❌ Lỗi đồng bộ bảng ${table}:`, error);
-        break; // Dừng lại ở đây để bảo toàn thứ tự thực thi
+        // Nếu lỗi do cột/bảng không tồn tại (PGRST204, 42P01) hoặc lỗi 400 bad request -> Xóa tác vụ hỏng để không làm tắc nghẽn toàn bộ hàng đợi sync!
+        if (error.code === 'PGRST204' || error.code === '42P01' || error.code === '23503' || error.status === 400 || (error.message && error.message.includes('Could not find'))) {
+          console.warn(`⚠️ Đã tự động dọn dẹp tác vụ không tương thích sơ đồ DB (Bảng: ${table}, Lỗi: ${error.message})`);
+          await db.syncQueue.delete(id);
+        } else {
+          break; // Dừng lại ở đây nếu là lỗi mạng để chờ kết nối lại
+        }
       }
     }
   } catch (err) {
@@ -48,9 +59,19 @@ async function enqueueSync(table, payload) {
   processSyncQueue();
 }
 
+let currentUserId = null;
 
-const STORE_KEY = 'omnilinguist_study_store';
-const PROFILE_KEY = 'omnilinguist_user_profile';
+export function setUserId(id) {
+  currentUserId = id;
+  memoryStore = null; // Reset memory store when user changes
+}
+
+const getStoreKey = () => currentUserId ? `omnilinguist_study_store_${currentUserId}` : 'omnilinguist_study_store_guest';
+const getProfileKey = () => currentUserId ? `omnilinguist_user_profile_${currentUserId}` : 'omnilinguist_user_profile_guest';
+const getStreakKey = () => currentUserId ? `omnilinguist_streak_${currentUserId}` : 'omnilinguist_streak_guest';
+const getBookmarksKey = () => currentUserId ? `omnilinguist_bookmarks_${currentUserId}` : 'omnilinguist_bookmarks_guest';
+const getCustomCardsKey = () => currentUserId ? `omnilinguist_custom_cards_${currentUserId}` : 'omnilinguist_custom_cards_guest';
+const getFreeStudyKey = () => currentUserId ? `omnilinguist_freestudy_history_${currentUserId}` : 'omnilinguist_freestudy_history_guest';
 
 // ── Đọc toàn bộ store ──
 let memoryStore = null;
@@ -58,7 +79,7 @@ let memoryStore = null;
 function loadStore() {
   if (memoryStore) return memoryStore;
   try {
-    memoryStore = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+    memoryStore = JSON.parse(localStorage.getItem(getStoreKey()) || '{}');
   } catch { memoryStore = {}; }
   return memoryStore;
 }
@@ -66,7 +87,7 @@ function loadStore() {
 // ── Ghi store ──
 function saveStore(store) {
   memoryStore = store;
-  localStorage.setItem(STORE_KEY, JSON.stringify(store));
+  localStorage.setItem(getStoreKey(), JSON.stringify(store));
 }
 
 // ── Lấy card ──
@@ -75,8 +96,8 @@ export function getCard(cardId) {
   return store[cardId] || null;
 }
 
-// ── Cập nhật card sau review (Push to Cloud) ──
-export function reviewCard(cardId, rating) {
+// ── Cập nhật card lộ trình (Push to Cloud) ──
+export function reviewRoadmapCard(cardId, rating) {
   const store = loadStore();
   const card = store[cardId] || initCard(cardId);
   const scheduledCard = scheduleCard(card, rating);
@@ -99,11 +120,39 @@ export function reviewCard(cardId, rating) {
   return store[cardId];
 }
 
+// ── Cập nhật thẻ Học Tự Do (Free Study) ──
+export function reviewFreeStudyCard(cardId, isCorrect, moduleType = 'vocab') {
+  try {
+    const key = getFreeStudyKey();
+    const history = JSON.parse(localStorage.getItem(key) || '{}');
+    const item = history[cardId] || { correct: 0, incorrect: 0 };
+    
+    if (isCorrect) item.correct++;
+    else item.incorrect++;
+    
+    item.last_practiced = new Date().toISOString();
+    history[cardId] = item;
+    
+    localStorage.setItem(key, JSON.stringify(history));
+
+    enqueueSync('omni_freestudy_history', {
+      module_type: moduleType,
+      item_id: cardId,
+      correct_count: item.correct,
+      incorrect_count: item.incorrect,
+      last_practiced: item.last_practiced
+    });
+    return item;
+  } catch (err) {
+    console.error('Free Study review error:', err);
+    return null;
+  }
+}
+
 // ── Bookmarks ──
-const BOOKMARKS_KEY = 'omnilinguist_bookmarks';
 export function getBookmarks() {
   try {
-    return JSON.parse(localStorage.getItem(BOOKMARKS_KEY) || '[]');
+    return JSON.parse(localStorage.getItem(getBookmarksKey()) || '[]');
   } catch { return []; }
 }
 export function toggleBookmark(cardId) {
@@ -113,7 +162,7 @@ export function toggleBookmark(cardId) {
   } else {
     marks.push(cardId);
   }
-  localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(marks));
+  localStorage.setItem(getBookmarksKey(), JSON.stringify(marks));
   return marks.includes(cardId);
 }
 export function isBookmarked(cardId) {
@@ -131,20 +180,37 @@ export function getDueCards(allVocabIds) {
   });
 }
 
+export function getFreeStudyHistory() {
+  try {
+    const key = getFreeStudyKey();
+    return JSON.parse(localStorage.getItem(key) || '{}');
+  } catch { return {}; }
+}
+
 // ── Thống kê tổng hợp ──
-export function getStats(allVocabIds) {
+export function getStats(allVocabIds, learningMode = 'roadmap') {
   const store = loadStore();
+  const freeStudyHist = getFreeStudyHistory();
   const now = new Date();
   let newCount = 0, dueCount = 0, learnedCount = 0;
 
   allVocabIds.forEach(id => {
     const card = store[id];
-    if (!card || card.state === State.New) {
-      newCount++;
-    } else if (isDue(card, now)) {
-      dueCount++;
+    const fsHist = freeStudyHist[id];
+    if (learningMode === 'freestudy') {
+      if (fsHist && (fsHist.correct > 0 || fsHist.incorrect > 0)) {
+        learnedCount++;
+      } else {
+        newCount++;
+      }
     } else {
-      learnedCount++;
+      if (!card || card.state === State.New) {
+        newCount++;
+      } else if (isDue(card, now)) {
+        dueCount++;
+      } else {
+        learnedCount++;
+      }
     }
   });
 
@@ -165,7 +231,7 @@ export function getNextDueInfo(cardId) {
 // ── User Profile & Roadmap Progress ──
 export function getUserProfile() {
   try {
-    return JSON.parse(localStorage.getItem(PROFILE_KEY) || 'null');
+    return JSON.parse(localStorage.getItem(getProfileKey()) || 'null');
   } catch { return null; }
 }
 
@@ -177,7 +243,7 @@ export function saveUserProfile(profile) {
     startDate: current.startDate || new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   };
-  localStorage.setItem(PROFILE_KEY, JSON.stringify(updatedProfile));
+  localStorage.setItem(getProfileKey(), JSON.stringify(updatedProfile));
 
   // Đẩy vào hàng đợi Offline
   enqueueSync('omni_profiles', {
@@ -196,20 +262,19 @@ export function advancePhase() {
 }
 
 // ── Streak tracking ──
-const STREAK_KEY = 'omnilinguist_streak';
 export function updateStreak() {
   const today = new Date().toDateString();
-  const data = JSON.parse(localStorage.getItem(STREAK_KEY) || '{"streak":0,"lastDate":""}');
+  const data = JSON.parse(localStorage.getItem(getStreakKey()) || '{"streak":0,"lastDate":""}');
   const yesterday = new Date(Date.now() - 86400000).toDateString();
   if (data.lastDate === today) return data.streak;
   if (data.lastDate === yesterday) {
     const updated = { streak: data.streak + 1, lastDate: today, updated_at: new Date().toISOString() };
-    localStorage.setItem(STREAK_KEY, JSON.stringify(updated));
+    localStorage.setItem(getStreakKey(), JSON.stringify(updated));
     syncStreakToCloud(updated);
     return updated.streak;
   }
   const reset = { streak: 1, lastDate: today, updated_at: new Date().toISOString() };
-  localStorage.setItem(STREAK_KEY, JSON.stringify(reset));
+  localStorage.setItem(getStreakKey(), JSON.stringify(reset));
   syncStreakToCloud(reset);
   return 1;
 }
@@ -223,16 +288,15 @@ function syncStreakToCloud(streakData) {
 }
 
 export function getStreak() {
-  const data = JSON.parse(localStorage.getItem(STREAK_KEY) || '{"streak":0}');
+  const data = JSON.parse(localStorage.getItem(getStreakKey()) || '{"streak":0}');
   return data.streak;
 }
 
 // ── Custom Flashcards (added from Immersion Reader) ──
-const CUSTOM_CARDS_KEY = 'omnilinguist_custom_cards';
 
 export function getCustomCards() {
   try {
-    return JSON.parse(localStorage.getItem(CUSTOM_CARDS_KEY) || '[]');
+    return JSON.parse(localStorage.getItem(getCustomCardsKey()) || '[]');
   } catch { return []; }
 }
 
@@ -240,7 +304,7 @@ export function addCustomCard(card) {
   const cards = getCustomCards();
   // Ensure we don't add duplicate words
   if (!cards.some(c => c.word === card.word)) {
-    localStorage.setItem(CUSTOM_CARDS_KEY, JSON.stringify([...cards, card]));
+    localStorage.setItem(getCustomCardsKey(), JSON.stringify([...cards, card]));
     
     // Đẩy vào hàng đợi Offline
     enqueueSync('omni_custom_cards', {
@@ -268,7 +332,7 @@ export async function pullCloudData() {
       const localProfile = getUserProfile() || {};
       if (!localProfile.updatedAt || new Date(profile.updated_at) > new Date(localProfile.updatedAt)) {
         const target = profile.target_level || 'N3';
-        localStorage.setItem(PROFILE_KEY, JSON.stringify({
+        localStorage.setItem(getProfileKey(), JSON.stringify({
           currentLevel: profile.current_level || 'N4',
           targetLevel: target,
           goal: target,
@@ -283,9 +347,9 @@ export async function pullCloudData() {
     // 2. Pull Streaks
     const { data: streak } = await supabase.from('omni_streaks').select('*').maybeSingle();
     if (streak) {
-      const localStreak = JSON.parse(localStorage.getItem(STREAK_KEY) || '{"streak":0}');
+      const localStreak = JSON.parse(localStorage.getItem(getStreakKey()) || '{"streak":0}');
       if (!localStreak.updated_at || new Date(streak.updated_at) > new Date(localStreak.updated_at)) {
-        localStorage.setItem(STREAK_KEY, JSON.stringify({
+        localStorage.setItem(getStreakKey(), JSON.stringify({
           streak: streak.current_streak || 0,
           lastDate: streak.last_study_date || '',
           updated_at: streak.updated_at

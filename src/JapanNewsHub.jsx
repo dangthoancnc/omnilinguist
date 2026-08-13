@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { 
   Newspaper, Globe, BookOpen, Volume2, Sparkles, ExternalLink, ArrowRight, 
   Search, Bookmark, Plus, Loader, CheckCircle, RefreshCw, Layers, ShieldCheck, 
-  Briefcase, HeartHandshake, Eye, VolumeX, PencilLine, Share2
+  Briefcase, HeartHandshake, Eye, VolumeX, PencilLine, Share2, X
 } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 import SelectionDictionary from './components/SelectionDictionary';

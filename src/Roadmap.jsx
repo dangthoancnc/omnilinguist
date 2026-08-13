@@ -225,7 +225,7 @@ const Roadmap = () => {
 
                 {isActive && (
                   <div style={{ marginTop: 10, padding: '10px 12px', borderRadius: 8, background: `${p.color}15`, border: `1px solid ${p.color}44`, fontSize: '0.82rem', color: p.color, display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <Target size={16} flexShrink={0} />
+                    <Target size={16} style={{ flexShrink: 0 }} />
                     <div>
                       <strong>Đang học giai đoạn này:</strong> Tiến độ được tự động xác thực qua kết quả ôn luyện Flashcards & Shadowing của bạn.
                     </div>

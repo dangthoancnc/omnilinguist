@@ -3,9 +3,14 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
 import { Search, BookA, Bookmark, ArrowRight, LayoutGrid, Type } from 'lucide-react';
 
-import { API_BASE_URL } from './config.js';
+import localMasterDb from './data/jlpt_master_db.json';
 
 const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
+
+const removeDiacritics = (str) => {
+  if (!str) return '';
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+};
 
 // Auto-Translate component with caching, backend proxy & AbortController timeout
 const translateToVi = async (enText) => {
@@ -277,6 +282,14 @@ const Dictionary = () => {
   const [translatedQ, setTranslatedQ] = useState(null);
   const [isSearching, setIsSearching] = useState(false);
 
+  // Real-time debounced search typing (300ms)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearchQuery(query);
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [query]);
+
   // Auto-translate Vietnamese query to English/Japanese for offline DB matching
   useEffect(() => {
     const qRaw = searchQuery.trim().toLowerCase();
@@ -320,41 +333,80 @@ const Dictionary = () => {
     const qRaw = searchQuery.toLowerCase().trim();
     if (!qRaw) return { vocab: [], kanji: [], grammar: [] };
     
-    const normalize = (str) => (str || '').toLowerCase().replace(/[\.\-\s]/g, '');
+    const normalize = (str) => (str || '').toLowerCase().replace(/[\.\-\s~〜]/g, '');
     const nq = normalize(qRaw);
+    const nqUnaccented = removeDiacritics(nq);
     const nqHira = toHiragana(nq);
-    const normalizedTranslatedQ = translatedQ.map(tq => normalize(tq));
+    const normalizedTranslatedQ = (translatedQ || []).map(tq => normalize(tq));
 
-    const vRes = filterType === 'all' || filterType === 'vocab' 
-      ? await db.vocab.filter(v => 
-          normalize(v.word).includes(nq) || 
-          normalize(v.word).includes(nqHira) || 
-          normalize(v.reading).includes(nq) || 
-          normalize(v.reading).includes(nqHira) || 
-          normalize(v.vi).includes(nq) ||
-          (translatedQ && translatedQ.some(t => normalize(v.word).includes(normalize(t))))
-        ).limit(50).toArray()
-      : [];
+    const masterVocab = localMasterDb.vocabulary || [];
+    const masterKanji = localMasterDb.kanji || [];
+    const masterGrammar = localMasterDb.grammar || [];
 
-    const kRes = filterType === 'all' || filterType === 'kanji'
-      ? await db.kanji.filter(k => 
-          normalize(k.kanji).includes(nq) || 
-          k.meanings.some(m => normalize(m).includes(nq)) || 
-          k.onyomi.some(o => normalize(o).includes(nq) || normalize(o).includes(nqHira)) || 
-          k.kunyomi.some(ku => normalize(ku).includes(nq) || normalize(ku).includes(nqHira)) ||
-          (translatedQ && k.meanings.some(m => translatedQ.some(t => normalize(m).includes(normalize(t)))))
-        ).limit(30).toArray()
-      : [];
+    // VOCAB SEARCH
+    let vRes = [];
+    if (filterType === 'all' || filterType === 'vocab') {
+      vRes = await db.vocab.filter(v => {
+        const w = normalize(v.word);
+        const r = normalize(v.reading);
+        const vi = (v.vi || v.meaning || '').toLowerCase();
+        const viUnaccented = removeDiacritics(vi);
+        return w.includes(nq) || (nqHira && (w.includes(nqHira) || r.includes(nqHira))) || r.includes(nq) || vi.includes(nq) || viUnaccented.includes(nqUnaccented) || normalizedTranslatedQ.some(t => w.includes(t));
+      }).limit(50).toArray();
 
-    const gRes = filterType === 'all' || filterType === 'grammar'
-      ? await db.grammar.filter(g => 
-          normalize(g.pattern).includes(nq) || 
-          normalize(g.pattern).includes(nqHira) || 
-          normalize(g.meaning).includes(nq) || 
-          normalize(g.vi).includes(nq) ||
-          (translatedQ && translatedQ.some(t => normalize(g.meaning).includes(normalize(t))))
-        ).limit(30).toArray()
-      : [];
+      if (vRes.length === 0 && masterVocab.length > 0) {
+        vRes = masterVocab.filter(v => {
+          const w = normalize(v.word);
+          const r = normalize(v.reading);
+          const vi = (v.vi || v.meaning || '').toLowerCase();
+          const viUnaccented = removeDiacritics(vi);
+          return w.includes(nq) || (nqHira && (w.includes(nqHira) || r.includes(nqHira))) || r.includes(nq) || vi.includes(nq) || viUnaccented.includes(nqUnaccented);
+        }).slice(0, 50);
+      }
+    }
+
+    // KANJI SEARCH
+    let kRes = [];
+    if (filterType === 'all' || filterType === 'kanji') {
+      kRes = await db.kanji.filter(k => {
+        const kj = normalize(k.kanji);
+        const mStr = (k.meanings || []).join(' ').toLowerCase();
+        const mUnaccented = removeDiacritics(mStr);
+        const ony = (k.onyomi || []).map(o => normalize(o)).join(' ');
+        const kun = (k.kunyomi || []).map(ku => normalize(ku)).join(' ');
+        return kj.includes(nq) || mStr.includes(nq) || mUnaccented.includes(nqUnaccented) || ony.includes(nq) || (nqHira && ony.includes(nqHira)) || kun.includes(nq) || (nqHira && kun.includes(nqHira));
+      }).limit(30).toArray();
+
+      if (kRes.length === 0 && masterKanji.length > 0) {
+        kRes = masterKanji.filter(k => {
+          const kj = normalize(k.kanji);
+          const mStr = (Array.isArray(k.meanings) ? k.meanings.join(' ') : String(k.meanings || '')).toLowerCase();
+          const mUnaccented = removeDiacritics(mStr);
+          return kj.includes(nq) || mStr.includes(nq) || mUnaccented.includes(nqUnaccented);
+        }).slice(0, 30);
+      }
+    }
+
+    // GRAMMAR SEARCH
+    let gRes = [];
+    if (filterType === 'all' || filterType === 'grammar') {
+      gRes = await db.grammar.filter(g => {
+        const p = normalize(g.pattern);
+        const m = (g.meaning || g.vi || '').toLowerCase();
+        const mUnaccented = removeDiacritics(m);
+        const exStr = Array.isArray(g.examples) ? g.examples.map(e => typeof e === 'object' ? `${e.jp||''} ${e.vi||''}` : String(e)).join(' ').toLowerCase() : '';
+        return p.includes(nq) || (nqHira && p.includes(nqHira)) || m.includes(nq) || mUnaccented.includes(nqUnaccented) || exStr.includes(nq) || removeDiacritics(exStr).includes(nqUnaccented);
+      }).limit(30).toArray();
+
+      if (gRes.length === 0 && masterGrammar.length > 0) {
+        gRes = masterGrammar.filter(g => {
+          const p = normalize(g.pattern);
+          const m = (g.meaning || g.vi || '').toLowerCase();
+          const mUnaccented = removeDiacritics(m);
+          return p.includes(nq) || (nqHira && p.includes(nqHira)) || m.includes(nq) || mUnaccented.includes(nqUnaccented);
+        }).slice(0, 30);
+      }
+    }
 
     return { vocab: vRes, kanji: kRes, grammar: gRes };
   }, [searchQuery, filterType, translatedQ]) || { vocab: [], kanji: [], grammar: [] };

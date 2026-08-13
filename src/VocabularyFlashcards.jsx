@@ -3,9 +3,9 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
 import { Rating } from './fsrs.js';
-import { getCard, reviewCard, getDueCards, getStats, getNextDueInfo, getCustomCards, isBookmarked, toggleBookmark } from './studyStore.js';
+import { getCard, reviewRoadmapCard, reviewFreeStudyCard, getDueCards, getStats, getNextDueInfo, getCustomCards, isBookmarked, toggleBookmark, getUserProfile, getFreeStudyHistory } from './studyStore.js';
 import { syncMasterData } from './syncMasterData.js';
-import { Eye, EyeOff, Volume2, ChevronLeft, ChevronRight, Brain, CheckCircle2, AlertCircle, RotateCcw, Target, Bookmark, Filter, Shuffle, ListOrdered, Zap, BookOpen, List, X } from 'lucide-react';
+import { Eye, EyeOff, Volume2, ChevronLeft, ChevronRight, Brain, CheckCircle2, AlertCircle, RotateCcw, Target, Bookmark, Filter, Shuffle, ListOrdered, Zap, BookOpen, List, X, Settings, FastForward, Play, Pause, Hand } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 import localMasterDb from './data/jlpt_master_db.json';
 
@@ -30,9 +30,17 @@ const StatsBar = ({ stats, levelColor }) => (
 
 const VocabularyFlashcards = () => {
   const vocabData = useLiveQuery(() => db.vocab.toArray()) || [];
-  const [level, setLevel] = useState('N3');
+  const [level, setLevel] = useState(() => {
+    const p = getUserProfile();
+    return p?.currentLevel || 'N3';
+  });
+  const [learningMode, setLearningMode] = useState('roadmap'); // 'roadmap' | 'freestudy'
   const [filterMode, setFilterMode] = useState('all');
   const [autoPlay, setAutoPlay] = useState(true);
+  const [autoAdvanceDelay, setAutoAdvanceDelay] = useState(400); // 0, 400, 1000, 2000, -1
+  const [isManualNextReady, setIsManualNextReady] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  
   const [queue, setQueue] = useState([]);
   const [queueIdx, setQueueIdx] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -116,7 +124,7 @@ const VocabularyFlashcards = () => {
   }, [vocabData]);
 
   const allIds = useMemo(() => levelVocab.map(v => v.id), [levelVocab]);
-  const refreshStats = () => setStats(getStats(allIds));
+  const refreshStats = () => setStats(getStats(allIds, learningMode));
 
   const buildQueue = () => {
     refreshStats();
@@ -173,7 +181,7 @@ const VocabularyFlashcards = () => {
     setVisibleCount(30);
   };
 
-  useEffect(() => { buildQueue(); }, [level, levelVocab, filterMode, isRandom]);
+  useEffect(() => { buildQueue(); }, [level, levelVocab, filterMode, isRandom, learningMode]);
 
   useEffect(() => {
     return () => {
@@ -198,19 +206,54 @@ const VocabularyFlashcards = () => {
     }
   }, [currentId, studyMode, levelVocab]);
 
-  // Auto-play khi chuyển thẻ
-  useEffect(() => {
-    if (autoPlay && currentCard && !showAnswer) {
-      speak(currentCard.word);
-    }
-  }, [currentId, autoPlay, currentCard]);
+  // Xóa bỏ useEffect tự đọc khi mở tab (chỉ đọc khi có thao tác Lật thẻ/Next/Lùi của người dùng)
 
   const [sessionHistory, setSessionHistory] = useState([]);
   const [showSessionReview, setShowSessionReview] = useState(false);
 
+  const advanceToNextCard = () => {
+    setShowAnswer(false);
+    setLastRating(null);
+    setQuizAnswered(null);
+    setIsManualNextReady(false);
+    if (queueIdx < queue.length - 1) {
+      const nextIdx = queueIdx + 1;
+      setQueueIdx(nextIdx);
+      if (autoPlay) {
+        const nextId = queue[nextIdx];
+        const nextCard = levelVocab.find(v => v.id === nextId);
+        if (nextCard) speak(nextCard.word);
+      }
+    } else {
+      setQueue([]);
+    }
+  };
+
+  const handlePrev = () => {
+    if (queue.length === 0) return;
+    setShowAnswer(false);
+    setLastRating(null);
+    setQuizAnswered(null);
+    setIsManualNextReady(false);
+    const prevIdx = (queueIdx - 1 + queue.length) % queue.length;
+    setQueueIdx(prevIdx);
+    if (autoPlay) {
+      const prevId = queue[prevIdx];
+      const prevCard = levelVocab.find(v => v.id === prevId);
+      if (prevCard) speak(prevCard.word);
+    }
+  };
+
   const handleRating = (rating) => {
     if (!currentId || !currentCard) return;
-    reviewCard(currentId, rating);
+    
+    if (learningMode === 'roadmap') {
+      reviewRoadmapCard(currentId, rating);
+    } else {
+      const isCorrect = (rating === Rating.Good || rating === Rating.Easy);
+      reviewFreeStudyCard(currentId, isCorrect, 'vocab');
+    }
+    
     setLastRating(rating);
     
     // Save to session history
@@ -226,25 +269,30 @@ const VocabularyFlashcards = () => {
       hard: s.hard + (rating === Rating.Hard ? 1 : 0),
       easy: s.easy + (rating === Rating.Good || rating === Rating.Easy ? 1 : 0),
     }));
-    setTimeout(() => {
-      setShowAnswer(false);
-      setLastRating(null);
-      setQuizAnswered(null);
-      if (queueIdx < queue.length - 1) {
-        setQueueIdx(i => i + 1);
-      } else {
-        setQueue([]);
-      }
-    }, 400);
+
+    refreshStats();
+
+    if (autoAdvanceDelay === -1) {
+      setIsManualNextReady(true);
+    } else {
+      setTimeout(() => {
+        advanceToNextCard();
+      }, autoAdvanceDelay);
+    }
   };
 
   // Derive studied cards in current level from FSRS store if sessionHistory is empty
   const studiedCardsInLevel = useMemo(() => {
+    const freeStudyHist = getFreeStudyHistory();
     return levelVocab.filter(v => {
       const card = getCard(v.id);
+      const fsHist = freeStudyHist[v.id];
+      if (learningMode === 'freestudy') {
+        return fsHist && (fsHist.correct > 0 || fsHist.incorrect > 0);
+      }
       return card && card.repetition > 0;
     });
-  }, [levelVocab]);
+  }, [levelVocab, sessionHistory, learningMode, stats]);
 
   const effectiveReviewList = sessionHistory.length > 0 ? sessionHistory : studiedCardsInLevel;
 
@@ -261,7 +309,12 @@ const VocabularyFlashcards = () => {
 
   // Load next 25 new cards batch
   const handleLoadNextNewBatch = () => {
+    const freeStudyHist = getFreeStudyHistory();
     const unlearned = levelVocab.filter(v => {
+      if (learningMode === 'freestudy') {
+        const fsHist = freeStudyHist[v.id];
+        return !fsHist || (fsHist.correct === 0 && fsHist.incorrect === 0);
+      }
       const card = getCard(v.id);
       return !card || card.repetition === 0;
     }).slice(0, 25);
@@ -399,7 +452,12 @@ const VocabularyFlashcards = () => {
         <div style={{ display:'flex', gap:8, alignItems: 'center' }}>
           <select 
             value={level} 
-            onChange={(e)=>setLevel(e.target.value)} 
+            onChange={(e)=>{
+              setLevel(e.target.value);
+              const p = getUserProfile();
+              if (p && p.currentLevel === e.target.value) setLearningMode('roadmap');
+              else setLearningMode('freestudy');
+            }} 
             style={{ padding:'8px 16px', borderRadius:8, background: LEVEL_COLORS[level] || '#6366f1', border:'none', color:'white', fontWeight:700, outline:'none', cursor:'pointer', boxShadow:`0 4px 12px ${(LEVEL_COLORS[level]||'#6366f1')}55` }}
           >
             {[...LEVELS, 'Khác'].map(l => (
@@ -410,13 +468,26 @@ const VocabularyFlashcards = () => {
           </select>
 
           <div style={{ display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: 8, padding: 4 }}>
+            <button onClick={() => setLearningMode('roadmap')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: learningMode === 'roadmap' ? 'rgba(59,130,246,0.3)' : 'transparent', color: learningMode === 'roadmap' ? '#60a5fa' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6, fontWeight: learningMode === 'roadmap' ? 600 : 400 }}>
+              <ListOrdered size={16}/> Lộ Trình FSRS
+            </button>
+            <button onClick={() => setLearningMode('freestudy')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: learningMode === 'freestudy' ? 'rgba(16,185,129,0.2)' : 'transparent', color: learningMode === 'freestudy' ? '#34d399' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6, fontWeight: learningMode === 'freestudy' ? 600 : 400 }}>
+              <Shuffle size={16}/> Học Tự Do
+            </button>
+          </div>
+
+          <div style={{ display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: 8, padding: 4 }}>
             <button onClick={() => setStudyMode('fsrs')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: studyMode === 'fsrs' ? 'rgba(255,255,255,0.1)' : 'transparent', color: studyMode === 'fsrs' ? 'white' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6 }}>
-              <Brain size={16}/> FSRS
+              <Brain size={16}/> Lật thẻ
             </button>
             <button onClick={() => setStudyMode('quiz')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: studyMode === 'quiz' ? 'rgba(255,255,255,0.1)' : 'transparent', color: studyMode === 'quiz' ? 'white' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6 }}>
               <Target size={16}/> Trắc nghiệm
             </button>
           </div>
+          
+          <button className="btn btn-ghost" onClick={() => setShowSettings(!showSettings)} style={{ padding: '8px', color: 'var(--text-secondary)' }} title="Cài đặt lật thẻ">
+            <Settings size={20}/>
+          </button>
         </div>
         
         <div style={{ display:'flex', alignItems:'center', flexWrap: 'wrap', gap:16 }}>
@@ -581,19 +652,25 @@ const VocabularyFlashcards = () => {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 16 }}>
         {/* Navigation Row */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <button className="btn btn-outline" style={{ padding:'12px 20px', display: 'flex', alignItems: 'center', gap: 8 }} onClick={()=>{ setQueueIdx(i=>(i-1+queue.length)%queue.length); setShowAnswer(false); setQuizAnswered(null); }}>
+          <button className="btn btn-outline" style={{ padding:'12px 20px', display: 'flex', alignItems: 'center', gap: 8 }} onClick={handlePrev}>
             <ChevronLeft size={18}/> <span style={{ fontSize: '0.9rem', display: 'none' }} className="mobile-hide">Lùi</span>
           </button>
           
           <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: 600 }}>{queueIdx + 1} / {queue.length}</span>
 
-          <button className="btn btn-outline" style={{ padding:'12px 20px', display: 'flex', alignItems: 'center', gap: 8 }} onClick={()=>{ setQueueIdx(i=>(i+1)%queue.length); setShowAnswer(false); setQuizAnswered(null); }}>
+          <button className="btn btn-outline" style={{ padding:'12px 20px', display: 'flex', alignItems: 'center', gap: 8 }} onClick={advanceToNextCard}>
             <span style={{ fontSize: '0.9rem', display: 'none' }} className="mobile-hide">Tiếp</span> <ChevronRight size={18}/>
           </button>
         </div>
 
         {/* Rating Row */}
-        {studyMode === 'fsrs' ? (
+        {isManualNextReady ? (
+          <div style={{ display: 'flex', gap: 10 }}>
+            <button onClick={advanceToNextCard} style={{ flex:1, padding:'14px 4px', borderRadius:8, cursor:'pointer', background:'rgba(59,130,246,0.15)', color:'#93c5fd', fontWeight:600, fontSize:'1.1rem', border:'1px solid rgba(59,130,246,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+              <span style={{ fontSize: '1.2rem' }}>Thẻ tiếp theo</span> <ChevronRight size={20} />
+            </button>
+          </div>
+        ) : studyMode === 'fsrs' ? (
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             <button onClick={()=>handleRating(Rating.Again)} style={{ flex: '1 1 60px', padding:'13px 4px', borderRadius:8, cursor:'pointer', background:'rgba(239,68,68,0.15)', color:'#fca5a5', fontWeight:600, fontSize:'0.88rem', border:'1px solid rgba(239,68,68,0.3)' }}>
               🔁 Lại<br/><span style={{ fontSize:'0.72rem', opacity:0.7 }}>1 ngày</span>
@@ -684,6 +761,54 @@ const VocabularyFlashcards = () => {
         </div>
       )}
       </div>
+
+      {showSettings && (
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(4px)' }} onClick={() => setShowSettings(false)}>
+          <div style={{ background: '#1e293b', border: '1px solid var(--glass-border)', borderRadius: 16, padding: 24, width: '90%', maxWidth: 400, boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }} onClick={e => e.stopPropagation()}>
+            <h2 style={{ margin: '0 0 20px 0', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: 10 }}>
+              <Settings size={20} color="#60a5fa" /> Cài đặt Lật thẻ
+            </h2>
+
+            <div style={{ marginBottom: 24 }}>
+              <label style={{ display: 'block', fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 12, fontWeight: 600 }}>Tốc độ chuyển thẻ tự động</label>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {[
+                  { value: 0, label: 'Chuyển ngay lập tức (Nhanh nhất)', icon: <FastForward size={16} /> },
+                  { value: 400, label: 'Đợi 0.4s (Mặc định)', icon: <Play size={16} /> },
+                  { value: 1000, label: 'Đợi 1s (Chậm)', icon: <Pause size={16} /> },
+                  { value: 2000, label: 'Đợi 2s (Rất chậm)', icon: <Pause size={16} /> },
+                  { value: -1, label: 'Thủ công (Bấm nút Tiếp tục)', icon: <Hand size={16} /> },
+                ].map(opt => (
+                  <button
+                    key={opt.value}
+                    onClick={() => { setAutoAdvanceDelay(opt.value); setShowSettings(false); }}
+                    style={{
+                      padding: '12px 16px',
+                      borderRadius: 8,
+                      border: autoAdvanceDelay === opt.value ? '1px solid #3b82f6' : '1px solid var(--glass-border)',
+                      background: autoAdvanceDelay === opt.value ? 'rgba(59,130,246,0.1)' : 'rgba(0,0,0,0.2)',
+                      color: autoAdvanceDelay === opt.value ? '#60a5fa' : 'white',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 10,
+                      textAlign: 'left'
+                    }}
+                  >
+                    {opt.icon} {opt.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <button onClick={() => setShowSettings(false)} className="btn btn-primary" style={{ padding: '10px 20px' }}>Đóng</button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };

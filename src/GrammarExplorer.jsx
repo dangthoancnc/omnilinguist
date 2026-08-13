@@ -10,8 +10,41 @@ import {
 } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 
+import localMasterDb from './data/jlpt_master_db.json';
+
 const LEVELS = ['ALL', 'N5', 'N4', 'N3', 'N2', 'N1'];
 const LEVEL_COLORS = { N5: '#10b981', N4: '#3b82f6', N3: '#f59e0b', N2: '#8b5cf6', N1: '#ef4444' };
+
+const ROMAJI_TO_KANA = {
+  kya:'きゃ', kyu:'きゅ', kyo:'きょ', sha:'しゃ', shu:'しゅ', sho:'しょ', cha:'ちゃ', chu:'ちゅ', cho:'ちょ',
+  nya:'にゃ', nyu:'にゅ', nyo:'にょ', hya:'ひゃ', hyu:'ひゅ', hyo:'ひょ', mya:'みゃ', myu:'みゅ', myo:'みょ',
+  rya:'りゃ', ryu:'りゅ', ryo:'りょ', gya:'ぎゃ', gyu:'ぎゅ', gyo:'ぎょ', ja:'じゃ', ju:'じゅ', jo:'じょ',
+  bya:'びゃ', byu:'びゅ', byo:'びょ', pya:'ぴゃ', pyu:'ぴゅ', pyo:'ぴょ',
+  shi:'し', chi:'ち', tsu:'つ',
+  ka:'か', ki:'き', ku:'く', ke:'け', ko:'こ', sa:'さ', su:'す', se:'せ', so:'そ',
+  ta:'た', te:'て', to:'と', na:'な', ni:'に', nu:'ぬ', ne:'ね', no:'の',
+  ha:'は', hi:'ひ', fu:'ふ', he:'へ', ho:'ほ', ma:'ま', mi:'み', mu:'む', me:'め', mo:'も',
+  ya:'や', yu:'ゆ', yo:'よ', ra:'ら', ri:'り', ru:'る', re:'れ', ro:'ろ',
+  wa:'わ', wo:'を', nn:'ん', n:'ん',
+  ga:'が', gi:'ぎ', gu:'ぐ', ge:'げ', go:'ご', za:'ざ', ji:'じ', zu:'ず', ze:'ぜ', zo:'ぞ',
+  da:'だ', de:'で', do:'ど', ba:'ば', bi:'び', bu:'ぶ', be:'べ', bo:'ぼ',
+  pa:'ぱ', pi:'ぴ', pu:'ぷ', pe:'ぺ', po:'ぽ',
+  a:'あ', i:'い', u:'う', e:'え', o:'お'
+};
+
+const toHiragana = (str) => {
+  if (!str) return '';
+  let res = str.toLowerCase();
+  for (let k in ROMAJI_TO_KANA) {
+    res = res.split(k).join(ROMAJI_TO_KANA[k]);
+  }
+  return res;
+};
+
+const removeDiacritics = (str) => {
+  if (!str) return '';
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+};
 
 const cleanText = (text) => text ? text.replace(/&nbsp;/g, ' ').replace(/<[^>]*>?/gm, '').trim() : '';
 
@@ -108,17 +141,77 @@ const GrammarExplorer = () => {
     return counts;
   }, []);
 
-  // Filtered grammar list for Library
+  const [visibleCount, setVisibleCount] = useState(40);
+
+  useEffect(() => {
+    setVisibleCount(40);
+  }, [selectedLevel, query]);
+
+  // Filtered & Relevance-ranked grammar list for Library
   const filteredGrammar = useMemo(() => {
-    return grammarData.filter(g => {
+    const qRaw = query.trim().toLowerCase();
+    const masterGrammar = localMasterDb.grammar || [];
+    const pool = (grammarData && grammarData.length > 0) ? grammarData : masterGrammar;
+
+    if (!qRaw) {
+      return pool.filter(g => selectedLevel === 'ALL' || g.level === selectedLevel);
+    }
+
+    const qClean = qRaw.replace(/[\.\-\s~〜]/g, '');
+    const qUnaccented = removeDiacritics(qClean);
+    const qHira = toHiragana(qClean);
+    const qHiraWithSpaces = toHiragana(qRaw);
+
+    const scored = [];
+
+    pool.forEach(g => {
       const matchLvl = selectedLevel === 'ALL' || g.level === selectedLevel;
-      const q = query.trim().toLowerCase();
-      const matchQ = !q || 
-        (g.pattern && g.pattern.toLowerCase().includes(q)) || 
-        (g.meaning && g.meaning.toLowerCase().includes(q)) ||
-        (g.explanation && g.explanation.toLowerCase().includes(q));
-      return matchLvl && matchQ;
+      if (!matchLvl) return;
+
+      const rawPattern = (g.pattern || '').toLowerCase();
+      const patternClean = rawPattern.replace(/[\.\-\s~〜]/g, '');
+      const meaningClean = (g.meaning || g.vi || '').toLowerCase();
+      const meaningUnaccented = removeDiacritics(meaningClean);
+      const explanationClean = (g.explanation || '').toLowerCase();
+      const explanationUnaccented = removeDiacritics(explanationClean);
+
+      let score = 0;
+
+      // Priority 1: Exact / Partial pattern match
+      if (rawPattern.includes(qRaw) || patternClean.includes(qClean)) {
+        score += 100;
+      } else if (qHira && (rawPattern.includes(qHira) || patternClean.includes(qHira) || rawPattern.includes(qHiraWithSpaces))) {
+        score += 90;
+      }
+
+      // Priority 2: Meaning / Title match
+      if (meaningClean.includes(qRaw) || (qUnaccented.length >= 2 && meaningUnaccented.includes(qUnaccented))) {
+        score += 50;
+      }
+
+      // Priority 3: Explanation match
+      if (explanationClean.includes(qRaw) || (qUnaccented.length >= 3 && explanationUnaccented.includes(qUnaccented))) {
+        score += 20;
+      }
+
+      // Priority 4: Examples match (only if query length >= 4 to avoid particle false positives)
+      if (qRaw.length >= 4) {
+        const examplesText = Array.isArray(g.examples) 
+          ? g.examples.map(ex => typeof ex === 'object' ? `${ex.jp || ''} ${ex.vi || ''}` : String(ex)).join(' ').toLowerCase() 
+          : '';
+        if (examplesText.includes(qRaw) || removeDiacritics(examplesText).includes(qUnaccented)) {
+          score += 10;
+        }
+      }
+
+      if (score > 0) {
+        scored.push({ g, score });
+      }
     });
+
+    // Sort by relevance score descending
+    scored.sort((a, b) => b.score - a.score);
+    return scored.map(s => s.g);
   }, [grammarData, selectedLevel, query]);
 
   useEffect(() => {
@@ -333,34 +426,46 @@ const GrammarExplorer = () => {
               {filteredGrammar.length === 0 ? (
                 <div style={{ textAlign: 'center', padding: 30, color: 'var(--text-secondary)' }}>Không tìm thấy mẫu ngữ pháp phù hợp.</div>
               ) : (
-                filteredGrammar.map(g => {
-                  const isSel = selectedItem?.pattern === g.pattern;
-                  return (
-                    <div 
-                      key={g.pattern || g.id}
-                      onClick={() => setSelectedItem(g)}
-                      style={{ 
-                        padding: '12px 14px', borderRadius: 10, cursor: 'pointer',
-                        background: isSel ? 'rgba(59,130,246,0.18)' : 'rgba(255,255,255,0.02)',
-                        border: `1px solid ${isSel ? 'var(--accent-primary)' : 'rgba(255,255,255,0.04)'}`,
-                        display: 'flex', justifyContent: 'space-between', alignItems: 'center', transition: 'all 0.2s'
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                        <span style={{ fontSize: '0.75rem', fontWeight: 700, padding: '2px 8px', borderRadius: 4, background: (LEVEL_COLORS[g.level] || '#3b82f6') + '22', color: LEVEL_COLORS[g.level] || '#3b82f6' }}>
-                          {g.level || 'N3'}
-                        </span>
-                        <div>
-                          <div style={{ fontWeight: 600, fontSize: '1.05rem', color: 'white' }} className="jp-text">
-                            <FuriganaText text={g.pattern} />
+                <>
+                  {filteredGrammar.slice(0, visibleCount).map((g, idx) => {
+                    const isSel = selectedItem?.pattern === g.pattern;
+                    const itemKey = g.id ? `g_${g.id}` : `g_${g.level}_${g.pattern}_${idx}`;
+                    return (
+                      <div 
+                        key={itemKey}
+                        onClick={() => setSelectedItem(g)}
+                        style={{ 
+                          padding: '12px 14px', borderRadius: 10, cursor: 'pointer',
+                          background: isSel ? 'rgba(59,130,246,0.18)' : 'rgba(255,255,255,0.02)',
+                          border: `1px solid ${isSel ? 'var(--accent-primary)' : 'rgba(255,255,255,0.04)'}`,
+                          display: 'flex', justifyContent: 'space-between', alignItems: 'center', transition: 'all 0.2s'
+                        }}
+                      >
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                          <span style={{ fontSize: '0.75rem', fontWeight: 700, padding: '2px 8px', borderRadius: 4, background: (LEVEL_COLORS[g.level] || '#3b82f6') + '22', color: LEVEL_COLORS[g.level] || '#3b82f6' }}>
+                            {g.level || 'N3'}
+                          </span>
+                          <div>
+                            <div style={{ fontWeight: 600, fontSize: '1.05rem', color: 'white' }} className="jp-text">
+                              <FuriganaText text={g.pattern} />
+                            </div>
+                            <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{g.meaning}</div>
                           </div>
-                          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{g.meaning}</div>
                         </div>
+                        <ChevronRight size={16} color={isSel ? 'var(--accent-primary)' : 'var(--text-tertiary)'} />
                       </div>
-                      <ChevronRight size={16} color={isSel ? 'var(--accent-primary)' : 'var(--text-tertiary)'} />
-                    </div>
-                  );
-                })
+                    );
+                  })}
+                  {filteredGrammar.length > visibleCount && (
+                    <button 
+                      className="btn btn-outline" 
+                      onClick={() => setVisibleCount(v => v + 40)}
+                      style={{ width: '100%', padding: '10px', fontSize: '0.82rem', marginTop: 8, color: '#60a5fa', borderColor: 'rgba(59,130,246,0.3)' }}
+                    >
+                      ⚡ Tải thêm mẫu ngữ pháp ({visibleCount} / {filteredGrammar.length})
+                    </button>
+                  )}
+                </>
               )}
             </div>
 

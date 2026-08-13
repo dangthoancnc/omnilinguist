@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Edit3, RefreshCw, Eye, EyeOff, CheckCircle2, XCircle, ChevronLeft, ChevronRight, Image, X, ThumbsUp, ThumbsDown, Minus, Filter } from 'lucide-react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
-import { reviewCard, getCard, getDueCards, getStats } from './studyStore.js';
+import { reviewRoadmapCard, reviewFreeStudyCard, getCard, getDueCards, getStats, getUserProfile } from './studyStore.js';
 import { Rating } from './fsrs.js';
 
 import HanziWriter from 'hanzi-writer';
@@ -292,7 +292,11 @@ const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N
 
 const KanjiStudio = () => {
   const kanjiData = useLiveQuery(() => db.kanji.toArray()) || [];
-  const [level, setLevel] = useState('N5');
+  const [level, setLevel] = useState(() => {
+    const p = getUserProfile();
+    return p?.currentLevel || 'N5';
+  });
+  const [learningMode, setLearningMode] = useState('roadmap'); // 'roadmap' | 'freestudy'
   const [kanjiList, setKanjiList] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -398,12 +402,16 @@ const KanjiStudio = () => {
   const handleGrade = (index, grade) => {
     setSessionLog(prev => prev.map((e, i) => i === index ? { ...e, grade } : e));
     
-    // Đồng bộ kết quả vào hệ thống FSRS (Local Storage + Supabase)
     const logEntry = sessionLog[index];
     if (logEntry && logEntry.id) {
-      const ratingMap = { good: Rating.Good, ok: Rating.Hard, bad: Rating.Again };
-      if (ratingMap[grade]) {
-        reviewCard(`kanji_${logEntry.id}`, ratingMap[grade]);
+      if (learningMode === 'roadmap') {
+        const ratingMap = { good: Rating.Good, ok: Rating.Hard, bad: Rating.Again };
+        if (ratingMap[grade]) {
+          reviewRoadmapCard(`kanji_${logEntry.id}`, ratingMap[grade]);
+        }
+      } else {
+        const isCorrect = grade === 'good' || grade === 'ok';
+        reviewFreeStudyCard(`kanji_${logEntry.id}`, isCorrect, 'kanji');
       }
     }
   };
@@ -424,7 +432,12 @@ const KanjiStudio = () => {
           {LEVELS.map(lvl => (
             <button 
               key={lvl}
-              onClick={() => setLevel(lvl)}
+              onClick={() => {
+                setLevel(lvl);
+                const p = getUserProfile();
+                if (p && p.currentLevel === lvl) setLearningMode('roadmap');
+                else setLearningMode('freestudy');
+              }}
               className={`btn ${level === lvl ? 'btn-primary' : 'btn-outline'}`}
               style={{ padding: '8px 18px', fontSize: '0.9rem', fontWeight: 700 }}
             >
@@ -474,7 +487,12 @@ const KanjiStudio = () => {
         <div style={{ display:'flex', gap:8, alignItems: 'center' }}>
           <select 
             value={level} 
-            onChange={(e)=>setLevel(e.target.value)} 
+            onChange={(e)=>{
+              setLevel(e.target.value);
+              const p = getUserProfile();
+              if (p && p.currentLevel === e.target.value) setLearningMode('roadmap');
+              else setLearningMode('freestudy');
+            }} 
             style={{ padding:'8px 16px', borderRadius:8, background: LEVEL_COLORS[level] || '#6366f1', border:'none', color:'white', fontWeight:700, outline:'none', cursor:'pointer', boxShadow:`0 4px 12px ${(LEVEL_COLORS[level]||'#6366f1')}55` }}
           >
             {LEVELS.map(l => <option key={l} value={l} style={{ background: '#1e293b' }}>Thẻ {l} ({kanjiByLevel[l] || 0})</option>)}
