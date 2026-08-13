@@ -5,7 +5,7 @@ import { db } from './db.js';
 import { Rating } from './fsrs.js';
 import { getCard, reviewCard, getDueCards, getStats, getNextDueInfo, getCustomCards, isBookmarked, toggleBookmark } from './studyStore.js';
 import { syncMasterData } from './syncMasterData.js';
-import { Eye, EyeOff, Volume2, ChevronLeft, ChevronRight, Brain, CheckCircle2, AlertCircle, RotateCcw, Target, Bookmark, Filter, Shuffle, ListOrdered } from 'lucide-react';
+import { Eye, EyeOff, Volume2, ChevronLeft, ChevronRight, Brain, CheckCircle2, AlertCircle, RotateCcw, Target, Bookmark, Filter, Shuffle, ListOrdered, Zap, BookOpen, List, X } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 import localMasterDb from './data/jlpt_master_db.json';
 
