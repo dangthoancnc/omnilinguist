@@ -1,7 +1,7 @@
 import { db } from './db.js';
 import localMasterDb from './data/jlpt_master_db.json';
 
-const CURRENT_DATA_VERSION = 'v10.3.1_master_unique';
+const CURRENT_DATA_VERSION = 'v11.0.0_bunpro_full_dataset';
 const CHUNK_SIZE = 150; // Chia nhỏ 150 bản ghi / đợt để tránh làm nghẽn UI thread
 
 const parseField = (val) => {
@@ -22,7 +22,6 @@ async function chunkedBulkPut(table, items) {
   for (let i = 0; i < items.length; i += CHUNK_SIZE) {
     const chunk = items.slice(i, i + CHUNK_SIZE);
     await table.bulkPut(chunk);
-    // Nhường luồng cho UI (requestIdleCallback / setTimeout)
     await new Promise(resolve => setTimeout(resolve, 0));
   }
 }
@@ -33,11 +32,11 @@ async function chunkedBulkPut(table, items) {
 export async function syncMasterData() {
   try {
     const savedVer = localStorage.getItem('omni_master_ver');
-    const vocabCount = await db.vocab.count();
+    const grammarCount = await db.grammar.count();
 
-    // ⚡ TỐI ƯU SIÊU TỐC: Nếu phiên bản đã khớp & đã có dữ liệu -> Bỏ qua nạp lại (Instant 0ms load!)
-    if (savedVer === CURRENT_DATA_VERSION && vocabCount > 0) {
-      console.log(`⚡ [FastLoad] Master Data đã sẵn sàng (${vocabCount} từ vựng). Bỏ qua nạp lại!`);
+    // ⚡ TỐI ƯU SIÊU TỐC: Nếu phiên bản đã khớp & đã có dữ liệu -> Bỏ qua nạp lại
+    if (savedVer === CURRENT_DATA_VERSION && grammarCount > 50) {
+      console.log(`⚡ [FastLoad] Master Data đã sẵn sàng (${grammarCount} mẫu ngữ pháp Bunpro). Bỏ qua nạp lại!`);
       return;
     }
 
@@ -80,23 +79,25 @@ export async function syncMasterData() {
       await chunkedBulkPut(db.kanji, parsedKanji);
     }
 
-    // === 3. Nạp Ngữ pháp theo Chunk ===
+    // === 3. Nạp Ngữ pháp Bunpro Full N5-N1 theo Chunk ===
     const grammar = localMasterDb.grammar || [];
     if (grammar.length > 0) {
       const parsedGrammar = grammar.map((g, i) => ({
         id: g.id || `g_${i}`,
+        pattern: g.pattern || g.title || g.name || '',
+        title: g.pattern || g.title || g.name || '',
         level: g.level || 'N3',
-        title: g.title || g.name || '',
         meaning: g.meaning || g.vi || '',
         formation: parseField(g.formation),
-        examples: parseField(g.examples)
+        explanation: g.explanation || '',
+        examples: Array.isArray(g.examples) ? g.examples : parseField(g.examples)
       }));
       await chunkedBulkPut(db.grammar, parsedGrammar);
     }
 
     // Ghi nhận phiên bản để lần sau mở web là chạy ngay tức thì
     localStorage.setItem('omni_master_ver', CURRENT_DATA_VERSION);
-    console.log(`🎉 [ChunkedLoader] Hoàn tất nạp dữ liệu!`);
+    console.log(`🎉 [ChunkedLoader] Hoàn tất nạp ${grammar.length} mẫu ngữ pháp Bunpro N5-N1!`);
 
   } catch (error) {
     console.error('❌ Lỗi khi nạp Master Data:', error);
