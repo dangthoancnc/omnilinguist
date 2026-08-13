@@ -103,6 +103,18 @@ const VocabularyFlashcards = () => {
     });
   }, [level, vocabData]);
 
+  // Calculate total vocab count per level for dropdown labels
+  const vocabLevelCounts = useMemo(() => {
+    const counts = { N5: 0, N4: 0, N3: 0, N2: 0, N1: 0 };
+    const customCards = getCustomCards();
+    const effectiveVocab = vocabData.length >= 50 ? vocabData : (localMasterDb.vocabulary || []);
+    [...effectiveVocab, ...customCards].forEach(v => {
+      const lvl = (v.level || 'N3').toUpperCase();
+      if (counts[lvl] !== undefined) counts[lvl]++;
+    });
+    return counts;
+  }, [vocabData]);
+
   const allIds = useMemo(() => levelVocab.map(v => v.id), [levelVocab]);
   const refreshStats = () => setStats(getStats(allIds));
 
@@ -111,6 +123,10 @@ const VocabularyFlashcards = () => {
     let ids;
     if (filterMode === 'due') {
       ids = getDueCards(allIds);
+      if (ids.length === 0 && allIds.length > 0) {
+        // Fallback for due mode if no due cards: shuffle all level cards for free review
+        ids = [...allIds].sort(() => 0.5 - Math.random()).slice(0, 30);
+      }
     } else if (filterMode === 'bookmark') {
       ids = allIds.filter(id => isBookmarked(id));
     } else if (filterMode === 'again') {
@@ -125,7 +141,12 @@ const VocabularyFlashcards = () => {
         if (dueSet.has(id)) return true;
         return false;
       });
-      ids = ids.slice(0, 30);
+      // ⚡ LINH HOẠT HỌC TỰ DO: Nếu hết từ mới/đến hạn, tự động xáo trộn 30 từ của cấp độ này để luyện tập tự do
+      if (ids.length === 0 && allIds.length > 0) {
+        ids = [...allIds].sort(() => 0.5 - Math.random()).slice(0, 30);
+      } else {
+        ids = ids.slice(0, 30);
+      }
     }
     
     let finalQueue;
@@ -381,7 +402,11 @@ const VocabularyFlashcards = () => {
             onChange={(e)=>setLevel(e.target.value)} 
             style={{ padding:'8px 16px', borderRadius:8, background: LEVEL_COLORS[level] || '#6366f1', border:'none', color:'white', fontWeight:700, outline:'none', cursor:'pointer', boxShadow:`0 4px 12px ${(LEVEL_COLORS[level]||'#6366f1')}55` }}
           >
-            {[...LEVELS, 'Khác'].map(l => <option key={l} value={l} style={{ background: '#1e293b' }}>Thẻ {l}</option>)}
+            {[...LEVELS, 'Khác'].map(l => (
+              <option key={l} value={l} style={{ background: '#1e293b' }}>
+                Thẻ {l} {vocabLevelCounts[l] !== undefined ? `(${vocabLevelCounts[l]} từ)` : ''}
+              </option>
+            ))}
           </select>
 
           <div style={{ display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: 8, padding: 4 }}>
