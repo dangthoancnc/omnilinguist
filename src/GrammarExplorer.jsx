@@ -21,6 +21,8 @@ const normalizeJp = (str) => {
   return str.replace(/[。、！？\s～〜]/g, '').trim().toLowerCase();
 };
 
+import bunproQuizBank from './data/bunpro_quiz_bank.json';
+
 // Smart Warning & Synonym Detection Engine for Bunpro Fill-In-The-Blank
 const checkBunproAnswer = (userInput, targetPattern, synonyms = []) => {
   const normUser = normalizeJp(userInput);
@@ -35,7 +37,7 @@ const checkBunproAnswer = (userInput, targetPattern, synonyms = []) => {
 
   // Check synonyms
   for (const syn of synonyms) {
-    if (normUser === normalizeJp(syn)) {
+    if (syn && normUser === normalizeJp(syn)) {
       return { status: 'warning', msg: `💡 Gợi ý Bunpro: Mẫu câu bạn gõ (${userInput}) đồng nghĩa, nhưng bài tập này yêu cầu cấu trúc [${targetPattern}]. Hãy thử lại!` };
     }
   }
@@ -48,62 +50,18 @@ const checkBunproAnswer = (userInput, targetPattern, synonyms = []) => {
   return { status: 'wrong', msg: `❌ Chưa chính xác. Đáp án đúng là: ${targetPattern}` };
 };
 
-// Built-in Practice Questions Bank (Fallback if DB lacks examples)
-const FALLBACK_PRACTICE_BANK = [
+// Fallback practice questions
+const FALLBACK_PRACTICE_BANK = bunproQuizBank && bunproQuizBank.length > 0 ? bunproQuizBank : [
   {
     id: 'g_p1',
     level: 'N3',
     pattern: 'に関して',
-    promptSentence: 'この問題___話し合いましょう。',
+    promptSentence: 'この問題 ___ 話し合いましょう。',
     target: 'に関して',
     synonyms: ['について', 'にかんして'],
     translation: 'Hãy thảo luận liên quan đến vấn đề này.',
     options: ['に関して', 'にして', 'にとって', 'において'],
     explanation: 'Cấu trúc [N + に関して] dùng để chỉ chủ đề "về/liên quan đến...".'
-  },
-  {
-    id: 'g_p2',
-    level: 'N3',
-    pattern: 'おかげで',
-    promptSentence: '先生の___、試験に合格できました。',
-    target: 'おかげで',
-    synonyms: ['のおかげで', 'のおかげ'],
-    translation: 'Nhờ có thầy giáo mà tôi đã đỗ kỳ thi.',
-    options: ['おかげで', 'せいで', 'ために', 'せいで'],
-    explanation: 'Cấu trúc [N + のおかげで] thể hiện kết quả tích cực "nhờ có...".'
-  },
-  {
-    id: 'g_p3',
-    level: 'N2',
-    pattern: 'わけにはいかない',
-    promptSentence: '大事な会議だから、休む___。',
-    target: 'わけにはいかない',
-    synonyms: ['わけにはいかぬ'],
-    translation: 'Vì là cuộc họp quan trọng nên không thể nghỉ được.',
-    options: ['わけにはいかない', 'はずがない', 'に違いない', 'にすぎない'],
-    explanation: 'Cấu trúc [V-る + わけにはいかない] biểu thị không thể làm vì lý do đạo đức/xã hội.'
-  },
-  {
-    id: 'g_p4',
-    level: 'N4',
-    pattern: 'ながら',
-    promptSentence: '音楽を聴き___、勉強します。',
-    target: 'ながら',
-    synonyms: [],
-    translation: 'Tôi vừa nghe nhạc vừa học bài.',
-    options: ['ながら', 'つつ', 'あとで', 'まえに'],
-    explanation: 'Cấu trúc [V-ます + ながら] diễn tả 2 hành động xảy ra đồng thời.'
-  },
-  {
-    id: 'g_p5',
-    level: 'N5',
-    pattern: 'てはいけない',
-    promptSentence: 'ここで写真を撮っ___。',
-    target: 'てはいけない',
-    synonyms: ['ちゃいけない', 'てはならない'],
-    translation: 'Cấm không được chụp ảnh ở đây.',
-    options: ['てはいけない', 'てもいい', 'なければならない', 'てもかまわない'],
-    explanation: 'Cấu trúc [V-て + はいけない] biểu thị sự cấm đoán.'
   }
 ];
 
@@ -121,7 +79,18 @@ const GrammarExplorer = () => {
   const [selectedLevel, setSelectedLevel] = useState('ALL');
   const [selectedItem, setSelectedItem] = useState(null);
 
-  // Calculate item counts per level dynamically
+  // TAB 2 & 3: PRACTICE STATES
+  const [selectedPracticeLevel, setSelectedPracticeLevel] = useState('ALL');
+  const [quizMode, setQuizMode] = useState('typing'); // 'typing' (Bunpro Active Recall) vs 'choice' (Trắc nghiệm 4 đáp án)
+  const [cramLevel, setCramLevel] = useState('N3');
+  const [currentQuizIdx, setCurrentQuizIdx] = useState(0);
+  const [userTypedInput, setUserTypedInput] = useState('');
+  const [selectedOptionIdx, setSelectedOptionIdx] = useState(null);
+  const [feedback, setFeedback] = useState(null); // { status: 'correct'|'warning'|'wrong', msg: '' }
+  const [scoreStats, setScoreStats] = useState({ correct: 0, total: 0, streak: 0 });
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+
+  // Calculate item counts per level dynamically for Library
   const levelCounts = useMemo(() => {
     const counts = { ALL: grammarData.length, N5: 0, N4: 0, N3: 0, N2: 0, N1: 0 };
     grammarData.forEach(g => {
@@ -129,6 +98,15 @@ const GrammarExplorer = () => {
     });
     return counts;
   }, [grammarData]);
+
+  // Calculate practice counts per level dynamically
+  const practiceCounts = useMemo(() => {
+    const counts = { ALL: bunproQuizBank.length, N5: 0, N4: 0, N3: 0, N2: 0, N1: 0 };
+    bunproQuizBank.forEach(q => {
+      if (counts[q.level] !== undefined) counts[q.level]++;
+    });
+    return counts;
+  }, []);
 
   // Filtered grammar list for Library
   const filteredGrammar = useMemo(() => {
@@ -149,50 +127,22 @@ const GrammarExplorer = () => {
     }
   }, [filteredGrammar, selectedItem]);
 
-  // TAB 2 & 3: PRACTICE & CRAM STATES
-  const [quizMode, setQuizMode] = useState('typing'); // 'typing' (Bunpro Active Recall) vs 'choice' (Trắc nghiệm 4 đáp án)
-  const [cramLevel, setCramLevel] = useState('N3');
-  const [currentQuizIdx, setCurrentQuizIdx] = useState(0);
-  const [userTypedInput, setUserTypedInput] = useState('');
-  const [selectedOptionIdx, setSelectedOptionIdx] = useState(null);
-  const [feedback, setFeedback] = useState(null); // { status: 'correct'|'warning'|'wrong', msg: '' }
-  const [scoreStats, setScoreStats] = useState({ correct: 0, total: 0, streak: 0 });
-  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
-
-  // Derive Quiz Questions Bank (From DB examples or fallback bank)
+  // Derive Active Quiz Questions Bank (From Real Bunpro Quiz Bank Dataset)
   const activeQuizBank = useMemo(() => {
-    const bank = [];
-    grammarData.forEach((g, idx) => {
-      if (g.examples && g.examples.length > 0) {
-        g.examples.forEach((ex, exIdx) => {
-          const exJp = typeof ex === 'string' ? ex : (ex.jp || '');
-          const exVi = typeof ex === 'object' ? (ex.vi || '') : g.meaning;
-          if (exJp.includes(g.pattern)) {
-            const prompt = exJp.replace(g.pattern, '___');
-            bank.push({
-              id: `db_${idx}_${exIdx}`,
-              level: g.level || 'N3',
-              pattern: g.pattern,
-              promptSentence: prompt,
-              target: g.pattern,
-              synonyms: [g.pattern.replace(/~|～/g, '')],
-              translation: exVi,
-              options: [g.pattern, 'にして', 'にとって', 'において'].sort(() => Math.random() - 0.5),
-              explanation: g.explanation || g.meaning
-            });
-          }
-        });
-      }
-    });
-
-    if (bank.length < 5) return FALLBACK_PRACTICE_BANK;
+    let pool = bunproQuizBank && bunproQuizBank.length > 0 ? bunproQuizBank : FALLBACK_PRACTICE_BANK;
     
     if (activeTab === 'cram') {
-      const cramFiltered = bank.filter(q => q.level === cramLevel);
-      return cramFiltered.length > 0 ? cramFiltered : FALLBACK_PRACTICE_BANK;
+      const cramFiltered = pool.filter(q => q.level === cramLevel);
+      return cramFiltered.length > 0 ? cramFiltered : pool;
     }
-    return bank;
-  }, [grammarData, activeTab, cramLevel]);
+    
+    if (selectedPracticeLevel !== 'ALL') {
+      const filtered = pool.filter(q => q.level === selectedPracticeLevel);
+      return filtered.length > 0 ? filtered : pool;
+    }
+    
+    return pool;
+  }, [activeTab, cramLevel, selectedPracticeLevel]);
 
   const currentQuestion = activeQuizBank[currentQuizIdx % activeQuizBank.length] || FALLBACK_PRACTICE_BANK[0];
 
@@ -538,12 +488,28 @@ const GrammarExplorer = () => {
                 </button>
               </div>
 
+              {/* Level selector for Practice Mode */}
+              {activeTab === 'practice' && (
+                <div style={{ display: 'flex', gap: 4, alignItems: 'center', overflowX: 'auto' }}>
+                  {LEVELS.map(lvl => (
+                    <button 
+                      key={lvl} 
+                      onClick={() => { setSelectedPracticeLevel(lvl); setCurrentQuizIdx(0); }} 
+                      className={`btn ${selectedPracticeLevel === lvl ? 'btn-primary' : 'btn-outline'}`} 
+                      style={{ padding: '3px 7px', fontSize: '0.75rem', whiteSpace: 'nowrap' }}
+                    >
+                      {lvl} ({practiceCounts[lvl] || 0})
+                    </button>
+                  ))}
+                </div>
+              )}
+
               {/* Level selector for Cram Mode */}
               {activeTab === 'cram' && (
                 <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
                   <span style={{ fontSize: '0.75rem', color: '#ef4444', fontWeight: 700, marginRight: 4 }}>🔥 CRAM LEVEL:</span>
                   {['N5','N4','N3','N2','N1'].map(lvl => (
-                    <button key={lvl} onClick={() => setCramLevel(lvl)} className={`btn ${cramLevel === lvl ? 'btn-primary' : 'btn-outline'}`} style={{ padding: '2px 8px', fontSize: '0.75rem', background: cramLevel === lvl ? '#ef4444' : 'transparent' }}>
+                    <button key={lvl} onClick={() => { setCramLevel(lvl); setCurrentQuizIdx(0); }} className={`btn ${cramLevel === lvl ? 'btn-primary' : 'btn-outline'}`} style={{ padding: '2px 8px', fontSize: '0.75rem', background: cramLevel === lvl ? '#ef4444' : 'transparent' }}>
                       {lvl}
                     </button>
                   ))}
