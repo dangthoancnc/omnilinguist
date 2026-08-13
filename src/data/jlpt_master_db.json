@@ -1,783 +1,3331 @@
 {
   "vocabulary": [
     {
+      "id": "v_master_1",
       "level": "N5",
       "word": "私",
       "reading": "わたし",
       "vi": "Tôi",
-      "type": "Đại từ",
-      "examples": [
-        {
-          "jp": "私は学生です。",
-          "vi": "Tôi là học sinh."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "学校",
-      "reading": "がっこう",
-      "vi": "Trường học",
+      "meaning": "Tôi",
       "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
       "examples": [
-        {
-          "jp": "毎日学校へ行きます。",
-          "vi": "Hàng ngày tôi đến trường."
-        }
+        "私（わたし）の例文です。"
       ]
     },
     {
-      "level": "N5",
-      "word": "先生",
-      "reading": "せんせい",
-      "vi": "Thầy/Cô giáo",
-      "type": "Danh từ",
-      "examples": [
-        {
-          "jp": "日本語の先生です。",
-          "vi": "Là giáo viên tiếng Nhật."
-        }
-      ]
-    },
-    {
+      "id": "v_master_2",
       "level": "N5",
       "word": "本",
       "reading": "ほん",
       "vi": "Sách",
+      "meaning": "Sách",
       "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
       "examples": [
-        {
-          "jp": "図書館で本を読みます。",
-          "vi": "Đọc sách ở thư viện."
-        }
+        "本（ほん）の例文です。"
       ]
     },
     {
+      "id": "v_master_3",
       "level": "N5",
-      "word": "食べる",
-      "reading": "たべる",
-      "vi": "Ăn",
-      "type": "Động từ",
-      "examples": [
-        {
-          "jp": "ご飯を食べます。",
-          "vi": "Tôi ăn cơm."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "飲む",
-      "reading": "のむ",
-      "vi": "Uống",
-      "type": "Động từ",
-      "examples": [
-        {
-          "jp": "水を飲みます。",
-          "vi": "Tôi uống nước."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "行く",
-      "reading": "いく",
-      "vi": "Đi",
-      "type": "Động từ",
-      "examples": [
-        {
-          "jp": "スーパーへ行きます。",
-          "vi": "Đi siêu thị."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "来る",
-      "reading": "くる",
-      "vi": "Đến",
-      "type": "Động từ",
-      "examples": [
-        {
-          "jp": "友達が家に来ます。",
-          "vi": "Bạn đến nhà tôi."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "見る",
-      "reading": "みる",
-      "vi": "Nhìn / Xem",
-      "type": "Động từ",
-      "examples": [
-        {
-          "jp": "映画を見ます。",
-          "vi": "Xem phim."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "聞く",
-      "reading": "きく",
-      "vi": "Nghe",
-      "type": "Động từ",
-      "examples": [
-        {
-          "jp": "音楽を聞きます。",
-          "vi": "Nghe nhạc."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "書く",
-      "reading": "かく",
-      "vi": "Viết",
-      "type": "Động từ",
-      "examples": [
-        {
-          "jp": "手紙を書きます。",
-          "vi": "Viết thư."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "大きい",
-      "reading": "おおきい",
-      "vi": "To, lớn",
-      "type": "Tính từ",
-      "examples": [
-        {
-          "jp": "大きい家ですね。",
-          "vi": "Ngôi nhà to nhỉ."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "小さい",
-      "reading": "ちいさい",
-      "vi": "Nhỏ, bé",
-      "type": "Tính từ",
-      "examples": [
-        {
-          "jp": "小さい犬がいます。",
-          "vi": "Có con chó nhỏ."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "新しい",
-      "reading": "あたらしい",
-      "vi": "Mới",
-      "type": "Tính từ",
-      "examples": [
-        {
-          "jp": "新しい車を買いました。",
-          "vi": "Đã mua xe hơi mới."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "古い",
-      "reading": "ふるい",
-      "vi": "Cũ",
-      "type": "Tính từ",
-      "examples": [
-        {
-          "jp": "古い本があります。",
-          "vi": "Có quyển sách cũ."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "高い",
-      "reading": "たかい",
-      "vi": "Đắt / Cao",
-      "type": "Tính từ",
-      "examples": [
-        {
-          "jp": "この時計は高いです。",
-          "vi": "Đồng hồ này đắt."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "安い",
-      "reading": "やすい",
-      "vi": "Rẻ",
-      "type": "Tính từ",
-      "examples": [
-        {
-          "jp": "安くて美味しいです。",
-          "vi": "Rẻ và ngon."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "時間",
-      "reading": "じかん",
-      "vi": "Thời gian",
+      "word": "人",
+      "reading": "ひと",
+      "vi": "Người",
+      "meaning": "Người",
       "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
       "examples": [
-        {
-          "jp": "時間がありますか。",
-          "vi": "Bạn có thời gian không?"
-        }
+        "人（ひと）の例文です。"
       ]
     },
     {
-      "level": "N5",
-      "word": "友達",
-      "reading": "ともだち",
-      "vi": "Bạn bè",
-      "type": "Danh từ",
-      "examples": [
-        {
-          "jp": "友達と遊びます。",
-          "vi": "Đi chơi với bạn."
-        }
-      ]
-    },
-    {
-      "level": "N5",
-      "word": "家",
-      "reading": "うち / いえ",
-      "vi": "Nhà",
-      "type": "Danh từ",
-      "examples": [
-        {
-          "jp": "家へ帰ります。",
-          "vi": "Về nhà."
-        }
-      ]
-    },
-    {
+      "id": "v_master_4",
       "level": "N5",
       "word": "水",
       "reading": "みず",
       "vi": "Nước",
+      "meaning": "Nước",
       "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
       "examples": [
-        {
-          "jp": "冷たい水です。",
-          "vi": "Nước lạnh."
-        }
+        "水（みず）の例文です。"
       ]
     },
     {
+      "id": "v_master_5",
       "level": "N5",
-      "word": "今日",
-      "reading": "きょう",
-      "vi": "Hôm nay",
+      "word": "山",
+      "reading": "やま",
+      "vi": "Núi",
+      "meaning": "Núi",
       "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
       "examples": [
-        {
-          "jp": "今日はいい天気です。",
-          "vi": "Hôm nay thời tiết đẹp."
-        }
+        "山（やま）の例文です。"
       ]
     },
     {
+      "id": "v_master_6",
       "level": "N5",
-      "word": "明日",
-      "reading": "あした",
-      "vi": "Ngày mai",
+      "word": "川",
+      "reading": "かわ",
+      "vi": "Sông",
+      "meaning": "Sông",
       "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
       "examples": [
-        {
-          "jp": "明日テストがあります。",
-          "vi": "Ngày mai có bài kiểm tra."
-        }
+        "川（かわ）の例文です。"
       ]
     },
     {
+      "id": "v_master_7",
+      "level": "N5",
+      "word": "田",
+      "reading": "た",
+      "vi": "Ruộng",
+      "meaning": "Ruộng",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "田（た）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_8",
+      "level": "N5",
+      "word": "日",
+      "reading": "ひ",
+      "vi": "Ngày / Mặt trời",
+      "meaning": "Ngày / Mặt trời",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "日（ひ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_9",
+      "level": "N5",
+      "word": "月",
+      "reading": "つき",
+      "vi": "Tháng / Mặt trăng",
+      "meaning": "Tháng / Mặt trăng",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "月（つき）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_10",
+      "level": "N5",
+      "word": "木",
+      "reading": "き",
+      "vi": "Cây",
+      "meaning": "Cây",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "木（き）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_11",
+      "level": "N5",
+      "word": "金",
+      "reading": "かね",
+      "vi": "Tiền / Vàng",
+      "meaning": "Tiền / Vàng",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "金（かね）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_12",
+      "level": "N5",
+      "word": "土",
+      "reading": "つち",
+      "vi": "Đất",
+      "meaning": "Đất",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "土（つち）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_13",
+      "level": "N5",
+      "word": "車",
+      "reading": "くるま",
+      "vi": "Xe hơi",
+      "meaning": "Xe hơi",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "車（くるま）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_14",
+      "level": "N5",
+      "word": "門",
+      "reading": "かど",
+      "vi": "Cổng",
+      "meaning": "Cổng",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "門（かど）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_15",
+      "level": "N5",
+      "word": "火",
+      "reading": "ひ",
+      "vi": "Lửa",
+      "meaning": "Lửa",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "火（ひ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_16",
+      "level": "N5",
+      "word": "女",
+      "reading": "おんな",
+      "vi": "Phụ nữ",
+      "meaning": "Phụ nữ",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "女（おんな）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_17",
+      "level": "N5",
+      "word": "男",
+      "reading": "おとこ",
+      "vi": "Đàn ông",
+      "meaning": "Đàn ông",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "男（おとこ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_18",
+      "level": "N5",
+      "word": "子",
+      "reading": "こ",
+      "vi": "Trẻ em / Con",
+      "meaning": "Trẻ em / Con",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "子（こ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_19",
+      "level": "N5",
+      "word": "学",
+      "reading": "まなぶ",
+      "vi": "Học",
+      "meaning": "Học",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "学（まなぶ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_20",
+      "level": "N5",
+      "word": "生",
+      "reading": "いきる",
+      "vi": "Sống",
+      "meaning": "Sống",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "生（いきる）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_21",
+      "level": "N5",
+      "word": "先",
+      "reading": "さき",
+      "vi": "Trước tiên",
+      "meaning": "Trước tiên",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "先（さき）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_22",
+      "level": "N5",
+      "word": "文",
+      "reading": "ふみ",
+      "vi": "Văn tự / Thư",
+      "meaning": "Văn tự / Thư",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "文（ふみ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_23",
+      "level": "N5",
+      "word": "字",
+      "reading": "あざ",
+      "vi": "Chữ",
+      "meaning": "Chữ",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "字（あざ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_24",
+      "level": "N5",
+      "word": "名",
+      "reading": "な",
+      "vi": "Tên",
+      "meaning": "Tên",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "名（な）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_25",
+      "level": "N5",
+      "word": "年",
+      "reading": "とし",
+      "vi": "Năm / Tuổi",
+      "meaning": "Năm / Tuổi",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "年（とし）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_26",
+      "level": "N5",
+      "word": "円",
+      "reading": "えん",
+      "vi": "Đồng Yên",
+      "meaning": "Đồng Yên",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "円（えん）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_27",
+      "level": "N5",
+      "word": "百",
+      "reading": "ひゃく",
+      "vi": "Trăm",
+      "meaning": "Trăm",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "百（ひゃく）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_28",
+      "level": "N5",
+      "word": "千",
+      "reading": "せん",
+      "vi": "Nghìn",
+      "meaning": "Nghìn",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "千（せん）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_29",
+      "level": "N5",
+      "word": "万",
+      "reading": "まん",
+      "vi": "Mười nghìn",
+      "meaning": "Mười nghìn",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "万（まん）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_30",
+      "level": "N5",
+      "word": "上",
+      "reading": "うえ",
+      "vi": "Phía trên",
+      "meaning": "Phía trên",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "上（うえ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_31",
+      "level": "N5",
+      "word": "下",
+      "reading": "した",
+      "vi": "Phía dưới",
+      "meaning": "Phía dưới",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "下（した）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_32",
+      "level": "N5",
+      "word": "中",
+      "reading": "なか",
+      "vi": "Bên trong / Giữa",
+      "meaning": "Bên trong / Giữa",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "中（なか）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_33",
+      "level": "N5",
+      "word": "大",
+      "reading": "おおきい",
+      "vi": "To / Lớn",
+      "meaning": "To / Lớn",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N5"
+      ],
+      "examples": [
+        "大（おおきい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_34",
+      "level": "N5",
+      "word": "小",
+      "reading": "ちいさい",
+      "vi": "Nhỏ / Bé",
+      "meaning": "Nhỏ / Bé",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N5"
+      ],
+      "examples": [
+        "小（ちいさい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_35",
+      "level": "N5",
+      "word": "切る",
+      "reading": "きる",
+      "vi": "Cắt",
+      "meaning": "Cắt",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "切る（きる）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_36",
+      "level": "N5",
+      "word": "友",
+      "reading": "とも",
+      "vi": "Bạn bè",
+      "meaning": "Bạn bè",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "友（とも）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_37",
+      "level": "N5",
+      "word": "手",
+      "reading": "て",
+      "vi": "Bàn tay",
+      "meaning": "Bàn tay",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "手（て）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_38",
+      "level": "N5",
+      "word": "目",
+      "reading": "め",
+      "vi": "Mắt",
+      "meaning": "Mắt",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "目（め）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_39",
+      "level": "N5",
+      "word": "耳",
+      "reading": "みみ",
+      "vi": "Tai",
+      "meaning": "Tai",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "耳（みみ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_40",
+      "level": "N5",
+      "word": "口",
+      "reading": "くち",
+      "vi": "Miệng",
+      "meaning": "Miệng",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "口（くち）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_41",
+      "level": "N5",
+      "word": "足",
+      "reading": "あし",
+      "vi": "Chân",
+      "meaning": "Chân",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "足（あし）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_42",
+      "level": "N5",
+      "word": "雨",
+      "reading": "あめ",
+      "vi": "Mưa",
+      "meaning": "Mưa",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "雨（あめ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_43",
+      "level": "N5",
+      "word": "空",
+      "reading": "そら",
+      "vi": "Bầu trời",
+      "meaning": "Bầu trời",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "空（そら）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_44",
+      "level": "N5",
+      "word": "魚",
+      "reading": "さかな",
+      "vi": "Cá",
+      "meaning": "Cá",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "魚（さかな）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_45",
+      "level": "N5",
+      "word": "肉",
+      "reading": "にく",
+      "vi": "Thịt",
+      "meaning": "Thịt",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "肉（にく）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_46",
+      "level": "N5",
+      "word": "卵",
+      "reading": "たまご",
+      "vi": "Trứng",
+      "meaning": "Trứng",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "卵（たまご）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_47",
+      "level": "N5",
+      "word": "野菜",
+      "reading": "やさい",
+      "vi": "Rau",
+      "meaning": "Rau",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "野菜（やさい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_48",
+      "level": "N5",
+      "word": "果物",
+      "reading": "くだもの",
+      "vi": "Hoa quả",
+      "meaning": "Hoa quả",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "果物（くだもの）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_49",
+      "level": "N5",
+      "word": "お茶",
+      "reading": "おちゃ",
+      "vi": "Trà xanh",
+      "meaning": "Trà xanh",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "お茶（おちゃ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_50",
+      "level": "N5",
+      "word": "牛乳",
+      "reading": "ぎゅうにゅう",
+      "vi": "Sữa bò",
+      "meaning": "Sữa bò",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "牛乳（ぎゅうにゅう）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_51",
+      "level": "N5",
+      "word": "猫",
+      "reading": "ねこ",
+      "vi": "Con mèo",
+      "meaning": "Con mèo",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "猫（ねこ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_52",
+      "level": "N5",
+      "word": "犬",
+      "reading": "いぬ",
+      "vi": "Con chó",
+      "meaning": "Con chó",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "犬（いぬ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_53",
+      "level": "N5",
+      "word": "家",
+      "reading": "いえ",
+      "vi": "Ngôi nhà",
+      "meaning": "Ngôi nhà",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "家（いえ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_54",
+      "level": "N5",
+      "word": "部屋",
+      "reading": "へや",
+      "vi": "Căn phòng",
+      "meaning": "Căn phòng",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "部屋（へや）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_55",
+      "level": "N5",
+      "word": "学校",
+      "reading": "がっこう",
+      "vi": "Trường học",
+      "meaning": "Trường học",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "学校（がっこう）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_56",
+      "level": "N5",
+      "word": "教室",
+      "reading": "きょうしつ",
+      "vi": "Phòng học",
+      "meaning": "Phòng học",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "教室（きょうしつ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_57",
+      "level": "N5",
+      "word": "先生",
+      "reading": "せんせい",
+      "vi": "Thầy cô giáo",
+      "meaning": "Thầy cô giáo",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "先生（せんせい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_58",
+      "level": "N5",
+      "word": "学生",
+      "reading": "がくせい",
+      "vi": "Học sinh / Sinh viên",
+      "meaning": "Học sinh / Sinh viên",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "学生（がくせい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_59",
+      "level": "N5",
+      "word": "友達",
+      "reading": "ともだち",
+      "vi": "Bạn bè",
+      "meaning": "Bạn bè",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "友達（ともだち）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_60",
+      "level": "N5",
+      "word": "家族",
+      "reading": "かぞく",
+      "vi": "Gia đình",
+      "meaning": "Gia đình",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "家族（かぞく）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_61",
+      "level": "N5",
+      "word": "父",
+      "reading": "ちち",
+      "vi": "Bố (tôi)",
+      "meaning": "Bố (tôi)",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "父（ちち）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_62",
+      "level": "N5",
+      "word": "母",
+      "reading": "はは",
+      "vi": "Mẹ (tôi)",
+      "meaning": "Mẹ (tôi)",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "母（はは）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_63",
+      "level": "N5",
+      "word": "兄",
+      "reading": "あに",
+      "vi": "Anh trai",
+      "meaning": "Anh trai",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "兄（あに）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_64",
+      "level": "N5",
+      "word": "姉",
+      "reading": "あね",
+      "vi": "Chị gái",
+      "meaning": "Chị gái",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "姉（あね）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_65",
+      "level": "N5",
+      "word": "弟",
+      "reading": "おとうと",
+      "vi": "Em trai",
+      "meaning": "Em trai",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "弟（おとうと）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_66",
+      "level": "N5",
+      "word": "妹",
+      "reading": "いもうと",
+      "vi": "Em gái",
+      "meaning": "Em gái",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "妹（いもうと）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_67",
       "level": "N5",
       "word": "昨日",
       "reading": "きのう",
       "vi": "Hôm qua",
+      "meaning": "Hôm qua",
       "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
       "examples": [
-        {
-          "jp": "昨日映画を見ました。",
-          "vi": "Hôm qua tôi xem phim."
-        }
+        "昨日（きのう）の例文です。"
       ]
     },
     {
-      "level": "N4",
-      "word": "準備",
-      "reading": "じゅんび",
-      "vi": "Chuẩn bị",
-      "type": "Danh từ / Động từ",
+      "id": "v_master_68",
+      "level": "N5",
+      "word": "今日",
+      "reading": "きょう",
+      "vi": "Hôm nay",
+      "meaning": "Hôm nay",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
       "examples": [
-        {
-          "jp": "旅行の準備をします。",
-          "vi": "Chuẩn bị cho chuyến du lịch."
-        }
+        "今日（きょう）の例文です。"
       ]
     },
     {
-      "level": "N4",
-      "word": "復習",
-      "reading": "ふくしゅう",
-      "vi": "Ôn tập",
-      "type": "Danh từ / Động từ",
+      "id": "v_master_69",
+      "level": "N5",
+      "word": "明日",
+      "reading": "あした",
+      "vi": "Ngày mai",
+      "meaning": "Ngày mai",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
       "examples": [
-        {
-          "jp": "授業の前に復習します。",
-          "vi": "Ôn tập trước buổi học."
-        }
+        "明日（あした）の例文です。"
       ]
     },
     {
-      "level": "N4",
-      "word": "予習",
-      "reading": "よしゅう",
-      "vi": "Soạn bài trước",
-      "type": "Danh từ / Động từ",
+      "id": "v_master_70",
+      "level": "N5",
+      "word": "朝",
+      "reading": "あさ",
+      "vi": "Buổi sáng",
+      "meaning": "Buổi sáng",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
       "examples": [
-        {
-          "jp": "明日読む本を予習します。",
-          "vi": "Soạn bài trước cho sách mai đọc."
-        }
+        "朝（あさ）の例文です。"
       ]
     },
     {
+      "id": "v_master_71",
+      "level": "N5",
+      "word": "昼",
+      "reading": "ひる",
+      "vi": "Buổi trưa",
+      "meaning": "Buổi trưa",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "昼（ひる）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_72",
+      "level": "N5",
+      "word": "夜",
+      "reading": "よる",
+      "vi": "Buổi tối / Đêm",
+      "meaning": "Buổi tối / Đêm",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "夜（よる）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_73",
+      "level": "N5",
+      "word": "春",
+      "reading": "はる",
+      "vi": "Mùa xuân",
+      "meaning": "Mùa xuân",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "春（はる）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_74",
+      "level": "N5",
+      "word": "夏",
+      "reading": "なつ",
+      "vi": "Mùa hạ",
+      "meaning": "Mùa hạ",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "夏（なつ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_75",
+      "level": "N5",
+      "word": "秋",
+      "reading": "あき",
+      "vi": "Mùa thu",
+      "meaning": "Mùa thu",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "秋（あき）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_76",
+      "level": "N5",
+      "word": "冬",
+      "reading": "ふゆ",
+      "vi": "Mùa đông",
+      "meaning": "Mùa đông",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "冬（ふゆ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_77",
+      "level": "N5",
+      "word": "行く",
+      "reading": "いく",
+      "vi": "Đi",
+      "meaning": "Đi",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "行く（いく）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_78",
+      "level": "N5",
+      "word": "来る",
+      "reading": "くる",
+      "vi": "Đến",
+      "meaning": "Đến",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "来る（くる）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_79",
+      "level": "N5",
+      "word": "帰る",
+      "reading": "かえる",
+      "vi": "Về",
+      "meaning": "Về",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "帰る（かえる）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_80",
+      "level": "N5",
+      "word": "食べる",
+      "reading": "たべる",
+      "vi": "Ăn",
+      "meaning": "Ăn",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "食べる（たべる）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_81",
+      "level": "N5",
+      "word": "飲む",
+      "reading": "のむ",
+      "vi": "Uống",
+      "meaning": "Uống",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "飲む（のむ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_82",
+      "level": "N5",
+      "word": "見せる",
+      "reading": "みせる",
+      "vi": "Cho xem",
+      "meaning": "Cho xem",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "見せる（みせる）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_83",
+      "level": "N5",
+      "word": "聞く",
+      "reading": "きく",
+      "vi": "Nghe",
+      "meaning": "Nghe",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "聞く（きく）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_84",
+      "level": "N5",
+      "word": "読む",
+      "reading": "よむ",
+      "vi": "Đọc",
+      "meaning": "Đọc",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "読む（よむ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_85",
+      "level": "N5",
+      "word": "書く",
+      "reading": "かく",
+      "vi": "Viết",
+      "meaning": "Viết",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "書く（かく）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_86",
+      "level": "N5",
+      "word": "話す",
+      "reading": "はなす",
+      "vi": "Nói chuyện",
+      "meaning": "Nói chuyện",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "話す（はなす）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_87",
+      "level": "N5",
+      "word": "買う",
+      "reading": "かう",
+      "vi": "Mua",
+      "meaning": "Mua",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "買う（かう）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_88",
+      "level": "N5",
+      "word": "会う",
+      "reading": "あう",
+      "vi": "Gặp mặt",
+      "meaning": "Gặp mặt",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "会う（あう）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_89",
+      "level": "N5",
+      "word": "作る",
+      "reading": "つくる",
+      "vi": "Chế tạo / Làm",
+      "meaning": "Chế tạo / Làm",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "作る（つくる）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_90",
+      "level": "N5",
+      "word": "泳ぐ",
+      "reading": "およぐ",
+      "vi": "Bơi",
+      "meaning": "Bơi",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "泳ぐ（およぐ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_91",
+      "level": "N5",
+      "word": "遊ぶ",
+      "reading": "あそぶ",
+      "vi": "Chơi",
+      "meaning": "Chơi",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "遊ぶ（あそぶ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_92",
+      "level": "N5",
+      "word": "待つ",
+      "reading": "まつ",
+      "vi": "Chờ đợi",
+      "meaning": "Chờ đợi",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "待つ（まつ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_93",
+      "level": "N5",
+      "word": "呼ぶ",
+      "reading": "よぶ",
+      "vi": "Gọi",
+      "meaning": "Gọi",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N5"
+      ],
+      "examples": [
+        "呼ぶ（よぶ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_94",
       "level": "N4",
-      "word": "紹介",
-      "reading": "しょうかい",
+      "word": "安い",
+      "reading": "やすい",
+      "vi": "Rẻ",
+      "meaning": "Rẻ",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "安い（やすい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_95",
+      "level": "N4",
+      "word": "高い",
+      "reading": "たかい",
+      "vi": "Cao / Đắt",
+      "meaning": "Cao / Đắt",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "高い（たかい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_96",
+      "level": "N4",
+      "word": "新しい",
+      "reading": "あたらしい",
+      "vi": "Mới",
+      "meaning": "Mới",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "新しい（あたらしい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_97",
+      "level": "N4",
+      "word": "古い",
+      "reading": "ふるい",
+      "vi": "Cũ",
+      "meaning": "Cũ",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "古い（ふるい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_98",
+      "level": "N4",
+      "word": "長い",
+      "reading": "ながい",
+      "vi": "Dài",
+      "meaning": "Dài",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "長い（ながい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_99",
+      "level": "N4",
+      "word": "短い",
+      "reading": "みじかい",
+      "vi": "Ngắn",
+      "meaning": "Ngắn",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "短い（みじかい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_100",
+      "level": "N4",
+      "word": "多い",
+      "reading": "おおい",
+      "vi": "Nhiều",
+      "meaning": "Nhiều",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "多い（おおい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_101",
+      "level": "N4",
+      "word": "少ない",
+      "reading": "すくない",
+      "vi": "Ít",
+      "meaning": "Ít",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "少ない（すくない）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_102",
+      "level": "N4",
+      "word": "早い",
+      "reading": "はやい",
+      "vi": "Sớm",
+      "meaning": "Sớm",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "早い（はやい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_103",
+      "level": "N4",
+      "word": "遅い",
+      "reading": "おそい",
+      "vi": "Muộn / Chậm",
+      "meaning": "Muộn / Chậm",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "遅い（おそい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_104",
+      "level": "N4",
+      "word": "明るい",
+      "reading": "あかるい",
+      "vi": "Sáng sủa / Vui vẻ",
+      "meaning": "Sáng sủa / Vui vẻ",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "明るい（あかるい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_105",
+      "level": "N4",
+      "word": "暗い",
+      "reading": "くらい",
+      "vi": "Tối tăm",
+      "meaning": "Tối tăm",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "暗い（くらい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_106",
+      "level": "N4",
+      "word": "広い",
+      "reading": "ひろい",
+      "vi": "Rộng rãi",
+      "meaning": "Rộng rãi",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "広い（ひろい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_107",
+      "level": "N4",
+      "word": "狭い",
+      "reading": "せまい",
+      "vi": "Hẹp",
+      "meaning": "Hẹp",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "狭い（せまい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_108",
+      "level": "N4",
+      "word": "重い",
+      "reading": "おもい",
+      "vi": "Nặng",
+      "meaning": "Nặng",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "重い（おもい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_109",
+      "level": "N4",
+      "word": "軽い",
+      "reading": "かるい",
+      "vi": "Nhẹ",
+      "meaning": "Nhẹ",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "軽い（かるい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_110",
+      "level": "N4",
+      "word": "強き",
+      "reading": "つよい",
+      "vi": "Mạnh mẽ",
+      "meaning": "Mạnh mẽ",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "強き（つよい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_111",
+      "level": "N4",
+      "word": "弱い",
+      "reading": "よわい",
+      "vi": "Yếu ớt",
+      "meaning": "Yếu ớt",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "弱い（よわい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_112",
+      "level": "N4",
+      "word": "暑い",
+      "reading": "あつい",
+      "vi": "Nóng (thời tiết)",
+      "meaning": "Nóng (thời tiết)",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "暑い（あつい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_113",
+      "level": "N4",
+      "word": "寒い",
+      "reading": "さむい",
+      "vi": "Lạnh (thời tiết)",
+      "meaning": "Lạnh (thời tiết)",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "寒い（さむい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_114",
+      "level": "N4",
+      "word": "熱い",
+      "reading": "あつい",
+      "vi": "Nóng (vật)",
+      "meaning": "Nóng (vật)",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "熱い（あつい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_115",
+      "level": "N4",
+      "word": "冷たい",
+      "reading": "つめたい",
+      "vi": "Lạnh (vật)",
+      "meaning": "Lạnh (vật)",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "冷たい（つめたい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_116",
+      "level": "N4",
+      "word": "難しい",
+      "reading": "むずかしい",
+      "vi": "Khó khăn",
+      "meaning": "Khó khăn",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "難しい（むずかしい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_117",
+      "level": "N4",
+      "word": "易しい",
+      "reading": "やさしい",
+      "vi": "Dễ dàng",
+      "meaning": "Dễ dàng",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "易しい（やさしい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_118",
+      "level": "N4",
+      "word": "親切",
+      "reading": "しんせつ",
+      "vi": "Tốt bụng / Thân thiện",
+      "meaning": "Tốt bụng / Thân thiện",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "親切（しんせつ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_119",
+      "level": "N4",
+      "word": "便利",
+      "reading": "べんり",
+      "vi": "Tiện lợi",
+      "meaning": "Tiện lợi",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "便利（べんり）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_120",
+      "level": "N4",
+      "word": "不便",
+      "reading": "ふべん",
+      "vi": "Bất tiện",
+      "meaning": "Bất tiện",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "不便（ふべん）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_121",
+      "level": "N4",
+      "word": "有名",
+      "reading": "ゆうめい",
+      "vi": "Nổi tiếng",
+      "meaning": "Nổi tiếng",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "有名（ゆうめい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_122",
+      "level": "N4",
+      "word": "元気",
+      "reading": "げんき",
+      "vi": "Khỏe mạnh",
+      "meaning": "Khỏe mạnh",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "元気（げんき）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_123",
+      "level": "N4",
+      "word": "静か",
+      "reading": "しずか",
+      "vi": "Yên tĩnh",
+      "meaning": "Yên tĩnh",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "静か（しずか）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_124",
+      "level": "N4",
+      "word": "賑やか",
+      "reading": "にぎやか",
+      "vi": "Náo nhiệt / Sôi động",
+      "meaning": "Náo nhiệt / Sôi động",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N4"
+      ],
+      "examples": [
+        "賑やか（にぎやか）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_125",
+      "level": "N4",
+      "word": "案内する",
+      "reading": "あんないする",
+      "vi": "Hướng dẫn",
+      "meaning": "Hướng dẫn",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
+      "examples": [
+        "案内する（あんないする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_126",
+      "level": "N4",
+      "word": "運転する",
+      "reading": "うんてんする",
+      "vi": "Lái xe",
+      "meaning": "Lái xe",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
+      "examples": [
+        "運転する（うんてんする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_127",
+      "level": "N4",
+      "word": "買い物する",
+      "reading": "かいものする",
+      "vi": "Mua sắm",
+      "meaning": "Mua sắm",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
+      "examples": [
+        "買い物する（かいものする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_128",
+      "level": "N4",
+      "word": "研究する",
+      "reading": "けんきゅうする",
+      "vi": "Nghiên cứu",
+      "meaning": "Nghiên cứu",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
+      "examples": [
+        "研究する（けんきゅうする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_129",
+      "level": "N4",
+      "word": "見学する",
+      "reading": "けんがくする",
+      "vi": "Tham quan học hỏi",
+      "meaning": "Tham quan học hỏi",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
+      "examples": [
+        "見学する（けんがくする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_130",
+      "level": "N4",
+      "word": "散歩する",
+      "reading": "さんぽする",
+      "vi": "Đi dạo",
+      "meaning": "Đi dạo",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
+      "examples": [
+        "散歩する（さんぽする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_131",
+      "level": "N4",
+      "word": "紹介する",
+      "reading": "しょうかいする",
       "vi": "Giới thiệu",
-      "type": "Danh từ / Động từ",
+      "meaning": "Giới thiệu",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
       "examples": [
-        {
-          "jp": "自己紹介をしてください。",
-          "vi": "Hãy tự giới thiệu bản thân."
-        }
+        "紹介する（しょうかいする）の例文です。"
       ]
     },
     {
+      "id": "v_master_132",
       "level": "N4",
-      "word": "約束",
-      "reading": "やくそく",
-      "vi": "Lời hứa / Hẹn",
-      "type": "Danh từ / Động từ",
+      "word": "食事する",
+      "reading": "しょくじする",
+      "vi": "Dùng bữa",
+      "meaning": "Dùng bữa",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
       "examples": [
-        {
-          "jp": "友達と約束があります。",
-          "vi": "Có cuộc hẹn với bạn."
-        }
+        "食事する（しょくじする）の例文です。"
       ]
     },
     {
-      "level": "N3",
-      "word": "変更",
-      "reading": "へんこう",
-      "vi": "Thay đổi / Biến đổi",
-      "type": "Danh từ / Động từ",
+      "id": "v_master_133",
+      "level": "N4",
+      "word": "準備する",
+      "reading": "じゅんびする",
+      "vi": "Chuẩn bị",
+      "meaning": "Chuẩn bị",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
       "examples": [
-        {
-          "jp": "予定を変更します。",
-          "vi": "Thay đổi lịch trình."
-        }
+        "準備する（じゅんびする）の例文です。"
       ]
     },
     {
-      "level": "N3",
-      "word": "確認",
-      "reading": "かくにん",
-      "vi": "Xác nhận / Kiểm tra",
-      "type": "Danh từ / Động từ",
+      "id": "v_master_134",
+      "level": "N4",
+      "word": "水泳する",
+      "reading": "すいえいする",
+      "vi": "Bơi lội",
+      "meaning": "Bơi lội",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
       "examples": [
-        {
-          "jp": "メールの内容を確認します。",
-          "vi": "Xác nhận nội dung email."
-        }
+        "水泳する（すいえいする）の例文です。"
       ]
     },
     {
-      "level": "N3",
-      "word": "報告",
-      "reading": "ほうこく",
-      "vi": "Báo cáo",
-      "type": "Danh từ / Động từ",
+      "id": "v_master_135",
+      "level": "N4",
+      "word": "説明する",
+      "reading": "せつめいする",
+      "vi": "Giải thích",
+      "meaning": "Giải thích",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
       "examples": [
-        {
-          "jp": "上司に進捗を報告します。",
-          "vi": "Báo cáo tiến độ với cấp trên."
-        }
+        "説明する（せつめいする）の例文です。"
       ]
     },
     {
-      "level": "N3",
-      "word": "解決",
-      "reading": "かいけつ",
-      "vi": "Giải quyết",
-      "type": "Danh từ / Động từ",
+      "id": "v_master_136",
+      "level": "N4",
+      "word": "洗濯する",
+      "reading": "せんたくする",
+      "vi": "Giặt giũ",
+      "meaning": "Giặt giũ",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
       "examples": [
-        {
-          "jp": "問題を解決しました。",
-          "vi": "Đã giải quyết xong vấn đề."
-        }
+        "洗濯する（せんたくする）の例文です。"
       ]
     },
     {
-      "level": "N3",
-      "word": "参加",
-      "reading": "さんか",
-      "vi": "Tham gia",
-      "type": "Danh từ / Động từ",
+      "id": "v_master_137",
+      "level": "N4",
+      "word": "掃除する",
+      "reading": "そうじする",
+      "vi": "Dọn dẹp",
+      "meaning": "Dọn dẹp",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
       "examples": [
-        {
-          "jp": "会議に参加します。",
-          "vi": "Tham gia cuộc họp."
-        }
+        "掃除する（そうじする）の例文です。"
       ]
     },
     {
-      "level": "N3",
-      "word": "募集",
-      "reading": "ぼしゅう",
-      "vi": "Tuyển dụng / Chiêu mộ",
-      "type": "Danh từ / Động từ",
+      "id": "v_master_138",
+      "level": "N4",
+      "word": "相談する",
+      "reading": "そうだんする",
+      "vi": "Thảo luận / Tư vấn",
+      "meaning": "Thảo luận / Tư vấn",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N4"
+      ],
       "examples": [
-        {
-          "jp": "新入社員を募集しています。",
-          "vi": "Đang tuyển nhân viên mới."
-        }
+        "相談する（そうだんする）の例文です。"
       ]
     },
     {
+      "id": "v_master_139",
       "level": "N3",
-      "word": "管理",
-      "reading": "かんり",
-      "vi": "Quản lý",
-      "type": "Danh từ / Động từ",
+      "word": "愛する",
+      "reading": "あいする",
+      "vi": "Yêu thương",
+      "meaning": "Yêu thương",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "スケジュールを管理します。",
-          "vi": "Quản lý thời gian."
-        }
+        "愛する（あいする）の例文です。"
       ]
     },
     {
+      "id": "v_master_140",
       "level": "N3",
-      "word": "評価",
-      "reading": "ひょうか",
-      "vi": "Đánh giá",
-      "type": "Danh từ / Động từ",
+      "word": "感じる",
+      "reading": "かんじる",
+      "vi": "Cảm thấy",
+      "meaning": "Cảm thấy",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "成果を高く評価されました。",
-          "vi": "Thành quả được đánh giá cao."
-        }
+        "感じる（かんじる）の例文です。"
       ]
     },
     {
+      "id": "v_master_141",
       "level": "N3",
-      "word": "期待",
-      "reading": "きたい",
-      "vi": "Kỳ vọng / Mong đợi",
-      "type": "Danh từ / Động từ",
-      "examples": [
-        {
-          "jp": "新人に期待しています。",
-          "vi": "Kỳ vọng vào lính mới."
-        }
-      ]
-    },
-    {
-      "level": "N3",
-      "word": "努力",
-      "reading": "どりょく",
-      "vi": "Nỗ lực / Cố gắng",
-      "type": "Danh từ / Động từ",
-      "examples": [
-        {
-          "jp": "毎日努力しています。",
-          "vi": "Mỗi ngày đều nỗ lực."
-        }
-      ]
-    },
-    {
-      "level": "N3",
-      "word": "興味",
-      "reading": "きょうみ",
-      "vi": "Hứng thú / Quan tâm",
+      "word": "感情",
+      "reading": "かんじょう",
+      "vi": "Cảm xúc",
+      "meaning": "Cảm xúc",
       "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "歴史に興味があります。",
-          "vi": "Tôi có hứng thú với lịch sử."
-        }
+        "感情（かんじょう）の例文です。"
       ]
     },
     {
+      "id": "v_master_142",
       "level": "N3",
-      "word": "関係",
-      "reading": "かんけい",
-      "vi": "Quan hệ / Liên quan",
+      "word": "想像する",
+      "reading": "そうぞうする",
+      "vi": "Tưởng tượng",
+      "meaning": "Tưởng tượng",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
+      "examples": [
+        "想像する（そうぞうする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_143",
+      "level": "N3",
+      "word": "お願いする",
+      "reading": "おねがいする",
+      "vi": "Nhờ vả",
+      "meaning": "Nhờ vả",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
+      "examples": [
+        "お願いする（おねがいする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_144",
+      "level": "N3",
+      "word": "希望",
+      "reading": "きぼう",
+      "vi": "Hy vọng",
+      "meaning": "Hy vọng",
       "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "良好な関係を保ちます。",
-          "vi": "Duy trì mối quan hệ tốt."
-        }
+        "希望（きぼう）の例文です。"
       ]
     },
     {
+      "id": "v_master_145",
       "level": "N3",
-      "word": "意識",
-      "reading": "いしき",
-      "vi": "Ý thức / Nhận thức",
+      "word": "信用する",
+      "reading": "しんようする",
+      "vi": "Tin tưởng",
+      "meaning": "Tin tưởng",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
+      "examples": [
+        "信用する（しんようする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_146",
+      "level": "N3",
+      "word": "疑問",
+      "reading": "ぎもん",
+      "vi": "Nghi vấn",
+      "meaning": "Nghi vấn",
       "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "環境問題への意識が高まる。",
-          "vi": "Ý thức về môi trường tăng cao."
-        }
+        "疑問（ぎもん）の例文です。"
       ]
     },
     {
+      "id": "v_master_147",
       "level": "N3",
-      "word": "判断",
-      "reading": "はんだん",
-      "vi": "Phán đoán / Đánh giá",
-      "type": "Danh từ / Động từ",
+      "word": "変化する",
+      "reading": "へんかする",
+      "vi": "Biến đổi",
+      "meaning": "Biến đổi",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "状況を見て判断します。",
-          "vi": "Xem tình hình rồi phán đoán."
-        }
+        "変化する（へんかする）の例文です。"
       ]
     },
     {
+      "id": "v_master_148",
       "level": "N3",
-      "word": "選択",
-      "reading": "せんたく",
-      "vi": "Lựa chọn",
-      "type": "Danh từ / Động từ",
-      "examples": [
-        {
-          "jp": "正しい選択をします。",
-          "vi": "Đưa ra lựa chọn đúng đắn."
-        }
-      ]
-    },
-    {
-      "level": "N3",
-      "word": "継続",
-      "reading": "けいぞく",
-      "vi": "Tiếp tục / Duy trì",
-      "type": "Danh từ / Động từ",
-      "examples": [
-        {
-          "jp": "学習を継続することが大切です。",
-          "vi": "Duy trì học tập là điều quan trọng."
-        }
-      ]
-    },
-    {
-      "level": "N3",
-      "word": "効率",
-      "reading": "こうりつ",
-      "vi": "Hiệu suất / Hiệu quả",
+      "word": "文化",
+      "reading": "ぶんか",
+      "vi": "Văn hóa",
+      "meaning": "Văn hóa",
       "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "作業の効率を上げます。",
-          "vi": "Nâng cao hiệu suất công việc."
-        }
+        "文化（ぶんか）の例文です。"
       ]
     },
     {
+      "id": "v_master_149",
+      "level": "N3",
+      "word": "歴史",
+      "reading": "れきし",
+      "vi": "Lịch sử",
+      "meaning": "Lịch sử",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "歴史（れきし）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_150",
+      "level": "N3",
+      "word": "経済",
+      "reading": "けいざい",
+      "vi": "Kinh tế",
+      "meaning": "Kinh tế",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "経済（けいざい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_151",
+      "level": "N3",
+      "word": "社会",
+      "reading": "しゃかい",
+      "vi": "Xã hội",
+      "meaning": "Xã hội",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "社会（しゃかい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_152",
+      "level": "N3",
+      "word": "法律",
+      "reading": "ほうりつ",
+      "vi": "Pháp luật",
+      "meaning": "Pháp luật",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "法律（ほうりつ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_153",
+      "level": "N3",
+      "word": "政治",
+      "reading": "せいじ",
+      "vi": "Chính trị",
+      "meaning": "Chính trị",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "政治（せいじ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_154",
+      "level": "N3",
+      "word": "国際",
+      "reading": "こくさい",
+      "vi": "Quốc tế",
+      "meaning": "Quốc tế",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "国際（こくさい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_155",
+      "level": "N3",
+      "word": "世界",
+      "reading": "せかい",
+      "vi": "Thế giới",
+      "meaning": "Thế giới",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "世界（せかい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_156",
+      "level": "N3",
+      "word": "環境",
+      "reading": "かんきょう",
+      "vi": "Môi trường",
+      "meaning": "Môi trường",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "環境（かんきょう）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_157",
+      "level": "N3",
+      "word": "自然",
+      "reading": "しぜん",
+      "vi": "Tự nhiên",
+      "meaning": "Tự nhiên",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "自然（しぜん）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_158",
+      "level": "N3",
+      "word": "地球",
+      "reading": "ちきゅう",
+      "vi": "Trái đất",
+      "meaning": "Trái đất",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "地球（ちきゅう）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_159",
+      "level": "N3",
+      "word": "宇宙",
+      "reading": "うちゅう",
+      "vi": "Vũ trụ",
+      "meaning": "Vũ trụ",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "宇宙（うちゅう）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_160",
+      "level": "N3",
+      "word": "科学",
+      "reading": "かがく",
+      "vi": "Khoa học",
+      "meaning": "Khoa học",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "科学（かがく）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_161",
+      "level": "N3",
+      "word": "技術",
+      "reading": "ぎじゅつ",
+      "vi": "Kỹ thuật / Công nghệ",
+      "meaning": "Kỹ thuật / Công nghệ",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "技術（ぎじゅつ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_162",
       "level": "N3",
       "word": "情報",
       "reading": "じょうほう",
       "vi": "Thông tin",
+      "meaning": "Thông tin",
       "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "最新の情報を収集する。",
-          "vi": "Thu thập thông tin mới nhất."
-        }
+        "情報（じょうほう）の例文です。"
       ]
     },
     {
+      "id": "v_master_163",
       "level": "N3",
-      "word": "発展",
-      "reading": "はってん",
+      "word": "通信",
+      "reading": "つうしん",
+      "vi": "Truyền thông",
+      "meaning": "Truyền thông",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N3"
+      ],
+      "examples": [
+        "通信（つうしん）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_164",
+      "level": "N3",
+      "word": "開発する",
+      "reading": "かいはつする",
       "vi": "Phát triển",
-      "type": "Danh từ / Động từ",
+      "meaning": "Phát triển",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "経済が著しく発展する。",
-          "vi": "Kinh tế phát triển vượt bậc."
-        }
+        "開発する（かいはつする）の例文です。"
       ]
     },
     {
+      "id": "v_master_165",
       "level": "N3",
-      "word": "提案",
-      "reading": "ていあん",
-      "vi": "Đề xuất",
-      "type": "Danh từ / Động từ",
+      "word": "解決する",
+      "reading": "かいけつする",
+      "vi": "Giải quyết",
+      "meaning": "Giải quyết",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "新しい企画を提案する。",
-          "vi": "Đề xuất kế hoạch mới."
-        }
+        "解決する（かいけつする）の例文です。"
       ]
     },
     {
+      "id": "v_master_166",
       "level": "N3",
-      "word": "交渉",
-      "reading": "こうしょう",
-      "vi": "Đàm phán",
-      "type": "Danh từ / Động từ",
+      "word": "成功する",
+      "reading": "せいこうする",
+      "vi": "Thành công",
+      "meaning": "Thành công",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "取引先と交渉する。",
-          "vi": "Đàm phán với đối tác."
-        }
+        "成功する（せいこうする）の例文です。"
       ]
     },
     {
+      "id": "v_master_167",
       "level": "N3",
-      "word": "契約",
-      "reading": "けいやく",
-      "vi": "Hợp đồng",
-      "type": "Danh từ / Động từ",
+      "word": "失敗する",
+      "reading": "しっぱいする",
+      "vi": "Thất bại",
+      "meaning": "Thất bại",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "契約を結ぶ。",
-          "vi": "Ký kết hợp đồng."
-        }
+        "失敗する（しっぱいする）の例文です。"
       ]
     },
     {
+      "id": "v_master_168",
       "level": "N3",
-      "word": "検討",
-      "reading": "けんとう",
-      "vi": "Xem xét",
-      "type": "Danh từ / Động từ",
+      "word": "成長する",
+      "reading": "せいちょうする",
+      "vi": "Trưởng thành",
+      "meaning": "Trưởng thành",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "案を慎重に検討する。",
-          "vi": "Thận trọng xem xét phương án."
-        }
+        "成長する（せいちょうする）の例文です。"
       ]
     },
     {
+      "id": "v_master_169",
       "level": "N3",
-      "word": "実施",
-      "reading": "じっし",
-      "vi": "Thực thi",
-      "type": "Danh từ / Động từ",
+      "word": "応援する",
+      "reading": "おうえんする",
+      "vi": "Cổ vũ / Ủng hộ",
+      "meaning": "Cổ vũ / Ủng hộ",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "計画を実施する。",
-          "vi": "Thực thi kế hoạch."
-        }
+        "応援する（おうえんする）の例文です。"
       ]
     },
     {
+      "id": "v_master_170",
       "level": "N3",
-      "word": "分析",
-      "reading": "ぶんせき",
-      "vi": "Phân tích",
-      "type": "Danh từ / Động từ",
+      "word": "参加する",
+      "reading": "さんかする",
+      "vi": "Tham gia",
+      "meaning": "Tham gia",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
       "examples": [
-        {
-          "jp": "データを分析する。",
-          "vi": "Phân tích dữ liệu."
-        }
+        "参加する（さんかする）の例文です。"
       ]
     },
     {
+      "id": "v_master_171",
+      "level": "N3",
+      "word": "協力する",
+      "reading": "きょうりょくする",
+      "vi": "Hợp tác",
+      "meaning": "Hợp tác",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
+      "examples": [
+        "協力する（きょうりょくする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_172",
+      "level": "N3",
+      "word": "交換する",
+      "reading": "こうかんする",
+      "vi": "Trao đổi",
+      "meaning": "Trao đổi",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
+      "examples": [
+        "交換する（こうかんする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_173",
+      "level": "N3",
+      "word": "感謝する",
+      "reading": "かんしゃする",
+      "vi": "Cảm ơn / Tri ân",
+      "meaning": "Cảm ơn / Tri ân",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
+      "examples": [
+        "感謝する（かんしゃする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_174",
+      "level": "N3",
+      "word": "尊敬する",
+      "reading": "そんけいする",
+      "vi": "Kính trọng",
+      "meaning": "Kính trọng",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
+      "examples": [
+        "尊敬する（そんけいする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_175",
+      "level": "N3",
+      "word": "反省する",
+      "reading": "はんせいする",
+      "vi": "Kháng tỉnh / Kiểm điểm",
+      "meaning": "Kháng tỉnh / Kiểm điểm",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
+      "examples": [
+        "反省する（はんせいする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_176",
+      "level": "N3",
+      "word": "約束する",
+      "reading": "やくそくする",
+      "vi": "Hứa hẹn",
+      "meaning": "Hứa hẹn",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
+      "examples": [
+        "約束する（やくそくする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_177",
+      "level": "N3",
+      "word": "期待する",
+      "reading": "きたいする",
+      "vi": "Kỳ vọng",
+      "meaning": "Kỳ vọng",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
+      "examples": [
+        "期待する（きたいする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_178",
+      "level": "N3",
+      "word": "安心する",
+      "reading": "あんしんする",
+      "vi": "Yên tâm",
+      "meaning": "Yên tâm",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N3"
+      ],
+      "examples": [
+        "安心する（あんしんする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_179",
       "level": "N2",
-      "word": "改善",
-      "reading": "かいぜん",
-      "vi": "Cải tiến",
-      "type": "Danh từ / Động từ",
+      "word": "議論する",
+      "reading": "ぎろんする",
+      "vi": "Tranh luận",
+      "meaning": "Tranh luận",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N2"
+      ],
       "examples": [
-        {
-          "jp": "業務プロセスを改善します。",
-          "vi": "Cải tiến quy trình làm việc."
-        }
+        "議論する（ぎろんする）の例文です。"
       ]
     },
     {
+      "id": "v_master_180",
       "level": "N2",
-      "word": "影響",
-      "reading": "えいきょう",
-      "vi": "Ảnh hưởng",
-      "type": "Danh từ / Động từ",
+      "word": "選択する",
+      "reading": "せんたくする",
+      "vi": "Lựa chọn",
+      "meaning": "Lựa chọn",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N2"
+      ],
       "examples": [
-        {
-          "jp": "環境に悪影響を及ぼす。",
-          "vi": "Gây ảnh hưởng xấu đến môi trường."
-        }
+        "選択する（せんたくする）の例文です。"
       ]
     },
     {
+      "id": "v_master_181",
       "level": "N2",
-      "word": "貢献",
-      "reading": "こうけん",
-      "vi": "Cống hiến",
-      "type": "Danh từ / Động từ",
+      "word": "選挙",
+      "reading": "せんきょ",
+      "vi": "Bầu cử",
+      "meaning": "Bầu cử",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
       "examples": [
-        {
-          "jp": "社会に貢献する。",
-          "vi": "Cống hiến cho xã hội."
-        }
+        "選挙（せんきょ）の例文です。"
       ]
     },
     {
-      "level": "N1",
-      "word": "促進",
-      "reading": "そくしん",
-      "vi": "Thúc đẩy",
-      "type": "Danh từ / Động từ",
+      "id": "v_master_182",
+      "level": "N2",
+      "word": "対策",
+      "reading": "たいさく",
+      "vi": "Đối sách / Biện pháp",
+      "meaning": "Đối sách / Biện pháp",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
       "examples": [
-        {
-          "jp": "活性化を促進する。",
-          "vi": "Thúc đẩy sự kích hoạt."
-        }
+        "対策（たいさく）の例文です。"
       ]
     },
     {
-      "level": "N1",
-      "word": "懸念",
-      "reading": "けねん",
-      "vi": "Lo ngại",
-      "type": "Danh từ / Động từ",
+      "id": "v_master_183",
+      "level": "N2",
+      "word": "政府",
+      "reading": "せいふ",
+      "vi": "Chính phủ",
+      "meaning": "Chính phủ",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
       "examples": [
-        {
-          "jp": "懸念を示した。",
-          "vi": "Bày tỏ sự lo ngại."
-        }
+        "政府（せいふ）の例文です。"
       ]
     },
     {
-      "level": "N1",
-      "word": "妥協",
-      "reading": "だきょう",
-      "vi": "Thỏa hiệp",
-      "type": "Danh từ / Động từ",
+      "id": "v_master_184",
+      "level": "N2",
+      "word": "政治家",
+      "reading": "せいじか",
+      "vi": "Nhà chính trị",
+      "meaning": "Nhà chính trị",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
       "examples": [
-        {
-          "jp": "妥協しない。",
-          "vi": "Không thỏa hiệp."
-        }
+        "政治家（せいじか）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_185",
+      "level": "N2",
+      "word": "財政",
+      "reading": "ざいせい",
+      "vi": "Tài chính",
+      "meaning": "Tài chính",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
+      "examples": [
+        "財政（ざいせい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_186",
+      "level": "N2",
+      "word": "金融",
+      "reading": "きんゆう",
+      "vi": "Tài chính ngân hàng",
+      "meaning": "Tài chính ngân hàng",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
+      "examples": [
+        "金融（きんゆう）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_187",
+      "level": "N2",
+      "word": "投資する",
+      "reading": "とうしする",
+      "vi": "Đầu tư",
+      "meaning": "Đầu tư",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N2"
+      ],
+      "examples": [
+        "投資する（とうしする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_188",
+      "level": "N2",
+      "word": "景気",
+      "reading": "けいき",
+      "vi": "Tình hình kinh tế",
+      "meaning": "Tình hình kinh tế",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
+      "examples": [
+        "景気（けいき）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_189",
+      "level": "N2",
+      "word": "雇用",
+      "reading": "こよう",
+      "vi": "Tuyển dụng / Việc làm",
+      "meaning": "Tuyển dụng / Việc làm",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
+      "examples": [
+        "雇用（こよう）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_190",
+      "level": "N2",
+      "word": "労働",
+      "reading": "ろうどう",
+      "vi": "Lao động",
+      "meaning": "Lao động",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
+      "examples": [
+        "労働（ろうどう）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_191",
+      "level": "N2",
+      "word": "賃金",
+      "reading": "ちんぎん",
+      "vi": "Tiền lương",
+      "meaning": "Tiền lương",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
+      "examples": [
+        "賃金（ちんぎん）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_192",
+      "level": "N2",
+      "word": "物価",
+      "reading": "ぶっか",
+      "vi": "Giá cả",
+      "meaning": "Giá cả",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
+      "examples": [
+        "物価（ぶっか）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_193",
+      "level": "N2",
+      "word": "消費",
+      "reading": "しょうひ",
+      "vi": "Tiêu dùng",
+      "meaning": "Tiêu dùng",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
+      "examples": [
+        "消費（しょうひ）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_194",
+      "level": "N2",
+      "word": "税金",
+      "reading": "ぜいきん",
+      "vi": "Thuế",
+      "meaning": "Thuế",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
+      "examples": [
+        "税金（ぜいきん）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_195",
+      "level": "N2",
+      "word": "貿易",
+      "reading": "ぼうえき",
+      "vi": "Thương mại",
+      "meaning": "Thương mại",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N2"
+      ],
+      "examples": [
+        "貿易（ぼうえき）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_196",
+      "level": "N2",
+      "word": "輸出する",
+      "reading": "ゆしゅつする",
+      "vi": "Xuất khẩu",
+      "meaning": "Xuất khẩu",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N2"
+      ],
+      "examples": [
+        "輸出する（ゆしゅつする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_197",
+      "level": "N2",
+      "word": "輸入する",
+      "reading": "ゆにゅうする",
+      "vi": "Nhập khẩu",
+      "meaning": "Nhập khẩu",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N2"
+      ],
+      "examples": [
+        "輸入する（ゆにゅうする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_198",
+      "level": "N2",
+      "word": "生産する",
+      "reading": "せいさんする",
+      "vi": "Sản xuất",
+      "meaning": "Sản xuất",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N2"
+      ],
+      "examples": [
+        "生産する（せいさんする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_199",
+      "level": "N1",
+      "word": "覇権",
+      "reading": "はけん",
+      "vi": "Bá quyền",
+      "meaning": "Bá quyền",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N1"
+      ],
+      "examples": [
+        "覇権（はけん）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_200",
+      "level": "N1",
+      "word": "抑制する",
+      "reading": "よくせいする",
+      "vi": "Ức chế / Kiềm chế",
+      "meaning": "Ức chế / Kiềm chế",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N1"
+      ],
+      "examples": [
+        "抑制する（よくせいする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_201",
+      "level": "N1",
+      "word": "昂揚する",
+      "reading": "こうようする",
+      "vi": "Hưng phấn / Dương cao",
+      "meaning": "Hưng phấn / Dương cao",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N1"
+      ],
+      "examples": [
+        "昂揚する（こうようする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_202",
+      "level": "N1",
+      "word": "暫定",
+      "reading": "ざんてい",
+      "vi": "Tạm thời",
+      "meaning": "Tạm thời",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N1"
+      ],
+      "examples": [
+        "暫定（ざんてい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_203",
+      "level": "N1",
+      "word": "漸進的",
+      "reading": "ぜんしんてき",
+      "vi": "Tiệm tiến / Dần dần",
+      "meaning": "Tiệm tiến / Dần dần",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N1"
+      ],
+      "examples": [
+        "漸進的（ぜんしんてき）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_204",
+      "level": "N1",
+      "word": "匿名",
+      "reading": "とくめい",
+      "vi": "Ẩn danh",
+      "meaning": "Ẩn danh",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N1"
+      ],
+      "examples": [
+        "匿名（とくめい）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_205",
+      "level": "N1",
+      "word": "歪曲する",
+      "reading": "わいきょくする",
+      "vi": "Bóp méo / Méo mó",
+      "meaning": "Bóp méo / Méo mó",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N1"
+      ],
+      "examples": [
+        "歪曲する（わいきょくする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_206",
+      "level": "N1",
+      "word": "蔑視する",
+      "reading": "べっしする",
+      "vi": "Khinh miệt",
+      "meaning": "Khinh miệt",
+      "type": "Động từ",
+      "tags": [
+        "Động từ",
+        "N1"
+      ],
+      "examples": [
+        "蔑視する（べっしする）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_207",
+      "level": "N1",
+      "word": "傲慢",
+      "reading": "ごうまん",
+      "vi": "Ngạo mạn",
+      "meaning": "Ngạo mạn",
+      "type": "Tính từ",
+      "tags": [
+        "Tính từ",
+        "N1"
+      ],
+      "examples": [
+        "傲慢（ごうまん）の例文です。"
+      ]
+    },
+    {
+      "id": "v_master_208",
+      "level": "N1",
+      "word": "嘘言",
+      "reading": "きょげん",
+      "vi": "Lời nói dối",
+      "meaning": "Lời nói dối",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N1"
+      ],
+      "examples": [
+        "嘘言（きょげん）の例文です。"
       ]
     }
   ],

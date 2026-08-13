@@ -217,10 +217,20 @@ const VocabularyFlashcards = () => {
     }, 400);
   };
 
-  // Re-study current batch cards
+  // Derive studied cards in current level from FSRS store if sessionHistory is empty
+  const studiedCardsInLevel = useMemo(() => {
+    return levelVocab.filter(v => {
+      const card = getCard(v.id);
+      return card && card.repetition > 0;
+    });
+  }, [levelVocab]);
+
+  const effectiveReviewList = sessionHistory.length > 0 ? sessionHistory : studiedCardsInLevel;
+
+  // Re-study current batch cards or all studied cards
   const handleRestudyCurrentBatch = () => {
-    if (sessionHistory.length > 0) {
-      setQueue(sessionHistory.map(c => c.id));
+    if (effectiveReviewList.length > 0) {
+      setQueue(effectiveReviewList.map(c => c.id));
       setQueueIdx(0);
       setShowAnswer(false);
     } else {
@@ -263,11 +273,11 @@ const VocabularyFlashcards = () => {
         {/* Session Log Quick Stats */}
         <div style={{ display: 'flex', gap: 16, width: '100%', maxWidth: 500, marginBottom: 28, background: 'rgba(0,0,0,0.3)', padding: '14px 20px', borderRadius: 12, justifyContent: 'space-around' }}>
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: 'white' }}>{sessionHistory.length}</div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>Từ đã học</div>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: 'white' }}>{effectiveReviewList.length}</div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>Từ đã thuộc</div>
           </div>
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#10b981' }}>{sessionLog.easy}</div>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#10b981' }}>{sessionHistory.length > 0 ? sessionLog.easy : stats.learnedCount}</div>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>Nhớ tốt</div>
           </div>
           <div style={{ textAlign: 'center' }}>
@@ -288,7 +298,7 @@ const VocabularyFlashcards = () => {
             onClick={handleRestudyCurrentBatch} 
             style={{ padding:'14px', fontSize:'0.9rem', display:'flex', alignItems:'center', justifyContent: 'center', gap:8, background: 'rgba(59,130,246,0.1)', color: '#60a5fa', border: '1px solid rgba(59,130,246,0.3)' }}
           >
-            <RotateCcw size={18}/> 🔄 Học lại đợt này
+            <RotateCcw size={18}/> 🔄 Ôn lại các từ đã thuộc ({effectiveReviewList.length})
           </button>
 
           <button 
@@ -296,7 +306,7 @@ const VocabularyFlashcards = () => {
             onClick={handleLoadNextNewBatch} 
             style={{ padding:'14px', fontSize:'0.9rem', display:'flex', alignItems:'center', justifyContent: 'center', gap:8 }}
           >
-            <Zap size={18}/> ⚡ Mở bài mới tiếp theo (25 từ)
+            <Zap size={18}/> ⚡ Mở 25 từ mới tiếp theo
           </button>
 
           <button 
@@ -304,7 +314,7 @@ const VocabularyFlashcards = () => {
             onClick={() => setShowSessionReview(true)} 
             style={{ padding:'14px', fontSize:'0.9rem', display:'flex', alignItems:'center', justifyContent: 'center', gap:8, background: 'rgba(16,185,129,0.1)', color: '#34d399', border: '1px solid rgba(16,185,129,0.3)' }}
           >
-            <BookOpen size={18}/> 📖 Xem nội dung vừa học ({sessionHistory.length})
+            <BookOpen size={18}/> 📖 Xem nội dung vừa học ({effectiveReviewList.length})
           </button>
 
           <button 
@@ -325,7 +335,7 @@ const VocabularyFlashcards = () => {
           <div style={{ maxWidth: 840, margin: '0 auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
               <h3 style={{ color: 'white', fontSize: '1.4rem', margin: 0, display: 'flex', alignItems: 'center', gap: 10 }}>
-                <BookOpen size={22} color="#10b981"/> Nội dung từ vựng vừa học trong phiên ({sessionHistory.length} từ)
+                <BookOpen size={22} color="#10b981"/> Danh sách từ vựng đã thuộc cấp độ {level} ({effectiveReviewList.length} từ)
               </h3>
               <button className="btn btn-ghost" onClick={() => setShowSessionReview(false)} style={{ color: 'white' }}>
                 <X size={20}/>
@@ -333,7 +343,7 @@ const VocabularyFlashcards = () => {
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 14 }}>
-              {sessionHistory.map((item, idx) => (
+              {effectiveReviewList.map((item, idx) => (
                 <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', padding: 14, borderRadius: 12, border: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <div style={{ fontSize: '1.3rem', fontWeight: 700, color: 'white', marginBottom: 2 }}>{item.word}</div>
