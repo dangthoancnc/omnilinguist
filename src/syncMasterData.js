@@ -1,8 +1,8 @@
 import { db } from './db.js';
 import localMasterDb from './data/jlpt_master_db.json';
 
-const CURRENT_DATA_VERSION = 'v11.0.0_bunpro_full_dataset';
-const CHUNK_SIZE = 150; // Chia nhỏ 150 bản ghi / đợt để tránh làm nghẽn UI thread
+const CURRENT_DATA_VERSION = 'v11.1.0_bunpro_full_2191';
+const CHUNK_SIZE = 200; // Chia nhỏ 200 bản ghi / đợt để nạp siêu mượt
 
 const parseField = (val) => {
   if (!val) return [];
@@ -34,8 +34,8 @@ export async function syncMasterData() {
     const savedVer = localStorage.getItem('omni_master_ver');
     const grammarCount = await db.grammar.count();
 
-    // ⚡ TỐI ƯU SIÊU TỐC: Nếu phiên bản đã khớp & đã có dữ liệu -> Bỏ qua nạp lại
-    if (savedVer === CURRENT_DATA_VERSION && grammarCount > 50) {
+    // ⚡ TỐI ƯU SIÊU TỐC: Nếu phiên bản đã khớp & đã có >1000 dữ liệu -> Bỏ qua nạp lại
+    if (savedVer === CURRENT_DATA_VERSION && grammarCount > 1000) {
       console.log(`⚡ [FastLoad] Master Data đã sẵn sàng (${grammarCount} mẫu ngữ pháp Bunpro). Bỏ qua nạp lại!`);
       return;
     }
@@ -79,7 +79,7 @@ export async function syncMasterData() {
       await chunkedBulkPut(db.kanji, parsedKanji);
     }
 
-    // === 3. Nạp Ngữ pháp Bunpro Full N5-N1 theo Chunk ===
+    // === 3. Nạp Ngữ pháp Bunpro Full 2,191 N5-N1 theo Chunk ===
     const grammar = localMasterDb.grammar || [];
     if (grammar.length > 0) {
       const parsedGrammar = grammar.map((g, i) => ({

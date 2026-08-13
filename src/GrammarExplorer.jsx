@@ -121,6 +121,15 @@ const GrammarExplorer = () => {
   const [selectedLevel, setSelectedLevel] = useState('ALL');
   const [selectedItem, setSelectedItem] = useState(null);
 
+  // Calculate item counts per level dynamically
+  const levelCounts = useMemo(() => {
+    const counts = { ALL: grammarData.length, N5: 0, N4: 0, N3: 0, N2: 0, N1: 0 };
+    grammarData.forEach(g => {
+      if (counts[g.level] !== undefined) counts[g.level]++;
+    });
+    return counts;
+  }, [grammarData]);
+
   // Filtered grammar list for Library
   const filteredGrammar = useMemo(() => {
     return grammarData.filter(g => {
@@ -298,10 +307,10 @@ const GrammarExplorer = () => {
           </div>
           <div>
             <h1 style={{ margin: 0, fontSize: '1.2rem', color: 'white', display: 'flex', alignItems: 'center', gap: 8 }}>
-              Bunpro Grammar Engine <span style={{ fontSize: '0.75rem', background: '#f59e0b', color: 'black', padding: '2px 8px', borderRadius: 10, fontWeight: 700 }}>v11.0 Pro</span>
+              Bunpro Grammar Engine <span style={{ fontSize: '0.75rem', background: '#f59e0b', color: 'black', padding: '2px 8px', borderRadius: 10, fontWeight: 700 }}>v11.1 Master</span>
             </h1>
             <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
-              Hệ thống học ngữ pháp chủ động Active Recall, Gợi ý sắc thái thông minh & Ép xung Cram Mode.
+              Hệ thống 2,191+ mẫu ngữ pháp N5-N1 Active Recall, Gợi ý sắc thái thông minh & Cram Mode.
             </p>
           </div>
         </div>
@@ -355,15 +364,15 @@ const GrammarExplorer = () => {
                 />
               </div>
 
-              <div style={{ display: 'flex', gap: 6, overflowX: 'auto' }}>
+              <div style={{ display: 'flex', gap: 4, overflowX: 'auto' }}>
                 {LEVELS.map(lvl => (
                   <button 
                     key={lvl}
                     onClick={() => setSelectedLevel(lvl)}
                     className={`btn ${selectedLevel === lvl ? 'btn-primary' : 'btn-outline'}`}
-                    style={{ padding: '3px 10px', fontSize: '0.78rem', flex: 1, whiteSpace: 'nowrap' }}
+                    style={{ padding: '4px 6px', fontSize: '0.75rem', flex: 1, whiteSpace: 'nowrap' }}
                   >
-                    {lvl}
+                    {lvl} ({levelCounts[lvl] || 0})
                   </button>
                 ))}
               </div>
