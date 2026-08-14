@@ -47,8 +47,15 @@ const VocabularyFlashcards = () => {
   const [learningMode, setLearningMode] = useState(() => isGuest() ? 'freestudy' : 'roadmap'); // Guest luôn mặc định Học Tự Do
   const [filterMode, setFilterMode] = useState('all');
   const [autoPlay, setAutoPlay] = useState(() => localStorage.getItem('omni_flashcards_autoplay') !== 'false');
-  const [autoFlipOnRating, setAutoFlipOnRating] = useState(() => localStorage.getItem('omni_flashcards_autoflip_rating') !== 'false');
-  const [autoFlipNext, setAutoFlipNext] = useState(() => localStorage.getItem('omni_flashcards_autoflip_next') === 'true');
+  
+  // revealMode: 'on_rating' (Lật xem đáp án sau khi bấm đánh giá) | 'always' (Luôn hiển thị sẵn đáp án khi mở thẻ mới)
+  const [revealMode, setRevealMode] = useState(() => {
+    const saved = localStorage.getItem('omni_flashcards_reveal_mode');
+    if (saved) return saved;
+    if (localStorage.getItem('omni_flashcards_autoflip_next') === 'true') return 'always';
+    return 'on_rating'; // Mặc định: Lật đáp án khi bấm Đánh Giá để xem lại kết quả
+  });
+
   const [autoAdvanceDelay, setAutoAdvanceDelay] = useState(() => {
     const d = localStorage.getItem('omni_flashcards_delay');
     return d !== null ? Number(d) : 1000; // 1s mặc định để xem lại đáp án
@@ -61,13 +68,9 @@ const VocabularyFlashcards = () => {
     setAutoPlay(val);
     localStorage.setItem('omni_flashcards_autoplay', String(val));
   };
-  const updateAutoFlipOnRating = (val) => {
-    setAutoFlipOnRating(val);
-    localStorage.setItem('omni_flashcards_autoflip_rating', String(val));
-  };
-  const updateAutoFlipNext = (val) => {
-    setAutoFlipNext(val);
-    localStorage.setItem('omni_flashcards_autoflip_next', String(val));
+  const updateRevealMode = (mode) => {
+    setRevealMode(mode);
+    localStorage.setItem('omni_flashcards_reveal_mode', mode);
   };
   const updateAutoAdvanceDelay = (val) => {
     setAutoAdvanceDelay(val);
@@ -249,7 +252,7 @@ const VocabularyFlashcards = () => {
       clearTimeout(advanceTimerRef.current);
       advanceTimerRef.current = null;
     }
-    setShowAnswer(autoFlipNext);
+    setShowAnswer(revealMode === 'always');
     setLastRating(null);
     setQuizAnswered(null);
     setIsManualNextReady(false);
@@ -272,7 +275,7 @@ const VocabularyFlashcards = () => {
       clearTimeout(advanceTimerRef.current);
       advanceTimerRef.current = null;
     }
-    setShowAnswer(autoFlipNext);
+    setShowAnswer(revealMode === 'always');
     setLastRating(null);
     setQuizAnswered(null);
     setIsManualNextReady(false);
@@ -302,8 +305,8 @@ const VocabularyFlashcards = () => {
     
     setLastRating(rating);
 
-    // Tự động lật đáp án ngay khi bấm trả lời để xem lại kết quả nếu bật tùy chọn
-    if (autoFlipOnRating) {
+    // Nếu đang ở chế độ 'on_rating', tự động lật đáp án ngay khi vừa bấm trả lời để xem lại
+    if (revealMode === 'on_rating') {
       setShowAnswer(true);
     }
     
@@ -805,7 +808,7 @@ const VocabularyFlashcards = () => {
                   width: '100%',
                   padding: '10px 14px',
                   borderRadius: 8,
-                  border: '1px border var(--glass-border)',
+                  border: '1px solid var(--glass-border)',
                   background: 'rgba(59,130,246,0.1)',
                   color: '#60a5fa',
                   fontSize: '0.85rem',
@@ -821,7 +824,6 @@ const VocabularyFlashcards = () => {
           </div>
         </div>
       )}
-      </div>
 
       {showSettings && (
         <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(6px)' }} onClick={() => setShowSettings(false)}>
@@ -830,42 +832,73 @@ const VocabularyFlashcards = () => {
               <Settings size={20} color="#60a5fa" /> Cài Đặt Lật Thẻ & Thời Gian Xác Nhận
             </h2>
 
-            {/* 1. Lật đáp án khi bấm Đánh Giá */}
-            <div style={{ background: 'rgba(0,0,0,0.2)', padding: 14, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
-              <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
-                <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'white' }}>👁️ Lật đáp án ngay khi bấm Đánh Giá (Lại/Khó/Tốt/Dễ)</span>
-                <input 
-                  type="checkbox" 
-                  checked={autoFlipOnRating} 
-                  onChange={e => updateAutoFlipOnRating(e.target.checked)} 
-                  style={{ width: 18, height: 18, cursor: 'pointer' }}
-                />
+            {/* 1. Chế độ hiển thị đáp án - CHỌN 1 TRONG 2 */}
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 10, fontWeight: 600 }}>
+                👁️ Chế độ lật đáp án (Chọn 1 trong 2):
               </label>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginTop: 4 }}>
-                Tự động mở hiển thị nghĩa & ví dụ để bạn xác nhận lại đáp án ngay sau khi chọn mức độ Lại, Khó, Tốt, hoặc Dễ.
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {/* Option 1: Lật khi bấm Đánh Giá */}
+                <div 
+                  onClick={() => updateRevealMode('on_rating')}
+                  style={{
+                    padding: 14,
+                    borderRadius: 10,
+                    border: revealMode === 'on_rating' ? '1px solid #3b82f6' : '1px solid var(--glass-border)',
+                    background: revealMode === 'on_rating' ? 'rgba(59,130,246,0.15)' : 'rgba(0,0,0,0.2)',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s'
+                  }}
+                >
+                  <label style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', fontWeight: 600, color: 'white', fontSize: '0.9rem' }}>
+                    <input 
+                      type="radio" 
+                      name="revealMode"
+                      checked={revealMode === 'on_rating'} 
+                      onChange={() => updateRevealMode('on_rating')}
+                      style={{ cursor: 'pointer', width: 16, height: 16 }}
+                    />
+                    1. Lật đáp án ngay khi bấm Đánh Giá (Khuyên dùng)
+                  </label>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginTop: 6, paddingLeft: 26, lineHeight: 1.4 }}>
+                    Mặt ẩn ban đầu ➔ Bấm chọn Lại/Khó/Tốt/Dễ ➔ Hệ thống tự lật đáp án & giữ màn hình N giây để bạn xác nhận lại.
+                  </div>
+                </div>
+
+                {/* Option 2: Luôn hiển thị sẵn đáp án */}
+                <div 
+                  onClick={() => updateRevealMode('always')}
+                  style={{
+                    padding: 14,
+                    borderRadius: 10,
+                    border: revealMode === 'always' ? '1px solid #3b82f6' : '1px solid var(--glass-border)',
+                    background: revealMode === 'always' ? 'rgba(59,130,246,0.15)' : 'rgba(0,0,0,0.2)',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s'
+                  }}
+                >
+                  <label style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', fontWeight: 600, color: 'white', fontSize: '0.9rem' }}>
+                    <input 
+                      type="radio" 
+                      name="revealMode"
+                      checked={revealMode === 'always'} 
+                      onChange={() => updateRevealMode('always')}
+                      style={{ cursor: 'pointer', width: 16, height: 16 }}
+                    />
+                    2. Luôn hiển thị sẵn đáp án ngay từ khi mở thẻ mới
+                  </label>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginTop: 6, paddingLeft: 26, lineHeight: 1.4 }}>
+                    Hiển thị sẵn Furigana, nghĩa tiếng Việt và câu ví dụ ngay khi vừa chuyển sang thẻ mới.
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* 2. Tự động lật sẵn mặt sau khi mở thẻ mới */}
+            {/* 2. Tự động phát âm */}
             <div style={{ background: 'rgba(0,0,0,0.2)', padding: 14, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
               <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
-                <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'white' }}>📖 Tự động lật sẵn đáp án khi mở thẻ mới</span>
-                <input 
-                  type="checkbox" 
-                  checked={autoFlipNext} 
-                  onChange={e => updateAutoFlipNext(e.target.checked)} 
-                  style={{ width: 18, height: 18, cursor: 'pointer' }}
-                />
-              </label>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginTop: 4 }}>
-                Hiển thị sẵn câu trả lời ngay khi thẻ mới vừa xuất hiện (không cần bấm lật mặt).
-              </div>
-            </div>
-
-            {/* 3. Tự động phát âm */}
-            <div style={{ background: 'rgba(0,0,0,0.2)', padding: 14, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
-              <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
-                <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'white' }}>🔊 Tự động phát âm thanh</span>
+                <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'white' }}>🔊 Tự động phát âm thanh tiếng Nhật</span>
                 <input 
                   type="checkbox" 
                   checked={autoPlay} 
@@ -875,13 +908,13 @@ const VocabularyFlashcards = () => {
               </label>
             </div>
 
-            {/* 4. Thời gian giữ xem lại kết quả trước khi chuyển thẻ */}
+            {/* 3. Thời gian giữ xem lại kết quả */}
             <div>
-              <label style={{ display: 'block', fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 10, fontWeight: 600 }}>⏱️ Thời gian giữ xem lại đáp án sau khi đánh giá</label>
+              <label style={{ block: 'block', fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 10, fontWeight: 600 }}>⏱️ Thời gian giữ xem lại đáp án sau khi đánh giá</label>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {[
-                  { value: 500, label: '0.5 giây (Xem nhanh)', icon: <FastForward size={16} /> },
-                  { value: 1000, label: '1.0 giây (Khuyên dùng - Đủ đọc lại đáp án)', icon: <Play size={16} /> },
+                  { value: 500, label: '0.5 giây (Xem lướt nhanh)', icon: <FastForward size={16} /> },
+                  { value: 1000, label: '1.0 giây (Khuyên dùng - Đủ đọc lại nghĩa)', icon: <Play size={16} /> },
                   { value: 2000, label: '2.0 giây (Đọc kỹ cả câu ví dụ)', icon: <Pause size={16} /> },
                   { value: 3000, label: '3.0 giây (Thư thả)', icon: <Pause size={16} /> },
                   { value: -1, label: 'Thủ công (Giữ màn hình cho tới khi bấm nút "Thẻ tiếp theo")', icon: <Hand size={16} /> },
@@ -900,6 +933,20 @@ const VocabularyFlashcards = () => {
                       alignItems: 'center',
                       gap: 10,
                       textAlign: 'left',
+                      fontSize: '0.88rem'
+                    }}
+                  >
+                    {opt.icon} {opt.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 4 }}>
+              <button onClick={() => setShowSettings(false)} className="btn btn-primary" style={{ padding: '10px 24px' }}>Lưu & Đóng</button>
+            </div>
+          </div>
+        </div>
                       fontSize: '0.88rem'
                     }}
                   >
