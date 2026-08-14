@@ -954,3 +954,5 @@ const VocabularyFlashcards = () => {
 };
 
 export default VocabularyFlashcards;
+// v9.2.5 — Optimized Flashcards Reveal Mode
+
