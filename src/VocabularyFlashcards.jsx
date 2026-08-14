@@ -46,10 +46,27 @@ const VocabularyFlashcards = () => {
 
   const [learningMode, setLearningMode] = useState(() => isGuest() ? 'freestudy' : 'roadmap'); // Guest luôn mặc định Học Tự Do
   const [filterMode, setFilterMode] = useState('all');
-  const [autoPlay, setAutoPlay] = useState(true);
-  const [autoAdvanceDelay, setAutoAdvanceDelay] = useState(400); // 0, 400, 1000, 2000, -1
+  const [autoPlay, setAutoPlay] = useState(() => localStorage.getItem('omni_flashcards_autoplay') !== 'false');
+  const [autoFlipNext, setAutoFlipNext] = useState(() => localStorage.getItem('omni_flashcards_autoflip') === 'true');
+  const [autoAdvanceDelay, setAutoAdvanceDelay] = useState(() => {
+    const d = localStorage.getItem('omni_flashcards_delay');
+    return d !== null ? Number(d) : 400;
+  });
   const [isManualNextReady, setIsManualNextReady] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+
+  const updateAutoPlay = (val) => {
+    setAutoPlay(val);
+    localStorage.setItem('omni_flashcards_autoplay', String(val));
+  };
+  const updateAutoFlipNext = (val) => {
+    setAutoFlipNext(val);
+    localStorage.setItem('omni_flashcards_autoflip', String(val));
+  };
+  const updateAutoAdvanceDelay = (val) => {
+    setAutoAdvanceDelay(val);
+    localStorage.setItem('omni_flashcards_delay', String(val));
+  };
   
   const [queue, setQueue] = useState([]);
   const [queueIdx, setQueueIdx] = useState(0);
@@ -222,7 +239,7 @@ const VocabularyFlashcards = () => {
   const [showSessionReview, setShowSessionReview] = useState(false);
 
   const advanceToNextCard = () => {
-    setShowAnswer(false);
+    setShowAnswer(autoFlipNext);
     setLastRating(null);
     setQuizAnswered(null);
     setIsManualNextReady(false);
@@ -241,7 +258,7 @@ const VocabularyFlashcards = () => {
 
   const handlePrev = () => {
     if (queue.length === 0) return;
-    setShowAnswer(false);
+    setShowAnswer(autoFlipNext);
     setLastRating(null);
     setQuizAnswered(null);
     setIsManualNextReady(false);
@@ -567,23 +584,26 @@ const VocabularyFlashcards = () => {
         <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: 16, minWidth: 320 }}>
           <StatsBar stats={stats} levelColor={lc}/>
 
-          {fsrsCard && nextDue && (
-            <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'10px 16px', background:`${lc}11`, border:`1px solid ${lc}33`, borderRadius:10, fontSize:'0.85rem' }}>
-              <span style={{ color:lc, fontWeight: 600 }}>
-                <Brain size={14} style={{ verticalAlign:'middle', marginRight:6 }}/>
-                Trạng thái FSRS: {['Chưa học','Đang học','Học','Ôn lại','Học lại'][fsrsCard.state || 0]}
-              </span>
-              <span style={{ color: nextDue.days === 0 ? '#f59e0b' : 'var(--text-secondary)', fontWeight: 500 }}>
-                Đến hạn: {nextDue.label}
-              </span>
-            </div>
-          )}
+          <div className="glass-panel" style={{ textAlign:'center', padding:'50px 28px 36px', minHeight:410, display:'flex', flexDirection:'column', justifyContent:'space-between', position:'relative', transition: 'all 0.2s ease' }}>
+            {/* Top Header inside card: Level tag + FSRS status */}
+            <div style={{ position:'absolute', top:16, left:18, right:18, display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+              <div style={{ display:'flex', gap:6, alignItems:'center' }}>
+                <span style={{ fontSize:'0.78rem', padding:'3px 10px', borderRadius:4, background:`${lc}22`, color:lc, fontWeight:700 }}>{level}</span>
+                {currentCard.type && <span style={{ fontSize:'0.78rem', padding:'3px 10px', borderRadius:4, background:'rgba(255,255,255,0.06)', color:'var(--text-secondary)' }}>{currentCard.type}</span>}
+              </div>
 
-      <div className="glass-panel" style={{ textAlign:'center', padding:'44px 28px', minHeight:360, display:'flex', flexDirection:'column', justifyContent:'center', position:'relative' }}>
-        <div style={{ position:'absolute', top:16, left:18, display:'flex', gap:6 }}>
-          <span style={{ fontSize:'0.78rem', padding:'3px 10px', borderRadius:4, background:`${lc}22`, color:lc, fontWeight:700 }}>{level}</span>
-          {currentCard.type && <span style={{ fontSize:'0.78rem', padding:'3px 10px', borderRadius:4, background:'rgba(255,255,255,0.06)', color:'var(--text-secondary)' }}>{currentCard.type}</span>}
-        </div>
+              {fsrsCard && nextDue && (
+                <div style={{ display:'flex', alignItems:'center', gap:8, fontSize:'0.78rem' }}>
+                  <span style={{ color:lc, fontWeight: 600, display:'flex', alignItems:'center', gap:4 }}>
+                    <Brain size={13}/>
+                    FSRS: {['Chưa học','Đang học','Học','Ôn lại','Học lại'][fsrsCard.state || 0]}
+                  </span>
+                  <span style={{ color: nextDue.days === 0 ? '#f59e0b' : 'var(--text-tertiary)', fontWeight: 500 }}>
+                    · {nextDue.label}
+                  </span>
+                </div>
+              )}
+            </div>
 
         {/* Word + TTS */}
         <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:14, marginBottom:24 }}>
@@ -780,37 +800,70 @@ const VocabularyFlashcards = () => {
       </div>
 
       {showSettings && (
-        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(4px)' }} onClick={() => setShowSettings(false)}>
-          <div style={{ background: '#1e293b', border: '1px solid var(--glass-border)', borderRadius: 16, padding: 24, width: '90%', maxWidth: 400, boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }} onClick={e => e.stopPropagation()}>
-            <h2 style={{ margin: '0 0 20px 0', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: 10 }}>
-              <Settings size={20} color="#60a5fa" /> Cài đặt Lật thẻ
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(6px)' }} onClick={() => setShowSettings(false)}>
+          <div style={{ background: '#1e293b', border: '1px solid var(--glass-border)', borderRadius: 16, padding: 24, width: '90%', maxWidth: 460, boxShadow: '0 20px 40px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: 20 }} onClick={e => e.stopPropagation()}>
+            <h2 style={{ margin: 0, fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: 10, color: 'white' }}>
+              <Settings size={20} color="#60a5fa" /> Cài Đặt Lật Thẻ & Tự Động
             </h2>
 
-            <div style={{ marginBottom: 24 }}>
-              <label style={{ display: 'block', fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 12, fontWeight: 600 }}>Tốc độ chuyển thẻ tự động</label>
-              
+            {/* 1. Tự động phát âm */}
+            <div style={{ background: 'rgba(0,0,0,0.2)', padding: 14, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
+              <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+                <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'white' }}>🔊 Tự động phát âm thanh</span>
+                <input 
+                  type="checkbox" 
+                  checked={autoPlay} 
+                  onChange={e => updateAutoPlay(e.target.checked)} 
+                  style={{ width: 18, height: 18, cursor: 'pointer' }}
+                />
+              </label>
+              <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginTop: 4 }}>
+                Tự động phát đọc từ vựng tiếng Nhật khi chuyển sang thẻ mới.
+              </div>
+            </div>
+
+            {/* 2. Tự động lật sẵn mặt sau */}
+            <div style={{ background: 'rgba(0,0,0,0.2)', padding: 14, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
+              <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+                <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'white' }}>👁️ Tự động lật sẵn đáp án</span>
+                <input 
+                  type="checkbox" 
+                  checked={autoFlipNext} 
+                  onChange={e => updateAutoFlipNext(e.target.checked)} 
+                  style={{ width: 18, height: 18, cursor: 'pointer' }}
+                />
+              </label>
+              <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginTop: 4 }}>
+                Hiển thị sẵn cách đọc và nghĩa khi chuyển sang thẻ mới.
+              </div>
+            </div>
+
+            {/* 3. Tốc độ chuyển thẻ */}
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 10, fontWeight: 600 }}>⚡ Tốc độ chuyển thẻ tự động</label>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {[
-                  { value: 0, label: 'Chuyển ngay lập tức (Nhanh nhất)', icon: <FastForward size={16} /> },
-                  { value: 400, label: 'Đợi 0.4s (Mặc định)', icon: <Play size={16} /> },
+                  { value: 0, label: 'Chuyển ngay lập tức (0s)', icon: <FastForward size={16} /> },
+                  { value: 400, label: 'Đợi 0.4s (Mặc định mượt mà)', icon: <Play size={16} /> },
                   { value: 1000, label: 'Đợi 1s (Chậm)', icon: <Pause size={16} /> },
                   { value: 2000, label: 'Đợi 2s (Rất chậm)', icon: <Pause size={16} /> },
                   { value: -1, label: 'Thủ công (Bấm nút Tiếp tục)', icon: <Hand size={16} /> },
                 ].map(opt => (
                   <button
                     key={opt.value}
-                    onClick={() => { setAutoAdvanceDelay(opt.value); setShowSettings(false); }}
+                    onClick={() => updateAutoAdvanceDelay(opt.value)}
                     style={{
-                      padding: '12px 16px',
+                      padding: '10px 14px',
                       borderRadius: 8,
                       border: autoAdvanceDelay === opt.value ? '1px solid #3b82f6' : '1px solid var(--glass-border)',
-                      background: autoAdvanceDelay === opt.value ? 'rgba(59,130,246,0.1)' : 'rgba(0,0,0,0.2)',
+                      background: autoAdvanceDelay === opt.value ? 'rgba(59,130,246,0.15)' : 'rgba(0,0,0,0.2)',
                       color: autoAdvanceDelay === opt.value ? '#60a5fa' : 'white',
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',
                       gap: 10,
-                      textAlign: 'left'
+                      textAlign: 'left',
+                      fontSize: '0.88rem'
                     }}
                   >
                     {opt.icon} {opt.label}
@@ -819,8 +872,8 @@ const VocabularyFlashcards = () => {
               </div>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-              <button onClick={() => setShowSettings(false)} className="btn btn-primary" style={{ padding: '10px 20px' }}>Đóng</button>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 6 }}>
+              <button onClick={() => setShowSettings(false)} className="btn btn-primary" style={{ padding: '10px 24px' }}>Đóng & Lưu</button>
             </div>
           </div>
         </div>
