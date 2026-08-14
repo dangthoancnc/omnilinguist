@@ -5,9 +5,10 @@ import { db } from './db.js';
 import { Rating } from './fsrs.js';
 import { getCard, reviewRoadmapCard, reviewFreeStudyCard, getDueCards, getStats, getNextDueInfo, getCustomCards, isBookmarked, toggleBookmark, getUserProfile, getFreeStudyHistory } from './studyStore.js';
 import { syncMasterData } from './syncMasterData.js';
-import { Eye, EyeOff, Volume2, ChevronLeft, ChevronRight, Brain, CheckCircle2, AlertCircle, RotateCcw, Target, Bookmark, Filter, Shuffle, ListOrdered, Zap, BookOpen, List, X, Settings, FastForward, Play, Pause, Hand } from 'lucide-react';
+import { Eye, EyeOff, Volume2, ChevronLeft, ChevronRight, Brain, CheckCircle2, AlertCircle, RotateCcw, Target, Bookmark, Filter, Shuffle, ListOrdered, Zap, BookOpen, List, X, Settings, FastForward, Play, Pause, Hand, UserPlus } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 import localMasterDb from './data/jlpt_master_db.json';
+import { isGuest, checkGuestQuota } from './identityManager.js';
 
 const LEVELS = ['N5','N4','N3','N2','N1'];
 const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
@@ -34,7 +35,7 @@ const VocabularyFlashcards = () => {
     const p = getUserProfile();
     return p?.currentLevel || 'N3';
   });
-  const [learningMode, setLearningMode] = useState('roadmap'); // 'roadmap' | 'freestudy'
+  const [learningMode, setLearningMode] = useState(() => isGuest() ? 'freestudy' : 'roadmap'); // Guest luôn mặc định Học Tự Do
   const [filterMode, setFilterMode] = useState('all');
   const [autoPlay, setAutoPlay] = useState(true);
   const [autoAdvanceDelay, setAutoAdvanceDelay] = useState(400); // 0, 400, 1000, 2000, -1
@@ -467,14 +468,21 @@ const VocabularyFlashcards = () => {
             ))}
           </select>
 
-          <div style={{ display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: 8, padding: 4 }}>
-            <button onClick={() => setLearningMode('roadmap')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: learningMode === 'roadmap' ? 'rgba(59,130,246,0.3)' : 'transparent', color: learningMode === 'roadmap' ? '#60a5fa' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6, fontWeight: learningMode === 'roadmap' ? 600 : 400 }}>
-              <ListOrdered size={16}/> Lộ Trình FSRS
-            </button>
-            <button onClick={() => setLearningMode('freestudy')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: learningMode === 'freestudy' ? 'rgba(16,185,129,0.2)' : 'transparent', color: learningMode === 'freestudy' ? '#34d399' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6, fontWeight: learningMode === 'freestudy' ? 600 : 400 }}>
-              <Shuffle size={16}/> Học Tự Do
-            </button>
-          </div>
+          {!isGuest() ? (
+            <div style={{ display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: 8, padding: 4 }}>
+              <button onClick={() => setLearningMode('roadmap')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: learningMode === 'roadmap' ? 'rgba(59,130,246,0.3)' : 'transparent', color: learningMode === 'roadmap' ? '#60a5fa' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6, fontWeight: learningMode === 'roadmap' ? 600 : 400 }}>
+                <ListOrdered size={16}/> Lộ Trình FSRS
+              </button>
+              <button onClick={() => setLearningMode('freestudy')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: learningMode === 'freestudy' ? 'rgba(16,185,129,0.2)' : 'transparent', color: learningMode === 'freestudy' ? '#34d399' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6, fontWeight: learningMode === 'freestudy' ? 600 : 400 }}>
+                <Shuffle size={16}/> Học Tự Do
+              </button>
+            </div>
+          ) : (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(16,185,129,0.15)', padding: '6px 14px', borderRadius: 8, border: '1px solid rgba(16,185,129,0.3)' }}>
+              <Shuffle size={16} color="#34d399" />
+              <span style={{ fontSize: '0.85rem', color: '#34d399', fontWeight: 600 }}>Học Tự Do</span>
+            </div>
+          )}
 
           <div style={{ display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: 8, padding: 4 }}>
             <button onClick={() => setStudyMode('fsrs')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: studyMode === 'fsrs' ? 'rgba(255,255,255,0.1)' : 'transparent', color: studyMode === 'fsrs' ? 'white' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6 }}>

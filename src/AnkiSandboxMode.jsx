@@ -3,12 +3,15 @@ import { FolderOpen, FileArchive, Play, Book, Save, RefreshCw, AudioLines, Chevr
 import JSZip from 'jszip';
 import initSqlJs from 'sql.js';
 import sqlWasmUrl from 'sql.js/dist/sql-wasm.wasm?url';
+import { saveAnkiWorkspaceHandle, getAnkiWorkspaceHandle, verifyHandlePermission, DEFAULT_ANKI_FOLDER } from './ankiStore';
 
 const AnkiSandboxMode = () => {
   const [workspaceHandle, setWorkspaceHandle] = useState(null);
   const [mediaHandle, setMediaHandle] = useState(null);
   const [decks, setDecks] = useState([]);
   const [activeDeck, setActiveDeck] = useState(null);
+  const [savedFolderInfo, setSavedFolderInfo] = useState(null);
+  const [autoConnecting, setAutoConnecting] = useState(true);
   
   const [isProcessing, setIsProcessing] = useState(false);
   const [progressLog, setProgressLog] = useState([]);
@@ -26,23 +29,74 @@ const AnkiSandboxMode = () => {
 
   const addLog = (msg) => setProgressLog(p => [...p, msg]);
 
-  // Request Directory Access
+  // Connect to workspace directory handle
+  const connectWorkspace = async (dirHandle, pathName = null) => {
+    try {
+      const mediaDir = await dirHandle.getDirectoryHandle('media', { create: true });
+      setWorkspaceHandle(dirHandle);
+      setMediaHandle(mediaDir);
+      await saveAnkiWorkspaceHandle(dirHandle, pathName || dirHandle.name);
+      addLog(`✅ Đã kết nối Workspace: ${pathName || dirHandle.name}`);
+      await scanWorkspace(dirHandle);
+    } catch (err) {
+      console.error('Connection error:', err);
+      if (err.name !== 'AbortError') {
+        alert('Lỗi kết nối thư mục: ' + err.message);
+      }
+    }
+  };
+
+  // Auto load saved workspace on mount
+  useEffect(() => {
+    const initSavedWorkspace = async () => {
+      setAutoConnecting(true);
+      try {
+        const { handle, path } = await getAnkiWorkspaceHandle();
+        if (handle) {
+          const perm = await handle.queryPermission({ mode: 'readwrite' });
+          if (perm === 'granted') {
+            await connectWorkspace(handle, path);
+          } else {
+            setSavedFolderInfo({ handle, name: path || handle.name || DEFAULT_ANKI_FOLDER });
+          }
+        } else {
+          setSavedFolderInfo({ handle: null, name: localStorage.getItem('omni_anki_workspace_name') || DEFAULT_ANKI_FOLDER });
+        }
+      } catch (e) {
+        console.warn('Auto connect error:', e);
+      } finally {
+        setAutoConnecting(false);
+      }
+    };
+    initSavedWorkspace();
+  }, []);
+
+  // Request Directory Access via picker
   const handleSelectWorkspace = async () => {
     try {
       const dirHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
-      setWorkspaceHandle(dirHandle);
-      
-      // Get or create media folder
-      const mediaDir = await dirHandle.getDirectoryHandle('media', { create: true });
-      setMediaHandle(mediaDir);
-
-      addLog(`✅ Đã kết nối Workspace: ${dirHandle.name}`);
-      await scanWorkspace(dirHandle);
+      await connectWorkspace(dirHandle, dirHandle.name);
     } catch (err) {
       if (err.name !== 'AbortError') {
         alert('Lỗi truy cập thư mục: ' + err.message);
       }
     }
+  };
+
+  // Reconnect using saved handle
+  const handleReconnectSaved = async () => {
+    if (savedFolderInfo?.handle) {
+      try {
+        const granted = await verifyHandlePermission(savedFolderInfo.handle);
+        if (granted) {
+          await connectWorkspace(savedFolderInfo.handle, savedFolderInfo.name);
+          return;
+        }
+      } catch (e) {
+        console.warn('Permission error:', e);
+      }
+    }
+    handleSelectWorkspace();
   };
 
   // Scan workspace for existing decks
@@ -473,24 +527,61 @@ const AnkiSandboxMode = () => {
       {!workspaceHandle ? (
         <div className="glass-panel" style={{ padding: 40, textAlign: 'center' }}>
           <FolderOpen size={48} color="#3b82f6" style={{ marginBottom: 16 }} />
-          <h2>Khởi tạo Workspace</h2>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: 24, maxWidth: 500, margin: '0 auto 24px' }}>
-            Vui lòng chọn một thư mục trên máy tính của bạn (VD: D:\Omni_Sandbox). Toàn bộ dữ liệu bài học, hình ảnh và âm thanh sẽ được lưu an toàn tại đây để bạn có thể học offline vĩnh viễn.
+          <h2>Khởi tạo Anki Workspace</h2>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: 24, maxWidth: 550, margin: '0 auto 24px', lineHeight: 1.5 }}>
+            Toàn bộ dữ liệu bài học, hình ảnh và âm thanh sẽ được lưu an toàn trực tiếp trên máy tính của bạn.
+            {savedFolderInfo?.name && (
+              <span style={{ display: 'block', marginTop: 10, color: '#60a5fa', fontWeight: 600, fontFamily: 'monospace', fontSize: '0.95rem' }}>
+                📂 Thư mục mặc định: {savedFolderInfo.name}
+              </span>
+            )}
           </p>
-          <button className="btn btn-primary" onClick={handleSelectWorkspace} style={{ padding: '12px 24px', fontSize: '1.1rem' }}>
-            Chọn Thư Mục Lưu Trữ
-          </button>
+
+          {autoConnecting ? (
+            <div style={{ color: 'var(--text-secondary)', padding: 12 }}>Đang tự động kết nối thư mục...</div>
+          ) : (
+            <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+              <button 
+                className="btn btn-primary" 
+                onClick={savedFolderInfo?.handle ? handleReconnectSaved : handleSelectWorkspace} 
+                style={{ padding: '12px 24px', fontSize: '1.05rem', display: 'flex', alignItems: 'center', gap: 8 }}
+              >
+                <FolderOpen size={20} />
+                {savedFolderInfo?.handle ? `🔑 Kết Nối Workspace (${savedFolderInfo.name})` : 'Chọn Thư Mục Lưu Trữ'}
+              </button>
+
+              {savedFolderInfo?.handle && (
+                <button 
+                  className="btn btn-outline" 
+                  onClick={handleSelectWorkspace} 
+                  style={{ padding: '12px 20px', fontSize: '0.95rem' }}
+                >
+                  📁 Chọn Thư Mục Khác
+                </button>
+              )}
+            </div>
+          )}
         </div>
       ) : (
         <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', flex: 1 }}>
           {/* Sidebar */}
           <div style={{ flex: '1 1 250px', maxWidth: 350, display: 'flex', flexDirection: 'column', gap: 16 }}>
             <div className="glass-panel" style={{ padding: 20 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16, color: '#10b981' }}>
-                <Save size={18}/>
-                <span style={{ fontWeight: 600 }}>Workspace Đã Kết Nối</span>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#10b981' }}>
+                  <Save size={18}/>
+                  <span style={{ fontWeight: 600 }}>Workspace Đã Kết Nối</span>
+                </div>
+                <button 
+                  className="btn btn-ghost" 
+                  onClick={handleSelectWorkspace} 
+                  style={{ padding: '4px 8px', fontSize: '0.75rem', color: '#60a5fa', textDecoration: 'underline' }}
+                  title="Chọn hoặc đổi thư mục khác"
+                >
+                  Đổi thư mục
+                </button>
               </div>
-              <div style={{ fontSize: '0.85rem', background: 'rgba(0,0,0,0.2)', padding: 10, borderRadius: 6, wordBreak: 'break-all' }}>
+              <div style={{ fontSize: '0.85rem', background: 'rgba(0,0,0,0.2)', padding: 10, borderRadius: 6, wordBreak: 'break-all', fontFamily: 'monospace', color: '#60a5fa' }}>
                 {workspaceHandle.name}
               </div>
             </div>
