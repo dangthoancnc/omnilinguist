@@ -79,13 +79,35 @@ const Roadmap = () => {
   }, []);
 
   const handleFinishSetup = () => {
-    const newProfile = { ...formData, currentPhase: 0, startDate: new Date().toISOString() };
+    const newProfile = { 
+      ...formData, 
+      targetLevel: formData.goal,
+      currentPhase: 0, 
+      startDate: new Date().toISOString() 
+    };
     const selectedGoal = GOALS.find(g => g.id === formData.goal);
     if(selectedGoal) newProfile.goalLabel = selectedGoal.label;
     
     saveUserProfile(newProfile);
     setProfile(newProfile);
     setIsSettingUp(false);
+  };
+
+  const handleConfigureNewRoadmap = () => {
+    setSetupStep(1);
+    setIsSettingUp(true);
+  };
+
+  const handleResetCurrentRoadmap = () => {
+    if (window.confirm(`Bạn có chắc muốn đặt lại ngày bắt đầu và học lại Lộ trình ${profile?.goal || 'hiện tại'} từ Phase 1 (Ngày 1)?`)) {
+      const resetProf = {
+        ...profile,
+        currentPhase: 0,
+        startDate: new Date().toISOString()
+      };
+      saveUserProfile(resetProf);
+      setProfile(resetProf);
+    }
   };
 
   const handleAdvance = () => {
@@ -156,6 +178,17 @@ const Roadmap = () => {
               ← Quay lại
             </button>
           )}
+
+          {profile && (
+            <div style={{ marginTop: 16 }}>
+              <button 
+                onClick={() => setIsSettingUp(false)} 
+                style={{ background: 'none', border: 'none', color: 'var(--text-tertiary)', cursor: 'pointer', fontSize: '0.85rem' }}
+              >
+                ✕ Hủy (Giữ lộ trình {profile.goal} hiện tại)
+              </button>
+            </div>
+          )}
         </div>
       </div>
     );
@@ -180,7 +213,7 @@ const Roadmap = () => {
     <div style={{ maxWidth: 900, margin: '0 auto' }}>
       {/* Header Overview */}
       <div className="glass-panel" style={{ marginBottom: 24, background: `linear-gradient(135deg, ${goalInfo.color}15, rgba(0,0,0,0.4))` }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 12, marginBottom: 20 }}>
           <div>
             <h2 style={{ fontSize: '1.6rem', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 10 }}>
               <Flag color={goalInfo.color} size={24}/> Lộ trình {goalInfo.label} — {goalInfo.sub}
@@ -189,9 +222,25 @@ const Roadmap = () => {
               Đầu vào: {profile.currentLevel} • Mục tiêu: {profile.goal} • {profile.timePerDay} tiếng/ngày
             </div>
           </div>
-          <button onClick={() => { if(window.confirm('Bạn muốn xóa lộ trình hiện tại và làm lại từ đầu?')) { localStorage.removeItem('omnilinguist_user_profile'); saveUserProfile({ currentLevel: 'N4', targetLevel: 'N3', currentPhase: 0 }); window.location.reload(); } }} style={{ background: 'none', border: '1px solid var(--glass-border)', padding: '6px 12px', borderRadius: 8, color: 'var(--text-secondary)', cursor: 'pointer', fontSize: '0.8rem' }}>
-            Thiết lập lại
-          </button>
+
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            <button 
+              onClick={handleConfigureNewRoadmap} 
+              className="btn btn-outline"
+              style={{ padding: '6px 12px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: 6 }}
+              title="Đổi trình độ đầu vào hoặc chọn cấp độ mục tiêu mới"
+            >
+              ⚙️ Thiết Lập Lộ Trình Mới
+            </button>
+
+            <button 
+              onClick={handleResetCurrentRoadmap} 
+              style={{ background: 'none', border: '1px solid var(--glass-border)', padding: '6px 12px', borderRadius: 8, color: 'var(--text-tertiary)', cursor: 'pointer', fontSize: '0.8rem' }}
+              title="Học lại lộ trình hiện tại từ Ngày 1 (Phase 1)"
+            >
+              🔄 Học lại từ đầu
+            </button>
+          </div>
         </div>
 
         <div style={{ marginBottom: 8, display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
