@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
-  Target, Flame, BookOpen, Mic, Brain, PencilLine, Map, ChevronRight, 
+  Target, Flame, BookOpen, Mic, Brain, PencilLine, Map as MapIcon, ChevronRight, 
   AlertCircle, LogIn, UserPlus, CheckCircle2, History, BarChart2, ShieldCheck, 
   Sparkles, Layers, RefreshCw, Clock, Play
 } from 'lucide-react';
@@ -37,7 +37,7 @@ const WEEK = ['T2','T3','T4','T5','T6','T7','CN'];
 const WEEK_DATA = WEEK.map((label, i) => ({ label, v: [45,120,90,130,110,60,85][i], today: i === (new Date().getDay() + 6) % 7 }));
 
 const QUICK_LINKS = [
-  { icon:<Map size={18}/>, label:'学習ロードマップ', sub:'Lộ trình học tập', route:'/roadmap', color:'#f59e0b' },
+  { icon:<MapIcon size={18}/>, label:'学習ロードマップ', sub:'Lộ trình học tập', route:'/roadmap', color:'#f59e0b' },
   { icon:<Brain size={18}/>, label:'単語カード FSRS', sub:'Flashcards từ vựng', route:'/flashcards', color:'#3b82f6' },
   { icon:<PencilLine size={18}/>, label:'漢字練習', sub:'Luyện viết Kanji', route:'/kanji', color:'#8b5cf6' },
   { icon:<BookOpen size={18}/>, label:'文法検索', sub:'Tra cứu Ngữ pháp', route:'/grammar', color:'#ec4899' },
@@ -196,7 +196,7 @@ const Dashboard = () => {
             onClick={() => navigate('/roadmap')}
             style={{ padding: '10px 18px', fontSize: '0.88rem', display: 'flex', alignItems: 'center', gap: 8 }}
           >
-            <Map size={16} /> Xem Chi Tiết Lộ Trình <ChevronRight size={16} />
+            <MapIcon size={16} /> Xem Chi Tiết Lộ Trình <ChevronRight size={16} />
           </button>
         </div>
       )}

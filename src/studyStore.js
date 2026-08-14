@@ -430,8 +430,8 @@ export async function pullCloudData() {
 
     // 4. Pull Free Study History
     try {
-      const { data: freeStudy } = await supabase.from('omni_freestudy_history').select('*');
-      if (freeStudy && freeStudy.length > 0) {
+      const { data: freeStudy, error: fsErr } = await supabase.from('omni_freestudy_history').select('*');
+      if (!fsErr && freeStudy && freeStudy.length > 0) {
         const localHistory = JSON.parse(localStorage.getItem(getStorageKey('freestudy')) || '{}');
         let fsUpdates = false;
         freeStudy.forEach(fs => {
@@ -454,8 +454,8 @@ export async function pullCloudData() {
 
     // 5. Pull Custom Cards
     try {
-      const { data: customCards } = await supabase.from('omni_custom_cards').select('*');
-      if (customCards && customCards.length > 0) {
+      const { data: customCards, error: ccErr } = await supabase.from('omni_custom_cards').select('*');
+      if (!ccErr && customCards && customCards.length > 0) {
         const localCards = JSON.parse(localStorage.getItem(getStorageKey('custom_cards')) || '[]');
         const localWords = new Set(localCards.map(c => c.word));
         let newCards = false;
@@ -474,8 +474,8 @@ export async function pullCloudData() {
 
     // 6. Pull Bookmarks
     try {
-      const { data: bookmarks } = await supabase.from('omni_bookmarks').select('*');
-      if (bookmarks && bookmarks.length > 0) {
+      const { data: bookmarks, error: bmErr } = await supabase.from('omni_bookmarks').select('*');
+      if (!bmErr && bookmarks && bookmarks.length > 0) {
         const localBookmarks = JSON.parse(localStorage.getItem(getStorageKey('bookmarks')) || '[]');
         const merged = [...new Set([...localBookmarks, ...bookmarks.map(b => b.card_id)])];
         if (merged.length > localBookmarks.length) {
