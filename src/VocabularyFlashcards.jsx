@@ -1,5 +1,5 @@
-// v9.2.0 — Flashcards: FSRS Engine + Auto-repair IndexedDB khi thiếu dữ liệu
 import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
 import { Rating } from './fsrs.js';
@@ -30,11 +30,20 @@ const StatsBar = ({ stats, levelColor }) => (
 );
 
 const VocabularyFlashcards = () => {
+  const location = useLocation();
   const vocabData = useLiveQuery(() => db.vocab.toArray()) || [];
   const [level, setLevel] = useState(() => {
+    if (location.state?.level) return location.state.level;
     const p = getUserProfile();
-    return p?.currentLevel || 'N3';
+    return p?.goal || p?.targetLevel || p?.currentLevel || 'N3';
   });
+
+  useEffect(() => {
+    if (location.state?.level) {
+      setLevel(location.state.level);
+    }
+  }, [location.state]);
+
   const [learningMode, setLearningMode] = useState(() => isGuest() ? 'freestudy' : 'roadmap'); // Guest luôn mặc định Học Tự Do
   const [filterMode, setFilterMode] = useState('all');
   const [autoPlay, setAutoPlay] = useState(true);

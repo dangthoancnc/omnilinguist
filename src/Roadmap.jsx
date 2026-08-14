@@ -169,11 +169,12 @@ const Roadmap = () => {
   const currentPhaseIdx = profile.currentPhase || 0;
   
   // Tổng quan tiến độ
-  const startDate = new Date(profile.startDate);
+  const startDate = profile?.startDate ? new Date(profile.startDate) : new Date();
   const now = new Date();
-  const daysActive = Math.floor((now - startDate) / 86400000);
-  const totalDays = goalInfo.months * 30;
-  const progressPercent = Math.min(100, Math.round((daysActive / totalDays) * 100));
+  const validStartTime = isNaN(startDate.getTime()) ? now.getTime() : startDate.getTime();
+  const daysActive = Math.max(1, Math.floor((now.getTime() - validStartTime) / 86400000) + 1);
+  const totalDays = (goalInfo.months || 3) * 30;
+  const progressPercent = Math.min(100, Math.round((daysActive / totalDays) * 100)) || 0;
 
   return (
     <div style={{ maxWidth: 900, margin: '0 auto' }}>
@@ -256,7 +257,7 @@ const Roadmap = () => {
                 <h4 style={{ marginBottom: 14, fontSize: '0.95rem' }}>📅 Kế hoạch hàng ngày ({profile.timePerDay}h)</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {phases[currentPhaseIdx].tasks.map((t, i) => (
-                    <div key={i} onClick={() => navigate(t.route)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 14px', borderRadius: 8, background: 'rgba(255,255,255,0.04)', border: '1px solid var(--glass-border)', cursor: 'pointer', transition: 'all 0.2s' }}
+                    <div key={i} onClick={() => navigate(t.route, { state: { level: profile.goal || profile.targetLevel || 'N3' } })} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 14px', borderRadius: 8, background: 'rgba(255,255,255,0.04)', border: '1px solid var(--glass-border)', cursor: 'pointer', transition: 'all 0.2s' }}
                       onMouseEnter={e => e.currentTarget.style.borderColor = phases[currentPhaseIdx].color}
                       onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
                     >
