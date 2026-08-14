@@ -910,7 +910,7 @@ const VocabularyFlashcards = () => {
 
             {/* 3. Thời gian giữ xem lại kết quả */}
             <div>
-              <label style={{ block: 'block', fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 10, fontWeight: 600 }}>⏱️ Thời gian giữ xem lại đáp án sau khi đánh giá</label>
+              <label style={{ display: 'block', fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 10, fontWeight: 600 }}>⏱️ Thời gian giữ xem lại đáp án sau khi đánh giá</label>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {[
                   { value: 500, label: '0.5 giây (Xem lướt nhanh)', icon: <FastForward size={16} /> },
