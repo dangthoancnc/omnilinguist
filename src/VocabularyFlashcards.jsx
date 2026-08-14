@@ -47,21 +47,27 @@ const VocabularyFlashcards = () => {
   const [learningMode, setLearningMode] = useState(() => isGuest() ? 'freestudy' : 'roadmap'); // Guest luôn mặc định Học Tự Do
   const [filterMode, setFilterMode] = useState('all');
   const [autoPlay, setAutoPlay] = useState(() => localStorage.getItem('omni_flashcards_autoplay') !== 'false');
-  const [autoFlipNext, setAutoFlipNext] = useState(() => localStorage.getItem('omni_flashcards_autoflip') === 'true');
+  const [autoFlipOnRating, setAutoFlipOnRating] = useState(() => localStorage.getItem('omni_flashcards_autoflip_rating') !== 'false');
+  const [autoFlipNext, setAutoFlipNext] = useState(() => localStorage.getItem('omni_flashcards_autoflip_next') === 'true');
   const [autoAdvanceDelay, setAutoAdvanceDelay] = useState(() => {
     const d = localStorage.getItem('omni_flashcards_delay');
-    return d !== null ? Number(d) : 400;
+    return d !== null ? Number(d) : 1000; // 1s mặc định để xem lại đáp án
   });
   const [isManualNextReady, setIsManualNextReady] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const advanceTimerRef = useRef(null);
 
   const updateAutoPlay = (val) => {
     setAutoPlay(val);
     localStorage.setItem('omni_flashcards_autoplay', String(val));
   };
+  const updateAutoFlipOnRating = (val) => {
+    setAutoFlipOnRating(val);
+    localStorage.setItem('omni_flashcards_autoflip_rating', String(val));
+  };
   const updateAutoFlipNext = (val) => {
     setAutoFlipNext(val);
-    localStorage.setItem('omni_flashcards_autoflip', String(val));
+    localStorage.setItem('omni_flashcards_autoflip_next', String(val));
   };
   const updateAutoAdvanceDelay = (val) => {
     setAutoAdvanceDelay(val);
@@ -239,6 +245,10 @@ const VocabularyFlashcards = () => {
   const [showSessionReview, setShowSessionReview] = useState(false);
 
   const advanceToNextCard = () => {
+    if (advanceTimerRef.current) {
+      clearTimeout(advanceTimerRef.current);
+      advanceTimerRef.current = null;
+    }
     setShowAnswer(autoFlipNext);
     setLastRating(null);
     setQuizAnswered(null);
@@ -258,6 +268,10 @@ const VocabularyFlashcards = () => {
 
   const handlePrev = () => {
     if (queue.length === 0) return;
+    if (advanceTimerRef.current) {
+      clearTimeout(advanceTimerRef.current);
+      advanceTimerRef.current = null;
+    }
     setShowAnswer(autoFlipNext);
     setLastRating(null);
     setQuizAnswered(null);
@@ -274,6 +288,11 @@ const VocabularyFlashcards = () => {
   const handleRating = (rating) => {
     if (!currentId || !currentCard) return;
     
+    if (advanceTimerRef.current) {
+      clearTimeout(advanceTimerRef.current);
+      advanceTimerRef.current = null;
+    }
+
     if (learningMode === 'roadmap') {
       reviewRoadmapCard(currentId, rating);
     } else {
@@ -282,6 +301,11 @@ const VocabularyFlashcards = () => {
     }
     
     setLastRating(rating);
+
+    // Tự động lật đáp án ngay khi bấm trả lời để xem lại kết quả nếu bật tùy chọn
+    if (autoFlipOnRating) {
+      setShowAnswer(true);
+    }
     
     // Save to session history
     setSessionHistory(prev => {
@@ -302,7 +326,7 @@ const VocabularyFlashcards = () => {
     if (autoAdvanceDelay === -1) {
       setIsManualNextReady(true);
     } else {
-      setTimeout(() => {
+      advanceTimerRef.current = setTimeout(() => {
         advanceToNextCard();
       }, autoAdvanceDelay);
     }
@@ -801,12 +825,44 @@ const VocabularyFlashcards = () => {
 
       {showSettings && (
         <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(6px)' }} onClick={() => setShowSettings(false)}>
-          <div style={{ background: '#1e293b', border: '1px solid var(--glass-border)', borderRadius: 16, padding: 24, width: '90%', maxWidth: 460, boxShadow: '0 20px 40px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: 20 }} onClick={e => e.stopPropagation()}>
+          <div style={{ background: '#1e293b', border: '1px solid var(--glass-border)', borderRadius: 16, padding: 24, width: '90%', maxWidth: 480, boxShadow: '0 20px 40px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: 18 }} onClick={e => e.stopPropagation()}>
             <h2 style={{ margin: 0, fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: 10, color: 'white' }}>
-              <Settings size={20} color="#60a5fa" /> Cài Đặt Lật Thẻ & Tự Động
+              <Settings size={20} color="#60a5fa" /> Cài Đặt Lật Thẻ & Thời Gian Xác Nhận
             </h2>
 
-            {/* 1. Tự động phát âm */}
+            {/* 1. Lật đáp án khi bấm Đánh Giá */}
+            <div style={{ background: 'rgba(0,0,0,0.2)', padding: 14, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
+              <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+                <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'white' }}>👁️ Lật đáp án ngay khi bấm Đánh Giá (Lại/Khó/Tốt/Dễ)</span>
+                <input 
+                  type="checkbox" 
+                  checked={autoFlipOnRating} 
+                  onChange={e => updateAutoFlipOnRating(e.target.checked)} 
+                  style={{ width: 18, height: 18, cursor: 'pointer' }}
+                />
+              </label>
+              <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginTop: 4 }}>
+                Tự động mở hiển thị nghĩa & ví dụ để bạn xác nhận lại đáp án ngay sau khi chọn mức độ Lại, Khó, Tốt, hoặc Dễ.
+              </div>
+            </div>
+
+            {/* 2. Tự động lật sẵn mặt sau khi mở thẻ mới */}
+            <div style={{ background: 'rgba(0,0,0,0.2)', padding: 14, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
+              <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+                <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'white' }}>📖 Tự động lật sẵn đáp án khi mở thẻ mới</span>
+                <input 
+                  type="checkbox" 
+                  checked={autoFlipNext} 
+                  onChange={e => updateAutoFlipNext(e.target.checked)} 
+                  style={{ width: 18, height: 18, cursor: 'pointer' }}
+                />
+              </label>
+              <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginTop: 4 }}>
+                Hiển thị sẵn câu trả lời ngay khi thẻ mới vừa xuất hiện (không cần bấm lật mặt).
+              </div>
+            </div>
+
+            {/* 3. Tự động phát âm */}
             <div style={{ background: 'rgba(0,0,0,0.2)', padding: 14, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
               <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
                 <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'white' }}>🔊 Tự động phát âm thanh</span>
@@ -817,37 +873,18 @@ const VocabularyFlashcards = () => {
                   style={{ width: 18, height: 18, cursor: 'pointer' }}
                 />
               </label>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginTop: 4 }}>
-                Tự động phát đọc từ vựng tiếng Nhật khi chuyển sang thẻ mới.
-              </div>
             </div>
 
-            {/* 2. Tự động lật sẵn mặt sau */}
-            <div style={{ background: 'rgba(0,0,0,0.2)', padding: 14, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
-              <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
-                <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'white' }}>👁️ Tự động lật sẵn đáp án</span>
-                <input 
-                  type="checkbox" 
-                  checked={autoFlipNext} 
-                  onChange={e => updateAutoFlipNext(e.target.checked)} 
-                  style={{ width: 18, height: 18, cursor: 'pointer' }}
-                />
-              </label>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginTop: 4 }}>
-                Hiển thị sẵn cách đọc và nghĩa khi chuyển sang thẻ mới.
-              </div>
-            </div>
-
-            {/* 3. Tốc độ chuyển thẻ */}
+            {/* 4. Thời gian giữ xem lại kết quả trước khi chuyển thẻ */}
             <div>
-              <label style={{ display: 'block', fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 10, fontWeight: 600 }}>⚡ Tốc độ chuyển thẻ tự động</label>
+              <label style={{ display: 'block', fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 10, fontWeight: 600 }}>⏱️ Thời gian giữ xem lại đáp án sau khi đánh giá</label>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {[
-                  { value: 0, label: 'Chuyển ngay lập tức (0s)', icon: <FastForward size={16} /> },
-                  { value: 400, label: 'Đợi 0.4s (Mặc định mượt mà)', icon: <Play size={16} /> },
-                  { value: 1000, label: 'Đợi 1s (Chậm)', icon: <Pause size={16} /> },
-                  { value: 2000, label: 'Đợi 2s (Rất chậm)', icon: <Pause size={16} /> },
-                  { value: -1, label: 'Thủ công (Bấm nút Tiếp tục)', icon: <Hand size={16} /> },
+                  { value: 500, label: '0.5 giây (Xem nhanh)', icon: <FastForward size={16} /> },
+                  { value: 1000, label: '1.0 giây (Khuyên dùng - Đủ đọc lại đáp án)', icon: <Play size={16} /> },
+                  { value: 2000, label: '2.0 giây (Đọc kỹ cả câu ví dụ)', icon: <Pause size={16} /> },
+                  { value: 3000, label: '3.0 giây (Thư thả)', icon: <Pause size={16} /> },
+                  { value: -1, label: 'Thủ công (Giữ màn hình cho tới khi bấm nút "Thẻ tiếp theo")', icon: <Hand size={16} /> },
                 ].map(opt => (
                   <button
                     key={opt.value}
@@ -872,8 +909,8 @@ const VocabularyFlashcards = () => {
               </div>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 6 }}>
-              <button onClick={() => setShowSettings(false)} className="btn btn-primary" style={{ padding: '10px 24px' }}>Đóng & Lưu</button>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 4 }}>
+              <button onClick={() => setShowSettings(false)} className="btn btn-primary" style={{ padding: '10px 24px' }}>Lưu & Đóng</button>
             </div>
           </div>
         </div>
