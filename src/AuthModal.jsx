@@ -1,31 +1,51 @@
 import React, { useState } from 'react';
-import { supabase } from './lib/supabaseClient';
-import { Mail, Lock, BookOpen, Loader } from 'lucide-react';
+import { useAuth } from './AuthContext';
+import { X, LogIn, UserPlus, AlertCircle, CheckCircle, Lock, Mail } from 'lucide-react';
 
-const AuthModal = () => {
-  const [isLogin, setIsLogin] = useState(true);
+const AuthModal = ({ isOpen, onClose }) => {
+  const { signIn, signUp } = useAuth();
+  const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+  const [successMsg, setSuccessMsg] = useState(null);
+
+  if (!isOpen) return null;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError(null);
+    setErrorMsg(null);
+    setSuccessMsg(null);
 
+    if (!email || !password) {
+      setErrorMsg('Vui lòng nhập đầy đủ Email và Mật khẩu.');
+      return;
+    }
+
+    if (password.length < 6) {
+      setErrorMsg('Mật khẩu phải có ít nhất 6 ký tự.');
+      return;
+    }
+
+    setLoading(true);
     try {
-      if (isLogin) {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
+      if (isSignUp) {
+        await signUp({ email, password });
+        setSuccessMsg('Đăng ký thành công! Dữ liệu học vãng lai đã được chuyển sang tài khoản của bạn.');
+        setTimeout(() => {
+          onClose();
+        }, 1500);
       } else {
-        const { error } = await supabase.auth.signUp({ email, password });
-        if (error) throw error;
-        // Hiển thị thông báo yêu cầu xác nhận email nếu cần
-        setError('Đăng ký thành công! Đang tự động đăng nhập...');
+        await signIn({ email, password });
+        setSuccessMsg('Đăng nhập thành công!');
+        setTimeout(() => {
+          onClose();
+        }, 1000);
       }
     } catch (err) {
-      setError(err.message || 'Có lỗi xảy ra. Vui lòng thử lại.');
+      console.error('Auth error:', err);
+      setErrorMsg(err.message || 'Đã có lỗi xảy ra. Vui lòng thử lại.');
     } finally {
       setLoading(false);
     }
@@ -33,78 +53,130 @@ const AuthModal = () => {
 
   return (
     <div style={{
-      position: 'fixed', inset: 0, zIndex: 9999,
-      background: 'rgba(15, 23, 42, 0.8)', backdropFilter: 'blur(16px)',
-      display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20
+      position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+      background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(8px)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      zIndex: 9999, padding: 20
     }}>
-      <div className="glass-panel-solid" style={{ width: '100%', maxWidth: 400, padding: 32, animation: 'fadeIn 0.3s ease forwards' }}>
+      <div className="glass-panel" style={{
+        width: '100%', maxWidth: 440, padding: 32, borderRadius: 16,
+        boxShadow: '0 20px 50px rgba(0,0,0,0.5)', border: '1px solid var(--glass-border)',
+        position: 'relative'
+      }}>
+        {/* Close Button */}
+        <button 
+          onClick={onClose} 
+          style={{
+            position: 'absolute', top: 16, right: 16, background: 'transparent',
+            border: 'none', color: 'var(--text-tertiary)', cursor: 'pointer', padding: 4
+          }}
+        >
+          <X size={20} />
+        </button>
+
+        {/* Title */}
         <div style={{ textAlign: 'center', marginBottom: 24 }}>
-          <div style={{ display: 'inline-flex', padding: 12, background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)', borderRadius: 16, marginBottom: 16 }}>
-            <BookOpen size={32} color="white"/>
+          <div style={{
+            display: 'inline-flex', padding: 12, borderRadius: '50%',
+            background: isSignUp ? 'rgba(16,185,129,0.15)' : 'rgba(59,130,246,0.15)',
+            color: isSignUp ? '#34d399' : '#60a5fa', marginBottom: 12
+          }}>
+            {isSignUp ? <UserPlus size={28} /> : <LogIn size={28} />}
           </div>
-          <h2 style={{ fontSize: '1.6rem', marginBottom: 4 }}>OmniLinguist</h2>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-            Hệ thống Tự học Tiếng Nhật Toàn diện
+          <h2 style={{ margin: '0 0 6px 0', fontSize: '1.4rem', color: 'white' }}>
+            {isSignUp ? 'Tạo Tài Khoản Mới' : 'Đăng Nhập Tài Khoản'}
+          </h2>
+          <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+            {isSignUp 
+              ? 'Tự động đồng bộ toàn bộ tiến độ học từ chế độ Khách'
+              : 'Đăng nhập để tiếp tục lộ trình SRS và đồng bộ Cloud'}
           </p>
         </div>
 
+        {/* Error Alert */}
+        {errorMsg && (
+          <div style={{
+            padding: '10px 14px', borderRadius: 8, background: 'rgba(239,68,68,0.15)',
+            border: '1px solid rgba(239,68,68,0.3)', color: '#fca5a5',
+            fontSize: '0.85rem', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 8
+          }}>
+            <AlertCircle size={16} style={{ flexShrink: 0 }} />
+            <span>{errorMsg}</span>
+          </div>
+        )}
+
+        {/* Success Alert */}
+        {successMsg && (
+          <div style={{
+            padding: '10px 14px', borderRadius: 8, background: 'rgba(16,185,129,0.15)',
+            border: '1px solid rgba(16,185,129,0.3)', color: '#6ee7b7',
+            fontSize: '0.85rem', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 8
+          }}>
+            <CheckCircle size={16} style={{ flexShrink: 0 }} />
+            <span>{successMsg}</span>
+          </div>
+        )}
+
+        {/* Form */}
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          {error && (
-            <div style={{ padding: '10px 14px', background: error.includes('thành công') ? 'rgba(16,185,129,0.15)' : 'rgba(239, 68, 68, 0.15)', color: error.includes('thành công') ? '#6ee7b7' : '#fca5a5', borderRadius: 8, fontSize: '0.85rem', border: `1px solid ${error.includes('thành công') ? 'rgba(16,185,129,0.3)' : 'rgba(239, 68, 68, 0.3)'}` }}>
-              {error}
-            </div>
-          )}
-          
           <div>
-            <div style={{ position: 'relative' }}>
-              <Mail size={18} color="var(--text-tertiary)" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)' }}/>
+            <label style={{ display: 'block', fontSize: '0.83rem', fontWeight: 600, marginBottom: 6, color: 'var(--text-secondary)' }}>
+              Email
+            </label>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'rgba(0,0,0,0.3)', padding: '10px 14px', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
+              <Mail size={16} color="var(--text-tertiary)" />
               <input 
                 type="email" 
-                placeholder="Email của bạn"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
+                placeholder="name@example.com"
                 required
-                style={{
-                  width: '100%', padding: '12px 14px 12px 42px', borderRadius: 8,
-                  background: 'var(--bg-hover)', border: '1px solid var(--glass-border-strong)',
-                  color: 'var(--text-primary)', outline: 'none', fontSize: '0.95rem'
-                }}
+                style={{ background: 'transparent', border: 'none', color: 'white', outline: 'none', fontSize: '0.9rem', width: '100%' }}
               />
             </div>
           </div>
 
           <div>
-            <div style={{ position: 'relative' }}>
-              <Lock size={18} color="var(--text-tertiary)" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)' }}/>
+            <label style={{ display: 'block', fontSize: '0.83rem', fontWeight: 600, marginBottom: 6, color: 'var(--text-secondary)' }}>
+              Mật khẩu
+            </label>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'rgba(0,0,0,0.3)', padding: '10px 14px', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
+              <Lock size={16} color="var(--text-tertiary)" />
               <input 
                 type="password" 
-                placeholder="Mật khẩu (từ 6 ký tự)"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
+                placeholder="••••••••"
                 required
-                minLength={6}
-                style={{
-                  width: '100%', padding: '12px 14px 12px 42px', borderRadius: 8,
-                  background: 'var(--bg-hover)', border: '1px solid var(--glass-border-strong)',
-                  color: 'var(--text-primary)', outline: 'none', fontSize: '0.95rem'
-                }}
+                style={{ background: 'transparent', border: 'none', color: 'white', outline: 'none', fontSize: '0.9rem', width: '100%' }}
               />
             </div>
           </div>
 
-          <button type="submit" disabled={loading} className="btn btn-primary" style={{ padding: '12px', fontSize: '1rem', marginTop: 8 }}>
-            {loading ? <Loader size={18} className="spin"/> : (isLogin ? 'Đăng nhập' : 'Đăng ký tài khoản')}
+          <button 
+            type="submit" 
+            disabled={loading}
+            className="btn btn-primary"
+            style={{
+              padding: '12px', fontSize: '1rem', marginTop: 8,
+              opacity: loading ? 0.7 : 1, cursor: loading ? 'not-allowed' : 'pointer'
+            }}
+          >
+            {loading ? 'Đang xử lý...' : (isSignUp ? '✨ Tạo Tài Khoản & Đồng Bộ' : '🔑 Đăng Nhập')}
           </button>
         </form>
 
-        <div style={{ marginTop: 24, textAlign: 'center', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-          {isLogin ? 'Chưa có tài khoản? ' : 'Đã có tài khoản? '}
-          <span 
-            onClick={() => { setIsLogin(!isLogin); setError(null); }} 
-            style={{ color: 'var(--accent-primary)', cursor: 'pointer', fontWeight: 600 }}
+        {/* Switch Mode Toggle */}
+        <div style={{ textAlign: 'center', marginTop: 20, paddingTop: 16, borderTop: '1px solid var(--glass-border)', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+          {isSignUp ? 'Đã có tài khoản?' : 'Chưa có tài khoản?'}
+          {' '}
+          <button 
+            type="button"
+            onClick={() => { setIsSignUp(!isSignUp); setErrorMsg(null); setSuccessMsg(null); }}
+            style={{ background: 'transparent', border: 'none', color: 'var(--accent-primary)', fontWeight: 600, cursor: 'pointer', textDecoration: 'underline' }}
           >
-            {isLogin ? 'Đăng ký ngay' : 'Đăng nhập'}
-          </span>
+            {isSignUp ? 'Đăng nhập ngay' : 'Đăng ký tài khoản mới'}
+          </button>
         </div>
       </div>
     </div>

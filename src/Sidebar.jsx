@@ -115,7 +115,7 @@ const Sidebar = ({ isOpen, onClose, theme, onToggleTheme }) => {
           </button>
         </div>
 
-        {user && (
+        {user ? (
           <div style={{ padding: '12px 8px 4px', borderTop: '1px solid var(--glass-border)', marginTop: 8 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
               <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'var(--accent-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-primary)', flexShrink: 0 }}>
@@ -128,6 +128,20 @@ const Sidebar = ({ isOpen, onClose, theme, onToggleTheme }) => {
                 <div onClick={handleLogout} style={{ fontSize: '0.65rem', color: 'var(--accent-danger)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4, marginTop: 4, fontWeight: 500 }}>
                   <LogOut size={12}/> Đăng xuất
                 </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div style={{ padding: '12px 8px 4px', borderTop: '1px solid var(--glass-border)', marginTop: 8 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'rgba(16,185,129,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#34d399', flexShrink: 0 }}>
+                <User size={16}/>
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: '0.75rem', color: '#34d399', fontWeight: 600 }}>
+                  Khách vãng lai
+                </div>
+                <div style={{ fontSize: '0.65rem', color: 'var(--text-tertiary)' }}>Lưu trên thiết bị này</div>
               </div>
             </div>
           </div>
