@@ -947,20 +947,6 @@ const VocabularyFlashcards = () => {
             </div>
           </div>
         </div>
-                      fontSize: '0.88rem'
-                    }}
-                  >
-                    {opt.icon} {opt.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 4 }}>
-              <button onClick={() => setShowSettings(false)} className="btn btn-primary" style={{ padding: '10px 24px' }}>Lưu & Đóng</button>
-            </div>
-          </div>
-        </div>
       )}
 
     </div>
