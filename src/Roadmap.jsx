@@ -1,8 +1,8 @@
 // v9.1.50-3 — Roadmap & Onboarding
 import React, { useState, useEffect } from 'react';
-import { saveUserProfile, getUserProfile, advancePhase } from './studyStore.js';
+import { saveUserProfile, getUserProfile, advancePhase, getTodayStats } from './studyStore.js';
 import { useNavigate } from 'react-router-dom';
-import { Target, Brain, Mic, BookOpen, PencilLine, ChevronRight, CheckCircle2, Lock, ArrowRight, Flag } from 'lucide-react';
+import { Target, Brain, Mic, BookOpen, PencilLine, ChevronRight, CheckCircle2, Lock, ArrowRight, Flag, BarChart2, AlertCircle, Layers, Play, RotateCcw } from 'lucide-react';
 
 const GOALS = [
   { id:'N3', label:'N3', sub:'Trung cấp', months:3, hours:2, color:'#f59e0b', desc:'Đọc báo đơn giản, giao tiếp cơ bản công sở, viết email ngắn.' },
@@ -97,7 +97,7 @@ const Roadmap = () => {
     setSetupStep(1);
     setIsSettingUp(true);
   };
-
+  const todayStats = getTodayStats();
   const handleResetCurrentRoadmap = () => {
     if (window.confirm(`Bạn có chắc muốn đặt lại ngày bắt đầu và học lại Lộ trình ${profile?.goal || 'hiện tại'} từ Phase 1 (Ngày 1)?`)) {
       const resetProf = {
@@ -249,6 +249,100 @@ const Roadmap = () => {
         </div>
         <div style={{ height: 8, background: 'rgba(255,255,255,0.1)', borderRadius: 4, overflow: 'hidden' }}>
           <div style={{ width: `${progressPercent}%`, height: '100%', background: goalInfo.color, transition: 'width 1s' }}/>
+        </div>
+      </div>
+
+      {/* ============ NEW: PHÒNG LUYỆN TẬP & THỐNG KÊ HÔM NAY ============ */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20, marginBottom: 24 }}>
+        {/* Thống kê hôm nay */}
+        <div className="glass-panel" style={{ padding: '24px', borderRadius: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'white', fontWeight: 600, fontSize: '1.05rem' }}>
+            <BarChart2 size={20} color="#60a5fa" />
+            Lịch Sử Học Hôm Nay
+          </div>
+          <div style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+            <div style={{ flex: 1, textAlign: 'center', padding: '16px', background: 'rgba(59,130,246,0.1)', borderRadius: 12, border: '1px solid rgba(59,130,246,0.2)' }}>
+              <div style={{ fontSize: '2rem', fontWeight: 800, color: '#60a5fa', lineHeight: 1 }}>{todayStats.total}</div>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: 8 }}>Thẻ đã lật</div>
+            </div>
+            <div style={{ flex: 2, display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', marginBottom: 6 }}>
+                  <span style={{ color: '#10b981', fontWeight: 600 }}>Tốt / Dễ ({todayStats.correct})</span>
+                  <span style={{ color: '#ef4444', fontWeight: 600 }}>Khó / Sai ({todayStats.incorrect})</span>
+                </div>
+                <div style={{ width: '100%', height: 8, background: 'rgba(255,255,255,0.05)', borderRadius: 4, overflow: 'hidden', display: 'flex' }}>
+                  <div style={{ width: `${todayStats.total ? (todayStats.correct / todayStats.total) * 100 : 0}%`, background: '#10b981', transition: 'width 0.5s' }} />
+                  <div style={{ width: `${todayStats.total ? (todayStats.incorrect / todayStats.total) * 100 : 0}%`, background: '#ef4444', transition: 'width 0.5s' }} />
+                </div>
+              </div>
+
+              {/* Nút thao tác nhanh */}
+              <div style={{ display: 'flex', gap: 10, marginTop: 4, flexWrap: 'wrap' }}>
+                <button 
+                  onClick={() => navigate('/flashcards', { state: { studyMode: 'fsrs', filterMode: 'due' } })}
+                  style={{ flex: 1, padding: '9px 12px', borderRadius: 10, background: '#3b82f6', border: 'none', color: 'white', fontWeight: 600, fontSize: '0.82rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, transition: 'all 0.2s' }}
+                >
+                  <Play size={14} /> Tiếp tục học
+                </button>
+                <button 
+                  onClick={() => navigate('/flashcards', { state: { studyMode: 'fsrs', filterMode: 'today' } })}
+                  style={{ flex: 1, padding: '9px 12px', borderRadius: 10, background: 'rgba(255,255,255,0.06)', border: '1px solid var(--glass-border)', color: '#60a5fa', fontWeight: 600, fontSize: '0.82rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, transition: 'all 0.2s' }}
+                >
+                  <RotateCcw size={14} /> Ôn lại thẻ hôm nay
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Phòng luyện tập chuyên đề */}
+        <div className="glass-panel" style={{ padding: '24px', borderRadius: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'white', fontWeight: 600, fontSize: '1.05rem' }}>
+            <Target size={20} color="#f59e0b" />
+            🏋️ Phòng Luyện Tập Chuyên Đề
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <button 
+              onClick={() => navigate('/flashcards', { state: { studyMode: 'fsrs', filterMode: 'hard_only' } })}
+              style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)', padding: '12px 16px', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', color: '#fca5a5' }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{ padding: 8, background: 'rgba(239,68,68,0.2)', borderRadius: 8 }}><AlertCircle size={18}/></div>
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>Khắc Phục Điểm Yếu</div>
+                  <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>Ôn các thẻ hay sai và cực khó (Độ khó &gt; 7)</div>
+                </div>
+              </div>
+              <ChevronRight size={18}/>
+            </button>
+            <button 
+              onClick={() => navigate('/flashcards', { state: { studyMode: 'fsrs', filterMode: 'easy_only' } })}
+              style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.3)', padding: '12px 16px', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', color: '#6ee7b7' }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{ padding: 8, background: 'rgba(16,185,129,0.2)', borderRadius: 8 }}><CheckCircle2 size={18}/></div>
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>Ôn Tập Nhẹ Nhàng</div>
+                  <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>Lướt nhanh các thẻ Dễ (Độ khó &lt; 4)</div>
+                </div>
+              </div>
+              <ChevronRight size={18}/>
+            </button>
+            <button 
+              onClick={() => navigate('/flashcards', { state: { studyMode: 'fsrs', filterMode: 'sort_easy_to_hard' } })}
+              style={{ background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.3)', padding: '12px 16px', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', color: '#c4b5fd' }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{ padding: 8, background: 'rgba(139,92,246,0.2)', borderRadius: 8 }}><Layers size={18}/></div>
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>Quét Toàn Diện (Dễ ➔ Khó)</div>
+                  <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>Sắp xếp toàn bộ thẻ theo độ khó tăng dần</div>
+                </div>
+              </div>
+              <ChevronRight size={18}/>
+            </button>
+          </div>
         </div>
       </div>
 

@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { 
   Target, Flame, BookOpen, Mic, Brain, PencilLine, Map as MapIcon, ChevronRight, 
   AlertCircle, LogIn, UserPlus, CheckCircle2, History, BarChart2, ShieldCheck, 
-  Sparkles, Layers, RefreshCw, Clock, Play
+  Sparkles, Layers, RefreshCw, Clock, Play, RotateCcw
 } from 'lucide-react';
-import { getStats, getStreak, updateStreak, getUserProfile, getFreeStudyHistory } from './studyStore.js';
+import { getStats, getStreak, updateStreak, getUserProfile, getFreeStudyHistory, getTodayStats } from './studyStore.js';
 import { useAuth } from './AuthContext.jsx';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
@@ -58,6 +58,7 @@ const Dashboard = () => {
   const [profile, setProfile] = useState(null);
   const [activeTab, setActiveTab] = useState('overview'); // 'overview' | 'history'
   const [showAuthModal, setShowAuthModal] = useState(false);
+  const todayStats = getTodayStats();
 
   useEffect(() => {
     setStreak(updateStreak());
@@ -221,6 +222,108 @@ const Dashboard = () => {
 
       {activeTab === 'overview' ? (
         <>
+          {/* ============ NEW: PHÒNG LUYỆN TẬP & THỐNG KÊ HÔM NAY ============ */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20 }}>
+            
+            {/* Thống kê hôm nay */}
+            <div className="glass-panel" style={{ padding: '24px', borderRadius: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'white', fontWeight: 600, fontSize: '1.05rem' }}>
+                <BarChart2 size={20} color="#60a5fa" />
+                Lịch Sử Học Hôm Nay
+              </div>
+              
+              <div style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+                <div style={{ flex: 1, textAlign: 'center', padding: '16px', background: 'rgba(59,130,246,0.1)', borderRadius: 12, border: '1px solid rgba(59,130,246,0.2)' }}>
+                  <div style={{ fontSize: '2rem', fontWeight: 800, color: '#60a5fa', lineHeight: 1 }}>{todayStats.total}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: 8 }}>Thẻ đã lật</div>
+                </div>
+                
+                <div style={{ flex: 2, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', marginBottom: 6 }}>
+                      <span style={{ color: '#10b981', fontWeight: 600 }}>Tốt / Dễ ({todayStats.correct})</span>
+                      <span style={{ color: '#ef4444', fontWeight: 600 }}>Khó / Sai ({todayStats.incorrect})</span>
+                    </div>
+                    <div style={{ width: '100%', height: 8, background: 'rgba(255,255,255,0.05)', borderRadius: 4, overflow: 'hidden', display: 'flex' }}>
+                      <div style={{ width: `${todayStats.total ? (todayStats.correct / todayStats.total) * 100 : 0}%`, background: '#10b981', transition: 'width 0.5s' }} />
+                      <div style={{ width: `${todayStats.total ? (todayStats.incorrect / todayStats.total) * 100 : 0}%`, background: '#ef4444', transition: 'width 0.5s' }} />
+                    </div>
+                  </div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)', fontStyle: 'italic' }}>
+                    * Dữ liệu được tính dựa trên số lượt lật thẻ thực tế trong ngày, bao gồm cả từ vựng, kanji và ngữ pháp.
+                  </div>
+
+                  {/* Nút thao tác nhanh */}
+                  <div style={{ display: 'flex', gap: 10, marginTop: 4, flexWrap: 'wrap' }}>
+                    <button 
+                      onClick={() => navigate('/flashcards', { state: { studyMode: 'fsrs', filterMode: 'due' } })}
+                      style={{ flex: 1, padding: '9px 12px', borderRadius: 10, background: '#3b82f6', border: 'none', color: 'white', fontWeight: 600, fontSize: '0.82rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, transition: 'all 0.2s' }}
+                    >
+                      <Play size={14} /> Tiếp tục học
+                    </button>
+                    <button 
+                      onClick={() => navigate('/flashcards', { state: { studyMode: 'fsrs', filterMode: 'today' } })}
+                      style={{ flex: 1, padding: '9px 12px', borderRadius: 10, background: 'rgba(255,255,255,0.06)', border: '1px solid var(--glass-border)', color: '#60a5fa', fontWeight: 600, fontSize: '0.82rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, transition: 'all 0.2s' }}
+                    >
+                      <RotateCcw size={14} /> Ôn lại thẻ hôm nay
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Phòng luyện tập chuyên đề */}
+            <div className="glass-panel" style={{ padding: '24px', borderRadius: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'white', fontWeight: 600, fontSize: '1.05rem' }}>
+                <Target size={20} color="#f59e0b" />
+                🏋️ Phòng Luyện Tập Chuyên Đề
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                <button 
+                  onClick={() => navigate('/flashcards', { state: { studyMode: 'fsrs', filterMode: 'hard_only' } })}
+                  style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)', padding: '12px 16px', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', color: '#fca5a5' }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                    <div style={{ padding: 8, background: 'rgba(239,68,68,0.2)', borderRadius: 8 }}><AlertCircle size={18}/></div>
+                    <div style={{ textAlign: 'left' }}>
+                      <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>Khắc Phục Điểm Yếu</div>
+                      <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>Ôn các thẻ hay sai và cực khó (Độ khó &gt; 7)</div>
+                    </div>
+                  </div>
+                  <ChevronRight size={18}/>
+                </button>
+                
+                <button 
+                  onClick={() => navigate('/flashcards', { state: { studyMode: 'fsrs', filterMode: 'easy_only' } })}
+                  style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.3)', padding: '12px 16px', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', color: '#6ee7b7' }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                    <div style={{ padding: 8, background: 'rgba(16,185,129,0.2)', borderRadius: 8 }}><CheckCircle2 size={18}/></div>
+                    <div style={{ textAlign: 'left' }}>
+                      <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>Ôn Tập Nhẹ Nhàng</div>
+                      <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>Lướt nhanh các thẻ Dễ (Độ khó &lt; 4)</div>
+                    </div>
+                  </div>
+                  <ChevronRight size={18}/>
+                </button>
+
+                <button 
+                  onClick={() => navigate('/flashcards', { state: { studyMode: 'fsrs', filterMode: 'sort_easy_to_hard' } })}
+                  style={{ background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.3)', padding: '12px 16px', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', color: '#c4b5fd' }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                    <div style={{ padding: 8, background: 'rgba(139,92,246,0.2)', borderRadius: 8 }}><Layers size={18}/></div>
+                    <div style={{ textAlign: 'left' }}>
+                      <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>Quét Toàn Diện (Dễ ➔ Khó)</div>
+                      <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>Sắp xếp toàn bộ thẻ theo độ khó tăng dần</div>
+                    </div>
+                  </div>
+                  <ChevronRight size={18}/>
+                </button>
+              </div>
+            </div>
+          </div>
+
           {/* KPI Stats Cards */}
           <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:12 }}>
             <div className="glass-panel" style={{ padding:16 }}>

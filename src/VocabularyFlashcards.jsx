@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
 import { Rating } from './fsrs.js';
-import { getCard, reviewRoadmapCard, reviewFreeStudyCard, getDueCards, getStats, getNextDueInfo, getCustomCards, isBookmarked, toggleBookmark, getUserProfile, getFreeStudyHistory } from './studyStore.js';
+import { getCard, reviewRoadmapCard, reviewFreeStudyCard, getDueCards, getStats, getNextDueInfo, getCustomCards, isBookmarked, toggleBookmark, getUserProfile, getFreeStudyHistory, getTodayReviewedCardIds } from './studyStore.js';
 import { syncMasterData } from './syncMasterData.js';
 import { Eye, EyeOff, Volume2, ChevronLeft, ChevronRight, Brain, CheckCircle2, AlertCircle, RotateCcw, Target, Bookmark, Filter, Shuffle, ListOrdered, Zap, BookOpen, List, X, Settings, FastForward, Play, Pause, Hand, UserPlus } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
@@ -30,6 +30,7 @@ const StatsBar = ({ stats, levelColor }) => (
 );
 
 const VocabularyFlashcards = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const vocabData = useLiveQuery(() => db.vocab.toArray()) || [];
   const [level, setLevel] = useState(() => {
@@ -45,7 +46,15 @@ const VocabularyFlashcards = () => {
   }, [location.state]);
 
   const [learningMode, setLearningMode] = useState(() => isGuest() ? 'freestudy' : 'roadmap'); // Guest luôn mặc định Học Tự Do
-  const [filterMode, setFilterMode] = useState('all');
+  const [filterMode, setFilterMode] = useState(() => {
+    if (location.state?.filterMode) return location.state.filterMode;
+    return 'all';
+  });
+
+  useEffect(() => {
+    if (location.state?.filterMode) setFilterMode(location.state.filterMode);
+  }, [location.state]);
+
   const [autoPlay, setAutoPlay] = useState(() => localStorage.getItem('omni_flashcards_autoplay') !== 'false');
   
   // revealMode: 'on_rating' (Lật xem đáp án sau khi bấm đánh giá) | 'always' (Luôn hiển thị sẵn đáp án khi mở thẻ mới)
@@ -55,6 +64,8 @@ const VocabularyFlashcards = () => {
     if (localStorage.getItem('omni_flashcards_autoflip_next') === 'true') return 'always';
     return 'on_rating'; // Mặc định: Lật đáp án khi bấm Đánh Giá để xem lại kết quả
   });
+
+  const [speakOnRating, setSpeakOnRating] = useState(() => localStorage.getItem('omni_flashcards_speak_on_rating') !== 'false');
 
   const [autoAdvanceDelay, setAutoAdvanceDelay] = useState(() => {
     const d = localStorage.getItem('omni_flashcards_delay');
@@ -68,6 +79,10 @@ const VocabularyFlashcards = () => {
     setAutoPlay(val);
     localStorage.setItem('omni_flashcards_autoplay', String(val));
   };
+  const updateSpeakOnRating = (val) => {
+    setSpeakOnRating(val);
+    localStorage.setItem('omni_flashcards_speak_on_rating', String(val));
+  };
   const updateRevealMode = (mode) => {
     setRevealMode(mode);
     localStorage.setItem('omni_flashcards_reveal_mode', mode);
@@ -78,6 +93,7 @@ const VocabularyFlashcards = () => {
   };
   
   const [queue, setQueue] = useState([]);
+  const [sessionSkippedIds, setSessionSkippedIds] = useState(new Set());
   const [queueIdx, setQueueIdx] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [lastRating, setLastRating] = useState(null);
@@ -91,11 +107,19 @@ const VocabularyFlashcards = () => {
   const [quizAnswered, setQuizAnswered] = useState(null);
   const [visibleCount, setVisibleCount] = useState(30);
   const hasTriedRepair = useRef(false);
+  const lastQueueRef = useRef([]);
+
+  const setQueueAndSave = (newQueue) => {
+    if (newQueue && newQueue.length > 0) {
+      lastQueueRef.current = newQueue;
+    }
+    setQueue(newQueue);
+  };
 
   // === P0-2 FIX: Auto-repair với double guard (ref + localStorage) để chặn vòng lặp vô hạn ===
-  // Nếu IndexedDB chưa đạt 10,000 từ vựng, force re-sync MỘT LẦN DUY NHẤT
+  // Nếu IndexedDB chưa đạt đủ từ vựng, force re-sync MỘT LẦN DUY NHẤT
   useEffect(() => {
-    if (vocabData.length > 0 && vocabData.length < 10000 && !hasTriedRepair.current) {
+    if (vocabData.length > 0 && vocabData.length < 500 && !hasTriedRepair.current) {
       // Guard 1: ref chặn chạy lại trong cùng 1 session
       hasTriedRepair.current = true;
       // Guard 2: localStorage chặn chạy lại sau page reload
@@ -109,12 +133,12 @@ const VocabularyFlashcards = () => {
           return;
         }
       }
-      console.warn(`⚠️ IndexedDB đang có ${vocabData.length}/10000 từ vựng — đang tự động nâng cấp...`);
+      console.warn(`⚠️ IndexedDB đang có ${vocabData.length} từ vựng — đang tự động nâng cấp...`);
       localStorage.setItem(repairKey, Date.now().toString());
       db.vocab.clear().then(() => db.kanji.clear()).then(() => {
         return syncMasterData();
       }).then(() => {
-        console.log('✅ Auto-repair hoàn tất! 10,000 từ vựng đã được nạp.');
+        console.log('✅ Auto-repair hoàn tất! Từ vựng đã được nạp.');
       }).catch((err) => {
         console.error('❌ Auto-repair thất bại:', err);
       });
@@ -136,7 +160,7 @@ const VocabularyFlashcards = () => {
       tags: v.tags || [],
       examples: v.examples || v.example || []
     }));
-    const effectiveVocab = vocabData.length >= 50 ? vocabData : masterVocab;
+    const effectiveVocab = vocabData.length >= 500 ? vocabData : masterVocab;
     const allSources = [...effectiveVocab, ...customCards];
     
     return allSources.filter(v => {
@@ -151,7 +175,7 @@ const VocabularyFlashcards = () => {
   const vocabLevelCounts = useMemo(() => {
     const counts = { N5: 0, N4: 0, N3: 0, N2: 0, N1: 0 };
     const customCards = getCustomCards();
-    const effectiveVocab = vocabData.length >= 50 ? vocabData : (localMasterDb.vocabulary || []);
+    const effectiveVocab = vocabData.length >= 500 ? vocabData : (localMasterDb.vocabulary || []);
     [...effectiveVocab, ...customCards].forEach(v => {
       const lvl = (v.level || 'N3').toUpperCase();
       if (counts[lvl] !== undefined) counts[lvl]++;
@@ -161,6 +185,18 @@ const VocabularyFlashcards = () => {
 
   const allIds = useMemo(() => levelVocab.map(v => v.id), [levelVocab]);
   const refreshStats = () => setStats(getStats(allIds, learningMode));
+
+  const unlearnedCount = useMemo(() => {
+    const freeStudyHist = getFreeStudyHistory();
+    return allIds.filter(id => {
+      if (learningMode === 'freestudy') {
+        const fsHist = freeStudyHist[id];
+        return !fsHist || (fsHist.correct === 0 && fsHist.incorrect === 0);
+      }
+      const card = getCard(id);
+      return !card || !card.reps || card.reps === 0;
+    }).length;
+  }, [allIds, learningMode, stats]);
 
   const buildQueue = () => {
     refreshStats();
@@ -175,8 +211,49 @@ const VocabularyFlashcards = () => {
       ids = allIds.filter(id => isBookmarked(id));
     } else if (filterMode === 'again') {
       ids = allIds.filter(id => { const c = getCard(id); return c && c.last_rating === Rating.Again; });
-    } else if (filterMode === 'hard') {
-      ids = allIds.filter(id => { const c = getCard(id); return c && c.last_rating === Rating.Hard; });
+    } else if (filterMode === 'hard_only' || filterMode === 'hard') {
+      ids = allIds.filter(id => {
+        const c = getCard(id);
+        const free = getFreeStudyHistory(id);
+        if (c && c.difficulty >= 7) return true; // FSRS khó
+        if (free && (free.incorrect_count > (free.correct_count || 0) || free.incorrect_count > 5)) return true; // Học tự do sai nhiều
+        if (filterMode === 'hard' && c && c.last_rating === Rating.Hard) return true; // Giữ lại tương thích cũ
+        return false;
+      });
+      ids.sort((a, b) => {
+        const dA = getCard(a)?.difficulty || 0;
+        const dB = getCard(b)?.difficulty || 0;
+        return dB - dA; // Khó nhất lên đầu
+      });
+    } else if (filterMode === 'easy_only') {
+      ids = allIds.filter(id => {
+        const c = getCard(id);
+        return c && c.difficulty <= 4 && c.reps > 0;
+      });
+    } else if (filterMode === 'sort_easy_to_hard') {
+      ids = [...allIds].sort((a, b) => {
+        const cA = getCard(a);
+        const cB = getCard(b);
+        const diffA = cA && cA.reps > 0 ? cA.difficulty : 5; // Chưa học coi như TB
+        const diffB = cB && cB.reps > 0 ? cB.difficulty : 5;
+        return diffA - diffB; // Dễ nhất lên đầu
+      });
+    } else if (filterMode === 'today') {
+      const todayIds = getTodayReviewedCardIds();
+      ids = allIds.filter(id => todayIds.includes(id));
+      if (ids.length === 0 && todayIds.length > 0) {
+        ids = [...todayIds].slice(0, 30);
+      }
+    } else if (filterMode === 'skipped') {
+      const freeStudyHist = getFreeStudyHistory();
+      ids = allIds.filter(id => {
+        if (learningMode === 'freestudy') {
+          const fsHist = freeStudyHist[id];
+          return !fsHist || (fsHist.correct === 0 && fsHist.incorrect === 0);
+        }
+        const card = getCard(id);
+        return !card || !card.reps || card.reps === 0;
+      });
     } else {
       const dueSet = new Set(getDueCards(allIds));
       ids = allIds.filter(id => {
@@ -209,7 +286,7 @@ const VocabularyFlashcards = () => {
       });
     }
 
-    setQueue(finalQueue);
+    setQueueAndSave(finalQueue);
     setQueueIdx(0);
     setShowAnswer(false);
     setLastRating(null);
@@ -217,7 +294,10 @@ const VocabularyFlashcards = () => {
     setVisibleCount(30);
   };
 
-  useEffect(() => { buildQueue(); }, [level, levelVocab, filterMode, isRandom, learningMode]);
+  useEffect(() => { 
+    setSessionSkippedIds(new Set());
+    buildQueue(); 
+  }, [level, filterMode, isRandom, learningMode]);
 
   useEffect(() => {
     return () => {
@@ -246,6 +326,16 @@ const VocabularyFlashcards = () => {
 
   const [sessionHistory, setSessionHistory] = useState([]);
   const [showSessionReview, setShowSessionReview] = useState(false);
+
+  const sessionBreakdown = useMemo(() => {
+    let easy = 0, hard = 0, again = 0;
+    sessionHistory.forEach(item => {
+      if (item.rating === Rating.Again) again++;
+      else if (item.rating === Rating.Hard) hard++;
+      else easy++;
+    });
+    return { easy, hard, again };
+  }, [sessionHistory]);
 
   const advanceToNextCard = () => {
     if (advanceTimerRef.current) {
@@ -308,12 +398,19 @@ const VocabularyFlashcards = () => {
     // Nếu đang ở chế độ 'on_rating', tự động lật đáp án ngay khi vừa bấm trả lời để xem lại
     if (revealMode === 'on_rating') {
       setShowAnswer(true);
+      if (speakOnRating) {
+        speak(currentCard.word);
+      }
     }
     
-    // Save to session history
+    // Save/update session history with latest rating of this unique card
     setSessionHistory(prev => {
-      const exists = prev.find(p => p.id === currentCard.id);
-      if (exists) return prev;
+      const idx = prev.findIndex(p => p.id === currentCard.id);
+      if (idx >= 0) {
+        const updated = [...prev];
+        updated[idx] = { ...updated[idx], rating, timestamp: Date.now() };
+        return updated;
+      }
       return [...prev, { ...currentCard, rating, timestamp: Date.now() }];
     });
 
@@ -344,7 +441,7 @@ const VocabularyFlashcards = () => {
       if (learningMode === 'freestudy') {
         return fsHist && (fsHist.correct > 0 || fsHist.incorrect > 0);
       }
-      return card && card.repetition > 0;
+      return card && card.reps > 0;
     });
   }, [levelVocab, sessionHistory, learningMode, stats]);
 
@@ -355,7 +452,8 @@ const VocabularyFlashcards = () => {
     if (effectiveReviewList.length > 0) {
       setQueue(effectiveReviewList.map(c => c.id));
       setQueueIdx(0);
-      setShowAnswer(false);
+      setShowAnswer(revealMode === 'always');
+      setLastRating(null);
     } else {
       buildQueue();
     }
@@ -364,27 +462,62 @@ const VocabularyFlashcards = () => {
   // Load next 25 new cards batch
   const handleLoadNextNewBatch = () => {
     const freeStudyHist = getFreeStudyHistory();
-    const unlearned = levelVocab.filter(v => {
+    const newSkippedSet = new Set([...sessionSkippedIds, ...(lastQueueRef.current || [])]);
+    setSessionSkippedIds(newSkippedSet);
+
+    let unlearned = levelVocab.filter(v => {
+      if (newSkippedSet.has(v.id)) return false;
+
       if (learningMode === 'freestudy') {
         const fsHist = freeStudyHist[v.id];
         return !fsHist || (fsHist.correct === 0 && fsHist.incorrect === 0);
       }
       const card = getCard(v.id);
-      return !card || card.repetition === 0;
-    }).slice(0, 25);
+      return !card || !card.reps || card.reps === 0;
+    });
+
+    // Vòng lặp: Nếu đã bỏ qua/lướt hết sạch từ mới, tự động xoay vòng lại từ đầu danh sách chưa học
+    if (unlearned.length === 0) {
+      unlearned = levelVocab.filter(v => {
+        if (learningMode === 'freestudy') {
+          const fsHist = freeStudyHist[v.id];
+          return !fsHist || (fsHist.correct === 0 && fsHist.incorrect === 0);
+        }
+        const card = getCard(v.id);
+        return !card || !card.reps || card.reps === 0;
+      });
+      setSessionSkippedIds(new Set());
+    }
+
+    unlearned = unlearned.slice(0, 25);
 
     if (unlearned.length > 0) {
-      setQueue(unlearned.map(v => v.id));
+      setQueueAndSave(unlearned.map(v => v.id));
+      setQueueIdx(0);
+      setShowAnswer(revealMode === 'always');
+      setLastRating(null);
+      setSessionHistory([]); // Reset session history for the new batch
     } else {
-      // Pick next 25 cards regardless of state
-      setQueue(levelVocab.slice(0, 25).map(v => v.id));
+      alert(`Bạn đã học qua toàn bộ từ mới cấp độ ${level}! Đang chuyển sang chế độ luyện tập...`);
+      buildQueue();
     }
-    setQueueIdx(0);
-    setShowAnswer(false);
   };
 
   // COMPLETION SCREEN: Japanese License Test App Style Dashboard
-  if (!currentCard && queue.length === 0) return (
+  if (!currentCard && queue.length === 0) {
+    const ratedSet = new Set(sessionHistory.map(item => item.id));
+    const skippedInSession = (lastQueueRef.current || []).filter(id => !ratedSet.has(id));
+
+    const getCompletionMessage = () => {
+      if (skippedInSession.length > 0) return { title: `Đã xong đợt học (Còn ${skippedInSession.length} thẻ chưa đánh giá)`, desc: `Bạn đã lướt qua các thẻ nhưng còn ${skippedInSession.length} thẻ bị bỏ qua mà chưa bấm đánh giá.` };
+      if (filterMode === 'today') return { title: 'Đã ôn xong các thẻ hôm nay!', desc: 'Bạn đã ôn lại toàn bộ các thẻ đã lật trong ngày hôm nay.' };
+      if (filterMode === 'hard_only' || filterMode === 'hard') return { title: 'Không có điểm yếu nào!', desc: 'Hiện tại bạn không có thẻ nào cực khó (Độ khó >= 7) hoặc hay sai. Quá xuất sắc!' };
+      if (filterMode === 'easy_only') return { title: 'Không có thẻ dễ!', desc: 'Chưa có thẻ nào được đánh giá là Dễ. Hãy tiếp tục học nhé!' };
+      return { title: '🎉 Tuyệt vời! Đã hoàn thành đợt học.', desc: `Bạn đã hoàn thành mục tiêu ôn luyện hôm nay cho cấp độ Thẻ ${level}.` };
+    };
+    const msg = getCompletionMessage();
+
+    return (
     <div style={{ maxWidth:900, margin:'0 auto', padding: 20 }}>
       <StatsBar stats={stats} levelColor={LEVEL_COLORS[level]}/>
       
@@ -393,34 +526,53 @@ const VocabularyFlashcards = () => {
           <CheckCircle2 size={54} color="#10b981"/>
         </div>
         
-        <h2 style={{ marginBottom:8, color:'#10b981', fontSize: '1.6rem' }}>🎉 Tuyệt vời! Đã hoàn thành đợt học.</h2>
+        <h2 style={{ marginBottom:8, color:'#10b981', fontSize: '1.6rem' }}>{msg.title}</h2>
         <p style={{ color:'var(--text-secondary)', marginBottom:24, fontSize: '0.95rem' }}>
-          Bạn đã hoàn thành mục tiêu ôn luyện hôm nay cho cấp độ <strong>Thẻ {level}</strong>.
+          {msg.desc}
         </p>
 
         {/* Session Log Quick Stats */}
-        <div style={{ display: 'flex', gap: 16, width: '100%', maxWidth: 500, marginBottom: 28, background: 'rgba(0,0,0,0.3)', padding: '14px 20px', borderRadius: 12, justifyContent: 'space-around' }}>
+        <div style={{ display: 'flex', gap: 16, width: '100%', maxWidth: 620, marginBottom: 28, background: 'rgba(0,0,0,0.3)', padding: '16px 20px', borderRadius: 14, justifyContent: 'space-around', border: '1px solid var(--glass-border)', flexWrap: 'wrap' }}>
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: 'white' }}>{effectiveReviewList.length}</div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>Từ đã thuộc</div>
+            <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#60a5fa' }}>{sessionHistory.length}</div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginTop: 2 }}>Đã học phiên này</div>
           </div>
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#10b981' }}>{sessionHistory.length > 0 ? sessionLog.easy : stats.learnedCount}</div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>Nhớ tốt</div>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#10b981' }}>{sessionBreakdown.easy}</div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginTop: 2 }}>Nhớ tốt</div>
           </div>
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#f59e0b' }}>{sessionLog.hard}</div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>Tạm ổn</div>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#f59e0b' }}>{sessionBreakdown.hard}</div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginTop: 2 }}>Tạm ổn</div>
           </div>
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#ef4444' }}>{sessionLog.again}</div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>Cần xem lại</div>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#ef4444' }}>{sessionBreakdown.again}</div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginTop: 2 }}>Cần xem lại</div>
+          </div>
+          <div style={{ textAlign: 'center', borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: 16 }}>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: 'white' }}>{stats.learnedCount} <span style={{ fontSize: '0.9rem', opacity: 0.6 }}>/ {stats.total}</span></div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginTop: 2 }}>Tổng thuộc cấp {level}</div>
           </div>
         </div>
 
         {/* Japanese Driving License App Style Action Controls Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 14, width: '100%', maxWidth: 640 }}>
           
+          {skippedInSession.length > 0 && (
+            <button 
+              className="btn btn-outline" 
+              onClick={() => {
+                setQueueAndSave(skippedInSession);
+                setQueueIdx(0);
+                setShowAnswer(revealMode === 'always');
+                setLastRating(null);
+              }} 
+              style={{ padding:'14px', fontSize:'0.9rem', display:'flex', alignItems:'center', justifyContent: 'center', gap:8, background: 'rgba(245,158,11,0.15)', color: '#fcd34d', border: '1px solid rgba(245,158,11,0.4)', gridColumn: 'span 2' }}
+            >
+              <RotateCcw size={18}/> ⚠️ Ôn {skippedInSession.length} thẻ bị bỏ qua (chưa đánh giá)
+            </button>
+          )}
+
           <button 
             className="btn btn-outline" 
             onClick={handleRestudyCurrentBatch} 
@@ -447,10 +599,10 @@ const VocabularyFlashcards = () => {
 
           <button 
             className="btn btn-outline" 
-            onClick={() => { setFilterMode('all'); buildQueue(); }} 
-            style={{ padding:'14px', fontSize:'0.9rem', display:'flex', alignItems:'center', justifyContent: 'center', gap:8 }}
+            onClick={() => navigate(-1)} 
+            style={{ padding:'14px', fontSize:'0.9rem', display:'flex', alignItems:'center', justifyContent: 'center', gap:8, border: '1px solid rgba(255,255,255,0.2)' }}
           >
-            <List size={18}/> 📋 Quay lại danh sách ôn luyện
+            <ChevronLeft size={18}/> Quay lại trang trước
           </button>
 
         </div>
@@ -489,12 +641,19 @@ const VocabularyFlashcards = () => {
       )}
     </div>
   );
+}
 
-  if (!currentCard) return (
-    <div className="glass-panel" style={{ textAlign:'center', padding:40 }}>
-      Đang tải từ vựng...
-    </div>
-  );
+  if (!currentCard) {
+    if (queue.length > 0) {
+      console.warn(`[Auto-recover] Hàng đợi chứa thẻ không hợp lệ hoặc đã bị thay đổi (ID: ${currentId}). Tự động làm sạch hàng đợi để phục hồi.`);
+      setTimeout(() => setQueue([]), 0);
+    }
+    return (
+      <div className="glass-panel" style={{ textAlign:'center', padding:40 }}>
+        Đang tải từ vựng...
+      </div>
+    );
+  }
 
   const examples = Array.isArray(currentCard.examples) ? currentCard.examples : [];
   const lc = LEVEL_COLORS[level] || 'var(--accent-primary)';
@@ -546,6 +705,14 @@ const VocabularyFlashcards = () => {
             </button>
           </div>
           
+          <button 
+            onClick={handleLoadNextNewBatch} 
+            style={{ padding: '6px 14px', borderRadius: 8, background: 'rgba(59,130,246,0.15)', border: '1px solid rgba(59,130,246,0.3)', color: '#60a5fa', fontSize: '0.85rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontWeight: 600, transition: 'all 0.2s' }} 
+            title="Nhảy ngay sang 25 từ mới tiếp theo"
+          >
+            <Zap size={16}/> Mở 25 từ mới tiếp
+          </button>
+
           <button className="btn btn-ghost" onClick={() => setShowSettings(!showSettings)} style={{ padding: '8px', color: 'var(--text-secondary)' }} title="Cài đặt lật thẻ">
             <Settings size={20}/>
           </button>
@@ -563,6 +730,7 @@ const VocabularyFlashcards = () => {
                 >
                   <option value="all">Học thông thường ({allIds.length})</option>
                   <option value="due">Chỉ thẻ đến hạn ({getDueCards(allIds).length})</option>
+                  <option value="skipped">Thẻ bị bỏ qua / Chưa học ({unlearnedCount})</option>
                   <option value="bookmark">Thẻ đã Bookmark ({allIds.filter(id => isBookmarked(id)).length})</option>
                   <option value="again">Thẻ đánh giá: Lại</option>
                   <option value="hard">Thẻ đánh giá: Khó</option>
@@ -824,6 +992,7 @@ const VocabularyFlashcards = () => {
           </div>
         </div>
       )}
+      </div>
 
       {showSettings && (
         <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(6px)' }} onClick={() => setShowSettings(false)}>
@@ -864,6 +1033,23 @@ const VocabularyFlashcards = () => {
                   <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)', marginTop: 6, paddingLeft: 26, lineHeight: 1.4 }}>
                     Mặt ẩn ban đầu ➔ Bấm chọn Lại/Khó/Tốt/Dễ ➔ Hệ thống tự lật đáp án & giữ màn hình N giây để bạn xác nhận lại.
                   </div>
+
+                  {revealMode === 'on_rating' && (
+                    <div 
+                      onClick={(e) => e.stopPropagation()}
+                      style={{ marginTop: 10, paddingLeft: 26, display: 'flex', alignItems: 'center', gap: 8 }}
+                    >
+                      <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', fontSize: '0.84rem', color: '#60a5fa', fontWeight: 600 }}>
+                        <input 
+                          type="checkbox" 
+                          checked={speakOnRating} 
+                          onChange={e => updateSpeakOnRating(e.target.checked)} 
+                          style={{ width: 15, height: 15, cursor: 'pointer' }}
+                        />
+                        🔊 Tự động phát âm thanh khi lật đáp án đánh giá
+                      </label>
+                    </div>
+                  )}
                 </div>
 
                 {/* Option 2: Luôn hiển thị sẵn đáp án */}

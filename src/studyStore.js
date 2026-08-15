@@ -121,7 +121,65 @@ export function reviewRoadmapCard(cardId, rating) {
     updated_at: scheduledCard.updated_at
   });
 
+  // Ghi log review (SRS)
+  logReview(cardId, 'vocab_srs', rating);
+
   return store[cardId];
+}
+
+// ── Lịch sử lật thẻ hôm nay (Review Logs) ──
+export function logReview(cardId, moduleType, rating) {
+  const dateStr = new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD
+  const key = getStorageKey(`review_logs_${dateStr}`);
+  try {
+    const logs = JSON.parse(localStorage.getItem(key) || '[]');
+    logs.push({ cardId, moduleType, rating, time: new Date().toISOString() });
+    localStorage.setItem(key, JSON.stringify(logs));
+  } catch(e) {}
+  
+  // Push to cloud (dùng crypto.randomUUID() để làm ID giả cho lệnh upsert)
+  enqueueSync('omni_review_logs', {
+    id: crypto.randomUUID(),
+    card_id: cardId,
+    module_type: moduleType,
+    rating: rating,
+    review_time: new Date().toISOString()
+  });
+}
+
+export function getTodayStats() {
+  const dateStr = new Date().toLocaleDateString('en-CA');
+  const key = getStorageKey(`review_logs_${dateStr}`);
+  try {
+    const logs = JSON.parse(localStorage.getItem(key) || '[]');
+    const cardMap = {};
+    logs.forEach(l => {
+      cardMap[l.cardId] = l.rating;
+    });
+    const uniqueCardIds = Object.keys(cardMap);
+    const total = uniqueCardIds.length;
+    let correct = 0;
+    let incorrect = 0;
+    uniqueCardIds.forEach(id => {
+      const rating = cardMap[id];
+      if (rating <= 2) incorrect++;
+      else correct++;
+    });
+    return { total, correct, incorrect };
+  } catch {
+    return { total: 0, correct: 0, incorrect: 0 };
+  }
+}
+
+export function getTodayReviewedCardIds() {
+  const dateStr = new Date().toLocaleDateString('en-CA');
+  const key = getStorageKey(`review_logs_${dateStr}`);
+  try {
+    const logs = JSON.parse(localStorage.getItem(key) || '[]');
+    return [...new Set(logs.map(l => l.cardId))];
+  } catch {
+    return [];
+  }
 }
 
 // ── Cập nhật thẻ Học Tự Do (Free Study) ──
@@ -146,6 +204,10 @@ export function reviewFreeStudyCard(cardId, isCorrect, moduleType = 'vocab') {
       incorrect_count: item.incorrect,
       last_practiced: item.last_practiced
     });
+    
+    // Ghi log review
+    logReview(cardId, moduleType, isCorrect ? 3 : 1);
+    
     return item;
   } catch (err) {
     console.error('Free Study review error:', err);

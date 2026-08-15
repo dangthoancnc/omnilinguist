@@ -1,7 +1,7 @@
 import { db } from './db.js';
 import localMasterDb from './data/jlpt_master_db.json';
 
-const CURRENT_DATA_VERSION = 'v11.4.0_massive_vocab_1250';
+const CURRENT_DATA_VERSION = 'v12.0.0_deduplicated_1201';
 const CHUNK_SIZE = 200; // Chia nhỏ 200 bản ghi / đợt để nạp siêu mượt
 
 const parseField = (val) => {
@@ -32,11 +32,12 @@ async function chunkedBulkPut(table, items) {
 export async function syncMasterData() {
   try {
     const savedVer = localStorage.getItem('omni_master_ver');
+    const vocabCount = await db.vocab.count();
     const grammarCount = await db.grammar.count();
 
-    // ⚡ TỐI ƯU SIÊU TỐC: Nếu phiên bản đã khớp & đã có >1000 dữ liệu -> Bỏ qua nạp lại
-    if (savedVer === CURRENT_DATA_VERSION && grammarCount > 1000) {
-      console.log(`⚡ [FastLoad] Master Data đã sẵn sàng (${grammarCount} mẫu ngữ pháp Bunpro). Bỏ qua nạp lại!`);
+    // ⚡ TỐI ƯU SIÊU TỐC: Nếu phiên bản đã khớp & đã có đủ dữ liệu từ vựng + ngữ pháp -> Bỏ qua nạp lại
+    if (savedVer === CURRENT_DATA_VERSION && grammarCount > 1000 && vocabCount > 500) {
+      console.log(`⚡ [FastLoad] Master Data đã sẵn sàng (${vocabCount} từ vựng, ${grammarCount} mẫu ngữ pháp Bunpro). Bỏ qua nạp lại!`);
       return;
     }
 
