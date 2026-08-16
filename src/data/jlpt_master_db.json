@@ -3251,218 +3251,58 @@
     {
       "id": "v_n5_204",
       "level": "N5",
-      "word": "春",
-      "reading": "はる",
-      "vi": "Mùa xuân",
-      "meaning": "Mùa xuân",
+      "word": "犬",
+      "reading": "いぬ",
+      "vi": "Con chó",
+      "meaning": "Con chó",
       "type": "Danh từ",
       "tags": [
         "Danh từ",
         "N5"
       ],
       "examples": [
-        "春（はる）を使った例文です。"
+        "犬（いぬ）を使った例文です。"
       ]
     },
     {
       "id": "v_n5_205",
       "level": "N5",
-      "word": "夏",
-      "reading": "なつ",
-      "vi": "Mùa hè",
-      "meaning": "Mùa hè",
+      "word": "猫",
+      "reading": "ねこ",
+      "vi": "Con mèo",
+      "meaning": "Con mèo",
       "type": "Danh từ",
       "tags": [
         "Danh từ",
         "N5"
       ],
       "examples": [
-        "夏（なつ）を使った例文です。"
+        "猫（ねこ）を使った例文です。"
       ]
     },
     {
       "id": "v_n5_206",
       "level": "N5",
-      "word": "秋",
-      "reading": "あき",
-      "vi": "Mùa thu",
-      "meaning": "Mùa thu",
+      "word": "鳥",
+      "reading": "とり",
+      "vi": "Con chim",
+      "meaning": "Con chim",
       "type": "Danh từ",
       "tags": [
         "Danh từ",
         "N5"
       ],
       "examples": [
-        "秋（あき）を使った例文です。"
+        "鳥（とり）を使った例文です。"
       ]
     },
     {
       "id": "v_n5_207",
       "level": "N5",
-      "word": "冬",
-      "reading": "ふゆ",
-      "vi": "Mùa đông",
-      "meaning": "Mùa đông",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "冬（ふゆ）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_208",
-      "level": "N5",
-      "word": "天気",
-      "reading": "てんき",
-      "vi": "Thời tiết",
-      "meaning": "Thời tiết",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "天気（てんき）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_209",
-      "level": "N5",
-      "word": "雨",
-      "reading": "あめ",
-      "vi": "Mưa",
-      "meaning": "Mưa",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "雨（あめ）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_210",
-      "level": "N5",
-      "word": "雪",
-      "reading": "ゆき",
-      "vi": "Tuyết",
-      "meaning": "Tuyết",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "雪（ゆき）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_211",
-      "level": "N5",
-      "word": "風",
-      "reading": "かぜ",
-      "vi": "Gió",
-      "meaning": "Gió",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "風（かぜ）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_212",
-      "level": "N5",
-      "word": "水",
-      "reading": "みず",
-      "vi": "Nước",
-      "meaning": "Nước",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "水（みず）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_213",
-      "level": "N5",
-      "word": "お茶",
-      "reading": "おちゃ",
-      "vi": "Trà",
-      "meaning": "Trà",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "お茶（おちゃ）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_214",
-      "level": "N5",
-      "word": "ご飯",
-      "reading": "ごはん",
-      "vi": "Cơm",
-      "meaning": "Cơm",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "ご飯（ごはん）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_215",
-      "level": "N5",
-      "word": "パン",
-      "reading": "ぱん",
-      "vi": "Bánh mì",
-      "meaning": "Bánh mì",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "パン（ぱん）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_216",
-      "level": "N5",
-      "word": "肉",
-      "reading": "にく",
-      "vi": "Thịt",
-      "meaning": "Thịt",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "肉（にく）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_217",
-      "level": "N5",
       "word": "魚",
       "reading": "さかな",
-      "vi": "Cá",
-      "meaning": "Cá",
+      "vi": "Con cá",
+      "meaning": "Con cá",
       "type": "Danh từ",
       "tags": [
         "Danh từ",
@@ -3473,508 +3313,92 @@
       ]
     },
     {
-      "id": "v_n5_218",
+      "id": "v_n5_208",
       "level": "N5",
-      "word": "野菜",
-      "reading": "やさい",
-      "vi": "Rau",
-      "meaning": "Rau",
+      "word": "馬",
+      "reading": "うま",
+      "vi": "Con ngựa",
+      "meaning": "Con ngựa",
       "type": "Danh từ",
       "tags": [
         "Danh từ",
         "N5"
       ],
       "examples": [
-        "野菜（やさい）を使った例文です。"
+        "馬（うま）を使った例文です。"
       ]
     },
     {
-      "id": "v_n5_219",
+      "id": "v_n5_209",
       "level": "N5",
-      "word": "果物",
-      "reading": "くだもの",
-      "vi": "Trái cây",
-      "meaning": "Trái cây",
+      "word": "牛",
+      "reading": "うし",
+      "vi": "Con bò",
+      "meaning": "Con bò",
       "type": "Danh từ",
       "tags": [
         "Danh từ",
         "N5"
       ],
       "examples": [
-        "果物（くだもの）を使った例文です。"
+        "牛（うし）を使った例文です。"
       ]
     },
     {
-      "id": "v_n5_220",
+      "id": "v_n5_210",
       "level": "N5",
-      "word": "卵",
-      "reading": "たまご",
-      "vi": "Trứng",
-      "meaning": "Trứng",
+      "word": "豚",
+      "reading": "ぶた",
+      "vi": "Con lợn, heo",
+      "meaning": "Con lợn, heo",
       "type": "Danh từ",
       "tags": [
         "Danh từ",
         "N5"
       ],
       "examples": [
-        "卵（たまご）を使った例文です。"
+        "豚（ぶた）を使った例文です。"
       ]
     },
     {
-      "id": "v_n5_221",
+      "id": "v_n5_211",
       "level": "N5",
-      "word": "牛乳",
-      "reading": "ぎゅうにゅう",
-      "vi": "Sữa bò",
-      "meaning": "Sữa bò",
+      "word": "象",
+      "reading": "ぞう",
+      "vi": "Con voi",
+      "meaning": "Con voi",
       "type": "Danh từ",
       "tags": [
         "Danh từ",
         "N5"
       ],
       "examples": [
-        "牛乳（ぎゅうにゅう）を使った例文です。"
+        "象（ぞう）を使った例文です。"
       ]
     },
     {
-      "id": "v_n5_222",
+      "id": "v_n5_212",
       "level": "N5",
-      "word": "名前",
-      "reading": "なまえ",
-      "vi": "Tên",
-      "meaning": "Tên",
+      "word": "虫",
+      "reading": "むし",
+      "vi": "Côn trùng, sâu",
+      "meaning": "Côn trùng, sâu",
       "type": "Danh từ",
       "tags": [
         "Danh từ",
         "N5"
       ],
       "examples": [
-        "名前（なまえ）を使った例文です。"
+        "虫（むし）を使った例文です。"
       ]
     },
     {
-      "id": "v_n5_223",
-      "level": "N5",
-      "word": "電話",
-      "reading": "でんわ",
-      "vi": "Điện thoại",
-      "meaning": "Điện thoại",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "電話（でんわ）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_224",
-      "level": "N5",
-      "word": "テレビ",
-      "reading": "てれび",
-      "vi": "Tivi",
-      "meaning": "Tivi",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "テレビ（てれび）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_225",
-      "level": "N5",
-      "word": "写真",
-      "reading": "しゃしん",
-      "vi": "Ảnh",
-      "meaning": "Ảnh",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "写真（しゃしん）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_226",
-      "level": "N5",
-      "word": "映画",
-      "reading": "えいが",
-      "vi": "Phim",
-      "meaning": "Phim",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "映画（えいが）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_227",
-      "level": "N5",
-      "word": "音楽",
-      "reading": "おんがく",
-      "vi": "Âm nhạc",
-      "meaning": "Âm nhạc",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "音楽（おんがく）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_228",
-      "level": "N5",
-      "word": "本",
-      "reading": "ほん",
-      "vi": "Sách",
-      "meaning": "Sách",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "本（ほん）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_229",
-      "level": "N5",
-      "word": "新聞",
-      "reading": "しんぶん",
-      "vi": "Báo",
-      "meaning": "Báo",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "新聞（しんぶん）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_230",
-      "level": "N5",
-      "word": "手紙",
-      "reading": "てがみ",
-      "vi": "Thư",
-      "meaning": "Thư",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "手紙（てがみ）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_231",
-      "level": "N5",
-      "word": "言葉",
-      "reading": "ことば",
-      "vi": "Từ ngữ",
-      "meaning": "Từ ngữ",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "言葉（ことば）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_232",
-      "level": "N5",
-      "word": "仕事",
-      "reading": "しごと",
-      "vi": "Công việc",
-      "meaning": "Công việc",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "仕事（しごと）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_233",
-      "level": "N5",
-      "word": "お金",
-      "reading": "おかね",
-      "vi": "Tiền",
-      "meaning": "Tiền",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "お金（おかね）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_234",
-      "level": "N5",
-      "word": "時間",
-      "reading": "じかん",
-      "vi": "Thời gian",
-      "meaning": "Thời gian",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "時間（じかん）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_235",
-      "level": "N5",
-      "word": "体",
-      "reading": "からだ",
-      "vi": "Cơ thể",
-      "meaning": "Cơ thể",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "体（からだ）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_236",
-      "level": "N5",
-      "word": "頭",
-      "reading": "あたま",
-      "vi": "Đầu",
-      "meaning": "Đầu",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "頭（あたま）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_237",
-      "level": "N5",
-      "word": "顔",
-      "reading": "かお",
-      "vi": "Mặt",
-      "meaning": "Mặt",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "顔（かお）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_238",
-      "level": "N5",
-      "word": "目",
-      "reading": "め",
-      "vi": "Mắt",
-      "meaning": "Mắt",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "目（め）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_239",
-      "level": "N5",
-      "word": "耳",
-      "reading": "みみ",
-      "vi": "Tai",
-      "meaning": "Tai",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "耳（みみ）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_240",
-      "level": "N5",
-      "word": "口",
-      "reading": "くち",
-      "vi": "Miệng",
-      "meaning": "Miệng",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "口（くち）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_241",
-      "level": "N5",
-      "word": "手",
-      "reading": "て",
-      "vi": "Tay",
-      "meaning": "Tay",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "手（て）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_242",
-      "level": "N5",
-      "word": "足",
-      "reading": "あし",
-      "vi": "Chân",
-      "meaning": "Chân",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "足（あし）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_243",
-      "level": "N5",
-      "word": "花",
-      "reading": "はな",
-      "vi": "Hoa",
-      "meaning": "Hoa",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "花（はな）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_244",
-      "level": "N5",
-      "word": "木",
-      "reading": "き",
-      "vi": "Cây",
-      "meaning": "Cây",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "木（き）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_245",
-      "level": "N5",
-      "word": "山",
-      "reading": "やま",
-      "vi": "Núi",
-      "meaning": "Núi",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "山（やま）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_246",
-      "level": "N5",
-      "word": "川",
-      "reading": "かわ",
-      "vi": "Sông",
-      "meaning": "Sông",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "川（かわ）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_247",
-      "level": "N5",
-      "word": "海",
-      "reading": "うみ",
-      "vi": "Biển",
-      "meaning": "Biển",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "海（うみ）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_248",
-      "level": "N5",
-      "word": "道",
-      "reading": "みち",
-      "vi": "Đường",
-      "meaning": "Đường",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "道（みち）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_249",
+      "id": "v_n5_213",
       "level": "N5",
       "word": "車",
       "reading": "くるま",
-      "vi": "Xe ô tô",
-      "meaning": "Xe ô tô",
+      "vi": "Xe ô tô, xe hơi",
+      "meaning": "Xe ô tô, xe hơi",
       "type": "Danh từ",
       "tags": [
         "Danh từ",
@@ -3985,23 +3409,7 @@
       ]
     },
     {
-      "id": "v_n5_250",
-      "level": "N5",
-      "word": "自転車",
-      "reading": "じてんしゃ",
-      "vi": "Xe đạp",
-      "meaning": "Xe đạp",
-      "type": "Danh từ",
-      "tags": [
-        "Danh từ",
-        "N5"
-      ],
-      "examples": [
-        "自転車（じてんしゃ）を使った例文です。"
-      ]
-    },
-    {
-      "id": "v_n5_251",
+      "id": "v_n5_214",
       "level": "N5",
       "word": "電車",
       "reading": "でんしゃ",
@@ -4017,7 +3425,935 @@
       ]
     },
     {
+      "id": "v_n5_215",
+      "level": "N5",
+      "word": "自転車",
+      "reading": "じてんしゃ",
+      "vi": "Xe đạp",
+      "meaning": "Xe đạp",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "自転車（じてんしゃ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_216",
+      "level": "N5",
+      "word": "飛行機",
+      "reading": "ひこうき",
+      "vi": "Máy bay",
+      "meaning": "Máy bay",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "飛行機（ひこうき）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_217",
+      "level": "N5",
+      "word": "船",
+      "reading": "ふね",
+      "vi": "Tàu thủy, thuyền",
+      "meaning": "Tàu thủy, thuyền",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "船（ふね）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_218",
+      "level": "N5",
+      "word": "バス",
+      "reading": "ばす",
+      "vi": "Xe buýt",
+      "meaning": "Xe buýt",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "バス（ばす）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_219",
+      "level": "N5",
+      "word": "タクシー",
+      "reading": "たくしー",
+      "vi": "Xe taxi",
+      "meaning": "Xe taxi",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "タクシー（たくしー）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_220",
+      "level": "N5",
+      "word": "春",
+      "reading": "はる",
+      "vi": "Mùa xuân",
+      "meaning": "Mùa xuân",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "春（はる）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_221",
+      "level": "N5",
+      "word": "夏",
+      "reading": "なつ",
+      "vi": "Mùa hè",
+      "meaning": "Mùa hè",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "夏（なつ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_222",
+      "level": "N5",
+      "word": "秋",
+      "reading": "あき",
+      "vi": "Mùa thu",
+      "meaning": "Mùa thu",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "秋（あき）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_223",
+      "level": "N5",
+      "word": "冬",
+      "reading": "ふゆ",
+      "vi": "Mùa đông",
+      "meaning": "Mùa đông",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "冬（ふゆ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_224",
+      "level": "N5",
+      "word": "天気",
+      "reading": "てんき",
+      "vi": "Thời tiết",
+      "meaning": "Thời tiết",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "天気（てんき）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_225",
+      "level": "N5",
+      "word": "雨",
+      "reading": "あめ",
+      "vi": "Mưa",
+      "meaning": "Mưa",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "雨（あめ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_226",
+      "level": "N5",
+      "word": "雪",
+      "reading": "ゆき",
+      "vi": "Tuyết",
+      "meaning": "Tuyết",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "雪（ゆき）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_227",
+      "level": "N5",
+      "word": "風",
+      "reading": "かぜ",
+      "vi": "Gió",
+      "meaning": "Gió",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "風（かぜ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_228",
+      "level": "N5",
+      "word": "山",
+      "reading": "やま",
+      "vi": "Núi",
+      "meaning": "Núi",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "山（やま）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_229",
+      "level": "N5",
+      "word": "川",
+      "reading": "かわ",
+      "vi": "Sông",
+      "meaning": "Sông",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "川（かわ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_230",
+      "level": "N5",
+      "word": "海",
+      "reading": "うみ",
+      "vi": "Biển",
+      "meaning": "Biển",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "海（うみ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_231",
+      "level": "N5",
+      "word": "空",
+      "reading": "そら",
+      "vi": "Bầu trời",
+      "meaning": "Bầu trời",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "空（そら）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_232",
+      "level": "N5",
+      "word": "花",
+      "reading": "はな",
+      "vi": "Hoa",
+      "meaning": "Hoa",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "花（はな）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_233",
+      "level": "N5",
+      "word": "木",
+      "reading": "き",
+      "vi": "Cây, gỗ",
+      "meaning": "Cây, gỗ",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "木（き）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_234",
+      "level": "N5",
+      "word": "水",
+      "reading": "みず",
+      "vi": "Nước",
+      "meaning": "Nước",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "水（みず）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_235",
+      "level": "N5",
+      "word": "お茶",
+      "reading": "おちゃ",
+      "vi": "Trà",
+      "meaning": "Trà",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "お茶（おちゃ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_236",
+      "level": "N5",
+      "word": "ご飯",
+      "reading": "ごはん",
+      "vi": "Cơm",
+      "meaning": "Cơm",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "ご飯（ごはん）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_237",
+      "level": "N5",
+      "word": "パン",
+      "reading": "ぱん",
+      "vi": "Bánh mì",
+      "meaning": "Bánh mì",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "パン（ぱん）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_238",
+      "level": "N5",
+      "word": "肉",
+      "reading": "にく",
+      "vi": "Thịt",
+      "meaning": "Thịt",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "肉（にく）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_239",
+      "level": "N5",
+      "word": "野菜",
+      "reading": "やさい",
+      "vi": "Rau",
+      "meaning": "Rau",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "野菜（やさい）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_240",
+      "level": "N5",
+      "word": "果物",
+      "reading": "くだもの",
+      "vi": "Trái cây",
+      "meaning": "Trái cây",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "果物（くだもの）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_241",
+      "level": "N5",
+      "word": "卵",
+      "reading": "たまご",
+      "vi": "Trứng",
+      "meaning": "Trứng",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "卵（たまご）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_242",
+      "level": "N5",
+      "word": "牛乳",
+      "reading": "ぎゅうにゅう",
+      "vi": "Sữa bò",
+      "meaning": "Sữa bò",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "牛乳（ぎゅうにゅう）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_243",
+      "level": "N5",
+      "word": "名前",
+      "reading": "なまえ",
+      "vi": "Tên",
+      "meaning": "Tên",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "名前（なまえ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_244",
+      "level": "N5",
+      "word": "電話",
+      "reading": "でんわ",
+      "vi": "Điện thoại",
+      "meaning": "Điện thoại",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "電話（でんわ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_245",
+      "level": "N5",
+      "word": "テレビ",
+      "reading": "てれび",
+      "vi": "Tivi",
+      "meaning": "Tivi",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "テレビ（てれび）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_246",
+      "level": "N5",
+      "word": "写真",
+      "reading": "しゃしん",
+      "vi": "Ảnh",
+      "meaning": "Ảnh",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "写真（しゃしん）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_247",
+      "level": "N5",
+      "word": "映画",
+      "reading": "えいが",
+      "vi": "Phim",
+      "meaning": "Phim",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "映画（えいが）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_248",
+      "level": "N5",
+      "word": "音楽",
+      "reading": "おんがく",
+      "vi": "Âm nhạc",
+      "meaning": "Âm nhạc",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "音楽（おんがく）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_249",
+      "level": "N5",
+      "word": "本",
+      "reading": "ほん",
+      "vi": "Sách",
+      "meaning": "Sách",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "本（ほん）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_250",
+      "level": "N5",
+      "word": "辞書",
+      "reading": "じしょ",
+      "vi": "Từ điển",
+      "meaning": "Từ điển",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "辞書（じしょ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_251",
+      "level": "N5",
+      "word": "新聞",
+      "reading": "しんぶん",
+      "vi": "Báo",
+      "meaning": "Báo",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "新聞（しんぶん）を使った例文です。"
+      ]
+    },
+    {
       "id": "v_n5_252",
+      "level": "N5",
+      "word": "手紙",
+      "reading": "てがみ",
+      "vi": "Thư",
+      "meaning": "Thư",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "手紙（てがみ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_253",
+      "level": "N5",
+      "word": "言葉",
+      "reading": "ことば",
+      "vi": "Từ ngữ",
+      "meaning": "Từ ngữ",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "言葉（ことば）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_254",
+      "level": "N5",
+      "word": "仕事",
+      "reading": "しごと",
+      "vi": "Công việc",
+      "meaning": "Công việc",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "仕事（しごと）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_255",
+      "level": "N5",
+      "word": "お金",
+      "reading": "おかね",
+      "vi": "Tiền",
+      "meaning": "Tiền",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "お金（おかね）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_256",
+      "level": "N5",
+      "word": "財布",
+      "reading": "さいふ",
+      "vi": "Ví tiền",
+      "meaning": "Ví tiền",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "財布（さいふ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_257",
+      "level": "N5",
+      "word": "鍵",
+      "reading": "かぎ",
+      "vi": "Chìa khóa",
+      "meaning": "Chìa khóa",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "鍵（かぎ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_258",
+      "level": "N5",
+      "word": "時計",
+      "reading": "とけい",
+      "vi": "Đồng hồ",
+      "meaning": "Đồng hồ",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "時計（とけい）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_259",
+      "level": "N5",
+      "word": "傘",
+      "reading": "かさ",
+      "vi": "Cái ô, dù",
+      "meaning": "Cái ô, dù",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "傘（かさ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_260",
+      "level": "N5",
+      "word": "鞄",
+      "reading": "かばん",
+      "vi": "Cặp, túi xách",
+      "meaning": "Cặp, túi xách",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "鞄（かばん）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_261",
+      "level": "N5",
+      "word": "靴",
+      "reading": "くつ",
+      "vi": "Giày",
+      "meaning": "Giày",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "靴（くつ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_262",
+      "level": "N5",
+      "word": "服",
+      "reading": "ふく",
+      "vi": "Quần áo",
+      "meaning": "Quần áo",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "服（ふく）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_263",
+      "level": "N5",
+      "word": "時間",
+      "reading": "じかん",
+      "vi": "Thời gian",
+      "meaning": "Thời gian",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "時間（じかん）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_264",
+      "level": "N5",
+      "word": "体",
+      "reading": "からだ",
+      "vi": "Cơ thể",
+      "meaning": "Cơ thể",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "体（からだ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_265",
+      "level": "N5",
+      "word": "頭",
+      "reading": "あたま",
+      "vi": "Đầu",
+      "meaning": "Đầu",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "頭（あたま）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_266",
+      "level": "N5",
+      "word": "顔",
+      "reading": "かお",
+      "vi": "Mặt",
+      "meaning": "Mặt",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "顔（かお）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_267",
+      "level": "N5",
+      "word": "目",
+      "reading": "め",
+      "vi": "Mắt",
+      "meaning": "Mắt",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "目（め）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_268",
+      "level": "N5",
+      "word": "耳",
+      "reading": "みみ",
+      "vi": "Tai",
+      "meaning": "Tai",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "耳（みみ）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_269",
+      "level": "N5",
+      "word": "口",
+      "reading": "くち",
+      "vi": "Miệng",
+      "meaning": "Miệng",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "口（くち）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_270",
+      "level": "N5",
+      "word": "手",
+      "reading": "て",
+      "vi": "Tay",
+      "meaning": "Tay",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "手（て）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_271",
+      "level": "N5",
+      "word": "足",
+      "reading": "あし",
+      "vi": "Chân",
+      "meaning": "Chân",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "足（あし）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_272",
+      "level": "N5",
+      "word": "道",
+      "reading": "みち",
+      "vi": "Đường",
+      "meaning": "Đường",
+      "type": "Danh từ",
+      "tags": [
+        "Danh từ",
+        "N5"
+      ],
+      "examples": [
+        "道（みち）を使った例文です。"
+      ]
+    },
+    {
+      "id": "v_n5_273",
       "level": "N5",
       "word": "いつも",
       "reading": "いつも",
@@ -4033,7 +4369,7 @@
       ]
     },
     {
-      "id": "v_n5_253",
+      "id": "v_n5_274",
       "level": "N5",
       "word": "よく",
       "reading": "よく",
@@ -4049,7 +4385,7 @@
       ]
     },
     {
-      "id": "v_n5_254",
+      "id": "v_n5_275",
       "level": "N5",
       "word": "時々",
       "reading": "ときどき",
@@ -4065,7 +4401,7 @@
       ]
     },
     {
-      "id": "v_n5_255",
+      "id": "v_n5_276",
       "level": "N5",
       "word": "たくさん",
       "reading": "たくさん",
@@ -4081,7 +4417,7 @@
       ]
     },
     {
-      "id": "v_n5_256",
+      "id": "v_n5_277",
       "level": "N5",
       "word": "少し",
       "reading": "すこし",
@@ -4097,7 +4433,7 @@
       ]
     },
     {
-      "id": "v_n5_257",
+      "id": "v_n5_278",
       "level": "N5",
       "word": "もう",
       "reading": "もう",
@@ -4113,7 +4449,7 @@
       ]
     },
     {
-      "id": "v_n5_258",
+      "id": "v_n5_279",
       "level": "N5",
       "word": "まだ",
       "reading": "まだ",
@@ -4129,7 +4465,7 @@
       ]
     },
     {
-      "id": "v_n5_259",
+      "id": "v_n5_280",
       "level": "N5",
       "word": "すぐ",
       "reading": "すぐ",
@@ -4145,7 +4481,7 @@
       ]
     },
     {
-      "id": "v_n5_260",
+      "id": "v_n5_281",
       "level": "N5",
       "word": "一緒に",
       "reading": "いっしょに",
@@ -4161,7 +4497,7 @@
       ]
     },
     {
-      "id": "v_n5_261",
+      "id": "v_n5_282",
       "level": "N5",
       "word": "とても",
       "reading": "とても",
@@ -4177,7 +4513,7 @@
       ]
     },
     {
-      "id": "v_n5_262",
+      "id": "v_n5_283",
       "level": "N5",
       "word": "ちょっと",
       "reading": "ちょっと",
@@ -4193,7 +4529,7 @@
       ]
     },
     {
-      "id": "v_n5_263",
+      "id": "v_n5_284",
       "level": "N5",
       "word": "全部",
       "reading": "ぜんぶ",
@@ -4209,7 +4545,7 @@
       ]
     },
     {
-      "id": "v_n5_264",
+      "id": "v_n5_285",
       "level": "N5",
       "word": "初めて",
       "reading": "はじめて",
@@ -4225,7 +4561,7 @@
       ]
     },
     {
-      "id": "v_n5_265",
+      "id": "v_n5_286",
       "level": "N5",
       "word": "だんだん",
       "reading": "だんだん",
@@ -4241,7 +4577,7 @@
       ]
     },
     {
-      "id": "v_n5_266",
+      "id": "v_n5_287",
       "level": "N5",
       "word": "ゆっくり",
       "reading": "ゆっくり",
@@ -20967,6 +21303,152 @@
         "Hư",
         "Lời nói dối"
       ]
+    },
+    {
+      "id": "k_inu",
+      "level": "N5",
+      "kanji": "犬",
+      "meanings": [
+        "Khuyển",
+        "Con chó"
+      ],
+      "onyomi": [
+        "ケン"
+      ],
+      "kunyomi": [
+        "いぬ"
+      ],
+      "strokes": 4
+    },
+    {
+      "id": "k_neko",
+      "level": "N5",
+      "kanji": "猫",
+      "meanings": [
+        "Miêu",
+        "Con mèo"
+      ],
+      "onyomi": [
+        "ビョウ"
+      ],
+      "kunyomi": [
+        "ねこ"
+      ],
+      "strokes": 11
+    },
+    {
+      "id": "k_tori",
+      "level": "N5",
+      "kanji": "鳥",
+      "meanings": [
+        "Điểu",
+        "Con chim"
+      ],
+      "onyomi": [
+        "チョウ"
+      ],
+      "kunyomi": [
+        "とり"
+      ],
+      "strokes": 11
+    },
+    {
+      "id": "k_sakana",
+      "level": "N5",
+      "kanji": "魚",
+      "meanings": [
+        "Ngư",
+        "Con cá"
+      ],
+      "onyomi": [
+        "ギョ"
+      ],
+      "kunyomi": [
+        "さかな",
+        "うお"
+      ],
+      "strokes": 11
+    },
+    {
+      "id": "k_umi",
+      "level": "N5",
+      "kanji": "海",
+      "meanings": [
+        "Hải",
+        "Biển"
+      ],
+      "onyomi": [
+        "カイ"
+      ],
+      "kunyomi": [
+        "うみ"
+      ],
+      "strokes": 9
+    },
+    {
+      "id": "k_sora",
+      "level": "N5",
+      "kanji": "空",
+      "meanings": [
+        "Không",
+        "Bầu trời"
+      ],
+      "onyomi": [
+        "クウ"
+      ],
+      "kunyomi": [
+        "そら",
+        "あ・く"
+      ],
+      "strokes": 8
+    },
+    {
+      "id": "k_rain",
+      "level": "N5",
+      "kanji": "雨",
+      "meanings": [
+        "Vũ",
+        "Mưa"
+      ],
+      "onyomi": [
+        "ウ"
+      ],
+      "kunyomi": [
+        "あめ"
+      ],
+      "strokes": 8
+    },
+    {
+      "id": "k_snow",
+      "level": "N5",
+      "kanji": "雪",
+      "meanings": [
+        "Tuyết",
+        "Tuyết"
+      ],
+      "onyomi": [
+        "セツ"
+      ],
+      "kunyomi": [
+        "ゆき"
+      ],
+      "strokes": 11
+    },
+    {
+      "id": "k_flower",
+      "level": "N5",
+      "kanji": "花",
+      "meanings": [
+        "Hoa",
+        "Bông hoa"
+      ],
+      "onyomi": [
+        "カ"
+      ],
+      "kunyomi": [
+        "はな"
+      ],
+      "strokes": 7
     }
   ],
   "grammar": [

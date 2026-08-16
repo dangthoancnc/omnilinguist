@@ -218,6 +218,24 @@ const N5_WORDS = [
   ["今年","ことし","Năm nay","Danh từ"],
   ["来年","らいねん","Năm sau","Danh từ"],
   ["去年","きょねん","Năm ngoái","Danh từ"],
+  // Nouns - Animals
+  ["犬","いぬ","Con chó","Danh từ"],
+  ["猫","ねこ","Con mèo","Danh từ"],
+  ["鳥","とり","Con chim","Danh từ"],
+  ["魚","さかな","Con cá","Danh từ"],
+  ["馬","うま","Con ngựa","Danh từ"],
+  ["牛","うし","Con bò","Danh từ"],
+  ["豚","ぶた","Con lợn, heo","Danh từ"],
+  ["象","ぞう","Con voi","Danh từ"],
+  ["虫","むし","Côn trùng, sâu","Danh từ"],
+  // Nouns - Transportation
+  ["車","くるま","Xe ô tô, xe hơi","Danh từ"],
+  ["電車","でんしゃ","Tàu điện","Danh từ"],
+  ["自転車","じてんしゃ","Xe đạp","Danh từ"],
+  ["飛行機","ひこうき","Máy bay","Danh từ"],
+  ["船","ふね","Tàu thủy, thuyền","Danh từ"],
+  ["バス","ばす","Xe buýt","Danh từ"],
+  ["タクシー","たくしー","Xe taxi","Danh từ"],
   // Nouns - Nature/Weather
   ["春","はる","Mùa xuân","Danh từ"],
   ["夏","なつ","Mùa hè","Danh từ"],
@@ -227,18 +245,23 @@ const N5_WORDS = [
   ["雨","あめ","Mưa","Danh từ"],
   ["雪","ゆき","Tuyết","Danh từ"],
   ["風","かぜ","Gió","Danh từ"],
+  ["山","やま","Núi","Danh từ"],
+  ["川","かわ","Sông","Danh từ"],
+  ["海","うみ","Biển","Danh từ"],
+  ["空","そら","Bầu trời","Danh từ"],
+  ["花","はな","Hoa","Danh từ"],
+  ["木","き","Cây, gỗ","Danh từ"],
   // Nouns - Food
   ["水","みず","Nước","Danh từ"],
   ["お茶","おちゃ","Trà","Danh từ"],
   ["ご飯","ごはん","Cơm","Danh từ"],
   ["パン","ぱん","Bánh mì","Danh từ"],
   ["肉","にく","Thịt","Danh từ"],
-  ["魚","さかな","Cá","Danh từ"],
   ["野菜","やさい","Rau","Danh từ"],
   ["果物","くだもの","Trái cây","Danh từ"],
   ["卵","たまご","Trứng","Danh từ"],
   ["牛乳","ぎゅうにゅう","Sữa bò","Danh từ"],
-  // Nouns - Other
+  // Nouns - Objects
   ["名前","なまえ","Tên","Danh từ"],
   ["電話","でんわ","Điện thoại","Danh từ"],
   ["テレビ","てれび","Tivi","Danh từ"],
@@ -246,11 +269,19 @@ const N5_WORDS = [
   ["映画","えいが","Phim","Danh từ"],
   ["音楽","おんがく","Âm nhạc","Danh từ"],
   ["本","ほん","Sách","Danh từ"],
+  ["辞書","じしょ","Từ điển","Danh từ"],
   ["新聞","しんぶん","Báo","Danh từ"],
   ["手紙","てがみ","Thư","Danh từ"],
   ["言葉","ことば","Từ ngữ","Danh từ"],
   ["仕事","しごと","Công việc","Danh từ"],
   ["お金","おかね","Tiền","Danh từ"],
+  ["財布","さいふ","Ví tiền","Danh từ"],
+  ["鍵","かぎ","Chìa khóa","Danh từ"],
+  ["時計","とけい","Đồng hồ","Danh từ"],
+  ["傘","かさ","Cái ô, dù","Danh từ"],
+  ["鞄","かばん","Cặp, túi xách","Danh từ"],
+  ["靴","くつ","Giày","Danh từ"],
+  ["服","ふく","Quần áo","Danh từ"],
   ["時間","じかん","Thời gian","Danh từ"],
   ["体","からだ","Cơ thể","Danh từ"],
   ["頭","あたま","Đầu","Danh từ"],
@@ -1320,13 +1351,40 @@ for (const level of ['N5','N4','N3','N2','N1']) {
   }
 }
 
+const ADDITIONAL_KANJI = [
+  { id: "k_inu", level: "N5", kanji: "犬", meanings: ["Khuyển", "Con chó"], onyomi: ["ケン"], kunyomi: ["いぬ"], strokes: 4 },
+  { id: "k_neko", level: "N5", kanji: "猫", meanings: ["Miêu", "Con mèo"], onyomi: ["ビョウ"], kunyomi: ["ねこ"], strokes: 11 },
+  { id: "k_tori", level: "N5", kanji: "鳥", meanings: ["Điểu", "Con chim"], onyomi: ["チョウ"], kunyomi: ["とり"], strokes: 11 },
+  { id: "k_sakana", level: "N5", kanji: "魚", meanings: ["Ngư", "Con cá"], onyomi: ["ギョ"], kunyomi: ["さかな", "うお"], strokes: 11 },
+  { id: "k_kuruma", level: "N5", kanji: "車", meanings: ["Xa", "Xe"], onyomi: ["シャ"], kunyomi: ["くるま"], strokes: 7 },
+  { id: "k_yama", level: "N5", kanji: "山", meanings: ["Sơn", "Núi"], onyomi: ["サン"], kunyomi: ["やま"], strokes: 3 },
+  { id: "k_kawa", level: "N5", kanji: "川", meanings: ["Xuyên", "Sông"], onyomi: ["セン"], kunyomi: ["かわ"], strokes: 3 },
+  { id: "k_umi", level: "N5", kanji: "海", meanings: ["Hải", "Biển"], onyomi: ["カイ"], kunyomi: ["うみ"], strokes: 9 },
+  { id: "k_sora", level: "N5", kanji: "空", meanings: ["Không", "Bầu trời"], onyomi: ["クウ"], kunyomi: ["そら", "あ・く"], strokes: 8 },
+  { id: "k_rain", level: "N5", kanji: "雨", meanings: ["Vũ", "Mưa"], onyomi: ["ウ"], kunyomi: ["あめ"], strokes: 8 },
+  { id: "k_snow", level: "N5", kanji: "雪", meanings: ["Tuyết", "Tuyết"], onyomi: ["セツ"], kunyomi: ["ゆき"], strokes: 11 },
+  { id: "k_flower", level: "N5", kanji: "花", meanings: ["Hoa", "Bông hoa"], onyomi: ["カ"], kunyomi: ["はな"], strokes: 7 },
+  { id: "k_tree", level: "N5", kanji: "木", meanings: ["Mộc", "Cây"], onyomi: ["ボク", "モク"], kunyomi: ["き"], strokes: 4 },
+  { id: "k_book", level: "N5", kanji: "本", meanings: ["Bản", "Sách", "Gốc"], onyomi: ["ホン"], kunyomi: ["moto"], strokes: 5 }
+];
+
 // Read existing master DB
 const masterPath = path.join(__dirname, 'jlpt_master_db.json');
 const masterDb = JSON.parse(fs.readFileSync(masterPath, 'utf8'));
 
-// Replace vocabulary while preserving grammar and kanji
+// Replace vocabulary while preserving grammar
 masterDb.vocabulary = allVocab;
+
+// Enrich kanji if not already present
+const existingKanjiChars = new Set((masterDb.kanji || []).map(k => k.kanji));
+for (const kItem of ADDITIONAL_KANJI) {
+  if (!existingKanjiChars.has(kItem.kanji)) {
+    masterDb.kanji.push(kItem);
+    existingKanjiChars.add(kItem.kanji);
+  }
+}
 
 // Write back
 fs.writeFileSync(masterPath, JSON.stringify(masterDb, null, 2), 'utf8');
-console.log('\n✅ Updated jlpt_master_db.json successfully!');
+console.log('\n✅ Updated jlpt_master_db.json successfully! Total Vocab:', masterDb.vocabulary.length, 'Total Kanji:', masterDb.kanji.length);
+

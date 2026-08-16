@@ -1,7 +1,7 @@
 import { db } from './db.js';
 import localMasterDb from './data/jlpt_master_db.json';
 
-const CURRENT_DATA_VERSION = 'v12.0.0_deduplicated_1201';
+const CURRENT_DATA_VERSION = 'v12.1.0_updated_vocab_1222';
 const CHUNK_SIZE = 200; // Chia nhỏ 200 bản ghi / đợt để nạp siêu mượt
 
 const parseField = (val) => {
