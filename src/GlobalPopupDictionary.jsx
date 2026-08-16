@@ -3,6 +3,33 @@ import { db } from './db.js';
 import { Search, Book, Type, X, ExternalLink, Loader, DownloadCloud, CheckCircle } from 'lucide-react';
 import { supabase } from './lib/supabaseClient.js';
 import FuriganaText from './components/FuriganaText';
+import localMasterDb from './data/jlpt_master_db.json';
+
+// Multi-proxy CORS fetcher for Jisho API
+const fetchJishoData = async (keyword) => {
+  const encodedKw = encodeURIComponent(keyword);
+  const proxies = [
+    `https://corsproxy.io/?url=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${encodedKw}`)}`,
+    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${encodedKw}`)}`,
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${encodedKw}`)}`
+  ];
+
+  for (const url of proxies) {
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 2500);
+      const res = await fetch(url, { signal: controller.signal });
+      clearTimeout(timer);
+      if (res.ok) {
+        const json = await res.json();
+        if (json && json.data && json.data.length > 0) {
+          return json.data.slice(0, 2);
+        }
+      }
+    } catch (e) {}
+  }
+  return null;
+};
 
 const GlobalPopupDictionary = () => {
   const [selection, setSelection] = useState({ text: '', x: 0, y: 0, show: false });
@@ -82,102 +109,66 @@ const GlobalPopupDictionary = () => {
     setResults({ vocab: [], kanji: [], grammar: [], jisho: null, engVie: null, loading: true });
     
     try {
-      // 1. Tra cứu Offline (IndexedDB) ưu tiên hiển thị Tiếng Việt
-      // Tối ưu hóa: Dùng index where('word') cho nhanh, kết hợp fallback filter nếu không thấy
-      let vocabMatches = await db.vocab.where('word').equals(text).limit(3).toArray();
+      const masterVocab = localMasterDb.vocabulary || [];
+      const masterKanji = localMasterDb.kanji || [];
+      const masterGrammar = localMasterDb.grammar || [];
+
+      // 1. Tra cứu Offline (IndexedDB + localMasterDb fallback)
+      let vocabMatches = await db.vocab.filter(v => v.word === text || v.reading === text).limit(3).toArray();
       if (vocabMatches.length === 0) {
-         vocabMatches = await db.vocab.filter(v => v.kanji === text).limit(3).toArray();
+        vocabMatches = masterVocab.filter(v => v.word === text || v.reading === text || v.vi === text).slice(0, 3);
       }
       
-      const kanjiMatches = await db.kanji.filter(k => k.kanji === text).toArray();
+      let kanjiMatches = await db.kanji.filter(k => k.kanji === text).toArray();
+      if (kanjiMatches.length === 0) {
+        kanjiMatches = masterKanji.filter(k => k.kanji === text);
+      }
       
-      // Tìm kiếm ngữ pháp gần đúng (nếu text dài hơn 1 ký tự)
       let grammarMatches = [];
       if (text.length > 1) {
         grammarMatches = await db.grammar.filter(g => g.pattern.includes(text)).limit(2).toArray();
+        if (grammarMatches.length === 0) {
+          grammarMatches = masterGrammar.filter(g => g.pattern.includes(text)).slice(0, 2);
+        }
       }
 
-      // HIỂN THỊ KẾT QUẢ OFFLINE NGAY LẬP TỨC (Không chờ API)
+      // HIỂN THỊ KẾT QUẢ OFFLINE NGAY LẬP TỨC
       setResults({
         vocab: vocabMatches,
         kanji: kanjiMatches,
         grammar: grammarMatches,
         jisho: null,
         engVie: null,
-        loading: true // Vẫn để loading cho phần online
+        loading: true
       });
 
-      // 2. Tra cứu Online (Jisho hoặc Anh-Việt) chạy ngầm (Non-blocking)
+      // 2. Tra cứu Online
       const isJapanese = /[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]/.test(text);
-      const isEnglish = !isJapanese; // Nếu không phải tiếng Nhật thì gửi sang Google Translate
 
       if (isJapanese) {
-        const apiQuery = encodeURIComponent(text);
-        const pJisho = fetch(`https://api.allorigins.win/raw?url=https://jisho.org/api/v1/search/words?keyword=${apiQuery}`)
+        const pJisho = fetchJishoData(text);
+        const pTrans = fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=ja&tl=vi&dt=t&q=${encodeURIComponent(text)}`)
           .then(res => res.json())
-          .then(data => {
-            let jishoData = null;
-            if (data.data && data.data.length > 0) {
-              jishoData = data.data.slice(0, 2);
-            }
-            return { jisho: jishoData };
-          }).catch(e => {
-            console.log("Jisho API Error:", e);
-            return { jisho: null };
-          });
+          .then(data => (data && data[0] && data[0][0]) ? data[0][0][0] : null)
+          .catch(() => null);
 
-        const pTrans = fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=ja&tl=vi&dt=t&dt=bd&q=${encodeURIComponent(text)}`)
-          .then(res => res.json())
-          .then(data => {
-            let viTrans = null;
-            if (data && data[0] && data[0][0]) {
-               viTrans = data[0][0][0];
-            }
-            return { viTrans };
-          }).catch(e => {
-            console.log("Trans API Error:", e);
-            return { viTrans: null };
-          });
-
-        Promise.all([pJisho, pTrans]).then(resps => {
-            const jisho = resps[0].jisho;
-            const viTrans = resps[1].viTrans;
-            setResults(prev => ({ ...prev, jisho, jishoVi: viTrans, loading: false }));
-        });
-      } else if (isEnglish) {
-        // Gọi Google Translate API lấy từ điển Anh - Việt
-        fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&dt=bd&q=${encodeURIComponent(text)}`)
-          .then(res => res.json())
-          .then(data => {
-            let engVieData = null;
-            if (data && data[0] && data[0][0]) {
-               engVieData = {
-                  translation: data[0][0][0],
-                  dictionary: data[1] || []
-               };
-            }
-            setResults(prev => ({ ...prev, engVie: engVieData, loading: false }));
-          })
-          .catch(e => {
-            console.log("Eng-Vie API Error:", e);
-            setResults(prev => ({ ...prev, loading: false }));
-          });
+        const [jishoData, viTrans] = await Promise.all([pJisho, pTrans]);
+        setResults(prev => ({ ...prev, jisho: jishoData, jishoVi: viTrans, loading: false }));
       } else {
-        // Fallback gọi Jisho
-        const apiQuery = encodeURIComponent(text);
-        fetch(`https://api.allorigins.win/raw?url=https://jisho.org/api/v1/search/words?keyword=${apiQuery}`)
-          .then(res => res.json())
-          .then(data => {
-            let jishoData = null;
-            if (data.data && data.data.length > 0) {
-              jishoData = data.data.slice(0, 2);
-            }
-            setResults(prev => ({ ...prev, jisho: jishoData, loading: false }));
-          })
-          .catch(e => {
-            console.log("Jisho API Error:", e);
-            setResults(prev => ({ ...prev, loading: false }));
-          });
+        try {
+          const res = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=vi&dt=t&dt=bd&q=${encodeURIComponent(text)}`);
+          const data = await res.json();
+          let engVieData = null;
+          if (data && data[0] && data[0][0]) {
+            engVieData = {
+              translation: data[0][0][0],
+              dictionary: data[1] || []
+            };
+          }
+          setResults(prev => ({ ...prev, engVie: engVieData, loading: false }));
+        } catch (e) {
+          setResults(prev => ({ ...prev, loading: false }));
+        }
       }
 
     } catch (error) {

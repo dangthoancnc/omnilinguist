@@ -6,6 +6,7 @@ import { Search, BookA, Bookmark, ArrowRight, LayoutGrid, Type, Globe } from 'lu
 import localMasterDb from './data/jlpt_master_db.json';
 
 const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
+const API_BASE_URL = typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:5000` : '';
 
 const removeDiacritics = (str) => {
   if (!str) return '';
@@ -120,6 +121,32 @@ const toHiragana = (str) => {
   return res;
 };
 
+// Multi-proxy CORS fetcher for Jisho API
+const fetchJishoData = async (keyword) => {
+  const encodedKw = encodeURIComponent(keyword);
+  const proxies = [
+    `https://corsproxy.io/?url=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${encodedKw}`)}`,
+    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${encodedKw}`)}`,
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${encodedKw}`)}`
+  ];
+
+  for (const url of proxies) {
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 2500);
+      const res = await fetch(url, { signal: controller.signal });
+      clearTimeout(timer);
+      if (res.ok) {
+        const json = await res.json();
+        if (json && json.data && json.data.length > 0) {
+          return json.data.slice(0, 4);
+        }
+      }
+    } catch (e) {}
+  }
+  return null;
+};
+
 // Open-Source Jisho.org (JMdict 180,000+ words) Live API Component
 const JishoOpenDict = ({ query }) => {
   const [items, setItems] = useState([]);
@@ -130,25 +157,9 @@ const JishoOpenDict = ({ query }) => {
 
     let isMounted = true;
     const fetchJisho = async () => {
-      try {
-        const controller = new AbortController();
-        const timer = setTimeout(() => controller.abort(), 4000);
-        
-        const res = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${q}`)}`, {
-          signal: controller.signal
-        });
-        clearTimeout(timer);
-        
-        if (res.ok) {
-          const json = await res.json();
-          if (isMounted && json.data && json.data.length > 0) {
-            setItems(json.data.slice(0, 4));
-          } else if (isMounted) {
-            setItems([]);
-          }
-        }
-      } catch (e) {
-        if (isMounted) setItems([]);
+      const data = await fetchJishoData(q);
+      if (isMounted) {
+        setItems(data || []);
       }
     };
 
