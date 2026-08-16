@@ -5,29 +5,69 @@ import { supabase } from './lib/supabaseClient.js';
 import FuriganaText from './components/FuriganaText';
 import localMasterDb from './data/jlpt_master_db.json';
 
-// Multi-proxy CORS fetcher for Jisho API
-const fetchJishoData = async (keyword) => {
-  const encodedKw = encodeURIComponent(keyword);
+// RAM Cache for ultra fast 0ms repeated lookups
+const jishoRamCache = new Map();
+
+// Parallel Proxy Race + Multi-layer Cache for Jisho API
+const fetchJishoData = async (keyword, maxResults = 2) => {
+  const q = (keyword || '').trim();
+  if (!q) return null;
+
+  // 1. RAM Cache (0ms)
+  if (jishoRamCache.has(q)) return jishoRamCache.get(q).slice(0, maxResults);
+
+  // 2. LocalStorage Cache (0ms)
+  try {
+    const lsData = localStorage.getItem(`jisho_${q}`);
+    if (lsData) {
+      const parsed = JSON.parse(lsData);
+      jishoRamCache.set(q, parsed);
+      return parsed.slice(0, maxResults);
+    }
+  } catch (e) {}
+
+  // 3. Parallel Proxy Race (Fastest proxy wins)
+  const encodedKw = encodeURIComponent(q);
   const proxies = [
     `https://corsproxy.io/?url=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${encodedKw}`)}`,
     `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${encodedKw}`)}`,
     `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${encodedKw}`)}`
   ];
 
-  for (const url of proxies) {
-    try {
+  const fetchSingleProxy = (url) => {
+    return new Promise((resolve, reject) => {
       const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 2500);
-      const res = await fetch(url, { signal: controller.signal });
-      clearTimeout(timer);
-      if (res.ok) {
-        const json = await res.json();
-        if (json && json.data && json.data.length > 0) {
-          return json.data.slice(0, 2);
-        }
-      }
-    } catch (e) {}
-  }
+      const timer = setTimeout(() => { controller.abort(); reject(new Error('timeout')); }, 1800);
+      
+      fetch(url, { signal: controller.signal })
+        .then(res => {
+          clearTimeout(timer);
+          if (res.ok) return res.json();
+          throw new Error('http error');
+        })
+        .then(json => {
+          if (json && json.data && json.data.length > 0) {
+            resolve(json.data);
+          } else {
+            reject(new Error('no data'));
+          }
+        })
+        .catch(err => {
+          clearTimeout(timer);
+          reject(err);
+        });
+    });
+  };
+
+  try {
+    const data = await Promise.any(proxies.map(url => fetchSingleProxy(url)));
+    if (data && data.length > 0) {
+      jishoRamCache.set(q, data);
+      try { localStorage.setItem(`jisho_${q}`, JSON.stringify(data)); } catch (e) {}
+      return data.slice(0, maxResults);
+    }
+  } catch (e) {}
+
   return null;
 };
 
