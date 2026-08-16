@@ -644,13 +644,16 @@ const VocabularyFlashcards = () => {
 }
 
   if (!currentCard) {
-    if (queue.length > 0) {
-      console.warn(`[Auto-recover] Hàng đợi chứa thẻ không hợp lệ hoặc đã bị thay đổi (ID: ${currentId}). Tự động làm sạch hàng đợi để phục hồi.`);
+    // Phân biệt 2 trường hợp:
+    // 1. levelVocab chưa có dữ liệu (IndexedDB đang sync) → chờ, KHÔNG xóa queue
+    // 2. levelVocab đã có dữ liệu nhưng không tìm thấy thẻ → queue cũ/lỗi → xóa queue
+    if (queue.length > 0 && levelVocab.length > 0) {
+      console.warn(`[Auto-recover] Thẻ ID "${currentId}" không tồn tại trong ${levelVocab.length} từ cấp ${level}. Đang phục hồi...`);
       setTimeout(() => setQueue([]), 0);
     }
     return (
       <div className="glass-panel" style={{ textAlign:'center', padding:40 }}>
-        Đang tải từ vựng...
+        {levelVocab.length === 0 ? 'Đang nạp dữ liệu từ vựng...' : 'Đang tải từ vựng...'}
       </div>
     );
   }
