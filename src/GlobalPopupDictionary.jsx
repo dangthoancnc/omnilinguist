@@ -8,7 +8,7 @@ import localMasterDb from './data/jlpt_master_db.json';
 // RAM Cache for ultra fast 0ms repeated lookups
 const jishoRamCache = new Map();
 
-// Parallel Proxy Race + Multi-layer Cache for Jisho API
+// Direct Jisho API + Parallel Proxy Fallback + Multi-layer Cache
 const fetchJishoData = async (keyword, maxResults = 2) => {
   const q = (keyword || '').trim();
   if (!q) return null;
@@ -26,18 +26,18 @@ const fetchJishoData = async (keyword, maxResults = 2) => {
     }
   } catch (e) {}
 
-  // 3. Parallel Proxy Race (Fastest proxy wins)
-  const encodedKw = encodeURIComponent(q);
-  const proxies = [
-    `https://corsproxy.io/?url=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${encodedKw}`)}`,
-    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${encodedKw}`)}`,
-    `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${encodedKw}`)}`
+  // 3. Direct Jisho API + Parallel Proxy Fallback (Fastest wins)
+  const jishoUrl = `https://jisho.org/api/v1/search/words?keyword=${encodeURIComponent(q)}`;
+  const endpoints = [
+    jishoUrl,
+    `https://corsproxy.io/?url=${encodeURIComponent(jishoUrl)}`,
+    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(jishoUrl)}`
   ];
 
-  const fetchSingleProxy = (url) => {
+  const fetchSingle = (url) => {
     return new Promise((resolve, reject) => {
       const controller = new AbortController();
-      const timer = setTimeout(() => { controller.abort(); reject(new Error('timeout')); }, 1800);
+      const timer = setTimeout(() => { controller.abort(); reject(new Error('timeout')); }, 2000);
       
       fetch(url, { signal: controller.signal })
         .then(res => {
@@ -60,7 +60,7 @@ const fetchJishoData = async (keyword, maxResults = 2) => {
   };
 
   try {
-    const data = await Promise.any(proxies.map(url => fetchSingleProxy(url)));
+    const data = await Promise.any(endpoints.map(url => fetchSingle(url)));
     if (data && data.length > 0) {
       jishoRamCache.set(q, data);
       try { localStorage.setItem(`jisho_${q}`, JSON.stringify(data)); } catch (e) {}
