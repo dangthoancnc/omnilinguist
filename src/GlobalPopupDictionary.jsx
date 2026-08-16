@@ -5,6 +5,8 @@ import { supabase } from './lib/supabaseClient.js';
 import FuriganaText from './components/FuriganaText';
 import localMasterDb from './data/jlpt_master_db.json';
 
+const API_BASE_URL = typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:5000` : '';
+
 // RAM Cache for ultra fast 0ms repeated lookups
 const jishoRamCache = new Map();
 
@@ -26,12 +28,14 @@ const fetchJishoData = async (keyword, maxResults = 2) => {
     }
   } catch (e) {}
 
-  // 3. Direct Jisho API + Parallel Proxy Fallback (Fastest wins)
+  // 3. Direct Jisho API + Local Backend Proxy + Public Proxy Fallback (Fastest wins)
   const jishoUrl = `https://jisho.org/api/v1/search/words?keyword=${encodeURIComponent(q)}`;
+  const localProxyUrl = `${API_BASE_URL}/api/jisho?keyword=${encodeURIComponent(q)}`;
+
   const endpoints = [
+    localProxyUrl,
     jishoUrl,
-    `https://corsproxy.io/?url=${encodeURIComponent(jishoUrl)}`,
-    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(jishoUrl)}`
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(jishoUrl)}`
   ];
 
   const fetchSingle = (url) => {

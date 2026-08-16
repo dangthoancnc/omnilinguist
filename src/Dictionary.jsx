@@ -142,12 +142,14 @@ const fetchJishoData = async (keyword, maxResults = 4) => {
     }
   } catch (e) {}
 
-  // 3. Direct Jisho API + Parallel Proxy Fallback (Fastest wins)
+  // 3. Direct Jisho API + Local Backend Proxy + Public Proxy Fallback (Fastest wins)
   const jishoUrl = `https://jisho.org/api/v1/search/words?keyword=${encodeURIComponent(q)}`;
+  const localProxyUrl = `${API_BASE_URL}/api/jisho?keyword=${encodeURIComponent(q)}`;
+  
   const endpoints = [
+    localProxyUrl,
     jishoUrl,
-    `https://corsproxy.io/?url=${encodeURIComponent(jishoUrl)}`,
-    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(jishoUrl)}`
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(jishoUrl)}`
   ];
 
   const fetchSingle = (url) => {
