@@ -51,19 +51,31 @@ const SelectionDictionary = () => {
       // Tìm kiếm ngữ pháp gần đúng (nếu text chứa cấu trúc)
       const grammarMatches = await db.grammar.filter(g => g.pattern.includes(text)).limit(3).toArray();
 
-      // Nếu Offline không có từ vựng nào, ta gọi Jisho API (Tiếng Anh)
       let jishoData = null;
       if (vocabMatches.length === 0 && kanjiMatches.length === 0) {
         try {
-          const apiQuery = encodeURIComponent(text);
-          // Use CORS proxy for Jisho
-          const res = await fetch(`https://api.allorigins.win/raw?url=https://jisho.org/api/v1/search/words?keyword=${apiQuery}`);
-          const data = await res.json();
-          if (data.data && data.data.length > 0) {
-            jishoData = data.data.slice(0, 2); // Lấy 2 kết quả đầu
+          const controller = new AbortController();
+          const timer = setTimeout(() => controller.abort(), 3500);
+          const res = await fetch('https://jotoba.de/api/search/words', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query: text, language: 'English', no_english: false }),
+            signal: controller.signal
+          });
+          clearTimeout(timer);
+          
+          if (res.ok) {
+            const data = await res.json();
+            if (data.words && data.words.length > 0) {
+              // Map to match the expected Jisho UI format below
+              jishoData = data.words.slice(0, 2).map(w => ({
+                japanese: [{ word: w.reading.kanji || w.reading.kana, reading: w.reading.kana }],
+                senses: w.senses.map(s => ({ english_definitions: s.glosses, parts_of_speech: s.pos }))
+              }));
+            }
           }
         } catch (e) {
-          console.log("Jisho API Error:", e);
+          console.log("Jotoba API Error:", e);
         }
       }
 

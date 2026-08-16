@@ -40,7 +40,7 @@ const isWholeWordMatch = (targetText, query) => {
   }
 };
 
-// Auto-Translate component with caching, backend proxy & AbortController timeout
+// Auto-Translate component with caching, MyMemory API & AbortController timeout
 const translateToVi = async (enText) => {
   if (!enText) return '';
   const cacheKey = `trans_${enText}`;
@@ -49,29 +49,31 @@ const translateToVi = async (enText) => {
   
   if (!navigator.onLine) return enText;
   
-  // Try local backend proxy first
+  // Try MyMemory Translation API (Free, CORS friendly)
   try {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 2000);
-    const res = await fetch(`${API_BASE_URL}/api/translate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: enText, target_lang: 'vi' }),
+    const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(enText)}&langpair=en|vi`, {
       signal: controller.signal
     });
     clearTimeout(timer);
     if (res.ok) {
       const data = await res.json();
-      if (data.status === 'success' && data.data) {
-        localStorage.setItem(cacheKey, data.data);
-        return data.data;
+      if (data && data.responseData && data.responseData.translatedText) {
+        let viText = data.responseData.translatedText;
+        // MyMemory sometimes returns source if confidence is low, fallback to matches
+        if (viText === enText && data.matches && data.matches.length > 1) {
+          viText = data.matches[1].translation || viText;
+        }
+        localStorage.setItem(cacheKey, viText);
+        return viText;
       }
     }
   } catch (e) {
-    // Backend offline, fallback to direct Google Translate
+    // API timeout/fail, fallback to direct Google Translate
   }
 
-  // Fallback to client-side fetch with AbortController timeout
+  // Fallback to client-side Google Translate with AbortController timeout
   try {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 3000);
@@ -124,8 +126,8 @@ const toHiragana = (str) => {
 // RAM Cache for ultra fast 0ms repeated lookups
 const jishoRamCache = new Map();
 
-// Direct Jisho API + Parallel Proxy Fallback + Multi-layer Cache
-const fetchJishoData = async (keyword, maxResults = 4) => {
+// Direct Jotoba API (Mapped to Jisho format) + Multi-layer Cache
+const fetchJishoData = async (keyword, maxResults = 2) => {
   const q = (keyword || '').trim();
   if (!q) return null;
 
@@ -142,49 +144,42 @@ const fetchJishoData = async (keyword, maxResults = 4) => {
     }
   } catch (e) {}
 
-  // 3. Direct Jisho API + Local Backend Proxy + Public Proxy Fallback (Fastest wins)
-  const jishoUrl = `https://jisho.org/api/v1/search/words?keyword=${encodeURIComponent(q)}`;
-  const localProxyUrl = `${API_BASE_URL}/api/jisho?keyword=${encodeURIComponent(q)}`;
-  
-  const endpoints = [
-    localProxyUrl,
-    jishoUrl,
-    `https://api.allorigins.win/raw?url=${encodeURIComponent(jishoUrl)}`
-  ];
-
-  const fetchSingle = (url) => {
-    return new Promise((resolve, reject) => {
-      const controller = new AbortController();
-      const timer = setTimeout(() => { controller.abort(); reject(new Error('timeout')); }, 2000);
-      
-      fetch(url, { signal: controller.signal })
-        .then(res => {
-          clearTimeout(timer);
-          if (res.ok) return res.json();
-          throw new Error('http error');
-        })
-        .then(json => {
-          if (json && json.data && json.data.length > 0) {
-            resolve(json.data);
-          } else {
-            reject(new Error('no data'));
-          }
-        })
-        .catch(err => {
-          clearTimeout(timer);
-          reject(err);
-        });
-    });
-  };
-
+  // 3. Direct Jotoba API (100% CORS free, reliable)
   try {
-    const data = await Promise.any(endpoints.map(url => fetchSingle(url)));
-    if (data && data.length > 0) {
-      jishoRamCache.set(q, data);
-      try { localStorage.setItem(`jisho_${q}`, JSON.stringify(data)); } catch (e) {}
-      return data.slice(0, maxResults);
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 3500);
+    const res = await fetch('https://jotoba.de/api/search/words', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: q, language: 'English', no_english: false }),
+      signal: controller.signal
+    });
+    clearTimeout(timer);
+    
+    if (res.ok) {
+      const json = await res.json();
+      if (json && json.words && json.words.length > 0) {
+        // Map to Jisho format to avoid breaking existing UI
+        const mappedData = json.words.map(w => ({
+          japanese: [{
+            word: w.reading.kanji || w.reading.kana,
+            reading: w.reading.kana
+          }],
+          senses: w.senses.map(s => ({
+            english_definitions: s.glosses,
+            parts_of_speech: s.pos
+          })),
+          is_common: w.common,
+          audio: w.audio ? `https://jotoba.de${w.audio}` : null,
+          jlpt: [] // Jotoba doesn't provide JLPT cleanly in the word search by default
+        }));
+        
+        jishoRamCache.set(q, mappedData);
+        try { localStorage.setItem(`jisho_${q}`, JSON.stringify(mappedData)); } catch(e){}
+        return mappedData.slice(0, maxResults);
+      }
     }
-  } catch (e) {}
+  } catch(e) {}
 
   return null;
 };
