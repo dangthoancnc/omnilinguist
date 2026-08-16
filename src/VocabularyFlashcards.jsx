@@ -32,7 +32,7 @@ const StatsBar = ({ stats, levelColor }) => (
 const VocabularyFlashcards = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const vocabData = useLiveQuery(() => db.vocab.toArray()) || [];
+  const vocabCount = useLiveQuery(() => db.vocab.count()) || 0;
   const [level, setLevel] = useState(() => {
     if (location.state?.level) return location.state.level;
     const p = getUserProfile();
@@ -117,9 +117,10 @@ const VocabularyFlashcards = () => {
   };
 
   // === P0-2 FIX: Auto-repair với double guard (ref + localStorage) để chặn vòng lặp vô hạn ===
-  // Nếu IndexedDB chưa đạt đủ từ vựng, force re-sync MỘT LẦN DUY NHẤT
+  // Chỉ repair khi sync ĐÃ HOÀN TẤT (có version trong localStorage) nhưng data vẫn thiếu
   useEffect(() => {
-    if (vocabData.length > 0 && vocabData.length < 500 && !hasTriedRepair.current) {
+    const syncDone = localStorage.getItem('omni_master_ver');
+    if (syncDone && vocabCount > 0 && vocabCount < 500 && !hasTriedRepair.current) {
       // Guard 1: ref chặn chạy lại trong cùng 1 session
       hasTriedRepair.current = true;
       // Guard 2: localStorage chặn chạy lại sau page reload
@@ -133,7 +134,7 @@ const VocabularyFlashcards = () => {
           return;
         }
       }
-      console.warn(`⚠️ IndexedDB đang có ${vocabData.length} từ vựng — đang tự động nâng cấp...`);
+      console.warn(`⚠️ IndexedDB đang có ${vocabCount} từ vựng — đang tự động nâng cấp...`);
       localStorage.setItem(repairKey, Date.now().toString());
       db.vocab.clear().then(() => db.kanji.clear()).then(() => {
         return syncMasterData();
@@ -143,12 +144,12 @@ const VocabularyFlashcards = () => {
         console.error('❌ Auto-repair thất bại:', err);
       });
     }
-  }, [vocabData.length]);
+  }, [vocabCount]);
 
   const levelVocab = useMemo(() => {
     const customCards = getCustomCards();
     const seen = new Set();
-    // THUẦN DỮ LIỆU TRỰC TIẾP: Sử dụng trực tiếp dữ liệu 10,000 từ nếu IndexedDB đang trống hoặc chưa nạp xong
+    // Luôn sử dụng dữ liệu từ JSON đã import sẵn — nhẹ, nhanh, không phụ thuộc IndexedDB
     const masterVocab = (localMasterDb.vocabulary || []).map((v, i) => ({
       id: v.id || `v_${i}`,
       level: v.level || 'N3',
@@ -160,8 +161,7 @@ const VocabularyFlashcards = () => {
       tags: v.tags || [],
       examples: v.examples || v.example || []
     }));
-    const effectiveVocab = vocabData.length >= 500 ? vocabData : masterVocab;
-    const allSources = [...effectiveVocab, ...customCards];
+    const allSources = [...masterVocab, ...customCards];
     
     return allSources.filter(v => {
       if (v.level !== level) return false;
@@ -169,19 +169,19 @@ const VocabularyFlashcards = () => {
       seen.add(v.word);
       return true;
     });
-  }, [level, vocabData]);
+  }, [level]);
 
   // Calculate total vocab count per level for dropdown labels
   const vocabLevelCounts = useMemo(() => {
     const counts = { N5: 0, N4: 0, N3: 0, N2: 0, N1: 0 };
     const customCards = getCustomCards();
-    const effectiveVocab = vocabData.length >= 500 ? vocabData : (localMasterDb.vocabulary || []);
+    const effectiveVocab = localMasterDb.vocabulary || [];
     [...effectiveVocab, ...customCards].forEach(v => {
       const lvl = (v.level || 'N3').toUpperCase();
       if (counts[lvl] !== undefined) counts[lvl]++;
     });
     return counts;
-  }, [vocabData]);
+  }, []);
 
   const allIds = useMemo(() => levelVocab.map(v => v.id), [levelVocab]);
   const refreshStats = () => setStats(getStats(allIds, learningMode));
@@ -303,6 +303,9 @@ const VocabularyFlashcards = () => {
     return () => {
       if (typeof window !== 'undefined' && window.speechSynthesis) {
         window.speechSynthesis.cancel();
+      }
+      if (advanceTimerRef.current) {
+        clearTimeout(advanceTimerRef.current);
       }
     };
   }, []);
@@ -662,7 +665,7 @@ const VocabularyFlashcards = () => {
   const lc = LEVEL_COLORS[level] || 'var(--accent-primary)';
 
   return (
-    <div style={{ padding: '20px 40px', maxWidth: 1600, margin: '0 auto', height: '100%', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
+    <div style={{ padding: '20px clamp(16px, 3vw, 40px)', maxWidth: 1600, margin: '0 auto', height: '100%', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
       {/* Header Controls */}
       <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:20, flexWrap:'wrap', gap:14 }}>
         <div style={{ display:'flex', gap:8, alignItems: 'center' }}>
@@ -779,7 +782,7 @@ const VocabularyFlashcards = () => {
 
       <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', flex: 1 }}>
         {/* LEFT COLUMN: MAIN CARD & STATS */}
-        <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: 16, minWidth: 320 }}>
+        <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: 16, minWidth: 280 }}>
           <StatsBar stats={stats} levelColor={lc}/>
 
           <div className="glass-panel" style={{ textAlign:'center', padding:'50px 28px 36px', minHeight:410, display:'flex', flexDirection:'column', justifyContent:'space-between', position:'relative', transition: 'all 0.2s ease' }}>

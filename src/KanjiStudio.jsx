@@ -74,7 +74,7 @@ const CanvasDrawing = ({ kanji, showAnswer, onClearRef, onSnapshotRef }) => {
   };
 
   return (
-    <div style={{ position: 'relative', width: 300, height: 300, background: 'rgba(0,0,0,0.5)', borderRadius: 12, border: '1px solid var(--glass-border)', overflow: 'hidden', touchAction: 'none' }}>
+    <div style={{ position: 'relative', width: '100%', maxWidth: 300, aspectRatio: '1/1', background: 'rgba(0,0,0,0.5)', borderRadius: 12, border: '1px solid var(--glass-border)', overflow: 'hidden', touchAction: 'none' }}>
       {/* Grid guide */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 0 }}>
         <div style={{ position: 'absolute', top: '50%', left: 0, width: '100%', borderTop: '1px dashed rgba(255,255,255,0.15)' }} />
@@ -185,7 +185,7 @@ const KanjiWriterComponent = ({ kanji, showAnswer, onScoreUpdate }) => {
           background: 'rgba(0,0,0,0.5)', 
           borderRadius: 12, 
           border: '1px solid var(--glass-border)',
-          width: 300, height: 300,
+          width: '100%', maxWidth: 300, aspectRatio: '1/1',
           position: 'relative'
         }}
       >

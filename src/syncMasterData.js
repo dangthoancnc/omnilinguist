@@ -102,5 +102,8 @@ export async function syncMasterData() {
 
   } catch (error) {
     console.error('❌ Lỗi khi nạp Master Data:', error);
+    // Không lưu version khi lỗi → cho phép retry lần sau
+    // Re-throw để caller (auto-repair) biết lỗi
+    throw error;
   }
 }

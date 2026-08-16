@@ -325,7 +325,7 @@ const Dashboard = () => {
           </div>
 
           {/* KPI Stats Cards */}
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:12 }}>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(120px, 1fr))', gap:12 }}>
             <div className="glass-panel" style={{ padding:16 }}>
               <div style={{ fontSize:'0.78rem', color:'var(--text-secondary)', marginBottom:8, display:'flex', alignItems:'center', gap:6 }}>
                 <Flame size={14} color="#f97316"/> Streak Học Liên Tiếp

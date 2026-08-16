@@ -66,9 +66,9 @@ const WritingStudio = () => {
   };
 
   return (
-    <div style={{ display: 'flex', gap: 16, height: 'calc(100vh - 100px)' }}>
+    <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', height: 'calc(100vh - 100px)' }}>
       {/* LEFT: Template List */}
-      <div className="glass-panel" style={{ width: 320, display: 'flex', flexDirection: 'column', flexShrink: 0, overflowY: 'auto' }}>
+      <div className="glass-panel" style={{ width: '100%', maxWidth: 320, display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
         <h3 style={{ marginBottom: 16, fontSize: '1.05rem', display: 'flex', alignItems: 'center', gap: 8 }}>
           <FileText size={18} color="var(--accent-primary)"/> Chủ đề Viết (Output)
         </h3>

@@ -28,6 +28,37 @@ const AnkiImportStudio = lazy(() => import('./AnkiImportStudio'));
 const AnkiSandboxMode = lazy(() => import('./AnkiSandboxMode'));
 const Settings = lazy(() => import('./Settings'));
 
+// Error Boundary: Bắt lỗi khi chunk JS không load được (mạng lỗi, cache cũ sau deploy)
+class ChunkErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  componentDidCatch(error, info) {
+    console.error('[ErrorBoundary] Chunk load failed:', error, info);
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', gap: 16, padding: 40 }}>
+          <h3 style={{ color: 'var(--text-primary)' }}>⚠️ Đã xảy ra lỗi khi tải trang</h3>
+          <p style={{ color: 'var(--text-secondary)', textAlign: 'center' }}>Có thể do mạng không ổn định hoặc ứng dụng đã được cập nhật phiên bản mới.</p>
+          <button
+            onClick={() => window.location.reload()}
+            style={{ padding: '10px 24px', background: 'var(--accent-primary)', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer', fontSize: '0.9rem' }}
+          >
+            🔄 Tải lại trang
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 function App() {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 1024);
@@ -135,6 +166,7 @@ function App() {
                   <span style={{ color: 'var(--text-tertiary)', fontSize: '0.85rem' }}>Đang tải giao diện...</span>
                 </div>
               }>
+              <ChunkErrorBoundary>
                 {/* P0-1 FIX: Hybrid routing — ShadowingStudio giữ display:none để bảo toàn state phát media,
                    các page khác dùng Routes để unmount khi không hiển thị → giảm memory ~80% */}
                 <div style={{ width: '100%', height: '100%', position: 'relative' }}>
@@ -164,6 +196,7 @@ function App() {
                     </Routes>
                   </div>
                 </div>
+              </ChunkErrorBoundary>
               </Suspense>
             )}
           </main>

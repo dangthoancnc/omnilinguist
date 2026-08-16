@@ -329,20 +329,27 @@ export function advancePhase() {
 
 // ── Streak tracking ──
 export function updateStreak() {
-  const today = new Date().toDateString();
-  const data = JSON.parse(localStorage.getItem(getStorageKey('streak')) || '{"streak":0,"lastDate":""}');
-  const yesterday = new Date(Date.now() - 86400000).toDateString();
-  if (data.lastDate === today) return data.streak;
-  if (data.lastDate === yesterday) {
-    const updated = { streak: data.streak + 1, lastDate: today, updated_at: new Date().toISOString() };
-    localStorage.setItem(getStorageKey('streak'), JSON.stringify(updated));
-    syncStreakToCloud(updated);
-    return updated.streak;
+  try {
+    const today = new Date().toDateString();
+    const data = JSON.parse(localStorage.getItem(getStorageKey('streak')) || '{"streak":0,"lastDate":""}');
+    const yesterday = new Date(Date.now() - 86400000).toDateString();
+    if (data.lastDate === today) return data.streak;
+    if (data.lastDate === yesterday) {
+      const updated = { streak: data.streak + 1, lastDate: today, updated_at: new Date().toISOString() };
+      localStorage.setItem(getStorageKey('streak'), JSON.stringify(updated));
+      syncStreakToCloud(updated);
+      return updated.streak;
+    }
+    const reset = { streak: 1, lastDate: today, updated_at: new Date().toISOString() };
+    localStorage.setItem(getStorageKey('streak'), JSON.stringify(reset));
+    syncStreakToCloud(reset);
+    return 1;
+  } catch {
+    // localStorage bị corrupt — reset về 0
+    const reset = { streak: 1, lastDate: new Date().toDateString(), updated_at: new Date().toISOString() };
+    localStorage.setItem(getStorageKey('streak'), JSON.stringify(reset));
+    return 1;
   }
-  const reset = { streak: 1, lastDate: today, updated_at: new Date().toISOString() };
-  localStorage.setItem(getStorageKey('streak'), JSON.stringify(reset));
-  syncStreakToCloud(reset);
-  return 1;
 }
 
 function syncStreakToCloud(streakData) {
@@ -354,8 +361,10 @@ function syncStreakToCloud(streakData) {
 }
 
 export function getStreak() {
-  const data = JSON.parse(localStorage.getItem(getStorageKey('streak')) || '{"streak":0}');
-  return data.streak;
+  try {
+    const data = JSON.parse(localStorage.getItem(getStorageKey('streak')) || '{"streak":0}');
+    return data?.streak || 0;
+  } catch { return 0; }
 }
 
 // ── Custom Flashcards (added from Immersion Reader) ──
