@@ -12,10 +12,20 @@ const removeDiacritics = (str) => {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 };
 
+const decodeHtmlEntities = (str) => {
+  if (!str || typeof str !== 'string' || !str.includes('&')) return str || '';
+  try {
+    const doc = new DOMParser().parseFromString(str, 'text/html');
+    return doc.body.textContent || str;
+  } catch (e) {
+    return str;
+  }
+};
+
 // Smart Word Boundary Helper for Vietnamese and English matching
 const isWholeWordMatch = (targetText, query) => {
   if (!targetText || !query) return false;
-  const t = String(targetText).toLowerCase();
+  const t = decodeHtmlEntities(String(targetText)).toLowerCase();
   const q = String(query).toLowerCase().trim();
   if (!q) return false;
 
@@ -28,6 +38,7 @@ const isWholeWordMatch = (targetText, query) => {
     return words.some(w => w === q);
   }
 };
+
 
 
 // Auto-Translate component with caching, backend proxy & AbortController timeout
@@ -227,8 +238,8 @@ const SearchResults = React.memo(({ query, totalResults, results, isSearching })
                     <span className="jp-text" style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--accent-primary)' }}>{g.pattern}</span>
                   </div>
                 </div>
-                <div style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: 10 }}>{g.meaning}</div>
-                {g.usage && <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: 10, padding: 8, background: 'rgba(0,0,0,0.2)', borderRadius: 6 }}>Cách chia: {g.usage}</div>}
+                <div style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: 10 }}>{decodeHtmlEntities(g.meaning)}</div>
+                {g.usage && <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: 10, padding: 8, background: 'rgba(0,0,0,0.2)', borderRadius: 6 }}>Cách chia: {decodeHtmlEntities(g.usage)}</div>}
                 {g.examples && g.examples.length > 0 && (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 12 }}>
                     {g.examples.map((ex, idx) => {
@@ -236,11 +247,11 @@ const SearchResults = React.memo(({ query, totalResults, results, isSearching })
                         return (
                           <div key={idx} style={{ fontSize: '0.9rem', paddingLeft: 12, borderLeft: '2px solid rgba(255,255,255,0.1)' }}>
                             <div className="jp-text" style={{ marginBottom: 4 }}>{ex.jp || ex.japanese || JSON.stringify(ex)}</div>
-                            <div style={{ color: 'var(--text-secondary)' }}>{ex.vi || ex.vietnamese || ex.en || ''}</div>
+                            <div style={{ color: 'var(--text-secondary)' }}>{decodeHtmlEntities(ex.vi || ex.vietnamese || ex.en || '')}</div>
                           </div>
                         );
                       }
-                      const textEx = String(ex);
+                      const textEx = decodeHtmlEntities(String(ex));
                       return (
                         <div key={idx} style={{ fontSize: '0.9rem', paddingLeft: 12, borderLeft: '2px solid rgba(255,255,255,0.1)' }}>
                           <div className="jp-text" style={{ marginBottom: 4 }}>{textEx.split('(')[0]}</div>
@@ -362,11 +373,13 @@ const Dictionary = () => {
     const masterKanji = localMasterDb.kanji || [];
     const masterGrammar = localMasterDb.grammar || [];
 
+    const queryHasAccents = removeDiacritics(qRaw) !== qRaw;
+
     // Helper to score Vocab entries
     const scoreVocab = (v) => {
       const w = (v.word || '').toLowerCase();
       const r = (v.reading || '').toLowerCase();
-      const vi = (v.vi || v.meaning || '').toLowerCase();
+      const vi = decodeHtmlEntities(v.vi || v.meaning || '').toLowerCase();
       const viUnaccented = removeDiacritics(vi);
       const wNorm = normalize(w);
       const rNorm = normalize(r);
@@ -381,9 +394,10 @@ const Dictionary = () => {
         else if (wNorm.startsWith(nqHira) || rNorm.startsWith(nqHira)) score += 300;
         else if (wNorm.includes(nqHira) || rNorm.includes(nqHira)) score += 100;
       } else {
-        if (vi === qRaw || viUnaccented === nqUnaccented) score += 500;
+        if (vi === qRaw) score += 500;
         else if (isWholeWordMatch(vi, qRaw)) score += 350;
-        else if (nqUnaccented.length >= 2 && isWholeWordMatch(viUnaccented, nqUnaccented)) score += 200;
+        else if (!queryHasAccents && viUnaccented === nqUnaccented) score += 200;
+        else if (!queryHasAccents && nqUnaccented.length >= 2 && isWholeWordMatch(viUnaccented, nqUnaccented)) score += 150;
         else if (normalizedTranslatedQ.some(t => wNorm.includes(t))) score += 50;
       }
       return score;
@@ -392,7 +406,7 @@ const Dictionary = () => {
     // Helper to score Kanji entries
     const scoreKanji = (k) => {
       const kj = (k.kanji || '').toLowerCase();
-      const mStr = (Array.isArray(k.meanings) ? k.meanings.join(' ') : String(k.meanings || '')).toLowerCase();
+      const mStr = decodeHtmlEntities(Array.isArray(k.meanings) ? k.meanings.join(' ') : String(k.meanings || '')).toLowerCase();
       const mUnaccented = removeDiacritics(mStr);
       const ony = (k.onyomi || []).map(o => normalize(o)).join(' ');
       const kun = (k.kunyomi || []).map(ku => normalize(ku)).join(' ');
@@ -401,7 +415,7 @@ const Dictionary = () => {
       if (kj === qRaw) score += 500;
       else if (ony.includes(nq) || kun.includes(nq) || (nqHira && (ony.includes(nqHira) || kun.includes(nqHira)))) score += 300;
       else if (isWholeWordMatch(mStr, qRaw)) score += 250;
-      else if (nqUnaccented.length >= 2 && isWholeWordMatch(mUnaccented, nqUnaccented)) score += 150;
+      else if (!queryHasAccents && nqUnaccented.length >= 2 && isWholeWordMatch(mUnaccented, nqUnaccented)) score += 100;
       return score;
     };
 
@@ -409,7 +423,7 @@ const Dictionary = () => {
     const scoreGrammar = (g) => {
       const p = (g.pattern || '').toLowerCase();
       const pClean = normalize(p);
-      const m = (g.meaning || g.vi || '').toLowerCase();
+      const m = decodeHtmlEntities(g.meaning || g.vi || '').toLowerCase();
       const mUnaccented = removeDiacritics(m);
 
       let score = 0;
@@ -419,11 +433,11 @@ const Dictionary = () => {
       else if (!isJapaneseQuery) {
         if (m === qRaw) score += 400;
         else if (isWholeWordMatch(m, qRaw)) score += 250;
-        else if (nqUnaccented.length >= 2 && isWholeWordMatch(mUnaccented, nqUnaccented)) score += 150;
+        else if (!queryHasAccents && nqUnaccented.length >= 2 && isWholeWordMatch(mUnaccented, nqUnaccented)) score += 100;
         
         // Example sentence matching: ONLY for queries >= 4 characters AND requiring whole word match
         if (qRaw.length >= 4) {
-          const exStr = Array.isArray(g.examples) ? g.examples.map(e => typeof e === 'object' ? `${e.jp||''} ${e.vi||''}` : String(e)).join(' ') : '';
+          const exStr = decodeHtmlEntities(Array.isArray(g.examples) ? g.examples.map(e => typeof e === 'object' ? `${e.jp||''} ${e.vi||''}` : String(e)).join(' ') : '');
           if (isJapaneseQuery && exStr.toLowerCase().includes(qRaw)) score += 30;
           else if (!isJapaneseQuery && isWholeWordMatch(exStr, qRaw)) score += 30;
         }
