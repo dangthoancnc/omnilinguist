@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
-import { Search, BookA, Bookmark, ArrowRight, LayoutGrid, Type } from 'lucide-react';
+import { Search, BookA, Bookmark, ArrowRight, LayoutGrid, Type, Globe } from 'lucide-react';
 
 import localMasterDb from './data/jlpt_master_db.json';
 
@@ -38,8 +38,6 @@ const isWholeWordMatch = (targetText, query) => {
     return words.some(w => w === q);
   }
 };
-
-
 
 // Auto-Translate component with caching, backend proxy & AbortController timeout
 const translateToVi = async (enText) => {
@@ -120,6 +118,95 @@ const toHiragana = (str) => {
     res = res.split(k).join(ROMAJI_TO_KANA[k]);
   }
   return res;
+};
+
+// Open-Source Jisho.org (JMdict 180,000+ words) Live API Component
+const JishoOpenDict = ({ query }) => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const q = (query || '').trim();
+    if (!q || q.length < 1) { setItems([]); return; }
+
+    let isMounted = true;
+    const fetchJisho = async () => {
+      try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 4000);
+        
+        const res = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://jisho.org/api/v1/search/words?keyword=${q}`)}`, {
+          signal: controller.signal
+        });
+        clearTimeout(timer);
+        
+        if (res.ok) {
+          const json = await res.json();
+          if (isMounted && json.data && json.data.length > 0) {
+            setItems(json.data.slice(0, 4));
+          } else if (isMounted) {
+            setItems([]);
+          }
+        }
+      } catch (e) {
+        if (isMounted) setItems([]);
+      }
+    };
+
+    const debounceTimer = setTimeout(fetchJisho, 350);
+    return () => { isMounted = false; clearTimeout(debounceTimer); };
+  }, [query]);
+
+  if (!query || items.length === 0) return null;
+
+  return (
+    <div style={{ marginBottom: 24 }}>
+      <h3 style={{ fontSize: '1.05rem', color: '#60a5fa', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 8 }}>
+        <Globe size={18}/> Từ điển Mở Quốc tế (Jisho / JMdict - 180,000+ từ)
+      </h3>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        {items.map((item, idx) => {
+          const japanese = item.japanese?.[0] || {};
+          const word = japanese.word || japanese.reading || query;
+          const reading = japanese.reading || '';
+          const senses = item.senses || [];
+          const jlpt = item.jlpt || [];
+          const isCommon = item.is_common;
+
+          return (
+            <div key={idx} className="glass-panel" style={{ padding: '16px 20px', border: '1px solid rgba(96, 165, 250, 0.3)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8, flexWrap: 'wrap', gap: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 12 }}>
+                  <span className="jp-text" style={{ fontSize: '1.3rem', fontWeight: 700, color: 'white' }}>{word}</span>
+                  {reading && reading !== word && <span style={{ fontSize: '1rem', color: '#93c5fd' }}>【{reading}】</span>}
+                </div>
+                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                  {isCommon && <span style={{ fontSize: '0.7rem', padding: '2px 8px', borderRadius: 12, background: 'rgba(16, 185, 129, 0.2)', color: '#34d399', fontWeight: 700 }}>Phổ biến</span>}
+                  {jlpt.map((j, i) => (
+                    <span key={i} style={{ fontSize: '0.7rem', padding: '2px 8px', borderRadius: 12, background: 'rgba(59, 130, 246, 0.2)', color: '#60a5fa', fontWeight: 700, textTransform: 'uppercase' }}>
+                      {j.replace('jlpt-', '')}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                {senses.slice(0, 3).map((s, sIdx) => {
+                  const partsOfSpeech = (s.parts_of_speech || []).join(', ');
+                  const definitions = (s.english_definitions || []).join('; ');
+                  return (
+                    <div key={sIdx} style={{ fontSize: '0.95rem' }}>
+                      {partsOfSpeech && <span style={{ fontSize: '0.8rem', color: '#94a3b8', fontStyle: 'italic', marginRight: 8 }}>[{partsOfSpeech}]</span>}
+                      <span style={{ color: '#f1f5f9' }}><ViText text={definitions} /></span>
+                      <div style={{ fontSize: '0.8rem', color: '#64748b' }}>({definitions})</div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 };
 
 const CrossDictEnVn = ({ query }) => {
@@ -554,6 +641,7 @@ const Dictionary = () => {
         ) : (
           <>
             <CrossDictEnVn query={searchQuery} />
+            <JishoOpenDict query={searchQuery} />
             <SearchResults query={searchQuery} totalResults={totalResults} results={results} isSearching={isSearching} />
           </>
         )}
