@@ -12,6 +12,24 @@ const removeDiacritics = (str) => {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 };
 
+// Smart Word Boundary Helper for Vietnamese and English matching
+const isWholeWordMatch = (targetText, query) => {
+  if (!targetText || !query) return false;
+  const t = String(targetText).toLowerCase();
+  const q = String(query).toLowerCase().trim();
+  if (!q) return false;
+
+  const escapedQ = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  try {
+    const regex = new RegExp(`(?<=^|[^\\p{L}\\p{N}])${escapedQ}(?=$|[^\\p{L}\\p{N}])`, 'iu');
+    return regex.test(t);
+  } catch (e) {
+    const words = t.split(/[\s,.;:!?()/"'”’\-]+/);
+    return words.some(w => w === q);
+  }
+};
+
+
 // Auto-Translate component with caching, backend proxy & AbortController timeout
 const translateToVi = async (enText) => {
   if (!enText) return '';
@@ -338,74 +356,117 @@ const Dictionary = () => {
     const nqUnaccented = removeDiacritics(nq);
     const nqHira = toHiragana(nq);
     const normalizedTranslatedQ = (translatedQ || []).map(tq => normalize(tq));
+    const isJapaneseQuery = /[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]/.test(qRaw);
 
     const masterVocab = localMasterDb.vocabulary || [];
     const masterKanji = localMasterDb.kanji || [];
     const masterGrammar = localMasterDb.grammar || [];
 
-    // VOCAB SEARCH
+    // Helper to score Vocab entries
+    const scoreVocab = (v) => {
+      const w = (v.word || '').toLowerCase();
+      const r = (v.reading || '').toLowerCase();
+      const vi = (v.vi || v.meaning || '').toLowerCase();
+      const viUnaccented = removeDiacritics(vi);
+      const wNorm = normalize(w);
+      const rNorm = normalize(r);
+
+      let score = 0;
+      if (isJapaneseQuery) {
+        if (wNorm === nq || rNorm === nq) score += 500;
+        else if (wNorm.startsWith(nq) || rNorm.startsWith(nq)) score += 300;
+        else if (wNorm.includes(nq) || rNorm.includes(nq)) score += 100;
+      } else if (nqHira && nqHira !== nq && nqHira.length >= 2) {
+        if (wNorm === nqHira || rNorm === nqHira) score += 500;
+        else if (wNorm.startsWith(nqHira) || rNorm.startsWith(nqHira)) score += 300;
+        else if (wNorm.includes(nqHira) || rNorm.includes(nqHira)) score += 100;
+      } else {
+        if (vi === qRaw || viUnaccented === nqUnaccented) score += 500;
+        else if (isWholeWordMatch(vi, qRaw)) score += 350;
+        else if (nqUnaccented.length >= 2 && isWholeWordMatch(viUnaccented, nqUnaccented)) score += 200;
+        else if (normalizedTranslatedQ.some(t => wNorm.includes(t))) score += 50;
+      }
+      return score;
+    };
+
+    // Helper to score Kanji entries
+    const scoreKanji = (k) => {
+      const kj = (k.kanji || '').toLowerCase();
+      const mStr = (Array.isArray(k.meanings) ? k.meanings.join(' ') : String(k.meanings || '')).toLowerCase();
+      const mUnaccented = removeDiacritics(mStr);
+      const ony = (k.onyomi || []).map(o => normalize(o)).join(' ');
+      const kun = (k.kunyomi || []).map(ku => normalize(ku)).join(' ');
+
+      let score = 0;
+      if (kj === qRaw) score += 500;
+      else if (ony.includes(nq) || kun.includes(nq) || (nqHira && (ony.includes(nqHira) || kun.includes(nqHira)))) score += 300;
+      else if (isWholeWordMatch(mStr, qRaw)) score += 250;
+      else if (nqUnaccented.length >= 2 && isWholeWordMatch(mUnaccented, nqUnaccented)) score += 150;
+      return score;
+    };
+
+    // Helper to score Grammar entries
+    const scoreGrammar = (g) => {
+      const p = (g.pattern || '').toLowerCase();
+      const pClean = normalize(p);
+      const m = (g.meaning || g.vi || '').toLowerCase();
+      const mUnaccented = removeDiacritics(m);
+
+      let score = 0;
+      if (pClean === nq || p === qRaw) score += 500;
+      else if (pClean.startsWith(nq) || (nqHira && pClean.startsWith(nqHira))) score += 350;
+      else if (pClean.includes(nq) || (nqHira && pClean.includes(nqHira))) score += 200;
+      else if (!isJapaneseQuery) {
+        if (m === qRaw) score += 400;
+        else if (isWholeWordMatch(m, qRaw)) score += 250;
+        else if (nqUnaccented.length >= 2 && isWholeWordMatch(mUnaccented, nqUnaccented)) score += 150;
+        
+        // Example sentence matching: ONLY for queries >= 4 characters AND requiring whole word match
+        if (qRaw.length >= 4) {
+          const exStr = Array.isArray(g.examples) ? g.examples.map(e => typeof e === 'object' ? `${e.jp||''} ${e.vi||''}` : String(e)).join(' ') : '';
+          if (isJapaneseQuery && exStr.toLowerCase().includes(qRaw)) score += 30;
+          else if (!isJapaneseQuery && isWholeWordMatch(exStr, qRaw)) score += 30;
+        }
+      }
+      return score;
+    };
+
+    // Retrieve pool from DB or master JSON
+    const dbVocab = await db.vocab.toArray();
+    const vocabPool = dbVocab.length >= 500 ? dbVocab : masterVocab;
+    const dbKanji = await db.kanji.toArray();
+    const kanjiPool = dbKanji.length >= 50 ? dbKanji : masterKanji;
+    const dbGrammar = await db.grammar.toArray();
+    const grammarPool = dbGrammar.length >= 100 ? dbGrammar : masterGrammar;
+
     let vRes = [];
     if (filterType === 'all' || filterType === 'vocab') {
-      vRes = await db.vocab.filter(v => {
-        const w = normalize(v.word);
-        const r = normalize(v.reading);
-        const vi = (v.vi || v.meaning || '').toLowerCase();
-        const viUnaccented = removeDiacritics(vi);
-        return w.includes(nq) || (nqHira && (w.includes(nqHira) || r.includes(nqHira))) || r.includes(nq) || vi.includes(nq) || viUnaccented.includes(nqUnaccented) || normalizedTranslatedQ.some(t => w.includes(t));
-      }).limit(50).toArray();
-
-      if (vRes.length === 0 && masterVocab.length > 0) {
-        vRes = masterVocab.filter(v => {
-          const w = normalize(v.word);
-          const r = normalize(v.reading);
-          const vi = (v.vi || v.meaning || '').toLowerCase();
-          const viUnaccented = removeDiacritics(vi);
-          return w.includes(nq) || (nqHira && (w.includes(nqHira) || r.includes(nqHira))) || r.includes(nq) || vi.includes(nq) || viUnaccented.includes(nqUnaccented);
-        }).slice(0, 50);
-      }
+      vRes = vocabPool
+        .map(v => ({ item: v, score: scoreVocab(v) }))
+        .filter(x => x.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 50)
+        .map(x => x.item);
     }
 
-    // KANJI SEARCH
     let kRes = [];
     if (filterType === 'all' || filterType === 'kanji') {
-      kRes = await db.kanji.filter(k => {
-        const kj = normalize(k.kanji);
-        const mStr = (k.meanings || []).join(' ').toLowerCase();
-        const mUnaccented = removeDiacritics(mStr);
-        const ony = (k.onyomi || []).map(o => normalize(o)).join(' ');
-        const kun = (k.kunyomi || []).map(ku => normalize(ku)).join(' ');
-        return kj.includes(nq) || mStr.includes(nq) || mUnaccented.includes(nqUnaccented) || ony.includes(nq) || (nqHira && ony.includes(nqHira)) || kun.includes(nq) || (nqHira && kun.includes(nqHira));
-      }).limit(30).toArray();
-
-      if (kRes.length === 0 && masterKanji.length > 0) {
-        kRes = masterKanji.filter(k => {
-          const kj = normalize(k.kanji);
-          const mStr = (Array.isArray(k.meanings) ? k.meanings.join(' ') : String(k.meanings || '')).toLowerCase();
-          const mUnaccented = removeDiacritics(mStr);
-          return kj.includes(nq) || mStr.includes(nq) || mUnaccented.includes(nqUnaccented);
-        }).slice(0, 30);
-      }
+      kRes = kanjiPool
+        .map(k => ({ item: k, score: scoreKanji(k) }))
+        .filter(x => x.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 30)
+        .map(x => x.item);
     }
 
-    // GRAMMAR SEARCH
     let gRes = [];
     if (filterType === 'all' || filterType === 'grammar') {
-      gRes = await db.grammar.filter(g => {
-        const p = normalize(g.pattern);
-        const m = (g.meaning || g.vi || '').toLowerCase();
-        const mUnaccented = removeDiacritics(m);
-        const exStr = Array.isArray(g.examples) ? g.examples.map(e => typeof e === 'object' ? `${e.jp||''} ${e.vi||''}` : String(e)).join(' ').toLowerCase() : '';
-        return p.includes(nq) || (nqHira && p.includes(nqHira)) || m.includes(nq) || mUnaccented.includes(nqUnaccented) || exStr.includes(nq) || removeDiacritics(exStr).includes(nqUnaccented);
-      }).limit(30).toArray();
-
-      if (gRes.length === 0 && masterGrammar.length > 0) {
-        gRes = masterGrammar.filter(g => {
-          const p = normalize(g.pattern);
-          const m = (g.meaning || g.vi || '').toLowerCase();
-          const mUnaccented = removeDiacritics(m);
-          return p.includes(nq) || (nqHira && p.includes(nqHira)) || m.includes(nq) || mUnaccented.includes(nqUnaccented);
-        }).slice(0, 30);
-      }
+      gRes = grammarPool
+        .map(g => ({ item: g, score: scoreGrammar(g) }))
+        .filter(x => x.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 30)
+        .map(x => x.item);
     }
 
     return { vocab: vRes, kanji: kRes, grammar: gRes };
@@ -450,12 +511,12 @@ const Dictionary = () => {
         </div>
 
         {/* Filters */}
-        <div style={{ display: 'flex', gap: 10 }}>
+        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
           {[
             { id: 'all', label: `Tất cả (${totalResults})` },
-            { id: 'vocab', label: `Từ vựng (${vocabCount})` },
-            { id: 'kanji', label: `Hán tự (${kanjiCount})` },
-            { id: 'grammar', label: `Ngữ pháp (${grammarCount})` }
+            { id: 'vocab', label: `Từ vựng (${searchQuery ? results.vocab.length : vocabCount})` },
+            { id: 'kanji', label: `Hán tự (${searchQuery ? results.kanji.length : kanjiCount})` },
+            { id: 'grammar', label: `Ngữ pháp (${searchQuery ? results.grammar.length : grammarCount})` }
           ].map(f => (
             <button
               key={f.id}
