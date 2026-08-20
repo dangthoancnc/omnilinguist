@@ -1,7 +1,7 @@
 import { db } from './db.js';
 import localMasterDb from './data/jlpt_master_db.json';
 
-const CURRENT_DATA_VERSION = 'v13.0.0_classified_massive_vocab_3000';
+const CURRENT_DATA_VERSION = 'v14.0.0_massive_kanji_500';
 const CHUNK_SIZE = 200; // Chia nhỏ 200 bản ghi / đợt để nạp siêu mượt
 
 const parseField = (val) => {
@@ -33,11 +33,12 @@ export async function syncMasterData() {
   try {
     const savedVer = localStorage.getItem('omni_master_ver');
     const vocabCount = await db.vocab.count();
+    const kanjiCount = await db.kanji.count();
     const grammarCount = await db.grammar.count();
 
-    // ⚡ TỐI ƯU SIÊU TỐC: Nếu phiên bản đã khớp & đã có đủ dữ liệu từ vựng + ngữ pháp -> Bỏ qua nạp lại
-    if (savedVer === CURRENT_DATA_VERSION && grammarCount > 1000 && vocabCount > 2000) {
-      console.log(`⚡ [FastLoad] Master Data đã sẵn sàng (${vocabCount} từ vựng, ${grammarCount} mẫu ngữ pháp Bunpro). Bỏ qua nạp lại!`);
+    // ⚡ TỐI ƯU SIÊU TỐC: Nếu phiên bản đã khớp & đã có đủ dữ liệu từ vựng + kanji + ngữ pháp -> Bỏ qua nạp lại
+    if (savedVer === CURRENT_DATA_VERSION && grammarCount > 1000 && vocabCount > 2000 && kanjiCount > 400) {
+      console.log(`⚡ [FastLoad] Master Data đã sẵn sàng (${vocabCount} từ vựng, ${kanjiCount} chữ Kanji, ${grammarCount} mẫu ngữ pháp Bunpro). Bỏ qua nạp lại!`);
       return;
     }
 

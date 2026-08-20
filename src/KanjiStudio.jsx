@@ -339,8 +339,9 @@ const KanjiStudio = () => {
         if (dueSet.has(id)) return true;
         return false;
       });
-      // limit to 50 for performance and goal setting
-      fsrsIds = fsrsIds.slice(0, 50);
+      if (fsrsIds.length === 0) {
+        fsrsIds = allFsrsIds;
+      }
     }
 
     const dueSet = new Set(getDueCards(allFsrsIds));
@@ -404,15 +405,12 @@ const KanjiStudio = () => {
     
     const logEntry = sessionLog[index];
     if (logEntry && logEntry.id) {
-      if (learningMode === 'roadmap') {
-        const ratingMap = { good: Rating.Good, ok: Rating.Hard, bad: Rating.Again };
-        if (ratingMap[grade]) {
-          reviewRoadmapCard(`kanji_${logEntry.id}`, ratingMap[grade]);
-        }
-      } else {
-        const isCorrect = grade === 'good' || grade === 'ok';
-        reviewFreeStudyCard(`kanji_${logEntry.id}`, isCorrect, 'kanji');
+      const ratingMap = { good: Rating.Good, ok: Rating.Hard, bad: Rating.Again };
+      if (ratingMap[grade]) {
+        reviewRoadmapCard(`kanji_${logEntry.id}`, ratingMap[grade]);
       }
+      const isCorrect = grade === 'good' || grade === 'ok';
+      reviewFreeStudyCard(`kanji_${logEntry.id}`, isCorrect, 'kanji');
     }
   };
 

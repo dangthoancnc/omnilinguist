@@ -56832,7 +56832,7 @@
   ],
   "kanji": [
     {
-      "id": "k_full_1",
+      "id": "k_n5_0001",
       "kanji": "日",
       "level": "N5",
       "meanings": [
@@ -56855,7 +56855,7 @@
       ]
     },
     {
-      "id": "k_full_2",
+      "id": "k_n5_0002",
       "kanji": "月",
       "level": "N5",
       "meanings": [
@@ -56877,7 +56877,26 @@
       ]
     },
     {
-      "id": "k_full_3",
+      "id": "k_n5_0003",
+      "kanji": "火",
+      "level": "N5",
+      "meanings": [
+        "Hỏa",
+        "Lửa"
+      ],
+      "onyomi": [
+        "カ"
+      ],
+      "kunyomi": [
+        "ひ"
+      ],
+      "vi_meanings": [
+        "Hỏa",
+        "Lửa"
+      ]
+    },
+    {
+      "id": "k_n5_0004",
       "kanji": "水",
       "level": "N5",
       "meanings": [
@@ -56896,12 +56915,13 @@
       ]
     },
     {
-      "id": "k_full_4",
+      "id": "k_n5_0005",
       "kanji": "木",
       "level": "N5",
       "meanings": [
         "Mộc",
-        "Cây"
+        "Cây",
+        "Gỗ"
       ],
       "onyomi": [
         "モク",
@@ -56912,11 +56932,12 @@
       ],
       "vi_meanings": [
         "Mộc",
-        "Cây"
+        "Cây",
+        "Gỗ"
       ]
     },
     {
-      "id": "k_full_5",
+      "id": "k_n5_0006",
       "kanji": "金",
       "level": "N5",
       "meanings": [
@@ -56938,7 +56959,7 @@
       ]
     },
     {
-      "id": "k_full_6",
+      "id": "k_n5_0007",
       "kanji": "土",
       "level": "N5",
       "meanings": [
@@ -56958,7 +56979,7 @@
       ]
     },
     {
-      "id": "k_full_7",
+      "id": "k_n5_0008",
       "kanji": "山",
       "level": "N5",
       "meanings": [
@@ -56977,7 +56998,7 @@
       ]
     },
     {
-      "id": "k_full_8",
+      "id": "k_n5_0009",
       "kanji": "川",
       "level": "N5",
       "meanings": [
@@ -56996,7 +57017,7 @@
       ]
     },
     {
-      "id": "k_full_9",
+      "id": "k_n5_0010",
       "kanji": "田",
       "level": "N5",
       "meanings": [
@@ -57015,7 +57036,432 @@
       ]
     },
     {
-      "id": "k_full_10",
+      "id": "k_n5_0011",
+      "kanji": "一",
+      "level": "N5",
+      "meanings": [
+        "Nhất",
+        "Một"
+      ],
+      "onyomi": [
+        "イチ",
+        "イツ"
+      ],
+      "kunyomi": [
+        "ひと・つ"
+      ],
+      "vi_meanings": [
+        "Nhất",
+        "Một"
+      ]
+    },
+    {
+      "id": "k_n5_0012",
+      "kanji": "二",
+      "level": "N5",
+      "meanings": [
+        "Nhị",
+        "Hai"
+      ],
+      "onyomi": [
+        "ニ"
+      ],
+      "kunyomi": [
+        "ふた・つ"
+      ],
+      "vi_meanings": [
+        "Nhị",
+        "Hai"
+      ]
+    },
+    {
+      "id": "k_n5_0013",
+      "kanji": "三",
+      "level": "N5",
+      "meanings": [
+        "Tam",
+        "Ba"
+      ],
+      "onyomi": [
+        "サン"
+      ],
+      "kunyomi": [
+        "み・っつ"
+      ],
+      "vi_meanings": [
+        "Tam",
+        "Ba"
+      ]
+    },
+    {
+      "id": "k_n5_0014",
+      "kanji": "四",
+      "level": "N5",
+      "meanings": [
+        "Tứ",
+        "Bốn"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "よ・っつ",
+        "よん"
+      ],
+      "vi_meanings": [
+        "Tứ",
+        "Bốn"
+      ]
+    },
+    {
+      "id": "k_n5_0015",
+      "kanji": "五",
+      "level": "N5",
+      "meanings": [
+        "Ngũ",
+        "Năm"
+      ],
+      "onyomi": [
+        "ゴ"
+      ],
+      "kunyomi": [
+        "いつ・つ"
+      ],
+      "vi_meanings": [
+        "Ngũ",
+        "Năm"
+      ]
+    },
+    {
+      "id": "k_n5_0016",
+      "kanji": "六",
+      "level": "N5",
+      "meanings": [
+        "Lục",
+        "Sáu"
+      ],
+      "onyomi": [
+        "ロク"
+      ],
+      "kunyomi": [
+        "む・っつ"
+      ],
+      "vi_meanings": [
+        "Lục",
+        "Sáu"
+      ]
+    },
+    {
+      "id": "k_n5_0017",
+      "kanji": "七",
+      "level": "N5",
+      "meanings": [
+        "Thất",
+        "Bảy"
+      ],
+      "onyomi": [
+        "シチ"
+      ],
+      "kunyomi": [
+        "なな・つ"
+      ],
+      "vi_meanings": [
+        "Thất",
+        "Bảy"
+      ]
+    },
+    {
+      "id": "k_n5_0018",
+      "kanji": "八",
+      "level": "N5",
+      "meanings": [
+        "Bát",
+        "Tám"
+      ],
+      "onyomi": [
+        "ハチ"
+      ],
+      "kunyomi": [
+        "や・っつ"
+      ],
+      "vi_meanings": [
+        "Bát",
+        "Tám"
+      ]
+    },
+    {
+      "id": "k_n5_0019",
+      "kanji": "九",
+      "level": "N5",
+      "meanings": [
+        "Cửu",
+        "Chín"
+      ],
+      "onyomi": [
+        "キュウ",
+        "ク"
+      ],
+      "kunyomi": [
+        "ここの・つ"
+      ],
+      "vi_meanings": [
+        "Cửu",
+        "Chín"
+      ]
+    },
+    {
+      "id": "k_n5_0020",
+      "kanji": "十",
+      "level": "N5",
+      "meanings": [
+        "Thập",
+        "Mười"
+      ],
+      "onyomi": [
+        "ジュウ",
+        "ジッ"
+      ],
+      "kunyomi": [
+        "とお"
+      ],
+      "vi_meanings": [
+        "Thập",
+        "Mười"
+      ]
+    },
+    {
+      "id": "k_n5_0021",
+      "kanji": "百",
+      "level": "N5",
+      "meanings": [
+        "Bách",
+        "Trăm"
+      ],
+      "onyomi": [
+        "ヒャク"
+      ],
+      "kunyomi": [
+        "もも"
+      ],
+      "vi_meanings": [
+        "Bách",
+        "Trăm"
+      ]
+    },
+    {
+      "id": "k_n5_0022",
+      "kanji": "千",
+      "level": "N5",
+      "meanings": [
+        "Thiên",
+        "Nghìn"
+      ],
+      "onyomi": [
+        "セン"
+      ],
+      "kunyomi": [
+        "ち"
+      ],
+      "vi_meanings": [
+        "Thiên",
+        "Nghìn"
+      ]
+    },
+    {
+      "id": "k_n5_0023",
+      "kanji": "万",
+      "level": "N5",
+      "meanings": [
+        "Vạn",
+        "Mười nghìn"
+      ],
+      "onyomi": [
+        "マン",
+        "バン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Vạn",
+        "Mười nghìn"
+      ]
+    },
+    {
+      "id": "k_n5_0024",
+      "kanji": "円",
+      "level": "N5",
+      "meanings": [
+        "Yên",
+        "Tròn",
+        "Đồng Yên"
+      ],
+      "onyomi": [
+        "エン"
+      ],
+      "kunyomi": [
+        "まる・い"
+      ],
+      "vi_meanings": [
+        "Yên",
+        "Tròn",
+        "Đồng Yên"
+      ]
+    },
+    {
+      "id": "k_n5_0025",
+      "kanji": "年",
+      "level": "N5",
+      "meanings": [
+        "Niên",
+        "Năm",
+        "Tuổi"
+      ],
+      "onyomi": [
+        "ネン"
+      ],
+      "kunyomi": [
+        "とし"
+      ],
+      "vi_meanings": [
+        "Niên",
+        "Năm",
+        "Tuổi"
+      ]
+    },
+    {
+      "id": "k_n5_0026",
+      "kanji": "上",
+      "level": "N5",
+      "meanings": [
+        "Thượng",
+        "Trên",
+        "Lên"
+      ],
+      "onyomi": [
+        "ジョウ"
+      ],
+      "kunyomi": [
+        "うえ",
+        "あ・がる"
+      ],
+      "vi_meanings": [
+        "Thượng",
+        "Trên",
+        "Lên"
+      ]
+    },
+    {
+      "id": "k_n5_0027",
+      "kanji": "下",
+      "level": "N5",
+      "meanings": [
+        "Hạ",
+        "Dưới",
+        "Xuống"
+      ],
+      "onyomi": [
+        "カ",
+        "ゲ"
+      ],
+      "kunyomi": [
+        "した",
+        "さ・がる"
+      ],
+      "vi_meanings": [
+        "Hạ",
+        "Dưới",
+        "Xuống"
+      ]
+    },
+    {
+      "id": "k_n5_0028",
+      "kanji": "中",
+      "level": "N5",
+      "meanings": [
+        "Trung",
+        "Trong",
+        "Giữa"
+      ],
+      "onyomi": [
+        "チュウ"
+      ],
+      "kunyomi": [
+        "なか"
+      ],
+      "vi_meanings": [
+        "Trung",
+        "Trong",
+        "Giữa"
+      ]
+    },
+    {
+      "id": "k_n5_0029",
+      "kanji": "大",
+      "level": "N5",
+      "meanings": [
+        "Đại",
+        "Lớn",
+        "To"
+      ],
+      "onyomi": [
+        "ダイ",
+        "タイ"
+      ],
+      "kunyomi": [
+        "おお・きい"
+      ],
+      "vi_meanings": [
+        "Đại",
+        "Lớn",
+        "To"
+      ]
+    },
+    {
+      "id": "k_n5_0030",
+      "kanji": "小",
+      "level": "N5",
+      "meanings": [
+        "Tiểu",
+        "Nhỏ",
+        "Bé"
+      ],
+      "onyomi": [
+        "ショウ"
+      ],
+      "kunyomi": [
+        "ちい・さい",
+        "こ"
+      ],
+      "vi_meanings": [
+        "Tiểu",
+        "Nhỏ",
+        "Bé"
+      ]
+    },
+    {
+      "id": "k_n5_0031",
+      "kanji": "本",
+      "level": "N5",
+      "meanings": [
+        "Bản",
+        "Sách",
+        "Gốc",
+        "Thật"
+      ],
+      "onyomi": [
+        "ホン"
+      ],
+      "kunyomi": [
+        "もと"
+      ],
+      "vi_meanings": [
+        "Bản",
+        "Sách",
+        "Gốc",
+        "Thật"
+      ]
+    },
+    {
+      "id": "k_n5_0032",
       "kanji": "人",
       "level": "N5",
       "meanings": [
@@ -57035,12 +57481,358 @@
       ]
     },
     {
-      "id": "k_full_11",
+      "id": "k_n5_0033",
+      "kanji": "今",
+      "level": "N5",
+      "meanings": [
+        "Kim",
+        "Bây giờ",
+        "Nay"
+      ],
+      "onyomi": [
+        "コン",
+        "キン"
+      ],
+      "kunyomi": [
+        "いま"
+      ],
+      "vi_meanings": [
+        "Kim",
+        "Bây giờ",
+        "Nay"
+      ]
+    },
+    {
+      "id": "k_n5_0034",
+      "kanji": "寺",
+      "level": "N5",
+      "meanings": [
+        "Tự",
+        "Chùa"
+      ],
+      "onyomi": [
+        "ジ"
+      ],
+      "kunyomi": [
+        "てら"
+      ],
+      "vi_meanings": [
+        "Tự",
+        "Chùa"
+      ]
+    },
+    {
+      "id": "k_n5_0035",
+      "kanji": "時",
+      "level": "N5",
+      "meanings": [
+        "Thời",
+        "Giờ",
+        "Thời gian"
+      ],
+      "onyomi": [
+        "ジ"
+      ],
+      "kunyomi": [
+        "とき"
+      ],
+      "vi_meanings": [
+        "Thời",
+        "Giờ",
+        "Thời gian"
+      ]
+    },
+    {
+      "id": "k_n5_0036",
+      "kanji": "半",
+      "level": "N5",
+      "meanings": [
+        "Bán",
+        "Nửa",
+        "Rưỡi"
+      ],
+      "onyomi": [
+        "ハン"
+      ],
+      "kunyomi": [
+        "なか・ば"
+      ],
+      "vi_meanings": [
+        "Bán",
+        "Nửa",
+        "Rưỡi"
+      ]
+    },
+    {
+      "id": "k_n5_0037",
+      "kanji": "刀",
+      "level": "N5",
+      "meanings": [
+        "Đao",
+        "Kiếm",
+        "Dao"
+      ],
+      "onyomi": [
+        "トウ"
+      ],
+      "kunyomi": [
+        "かたな"
+      ],
+      "vi_meanings": [
+        "Đao",
+        "Kiếm",
+        "Dao"
+      ]
+    },
+    {
+      "id": "k_n5_0038",
+      "kanji": "分",
+      "level": "N5",
+      "meanings": [
+        "Phân",
+        "Phút",
+        "Hiểu",
+        "Phần"
+      ],
+      "onyomi": [
+        "ブン",
+        "フン",
+        "ブ"
+      ],
+      "kunyomi": [
+        "わ・かる",
+        "わ・ける"
+      ],
+      "vi_meanings": [
+        "Phân",
+        "Phút",
+        "Hiểu",
+        "Phần"
+      ]
+    },
+    {
+      "id": "k_n5_0039",
+      "kanji": "何",
+      "level": "N5",
+      "meanings": [
+        "Hà",
+        "Cái gì"
+      ],
+      "onyomi": [
+        "カ"
+      ],
+      "kunyomi": [
+        "なに",
+        "なん"
+      ],
+      "vi_meanings": [
+        "Hà",
+        "Cái gì"
+      ]
+    },
+    {
+      "id": "k_n5_0040",
+      "kanji": "前",
+      "level": "N5",
+      "meanings": [
+        "Tiền",
+        "Trước"
+      ],
+      "onyomi": [
+        "ゼン"
+      ],
+      "kunyomi": [
+        "まえ"
+      ],
+      "vi_meanings": [
+        "Tiền",
+        "Trước"
+      ]
+    },
+    {
+      "id": "k_n5_0041",
+      "kanji": "後",
+      "level": "N5",
+      "meanings": [
+        "Hậu",
+        "Sau"
+      ],
+      "onyomi": [
+        "ゴ",
+        "コウ"
+      ],
+      "kunyomi": [
+        "うし・ろ",
+        "あと",
+        "おく・れる"
+      ],
+      "vi_meanings": [
+        "Hậu",
+        "Sau"
+      ]
+    },
+    {
+      "id": "k_n5_0042",
+      "kanji": "午",
+      "level": "N5",
+      "meanings": [
+        "Ngọ",
+        "Buổi trưa"
+      ],
+      "onyomi": [
+        "ゴ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Ngọ",
+        "Buổi trưa"
+      ]
+    },
+    {
+      "id": "k_n5_0043",
+      "kanji": "早",
+      "level": "N5",
+      "meanings": [
+        "Tảo",
+        "Sớm"
+      ],
+      "onyomi": [
+        "ソウ",
+        "サッ"
+      ],
+      "kunyomi": [
+        "はや・い"
+      ],
+      "vi_meanings": [
+        "Tảo",
+        "Sớm"
+      ]
+    },
+    {
+      "id": "k_n5_0044",
+      "kanji": "間",
+      "level": "N5",
+      "meanings": [
+        "Gian",
+        "Khoảng giữa",
+        "Khoảng thời gian"
+      ],
+      "onyomi": [
+        "カン",
+        "ケン"
+      ],
+      "kunyomi": [
+        "あいだ",
+        "ま"
+      ],
+      "vi_meanings": [
+        "Gian",
+        "Khoảng giữa",
+        "Khoảng thời gian"
+      ]
+    },
+    {
+      "id": "k_n5_0045",
+      "kanji": "週",
+      "level": "N5",
+      "meanings": [
+        "Chu",
+        "Tuần"
+      ],
+      "onyomi": [
+        "シュウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Chu",
+        "Tuần"
+      ]
+    },
+    {
+      "id": "k_n5_0046",
+      "kanji": "東",
+      "level": "N5",
+      "meanings": [
+        "Đông",
+        "Phía Đông"
+      ],
+      "onyomi": [
+        "トウ"
+      ],
+      "kunyomi": [
+        "ひがし"
+      ],
+      "vi_meanings": [
+        "Đông",
+        "Phía Đông"
+      ]
+    },
+    {
+      "id": "k_n5_0047",
+      "kanji": "西",
+      "level": "N5",
+      "meanings": [
+        "Tây",
+        "Phía Tây"
+      ],
+      "onyomi": [
+        "セイ",
+        "サイ"
+      ],
+      "kunyomi": [
+        "にし"
+      ],
+      "vi_meanings": [
+        "Tây",
+        "Phía Tây"
+      ]
+    },
+    {
+      "id": "k_n5_0048",
+      "kanji": "南",
+      "level": "N5",
+      "meanings": [
+        "Nam",
+        "Phía Nam"
+      ],
+      "onyomi": [
+        "ナン"
+      ],
+      "kunyomi": [
+        "みなみ"
+      ],
+      "vi_meanings": [
+        "Nam",
+        "Phía Nam"
+      ]
+    },
+    {
+      "id": "k_n5_0049",
+      "kanji": "北",
+      "level": "N5",
+      "meanings": [
+        "Bắc",
+        "Phía Bắc"
+      ],
+      "onyomi": [
+        "ホク"
+      ],
+      "kunyomi": [
+        "きた"
+      ],
+      "vi_meanings": [
+        "Bắc",
+        "Phía Bắc"
+      ]
+    },
+    {
+      "id": "k_n5_0050",
       "kanji": "口",
       "level": "N5",
       "meanings": [
         "Khẩu",
-        "Miệng"
+        "Miệng",
+        "Cửa"
       ],
       "onyomi": [
         "コウ",
@@ -57051,68 +57843,252 @@
       ],
       "vi_meanings": [
         "Khẩu",
-        "Miệng"
+        "Miệng",
+        "Cửa"
       ]
     },
     {
-      "id": "k_full_12",
-      "kanji": "車",
+      "id": "k_n5_0051",
+      "kanji": "目",
       "level": "N5",
       "meanings": [
-        "Xa",
-        "Xe"
+        "Mục",
+        "Mắt"
       ],
       "onyomi": [
-        "シャ"
+        "モク",
+        "ボク"
       ],
       "kunyomi": [
-        "くるま"
+        "め"
       ],
       "vi_meanings": [
-        "Xa",
-        "Xe"
+        "Mục",
+        "Mắt"
       ]
     },
     {
-      "id": "k_full_13",
-      "kanji": "門",
+      "id": "k_n5_0052",
+      "kanji": "耳",
       "level": "N5",
       "meanings": [
-        "Môn",
-        "Cổng"
+        "Nhĩ",
+        "Tai"
       ],
       "onyomi": [
-        "モン"
+        "ジ"
       ],
       "kunyomi": [
-        "かど"
+        "みみ"
       ],
       "vi_meanings": [
-        "Môn",
-        "Cổng"
+        "Nhĩ",
+        "Tai"
       ]
     },
     {
-      "id": "k_full_14",
-      "kanji": "火",
+      "id": "k_n5_0053",
+      "kanji": "手",
       "level": "N5",
       "meanings": [
-        "Hỏa",
-        "Lửa"
+        "Thủ",
+        "Tay"
       ],
       "onyomi": [
-        "カ"
+        "シュ"
       ],
       "kunyomi": [
-        "ひ"
+        "て"
       ],
       "vi_meanings": [
-        "Hỏa",
-        "Lửa"
+        "Thủ",
+        "Tay"
       ]
     },
     {
-      "id": "k_full_15",
+      "id": "k_n5_0054",
+      "kanji": "足",
+      "level": "N5",
+      "meanings": [
+        "Túc",
+        "Chân",
+        "Đầy đủ"
+      ],
+      "onyomi": [
+        "ソク"
+      ],
+      "kunyomi": [
+        "あし",
+        "た・りる"
+      ],
+      "vi_meanings": [
+        "Túc",
+        "Chân",
+        "Đầy đủ"
+      ]
+    },
+    {
+      "id": "k_n5_0055",
+      "kanji": "力",
+      "level": "N5",
+      "meanings": [
+        "Lực",
+        "Sức mạnh"
+      ],
+      "onyomi": [
+        "リョク",
+        "リキ"
+      ],
+      "kunyomi": [
+        "ちから"
+      ],
+      "vi_meanings": [
+        "Lực",
+        "Sức mạnh"
+      ]
+    },
+    {
+      "id": "k_n5_0056",
+      "kanji": "父",
+      "level": "N5",
+      "meanings": [
+        "Phụ",
+        "Bố",
+        "Cha"
+      ],
+      "onyomi": [
+        "フ"
+      ],
+      "kunyomi": [
+        "ちち"
+      ],
+      "vi_meanings": [
+        "Phụ",
+        "Bố",
+        "Cha"
+      ]
+    },
+    {
+      "id": "k_n5_0057",
+      "kanji": "母",
+      "level": "N5",
+      "meanings": [
+        "Mẫu",
+        "Mẹ"
+      ],
+      "onyomi": [
+        "ボ"
+      ],
+      "kunyomi": [
+        "はは"
+      ],
+      "vi_meanings": [
+        "Mẫu",
+        "Mẹ"
+      ]
+    },
+    {
+      "id": "k_n5_0058",
+      "kanji": "先",
+      "level": "N5",
+      "meanings": [
+        "Tiên",
+        "Trước"
+      ],
+      "onyomi": [
+        "セン"
+      ],
+      "kunyomi": [
+        "さき"
+      ],
+      "vi_meanings": [
+        "Tiên",
+        "Trước"
+      ]
+    },
+    {
+      "id": "k_n5_0059",
+      "kanji": "生",
+      "level": "N5",
+      "meanings": [
+        "Sinh",
+        "Sống",
+        "Sinh ra",
+        "Học sinh"
+      ],
+      "onyomi": [
+        "セイ",
+        "ショウ"
+      ],
+      "kunyomi": [
+        "い・きる",
+        "う・まれる",
+        "なま"
+      ],
+      "vi_meanings": [
+        "Sinh",
+        "Sống",
+        "Sinh ra",
+        "Học sinh"
+      ]
+    },
+    {
+      "id": "k_n5_0060",
+      "kanji": "学",
+      "level": "N5",
+      "meanings": [
+        "Học",
+        "Học tập"
+      ],
+      "onyomi": [
+        "ガク"
+      ],
+      "kunyomi": [
+        "まな・ぶ"
+      ],
+      "vi_meanings": [
+        "Học",
+        "Học tập"
+      ]
+    },
+    {
+      "id": "k_n5_0061",
+      "kanji": "校",
+      "level": "N5",
+      "meanings": [
+        "Hiệu",
+        "Trường học"
+      ],
+      "onyomi": [
+        "コウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Hiệu",
+        "Trường học"
+      ]
+    },
+    {
+      "id": "k_n5_0062",
+      "kanji": "友",
+      "level": "N5",
+      "meanings": [
+        "Hữu",
+        "Bạn bè"
+      ],
+      "onyomi": [
+        "ユウ"
+      ],
+      "kunyomi": [
+        "とも"
+      ],
+      "vi_meanings": [
+        "Hữu",
+        "Bạn bè"
+      ]
+    },
+    {
+      "id": "k_n5_0063",
       "kanji": "女",
       "level": "N5",
       "meanings": [
@@ -57124,7 +58100,8 @@
         "ニョ"
       ],
       "kunyomi": [
-        "おんな"
+        "おんな",
+        "め"
       ],
       "vi_meanings": [
         "Nữ",
@@ -57132,7 +58109,7 @@
       ]
     },
     {
-      "id": "k_full_16",
+      "id": "k_n5_0064",
       "kanji": "男",
       "level": "N5",
       "meanings": [
@@ -57152,7 +58129,7 @@
       ]
     },
     {
-      "id": "k_full_17",
+      "id": "k_n5_0065",
       "kanji": "子",
       "level": "N5",
       "meanings": [
@@ -57172,73 +58149,13 @@
       ]
     },
     {
-      "id": "k_full_18",
-      "kanji": "学",
-      "level": "N5",
-      "meanings": [
-        "Học",
-        "Học tập"
-      ],
-      "onyomi": [
-        "ガク"
-      ],
-      "kunyomi": [
-        "まな・ぶ"
-      ],
-      "vi_meanings": [
-        "Học",
-        "Học tập"
-      ]
-    },
-    {
-      "id": "k_full_19",
-      "kanji": "生",
-      "level": "N5",
-      "meanings": [
-        "Sinh",
-        "Sống",
-        "Sinh ra"
-      ],
-      "onyomi": [
-        "セイ",
-        "ショウ"
-      ],
-      "kunyomi": [
-        "い・きる",
-        "生・まれ"
-      ],
-      "vi_meanings": [
-        "Sinh",
-        "Sống",
-        "Sinh ra"
-      ]
-    },
-    {
-      "id": "k_full_20",
-      "kanji": "先",
-      "level": "N5",
-      "meanings": [
-        "Tiên",
-        "Trước"
-      ],
-      "onyomi": [
-        "セン"
-      ],
-      "kunyomi": [
-        "さき"
-      ],
-      "vi_meanings": [
-        "Tiên",
-        "Trước"
-      ]
-    },
-    {
-      "id": "k_full_21",
+      "id": "k_n5_0066",
       "kanji": "私",
       "level": "N5",
       "meanings": [
         "Tư",
-        "Tôi"
+        "Tôi",
+        "Cá nhân"
       ],
       "onyomi": [
         "シ"
@@ -57249,38 +58166,18 @@
       ],
       "vi_meanings": [
         "Tư",
-        "Tôi"
+        "Tôi",
+        "Cá nhân"
       ]
     },
     {
-      "id": "k_full_22",
-      "kanji": "本",
-      "level": "N5",
-      "meanings": [
-        "Bản",
-        "Sách",
-        "Gốc"
-      ],
-      "onyomi": [
-        "ホン"
-      ],
-      "kunyomi": [
-        "もと"
-      ],
-      "vi_meanings": [
-        "Bản",
-        "Sách",
-        "Gốc"
-      ]
-    },
-    {
-      "id": "k_full_23",
+      "id": "k_n5_0067",
       "kanji": "文",
       "level": "N5",
       "meanings": [
         "Văn",
-        "Văn tự",
-        "Câu"
+        "Câu",
+        "Văn tự"
       ],
       "onyomi": [
         "ブン",
@@ -57291,17 +58188,18 @@
       ],
       "vi_meanings": [
         "Văn",
-        "Văn tự",
-        "Câu"
+        "Câu",
+        "Văn tự"
       ]
     },
     {
-      "id": "k_full_24",
+      "id": "k_n5_0068",
       "kanji": "字",
       "level": "N5",
       "meanings": [
         "Tự",
-        "Chữ"
+        "Chữ",
+        "Ký tự"
       ],
       "onyomi": [
         "ジ"
@@ -57311,16 +58209,18 @@
       ],
       "vi_meanings": [
         "Tự",
-        "Chữ"
+        "Chữ",
+        "Ký tự"
       ]
     },
     {
-      "id": "k_full_25",
+      "id": "k_n5_0069",
       "kanji": "名",
       "level": "N5",
       "meanings": [
         "Danh",
-        "Tên"
+        "Tên",
+        "Nổi tiếng"
       ],
       "onyomi": [
         "メイ",
@@ -57331,302 +58231,707 @@
       ],
       "vi_meanings": [
         "Danh",
-        "Tên"
+        "Tên",
+        "Nổi tiếng"
       ]
     },
     {
-      "id": "k_full_26",
-      "kanji": "年",
+      "id": "k_n5_0070",
+      "kanji": "白",
       "level": "N5",
       "meanings": [
-        "Niên",
-        "Năm"
+        "Bạch",
+        "Trắng"
       ],
       "onyomi": [
-        "ネン"
+        "ハク",
+        "ビャク"
       ],
       "kunyomi": [
-        "とし"
+        "しろ・い"
       ],
       "vi_meanings": [
-        "Niên",
-        "Năm"
+        "Bạch",
+        "Trắng"
       ]
     },
     {
-      "id": "k_full_27",
-      "kanji": "円",
+      "id": "k_n5_0071",
+      "kanji": "黒",
       "level": "N5",
       "meanings": [
-        "Yên",
-        "Tròn"
+        "Hắc",
+        "Đen"
       ],
       "onyomi": [
-        "エン"
+        "コク"
       ],
       "kunyomi": [
-        "まる・い"
+        "くろ・い"
       ],
       "vi_meanings": [
-        "Yên",
-        "Tròn"
+        "Hắc",
+        "Đen"
       ]
     },
     {
-      "id": "k_full_28",
-      "kanji": "百",
+      "id": "k_n5_0072",
+      "kanji": "赤",
       "level": "N5",
       "meanings": [
-        "Bách",
-        "Trăm"
+        "Xích",
+        "Đỏ"
       ],
       "onyomi": [
-        "ヒャク"
+        "セキ",
+        "シャク"
       ],
       "kunyomi": [
-        "もも"
+        "あか・い"
       ],
       "vi_meanings": [
-        "Bách",
-        "Trăm"
+        "Xích",
+        "Đỏ"
       ]
     },
     {
-      "id": "k_full_29",
-      "kanji": "千",
+      "id": "k_n5_0073",
+      "kanji": "青",
       "level": "N5",
       "meanings": [
-        "Thiên",
-        "Nghìn"
+        "Thanh",
+        "Xanh"
       ],
       "onyomi": [
-        "セン"
-      ],
-      "kunyomi": [
-        "ち"
-      ],
-      "vi_meanings": [
-        "Thiên",
-        "Nghìn"
-      ]
-    },
-    {
-      "id": "k_full_30",
-      "kanji": "万",
-      "level": "N5",
-      "meanings": [
-        "Vạn",
-        "Mười nghìn"
-      ],
-      "onyomi": [
-        "マン",
-        "バン"
-      ],
-      "kunyomi": [],
-      "vi_meanings": [
-        "Vạn",
-        "Mười nghìn"
-      ]
-    },
-    {
-      "id": "k_full_31",
-      "kanji": "上",
-      "level": "N5",
-      "meanings": [
-        "Thượng",
-        "Trên"
-      ],
-      "onyomi": [
-        "ジョウ"
-      ],
-      "kunyomi": [
-        "うえ",
-        "あ・げる"
-      ],
-      "vi_meanings": [
-        "Thượng",
-        "Trên"
-      ]
-    },
-    {
-      "id": "k_full_32",
-      "kanji": "下",
-      "level": "N5",
-      "meanings": [
-        "Hạ",
-        "Dưới"
-      ],
-      "onyomi": [
-        "カ",
-        "ゲ"
-      ],
-      "kunyomi": [
-        "した",
-        "さ・げる"
-      ],
-      "vi_meanings": [
-        "Hạ",
-        "Dưới"
-      ]
-    },
-    {
-      "id": "k_full_33",
-      "kanji": "中",
-      "level": "N5",
-      "meanings": [
-        "Trung",
-        "Giữa",
-        "Trong"
-      ],
-      "onyomi": [
-        "チュウ"
-      ],
-      "kunyomi": [
-        "なか"
-      ],
-      "vi_meanings": [
-        "Trung",
-        "Giữa",
-        "Trong"
-      ]
-    },
-    {
-      "id": "k_full_34",
-      "kanji": "大",
-      "level": "N5",
-      "meanings": [
-        "Đại",
-        "Lớn"
-      ],
-      "onyomi": [
-        "ダイ",
-        "タイ"
-      ],
-      "kunyomi": [
-        "おお・きい"
-      ],
-      "vi_meanings": [
-        "Đại",
-        "Lớn"
-      ]
-    },
-    {
-      "id": "k_full_35",
-      "kanji": "小",
-      "level": "N5",
-      "meanings": [
-        "Tiểu",
-        "Nhỏ"
-      ],
-      "onyomi": [
+        "セイ",
         "ショウ"
       ],
       "kunyomi": [
-        "ちい・さい"
+        "あお・い"
       ],
       "vi_meanings": [
-        "Tiểu",
-        "Nhỏ"
+        "Thanh",
+        "Xanh"
       ]
     },
     {
-      "id": "k_full_36",
-      "kanji": "切",
+      "id": "k_n5_0074",
+      "kanji": "天",
       "level": "N5",
       "meanings": [
-        "Thiết",
-        "Cắt"
+        "Thiên",
+        "Trời"
       ],
       "onyomi": [
-        "セツ",
-        "サイ"
+        "テン"
       ],
       "kunyomi": [
-        "き・る"
+        "あめ",
+        "あま"
       ],
       "vi_meanings": [
-        "Thiết",
-        "Cắt"
+        "Thiên",
+        "Trời"
       ]
     },
     {
-      "id": "k_full_37",
-      "kanji": "友",
+      "id": "k_n5_0075",
+      "kanji": "気",
       "level": "N5",
       "meanings": [
-        "Hữu",
-        "Bạn bè"
+        "Khí",
+        "Khí sắc",
+        "Tinh thần",
+        "Khí trời"
       ],
       "onyomi": [
-        "ユウ"
+        "キ",
+        "ケ"
       ],
-      "kunyomi": [
-        "とも"
-      ],
+      "kunyomi": [],
       "vi_meanings": [
-        "Hữu",
-        "Bạn bè"
+        "Khí",
+        "Khí sắc",
+        "Tinh thần",
+        "Khí trời"
       ]
     },
     {
-      "id": "k_full_38",
-      "kanji": "手",
+      "id": "k_n5_0076",
+      "kanji": "雨",
       "level": "N5",
       "meanings": [
-        "Thủ",
-        "Tay"
+        "Vũ",
+        "Mưa"
       ],
       "onyomi": [
-        "シュ"
+        "ウ"
       ],
       "kunyomi": [
-        "て"
+        "あめ",
+        "あま"
       ],
       "vi_meanings": [
-        "Thủ",
-        "Tay"
+        "Vũ",
+        "Mưa"
       ]
     },
     {
-      "id": "k_full_39",
-      "kanji": "目",
+      "id": "k_n5_0077",
+      "kanji": "雪",
       "level": "N5",
       "meanings": [
-        "Mục",
-        "Mắt"
+        "Tuyết",
+        "Tuyết rơi"
       ],
       "onyomi": [
-        "モク"
+        "セツ"
       ],
       "kunyomi": [
-        "め"
+        "ゆき"
       ],
       "vi_meanings": [
-        "Mục",
-        "Mắt"
+        "Tuyết",
+        "Tuyết rơi"
       ]
     },
     {
-      "id": "k_full_40",
-      "kanji": "耳",
+      "id": "k_n5_0078",
+      "kanji": "空",
       "level": "N5",
       "meanings": [
-        "Nhĩ",
-        "Tai"
+        "Không",
+        "Bầu trời",
+        "Trống rỗng"
       ],
       "onyomi": [
-        "ジ"
+        "クウ"
       ],
       "kunyomi": [
-        "みみ"
+        "そら",
+        "あ・く",
+        "から"
       ],
       "vi_meanings": [
-        "Nhĩ",
-        "Tai"
+        "Không",
+        "Bầu trời",
+        "Trống rỗng"
       ]
     },
     {
-      "id": "k_full_41",
+      "id": "k_n5_0079",
+      "kanji": "風",
+      "level": "N5",
+      "meanings": [
+        "Phong",
+        "Gió",
+        "Phong cách"
+      ],
+      "onyomi": [
+        "フウ",
+        "フ"
+      ],
+      "kunyomi": [
+        "かぜ"
+      ],
+      "vi_meanings": [
+        "Phong",
+        "Gió",
+        "Phong cách"
+      ]
+    },
+    {
+      "id": "k_n5_0080",
+      "kanji": "魚",
+      "level": "N5",
+      "meanings": [
+        "Ngư",
+        "Cá"
+      ],
+      "onyomi": [
+        "ギョ"
+      ],
+      "kunyomi": [
+        "さかな",
+        "うお"
+      ],
+      "vi_meanings": [
+        "Ngư",
+        "Cá"
+      ]
+    },
+    {
+      "id": "k_n5_0081",
+      "kanji": "肉",
+      "level": "N5",
+      "meanings": [
+        "Nhục",
+        "Thịt"
+      ],
+      "onyomi": [
+        "ニク"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Nhục",
+        "Thịt"
+      ]
+    },
+    {
+      "id": "k_n5_0082",
+      "kanji": "犬",
+      "level": "N5",
+      "meanings": [
+        "Khuyển",
+        "Chó"
+      ],
+      "onyomi": [
+        "ケン"
+      ],
+      "kunyomi": [
+        "いぬ"
+      ],
+      "vi_meanings": [
+        "Khuyển",
+        "Chó"
+      ]
+    },
+    {
+      "id": "k_n5_0083",
+      "kanji": "花",
+      "level": "N5",
+      "meanings": [
+        "Hoa",
+        "Bông hoa"
+      ],
+      "onyomi": [
+        "カ"
+      ],
+      "kunyomi": [
+        "はな"
+      ],
+      "vi_meanings": [
+        "Hoa",
+        "Bông hoa"
+      ]
+    },
+    {
+      "id": "k_n5_0084",
+      "kanji": "車",
+      "level": "N5",
+      "meanings": [
+        "Xa",
+        "Xe"
+      ],
+      "onyomi": [
+        "シャ"
+      ],
+      "kunyomi": [
+        "くるま"
+      ],
+      "vi_meanings": [
+        "Xa",
+        "Xe"
+      ]
+    },
+    {
+      "id": "k_n5_0085",
+      "kanji": "門",
+      "level": "N5",
+      "meanings": [
+        "Môn",
+        "Cổng"
+      ],
+      "onyomi": [
+        "モン"
+      ],
+      "kunyomi": [
+        "かど"
+      ],
+      "vi_meanings": [
+        "Môn",
+        "Cổng"
+      ]
+    },
+    {
+      "id": "k_n5_0086",
+      "kanji": "店",
+      "level": "N5",
+      "meanings": [
+        "Điếm",
+        "Cửa hàng",
+        "Tiệm"
+      ],
+      "onyomi": [
+        "テン"
+      ],
+      "kunyomi": [
+        "みせ"
+      ],
+      "vi_meanings": [
+        "Điếm",
+        "Cửa hàng",
+        "Tiệm"
+      ]
+    },
+    {
+      "id": "k_n5_0087",
+      "kanji": "駅",
+      "level": "N5",
+      "meanings": [
+        "Dịch",
+        "Nhà ga"
+      ],
+      "onyomi": [
+        "エキ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Dịch",
+        "Nhà ga"
+      ]
+    },
+    {
+      "id": "k_n5_0088",
+      "kanji": "道",
+      "level": "N5",
+      "meanings": [
+        "Đạo",
+        "Đường",
+        "Đạo lộ"
+      ],
+      "onyomi": [
+        "ドウ",
+        "トウ"
+      ],
+      "kunyomi": [
+        "みち"
+      ],
+      "vi_meanings": [
+        "Đạo",
+        "Đường",
+        "Đạo lộ"
+      ]
+    },
+    {
+      "id": "k_n5_0089",
+      "kanji": "社",
+      "level": "N5",
+      "meanings": [
+        "Xã",
+        "Công ty",
+        "Đền thờ"
+      ],
+      "onyomi": [
+        "シャ"
+      ],
+      "kunyomi": [
+        "やしろ"
+      ],
+      "vi_meanings": [
+        "Xã",
+        "Công ty",
+        "Đền thờ"
+      ]
+    },
+    {
+      "id": "k_n5_0090",
+      "kanji": "国",
+      "level": "N5",
+      "meanings": [
+        "Quốc",
+        "Đất nước",
+        "Quốc gia"
+      ],
+      "onyomi": [
+        "コク"
+      ],
+      "kunyomi": [
+        "くに"
+      ],
+      "vi_meanings": [
+        "Quốc",
+        "Đất nước",
+        "Quốc gia"
+      ]
+    },
+    {
+      "id": "k_n5_0091",
+      "kanji": "外",
+      "level": "N5",
+      "meanings": [
+        "Ngoại",
+        "Bên ngoài"
+      ],
+      "onyomi": [
+        "ガイ",
+        "ゲ"
+      ],
+      "kunyomi": [
+        "そと",
+        "ほか",
+        "はず・す"
+      ],
+      "vi_meanings": [
+        "Ngoại",
+        "Bên ngoài"
+      ]
+    },
+    {
+      "id": "k_n5_0092",
+      "kanji": "見",
+      "level": "N5",
+      "meanings": [
+        "Kiến",
+        "Nhìn",
+        "Xem"
+      ],
+      "onyomi": [
+        "ケン"
+      ],
+      "kunyomi": [
+        "み・る",
+        "み・える"
+      ],
+      "vi_meanings": [
+        "Kiến",
+        "Nhìn",
+        "Xem"
+      ]
+    },
+    {
+      "id": "k_n5_0093",
+      "kanji": "聞",
+      "level": "N5",
+      "meanings": [
+        "Văn",
+        "Nghe",
+        "Hỏi"
+      ],
+      "onyomi": [
+        "ブン",
+        "モン"
+      ],
+      "kunyomi": [
+        "き・く",
+        "き・こえる"
+      ],
+      "vi_meanings": [
+        "Văn",
+        "Nghe",
+        "Hỏi"
+      ]
+    },
+    {
+      "id": "k_n5_0094",
+      "kanji": "読",
+      "level": "N5",
+      "meanings": [
+        "Độc",
+        "Đọc"
+      ],
+      "onyomi": [
+        "ドク",
+        "トク"
+      ],
+      "kunyomi": [
+        "よ・む"
+      ],
+      "vi_meanings": [
+        "Độc",
+        "Đọc"
+      ]
+    },
+    {
+      "id": "k_n5_0095",
+      "kanji": "書",
+      "level": "N5",
+      "meanings": [
+        "Thư",
+        "Viết",
+        "Sách"
+      ],
+      "onyomi": [
+        "ショ"
+      ],
+      "kunyomi": [
+        "か・く"
+      ],
+      "vi_meanings": [
+        "Thư",
+        "Viết",
+        "Sách"
+      ]
+    },
+    {
+      "id": "k_n5_0096",
+      "kanji": "話",
+      "level": "N5",
+      "meanings": [
+        "Thoại",
+        "Nói chuyện",
+        "Câu chuyện"
+      ],
+      "onyomi": [
+        "ワ"
+      ],
+      "kunyomi": [
+        "はな・す",
+        "はなし"
+      ],
+      "vi_meanings": [
+        "Thoại",
+        "Nói chuyện",
+        "Câu chuyện"
+      ]
+    },
+    {
+      "id": "k_n5_0097",
+      "kanji": "買",
+      "level": "N5",
+      "meanings": [
+        "Mãi",
+        "Mua"
+      ],
+      "onyomi": [
+        "バイ"
+      ],
+      "kunyomi": [
+        "か・う"
+      ],
+      "vi_meanings": [
+        "Mãi",
+        "Mua"
+      ]
+    },
+    {
+      "id": "k_n5_0098",
+      "kanji": "食",
+      "level": "N5",
+      "meanings": [
+        "Thực",
+        "Ăn",
+        "Món ăn"
+      ],
+      "onyomi": [
+        "ショク",
+        "ジキ"
+      ],
+      "kunyomi": [
+        "た・べる",
+        "く・う"
+      ],
+      "vi_meanings": [
+        "Thực",
+        "Ăn",
+        "Món ăn"
+      ]
+    },
+    {
+      "id": "k_n5_0099",
+      "kanji": "飲",
+      "level": "N5",
+      "meanings": [
+        "Ẩm",
+        "Uống"
+      ],
+      "onyomi": [
+        "イン"
+      ],
+      "kunyomi": [
+        "の・む"
+      ],
+      "vi_meanings": [
+        "Ẩm",
+        "Uống"
+      ]
+    },
+    {
+      "id": "k_n5_0100",
+      "kanji": "行",
+      "level": "N5",
+      "meanings": [
+        "Hành",
+        "Đi",
+        "Tổ chức"
+      ],
+      "onyomi": [
+        "コウ",
+        "ギョウ"
+      ],
+      "kunyomi": [
+        "い・く",
+        "おこな・う"
+      ],
+      "vi_meanings": [
+        "Hành",
+        "Đi",
+        "Tổ chức"
+      ]
+    },
+    {
+      "id": "k_n5_0101",
+      "kanji": "来",
+      "level": "N5",
+      "meanings": [
+        "Lai",
+        "Đến"
+      ],
+      "onyomi": [
+        "ライ"
+      ],
+      "kunyomi": [
+        "く・る",
+        "き・たる"
+      ],
+      "vi_meanings": [
+        "Lai",
+        "Đến"
+      ]
+    },
+    {
+      "id": "k_n5_0102",
+      "kanji": "休",
+      "level": "N5",
+      "meanings": [
+        "Hưu",
+        "Nghỉ ngơi"
+      ],
+      "onyomi": [
+        "キュウ"
+      ],
+      "kunyomi": [
+        "やす・む"
+      ],
+      "vi_meanings": [
+        "Hưu",
+        "Nghỉ ngơi"
+      ]
+    },
+    {
+      "id": "k_n5_0103",
+      "kanji": "会",
+      "level": "N5",
+      "meanings": [
+        "Hội",
+        "Gặp gỡ",
+        "Hội họp"
+      ],
+      "onyomi": [
+        "カイ",
+        "エ"
+      ],
+      "kunyomi": [
+        "あ・う"
+      ],
+      "vi_meanings": [
+        "Hội",
+        "Gặp gỡ",
+        "Hội họp"
+      ]
+    },
+    {
+      "id": "k_n4_0104",
       "kanji": "安",
       "level": "N4",
       "meanings": [
@@ -57647,7 +58952,7 @@
       ]
     },
     {
-      "id": "k_full_42",
+      "id": "k_n4_0105",
       "kanji": "高",
       "level": "N4",
       "meanings": [
@@ -57668,7 +58973,7 @@
       ]
     },
     {
-      "id": "k_full_43",
+      "id": "k_n4_0106",
       "kanji": "新",
       "level": "N4",
       "meanings": [
@@ -57679,7 +58984,8 @@
         "シン"
       ],
       "kunyomi": [
-        "あたら・しい"
+        "あたら・しい",
+        "あら・た"
       ],
       "vi_meanings": [
         "Tân",
@@ -57687,7 +58993,7 @@
       ]
     },
     {
-      "id": "k_full_44",
+      "id": "k_n4_0107",
       "kanji": "古",
       "level": "N4",
       "meanings": [
@@ -57706,7 +59012,7 @@
       ]
     },
     {
-      "id": "k_full_45",
+      "id": "k_n4_0108",
       "kanji": "長",
       "level": "N4",
       "meanings": [
@@ -57727,7 +59033,7 @@
       ]
     },
     {
-      "id": "k_full_46",
+      "id": "k_n4_0109",
       "kanji": "多",
       "level": "N4",
       "meanings": [
@@ -57746,12 +59052,13 @@
       ]
     },
     {
-      "id": "k_full_47",
+      "id": "k_n4_0110",
       "kanji": "少",
       "level": "N4",
       "meanings": [
         "Thiểu",
-        "Ít"
+        "Ít",
+        "Một chút"
       ],
       "onyomi": [
         "ショウ"
@@ -57762,225 +59069,176 @@
       ],
       "vi_meanings": [
         "Thiểu",
-        "Ít"
+        "Ít",
+        "Một chút"
       ]
     },
     {
-      "id": "k_full_48",
-      "kanji": "早",
+      "id": "k_n4_0111",
+      "kanji": "重",
       "level": "N4",
       "meanings": [
-        "Tảo",
-        "Sớm"
+        "Trọng",
+        "Nặng",
+        "Quan trọng"
       ],
       "onyomi": [
-        "ソウ"
+        "ジュウ",
+        "チョウ"
       ],
       "kunyomi": [
-        "はや・い"
+        "おも・い",
+        "かさ・ねる"
       ],
       "vi_meanings": [
-        "Tảo",
-        "Sớm"
+        "Trọng",
+        "Nặng",
+        "Quan trọng"
       ]
     },
     {
-      "id": "k_full_49",
-      "kanji": "行",
+      "id": "k_n4_0112",
+      "kanji": "軽",
       "level": "N4",
       "meanings": [
-        "Hành",
-        "Đi"
+        "Khinh",
+        "Nhẹ"
       ],
       "onyomi": [
-        "コウ",
-        "ギョウ"
+        "ケイ"
       ],
       "kunyomi": [
-        "い・く",
-        "おこな・う"
+        "かる・い"
       ],
       "vi_meanings": [
-        "Hành",
-        "Đi"
+        "Khinh",
+        "Nhẹ"
       ]
     },
     {
-      "id": "k_full_50",
-      "kanji": "来",
+      "id": "k_n4_0113",
+      "kanji": "広",
       "level": "N4",
       "meanings": [
-        "Lai",
-        "Đến"
+        "Quảng",
+        "Rộng"
       ],
       "onyomi": [
-        "ライ"
+        "コウ"
       ],
       "kunyomi": [
-        "く・る",
-        "き・たる"
+        "ひろ・い"
       ],
       "vi_meanings": [
-        "Lai",
-        "Đến"
+        "Quảng",
+        "Rộng"
       ]
     },
     {
-      "id": "k_full_51",
-      "kanji": "食",
+      "id": "k_n4_0114",
+      "kanji": "近",
       "level": "N4",
       "meanings": [
-        "Thực",
-        "Ăn"
+        "Cận",
+        "Gần"
       ],
       "onyomi": [
-        "ショク"
+        "キン"
       ],
       "kunyomi": [
-        "た・べる"
+        "ちか・い"
       ],
       "vi_meanings": [
-        "Thực",
-        "Ăn"
+        "Cận",
+        "Gần"
       ]
     },
     {
-      "id": "k_full_52",
-      "kanji": "飲",
+      "id": "k_n4_0115",
+      "kanji": "遠",
       "level": "N4",
       "meanings": [
-        "Ẩm",
-        "Uống"
+        "Viễn",
+        "Xa"
       ],
       "onyomi": [
-        "イン"
+        "エン",
+        "オン"
       ],
       "kunyomi": [
-        "の・む"
+        "とお・い"
       ],
       "vi_meanings": [
-        "Ẩm",
-        "Uống"
+        "Viễn",
+        "Xa"
       ]
     },
     {
-      "id": "k_full_53",
-      "kanji": "見",
+      "id": "k_n4_0116",
+      "kanji": "悪",
       "level": "N4",
       "meanings": [
-        "Kiến",
-        "Nhìn"
+        "Ác",
+        "Xấu",
+        "Tồi tệ"
       ],
       "onyomi": [
-        "ケン"
+        "アク",
+        "オ"
       ],
       "kunyomi": [
-        "み・る"
+        "わる・い"
       ],
       "vi_meanings": [
-        "Kiến",
-        "Nhìn"
+        "Ác",
+        "Xấu",
+        "Tồi tệ"
       ]
     },
     {
-      "id": "k_full_54",
-      "kanji": "聞",
+      "id": "k_n4_0117",
+      "kanji": "正",
       "level": "N4",
       "meanings": [
-        "Văn",
-        "Nghe"
+        "Chính",
+        "Đúng",
+        "Chính xác"
       ],
       "onyomi": [
-        "ブン",
-        "モン"
+        "セイ",
+        "ショウ"
       ],
       "kunyomi": [
-        "き・く"
+        "ただ・しい",
+        "まさ"
       ],
       "vi_meanings": [
-        "Văn",
-        "Nghe"
+        "Chính",
+        "Đúng",
+        "Chính xác"
       ]
     },
     {
-      "id": "k_full_55",
-      "kanji": "読",
+      "id": "k_n4_0118",
+      "kanji": "同",
       "level": "N4",
       "meanings": [
-        "Độc",
-        "Đọc"
+        "Đồng",
+        "Giống nhau"
       ],
       "onyomi": [
-        "ドク"
+        "ドウ"
       ],
       "kunyomi": [
-        "よ・む"
+        "おな・じ"
       ],
       "vi_meanings": [
-        "Độc",
-        "Đọc"
+        "Đồng",
+        "Giống nhau"
       ]
     },
     {
-      "id": "k_full_56",
-      "kanji": "書",
-      "level": "N4",
-      "meanings": [
-        "Thư",
-        "Viết"
-      ],
-      "onyomi": [
-        "ショ"
-      ],
-      "kunyomi": [
-        "か・く"
-      ],
-      "vi_meanings": [
-        "Thư",
-        "Viết"
-      ]
-    },
-    {
-      "id": "k_full_57",
-      "kanji": "話",
-      "level": "N4",
-      "meanings": [
-        "Thoại",
-        "Nói chuyện"
-      ],
-      "onyomi": [
-        "ワ"
-      ],
-      "kunyomi": [
-        "はな・す",
-        "はなし"
-      ],
-      "vi_meanings": [
-        "Thoại",
-        "Nói chuyện"
-      ]
-    },
-    {
-      "id": "k_full_58",
-      "kanji": "買",
-      "level": "N4",
-      "meanings": [
-        "Mãi",
-        "Mua"
-      ],
-      "onyomi": [
-        "バイ"
-      ],
-      "kunyomi": [
-        "か・う"
-      ],
-      "vi_meanings": [
-        "Mãi",
-        "Mua"
-      ]
-    },
-    {
-      "id": "k_full_59",
+      "id": "k_n4_0119",
       "kanji": "立",
       "level": "N4",
       "meanings": [
@@ -57988,10 +59246,12 @@
         "Đứng"
       ],
       "onyomi": [
-        "リツ"
+        "リツ",
+        "リュウ"
       ],
       "kunyomi": [
-        "た・つ"
+        "た・つ",
+        "た・てる"
       ],
       "vi_meanings": [
         "Lập",
@@ -57999,50 +59259,2388 @@
       ]
     },
     {
-      "id": "k_full_60",
-      "kanji": "休",
+      "id": "k_n4_0120",
+      "kanji": "座",
       "level": "N4",
       "meanings": [
-        "Hưu",
-        "Nghỉ ngơi"
+        "Tọa",
+        "Ngồi",
+        "Chỗ ngồi"
+      ],
+      "onyomi": [
+        "ザ"
+      ],
+      "kunyomi": [
+        "すわ・る"
+      ],
+      "vi_meanings": [
+        "Tọa",
+        "Ngồi",
+        "Chỗ ngồi"
+      ]
+    },
+    {
+      "id": "k_n4_0121",
+      "kanji": "歩",
+      "level": "N4",
+      "meanings": [
+        "Bộ",
+        "Đi bộ"
+      ],
+      "onyomi": [
+        "ホ",
+        "ブ"
+      ],
+      "kunyomi": [
+        "ある・く",
+        "あゆ・む"
+      ],
+      "vi_meanings": [
+        "Bộ",
+        "Đi bộ"
+      ]
+    },
+    {
+      "id": "k_n4_0122",
+      "kanji": "走",
+      "level": "N4",
+      "meanings": [
+        "Tẩu",
+        "Chạy"
+      ],
+      "onyomi": [
+        "ソウ"
+      ],
+      "kunyomi": [
+        "はし・る"
+      ],
+      "vi_meanings": [
+        "Tẩu",
+        "Chạy"
+      ]
+    },
+    {
+      "id": "k_n4_0123",
+      "kanji": "起",
+      "level": "N4",
+      "meanings": [
+        "Khởi",
+        "Thức dậy",
+        "Xảy ra"
+      ],
+      "onyomi": [
+        "キ"
+      ],
+      "kunyomi": [
+        "お・きる",
+        "お・こす"
+      ],
+      "vi_meanings": [
+        "Khởi",
+        "Thức dậy",
+        "Xảy ra"
+      ]
+    },
+    {
+      "id": "k_n4_0124",
+      "kanji": "寝",
+      "level": "N4",
+      "meanings": [
+        "Tẩm",
+        "Ngủ"
+      ],
+      "onyomi": [
+        "シン"
+      ],
+      "kunyomi": [
+        "ね・る",
+        "ね・かす"
+      ],
+      "vi_meanings": [
+        "Tẩm",
+        "Ngủ"
+      ]
+    },
+    {
+      "id": "k_n4_0125",
+      "kanji": "始",
+      "level": "N4",
+      "meanings": [
+        "Thủy",
+        "Bắt đầu"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "はじ・まる",
+        "はじ・める"
+      ],
+      "vi_meanings": [
+        "Thủy",
+        "Bắt đầu"
+      ]
+    },
+    {
+      "id": "k_n4_0126",
+      "kanji": "終",
+      "level": "N4",
+      "meanings": [
+        "Chung",
+        "Kết thúc"
+      ],
+      "onyomi": [
+        "シュウ"
+      ],
+      "kunyomi": [
+        "お・わる",
+        "お・える"
+      ],
+      "vi_meanings": [
+        "Chung",
+        "Kết thúc"
+      ]
+    },
+    {
+      "id": "k_n4_0127",
+      "kanji": "開",
+      "level": "N4",
+      "meanings": [
+        "Khai",
+        "Mở"
+      ],
+      "onyomi": [
+        "カイ"
+      ],
+      "kunyomi": [
+        "ひら・く",
+        "あ・く",
+        "あ・ける"
+      ],
+      "vi_meanings": [
+        "Khai",
+        "Mở"
+      ]
+    },
+    {
+      "id": "k_n4_0128",
+      "kanji": "閉",
+      "level": "N4",
+      "meanings": [
+        "Bế",
+        "Đóng"
+      ],
+      "onyomi": [
+        "ヘイ"
+      ],
+      "kunyomi": [
+        "と・じる",
+        "し・まる",
+        "し・める"
+      ],
+      "vi_meanings": [
+        "Bế",
+        "Đóng"
+      ]
+    },
+    {
+      "id": "k_n4_0129",
+      "kanji": "待",
+      "level": "N4",
+      "meanings": [
+        "Đãi",
+        "Chờ đợi"
+      ],
+      "onyomi": [
+        "タイ"
+      ],
+      "kunyomi": [
+        "ま・つ"
+      ],
+      "vi_meanings": [
+        "Đãi",
+        "Chờ đợi"
+      ]
+    },
+    {
+      "id": "k_n4_0130",
+      "kanji": "止",
+      "level": "N4",
+      "meanings": [
+        "Chỉ",
+        "Dừng lại"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "と・まる",
+        "と・める"
+      ],
+      "vi_meanings": [
+        "Chỉ",
+        "Dừng lại"
+      ]
+    },
+    {
+      "id": "k_n4_0131",
+      "kanji": "入",
+      "level": "N4",
+      "meanings": [
+        "Nhập",
+        "Vào",
+        "Cho vào"
+      ],
+      "onyomi": [
+        "ニュウ"
+      ],
+      "kunyomi": [
+        "はい・る",
+        "い・れる"
+      ],
+      "vi_meanings": [
+        "Nhập",
+        "Vào",
+        "Cho vào"
+      ]
+    },
+    {
+      "id": "k_n4_0132",
+      "kanji": "出",
+      "level": "N4",
+      "meanings": [
+        "Xuất",
+        "Ra",
+        "Lấy ra"
+      ],
+      "onyomi": [
+        "シュツ",
+        "スイ"
+      ],
+      "kunyomi": [
+        "で・る",
+        "だ・す"
+      ],
+      "vi_meanings": [
+        "Xuất",
+        "Ra",
+        "Lấy ra"
+      ]
+    },
+    {
+      "id": "k_n4_0133",
+      "kanji": "思",
+      "level": "N4",
+      "meanings": [
+        "Tư",
+        "Nghĩ",
+        "Suy nghĩ"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "おも・う"
+      ],
+      "vi_meanings": [
+        "Tư",
+        "Nghĩ",
+        "Suy nghĩ"
+      ]
+    },
+    {
+      "id": "k_n4_0134",
+      "kanji": "考",
+      "level": "N4",
+      "meanings": [
+        "Khảo",
+        "Suy nghĩ",
+        "Xem xét"
+      ],
+      "onyomi": [
+        "コウ"
+      ],
+      "kunyomi": [
+        "かんが・える"
+      ],
+      "vi_meanings": [
+        "Khảo",
+        "Suy nghĩ",
+        "Xem xét"
+      ]
+    },
+    {
+      "id": "k_n4_0135",
+      "kanji": "知",
+      "level": "N4",
+      "meanings": [
+        "Tri",
+        "Biết",
+        "Hiểu biết"
+      ],
+      "onyomi": [
+        "チ"
+      ],
+      "kunyomi": [
+        "し・る"
+      ],
+      "vi_meanings": [
+        "Tri",
+        "Biết",
+        "Hiểu biết"
+      ]
+    },
+    {
+      "id": "k_n4_0136",
+      "kanji": "答",
+      "level": "N4",
+      "meanings": [
+        "Đáp",
+        "Trả lời",
+        "Câu trả lời"
+      ],
+      "onyomi": [
+        "トウ"
+      ],
+      "kunyomi": [
+        "こた・える",
+        "こた・え"
+      ],
+      "vi_meanings": [
+        "Đáp",
+        "Trả lời",
+        "Câu trả lời"
+      ]
+    },
+    {
+      "id": "k_n4_0137",
+      "kanji": "問",
+      "level": "N4",
+      "meanings": [
+        "Vấn",
+        "Hỏi",
+        "Vấn đề"
+      ],
+      "onyomi": [
+        "モン"
+      ],
+      "kunyomi": [
+        "と・う",
+        "と・い"
+      ],
+      "vi_meanings": [
+        "Vấn",
+        "Hỏi",
+        "Vấn đề"
+      ]
+    },
+    {
+      "id": "k_n4_0138",
+      "kanji": "題",
+      "level": "N4",
+      "meanings": [
+        "Đề",
+        "Chủ đề",
+        "Đề tài"
+      ],
+      "onyomi": [
+        "ダイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Đề",
+        "Chủ đề",
+        "Đề tài"
+      ]
+    },
+    {
+      "id": "k_n4_0139",
+      "kanji": "住",
+      "level": "N4",
+      "meanings": [
+        "Trú",
+        "Sống",
+        "Ở"
+      ],
+      "onyomi": [
+        "ジュウ"
+      ],
+      "kunyomi": [
+        "す・む",
+        "す・まう"
+      ],
+      "vi_meanings": [
+        "Trú",
+        "Sống",
+        "Ở"
+      ]
+    },
+    {
+      "id": "k_n4_0140",
+      "kanji": "所",
+      "level": "N4",
+      "meanings": [
+        "Sở",
+        "Nơi chốn",
+        "Địa điểm"
+      ],
+      "onyomi": [
+        "ショ"
+      ],
+      "kunyomi": [
+        "ところ"
+      ],
+      "vi_meanings": [
+        "Sở",
+        "Nơi chốn",
+        "Địa điểm"
+      ]
+    },
+    {
+      "id": "k_n4_0141",
+      "kanji": "屋",
+      "level": "N4",
+      "meanings": [
+        "Ốc",
+        "Nhà",
+        "Cửa hàng"
+      ],
+      "onyomi": [
+        "オク"
+      ],
+      "kunyomi": [
+        "や"
+      ],
+      "vi_meanings": [
+        "Ốc",
+        "Nhà",
+        "Cửa hàng"
+      ]
+    },
+    {
+      "id": "k_n4_0142",
+      "kanji": "室",
+      "level": "N4",
+      "meanings": [
+        "Thất",
+        "Phòng"
+      ],
+      "onyomi": [
+        "シツ"
+      ],
+      "kunyomi": [
+        "むろ"
+      ],
+      "vi_meanings": [
+        "Thất",
+        "Phòng"
+      ]
+    },
+    {
+      "id": "k_n4_0143",
+      "kanji": "堂",
+      "level": "N4",
+      "meanings": [
+        "Đường",
+        "Hội trường",
+        "Chính đường"
+      ],
+      "onyomi": [
+        "ドウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Đường",
+        "Hội trường",
+        "Chính đường"
+      ]
+    },
+    {
+      "id": "k_n4_0144",
+      "kanji": "館",
+      "level": "N4",
+      "meanings": [
+        "Quán",
+        "Tòa nhà",
+        "Bảo tàng"
+      ],
+      "onyomi": [
+        "カン"
+      ],
+      "kunyomi": [
+        "やかた"
+      ],
+      "vi_meanings": [
+        "Quán",
+        "Tòa nhà",
+        "Bảo tàng"
+      ]
+    },
+    {
+      "id": "k_n4_0145",
+      "kanji": "院",
+      "level": "N4",
+      "meanings": [
+        "Viện",
+        "Bệnh viện",
+        "Học viện"
+      ],
+      "onyomi": [
+        "イン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Viện",
+        "Bệnh viện",
+        "Học viện"
+      ]
+    },
+    {
+      "id": "k_n4_0146",
+      "kanji": "病",
+      "level": "N4",
+      "meanings": [
+        "Bệnh",
+        "Bệnh tật",
+        "Ốm"
+      ],
+      "onyomi": [
+        "ビョウ",
+        "ヘイ"
+      ],
+      "kunyomi": [
+        "や・む",
+        "やまい"
+      ],
+      "vi_meanings": [
+        "Bệnh",
+        "Bệnh tật",
+        "Ốm"
+      ]
+    },
+    {
+      "id": "k_n4_0147",
+      "kanji": "医",
+      "level": "N4",
+      "meanings": [
+        "Y",
+        "Y học",
+        "Bác sĩ"
+      ],
+      "onyomi": [
+        "イ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Y",
+        "Y học",
+        "Bác sĩ"
+      ]
+    },
+    {
+      "id": "k_n4_0148",
+      "kanji": "者",
+      "level": "N4",
+      "meanings": [
+        "Giả",
+        "Người"
+      ],
+      "onyomi": [
+        "シャ"
+      ],
+      "kunyomi": [
+        "もの"
+      ],
+      "vi_meanings": [
+        "Giả",
+        "Người"
+      ]
+    },
+    {
+      "id": "k_n4_0149",
+      "kanji": "薬",
+      "level": "N4",
+      "meanings": [
+        "Dược",
+        "Thuốc"
+      ],
+      "onyomi": [
+        "ヤク"
+      ],
+      "kunyomi": [
+        "くすり"
+      ],
+      "vi_meanings": [
+        "Dược",
+        "Thuốc"
+      ]
+    },
+    {
+      "id": "k_n4_0150",
+      "kanji": "死",
+      "level": "N4",
+      "meanings": [
+        "Tử",
+        "Chết"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "し・ぬ"
+      ],
+      "vi_meanings": [
+        "Tử",
+        "Chết"
+      ]
+    },
+    {
+      "id": "k_n4_0151",
+      "kanji": "心",
+      "level": "N4",
+      "meanings": [
+        "Tâm",
+        "Trái tim",
+        "Tấm lòng"
+      ],
+      "onyomi": [
+        "シン"
+      ],
+      "kunyomi": [
+        "こころ"
+      ],
+      "vi_meanings": [
+        "Tâm",
+        "Trái tim",
+        "Tấm lòng"
+      ]
+    },
+    {
+      "id": "k_n4_0152",
+      "kanji": "体",
+      "level": "N4",
+      "meanings": [
+        "Thể",
+        "Cơ thể",
+        "Thân thể"
+      ],
+      "onyomi": [
+        "タイ",
+        "テイ"
+      ],
+      "kunyomi": [
+        "からだ"
+      ],
+      "vi_meanings": [
+        "Thể",
+        "Cơ thể",
+        "Thân thể"
+      ]
+    },
+    {
+      "id": "k_n4_0153",
+      "kanji": "頭",
+      "level": "N4",
+      "meanings": [
+        "Đầu",
+        "Cái đầu"
+      ],
+      "onyomi": [
+        "トウ",
+        "ズ"
+      ],
+      "kunyomi": [
+        "あたま",
+        "かしら"
+      ],
+      "vi_meanings": [
+        "Đầu",
+        "Cái đầu"
+      ]
+    },
+    {
+      "id": "k_n4_0154",
+      "kanji": "顔",
+      "level": "N4",
+      "meanings": [
+        "Nhan",
+        "Khuôn mặt"
+      ],
+      "onyomi": [
+        "ガン"
+      ],
+      "kunyomi": [
+        "かお"
+      ],
+      "vi_meanings": [
+        "Nhan",
+        "Khuôn mặt"
+      ]
+    },
+    {
+      "id": "k_n4_0155",
+      "kanji": "首",
+      "level": "N4",
+      "meanings": [
+        "Thủ",
+        "Cổ",
+        "Đứng đầu"
+      ],
+      "onyomi": [
+        "シュ"
+      ],
+      "kunyomi": [
+        "くび"
+      ],
+      "vi_meanings": [
+        "Thủ",
+        "Cổ",
+        "Đứng đầu"
+      ]
+    },
+    {
+      "id": "k_n4_0156",
+      "kanji": "声",
+      "level": "N4",
+      "meanings": [
+        "Thanh",
+        "Tiếng",
+        "Giọng nói"
+      ],
+      "onyomi": [
+        "セイ",
+        "ショウ"
+      ],
+      "kunyomi": [
+        "こえ",
+        "こわ"
+      ],
+      "vi_meanings": [
+        "Thanh",
+        "Tiếng",
+        "Giọng nói"
+      ]
+    },
+    {
+      "id": "k_n4_0157",
+      "kanji": "音",
+      "level": "N4",
+      "meanings": [
+        "Âm",
+        "Âm thanh"
+      ],
+      "onyomi": [
+        "オン",
+        "イン"
+      ],
+      "kunyomi": [
+        "おと",
+        "ね"
+      ],
+      "vi_meanings": [
+        "Âm",
+        "Âm thanh"
+      ]
+    },
+    {
+      "id": "k_n4_0158",
+      "kanji": "楽",
+      "level": "N4",
+      "meanings": [
+        "Lạc",
+        "Vui vẻ",
+        "Âm nhạc"
+      ],
+      "onyomi": [
+        "ラク",
+        "ガク"
+      ],
+      "kunyomi": [
+        "たの・しい",
+        "たの・しむ"
+      ],
+      "vi_meanings": [
+        "Lạc",
+        "Vui vẻ",
+        "Âm nhạc"
+      ]
+    },
+    {
+      "id": "k_n4_0159",
+      "kanji": "歌",
+      "level": "N4",
+      "meanings": [
+        "Ca",
+        "Hát",
+        "Bài hát"
+      ],
+      "onyomi": [
+        "カ"
+      ],
+      "kunyomi": [
+        "うた",
+        "うた・う"
+      ],
+      "vi_meanings": [
+        "Ca",
+        "Hát",
+        "Bài hát"
+      ]
+    },
+    {
+      "id": "k_n4_0160",
+      "kanji": "写",
+      "level": "N4",
+      "meanings": [
+        "Tả",
+        "Chụp",
+        "Sao chép"
+      ],
+      "onyomi": [
+        "シャ"
+      ],
+      "kunyomi": [
+        "うつ・す",
+        "うつ・る"
+      ],
+      "vi_meanings": [
+        "Tả",
+        "Chụp",
+        "Sao chép"
+      ]
+    },
+    {
+      "id": "k_n4_0161",
+      "kanji": "真",
+      "level": "N4",
+      "meanings": [
+        "Chân",
+        "Thật",
+        "Chân thực"
+      ],
+      "onyomi": [
+        "シン"
+      ],
+      "kunyomi": [
+        "ま",
+        "まこと"
+      ],
+      "vi_meanings": [
+        "Chân",
+        "Thật",
+        "Chân thực"
+      ]
+    },
+    {
+      "id": "k_n4_0162",
+      "kanji": "旅",
+      "level": "N4",
+      "meanings": [
+        "Lữ",
+        "Du lịch",
+        "Chuyến đi"
+      ],
+      "onyomi": [
+        "リョ"
+      ],
+      "kunyomi": [
+        "たび"
+      ],
+      "vi_meanings": [
+        "Lữ",
+        "Du lịch",
+        "Chuyến đi"
+      ]
+    },
+    {
+      "id": "k_n4_0163",
+      "kanji": "世",
+      "level": "N4",
+      "meanings": [
+        "Thế",
+        "Thế giới",
+        "Đời"
+      ],
+      "onyomi": [
+        "セイ",
+        "セ"
+      ],
+      "kunyomi": [
+        "よ"
+      ],
+      "vi_meanings": [
+        "Thế",
+        "Thế giới",
+        "Đời"
+      ]
+    },
+    {
+      "id": "k_n4_0164",
+      "kanji": "界",
+      "level": "N4",
+      "meanings": [
+        "Giới",
+        "Thế giới",
+        "Ranh giới"
+      ],
+      "onyomi": [
+        "カイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Giới",
+        "Thế giới",
+        "Ranh giới"
+      ]
+    },
+    {
+      "id": "k_n4_0165",
+      "kanji": "度",
+      "level": "N4",
+      "meanings": [
+        "Độ",
+        "Lần",
+        "Mức độ"
+      ],
+      "onyomi": [
+        "ド",
+        "ト"
+      ],
+      "kunyomi": [
+        "たび"
+      ],
+      "vi_meanings": [
+        "Độ",
+        "Lần",
+        "Mức độ"
+      ]
+    },
+    {
+      "id": "k_n4_0166",
+      "kanji": "回",
+      "level": "N4",
+      "meanings": [
+        "Hồi",
+        "Quay lại",
+        "Lần"
+      ],
+      "onyomi": [
+        "カイ",
+        "エ"
+      ],
+      "kunyomi": [
+        "まわ・る",
+        "まわ・す"
+      ],
+      "vi_meanings": [
+        "Hồi",
+        "Quay lại",
+        "Lần"
+      ]
+    },
+    {
+      "id": "k_n4_0167",
+      "kanji": "用",
+      "level": "N4",
+      "meanings": [
+        "Dụng",
+        "Dùng",
+        "Sử dụng",
+        "Việc bận"
+      ],
+      "onyomi": [
+        "ヨウ"
+      ],
+      "kunyomi": [
+        "もち・いる"
+      ],
+      "vi_meanings": [
+        "Dụng",
+        "Dùng",
+        "Sử dụng",
+        "Việc bận"
+      ]
+    },
+    {
+      "id": "k_n4_0168",
+      "kanji": "事",
+      "level": "N4",
+      "meanings": [
+        "Sự",
+        "Việc",
+        "Sự việc"
+      ],
+      "onyomi": [
+        "ジ",
+        "ズ"
+      ],
+      "kunyomi": [
+        "こと"
+      ],
+      "vi_meanings": [
+        "Sự",
+        "Việc",
+        "Sự việc"
+      ]
+    },
+    {
+      "id": "k_n4_0169",
+      "kanji": "仕",
+      "level": "N4",
+      "meanings": [
+        "Sĩ",
+        "Phục vụ",
+        "Làm việc"
+      ],
+      "onyomi": [
+        "シ",
+        "ジ"
+      ],
+      "kunyomi": [
+        "つか・える"
+      ],
+      "vi_meanings": [
+        "Sĩ",
+        "Phục vụ",
+        "Làm việc"
+      ]
+    },
+    {
+      "id": "k_n4_0170",
+      "kanji": "使",
+      "level": "N4",
+      "meanings": [
+        "Sử",
+        "Dùng",
+        "Sử dụng"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "つか・う"
+      ],
+      "vi_meanings": [
+        "Sử",
+        "Dùng",
+        "Sử dụng"
+      ]
+    },
+    {
+      "id": "k_n4_0171",
+      "kanji": "作",
+      "level": "N4",
+      "meanings": [
+        "Tác",
+        "Làm",
+        "Chế tạo"
+      ],
+      "onyomi": [
+        "サク",
+        "サ"
+      ],
+      "kunyomi": [
+        "つく・る"
+      ],
+      "vi_meanings": [
+        "Tác",
+        "Làm",
+        "Chế tạo"
+      ]
+    },
+    {
+      "id": "k_n4_0172",
+      "kanji": "品",
+      "level": "N4",
+      "meanings": [
+        "Phẩm",
+        "Hàng hóa",
+        "Vật phẩm"
+      ],
+      "onyomi": [
+        "ヒン"
+      ],
+      "kunyomi": [
+        "しな"
+      ],
+      "vi_meanings": [
+        "Phẩm",
+        "Hàng hóa",
+        "Vật phẩm"
+      ]
+    },
+    {
+      "id": "k_n4_0173",
+      "kanji": "物",
+      "level": "N4",
+      "meanings": [
+        "Vật",
+        "Đồ vật"
+      ],
+      "onyomi": [
+        "ブツ",
+        "モツ"
+      ],
+      "kunyomi": [
+        "もの"
+      ],
+      "vi_meanings": [
+        "Vật",
+        "Đồ vật"
+      ]
+    },
+    {
+      "id": "k_n4_0174",
+      "kanji": "料",
+      "level": "N4",
+      "meanings": [
+        "Liệu",
+        "Nguyên liệu",
+        "Phí"
+      ],
+      "onyomi": [
+        "リョウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Liệu",
+        "Nguyên liệu",
+        "Phí"
+      ]
+    },
+    {
+      "id": "k_n4_0175",
+      "kanji": "理",
+      "level": "N4",
+      "meanings": [
+        "Lý",
+        "Lý do",
+        "Chữa trị",
+        "Xử lý"
+      ],
+      "onyomi": [
+        "リ"
+      ],
+      "kunyomi": [
+        "ことわり"
+      ],
+      "vi_meanings": [
+        "Lý",
+        "Lý do",
+        "Chữa trị",
+        "Xử lý"
+      ]
+    },
+    {
+      "id": "k_n4_0176",
+      "kanji": "飯",
+      "level": "N4",
+      "meanings": [
+        "Phạn",
+        "Cơm",
+        "Bữa ăn"
+      ],
+      "onyomi": [
+        "ハン"
+      ],
+      "kunyomi": [
+        "めし"
+      ],
+      "vi_meanings": [
+        "Phạn",
+        "Cơm",
+        "Bữa ăn"
+      ]
+    },
+    {
+      "id": "k_n4_0177",
+      "kanji": "牛",
+      "level": "N4",
+      "meanings": [
+        "Ngưu",
+        "Bò"
+      ],
+      "onyomi": [
+        "ギュウ"
+      ],
+      "kunyomi": [
+        "うし"
+      ],
+      "vi_meanings": [
+        "Ngưu",
+        "Bò"
+      ]
+    },
+    {
+      "id": "k_n4_0178",
+      "kanji": "鳥",
+      "level": "N4",
+      "meanings": [
+        "Điểu",
+        "Chim"
+      ],
+      "onyomi": [
+        "チョウ"
+      ],
+      "kunyomi": [
+        "とり"
+      ],
+      "vi_meanings": [
+        "Điểu",
+        "Chim"
+      ]
+    },
+    {
+      "id": "k_n4_0179",
+      "kanji": "親",
+      "level": "N4",
+      "meanings": [
+        "Thân",
+        "Bố mẹ",
+        "Thân thiết"
+      ],
+      "onyomi": [
+        "シン"
+      ],
+      "kunyomi": [
+        "おや",
+        "した・しい"
+      ],
+      "vi_meanings": [
+        "Thân",
+        "Bố mẹ",
+        "Thân thiết"
+      ]
+    },
+    {
+      "id": "k_n4_0180",
+      "kanji": "兄",
+      "level": "N4",
+      "meanings": [
+        "Huynh",
+        "Anh trai"
+      ],
+      "onyomi": [
+        "ケイ",
+        "キョウ"
+      ],
+      "kunyomi": [
+        "あに"
+      ],
+      "vi_meanings": [
+        "Huynh",
+        "Anh trai"
+      ]
+    },
+    {
+      "id": "k_n4_0181",
+      "kanji": "弟",
+      "level": "N4",
+      "meanings": [
+        "Đệ",
+        "Em trai"
+      ],
+      "onyomi": [
+        "テイ",
+        "ダイ"
+      ],
+      "kunyomi": [
+        "おとうと"
+      ],
+      "vi_meanings": [
+        "Đệ",
+        "Em trai"
+      ]
+    },
+    {
+      "id": "k_n4_0182",
+      "kanji": "姉",
+      "level": "N4",
+      "meanings": [
+        "Tỷ",
+        "Chị gái"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "あね"
+      ],
+      "vi_meanings": [
+        "Tỷ",
+        "Chị gái"
+      ]
+    },
+    {
+      "id": "k_n4_0183",
+      "kanji": "妹",
+      "level": "N4",
+      "meanings": [
+        "Muội",
+        "Em gái"
+      ],
+      "onyomi": [
+        "マイ"
+      ],
+      "kunyomi": [
+        "いもうと"
+      ],
+      "vi_meanings": [
+        "Muội",
+        "Em gái"
+      ]
+    },
+    {
+      "id": "k_n4_0184",
+      "kanji": "家",
+      "level": "N4",
+      "meanings": [
+        "Gia",
+        "Nhà",
+        "Gia đình"
+      ],
+      "onyomi": [
+        "カ",
+        "ケ"
+      ],
+      "kunyomi": [
+        "いえ",
+        "や"
+      ],
+      "vi_meanings": [
+        "Gia",
+        "Nhà",
+        "Gia đình"
+      ]
+    },
+    {
+      "id": "k_n4_0185",
+      "kanji": "族",
+      "level": "N4",
+      "meanings": [
+        "Tộc",
+        "Gia tộc",
+        "Bộ tộc"
+      ],
+      "onyomi": [
+        "ゾク"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Tộc",
+        "Gia tộc",
+        "Bộ tộc"
+      ]
+    },
+    {
+      "id": "k_n4_0186",
+      "kanji": "自",
+      "level": "N4",
+      "meanings": [
+        "Tự",
+        "Bản thân",
+        "Tự mình"
+      ],
+      "onyomi": [
+        "ジ",
+        "シ"
+      ],
+      "kunyomi": [
+        "みずか・ら"
+      ],
+      "vi_meanings": [
+        "Tự",
+        "Bản thân",
+        "Tự mình"
+      ]
+    },
+    {
+      "id": "k_n4_0187",
+      "kanji": "動",
+      "level": "N4",
+      "meanings": [
+        "Động",
+        "Chuyển động",
+        "Cử động"
+      ],
+      "onyomi": [
+        "ドウ"
+      ],
+      "kunyomi": [
+        "うご・く",
+        "うご・かす"
+      ],
+      "vi_meanings": [
+        "Động",
+        "Chuyển động",
+        "Cử động"
+      ]
+    },
+    {
+      "id": "k_n4_0188",
+      "kanji": "運",
+      "level": "N4",
+      "meanings": [
+        "Vận",
+        "Vận chuyển",
+        "May mắn"
+      ],
+      "onyomi": [
+        "ウン"
+      ],
+      "kunyomi": [
+        "はこ・ぶ"
+      ],
+      "vi_meanings": [
+        "Vận",
+        "Vận chuyển",
+        "May mắn"
+      ]
+    },
+    {
+      "id": "k_n4_0189",
+      "kanji": "転",
+      "level": "N4",
+      "meanings": [
+        "Chuyển",
+        "Lăn",
+        "Ngã",
+        "Chuyển biến"
+      ],
+      "onyomi": [
+        "テン"
+      ],
+      "kunyomi": [
+        "ころ・がる",
+        "ころ・ぶ"
+      ],
+      "vi_meanings": [
+        "Chuyển",
+        "Lăn",
+        "Ngã",
+        "Chuyển biến"
+      ]
+    },
+    {
+      "id": "k_n4_0190",
+      "kanji": "送",
+      "level": "N4",
+      "meanings": [
+        "Tống",
+        "Gửi",
+        "Tiễn"
+      ],
+      "onyomi": [
+        "ソウ"
+      ],
+      "kunyomi": [
+        "おく・る"
+      ],
+      "vi_meanings": [
+        "Tống",
+        "Gửi",
+        "Tiễn"
+      ]
+    },
+    {
+      "id": "k_n4_0191",
+      "kanji": "借",
+      "level": "N4",
+      "meanings": [
+        "Tá",
+        "Mượn",
+        "Vay"
+      ],
+      "onyomi": [
+        "シャク"
+      ],
+      "kunyomi": [
+        "か・りる"
+      ],
+      "vi_meanings": [
+        "Tá",
+        "Mượn",
+        "Vay"
+      ]
+    },
+    {
+      "id": "k_n4_0192",
+      "kanji": "貸",
+      "level": "N4",
+      "meanings": [
+        "Thải",
+        "Cho vay",
+        "Cho mượn"
+      ],
+      "onyomi": [
+        "タイ"
+      ],
+      "kunyomi": [
+        "か・す"
+      ],
+      "vi_meanings": [
+        "Thải",
+        "Cho vay",
+        "Cho mượn"
+      ]
+    },
+    {
+      "id": "k_n4_0193",
+      "kanji": "返",
+      "level": "N4",
+      "meanings": [
+        "Phản",
+        "Trả lại"
+      ],
+      "onyomi": [
+        "ヘン"
+      ],
+      "kunyomi": [
+        "かえ・す",
+        "かえ・る"
+      ],
+      "vi_meanings": [
+        "Phản",
+        "Trả lại"
+      ]
+    },
+    {
+      "id": "k_n4_0194",
+      "kanji": "洗",
+      "level": "N4",
+      "meanings": [
+        "Tẩy",
+        "Rửa",
+        "Giặt"
+      ],
+      "onyomi": [
+        "セン"
+      ],
+      "kunyomi": [
+        "あら・う"
+      ],
+      "vi_meanings": [
+        "Tẩy",
+        "Rửa",
+        "Giặt"
+      ]
+    },
+    {
+      "id": "k_n4_0195",
+      "kanji": "急",
+      "level": "N4",
+      "meanings": [
+        "Cấp",
+        "Gấp",
+        "Vội vã"
       ],
       "onyomi": [
         "キュウ"
       ],
       "kunyomi": [
-        "やす・む"
+        "いそ・ぐ"
       ],
       "vi_meanings": [
-        "Hưu",
-        "Nghỉ ngơi"
+        "Cấp",
+        "Gấp",
+        "Vội vã"
       ]
     },
     {
-      "id": "k_full_61",
+      "id": "k_n4_0196",
+      "kanji": "通",
+      "level": "N4",
+      "meanings": [
+        "Thông",
+        "Đi qua",
+        "Thông qua"
+      ],
+      "onyomi": [
+        "ツウ"
+      ],
+      "kunyomi": [
+        "とお・る",
+        "かよ・う"
+      ],
+      "vi_meanings": [
+        "Thông",
+        "Đi qua",
+        "Thông qua"
+      ]
+    },
+    {
+      "id": "k_n4_0197",
+      "kanji": "降",
+      "level": "N4",
+      "meanings": [
+        "Giáng",
+        "Xuống xe",
+        "Rơi (mưa/tuyết)"
+      ],
+      "onyomi": [
+        "コウ"
+      ],
+      "kunyomi": [
+        "お・りる",
+        "ふ・る"
+      ],
+      "vi_meanings": [
+        "Giáng",
+        "Xuống xe",
+        "Rơi (mưa/tuyết)"
+      ]
+    },
+    {
+      "id": "k_n4_0198",
+      "kanji": "着",
+      "level": "N4",
+      "meanings": [
+        "Trước",
+        "Mặc",
+        "Đến nơi"
+      ],
+      "onyomi": [
+        "チャク",
+        "ジャク"
+      ],
+      "kunyomi": [
+        "き・る",
+        "つ・く"
+      ],
+      "vi_meanings": [
+        "Trước",
+        "Mặc",
+        "Đến nơi"
+      ]
+    },
+    {
+      "id": "k_n4_0199",
+      "kanji": "海",
+      "level": "N4",
+      "meanings": [
+        "Hải",
+        "Biển"
+      ],
+      "onyomi": [
+        "カイ"
+      ],
+      "kunyomi": [
+        "うみ"
+      ],
+      "vi_meanings": [
+        "Hải",
+        "Biển"
+      ]
+    },
+    {
+      "id": "k_n4_0200",
+      "kanji": "池",
+      "level": "N4",
+      "meanings": [
+        "Trì",
+        "Ao hồ"
+      ],
+      "onyomi": [
+        "チ"
+      ],
+      "kunyomi": [
+        "いけ"
+      ],
+      "vi_meanings": [
+        "Trì",
+        "Ao hồ"
+      ]
+    },
+    {
+      "id": "k_n4_0201",
+      "kanji": "町",
+      "level": "N4",
+      "meanings": [
+        "Đinh",
+        "Thị trấn",
+        "Khu phố"
+      ],
+      "onyomi": [
+        "チョウ"
+      ],
+      "kunyomi": [
+        "まち"
+      ],
+      "vi_meanings": [
+        "Đinh",
+        "Thị trấn",
+        "Khu phố"
+      ]
+    },
+    {
+      "id": "k_n4_0202",
+      "kanji": "市",
+      "level": "N4",
+      "meanings": [
+        "Thị",
+        "Thành phố",
+        "Chợ"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "いち"
+      ],
+      "vi_meanings": [
+        "Thị",
+        "Thành phố",
+        "Chợ"
+      ]
+    },
+    {
+      "id": "k_n4_0203",
+      "kanji": "村",
+      "level": "N4",
+      "meanings": [
+        "Thôn",
+        "Làng"
+      ],
+      "onyomi": [
+        "ソン"
+      ],
+      "kunyomi": [
+        "むら"
+      ],
+      "vi_meanings": [
+        "Thôn",
+        "Làng"
+      ]
+    },
+    {
+      "id": "k_n4_0204",
+      "kanji": "県",
+      "level": "N4",
+      "meanings": [
+        "Huyện",
+        "Tỉnh (Nhật Bản)"
+      ],
+      "onyomi": [
+        "ケン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Huyện",
+        "Tỉnh (Nhật Bản)"
+      ]
+    },
+    {
+      "id": "k_n4_0205",
+      "kanji": "春",
+      "level": "N4",
+      "meanings": [
+        "Xuân",
+        "Mùa xuân"
+      ],
+      "onyomi": [
+        "シュン"
+      ],
+      "kunyomi": [
+        "はる"
+      ],
+      "vi_meanings": [
+        "Xuân",
+        "Mùa xuân"
+      ]
+    },
+    {
+      "id": "k_n4_0206",
+      "kanji": "夏",
+      "level": "N4",
+      "meanings": [
+        "Hạ",
+        "Mùa hè"
+      ],
+      "onyomi": [
+        "カ",
+        "ゲ"
+      ],
+      "kunyomi": [
+        "なつ"
+      ],
+      "vi_meanings": [
+        "Hạ",
+        "Mùa hè"
+      ]
+    },
+    {
+      "id": "k_n4_0207",
+      "kanji": "秋",
+      "level": "N4",
+      "meanings": [
+        "Thu",
+        "Mùa thu"
+      ],
+      "onyomi": [
+        "シュウ"
+      ],
+      "kunyomi": [
+        "あき"
+      ],
+      "vi_meanings": [
+        "Thu",
+        "Mùa thu"
+      ]
+    },
+    {
+      "id": "k_n4_0208",
+      "kanji": "冬",
+      "level": "N4",
+      "meanings": [
+        "Đông",
+        "Mùa đông"
+      ],
+      "onyomi": [
+        "トウ"
+      ],
+      "kunyomi": [
+        "ふゆ"
+      ],
+      "vi_meanings": [
+        "Đông",
+        "Mùa đông"
+      ]
+    },
+    {
+      "id": "k_n4_0209",
+      "kanji": "暑",
+      "level": "N4",
+      "meanings": [
+        "Thử",
+        "Nóng (thời tiết)"
+      ],
+      "onyomi": [
+        "ショ"
+      ],
+      "kunyomi": [
+        "あつ・い"
+      ],
+      "vi_meanings": [
+        "Thử",
+        "Nóng (thời tiết)"
+      ]
+    },
+    {
+      "id": "k_n4_0210",
+      "kanji": "寒",
+      "level": "N4",
+      "meanings": [
+        "Hàn",
+        "Lạnh (thời tiết)"
+      ],
+      "onyomi": [
+        "カン"
+      ],
+      "kunyomi": [
+        "さむ・い"
+      ],
+      "vi_meanings": [
+        "Hàn",
+        "Lạnh (thời tiết)"
+      ]
+    },
+    {
+      "id": "k_n4_0211",
+      "kanji": "暖",
+      "level": "N4",
+      "meanings": [
+        "Noãn",
+        "Ấm áp"
+      ],
+      "onyomi": [
+        "ダン"
+      ],
+      "kunyomi": [
+        "あたた・かい"
+      ],
+      "vi_meanings": [
+        "Noãn",
+        "Ấm áp"
+      ]
+    },
+    {
+      "id": "k_n4_0212",
+      "kanji": "涼",
+      "level": "N4",
+      "meanings": [
+        "Lương",
+        "Mát mẻ"
+      ],
+      "onyomi": [
+        "リョウ"
+      ],
+      "kunyomi": [
+        "すず・しい"
+      ],
+      "vi_meanings": [
+        "Lương",
+        "Mát mẻ"
+      ]
+    },
+    {
+      "id": "k_n4_0213",
+      "kanji": "強",
+      "level": "N4",
+      "meanings": [
+        "Cường",
+        "Mạnh mẽ"
+      ],
+      "onyomi": [
+        "キョウ",
+        "ゴウ"
+      ],
+      "kunyomi": [
+        "つよ・い"
+      ],
+      "vi_meanings": [
+        "Cường",
+        "Mạnh mẽ"
+      ]
+    },
+    {
+      "id": "k_n4_0214",
+      "kanji": "弱",
+      "level": "N4",
+      "meanings": [
+        "Nhược",
+        "Yếu ớt"
+      ],
+      "onyomi": [
+        "ジャク"
+      ],
+      "kunyomi": [
+        "よわ・い"
+      ],
+      "vi_meanings": [
+        "Nhược",
+        "Yếu ớt"
+      ]
+    },
+    {
+      "id": "k_n4_0215",
+      "kanji": "明",
+      "level": "N4",
+      "meanings": [
+        "Minh",
+        "Sáng",
+        "Rõ ràng"
+      ],
+      "onyomi": [
+        "メイ",
+        "ミョウ"
+      ],
+      "kunyomi": [
+        "あか・るい",
+        "あ・ける"
+      ],
+      "vi_meanings": [
+        "Minh",
+        "Sáng",
+        "Rõ ràng"
+      ]
+    },
+    {
+      "id": "k_n4_0216",
+      "kanji": "暗",
+      "level": "N4",
+      "meanings": [
+        "Ám",
+        "Tối tăm"
+      ],
+      "onyomi": [
+        "アン"
+      ],
+      "kunyomi": [
+        "くら・い"
+      ],
+      "vi_meanings": [
+        "Ám",
+        "Tối tăm"
+      ]
+    },
+    {
+      "id": "k_n4_0217",
+      "kanji": "有",
+      "level": "N4",
+      "meanings": [
+        "Hữu",
+        "Có",
+        "Tồn tại"
+      ],
+      "onyomi": [
+        "ユウ",
+        "ウ"
+      ],
+      "kunyomi": [
+        "あ・る"
+      ],
+      "vi_meanings": [
+        "Hữu",
+        "Có",
+        "Tồn tại"
+      ]
+    },
+    {
+      "id": "k_n4_0218",
+      "kanji": "無",
+      "level": "N4",
+      "meanings": [
+        "Vô",
+        "Không có"
+      ],
+      "onyomi": [
+        "ム",
+        "ブ"
+      ],
+      "kunyomi": [
+        "な・い"
+      ],
+      "vi_meanings": [
+        "Vô",
+        "Không có"
+      ]
+    },
+    {
+      "id": "k_n4_0219",
+      "kanji": "切",
+      "level": "N4",
+      "meanings": [
+        "Thiết",
+        "Cắt",
+        "Hết"
+      ],
+      "onyomi": [
+        "セツ",
+        "サイ"
+      ],
+      "kunyomi": [
+        "き・る",
+        "き・れる"
+      ],
+      "vi_meanings": [
+        "Thiết",
+        "Cắt",
+        "Hết"
+      ]
+    },
+    {
+      "id": "k_n4_0220",
+      "kanji": "教",
+      "level": "N4",
+      "meanings": [
+        "Giáo",
+        "Dạy",
+        "Chỉ bảo"
+      ],
+      "onyomi": [
+        "キョウ"
+      ],
+      "kunyomi": [
+        "おし・える",
+        "おそ・わる"
+      ],
+      "vi_meanings": [
+        "Giáo",
+        "Dạy",
+        "Chỉ bảo"
+      ]
+    },
+    {
+      "id": "k_n4_0221",
+      "kanji": "習",
+      "level": "N4",
+      "meanings": [
+        "Tập",
+        "Học tập",
+        "Luyện tập"
+      ],
+      "onyomi": [
+        "シュウ"
+      ],
+      "kunyomi": [
+        "なら・う"
+      ],
+      "vi_meanings": [
+        "Tập",
+        "Học tập",
+        "Luyện tập"
+      ]
+    },
+    {
+      "id": "k_n4_0222",
+      "kanji": "研",
+      "level": "N4",
+      "meanings": [
+        "Nghiên",
+        "Mài giũa",
+        "Nghiên cứu"
+      ],
+      "onyomi": [
+        "ケン"
+      ],
+      "kunyomi": [
+        "と・ぐ"
+      ],
+      "vi_meanings": [
+        "Nghiên",
+        "Mài giũa",
+        "Nghiên cứu"
+      ]
+    },
+    {
+      "id": "k_n4_0223",
+      "kanji": "究",
+      "level": "N4",
+      "meanings": [
+        "Cứu",
+        "Nghiên cứu sâu"
+      ],
+      "onyomi": [
+        "キュウ"
+      ],
+      "kunyomi": [
+        "きわ・める"
+      ],
+      "vi_meanings": [
+        "Cứu",
+        "Nghiên cứu sâu"
+      ]
+    },
+    {
+      "id": "k_n4_0224",
+      "kanji": "試",
+      "level": "N4",
+      "meanings": [
+        "Thí",
+        "Thử",
+        "Thi cử"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "こころ・みる",
+        "ため・す"
+      ],
+      "vi_meanings": [
+        "Thí",
+        "Thử",
+        "Thi cử"
+      ]
+    },
+    {
+      "id": "k_n4_0225",
+      "kanji": "験",
+      "level": "N4",
+      "meanings": [
+        "Nghiệm",
+        "Kinh nghiệm",
+        "Thí nghiệm"
+      ],
+      "onyomi": [
+        "ケン",
+        "ゲン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Nghiệm",
+        "Kinh nghiệm",
+        "Thí nghiệm"
+      ]
+    },
+    {
+      "id": "k_n4_0226",
+      "kanji": "銀",
+      "level": "N4",
+      "meanings": [
+        "Ngân",
+        "Bạc",
+        "Ngân hàng"
+      ],
+      "onyomi": [
+        "ギン"
+      ],
+      "kunyomi": [
+        "しろがね"
+      ],
+      "vi_meanings": [
+        "Ngân",
+        "Bạc",
+        "Ngân hàng"
+      ]
+    },
+    {
+      "id": "k_n4_0227",
+      "kanji": "紙",
+      "level": "N4",
+      "meanings": [
+        "Chỉ",
+        "Giấy"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "かみ"
+      ],
+      "vi_meanings": [
+        "Chỉ",
+        "Giấy"
+      ]
+    },
+    {
+      "id": "k_n4_0228",
+      "kanji": "員",
+      "level": "N4",
+      "meanings": [
+        "Viên",
+        "Thành viên",
+        "Nhân viên"
+      ],
+      "onyomi": [
+        "イン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Viên",
+        "Thành viên",
+        "Nhân viên"
+      ]
+    },
+    {
+      "id": "k_n4_0229",
+      "kanji": "色",
+      "level": "N4",
+      "meanings": [
+        "Sắc",
+        "Màu sắc"
+      ],
+      "onyomi": [
+        "ショク",
+        "シキ"
+      ],
+      "kunyomi": [
+        "いろ"
+      ],
+      "vi_meanings": [
+        "Sắc",
+        "Màu sắc"
+      ]
+    },
+    {
+      "id": "k_n4_0230",
+      "kanji": "味",
+      "level": "N4",
+      "meanings": [
+        "Vị",
+        "Hương vị",
+        "Mùi vị"
+      ],
+      "onyomi": [
+        "ミ"
+      ],
+      "kunyomi": [
+        "あじ",
+        "あじ・わう"
+      ],
+      "vi_meanings": [
+        "Vị",
+        "Hương vị",
+        "Mùi vị"
+      ]
+    },
+    {
+      "id": "k_n4_0231",
+      "kanji": "油",
+      "level": "N4",
+      "meanings": [
+        "Du",
+        "Dầu"
+      ],
+      "onyomi": [
+        "ユ"
+      ],
+      "kunyomi": [
+        "あぶら"
+      ],
+      "vi_meanings": [
+        "Du",
+        "Dầu"
+      ]
+    },
+    {
+      "id": "k_n4_0232",
+      "kanji": "洋",
+      "level": "N4",
+      "meanings": [
+        "Dương",
+        "Đại dương",
+        "Phương Tây"
+      ],
+      "onyomi": [
+        "ヨウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Dương",
+        "Đại dương",
+        "Phương Tây"
+      ]
+    },
+    {
+      "id": "k_n4_0233",
+      "kanji": "服",
+      "level": "N4",
+      "meanings": [
+        "Phục",
+        "Quần áo",
+        "Phục tùng"
+      ],
+      "onyomi": [
+        "フク"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Phục",
+        "Quần áo",
+        "Phục tùng"
+      ]
+    },
+    {
+      "id": "k_n3_0234",
       "kanji": "愛",
       "level": "N3",
       "meanings": [
         "Ái",
-        "Yêu thương"
+        "Yêu thương",
+        "Tình yêu"
       ],
       "onyomi": [
         "アイ"
       ],
       "kunyomi": [
-        "い・しい"
+        "い・しい",
+        "め・でる"
       ],
       "vi_meanings": [
         "Ái",
-        "Yêu thương"
+        "Yêu thương",
+        "Tình yêu"
       ]
     },
     {
-      "id": "k_full_62",
+      "id": "k_n3_0235",
       "kanji": "感",
       "level": "N3",
       "meanings": [
         "Cảm",
-        "Cảm giác"
+        "Cảm giác",
+        "Cảm nhận"
       ],
       "onyomi": [
         "カン"
@@ -58050,16 +61648,18 @@
       "kunyomi": [],
       "vi_meanings": [
         "Cảm",
-        "Cảm giác"
+        "Cảm giác",
+        "Cảm nhận"
       ]
     },
     {
-      "id": "k_full_63",
+      "id": "k_n3_0236",
       "kanji": "情",
       "level": "N3",
       "meanings": [
         "Tình",
-        "Tình cảm"
+        "Tình cảm",
+        "Thông tin"
       ],
       "onyomi": [
         "ジョウ",
@@ -58070,16 +61670,18 @@
       ],
       "vi_meanings": [
         "Tình",
-        "Tình cảm"
+        "Tình cảm",
+        "Thông tin"
       ]
     },
     {
-      "id": "k_full_64",
+      "id": "k_n3_0237",
       "kanji": "想",
       "level": "N3",
       "meanings": [
         "Tưởng",
-        "Suy nghĩ"
+        "Suy nghĩ",
+        "Tưởng tượng"
       ],
       "onyomi": [
         "ソウ",
@@ -58090,16 +61692,18 @@
       ],
       "vi_meanings": [
         "Tưởng",
-        "Suy nghĩ"
+        "Suy nghĩ",
+        "Tưởng tượng"
       ]
     },
     {
-      "id": "k_full_65",
+      "id": "k_n3_0238",
       "kanji": "願",
       "level": "N3",
       "meanings": [
         "Nguyện",
-        "Cầu nguyện"
+        "Cầu nguyện",
+        "Mong muốn"
       ],
       "onyomi": [
         "ガン"
@@ -58109,16 +61713,18 @@
       ],
       "vi_meanings": [
         "Nguyện",
-        "Cầu nguyện"
+        "Cầu nguyện",
+        "Mong muốn"
       ]
     },
     {
-      "id": "k_full_66",
+      "id": "k_n3_0239",
       "kanji": "望",
       "level": "N3",
       "meanings": [
         "Vọng",
-        "Hy vọng"
+        "Hy vọng",
+        "Nguyện vọng"
       ],
       "onyomi": [
         "ボウ",
@@ -58129,16 +61735,18 @@
       ],
       "vi_meanings": [
         "Vọng",
-        "Hy vọng"
+        "Hy vọng",
+        "Nguyện vọng"
       ]
     },
     {
-      "id": "k_full_67",
+      "id": "k_n3_0240",
       "kanji": "信",
       "level": "N3",
       "meanings": [
         "Tín",
-        "Tin tưởng"
+        "Tin tưởng",
+        "Tín nhiệm"
       ],
       "onyomi": [
         "シン"
@@ -58146,11 +61754,12 @@
       "kunyomi": [],
       "vi_meanings": [
         "Tín",
-        "Tin tưởng"
+        "Tin tưởng",
+        "Tín nhiệm"
       ]
     },
     {
-      "id": "k_full_68",
+      "id": "k_n3_0241",
       "kanji": "疑",
       "level": "N3",
       "meanings": [
@@ -58161,7 +61770,7 @@
         "ギ"
       ],
       "kunyomi": [
-        "utaga・u"
+        "うたが・う"
       ],
       "vi_meanings": [
         "Nghi",
@@ -58169,85 +61778,696 @@
       ]
     },
     {
-      "id": "k_full_69",
+      "id": "k_n3_0242",
       "kanji": "変",
       "level": "N3",
       "meanings": [
         "Biến",
-        "Thay đổi"
+        "Thay đổi",
+        "Kỳ lạ"
       ],
       "onyomi": [
         "ヘン"
       ],
       "kunyomi": [
-        "か・わる"
+        "か・わる",
+        "か・える"
       ],
       "vi_meanings": [
         "Biến",
-        "Thay đổi"
+        "Thay đổi",
+        "Kỳ lạ"
       ]
     },
     {
-      "id": "k_full_70",
+      "id": "k_n3_0243",
       "kanji": "化",
       "level": "N3",
       "meanings": [
         "Hóa",
-        "Biến hóa"
+        "Biến hóa",
+        "Hóa học"
       ],
       "onyomi": [
         "カ",
         "ケ"
       ],
       "kunyomi": [
-        "ば・ける"
+        "ば・ける",
+        "ば・かす"
       ],
       "vi_meanings": [
         "Hóa",
-        "Biến hóa"
+        "Biến hóa",
+        "Hóa học"
       ]
     },
     {
-      "id": "k_full_71",
-      "kanji": "議",
-      "level": "N2",
+      "id": "k_n3_0244",
+      "kanji": "関",
+      "level": "N3",
       "meanings": [
-        "Nghị",
-        "Hội nghị"
+        "Quan",
+        "Liên quan",
+        "Quan hệ"
       ],
       "onyomi": [
-        "ギ"
+        "カン"
+      ],
+      "kunyomi": [
+        "せき",
+        "かか・わる"
+      ],
+      "vi_meanings": [
+        "Quan",
+        "Liên quan",
+        "Quan hệ"
+      ]
+    },
+    {
+      "id": "k_n3_0245",
+      "kanji": "係",
+      "level": "N3",
+      "meanings": [
+        "Hệ",
+        "Người phụ trách",
+        "Liên can"
+      ],
+      "onyomi": [
+        "ケイ"
+      ],
+      "kunyomi": [
+        "かか・る",
+        "かかり"
+      ],
+      "vi_meanings": [
+        "Hệ",
+        "Người phụ trách",
+        "Liên can"
+      ]
+    },
+    {
+      "id": "k_n3_0246",
+      "kanji": "連",
+      "level": "N3",
+      "meanings": [
+        "Liên",
+        "Liên lạc",
+        "Dẫn theo"
+      ],
+      "onyomi": [
+        "レン"
+      ],
+      "kunyomi": [
+        "つら・なる",
+        "つ・れる"
+      ],
+      "vi_meanings": [
+        "Liên",
+        "Liên lạc",
+        "Dẫn theo"
+      ]
+    },
+    {
+      "id": "k_n3_0247",
+      "kanji": "絡",
+      "level": "N3",
+      "meanings": [
+        "Lạc",
+        "Vướng mắc",
+        "Liên lạc"
+      ],
+      "onyomi": [
+        "ラク"
+      ],
+      "kunyomi": [
+        "から・む"
+      ],
+      "vi_meanings": [
+        "Lạc",
+        "Vướng mắc",
+        "Liên lạc"
+      ]
+    },
+    {
+      "id": "k_n3_0248",
+      "kanji": "約",
+      "level": "N3",
+      "meanings": [
+        "Ước",
+        "Ước lượng",
+        "Hẹn ước"
+      ],
+      "onyomi": [
+        "ヤク"
       ],
       "kunyomi": [],
       "vi_meanings": [
-        "Nghị",
-        "Hội nghị"
+        "Ước",
+        "Ước lượng",
+        "Hẹn ước"
       ]
     },
     {
-      "id": "k_full_72",
-      "kanji": "論",
-      "level": "N2",
+      "id": "k_n3_0249",
+      "kanji": "束",
+      "level": "N3",
       "meanings": [
-        "Luận",
-        "Thảo luận"
+        "Thúc",
+        "Bó",
+        "Ràng buộc"
       ],
       "onyomi": [
-        "ロン"
+        "ソク"
+      ],
+      "kunyomi": [
+        "たば"
+      ],
+      "vi_meanings": [
+        "Thúc",
+        "Bó",
+        "Ràng buộc"
+      ]
+    },
+    {
+      "id": "k_n3_0250",
+      "kanji": "必",
+      "level": "N3",
+      "meanings": [
+        "Tất",
+        "Tất yếu",
+        "Chắc chắn"
+      ],
+      "onyomi": [
+        "ヒツ"
+      ],
+      "kunyomi": [
+        "かなら・ず"
+      ],
+      "vi_meanings": [
+        "Tất",
+        "Tất yếu",
+        "Chắc chắn"
+      ]
+    },
+    {
+      "id": "k_n3_0251",
+      "kanji": "要",
+      "level": "N3",
+      "meanings": [
+        "Yếu",
+        "Cần thiết",
+        "Quan trọng"
+      ],
+      "onyomi": [
+        "ヨウ"
+      ],
+      "kunyomi": [
+        "い・る",
+        "かなめ"
+      ],
+      "vi_meanings": [
+        "Yếu",
+        "Cần thiết",
+        "Quan trọng"
+      ]
+    },
+    {
+      "id": "k_n3_0252",
+      "kanji": "相",
+      "level": "N3",
+      "meanings": [
+        "Tương",
+        "Tương hỗ",
+        "Cùng nhau"
+      ],
+      "onyomi": [
+        "ソウ",
+        "ショウ"
+      ],
+      "kunyomi": [
+        "あい"
+      ],
+      "vi_meanings": [
+        "Tương",
+        "Tương hỗ",
+        "Cùng nhau"
+      ]
+    },
+    {
+      "id": "k_n3_0253",
+      "kanji": "談",
+      "level": "N3",
+      "meanings": [
+        "Đàm",
+        "Bàn luận",
+        "Nói chuyện"
+      ],
+      "onyomi": [
+        "ダン"
       ],
       "kunyomi": [],
       "vi_meanings": [
-        "Luận",
-        "Thảo luận"
+        "Đàm",
+        "Bàn luận",
+        "Nói chuyện"
       ]
     },
     {
-      "id": "k_full_73",
+      "id": "k_n3_0254",
+      "kanji": "案",
+      "level": "N3",
+      "meanings": [
+        "Án",
+        "Phương án",
+        "Đề án"
+      ],
+      "onyomi": [
+        "アン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Án",
+        "Phương án",
+        "Đề án"
+      ]
+    },
+    {
+      "id": "k_n3_0255",
+      "kanji": "内",
+      "level": "N3",
+      "meanings": [
+        "Nội",
+        "Bên trong"
+      ],
+      "onyomi": [
+        "ナイ",
+        "ダイ"
+      ],
+      "kunyomi": [
+        "うち"
+      ],
+      "vi_meanings": [
+        "Nội",
+        "Bên trong"
+      ]
+    },
+    {
+      "id": "k_n3_0256",
+      "kanji": "準",
+      "level": "N3",
+      "meanings": [
+        "Chuẩn",
+        "Tiêu chuẩn",
+        "Chuẩn bị"
+      ],
+      "onyomi": [
+        "ジュン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Chuẩn",
+        "Tiêu chuẩn",
+        "Chuẩn bị"
+      ]
+    },
+    {
+      "id": "k_n3_0257",
+      "kanji": "備",
+      "level": "N3",
+      "meanings": [
+        "Bị",
+        "Trang bị",
+        "Chuẩn bị"
+      ],
+      "onyomi": [
+        "ビ"
+      ],
+      "kunyomi": [
+        "そな・える",
+        "そな・わる"
+      ],
+      "vi_meanings": [
+        "Bị",
+        "Trang bị",
+        "Chuẩn bị"
+      ]
+    },
+    {
+      "id": "k_n3_0258",
+      "kanji": "面",
+      "level": "N3",
+      "meanings": [
+        "Diện",
+        "Mặt",
+        "Bề mặt"
+      ],
+      "onyomi": [
+        "メン"
+      ],
+      "kunyomi": [
+        "おも",
+        "つら"
+      ],
+      "vi_meanings": [
+        "Diện",
+        "Mặt",
+        "Bề mặt"
+      ]
+    },
+    {
+      "id": "k_n3_0259",
+      "kanji": "接",
+      "level": "N3",
+      "meanings": [
+        "Tiếp",
+        "Tiếp xúc",
+        "Gặp mặt"
+      ],
+      "onyomi": [
+        "セツ"
+      ],
+      "kunyomi": [
+        "つ・ぐ"
+      ],
+      "vi_meanings": [
+        "Tiếp",
+        "Tiếp xúc",
+        "Gặp mặt"
+      ]
+    },
+    {
+      "id": "k_n3_0260",
+      "kanji": "受",
+      "level": "N3",
+      "meanings": [
+        "Thụ",
+        "Nhận",
+        "Tiếp nhận"
+      ],
+      "onyomi": [
+        "ジュ"
+      ],
+      "kunyomi": [
+        "う・ける",
+        "う・かる"
+      ],
+      "vi_meanings": [
+        "Thụ",
+        "Nhận",
+        "Tiếp nhận"
+      ]
+    },
+    {
+      "id": "k_n3_0261",
+      "kanji": "付",
+      "level": "N3",
+      "meanings": [
+        "Phó",
+        "Gắn vào",
+        "Kèm theo"
+      ],
+      "onyomi": [
+        "フ"
+      ],
+      "kunyomi": [
+        "つ・く",
+        "つ・ける"
+      ],
+      "vi_meanings": [
+        "Phó",
+        "Gắn vào",
+        "Kèm theo"
+      ]
+    },
+    {
+      "id": "k_n3_0262",
+      "kanji": "加",
+      "level": "N3",
+      "meanings": [
+        "Gia",
+        "Thêm vào",
+        "Gia tăng"
+      ],
+      "onyomi": [
+        "カ"
+      ],
+      "kunyomi": [
+        "くわ・える",
+        "くわ・わる"
+      ],
+      "vi_meanings": [
+        "Gia",
+        "Thêm vào",
+        "Gia tăng"
+      ]
+    },
+    {
+      "id": "k_n3_0263",
+      "kanji": "減",
+      "level": "N3",
+      "meanings": [
+        "Giảm",
+        "Giảm bớt",
+        "Suy giảm"
+      ],
+      "onyomi": [
+        "ゲン"
+      ],
+      "kunyomi": [
+        "へ・る",
+        "へ・らす"
+      ],
+      "vi_meanings": [
+        "Giảm",
+        "Giảm bớt",
+        "Suy giảm"
+      ]
+    },
+    {
+      "id": "k_n3_0264",
+      "kanji": "増",
+      "level": "N3",
+      "meanings": [
+        "Tăng",
+        "Tăng lên",
+        "Gia tăng"
+      ],
+      "onyomi": [
+        "ゾウ"
+      ],
+      "kunyomi": [
+        "ふ・える",
+        "ふ・やす",
+        "ま・す"
+      ],
+      "vi_meanings": [
+        "Tăng",
+        "Tăng lên",
+        "Gia tăng"
+      ]
+    },
+    {
+      "id": "k_n3_0265",
+      "kanji": "常",
+      "level": "N3",
+      "meanings": [
+        "Thường",
+        "Bình thường",
+        "Thường ngày"
+      ],
+      "onyomi": [
+        "ジョウ"
+      ],
+      "kunyomi": [
+        "つね",
+        "とこ"
+      ],
+      "vi_meanings": [
+        "Thường",
+        "Bình thường",
+        "Thường ngày"
+      ]
+    },
+    {
+      "id": "k_n3_0266",
+      "kanji": "非",
+      "level": "N3",
+      "meanings": [
+        "Phi",
+        "Phi thường",
+        "Không phải"
+      ],
+      "onyomi": [
+        "ヒ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Phi",
+        "Phi thường",
+        "Không phải"
+      ]
+    },
+    {
+      "id": "k_n3_0267",
+      "kanji": "活",
+      "level": "N3",
+      "meanings": [
+        "Hoạt",
+        "Hoạt động",
+        "Sống động"
+      ],
+      "onyomi": [
+        "カツ"
+      ],
+      "kunyomi": [
+        "い・きる"
+      ],
+      "vi_meanings": [
+        "Hoạt",
+        "Hoạt động",
+        "Sống động"
+      ]
+    },
+    {
+      "id": "k_n3_0268",
+      "kanji": "性",
+      "level": "N3",
+      "meanings": [
+        "Tính",
+        "Tính cách",
+        "Giới tính"
+      ],
+      "onyomi": [
+        "セイ",
+        "ショウ"
+      ],
+      "kunyomi": [
+        "さが"
+      ],
+      "vi_meanings": [
+        "Tính",
+        "Tính cách",
+        "Giới tính"
+      ]
+    },
+    {
+      "id": "k_n3_0269",
+      "kanji": "格",
+      "level": "N3",
+      "meanings": [
+        "Cách",
+        "Tư cách",
+        "Quy cách"
+      ],
+      "onyomi": [
+        "カク",
+        "コウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Cách",
+        "Tư cách",
+        "Quy cách"
+      ]
+    },
+    {
+      "id": "k_n3_0270",
+      "kanji": "的",
+      "level": "N3",
+      "meanings": [
+        "Đích",
+        "Mục đích",
+        "Mang tính"
+      ],
+      "onyomi": [
+        "テキ"
+      ],
+      "kunyomi": [
+        "まと"
+      ],
+      "vi_meanings": [
+        "Đích",
+        "Mục đích",
+        "Mang tính"
+      ]
+    },
+    {
+      "id": "k_n3_0271",
+      "kanji": "解",
+      "level": "N3",
+      "meanings": [
+        "Giải",
+        "Giải thích",
+        "Hiểu"
+      ],
+      "onyomi": [
+        "カイ",
+        "ゲ"
+      ],
+      "kunyomi": [
+        "と・く",
+        "と・ける"
+      ],
+      "vi_meanings": [
+        "Giải",
+        "Giải thích",
+        "Hiểu"
+      ]
+    },
+    {
+      "id": "k_n3_0272",
+      "kanji": "決",
+      "level": "N3",
+      "meanings": [
+        "Quyết",
+        "Quyết định",
+        "Quyết tâm"
+      ],
+      "onyomi": [
+        "ケツ"
+      ],
+      "kunyomi": [
+        "き・める",
+        "き・まる"
+      ],
+      "vi_meanings": [
+        "Quyết",
+        "Quyết định",
+        "Quyết tâm"
+      ]
+    },
+    {
+      "id": "k_n3_0273",
+      "kanji": "定",
+      "level": "N3",
+      "meanings": [
+        "Định",
+        "Cố định",
+        "Xác định"
+      ],
+      "onyomi": [
+        "テイ",
+        "ジョウ"
+      ],
+      "kunyomi": [
+        "さだ・める",
+        "さだ・まる"
+      ],
+      "vi_meanings": [
+        "Định",
+        "Cố định",
+        "Xác định"
+      ]
+    },
+    {
+      "id": "k_n3_0274",
       "kanji": "選",
-      "level": "N2",
+      "level": "N3",
       "meanings": [
         "Tuyển",
-        "Lựa chọn"
+        "Lựa chọn",
+        "Tuyển chọn"
       ],
       "onyomi": [
         "セン"
@@ -58257,54 +62477,156 @@
       ],
       "vi_meanings": [
         "Tuyển",
-        "Lựa chọn"
+        "Lựa chọn",
+        "Tuyển chọn"
       ]
     },
     {
-      "id": "k_full_74",
-      "kanji": "挙",
-      "level": "N2",
+      "id": "k_n3_0275",
+      "kanji": "残",
+      "level": "N3",
       "meanings": [
-        "Cử",
-        "Tuyển cử",
-        "Nâng"
+        "Tàn",
+        "Còn lại",
+        "Tàn tích"
       ],
       "onyomi": [
-        "キョ"
+        "ザン"
       ],
       "kunyomi": [
-        "あ・げる"
+        "のこ・る",
+        "のこ・す"
       ],
       "vi_meanings": [
-        "Cử",
-        "Tuyển cử",
-        "Nâng"
+        "Tàn",
+        "Còn lại",
+        "Tàn tích"
       ]
     },
     {
-      "id": "k_full_75",
-      "kanji": "策",
-      "level": "N2",
+      "id": "k_n3_0276",
+      "kanji": "念",
+      "level": "N3",
       "meanings": [
-        "Sách",
-        "Biện pháp"
+        "Niệm",
+        "Ý niệm",
+        "Tưởng nhớ"
       ],
       "onyomi": [
-        "サク"
+        "ネン"
       ],
       "kunyomi": [],
       "vi_meanings": [
-        "Sách",
-        "Biện pháp"
+        "Niệm",
+        "Ý niệm",
+        "Tưởng nhớ"
       ]
     },
     {
-      "id": "k_full_76",
+      "id": "k_n3_0277",
+      "kanji": "求",
+      "level": "N3",
+      "meanings": [
+        "Cầu",
+        "Tìm kiếm",
+        "Yêu cầu"
+      ],
+      "onyomi": [
+        "キュウ"
+      ],
+      "kunyomi": [
+        "もと・める"
+      ],
+      "vi_meanings": [
+        "Cầu",
+        "Tìm kiếm",
+        "Yêu cầu"
+      ]
+    },
+    {
+      "id": "k_n3_0278",
+      "kanji": "職",
+      "level": "N3",
+      "meanings": [
+        "Chức",
+        "Nghề nghiệp",
+        "Chức vụ"
+      ],
+      "onyomi": [
+        "ショク"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Chức",
+        "Nghề nghiệp",
+        "Chức vụ"
+      ]
+    },
+    {
+      "id": "k_n3_0279",
+      "kanji": "給",
+      "level": "N3",
+      "meanings": [
+        "Cấp",
+        "Cung cấp",
+        "Tiền lương"
+      ],
+      "onyomi": [
+        "キュウ"
+      ],
+      "kunyomi": [
+        "たま・う"
+      ],
+      "vi_meanings": [
+        "Cấp",
+        "Cung cấp",
+        "Tiền lương"
+      ]
+    },
+    {
+      "id": "k_n3_0280",
+      "kanji": "資",
+      "level": "N3",
+      "meanings": [
+        "Tư",
+        "Tư cách",
+        "Tài sản"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Tư",
+        "Tư cách",
+        "Tài sản"
+      ]
+    },
+    {
+      "id": "k_n3_0281",
+      "kanji": "税",
+      "level": "N3",
+      "meanings": [
+        "Thuế",
+        "Tiền thuế"
+      ],
+      "onyomi": [
+        "ゼイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Thuế",
+        "Tiền thuế"
+      ]
+    },
+    {
+      "id": "k_n3_0282",
       "kanji": "政",
-      "level": "N2",
+      "level": "N3",
       "meanings": [
         "Chính",
-        "Chính trị"
+        "Chính trị",
+        "Chính phủ"
       ],
       "onyomi": [
         "セイ",
@@ -58315,33 +62637,37 @@
       ],
       "vi_meanings": [
         "Chính",
-        "Chính trị"
+        "Chính trị",
+        "Chính phủ"
       ]
     },
     {
-      "id": "k_full_77",
+      "id": "k_n3_0283",
       "kanji": "治",
-      "level": "N2",
+      "level": "N3",
       "meanings": [
         "Trị",
-        "Chữa trị"
+        "Chữa trị",
+        "Cai trị"
       ],
       "onyomi": [
         "ジ",
         "チ"
       ],
       "kunyomi": [
-        "おさ・める"
+        "おさ・める",
+        "なお・る"
       ],
       "vi_meanings": [
         "Trị",
-        "Chữa trị"
+        "Chữa trị",
+        "Cai trị"
       ]
     },
     {
-      "id": "k_full_78",
+      "id": "k_n3_0284",
       "kanji": "経",
-      "level": "N2",
+      "level": "N3",
       "meanings": [
         "Kinh",
         "Kinh tế",
@@ -58361,13 +62687,13 @@
       ]
     },
     {
-      "id": "k_full_79",
+      "id": "k_n3_0285",
       "kanji": "済",
-      "level": "N2",
+      "level": "N3",
       "meanings": [
         "Tế",
         "Kinh tế",
-        "Xong"
+        "Hoàn tất"
       ],
       "onyomi": [
         "サイ"
@@ -58378,15 +62704,1110 @@
       "vi_meanings": [
         "Tế",
         "Kinh tế",
-        "Xong"
+        "Hoàn tất"
       ]
     },
     {
-      "id": "k_full_80",
+      "id": "k_n3_0286",
+      "kanji": "歴",
+      "level": "N3",
+      "meanings": [
+        "Lịch",
+        "Lịch sử",
+        "Lý lịch"
+      ],
+      "onyomi": [
+        "レキ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Lịch",
+        "Lịch sử",
+        "Lý lịch"
+      ]
+    },
+    {
+      "id": "k_n3_0287",
+      "kanji": "史",
+      "level": "N3",
+      "meanings": [
+        "Sử",
+        "Lịch sử"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Sử",
+        "Lịch sử"
+      ]
+    },
+    {
+      "id": "k_n3_0288",
+      "kanji": "育",
+      "level": "N3",
+      "meanings": [
+        "Dục",
+        "Nuôi dưỡng",
+        "Giáo dục"
+      ],
+      "onyomi": [
+        "イク"
+      ],
+      "kunyomi": [
+        "そだ・つ",
+        "そだ・てる"
+      ],
+      "vi_meanings": [
+        "Dục",
+        "Nuôi dưỡng",
+        "Giáo dục"
+      ]
+    },
+    {
+      "id": "k_n3_0289",
+      "kanji": "命",
+      "level": "N3",
+      "meanings": [
+        "Mệnh",
+        "Tính mạng",
+        "Số phận"
+      ],
+      "onyomi": [
+        "メイ",
+        "ミョウ"
+      ],
+      "kunyomi": [
+        "いのち"
+      ],
+      "vi_meanings": [
+        "Mệnh",
+        "Tính mạng",
+        "Số phận"
+      ]
+    },
+    {
+      "id": "k_n3_0290",
+      "kanji": "冷",
+      "level": "N3",
+      "meanings": [
+        "Lãnh",
+        "Lạnh lùng",
+        "Nguội"
+      ],
+      "onyomi": [
+        "レイ"
+      ],
+      "kunyomi": [
+        "つめ・たい",
+        "ひ・える"
+      ],
+      "vi_meanings": [
+        "Lãnh",
+        "Lạnh lùng",
+        "Nguội"
+      ]
+    },
+    {
+      "id": "k_n3_0291",
+      "kanji": "蔵",
+      "level": "N3",
+      "meanings": [
+        "Tàng",
+        "Tàng trữ",
+        "Nhà kho"
+      ],
+      "onyomi": [
+        "ゾウ"
+      ],
+      "kunyomi": [
+        "くら"
+      ],
+      "vi_meanings": [
+        "Tàng",
+        "Tàng trữ",
+        "Nhà kho"
+      ]
+    },
+    {
+      "id": "k_n3_0292",
+      "kanji": "庫",
+      "level": "N3",
+      "meanings": [
+        "Khố",
+        "Kho tàng"
+      ],
+      "onyomi": [
+        "コ",
+        "ク"
+      ],
+      "kunyomi": [
+        "くら"
+      ],
+      "vi_meanings": [
+        "Khố",
+        "Kho tàng"
+      ]
+    },
+    {
+      "id": "k_n3_0293",
+      "kanji": "濯",
+      "level": "N3",
+      "meanings": [
+        "Trạc",
+        "Giặt giũ"
+      ],
+      "onyomi": [
+        "タク"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Trạc",
+        "Giặt giũ"
+      ]
+    },
+    {
+      "id": "k_n3_0294",
+      "kanji": "温",
+      "level": "N3",
+      "meanings": [
+        "Ôn",
+        "Ấm áp",
+        "Nhiệt độ"
+      ],
+      "onyomi": [
+        "オン"
+      ],
+      "kunyomi": [
+        "あたた・かい",
+        "あたた・める"
+      ],
+      "vi_meanings": [
+        "Ôn",
+        "Ấm áp",
+        "Nhiệt độ"
+      ]
+    },
+    {
+      "id": "k_n3_0295",
+      "kanji": "器",
+      "level": "N3",
+      "meanings": [
+        "Khí",
+        "Dụng cụ",
+        "Vũ khí"
+      ],
+      "onyomi": [
+        "キ"
+      ],
+      "kunyomi": [
+        "うつわ"
+      ],
+      "vi_meanings": [
+        "Khí",
+        "Dụng cụ",
+        "Vũ khí"
+      ]
+    },
+    {
+      "id": "k_n3_0296",
+      "kanji": "具",
+      "level": "N3",
+      "meanings": [
+        "Cụ",
+        "Dụng cụ",
+        "Đầy đủ"
+      ],
+      "onyomi": [
+        "グ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Cụ",
+        "Dụng cụ",
+        "Đầy đủ"
+      ]
+    },
+    {
+      "id": "k_n3_0297",
+      "kanji": "械",
+      "level": "N3",
+      "meanings": [
+        "Giới",
+        "Máy móc"
+      ],
+      "onyomi": [
+        "カイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Giới",
+        "Máy móc"
+      ]
+    },
+    {
+      "id": "k_n3_0298",
+      "kanji": "機",
+      "level": "N3",
+      "meanings": [
+        "Cơ",
+        "Cơ hội",
+        "Máy móc"
+      ],
+      "onyomi": [
+        "キ"
+      ],
+      "kunyomi": [
+        "はた"
+      ],
+      "vi_meanings": [
+        "Cơ",
+        "Cơ hội",
+        "Máy móc"
+      ]
+    },
+    {
+      "id": "k_n3_0299",
+      "kanji": "能",
+      "level": "N3",
+      "meanings": [
+        "Năng",
+        "Khả năng",
+        "Tài năng"
+      ],
+      "onyomi": [
+        "ノウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Năng",
+        "Khả năng",
+        "Tài năng"
+      ]
+    },
+    {
+      "id": "k_n3_0300",
+      "kanji": "術",
+      "level": "N3",
+      "meanings": [
+        "Thuật",
+        "Kỹ thuật",
+        "Nghệ thuật"
+      ],
+      "onyomi": [
+        "ジュツ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Thuật",
+        "Kỹ thuật",
+        "Nghệ thuật"
+      ]
+    },
+    {
+      "id": "k_n3_0301",
+      "kanji": "技",
+      "level": "N3",
+      "meanings": [
+        "Kỹ",
+        "Kỹ năng",
+        "Kỹ xảo"
+      ],
+      "onyomi": [
+        "ギ"
+      ],
+      "kunyomi": [
+        "わざ"
+      ],
+      "vi_meanings": [
+        "Kỹ",
+        "Kỹ năng",
+        "Kỹ xảo"
+      ]
+    },
+    {
+      "id": "k_n3_0302",
+      "kanji": "美",
+      "level": "N3",
+      "meanings": [
+        "Mỹ",
+        "Xinh đẹp",
+        "Mỹ thuật"
+      ],
+      "onyomi": [
+        "ビ",
+        "ミ"
+      ],
+      "kunyomi": [
+        "うつく・しい"
+      ],
+      "vi_meanings": [
+        "Mỹ",
+        "Xinh đẹp",
+        "Mỹ thuật"
+      ]
+    },
+    {
+      "id": "k_n3_0303",
+      "kanji": "容",
+      "level": "N3",
+      "meanings": [
+        "Dung",
+        "Nội dung",
+        "Dung mạo"
+      ],
+      "onyomi": [
+        "ヨウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Dung",
+        "Nội dung",
+        "Dung mạo"
+      ]
+    },
+    {
+      "id": "k_n3_0304",
+      "kanji": "易",
+      "level": "N3",
+      "meanings": [
+        "Dịch",
+        "Dễ dàng",
+        "Mậu dịch"
+      ],
+      "onyomi": [
+        "エキ",
+        "イ"
+      ],
+      "kunyomi": [
+        "やさ・しい"
+      ],
+      "vi_meanings": [
+        "Dịch",
+        "Dễ dàng",
+        "Mậu dịch"
+      ]
+    },
+    {
+      "id": "k_n3_0305",
+      "kanji": "難",
+      "level": "N3",
+      "meanings": [
+        "Nan",
+        "Khó khăn",
+        "Gian nan"
+      ],
+      "onyomi": [
+        "ナン"
+      ],
+      "kunyomi": [
+        "むずか・しい"
+      ],
+      "vi_meanings": [
+        "Nan",
+        "Khó khăn",
+        "Gian nan"
+      ]
+    },
+    {
+      "id": "k_n3_0306",
+      "kanji": "細",
+      "level": "N3",
+      "meanings": [
+        "Tế",
+        "Nhỏ bé",
+        "Chi tiết"
+      ],
+      "onyomi": [
+        "サイ"
+      ],
+      "kunyomi": [
+        "ほそ・い",
+        "こま・かい"
+      ],
+      "vi_meanings": [
+        "Tế",
+        "Nhỏ bé",
+        "Chi tiết"
+      ]
+    },
+    {
+      "id": "k_n3_0307",
+      "kanji": "太",
+      "level": "N3",
+      "meanings": [
+        "Thái",
+        "Béo",
+        "Dày"
+      ],
+      "onyomi": [
+        "タイ",
+        "タ"
+      ],
+      "kunyomi": [
+        "ふと・い",
+        "ふと・る"
+      ],
+      "vi_meanings": [
+        "Thái",
+        "Béo",
+        "Dày"
+      ]
+    },
+    {
+      "id": "k_n3_0308",
+      "kanji": "深",
+      "level": "N3",
+      "meanings": [
+        "Thâm",
+        "Sâu sắc",
+        "Đậm đà"
+      ],
+      "onyomi": [
+        "シン"
+      ],
+      "kunyomi": [
+        "ふか・い"
+      ],
+      "vi_meanings": [
+        "Thâm",
+        "Sâu sắc",
+        "Đậm đà"
+      ]
+    },
+    {
+      "id": "k_n3_0309",
+      "kanji": "浅",
+      "level": "N3",
+      "meanings": [
+        "Thiển",
+        "Nông cạn"
+      ],
+      "onyomi": [
+        "セン"
+      ],
+      "kunyomi": [
+        "あさ・い"
+      ],
+      "vi_meanings": [
+        "Thiển",
+        "Nông cạn"
+      ]
+    },
+    {
+      "id": "k_n3_0310",
+      "kanji": "厚",
+      "level": "N3",
+      "meanings": [
+        "Hậu",
+        "Dày dặn",
+        "Nồng hậu"
+      ],
+      "onyomi": [
+        "コウ"
+      ],
+      "kunyomi": [
+        "あつ・い"
+      ],
+      "vi_meanings": [
+        "Hậu",
+        "Dày dặn",
+        "Nồng hậu"
+      ]
+    },
+    {
+      "id": "k_n3_0311",
+      "kanji": "薄",
+      "level": "N3",
+      "meanings": [
+        "Bạc",
+        "Mỏng",
+        "Nhạt"
+      ],
+      "onyomi": [
+        "ハク"
+      ],
+      "kunyomi": [
+        "うす・い"
+      ],
+      "vi_meanings": [
+        "Bạc",
+        "Mỏng",
+        "Nhạt"
+      ]
+    },
+    {
+      "id": "k_n3_0312",
+      "kanji": "固",
+      "level": "N3",
+      "meanings": [
+        "Cố",
+        "Cứng rắn",
+        "Kiên cố"
+      ],
+      "onyomi": [
+        "コ"
+      ],
+      "kunyomi": [
+        "かた・い",
+        "かた・まる"
+      ],
+      "vi_meanings": [
+        "Cố",
+        "Cứng rắn",
+        "Kiên cố"
+      ]
+    },
+    {
+      "id": "k_n3_0313",
+      "kanji": "柔",
+      "level": "N3",
+      "meanings": [
+        "Nhu",
+        "Mềm dẻo",
+        "Nhẹ nhàng"
+      ],
+      "onyomi": [
+        "ジュウ",
+        "ニュウ"
+      ],
+      "kunyomi": [
+        "やわ・らか"
+      ],
+      "vi_meanings": [
+        "Nhu",
+        "Mềm dẻo",
+        "Nhẹ nhàng"
+      ]
+    },
+    {
+      "id": "k_n3_0314",
+      "kanji": "硬",
+      "level": "N3",
+      "meanings": [
+        "Ngạnh",
+        "Cứng",
+        "Ngạnh đơ"
+      ],
+      "onyomi": [
+        "コウ"
+      ],
+      "kunyomi": [
+        "かた・い"
+      ],
+      "vi_meanings": [
+        "Ngạnh",
+        "Cứng",
+        "Ngạnh đơ"
+      ]
+    },
+    {
+      "id": "k_n3_0315",
+      "kanji": "軟",
+      "level": "N3",
+      "meanings": [
+        "Nhuyễn",
+        "Mềm mại"
+      ],
+      "onyomi": [
+        "ナン"
+      ],
+      "kunyomi": [
+        "やわ・らか"
+      ],
+      "vi_meanings": [
+        "Nhuyễn",
+        "Mềm mại"
+      ]
+    },
+    {
+      "id": "k_n3_0316",
+      "kanji": "清",
+      "level": "N3",
+      "meanings": [
+        "Thanh",
+        "Trong sạch",
+        "Thanh khiết"
+      ],
+      "onyomi": [
+        "セイ",
+        "ショウ"
+      ],
+      "kunyomi": [
+        "きよ・らか"
+      ],
+      "vi_meanings": [
+        "Thanh",
+        "Trong sạch",
+        "Thanh khiết"
+      ]
+    },
+    {
+      "id": "k_n3_0317",
+      "kanji": "濁",
+      "level": "N3",
+      "meanings": [
+        "Trọc",
+        "Đục ngầu",
+        "Ô nhiễm"
+      ],
+      "onyomi": [
+        "ダク"
+      ],
+      "kunyomi": [
+        "にご・る"
+      ],
+      "vi_meanings": [
+        "Trọc",
+        "Đục ngầu",
+        "Ô nhiễm"
+      ]
+    },
+    {
+      "id": "k_n3_0318",
+      "kanji": "静",
+      "level": "N3",
+      "meanings": [
+        "Tĩnh",
+        "Yên tĩnh",
+        "Thanh tĩnh"
+      ],
+      "onyomi": [
+        "セイ",
+        "ジョウ"
+      ],
+      "kunyomi": [
+        "しず・か"
+      ],
+      "vi_meanings": [
+        "Tĩnh",
+        "Yên tĩnh",
+        "Thanh tĩnh"
+      ]
+    },
+    {
+      "id": "k_n3_0319",
+      "kanji": "騒",
+      "level": "N3",
+      "meanings": [
+        "Tao",
+        "Ồn ào",
+        "Huyên náo"
+      ],
+      "onyomi": [
+        "ソウ"
+      ],
+      "kunyomi": [
+        "さわ・ぐ"
+      ],
+      "vi_meanings": [
+        "Tao",
+        "Ồn ào",
+        "Huyên náo"
+      ]
+    },
+    {
+      "id": "k_n3_0320",
+      "kanji": "混",
+      "level": "N3",
+      "meanings": [
+        "Hỗn",
+        "Hỗn hợp",
+        "Pha trộn"
+      ],
+      "onyomi": [
+        "コン"
+      ],
+      "kunyomi": [
+        "ま・ざる",
+        "こ・む"
+      ],
+      "vi_meanings": [
+        "Hỗn",
+        "Hỗn hợp",
+        "Pha trộn"
+      ]
+    },
+    {
+      "id": "k_n3_0321",
+      "kanji": "乱",
+      "level": "N3",
+      "meanings": [
+        "Loạn",
+        "Hỗn loạn",
+        "Lộn xộn"
+      ],
+      "onyomi": [
+        "ラン"
+      ],
+      "kunyomi": [
+        "みだ・れる"
+      ],
+      "vi_meanings": [
+        "Loạn",
+        "Hỗn loạn",
+        "Lộn xộn"
+      ]
+    },
+    {
+      "id": "k_n3_0322",
+      "kanji": "整",
+      "level": "N3",
+      "meanings": [
+        "Chỉnh",
+        "Chỉnh tề",
+        "Sắp xếp"
+      ],
+      "onyomi": [
+        "セイ"
+      ],
+      "kunyomi": [
+        "ととの・える"
+      ],
+      "vi_meanings": [
+        "Chỉnh",
+        "Chỉnh tề",
+        "Sắp xếp"
+      ]
+    },
+    {
+      "id": "k_n3_0323",
+      "kanji": "完",
+      "level": "N3",
+      "meanings": [
+        "Hoàn",
+        "Hoàn thành",
+        "Hoàn hảo"
+      ],
+      "onyomi": [
+        "カン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Hoàn",
+        "Hoàn thành",
+        "Hoàn hảo"
+      ]
+    },
+    {
+      "id": "k_n3_0324",
+      "kanji": "成",
+      "level": "N3",
+      "meanings": [
+        "Thành",
+        "Trở thành",
+        "Thành công"
+      ],
+      "onyomi": [
+        "セイ",
+        "ジョウ"
+      ],
+      "kunyomi": [
+        "な・る",
+        "な・す"
+      ],
+      "vi_meanings": [
+        "Thành",
+        "Trở thành",
+        "Thành công"
+      ]
+    },
+    {
+      "id": "k_n3_0325",
+      "kanji": "功",
+      "level": "N3",
+      "meanings": [
+        "Công",
+        "Công lao",
+        "Thành công"
+      ],
+      "onyomi": [
+        "コウ",
+        "ク"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Công",
+        "Công lao",
+        "Thành công"
+      ]
+    },
+    {
+      "id": "k_n3_0326",
+      "kanji": "敗",
+      "level": "N3",
+      "meanings": [
+        "Bại",
+        "Thất bại",
+        "Thua cuộc"
+      ],
+      "onyomi": [
+        "ハイ"
+      ],
+      "kunyomi": [
+        "やぶ・れる"
+      ],
+      "vi_meanings": [
+        "Bại",
+        "Thất bại",
+        "Thua cuộc"
+      ]
+    },
+    {
+      "id": "k_n3_0327",
+      "kanji": "勝",
+      "level": "N3",
+      "meanings": [
+        "Thắng",
+        "Chiến thắng"
+      ],
+      "onyomi": [
+        "ショウ"
+      ],
+      "kunyomi": [
+        "か・つ",
+        "まさ・る"
+      ],
+      "vi_meanings": [
+        "Thắng",
+        "Chiến thắng"
+      ]
+    },
+    {
+      "id": "k_n3_0328",
+      "kanji": "負",
+      "level": "N3",
+      "meanings": [
+        "Phụ",
+        "Thua",
+        "Gánh vác"
+      ],
+      "onyomi": [
+        "フ"
+      ],
+      "kunyomi": [
+        "ま・ける",
+        "お・う"
+      ],
+      "vi_meanings": [
+        "Phụ",
+        "Thua",
+        "Gánh vác"
+      ]
+    },
+    {
+      "id": "k_n3_0329",
+      "kanji": "利",
+      "level": "N3",
+      "meanings": [
+        "Lợi",
+        "Lợi ích",
+        "Tiện lợi"
+      ],
+      "onyomi": [
+        "リ"
+      ],
+      "kunyomi": [
+        "き・く"
+      ],
+      "vi_meanings": [
+        "Lợi",
+        "Lợi ích",
+        "Tiện lợi"
+      ]
+    },
+    {
+      "id": "k_n3_0330",
+      "kanji": "益",
+      "level": "N3",
+      "meanings": [
+        "Ích",
+        "Lợi ích",
+        "Bổ ích"
+      ],
+      "onyomi": [
+        "エキ",
+        "ヤク"
+      ],
+      "kunyomi": [
+        "ま・す"
+      ],
+      "vi_meanings": [
+        "Ích",
+        "Lợi ích",
+        "Bổ ích"
+      ]
+    },
+    {
+      "id": "k_n3_0331",
+      "kanji": "害",
+      "level": "N3",
+      "meanings": [
+        "Hại",
+        "Tác hại",
+        "Tổn hại"
+      ],
+      "onyomi": [
+        "ガイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Hại",
+        "Tác hại",
+        "Tổn hại"
+      ]
+    },
+    {
+      "id": "k_n3_0332",
+      "kanji": "損",
+      "level": "N3",
+      "meanings": [
+        "Tổn",
+        "Tổn thất",
+        "Thiệt hại"
+      ],
+      "onyomi": [
+        "ソン"
+      ],
+      "kunyomi": [
+        "そこ・なう"
+      ],
+      "vi_meanings": [
+        "Tổn",
+        "Tổn thất",
+        "Thiệt hại"
+      ]
+    },
+    {
+      "id": "k_n3_0333",
+      "kanji": "得",
+      "level": "N3",
+      "meanings": [
+        "Đắc",
+        "Được",
+        "Đạt được"
+      ],
+      "onyomi": [
+        "トク"
+      ],
+      "kunyomi": [
+        "え・る",
+        "う・る"
+      ],
+      "vi_meanings": [
+        "Đắc",
+        "Được",
+        "Đạt được"
+      ]
+    },
+    {
+      "id": "k_n3_0334",
+      "kanji": "失",
+      "level": "N3",
+      "meanings": [
+        "Thất",
+        "Mất",
+        "Thất bại"
+      ],
+      "onyomi": [
+        "シツ"
+      ],
+      "kunyomi": [
+        "うしな・う"
+      ],
+      "vi_meanings": [
+        "Thất",
+        "Mất",
+        "Thất bại"
+      ]
+    },
+    {
+      "id": "k_n2_0335",
+      "kanji": "議",
+      "level": "N2",
+      "meanings": [
+        "Nghị",
+        "Hội nghị",
+        "Nghị luận"
+      ],
+      "onyomi": [
+        "ギ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Nghị",
+        "Hội nghị",
+        "Nghị luận"
+      ]
+    },
+    {
+      "id": "k_n2_0336",
+      "kanji": "論",
+      "level": "N2",
+      "meanings": [
+        "Luận",
+        "Thảo luận",
+        "Lý luận"
+      ],
+      "onyomi": [
+        "ロン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Luận",
+        "Thảo luận",
+        "Lý luận"
+      ]
+    },
+    {
+      "id": "k_n2_0337",
+      "kanji": "挙",
+      "level": "N2",
+      "meanings": [
+        "Cử",
+        "Tuyển cử",
+        "Nâng lên"
+      ],
+      "onyomi": [
+        "キョ"
+      ],
+      "kunyomi": [
+        "あ・げる",
+        "あ・がる"
+      ],
+      "vi_meanings": [
+        "Cử",
+        "Tuyển cử",
+        "Nâng lên"
+      ]
+    },
+    {
+      "id": "k_n2_0338",
+      "kanji": "策",
+      "level": "N2",
+      "meanings": [
+        "Sách",
+        "Chính sách",
+        "Kế sách"
+      ],
+      "onyomi": [
+        "サク"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Sách",
+        "Chính sách",
+        "Kế sách"
+      ]
+    },
+    {
+      "id": "k_n2_0339",
       "kanji": "財",
       "level": "N2",
       "meanings": [
         "Tài",
+        "Tài sản",
         "Tài chính"
       ],
       "onyomi": [
@@ -58396,16 +63817,956 @@
       "kunyomi": [],
       "vi_meanings": [
         "Tài",
+        "Tài sản",
         "Tài chính"
       ]
     },
     {
-      "id": "k_full_81",
+      "id": "k_n2_0340",
+      "kanji": "価",
+      "level": "N2",
+      "meanings": [
+        "Giá",
+        "Giá trị",
+        "Giá cả"
+      ],
+      "onyomi": [
+        "カ"
+      ],
+      "kunyomi": [
+        "あたい"
+      ],
+      "vi_meanings": [
+        "Giá",
+        "Giá trị",
+        "Giá cả"
+      ]
+    },
+    {
+      "id": "k_n2_0341",
+      "kanji": "営",
+      "level": "N2",
+      "meanings": [
+        "Doanh",
+        "Kinh doanh",
+        "Quản lý"
+      ],
+      "onyomi": [
+        "エイ"
+      ],
+      "kunyomi": [
+        "いとな・む"
+      ],
+      "vi_meanings": [
+        "Doanh",
+        "Kinh doanh",
+        "Quản lý"
+      ]
+    },
+    {
+      "id": "k_n2_0342",
+      "kanji": "業",
+      "level": "N2",
+      "meanings": [
+        "Nghiệp",
+        "Công việc",
+        "Nghề nghiệp"
+      ],
+      "onyomi": [
+        "ギョウ",
+        "ゴウ"
+      ],
+      "kunyomi": [
+        "わざ"
+      ],
+      "vi_meanings": [
+        "Nghiệp",
+        "Công việc",
+        "Nghề nghiệp"
+      ]
+    },
+    {
+      "id": "k_n2_0343",
+      "kanji": "務",
+      "level": "N2",
+      "meanings": [
+        "Vụ",
+        "Nhiệm vụ",
+        "Công vụ"
+      ],
+      "onyomi": [
+        "ム"
+      ],
+      "kunyomi": [
+        "つと・める"
+      ],
+      "vi_meanings": [
+        "Vụ",
+        "Nhiệm vụ",
+        "Công vụ"
+      ]
+    },
+    {
+      "id": "k_n2_0344",
+      "kanji": "確",
+      "level": "N2",
+      "meanings": [
+        "Xác",
+        "Chính xác",
+        "Xác nhận"
+      ],
+      "onyomi": [
+        "カク"
+      ],
+      "kunyomi": [
+        "たし・か",
+        "たし・かめる"
+      ],
+      "vi_meanings": [
+        "Xác",
+        "Chính xác",
+        "Xác nhận"
+      ]
+    },
+    {
+      "id": "k_n2_0345",
+      "kanji": "認",
+      "level": "N2",
+      "meanings": [
+        "Nhận",
+        "Xác nhận",
+        "Thừa nhận"
+      ],
+      "onyomi": [
+        "ニン"
+      ],
+      "kunyomi": [
+        "みと・める"
+      ],
+      "vi_meanings": [
+        "Nhận",
+        "Xác nhận",
+        "Thừa nhận"
+      ]
+    },
+    {
+      "id": "k_n2_0346",
+      "kanji": "証",
+      "level": "N2",
+      "meanings": [
+        "Chứng",
+        "Bằng chứng",
+        "Chứng minh"
+      ],
+      "onyomi": [
+        "ショウ"
+      ],
+      "kunyomi": [
+        "あかし"
+      ],
+      "vi_meanings": [
+        "Chứng",
+        "Bằng chứng",
+        "Chứng minh"
+      ]
+    },
+    {
+      "id": "k_n2_0347",
+      "kanji": "規",
+      "level": "N2",
+      "meanings": [
+        "Quy",
+        "Quy định",
+        "Quy tắc"
+      ],
+      "onyomi": [
+        "キ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Quy",
+        "Quy định",
+        "Quy tắc"
+      ]
+    },
+    {
+      "id": "k_n2_0348",
+      "kanji": "則",
+      "level": "N2",
+      "meanings": [
+        "Tắc",
+        "Quy tắc",
+        "Nguyên tắc"
+      ],
+      "onyomi": [
+        "ソク"
+      ],
+      "kunyomi": [
+        "のっと・る"
+      ],
+      "vi_meanings": [
+        "Tắc",
+        "Quy tắc",
+        "Nguyên tắc"
+      ]
+    },
+    {
+      "id": "k_n2_0349",
+      "kanji": "制",
+      "level": "N2",
+      "meanings": [
+        "Chế",
+        "Quy chế",
+        "Chế độ"
+      ],
+      "onyomi": [
+        "セイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Chế",
+        "Quy chế",
+        "Chế độ"
+      ]
+    },
+    {
+      "id": "k_n2_0350",
+      "kanji": "限",
+      "level": "N2",
+      "meanings": [
+        "Hạn",
+        "Giới hạn",
+        "Kỳ hạn"
+      ],
+      "onyomi": [
+        "ゲン"
+      ],
+      "kunyomi": [
+        "かぎ・る"
+      ],
+      "vi_meanings": [
+        "Hạn",
+        "Giới hạn",
+        "Kỳ hạn"
+      ]
+    },
+    {
+      "id": "k_n2_0351",
+      "kanji": "権",
+      "level": "N2",
+      "meanings": [
+        "Quyền",
+        "Quyền hạn",
+        "Quyền lợi"
+      ],
+      "onyomi": [
+        "ケン",
+        "ゴン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Quyền",
+        "Quyền hạn",
+        "Quyền lợi"
+      ]
+    },
+    {
+      "id": "k_n2_0352",
+      "kanji": "保",
+      "level": "N2",
+      "meanings": [
+        "Bảo",
+        "Bảo hiểm",
+        "Bảo đảm"
+      ],
+      "onyomi": [
+        "ホ",
+        "ホウ"
+      ],
+      "kunyomi": [
+        "たも・つ"
+      ],
+      "vi_meanings": [
+        "Bảo",
+        "Bảo hiểm",
+        "Bảo đảm"
+      ]
+    },
+    {
+      "id": "k_n2_0353",
+      "kanji": "障",
+      "level": "N2",
+      "meanings": [
+        "Chướng",
+        "Bảo đảm",
+        "Trở ngại"
+      ],
+      "onyomi": [
+        "ショウ"
+      ],
+      "kunyomi": [
+        "さわ・る"
+      ],
+      "vi_meanings": [
+        "Chướng",
+        "Bảo đảm",
+        "Trở ngại"
+      ]
+    },
+    {
+      "id": "k_n2_0354",
+      "kanji": "構",
+      "level": "N2",
+      "meanings": [
+        "Cấu",
+        "Cấu trúc",
+        "Xây dựng"
+      ],
+      "onyomi": [
+        "コウ"
+      ],
+      "kunyomi": [
+        "かま・う",
+        "かま・える"
+      ],
+      "vi_meanings": [
+        "Cấu",
+        "Cấu trúc",
+        "Xây dựng"
+      ]
+    },
+    {
+      "id": "k_n2_0355",
+      "kanji": "造",
+      "level": "N2",
+      "meanings": [
+        "Tạo",
+        "Chế tạo",
+        "Sáng tạo"
+      ],
+      "onyomi": [
+        "ゾウ"
+      ],
+      "kunyomi": [
+        "つく・る"
+      ],
+      "vi_meanings": [
+        "Tạo",
+        "Chế tạo",
+        "Sáng tạo"
+      ]
+    },
+    {
+      "id": "k_n2_0356",
+      "kanji": "築",
+      "level": "N2",
+      "meanings": [
+        "Trúc",
+        "Kiến trúc",
+        "Xây đắp"
+      ],
+      "onyomi": [
+        "チク"
+      ],
+      "kunyomi": [
+        "きず・く"
+      ],
+      "vi_meanings": [
+        "Trúc",
+        "Kiến trúc",
+        "Xây đắp"
+      ]
+    },
+    {
+      "id": "k_n2_0357",
+      "kanji": "演",
+      "level": "N2",
+      "meanings": [
+        "Diễn",
+        "Biểu diễn",
+        "Diễn thuyết"
+      ],
+      "onyomi": [
+        "エン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Diễn",
+        "Biểu diễn",
+        "Diễn thuyết"
+      ]
+    },
+    {
+      "id": "k_n2_0358",
+      "kanji": "奏",
+      "level": "N2",
+      "meanings": [
+        "Tấu",
+        "Tấu nhạc",
+        "Hòa tấu"
+      ],
+      "onyomi": [
+        "ソウ"
+      ],
+      "kunyomi": [
+        "かな・でる"
+      ],
+      "vi_meanings": [
+        "Tấu",
+        "Tấu nhạc",
+        "Hòa tấu"
+      ]
+    },
+    {
+      "id": "k_n2_0359",
+      "kanji": "劇",
+      "level": "N2",
+      "meanings": [
+        "Kịch",
+        "Kịch tích",
+        "Vở kịch"
+      ],
+      "onyomi": [
+        "ゲキ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Kịch",
+        "Kịch tích",
+        "Vở kịch"
+      ]
+    },
+    {
+      "id": "k_n2_0360",
+      "kanji": "舞",
+      "level": "N2",
+      "meanings": [
+        "Vũ",
+        "Múa",
+        "Vũ đài"
+      ],
+      "onyomi": [
+        "ブ"
+      ],
+      "kunyomi": [
+        "ま・う",
+        "まい"
+      ],
+      "vi_meanings": [
+        "Vũ",
+        "Múa",
+        "Vũ đài"
+      ]
+    },
+    {
+      "id": "k_n2_0361",
+      "kanji": "台",
+      "level": "N2",
+      "meanings": [
+        "Đài",
+        "Khán đài",
+        "Vũ đài"
+      ],
+      "onyomi": [
+        "ダイ",
+        "タイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Đài",
+        "Khán đài",
+        "Vũ đài"
+      ]
+    },
+    {
+      "id": "k_n2_0362",
+      "kanji": "防",
+      "level": "N2",
+      "meanings": [
+        "Phòng",
+        "Phòng chống",
+        "Đề phòng"
+      ],
+      "onyomi": [
+        "ボウ"
+      ],
+      "kunyomi": [
+        "ふせ・ぐ"
+      ],
+      "vi_meanings": [
+        "Phòng",
+        "Phòng chống",
+        "Đề phòng"
+      ]
+    },
+    {
+      "id": "k_n2_0363",
+      "kanji": "護",
+      "level": "N2",
+      "meanings": [
+        "Hộ",
+        "Bảo hộ",
+        "Hộ vệ"
+      ],
+      "onyomi": [
+        "ゴ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Hộ",
+        "Bảo hộ",
+        "Hộ vệ"
+      ]
+    },
+    {
+      "id": "k_n2_0364",
+      "kanji": "憲",
+      "level": "N2",
+      "meanings": [
+        "Hiến",
+        "Hiến pháp"
+      ],
+      "onyomi": [
+        "ケン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Hiến",
+        "Hiến pháp"
+      ]
+    },
+    {
+      "id": "k_n2_0365",
+      "kanji": "法",
+      "level": "N2",
+      "meanings": [
+        "Pháp",
+        "Pháp luật",
+        "Phương pháp"
+      ],
+      "onyomi": [
+        "ホウ",
+        "ハッ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Pháp",
+        "Pháp luật",
+        "Phương pháp"
+      ]
+    },
+    {
+      "id": "k_n2_0366",
+      "kanji": "律",
+      "level": "N2",
+      "meanings": [
+        "Luật",
+        "Quy luật",
+        "Kỷ luật"
+      ],
+      "onyomi": [
+        "リツ",
+        "リチ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Luật",
+        "Quy luật",
+        "Kỷ luật"
+      ]
+    },
+    {
+      "id": "k_n2_0367",
+      "kanji": "令",
+      "level": "N2",
+      "meanings": [
+        "Lệnh",
+        "Mệnh lệnh",
+        "Nghị định"
+      ],
+      "onyomi": [
+        "レイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Lệnh",
+        "Mệnh lệnh",
+        "Nghị định"
+      ]
+    },
+    {
+      "id": "k_n2_0368",
+      "kanji": "条",
+      "level": "N2",
+      "meanings": [
+        "Điều",
+        "Điều khoản",
+        "Điều lệ"
+      ],
+      "onyomi": [
+        "ジョウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Điều",
+        "Điều khoản",
+        "Điều lệ"
+      ]
+    },
+    {
+      "id": "k_n2_0369",
+      "kanji": "項",
+      "level": "N2",
+      "meanings": [
+        "Hạng",
+        "Hạng mục",
+        "Khoản mục"
+      ],
+      "onyomi": [
+        "コウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Hạng",
+        "Hạng mục",
+        "Khoản mục"
+      ]
+    },
+    {
+      "id": "k_n2_0370",
+      "kanji": "裁",
+      "level": "N2",
+      "meanings": [
+        "Tài",
+        "Phán xét",
+        "Trọng tài"
+      ],
+      "onyomi": [
+        "サイ"
+      ],
+      "kunyomi": [
+        "さば・く",
+        "た・つ"
+      ],
+      "vi_meanings": [
+        "Tài",
+        "Phán xét",
+        "Trọng tài"
+      ]
+    },
+    {
+      "id": "k_n2_0371",
+      "kanji": "判",
+      "level": "N2",
+      "meanings": [
+        "Phán",
+        "Phán đoán",
+        "Phán quyết"
+      ],
+      "onyomi": [
+        "ハン",
+        "バン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Phán",
+        "Phán đoán",
+        "Phán quyết"
+      ]
+    },
+    {
+      "id": "k_n2_0372",
+      "kanji": "審",
+      "level": "N2",
+      "meanings": [
+        "Thẩm",
+        "Thẩm tra",
+        "Thẩm phán"
+      ],
+      "onyomi": [
+        "シン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Thẩm",
+        "Thẩm tra",
+        "Thẩm phán"
+      ]
+    },
+    {
+      "id": "k_n2_0373",
+      "kanji": "查",
+      "level": "N2",
+      "meanings": [
+        "Tra",
+        "Kiểm tra",
+        "Điều tra"
+      ],
+      "onyomi": [
+        "サ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Tra",
+        "Kiểm tra",
+        "Điều tra"
+      ]
+    },
+    {
+      "id": "k_n2_0374",
+      "kanji": "検",
+      "level": "N2",
+      "meanings": [
+        "Kiểm",
+        "Kiểm tra",
+        "Khám xét"
+      ],
+      "onyomi": [
+        "ケン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Kiểm",
+        "Kiểm tra",
+        "Khám xét"
+      ]
+    },
+    {
+      "id": "k_n2_0375",
+      "kanji": "索",
+      "level": "N2",
+      "meanings": [
+        "Sách",
+        "Tìm kiếm",
+        "Dây thừng"
+      ],
+      "onyomi": [
+        "サク"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Sách",
+        "Tìm kiếm",
+        "Dây thừng"
+      ]
+    },
+    {
+      "id": "k_n2_0376",
+      "kanji": "討",
+      "level": "N2",
+      "meanings": [
+        "Thảo",
+        "Thảo phạt",
+        "Thảo luận"
+      ],
+      "onyomi": [
+        "トウ"
+      ],
+      "kunyomi": [
+        "う・つ"
+      ],
+      "vi_meanings": [
+        "Thảo",
+        "Thảo phạt",
+        "Thảo luận"
+      ]
+    },
+    {
+      "id": "k_n2_0377",
+      "kanji": "述",
+      "level": "N2",
+      "meanings": [
+        "Thuật",
+        "Tường thuật",
+        "Trần thuật"
+      ],
+      "onyomi": [
+        "ジュツ"
+      ],
+      "kunyomi": [
+        "の・べる"
+      ],
+      "vi_meanings": [
+        "Thuật",
+        "Tường thuật",
+        "Trần thuật"
+      ]
+    },
+    {
+      "id": "k_n2_0378",
+      "kanji": "記",
+      "level": "N2",
+      "meanings": [
+        "Ký",
+        "Ghi ký",
+        "Ký sự"
+      ],
+      "onyomi": [
+        "キ"
+      ],
+      "kunyomi": [
+        "しる・す"
+      ],
+      "vi_meanings": [
+        "Ký",
+        "Ghi ký",
+        "Ký sự"
+      ]
+    },
+    {
+      "id": "k_n2_0379",
+      "kanji": "載",
+      "level": "N2",
+      "meanings": [
+        "Tái",
+        "Đăng tải",
+        "Ghi chép"
+      ],
+      "onyomi": [
+        "サイ"
+      ],
+      "kunyomi": [
+        "の・る",
+        "の・せる"
+      ],
+      "vi_meanings": [
+        "Tái",
+        "Đăng tải",
+        "Ghi chép"
+      ]
+    },
+    {
+      "id": "k_n2_0380",
+      "kanji": "掲",
+      "level": "N2",
+      "meanings": [
+        "Yết",
+        "Niêm yết",
+        "Đăng báo"
+      ],
+      "onyomi": [
+        "ケイ"
+      ],
+      "kunyomi": [
+        "かか・げる"
+      ],
+      "vi_meanings": [
+        "Yết",
+        "Niêm yết",
+        "Đăng báo"
+      ]
+    },
+    {
+      "id": "k_n2_0381",
+      "kanji": "宣",
+      "level": "N2",
+      "meanings": [
+        "Tuyên",
+        "Tuyên truyền",
+        "Tuyên xưng"
+      ],
+      "onyomi": [
+        "セン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Tuyên",
+        "Tuyên truyền",
+        "Tuyên xưng"
+      ]
+    },
+    {
+      "id": "k_n2_0382",
+      "kanji": "言",
+      "level": "N2",
+      "meanings": [
+        "Ngôn",
+        "Lời nói",
+        "Tuyên ngôn"
+      ],
+      "onyomi": [
+        "ゲン",
+        "ゴン"
+      ],
+      "kunyomi": [
+        "い・う",
+        "こと"
+      ],
+      "vi_meanings": [
+        "Ngôn",
+        "Lời nói",
+        "Tuyên ngôn"
+      ]
+    },
+    {
+      "id": "k_n2_0383",
+      "kanji": "語",
+      "level": "N2",
+      "meanings": [
+        "Ngữ",
+        "Ngôn ngữ",
+        "Kể chuyện"
+      ],
+      "onyomi": [
+        "ゴ"
+      ],
+      "kunyomi": [
+        "かた・る"
+      ],
+      "vi_meanings": [
+        "Ngữ",
+        "Ngôn ngữ",
+        "Kể chuyện"
+      ]
+    },
+    {
+      "id": "k_n2_0384",
+      "kanji": "訳",
+      "level": "N2",
+      "meanings": [
+        "Dịch",
+        "Phiên dịch",
+        "Lý do"
+      ],
+      "onyomi": [
+        "ヤク"
+      ],
+      "kunyomi": [
+        "わけ"
+      ],
+      "vi_meanings": [
+        "Dịch",
+        "Phiên dịch",
+        "Lý do"
+      ]
+    },
+    {
+      "id": "k_n2_0385",
+      "kanji": "釈",
+      "level": "N2",
+      "meanings": [
+        "Thích",
+        "Giải thích",
+        "Thích giáo"
+      ],
+      "onyomi": [
+        "シャク"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Thích",
+        "Giải thích",
+        "Thích giáo"
+      ]
+    },
+    {
+      "id": "k_n1_0386",
       "kanji": "覇",
       "level": "N1",
       "meanings": [
         "Bá",
-        "Bá quyền"
+        "Bá quyền",
+        "Tranh bá"
       ],
       "onyomi": [
         "ハ"
@@ -58413,16 +64774,18 @@
       "kunyomi": [],
       "vi_meanings": [
         "Bá",
-        "Bá quyền"
+        "Bá quyền",
+        "Tranh bá"
       ]
     },
     {
-      "id": "k_full_82",
+      "id": "k_n1_0387",
       "kanji": "抑",
       "level": "N1",
       "meanings": [
         "Ức",
-        "Đàn áp"
+        "Đàn áp",
+        "Ức chế"
       ],
       "onyomi": [
         "ヨク"
@@ -58432,35 +64795,40 @@
       ],
       "vi_meanings": [
         "Ức",
-        "Đàn áp"
+        "Đàn áp",
+        "Ức chế"
       ]
     },
     {
-      "id": "k_full_83",
+      "id": "k_n1_0388",
       "kanji": "揚",
       "level": "N1",
       "meanings": [
         "Dương",
-        "Tuyên dương"
+        "Tuyên dương",
+        "Bay lên"
       ],
       "onyomi": [
         "ヨウ"
       ],
       "kunyomi": [
-        "あ・げる"
+        "あ・げる",
+        "あ・がる"
       ],
       "vi_meanings": [
         "Dương",
-        "Tuyên dương"
+        "Tuyên dương",
+        "Bay lên"
       ]
     },
     {
-      "id": "k_full_84",
+      "id": "k_n1_0389",
       "kanji": "暫",
       "level": "N1",
       "meanings": [
         "Tạm",
-        "Tạm thời"
+        "Tạm thời",
+        "Chốc lát"
       ],
       "onyomi": [
         "ザン"
@@ -58470,71 +64838,392 @@
       ],
       "vi_meanings": [
         "Tạm",
-        "Tạm thời"
+        "Tạm thời",
+        "Chốc lát"
       ]
     },
     {
-      "id": "k_full_85",
+      "id": "k_n1_0390",
       "kanji": "漸",
       "level": "N1",
       "meanings": [
         "Tiệm",
-        "Tiệm tiến"
+        "Tiệm tiến",
+        "Dần dần"
       ],
       "onyomi": [
         "ゼン"
       ],
-      "kunyomi": [],
+      "kunyomi": [
+        "ようや・く"
+      ],
       "vi_meanings": [
         "Tiệm",
-        "Tiệm tiến"
+        "Tiệm tiến",
+        "Dần dần"
       ]
     },
     {
-      "id": "k_full_86",
+      "id": "k_n1_0391",
+      "kanji": "諮",
+      "level": "N1",
+      "meanings": [
+        "Ti",
+        "Tham vấn",
+        "Hỏi ý kiến"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "はか・る"
+      ],
+      "vi_meanings": [
+        "Ti",
+        "Tham vấn",
+        "Hỏi ý kiến"
+      ]
+    },
+    {
+      "id": "k_n1_0392",
+      "kanji": "賠",
+      "level": "N1",
+      "meanings": [
+        "Bồi",
+        "Bồi thường"
+      ],
+      "onyomi": [
+        "バイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Bồi",
+        "Bồi thường"
+      ]
+    },
+    {
+      "id": "k_n1_0393",
+      "kanji": "償",
+      "level": "N1",
+      "meanings": [
+        "Thường",
+        "Bồi thường",
+        "Đền bù"
+      ],
+      "onyomi": [
+        "ショウ"
+      ],
+      "kunyomi": [
+        "つぐな・う"
+      ],
+      "vi_meanings": [
+        "Thường",
+        "Bồi thường",
+        "Đền bù"
+      ]
+    },
+    {
+      "id": "k_n1_0394",
+      "kanji": "騰",
+      "level": "N1",
+      "meanings": [
+        "Đằng",
+        "Tăng vọt",
+        "Tăng giá"
+      ],
+      "onyomi": [
+        "トウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Đằng",
+        "Tăng vọt",
+        "Tăng giá"
+      ]
+    },
+    {
+      "id": "k_n1_0395",
+      "kanji": "唆",
+      "level": "N1",
+      "meanings": [
+        "Toa",
+        "Xúi giục",
+        "Ám chỉ"
+      ],
+      "onyomi": [
+        "サ"
+      ],
+      "kunyomi": [
+        "そそのか・す"
+      ],
+      "vi_meanings": [
+        "Toa",
+        "Xúi giục",
+        "Ám chỉ"
+      ]
+    },
+    {
+      "id": "k_n1_0396",
+      "kanji": "妥",
+      "level": "N1",
+      "meanings": [
+        "Thỏa",
+        "Thỏa hiệp",
+        "Thỏa đáng"
+      ],
+      "onyomi": [
+        "ダ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Thỏa",
+        "Thỏa hiệp",
+        "Thỏa đáng"
+      ]
+    },
+    {
+      "id": "k_n1_0397",
+      "kanji": "轄",
+      "level": "N1",
+      "meanings": [
+        "Hạt",
+        "Quản hạt",
+        "Cai quản"
+      ],
+      "onyomi": [
+        "カツ"
+      ],
+      "kunyomi": [
+        "くさび"
+      ],
+      "vi_meanings": [
+        "Hạt",
+        "Quản hạt",
+        "Cai quản"
+      ]
+    },
+    {
+      "id": "k_n1_0398",
+      "kanji": "頻",
+      "level": "N1",
+      "meanings": [
+        "Tần",
+        "Tần suất",
+        "Thường xuyên"
+      ],
+      "onyomi": [
+        "ヒン"
+      ],
+      "kunyomi": [
+        "しき・りに"
+      ],
+      "vi_meanings": [
+        "Tần",
+        "Tần suất",
+        "Thường xuyên"
+      ]
+    },
+    {
+      "id": "k_n1_0399",
+      "kanji": "顕",
+      "level": "N1",
+      "meanings": [
+        "Hiển",
+        "Hiển nhiên",
+        "Rõ ràng"
+      ],
+      "onyomi": [
+        "ケン"
+      ],
+      "kunyomi": [
+        "あきらか",
+        "あらわ・れる"
+      ],
+      "vi_meanings": [
+        "Hiển",
+        "Hiển nhiên",
+        "Rõ ràng"
+      ]
+    },
+    {
+      "id": "k_n1_0400",
+      "kanji": "躍",
+      "level": "N1",
+      "meanings": [
+        "Dược",
+        "Nhảy vọt",
+        "Hoạt dược"
+      ],
+      "onyomi": [
+        "ヤク"
+      ],
+      "kunyomi": [
+        "おど・る"
+      ],
+      "vi_meanings": [
+        "Dược",
+        "Nhảy vọt",
+        "Hoạt dược"
+      ]
+    },
+    {
+      "id": "k_n1_0401",
+      "kanji": "覆",
+      "level": "N1",
+      "meanings": [
+        "Phúc",
+        "Lật đổ",
+        "Bao phủ"
+      ],
+      "onyomi": [
+        "フク"
+      ],
+      "kunyomi": [
+        "おお・う",
+        "くつがえ・す"
+      ],
+      "vi_meanings": [
+        "Phúc",
+        "Lật đổ",
+        "Bao phủ"
+      ]
+    },
+    {
+      "id": "k_n1_0402",
+      "kanji": "促",
+      "level": "N1",
+      "meanings": [
+        "Xúc",
+        "Thúc đẩy",
+        "Xúc tiến"
+      ],
+      "onyomi": [
+        "ソク"
+      ],
+      "kunyomi": [
+        "うなが・す"
+      ],
+      "vi_meanings": [
+        "Xúc",
+        "Thúc đẩy",
+        "Xúc tiến"
+      ]
+    },
+    {
+      "id": "k_n1_0403",
+      "kanji": "慮",
+      "level": "N1",
+      "meanings": [
+        "Lự",
+        "Suy nghĩ sâu xa",
+        "Lưỡng lự"
+      ],
+      "onyomi": [
+        "リョ"
+      ],
+      "kunyomi": [
+        "おもんぱか・る"
+      ],
+      "vi_meanings": [
+        "Lự",
+        "Suy nghĩ sâu xa",
+        "Lưỡng lự"
+      ]
+    },
+    {
+      "id": "k_n1_0404",
+      "kanji": "陥",
+      "level": "N1",
+      "meanings": [
+        "Hãm",
+        "Rơi vào",
+        "Hãm hại"
+      ],
+      "onyomi": [
+        "カン"
+      ],
+      "kunyomi": [
+        "おちい・る",
+        "おとしい・れる"
+      ],
+      "vi_meanings": [
+        "Hãm",
+        "Rơi vào",
+        "Hãm hại"
+      ]
+    },
+    {
+      "id": "k_n1_0405",
+      "kanji": "拠",
+      "level": "N1",
+      "meanings": [
+        "Cứ",
+        "Căn cứ",
+        "Bằng chứng"
+      ],
+      "onyomi": [
+        "キョ",
+        "コ"
+      ],
+      "kunyomi": [
+        "よ・る"
+      ],
+      "vi_meanings": [
+        "Cứ",
+        "Căn cứ",
+        "Bằng chứng"
+      ]
+    },
+    {
+      "id": "k_n1_0406",
       "kanji": "匿",
       "level": "N1",
       "meanings": [
-        "Ẩn",
-        "Ẩn danh"
+        "Nặc",
+        "Ẩn danh",
+        "Nặc danh"
       ],
       "onyomi": [
         "トク"
       ],
       "kunyomi": [
-        "かく・れる"
+        "かく・す"
       ],
       "vi_meanings": [
-        "Ẩn",
-        "Ẩn danh"
+        "Nặc",
+        "Ẩn danh",
+        "Nặc danh"
       ]
     },
     {
-      "id": "k_full_87",
-      "kanji": "歪",
+      "id": "k_n1_0407",
+      "kanji": "濫",
       "level": "N1",
       "meanings": [
-        "Oai",
-        "Méo mó"
+        "Lạm",
+        "Lạm dụng",
+        "Tràn lan"
       ],
       "onyomi": [
-        "ワイ"
+        "ラン"
       ],
       "kunyomi": [
-        "ゆが・む"
+        "みだ・りに"
       ],
       "vi_meanings": [
-        "Oai",
-        "Méo mó"
+        "Lạm",
+        "Lạm dụng",
+        "Tràn lan"
       ]
     },
     {
-      "id": "k_full_88",
+      "id": "k_n1_0408",
       "kanji": "蔑",
       "level": "N1",
       "meanings": [
         "Miệt",
-        "Khinh miệt"
+        "Khinh miệt",
+        "Xem thường"
       ],
       "onyomi": [
         "ベツ"
@@ -58544,16 +65233,368 @@
       ],
       "vi_meanings": [
         "Miệt",
-        "Khinh miệt"
+        "Khinh miệt",
+        "Xem thường"
       ]
     },
     {
-      "id": "k_full_89",
+      "id": "k_n1_0409",
+      "kanji": "弊",
+      "level": "N1",
+      "meanings": [
+        "Tệ",
+        "Tệ hại",
+        "Khuyết điểm"
+      ],
+      "onyomi": [
+        "ヘイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Tệ",
+        "Tệ hại",
+        "Khuyết điểm"
+      ]
+    },
+    {
+      "id": "k_n1_0410",
+      "kanji": "阻",
+      "level": "N1",
+      "meanings": [
+        "Trở",
+        "Ngăn cản",
+        "Trở ngại"
+      ],
+      "onyomi": [
+        "ソ"
+      ],
+      "kunyomi": [
+        "はば・む"
+      ],
+      "vi_meanings": [
+        "Trở",
+        "Ngăn cản",
+        "Trở ngại"
+      ]
+    },
+    {
+      "id": "k_n1_0411",
+      "kanji": "怠",
+      "level": "N1",
+      "meanings": [
+        "Đãi",
+        "Lười biếng",
+        "Chểnh mảng"
+      ],
+      "onyomi": [
+        "タイ"
+      ],
+      "kunyomi": [
+        "おこた・る",
+        "なま・ける"
+      ],
+      "vi_meanings": [
+        "Đãi",
+        "Lười biếng",
+        "Chểnh mảng"
+      ]
+    },
+    {
+      "id": "k_n1_0412",
+      "kanji": "侮",
+      "level": "N1",
+      "meanings": [
+        "Vũ",
+        "Khinh bỉ",
+        "Coi thường"
+      ],
+      "onyomi": [
+        "ブ"
+      ],
+      "kunyomi": [
+        "あなど・る"
+      ],
+      "vi_meanings": [
+        "Vũ",
+        "Khinh bỉ",
+        "Coi thường"
+      ]
+    },
+    {
+      "id": "k_n1_0413",
+      "kanji": "偏",
+      "level": "N1",
+      "meanings": [
+        "Thiên",
+        "Lệch lạc",
+        "Thiên vị"
+      ],
+      "onyomi": [
+        "ヘン"
+      ],
+      "kunyomi": [
+        "かたよ・る"
+      ],
+      "vi_meanings": [
+        "Thiên",
+        "Lệch lạc",
+        "Thiên vị"
+      ]
+    },
+    {
+      "id": "k_n1_0414",
+      "kanji": "誇",
+      "level": "N1",
+      "meanings": [
+        "Khoa",
+        "Tự hào",
+        "Khoe khoang"
+      ],
+      "onyomi": [
+        "コ"
+      ],
+      "kunyomi": [
+        "ほこ・る"
+      ],
+      "vi_meanings": [
+        "Khoa",
+        "Tự hào",
+        "Khoe khoang"
+      ]
+    },
+    {
+      "id": "k_n1_0415",
+      "kanji": "醸",
+      "level": "N1",
+      "meanings": [
+        "Nhưỡng",
+        "Ủ rượu",
+        "Tạo ra không khí"
+      ],
+      "onyomi": [
+        "ジョウ"
+      ],
+      "kunyomi": [
+        "かも・す"
+      ],
+      "vi_meanings": [
+        "Nhưỡng",
+        "Ủ rượu",
+        "Tạo ra không khí"
+      ]
+    },
+    {
+      "id": "k_n1_0416",
+      "kanji": "曖",
+      "level": "N1",
+      "meanings": [
+        "Ái",
+        "Mơ hồ",
+        "Mờ mịt"
+      ],
+      "onyomi": [
+        "アイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Ái",
+        "Mơ hồ",
+        "Mờ mịt"
+      ]
+    },
+    {
+      "id": "k_n1_0417",
+      "kanji": "昧",
+      "level": "N1",
+      "meanings": [
+        "Muội",
+        "Tăm tối",
+        "Mơ hồ"
+      ],
+      "onyomi": [
+        "マイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Muội",
+        "Tăm tối",
+        "Mơ hồ"
+      ]
+    },
+    {
+      "id": "k_n1_0418",
+      "kanji": "緻",
+      "level": "N1",
+      "meanings": [
+        "Trí",
+        "Tinh tế",
+        "Kỹ lưỡng"
+      ],
+      "onyomi": [
+        "チ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Trí",
+        "Tinh tế",
+        "Kỹ lưỡng"
+      ]
+    },
+    {
+      "id": "k_n1_0419",
+      "kanji": "密",
+      "level": "N1",
+      "meanings": [
+        "Mật",
+        "Bí mật",
+        "Dày đặc"
+      ],
+      "onyomi": [
+        "ミツ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Mật",
+        "Bí mật",
+        "Dày đặc"
+      ]
+    },
+    {
+      "id": "k_n1_0420",
+      "kanji": "嘲",
+      "level": "N1",
+      "meanings": [
+        "Trào",
+        "Chế giễu",
+        "Cười nhạo"
+      ],
+      "onyomi": [
+        "チョウ"
+      ],
+      "kunyomi": [
+        "あざけ・る"
+      ],
+      "vi_meanings": [
+        "Trào",
+        "Chế giễu",
+        "Cười nhạo"
+      ]
+    },
+    {
+      "id": "k_n1_0421",
+      "kanji": "玩",
+      "level": "N1",
+      "meanings": [
+        "Ngoạn",
+        "Thưởng thức",
+        "Đồ chơi"
+      ],
+      "onyomi": [
+        "ガン"
+      ],
+      "kunyomi": [
+        "もてあそ・ぶ"
+      ],
+      "vi_meanings": [
+        "Ngoạn",
+        "Thưởng thức",
+        "Đồ chơi"
+      ]
+    },
+    {
+      "id": "k_n1_0422",
+      "kanji": "弄",
+      "level": "N1",
+      "meanings": [
+        "Lộng",
+        "Đùa cợt",
+        "Lạm dụng"
+      ],
+      "onyomi": [
+        "ロウ"
+      ],
+      "kunyomi": [
+        "いじ・る",
+        "もてあそ・ぶ"
+      ],
+      "vi_meanings": [
+        "Lộng",
+        "Đùa cợt",
+        "Lạm dụng"
+      ]
+    },
+    {
+      "id": "k_n1_0423",
+      "kanji": "憐",
+      "level": "N1",
+      "meanings": [
+        "Lân",
+        "Thương xót",
+        "Thương hại"
+      ],
+      "onyomi": [
+        "レン"
+      ],
+      "kunyomi": [
+        "あわ・れむ"
+      ],
+      "vi_meanings": [
+        "Lân",
+        "Thương xót",
+        "Thương hại"
+      ]
+    },
+    {
+      "id": "k_n1_0424",
+      "kanji": "憫",
+      "level": "N1",
+      "meanings": [
+        "Mẫn",
+        "Xót thương",
+        "Thương cảm"
+      ],
+      "onyomi": [
+        "ビン",
+        "ミン"
+      ],
+      "kunyomi": [
+        "あわ・れむ"
+      ],
+      "vi_meanings": [
+        "Mẫn",
+        "Xót thương",
+        "Thương cảm"
+      ]
+    },
+    {
+      "id": "k_n1_0425",
+      "kanji": "恣",
+      "level": "N1",
+      "meanings": [
+        "Tứ",
+        "Tùy tiện",
+        "Phóng túng"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "ほしいまま"
+      ],
+      "vi_meanings": [
+        "Tứ",
+        "Tùy tiện",
+        "Phóng túng"
+      ]
+    },
+    {
+      "id": "k_n1_0426",
       "kanji": "傲",
       "level": "N1",
       "meanings": [
         "Ngạo",
-        "Ngạo mạn"
+        "Ngạo mạn",
+        "Kiêu ngạo"
       ],
       "onyomi": [
         "ゴウ"
@@ -58561,171 +65602,1571 @@
       "kunyomi": [],
       "vi_meanings": [
         "Ngạo",
-        "Ngạo mạn"
+        "Ngạo mạn",
+        "Kiêu ngạo"
       ]
     },
     {
-      "id": "k_full_90",
-      "kanji": "嘘",
+      "id": "k_n1_0427",
+      "kanji": "慢",
       "level": "N1",
       "meanings": [
-        "Hư",
-        "Lời nói dối"
+        "Mạn",
+        "Chậm chạp",
+        "Kiêu mạn"
       ],
-      "onyomi": [],
-      "kunyomi": [
-        "うそ"
+      "onyomi": [
+        "マン"
       ],
+      "kunyomi": [],
       "vi_meanings": [
-        "Hư",
-        "Lời nói dối"
+        "Mạn",
+        "Chậm chạp",
+        "Kiêu mạn"
       ]
     },
     {
-      "id": "k_inu",
-      "level": "N5",
-      "kanji": "犬",
+      "id": "k_n1_0428",
+      "kanji": "貪",
+      "level": "N1",
       "meanings": [
-        "Khuyển",
-        "Con chó"
+        "Tham",
+        "Tham lam",
+        "Ham muốn"
       ],
       "onyomi": [
-        "ケン"
+        "ドン",
+        "タン"
       ],
       "kunyomi": [
-        "いぬ"
+        "むさぼ・る"
       ],
-      "strokes": 4
+      "vi_meanings": [
+        "Tham",
+        "Tham lam",
+        "Ham muốn"
+      ]
     },
     {
-      "id": "k_neko",
-      "level": "N5",
-      "kanji": "猫",
+      "id": "k_n1_0429",
+      "kanji": "婪",
+      "level": "N1",
       "meanings": [
-        "Miêu",
-        "Con mèo"
+        "Lam",
+        "Tham lam"
       ],
       "onyomi": [
-        "ビョウ"
+        "ラン"
       ],
-      "kunyomi": [
-        "ねこ"
-      ],
-      "strokes": 11
+      "kunyomi": [],
+      "vi_meanings": [
+        "Lam",
+        "Tham lam"
+      ]
     },
     {
-      "id": "k_tori",
-      "level": "N5",
-      "kanji": "鳥",
+      "id": "k_n1_0430",
+      "kanji": "嫉",
+      "level": "N1",
       "meanings": [
-        "Điểu",
-        "Con chim"
+        "Tật",
+        "Ghen ghét",
+        "Đố kỵ"
       ],
       "onyomi": [
-        "チョウ"
+        "シツ"
       ],
       "kunyomi": [
-        "とり"
+        "そね・む"
       ],
-      "strokes": 11
+      "vi_meanings": [
+        "Tật",
+        "Ghen ghét",
+        "Đố kỵ"
+      ]
     },
     {
-      "id": "k_sakana",
-      "level": "N5",
-      "kanji": "魚",
+      "id": "k_n1_0431",
+      "kanji": "妬",
+      "level": "N1",
       "meanings": [
-        "Ngư",
-        "Con cá"
+        "Đố",
+        "Ghen tuông",
+        "Đố kỵ"
       ],
       "onyomi": [
-        "ギョ"
+        "ト"
       ],
       "kunyomi": [
-        "さかな",
-        "うお"
+        "ねた・む"
       ],
-      "strokes": 11
+      "vi_meanings": [
+        "Đố",
+        "Ghen tuông",
+        "Đố kỵ"
+      ]
     },
     {
-      "id": "k_umi",
-      "level": "N5",
-      "kanji": "海",
+      "id": "k_n1_0432",
+      "kanji": "怨",
+      "level": "N1",
       "meanings": [
-        "Hải",
-        "Biển"
+        "Oán",
+        "Oán hận",
+        "Oán trách"
       ],
       "onyomi": [
-        "カイ"
+        "エン",
+        "オン"
       ],
       "kunyomi": [
-        "うみ"
+        "うら・む"
       ],
-      "strokes": 9
+      "vi_meanings": [
+        "Oán",
+        "Oán hận",
+        "Oán trách"
+      ]
     },
     {
-      "id": "k_sora",
-      "level": "N5",
-      "kanji": "空",
+      "id": "k_n1_0433",
+      "kanji": "恨",
+      "level": "N1",
       "meanings": [
-        "Không",
-        "Bầu trời"
+        "Hận",
+        "Căm thù",
+        "Hận thù"
       ],
       "onyomi": [
-        "クウ"
+        "コン"
       ],
       "kunyomi": [
-        "そら",
-        "あ・く"
+        "うら・む",
+        "うら・めしい"
       ],
-      "strokes": 8
+      "vi_meanings": [
+        "Hận",
+        "Căm thù",
+        "Hận thù"
+      ]
     },
     {
-      "id": "k_rain",
-      "level": "N5",
-      "kanji": "雨",
+      "id": "k_n1_0434",
+      "kanji": "憤",
+      "level": "N1",
       "meanings": [
-        "Vũ",
-        "Mưa"
+        "Phẫn",
+        "Phẫn nộ",
+        "Căm phẫn"
       ],
       "onyomi": [
-        "ウ"
+        "フン"
       ],
       "kunyomi": [
-        "あめ"
+        "いきどお・る"
       ],
-      "strokes": 8
+      "vi_meanings": [
+        "Phẫn",
+        "Phẫn nộ",
+        "Căm phẫn"
+      ]
     },
     {
-      "id": "k_snow",
-      "level": "N5",
-      "kanji": "雪",
+      "id": "k_n1_0435",
+      "kanji": "慨",
+      "level": "N1",
       "meanings": [
-        "Tuyết",
-        "Tuyết"
+        "Khái",
+        "Cảm khái",
+        "Than thở"
+      ],
+      "onyomi": [
+        "ガイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Khái",
+        "Cảm khái",
+        "Than thở"
+      ]
+    },
+    {
+      "id": "k_n1_0436",
+      "kanji": "慄",
+      "level": "N1",
+      "meanings": [
+        "Lật",
+        "Rùng mình",
+        "Sợ hãi"
+      ],
+      "onyomi": [
+        "リツ"
+      ],
+      "kunyomi": [
+        "おのの・く"
+      ],
+      "vi_meanings": [
+        "Lật",
+        "Rùng mình",
+        "Sợ hãi"
+      ]
+    },
+    {
+      "id": "k_n1_0437",
+      "kanji": "惧",
+      "level": "N1",
+      "meanings": [
+        "Cụ",
+        "Lo sợ",
+        "Kính sợ"
+      ],
+      "onyomi": [
+        "ク"
+      ],
+      "kunyomi": [
+        "おそ・れる"
+      ],
+      "vi_meanings": [
+        "Cụ",
+        "Lo sợ",
+        "Kính sợ"
+      ]
+    },
+    {
+      "id": "k_n1_0438",
+      "kanji": "恍",
+      "level": "N1",
+      "meanings": [
+        "Hoảng",
+        "Ngơ ngẩn",
+        "Mơ màng"
+      ],
+      "onyomi": [
+        "コウ"
+      ],
+      "kunyomi": [
+        "ほの・か"
+      ],
+      "vi_meanings": [
+        "Hoảng",
+        "Ngơ ngẩn",
+        "Mơ màng"
+      ]
+    },
+    {
+      "id": "k_n1_0439",
+      "kanji": "惚",
+      "level": "N1",
+      "meanings": [
+        "Hốt",
+        "Say mê",
+        "Si tình"
+      ],
+      "onyomi": [
+        "コツ"
+      ],
+      "kunyomi": [
+        "ほ・れる",
+        "ぼ・ける"
+      ],
+      "vi_meanings": [
+        "Hốt",
+        "Say mê",
+        "Si tình"
+      ]
+    },
+    {
+      "id": "k_n1_0440",
+      "kanji": "憧",
+      "level": "N1",
+      "meanings": [
+        "Sung",
+        "Ngưỡng mộ",
+        "Khao khát"
+      ],
+      "onyomi": [
+        "ショウ"
+      ],
+      "kunyomi": [
+        "あこが・れる"
+      ],
+      "vi_meanings": [
+        "Sung",
+        "Ngưỡng mộ",
+        "Khao khát"
+      ]
+    },
+    {
+      "id": "k_n1_0441",
+      "kanji": "憬",
+      "level": "N1",
+      "meanings": [
+        "Cảnh",
+        "Ngưỡng vọng",
+        "Mơ ước"
+      ],
+      "onyomi": [
+        "ケイ"
+      ],
+      "kunyomi": [
+        "あこが・れる"
+      ],
+      "vi_meanings": [
+        "Cảnh",
+        "Ngưỡng vọng",
+        "Mơ ước"
+      ]
+    },
+    {
+      "id": "k_n2_0442",
+      "kanji": "協",
+      "level": "N2",
+      "meanings": [
+        "Hiệp",
+        "Hợp tác",
+        "Hiệp lực"
+      ],
+      "onyomi": [
+        "キョウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Hiệp",
+        "Hợp tác",
+        "Hiệp lực"
+      ]
+    },
+    {
+      "id": "k_n2_0443",
+      "kanji": "労",
+      "level": "N2",
+      "meanings": [
+        "Lao",
+        "Lao động",
+        "Vất vả"
+      ],
+      "onyomi": [
+        "ロウ"
+      ],
+      "kunyomi": [
+        "ねぎら・う"
+      ],
+      "vi_meanings": [
+        "Lao",
+        "Lao động",
+        "Vất vả"
+      ]
+    },
+    {
+      "id": "k_n2_0444",
+      "kanji": "働",
+      "level": "N2",
+      "meanings": [
+        "Động",
+        "Làm việc",
+        "Lao động"
+      ],
+      "onyomi": [
+        "ドウ"
+      ],
+      "kunyomi": [
+        "はたら・く"
+      ],
+      "vi_meanings": [
+        "Động",
+        "Làm việc",
+        "Lao động"
+      ]
+    },
+    {
+      "id": "k_n2_0445",
+      "kanji": "輸",
+      "level": "N2",
+      "meanings": [
+        "Thâu",
+        "Vận chuyển",
+        "Xuất nhập khẩu"
+      ],
+      "onyomi": [
+        "ユ",
+        "シュ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Thâu",
+        "Vận chuyển",
+        "Xuất nhập khẩu"
+      ]
+    },
+    {
+      "id": "k_n2_0446",
+      "kanji": "貿",
+      "level": "N2",
+      "meanings": [
+        "Mậu",
+        "Mậu dịch",
+        "Thương mại"
+      ],
+      "onyomi": [
+        "ボウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Mậu",
+        "Mậu dịch",
+        "Thương mại"
+      ]
+    },
+    {
+      "id": "k_n2_0447",
+      "kanji": "収",
+      "level": "N2",
+      "meanings": [
+        "Thu",
+        "Thu nhập",
+        "Thu hoạch"
+      ],
+      "onyomi": [
+        "シュウ"
+      ],
+      "kunyomi": [
+        "おさ・める",
+        "おさ・まる"
+      ],
+      "vi_meanings": [
+        "Thu",
+        "Thu nhập",
+        "Thu hoạch"
+      ]
+    },
+    {
+      "id": "k_n2_0448",
+      "kanji": "支",
+      "level": "N2",
+      "meanings": [
+        "Chi",
+        "Chi trả",
+        "Chi nhánh"
+      ],
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "ささ・える"
+      ],
+      "vi_meanings": [
+        "Chi",
+        "Chi trả",
+        "Chi nhánh"
+      ]
+    },
+    {
+      "id": "k_n2_0449",
+      "kanji": "払",
+      "level": "N2",
+      "meanings": [
+        "Phất",
+        "Chi trả",
+        "Quét sạch"
+      ],
+      "onyomi": [
+        "フツ",
+        "ヒツ"
+      ],
+      "kunyomi": [
+        "はら・う"
+      ],
+      "vi_meanings": [
+        "Phất",
+        "Chi trả",
+        "Quét sạch"
+      ]
+    },
+    {
+      "id": "k_n2_0450",
+      "kanji": "額",
+      "level": "N2",
+      "meanings": [
+        "Ngạch",
+        "Số tiền",
+        "Hạn mức",
+        "Trán"
+      ],
+      "onyomi": [
+        "ガク"
+      ],
+      "kunyomi": [
+        "ひたい"
+      ],
+      "vi_meanings": [
+        "Ngạch",
+        "Số tiền",
+        "Hạn mức",
+        "Trán"
+      ]
+    },
+    {
+      "id": "k_n2_0451",
+      "kanji": "投",
+      "level": "N2",
+      "meanings": [
+        "Đầu",
+        "Đầu tư",
+        "Ném"
+      ],
+      "onyomi": [
+        "トウ"
+      ],
+      "kunyomi": [
+        "な・げる"
+      ],
+      "vi_meanings": [
+        "Đầu",
+        "Đầu tư",
+        "Ném"
+      ]
+    },
+    {
+      "id": "k_n2_0452",
+      "kanji": "諸",
+      "level": "N2",
+      "meanings": [
+        "Chư",
+        "Các",
+        "Nhiều"
+      ],
+      "onyomi": [
+        "ショ"
+      ],
+      "kunyomi": [
+        "もろ"
+      ],
+      "vi_meanings": [
+        "Chư",
+        "Các",
+        "Nhiều"
+      ]
+    },
+    {
+      "id": "k_n2_0453",
+      "kanji": "費",
+      "level": "N2",
+      "meanings": [
+        "Phí",
+        "Chi phí",
+        "Tiêu hao"
+      ],
+      "onyomi": [
+        "ヒ"
+      ],
+      "kunyomi": [
+        "つい・やす"
+      ],
+      "vi_meanings": [
+        "Phí",
+        "Chi phí",
+        "Tiêu hao"
+      ]
+    },
+    {
+      "id": "k_n2_0454",
+      "kanji": "況",
+      "level": "N2",
+      "meanings": [
+        "Huống",
+        "Tình huống",
+        "Tình hình"
+      ],
+      "onyomi": [
+        "キョウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Huống",
+        "Tình huống",
+        "Tình hình"
+      ]
+    },
+    {
+      "id": "k_n2_0455",
+      "kanji": "態",
+      "level": "N2",
+      "meanings": [
+        "Thái",
+        "Trạng thái",
+        "Thái độ"
+      ],
+      "onyomi": [
+        "タイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Thái",
+        "Trạng thái",
+        "Thái độ"
+      ]
+    },
+    {
+      "id": "k_n2_0456",
+      "kanji": "勢",
+      "level": "N2",
+      "meanings": [
+        "Thế",
+        "Tư thế",
+        "Xu thế"
+      ],
+      "onyomi": [
+        "セイ"
+      ],
+      "kunyomi": [
+        "いきお・い"
+      ],
+      "vi_meanings": [
+        "Thế",
+        "Tư thế",
+        "Xu thế"
+      ]
+    },
+    {
+      "id": "k_n2_0457",
+      "kanji": "趨",
+      "level": "N2",
+      "meanings": [
+        "Xu",
+        "Xu hướng"
+      ],
+      "onyomi": [
+        "スウ",
+        "シュ"
+      ],
+      "kunyomi": [
+        "おもむ・く"
+      ],
+      "vi_meanings": [
+        "Xu",
+        "Xu hướng"
+      ]
+    },
+    {
+      "id": "k_n2_0458",
+      "kanji": "向",
+      "level": "N2",
+      "meanings": [
+        "Hướng",
+        "Phương hướng",
+        "Hướng tới"
+      ],
+      "onyomi": [
+        "コウ"
+      ],
+      "kunyomi": [
+        "む・く",
+        "む・かう"
+      ],
+      "vi_meanings": [
+        "Hướng",
+        "Phương hướng",
+        "Hướng tới"
+      ]
+    },
+    {
+      "id": "k_n2_0459",
+      "kanji": "及",
+      "level": "N2",
+      "meanings": [
+        "Cập",
+        "Phổ cập",
+        "Lan tới"
+      ],
+      "onyomi": [
+        "キュウ"
+      ],
+      "kunyomi": [
+        "およ・ぶ",
+        "およ・ぼす"
+      ],
+      "vi_meanings": [
+        "Cập",
+        "Phổ cập",
+        "Lan tới"
+      ]
+    },
+    {
+      "id": "k_n2_0460",
+      "kanji": "普",
+      "level": "N2",
+      "meanings": [
+        "Phổ",
+        "Phổ biến",
+        "Rộng khắp"
+      ],
+      "onyomi": [
+        "フ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Phổ",
+        "Phổ biến",
+        "Rộng khắp"
+      ]
+    },
+    {
+      "id": "k_n2_0461",
+      "kanji": "導",
+      "level": "N2",
+      "meanings": [
+        "Đạo",
+        "Chỉ đạo",
+        "Dẫn dắt"
+      ],
+      "onyomi": [
+        "ドウ"
+      ],
+      "kunyomi": [
+        "みちび・く"
+      ],
+      "vi_meanings": [
+        "Đạo",
+        "Chỉ đạo",
+        "Dẫn dắt"
+      ]
+    },
+    {
+      "id": "k_n2_0462",
+      "kanji": "引",
+      "level": "N2",
+      "meanings": [
+        "Dẫn",
+        "Kéo",
+        "Trừ"
+      ],
+      "onyomi": [
+        "イン"
+      ],
+      "kunyomi": [
+        "ひ・く",
+        "ひ・ける"
+      ],
+      "vi_meanings": [
+        "Dẫn",
+        "Kéo",
+        "Trừ"
+      ]
+    },
+    {
+      "id": "k_n2_0463",
+      "kanji": "創",
+      "level": "N2",
+      "meanings": [
+        "Sáng",
+        "Sáng lập",
+        "Sáng tạo"
+      ],
+      "onyomi": [
+        "ソウ",
+        "ショウ"
+      ],
+      "kunyomi": [
+        "つく・る"
+      ],
+      "vi_meanings": [
+        "Sáng",
+        "Sáng lập",
+        "Sáng tạo"
+      ]
+    },
+    {
+      "id": "k_n2_0464",
+      "kanji": "設",
+      "level": "N2",
+      "meanings": [
+        "Thiết",
+        "Thiết lập",
+        "Thiết bị"
       ],
       "onyomi": [
         "セツ"
       ],
       "kunyomi": [
-        "ゆき"
+        "もう・ける"
       ],
-      "strokes": 11
+      "vi_meanings": [
+        "Thiết",
+        "Thiết lập",
+        "Thiết bị"
+      ]
     },
     {
-      "id": "k_flower",
-      "level": "N5",
-      "kanji": "花",
+      "id": "k_n2_0465",
+      "kanji": "改",
+      "level": "N2",
       "meanings": [
-        "Hoa",
-        "Bông hoa"
+        "Cải",
+        "Cải cách",
+        "Cải thiện"
       ],
       "onyomi": [
-        "カ"
+        "カイ"
       ],
       "kunyomi": [
-        "はな"
+        "あらた・める"
       ],
-      "strokes": 7
+      "vi_meanings": [
+        "Cải",
+        "Cải cách",
+        "Cải thiện"
+      ]
+    },
+    {
+      "id": "k_n2_0466",
+      "kanji": "善",
+      "level": "N2",
+      "meanings": [
+        "Thiện",
+        "Tốt đẹp",
+        "Hoàn thiện"
+      ],
+      "onyomi": [
+        "ゼン"
+      ],
+      "kunyomi": [
+        "よ・い"
+      ],
+      "vi_meanings": [
+        "Thiện",
+        "Tốt đẹp",
+        "Hoàn thiện"
+      ]
+    },
+    {
+      "id": "k_n2_0467",
+      "kanji": "良",
+      "level": "N2",
+      "meanings": [
+        "Lương",
+        "Tốt",
+        "Lương tâm"
+      ],
+      "onyomi": [
+        "リョウ"
+      ],
+      "kunyomi": [
+        "よ・い"
+      ],
+      "vi_meanings": [
+        "Lương",
+        "Tốt",
+        "Lương tâm"
+      ]
+    },
+    {
+      "id": "k_n2_0468",
+      "kanji": "劣",
+      "level": "N2",
+      "meanings": [
+        "Liệt",
+        "Kém cỏi",
+        "Yếu thế"
+      ],
+      "onyomi": [
+        "レツ"
+      ],
+      "kunyomi": [
+        "おと・る"
+      ],
+      "vi_meanings": [
+        "Liệt",
+        "Kém cỏi",
+        "Yếu thế"
+      ]
+    },
+    {
+      "id": "k_n2_0469",
+      "kanji": "優",
+      "level": "N2",
+      "meanings": [
+        "Ưu",
+        "Ưu tú",
+        "Dịu dàng"
+      ],
+      "onyomi": [
+        "ユウ",
+        "ウ"
+      ],
+      "kunyomi": [
+        "やさ・しい",
+        "すぐ・れる"
+      ],
+      "vi_meanings": [
+        "Ưu",
+        "Ưu tú",
+        "Dịu dàng"
+      ]
+    },
+    {
+      "id": "k_n2_0470",
+      "kanji": "退",
+      "level": "N2",
+      "meanings": [
+        "Thoái",
+        "Rút lui",
+        "Thoái lui"
+      ],
+      "onyomi": [
+        "タイ"
+      ],
+      "kunyomi": [
+        "しりぞ・く",
+        "の・く"
+      ],
+      "vi_meanings": [
+        "Thoái",
+        "Rút lui",
+        "Thoái lui"
+      ]
+    },
+    {
+      "id": "k_n2_0471",
+      "kanji": "進",
+      "level": "N2",
+      "meanings": [
+        "Tiến",
+        "Tiến bộ",
+        "Tiến lên"
+      ],
+      "onyomi": [
+        "シン"
+      ],
+      "kunyomi": [
+        "すす・む",
+        "すす・める"
+      ],
+      "vi_meanings": [
+        "Tiến",
+        "Tiến bộ",
+        "Tiến lên"
+      ]
+    },
+    {
+      "id": "k_n2_0472",
+      "kanji": "停",
+      "level": "N2",
+      "meanings": [
+        "Đình",
+        "Đình trệ",
+        "Dừng lại"
+      ],
+      "onyomi": [
+        "テイ"
+      ],
+      "kunyomi": [
+        "と・まる"
+      ],
+      "vi_meanings": [
+        "Đình",
+        "Đình trệ",
+        "Dừng lại"
+      ]
+    },
+    {
+      "id": "k_n2_0473",
+      "kanji": "留",
+      "level": "N2",
+      "meanings": [
+        "Lưu",
+        "Lưu lại",
+        "Du học"
+      ],
+      "onyomi": [
+        "リュウ",
+        "ル"
+      ],
+      "kunyomi": [
+        "と・まる",
+        "と・める"
+      ],
+      "vi_meanings": [
+        "Lưu",
+        "Lưu lại",
+        "Du học"
+      ]
+    },
+    {
+      "id": "k_n2_0474",
+      "kanji": "居",
+      "level": "N2",
+      "meanings": [
+        "Cư",
+        "Cư trú",
+        "Ở lại"
+      ],
+      "onyomi": [
+        "キョ",
+        "コ"
+      ],
+      "kunyomi": [
+        "い・る"
+      ],
+      "vi_meanings": [
+        "Cư",
+        "Cư trú",
+        "Ở lại"
+      ]
+    },
+    {
+      "id": "k_n2_0475",
+      "kanji": "宿",
+      "level": "N2",
+      "meanings": [
+        "Túc",
+        "Nhà trọ",
+        "Nghỉ ngơi"
+      ],
+      "onyomi": [
+        "シュク"
+      ],
+      "kunyomi": [
+        "やど",
+        "やど・る"
+      ],
+      "vi_meanings": [
+        "Túc",
+        "Nhà trọ",
+        "Nghỉ ngơi"
+      ]
+    },
+    {
+      "id": "k_n2_0476",
+      "kanji": "泊",
+      "level": "N2",
+      "meanings": [
+        "Bạc",
+        "Trọ lại",
+        "Nghỉ đêm"
+      ],
+      "onyomi": [
+        "ハク"
+      ],
+      "kunyomi": [
+        "と・まる",
+        "と・める"
+      ],
+      "vi_meanings": [
+        "Bạc",
+        "Trọ lại",
+        "Nghỉ đêm"
+      ]
+    },
+    {
+      "id": "k_n2_0477",
+      "kanji": "賃",
+      "level": "N2",
+      "meanings": [
+        "Nhẫm",
+        "Tiền thuê",
+        "Tiền công"
+      ],
+      "onyomi": [
+        "チン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Nhẫm",
+        "Tiền thuê",
+        "Tiền công"
+      ]
+    },
+    {
+      "id": "k_n2_0478",
+      "kanji": "契",
+      "level": "N2",
+      "meanings": [
+        "Khế",
+        "Khế ước",
+        "Hợp đồng"
+      ],
+      "onyomi": [
+        "ケイ"
+      ],
+      "kunyomi": [
+        "ちぎ・る"
+      ],
+      "vi_meanings": [
+        "Khế",
+        "Khế ước",
+        "Hợp đồng"
+      ]
+    },
+    {
+      "id": "k_n1_0479",
+      "kanji": "糾",
+      "level": "N1",
+      "meanings": [
+        "Củ",
+        "Vặn xoắn",
+        "Điều tra làm rõ"
+      ],
+      "onyomi": [
+        "キュウ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Củ",
+        "Vặn xoắn",
+        "Điều tra làm rõ"
+      ]
+    },
+    {
+      "id": "k_n1_0480",
+      "kanji": "弾",
+      "level": "N1",
+      "meanings": [
+        "Đạn",
+        "Chỉ trích",
+        "Bắn đạn"
+      ],
+      "onyomi": [
+        "ダン"
+      ],
+      "kunyomi": [
+        "ひ・く",
+        "はず・む"
+      ],
+      "vi_meanings": [
+        "Đạn",
+        "Chỉ trích",
+        "Bắn đạn"
+      ]
+    },
+    {
+      "id": "k_n1_0481",
+      "kanji": "劾",
+      "level": "N1",
+      "meanings": [
+        "Hặc",
+        "Hặc tội",
+        "Đàn hặc"
+      ],
+      "onyomi": [
+        "ガイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Hặc",
+        "Hặc tội",
+        "Đàn hặc"
+      ]
+    },
+    {
+      "id": "k_n1_0482",
+      "kanji": "喪",
+      "level": "N1",
+      "meanings": [
+        "Tang",
+        "Tang tóc",
+        "Mất mát"
+      ],
+      "onyomi": [
+        "ソウ"
+      ],
+      "kunyomi": [
+        "も",
+        "うしな・う"
+      ],
+      "vi_meanings": [
+        "Tang",
+        "Tang tóc",
+        "Mất mát"
+      ]
+    },
+    {
+      "id": "k_n1_0483",
+      "kanji": "欺",
+      "level": "N1",
+      "meanings": [
+        "Khi",
+        "Lừa dối",
+        "Lừa gạt"
+      ],
+      "onyomi": [
+        "ギ"
+      ],
+      "kunyomi": [
+        "あざむ・く"
+      ],
+      "vi_meanings": [
+        "Khi",
+        "Lừa dối",
+        "Lừa gạt"
+      ]
+    },
+    {
+      "id": "k_n1_0484",
+      "kanji": "詐",
+      "level": "N1",
+      "meanings": [
+        "Trá",
+        "Dối trá",
+        "Lừa đảo"
+      ],
+      "onyomi": [
+        "サ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Trá",
+        "Dối trá",
+        "Lừa đảo"
+      ]
+    },
+    {
+      "id": "k_n1_0485",
+      "kanji": "瞞",
+      "level": "N1",
+      "meanings": [
+        "Man",
+        "Lừa dối",
+        "Che mắt"
+      ],
+      "onyomi": [
+        "マン"
+      ],
+      "kunyomi": [
+        "ごまか・す"
+      ],
+      "vi_meanings": [
+        "Man",
+        "Lừa dối",
+        "Che mắt"
+      ]
+    },
+    {
+      "id": "k_n1_0486",
+      "kanji": "騙",
+      "level": "N1",
+      "meanings": [
+        "Phiến",
+        "Lừa gạt",
+        "Dỗ dành"
+      ],
+      "onyomi": [
+        "ヘン"
+      ],
+      "kunyomi": [
+        "だま・す"
+      ],
+      "vi_meanings": [
+        "Phiến",
+        "Lừa gạt",
+        "Dỗ dành"
+      ]
+    },
+    {
+      "id": "k_n1_0487",
+      "kanji": "賄",
+      "level": "N1",
+      "meanings": [
+        "Hối",
+        "Hối lộ",
+        "Chi trả"
+      ],
+      "onyomi": [
+        "ワイ"
+      ],
+      "kunyomi": [
+        "まかな・う"
+      ],
+      "vi_meanings": [
+        "Hối",
+        "Hối lộ",
+        "Chi trả"
+      ]
+    },
+    {
+      "id": "k_n1_0488",
+      "kanji": "賂",
+      "level": "N1",
+      "meanings": [
+        "Lộ",
+        "Hối lộ",
+        "Quà cáp"
+      ],
+      "onyomi": [
+        "ロ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Lộ",
+        "Hối lộ",
+        "Quà cáp"
+      ]
+    },
+    {
+      "id": "k_n1_0489",
+      "kanji": "汚",
+      "level": "N1",
+      "meanings": [
+        "Ô",
+        "Ô nhiễm",
+        "Ô danh"
+      ],
+      "onyomi": [
+        "オ"
+      ],
+      "kunyomi": [
+        "きたな・い",
+        "よご・す"
+      ],
+      "vi_meanings": [
+        "Ô",
+        "Ô nhiễm",
+        "Ô danh"
+      ]
+    },
+    {
+      "id": "k_n1_0490",
+      "kanji": "廉",
+      "level": "N1",
+      "meanings": [
+        "Liêm",
+        "Liêm chính",
+        "Thanh liêm"
+      ],
+      "onyomi": [
+        "レン"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Liêm",
+        "Liêm chính",
+        "Thanh liêm"
+      ]
+    },
+    {
+      "id": "k_n1_0491",
+      "kanji": "潔",
+      "level": "N1",
+      "meanings": [
+        "Khiết",
+        "Thanh khiết",
+        "Trong sạch"
+      ],
+      "onyomi": [
+        "ケツ"
+      ],
+      "kunyomi": [
+        "いさぎよ・い"
+      ],
+      "vi_meanings": [
+        "Khiết",
+        "Thanh khiết",
+        "Trong sạch"
+      ]
+    },
+    {
+      "id": "k_n1_0492",
+      "kanji": "澄",
+      "level": "N1",
+      "meanings": [
+        "Trừng",
+        "Trong suốt",
+        "Trầm lắng"
+      ],
+      "onyomi": [
+        "チョウ"
+      ],
+      "kunyomi": [
+        "す・む",
+        "す・ます"
+      ],
+      "vi_meanings": [
+        "Trừng",
+        "Trong suốt",
+        "Trầm lắng"
+      ]
+    },
+    {
+      "id": "k_n1_0493",
+      "kanji": "粛",
+      "level": "N1",
+      "meanings": [
+        "Túc",
+        "Nghiêm túc",
+        "Trang nghiêm"
+      ],
+      "onyomi": [
+        "シュク"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Túc",
+        "Nghiêm túc",
+        "Trang nghiêm"
+      ]
+    },
+    {
+      "id": "k_n1_0494",
+      "kanji": "厳",
+      "level": "N1",
+      "meanings": [
+        "Nghiêm",
+        "Nghiêm khắc",
+        "Trang nghiêm"
+      ],
+      "onyomi": [
+        "ゲン",
+        "ゴン"
+      ],
+      "kunyomi": [
+        "きび・しい",
+        "おごそ・か"
+      ],
+      "vi_meanings": [
+        "Nghiêm",
+        "Nghiêm khắc",
+        "Trang nghiêm"
+      ]
+    },
+    {
+      "id": "k_n1_0495",
+      "kanji": "謹",
+      "level": "N1",
+      "meanings": [
+        "Cẩn",
+        "Cẩn thận",
+        "Cung kính"
+      ],
+      "onyomi": [
+        "キン"
+      ],
+      "kunyomi": [
+        "つつし・む"
+      ],
+      "vi_meanings": [
+        "Cẩn",
+        "Cẩn thận",
+        "Cung kính"
+      ]
+    },
+    {
+      "id": "k_n1_0496",
+      "kanji": "慎",
+      "level": "N1",
+      "meanings": [
+        "Thận",
+        "Thận trọng"
+      ],
+      "onyomi": [
+        "シン"
+      ],
+      "kunyomi": [
+        "つつし・む"
+      ],
+      "vi_meanings": [
+        "Thận",
+        "Thận trọng"
+      ]
+    },
+    {
+      "id": "k_n1_0497",
+      "kanji": "戒",
+      "level": "N1",
+      "meanings": [
+        "Giới",
+        "Cảnh giới",
+        "Răn dạy"
+      ],
+      "onyomi": [
+        "カイ"
+      ],
+      "kunyomi": [
+        "いまし・める"
+      ],
+      "vi_meanings": [
+        "Giới",
+        "Cảnh giới",
+        "Răn dạy"
+      ]
+    },
+    {
+      "id": "k_n1_0498",
+      "kanji": "懲",
+      "level": "N1",
+      "meanings": [
+        "Trừng",
+        "Trừng phạt",
+        "Trừng trị"
+      ],
+      "onyomi": [
+        "チョウ"
+      ],
+      "kunyomi": [
+        "こ・りる",
+        "こ・らす"
+      ],
+      "vi_meanings": [
+        "Trừng",
+        "Trừng phạt",
+        "Trừng trị"
+      ]
+    },
+    {
+      "id": "k_n1_0499",
+      "kanji": "罰",
+      "level": "N1",
+      "meanings": [
+        "Phạt",
+        "Hình phạt",
+        "Xử phạt"
+      ],
+      "onyomi": [
+        "バツ",
+        "バチ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Phạt",
+        "Hình phạt",
+        "Xử phạt"
+      ]
+    },
+    {
+      "id": "k_n1_0500",
+      "kanji": "処",
+      "level": "N1",
+      "meanings": [
+        "Xử",
+        "Xử lý",
+        "Xử phạt"
+      ],
+      "onyomi": [
+        "ショ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Xử",
+        "Xử lý",
+        "Xử phạt"
+      ]
+    },
+    {
+      "id": "k_n1_0501",
+      "kanji": "刑",
+      "level": "N1",
+      "meanings": [
+        "Hình",
+        "Hình sự",
+        "Hình phạt"
+      ],
+      "onyomi": [
+        "ケイ"
+      ],
+      "kunyomi": [],
+      "vi_meanings": [
+        "Hình",
+        "Hình sự",
+        "Hình phạt"
+      ]
     }
   ],
   "grammar": [
