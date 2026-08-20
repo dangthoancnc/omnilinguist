@@ -182,6 +182,7 @@ function App() {
                       <Route path="/" element={<Dashboard/>} />
                       <Route path="/roadmap" element={<Roadmap/>} />
                       <Route path="/news" element={<JapanNewsHub/>} />
+                      <Route path="/news/:articleId" element={<JapanNewsHub/>} />
                       <Route path="/reading" element={<ImmersionReader/>} />
                       <Route path="/flashcards" element={<VocabularyFlashcards/>} />
                       <Route path="/grammar" element={<GrammarExplorer/>} />
