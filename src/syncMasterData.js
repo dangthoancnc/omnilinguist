@@ -1,7 +1,7 @@
 import { db } from './db.js';
 import localMasterDb from './data/jlpt_master_db.json';
 
-const CURRENT_DATA_VERSION = 'v12.1.0_updated_vocab_1222';
+const CURRENT_DATA_VERSION = 'v13.0.0_classified_massive_vocab_3000';
 const CHUNK_SIZE = 200; // Chia nhỏ 200 bản ghi / đợt để nạp siêu mượt
 
 const parseField = (val) => {
@@ -36,7 +36,7 @@ export async function syncMasterData() {
     const grammarCount = await db.grammar.count();
 
     // ⚡ TỐI ƯU SIÊU TỐC: Nếu phiên bản đã khớp & đã có đủ dữ liệu từ vựng + ngữ pháp -> Bỏ qua nạp lại
-    if (savedVer === CURRENT_DATA_VERSION && grammarCount > 1000 && vocabCount > 500) {
+    if (savedVer === CURRENT_DATA_VERSION && grammarCount > 1000 && vocabCount > 2000) {
       console.log(`⚡ [FastLoad] Master Data đã sẵn sàng (${vocabCount} từ vựng, ${grammarCount} mẫu ngữ pháp Bunpro). Bỏ qua nạp lại!`);
       return;
     }
@@ -59,6 +59,8 @@ export async function syncMasterData() {
         vi: v.vi || v.meaning || '',
         meaning: v.vi || v.meaning || '',
         type: v.type || (Array.isArray(v.tags) ? v.tags[0] : 'Từ vựng'),
+        priority: v.priority || 2,
+        priorityLabel: v.priorityLabel || (v.priority === 1 ? 'Cốt lõi' : v.priority === 3 ? 'Nâng cao' : 'Phổ biến'),
         tags: parseField(v.tags),
         examples: parseField(v.examples || v.example)
       }));

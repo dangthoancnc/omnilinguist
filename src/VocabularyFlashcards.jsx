@@ -5,7 +5,7 @@ import { db } from './db.js';
 import { Rating } from './fsrs.js';
 import { getCard, reviewRoadmapCard, reviewFreeStudyCard, getDueCards, getStats, getNextDueInfo, getCustomCards, isBookmarked, toggleBookmark, getUserProfile, getFreeStudyHistory, getTodayReviewedCardIds } from './studyStore.js';
 import { syncMasterData } from './syncMasterData.js';
-import { Eye, EyeOff, Volume2, ChevronLeft, ChevronRight, Brain, CheckCircle2, AlertCircle, RotateCcw, Target, Bookmark, Filter, Shuffle, ListOrdered, Zap, BookOpen, List, X, Settings, FastForward, Play, Pause, Hand, UserPlus } from 'lucide-react';
+import { Eye, EyeOff, Volume2, ChevronLeft, ChevronRight, Brain, CheckCircle2, AlertCircle, RotateCcw, Target, Bookmark, Filter, Shuffle, ListOrdered, Zap, BookOpen, List, X, Settings, FastForward, Play, Pause, Hand, UserPlus, Flame } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 import localMasterDb from './data/jlpt_master_db.json';
 import { isGuest, checkGuestQuota } from './identityManager.js';
@@ -146,6 +146,8 @@ const VocabularyFlashcards = () => {
     }
   }, [vocabCount]);
 
+  const [priorityFilter, setPriorityFilter] = useState('all'); // 'all', '1', '2', '3'
+
   const levelVocab = useMemo(() => {
     const customCards = getCustomCards();
     const seen = new Set();
@@ -158,18 +160,24 @@ const VocabularyFlashcards = () => {
       vi: v.vi || v.meaning || '',
       meaning: v.vi || v.meaning || '',
       type: v.type || (Array.isArray(v.tags) ? v.tags[0] : 'Từ vựng'),
+      priority: v.priority || 2,
+      priorityLabel: v.priorityLabel || (v.priority === 1 ? 'Cốt lõi' : v.priority === 3 ? 'Nâng cao' : 'Phổ biến'),
       tags: v.tags || [],
       examples: v.examples || v.example || []
     }));
     const allSources = [...masterVocab, ...customCards];
     
-    return allSources.filter(v => {
+    const filtered = allSources.filter(v => {
       if (v.level !== level) return false;
+      if (priorityFilter !== 'all' && String(v.priority) !== String(priorityFilter)) return false;
       if (seen.has(v.word)) return false;
       seen.add(v.word);
       return true;
     });
-  }, [level]);
+
+    // Mặc định sắp xếp ưu tiên từ Cốt lõi (1) -> Phổ biến (2) -> Nâng cao (3)
+    return filtered.sort((a, b) => (a.priority || 2) - (b.priority || 2));
+  }, [level, priorityFilter]);
 
   // Calculate total vocab count per level for dropdown labels
   const vocabLevelCounts = useMemo(() => {
@@ -734,12 +742,29 @@ const VocabularyFlashcards = () => {
                   onChange={e => setFilterMode(e.target.value)}
                   style={{ background:'transparent', border:'none', color:'var(--text-secondary)', cursor:'pointer', outline:'none', fontWeight: 500 }}
                 >
-                  <option value="all">Học thông thường ({allIds.length})</option>
-                  <option value="due">Chỉ thẻ đến hạn ({getDueCards(allIds).length})</option>
-                  <option value="skipped">Thẻ bị bỏ qua / Chưa học ({unlearnedCount})</option>
-                  <option value="bookmark">Thẻ đã Bookmark ({allIds.filter(id => isBookmarked(id)).length})</option>
-                  <option value="again">Thẻ đánh giá: Lại</option>
-                  <option value="hard">Thẻ đánh giá: Khó</option>
+                  <option value="all" style={{ background:'#1e293b' }}>Học thông thường ({allIds.length})</option>
+                  <option value="due" style={{ background:'#1e293b' }}>Chỉ thẻ đến hạn ({getDueCards(allIds).length})</option>
+                  <option value="skipped" style={{ background:'#1e293b' }}>Thẻ bị bỏ qua / Chưa học ({unlearnedCount})</option>
+                  <option value="bookmark" style={{ background:'#1e293b' }}>Thẻ đã Bookmark ({allIds.filter(id => isBookmarked(id)).length})</option>
+                  <option value="again" style={{ background:'#1e293b' }}>Thẻ đánh giá: Lại</option>
+                  <option value="hard" style={{ background:'#1e293b' }}>Thẻ đánh giá: Khó</option>
+                </select>
+              </div>
+
+              <div style={{ width: 1, height: 16, background: 'var(--glass-border)' }}></div>
+
+              <div style={{ display:'flex', alignItems:'center', gap:6, fontSize:'0.85rem', color:'var(--text-secondary)' }}>
+                <Flame size={15} color="#f59e0b"/>
+                <select 
+                  value={priorityFilter} 
+                  onChange={e => setPriorityFilter(e.target.value)}
+                  style={{ background:'transparent', border:'none', color: priorityFilter === '1' ? '#f59e0b' : priorityFilter === '2' ? '#60a5fa' : priorityFilter === '3' ? '#c084fc' : 'var(--text-secondary)', cursor:'pointer', outline:'none', fontWeight: 600 }}
+                  title="Lọc từ vựng theo mức độ quan trọng & tần suất sử dụng"
+                >
+                  <option value="all" style={{ background:'#1e293b', color:'white' }}>Tất cả mức độ</option>
+                  <option value="1" style={{ background:'#1e293b', color:'#f59e0b' }}>⭐⭐⭐ Cốt lõi</option>
+                  <option value="2" style={{ background:'#1e293b', color:'#60a5fa' }}>⭐⭐ Phổ biến</option>
+                  <option value="3" style={{ background:'#1e293b', color:'#c084fc' }}>⭐ Nâng cao</option>
                 </select>
               </div>
               
@@ -786,11 +811,26 @@ const VocabularyFlashcards = () => {
           <StatsBar stats={stats} levelColor={lc}/>
 
           <div className="glass-panel" style={{ textAlign:'center', padding:'50px 28px 36px', minHeight:410, display:'flex', flexDirection:'column', justifyContent:'space-between', position:'relative', transition: 'all 0.2s ease' }}>
-            {/* Top Header inside card: Level tag + FSRS status */}
-            <div style={{ position:'absolute', top:16, left:18, right:18, display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-              <div style={{ display:'flex', gap:6, alignItems:'center' }}>
+            {/* Top Header inside card: Level tag + Priority tag + FSRS status */}
+            <div style={{ position:'absolute', top:16, left:18, right:18, display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:6 }}>
+              <div style={{ display:'flex', gap:6, alignItems:'center', flexWrap:'wrap' }}>
                 <span style={{ fontSize:'0.78rem', padding:'3px 10px', borderRadius:4, background:`${lc}22`, color:lc, fontWeight:700 }}>{level}</span>
                 {currentCard.type && <span style={{ fontSize:'0.78rem', padding:'3px 10px', borderRadius:4, background:'rgba(255,255,255,0.06)', color:'var(--text-secondary)' }}>{currentCard.type}</span>}
+                {currentCard.priority === 1 && (
+                  <span style={{ fontSize:'0.75rem', padding:'2px 8px', borderRadius:12, background:'rgba(245, 158, 11, 0.18)', color:'#f59e0b', fontWeight:700, border:'1px solid rgba(245, 158, 11, 0.35)' }} title="Từ vựng cốt lõi tần suất cực cao">
+                    ⭐⭐⭐ Cốt lõi
+                  </span>
+                )}
+                {currentCard.priority === 2 && (
+                  <span style={{ fontSize:'0.75rem', padding:'2px 8px', borderRadius:12, background:'rgba(59, 130, 246, 0.18)', color:'#60a5fa', fontWeight:700, border:'1px solid rgba(59, 130, 246, 0.35)' }} title="Từ vựng phổ biến đời sống & công việc">
+                    ⭐⭐ Phổ biến
+                  </span>
+                )}
+                {currentCard.priority === 3 && (
+                  <span style={{ fontSize:'0.75rem', padding:'2px 8px', borderRadius:12, background:'rgba(168, 85, 247, 0.18)', color:'#c084fc', fontWeight:700, border:'1px solid rgba(168, 85, 247, 0.35)' }} title="Từ vựng mở rộng / nâng cao">
+                    ⭐ Nâng cao
+                  </span>
+                )}
               </div>
 
               {fsrsCard && nextDue && (
@@ -965,7 +1005,11 @@ const VocabularyFlashcards = () => {
                   onMouseOut={e => e.currentTarget.style.background = queueIdx === index ? 'rgba(99,102,241,0.15)' : 'rgba(255,255,255,0.03)'}
                 >
                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                     <span className="jp-text" style={{ fontSize: '1.15rem', fontWeight: 700, color: queueIdx === index ? '#818cf8' : 'var(--text-primary)' }}>{c.word}</span>
+                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                       <span className="jp-text" style={{ fontSize: '1.15rem', fontWeight: 700, color: queueIdx === index ? '#818cf8' : 'var(--text-primary)' }}>{c.word}</span>
+                       {c.priority === 1 && <span style={{ fontSize: '0.68rem', padding: '1px 5px', borderRadius: 4, background: 'rgba(245,158,11,0.2)', color: '#f59e0b', fontWeight: 600 }}>Cốt lõi</span>}
+                       {c.priority === 3 && <span style={{ fontSize: '0.68rem', padding: '1px 5px', borderRadius: 4, background: 'rgba(168,85,247,0.2)', color: '#c084fc', fontWeight: 600 }}>Nâng cao</span>}
+                     </div>
                      {isBookmarked(id) && <Bookmark size={14} color="#f59e0b" fill="#f59e0b" />}
                    </div>
                    <div style={{ filter: (!hideListDetails || queueIdx === index) ? 'none' : 'blur(4px)', opacity: (!hideListDetails || queueIdx === index) ? 1 : 0.6, transition: 'all 0.3s' }}>
