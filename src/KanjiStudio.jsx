@@ -287,8 +287,8 @@ const SessionReview = ({ sessionLog, onClose, onGrade }) => {
   );
 };
 
-const LEVELS = ['N5', 'N4', 'N3', 'N2', 'N1'];
-const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
+const LEVELS = ['Bộ Thủ', 'N5', 'N4', 'N3', 'N2', 'N1'];
+const LEVEL_COLORS = { 'Bộ Thủ': '#ec4899', N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
 
 const KanjiStudio = () => {
   const kanjiData = useLiveQuery(() => db.kanji.toArray()) || [];
@@ -312,7 +312,7 @@ const KanjiStudio = () => {
   const snapshotRef = useRef(null);
 
   const kanjiByLevel = useMemo(() => {
-    const counts = { N5:0, N4:0, N3:0, N2:0, N1:0 };
+    const counts = { 'Bộ Thủ': 0, N5:0, N4:0, N3:0, N2:0, N1:0 };
     kanjiData.forEach(k => { if(counts[k.level] !== undefined) counts[k.level]++; });
     return counts;
   }, [kanjiData]);
@@ -439,7 +439,7 @@ const KanjiStudio = () => {
               className={`btn ${level === lvl ? 'btn-primary' : 'btn-outline'}`}
               style={{ padding: '8px 18px', fontSize: '0.9rem', fontWeight: 700 }}
             >
-              {lvl} ({kanjiByLevel[lvl] || 0})
+              {lvl === 'Bộ Thủ' ? '⛩️ Bộ Thủ' : lvl} ({kanjiByLevel[lvl] || 0})
             </button>
           ))}
         </div>
@@ -493,7 +493,11 @@ const KanjiStudio = () => {
             }} 
             style={{ padding:'8px 16px', borderRadius:8, background: LEVEL_COLORS[level] || '#6366f1', border:'none', color:'white', fontWeight:700, outline:'none', cursor:'pointer', boxShadow:`0 4px 12px ${(LEVEL_COLORS[level]||'#6366f1')}55` }}
           >
-            {LEVELS.map(l => <option key={l} value={l} style={{ background: '#1e293b' }}>Thẻ {l} ({kanjiByLevel[l] || 0})</option>)}
+            {LEVELS.map(l => (
+              <option key={l} value={l} style={{ background: '#1e293b' }}>
+                {l === 'Bộ Thủ' ? '⛩️ Bộ Thủ' : `Thẻ ${l}`} ({kanjiByLevel[l] || 0})
+              </option>
+            ))}
           </select>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(0,0,0,0.2)', padding: '6px 12px', borderRadius: 20 }}>
