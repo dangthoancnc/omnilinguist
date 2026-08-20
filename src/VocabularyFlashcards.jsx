@@ -97,6 +97,7 @@ const VocabularyFlashcards = () => {
   const [queueIdx, setQueueIdx] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [lastRating, setLastRating] = useState(null);
+  const [isSessionCompleted, setIsSessionCompleted] = useState(false);
   const [stats, setStats] = useState({ newCount:0, dueCount:0, learnedCount:0, total:0 });
   const [sessionLog, setSessionLog] = useState({ easy:0, hard:0, again:0 });
   const [hideListDetails, setHideListDetails] = useState(true);
@@ -296,6 +297,7 @@ const VocabularyFlashcards = () => {
 
     setQueueAndSave(finalQueue);
     setQueueIdx(0);
+    setIsSessionCompleted(false);
     setShowAnswer(false);
     setLastRating(null);
     setQuizAnswered(null);
@@ -304,8 +306,9 @@ const VocabularyFlashcards = () => {
 
   useEffect(() => { 
     setSessionSkippedIds(new Set());
+    setIsSessionCompleted(false);
     buildQueue(); 
-  }, [level, filterMode, isRandom, learningMode]);
+  }, [level, filterMode, isRandom, learningMode, priorityFilter]);
 
   useEffect(() => {
     return () => {
@@ -366,6 +369,7 @@ const VocabularyFlashcards = () => {
         if (nextCard) speak(nextCard.word);
       }
     } else {
+      setIsSessionCompleted(true);
       setQueue([]);
     }
   };
@@ -397,12 +401,13 @@ const VocabularyFlashcards = () => {
       advanceTimerRef.current = null;
     }
 
-    if (learningMode === 'roadmap') {
-      reviewRoadmapCard(currentId, rating);
-    } else {
-      const isCorrect = (rating === Rating.Good || rating === Rating.Easy);
-      reviewFreeStudyCard(currentId, isCorrect, 'vocab');
-    }
+    // ⚡ TIẾN ĐỘ THÔNG MINH:
+    // 1. Luôn ghi nhận FSRS card (lưu stability, difficulty, reps, last_rating, due)
+    reviewRoadmapCard(currentId, rating);
+    
+    // 2. Luôn ghi nhận Free Study history (lưu correct/incorrect count, last_practiced)
+    const isCorrect = (rating === Rating.Good || rating === Rating.Easy);
+    reviewFreeStudyCard(currentId, isCorrect, 'vocab');
     
     setLastRating(rating);
 
@@ -514,8 +519,8 @@ const VocabularyFlashcards = () => {
     }
   };
 
-  // COMPLETION SCREEN: Japanese License Test App Style Dashboard
-  if (!currentCard && queue.length === 0) {
+  // COMPLETION SCREEN: Chỉ hiển thị khi người dùng đã thực sự hoàn thành đợt học
+  if (isSessionCompleted && (!currentCard || queue.length === 0)) {
     const ratedSet = new Set(sessionHistory.map(item => item.id));
     const skippedInSession = (lastQueueRef.current || []).filter(id => !ratedSet.has(id));
 
@@ -566,7 +571,7 @@ const VocabularyFlashcards = () => {
           </div>
         </div>
 
-        {/* Japanese Driving License App Style Action Controls Grid */}
+        {/* Action Controls Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 14, width: '100%', maxWidth: 640 }}>
           
           {skippedInSession.length > 0 && (
@@ -575,6 +580,7 @@ const VocabularyFlashcards = () => {
               onClick={() => {
                 setQueueAndSave(skippedInSession);
                 setQueueIdx(0);
+                setIsSessionCompleted(false);
                 setShowAnswer(revealMode === 'always');
                 setLastRating(null);
               }} 
@@ -655,16 +661,9 @@ const VocabularyFlashcards = () => {
 }
 
   if (!currentCard) {
-    // Phân biệt 2 trường hợp:
-    // 1. levelVocab chưa có dữ liệu (IndexedDB đang sync) → chờ, KHÔNG xóa queue
-    // 2. levelVocab đã có dữ liệu nhưng không tìm thấy thẻ → queue cũ/lỗi → xóa queue
-    if (queue.length > 0 && levelVocab.length > 0) {
-      console.warn(`[Auto-recover] Thẻ ID "${currentId}" không tồn tại trong ${levelVocab.length} từ cấp ${level}. Đang phục hồi...`);
-      setTimeout(() => setQueue([]), 0);
-    }
     return (
-      <div className="glass-panel" style={{ textAlign:'center', padding:40 }}>
-        {levelVocab.length === 0 ? 'Đang nạp dữ liệu từ vựng...' : 'Đang tải từ vựng...'}
+      <div className="glass-panel" style={{ textAlign:'center', padding:40, margin: '40px auto', maxWidth: 600 }}>
+        {levelVocab.length === 0 ? `Đang nạp dữ liệu từ vựng cấp độ ${level}...` : `Đang tải từ vựng cấp độ ${level}...`}
       </div>
     );
   }
@@ -680,10 +679,10 @@ const VocabularyFlashcards = () => {
           <select 
             value={level} 
             onChange={(e)=>{
-              setLevel(e.target.value);
-              const p = getUserProfile();
-              if (p && p.currentLevel === e.target.value) setLearningMode('roadmap');
-              else setLearningMode('freestudy');
+              const newLvl = e.target.value;
+              setLevel(newLvl);
+              setIsSessionCompleted(false);
+              setSessionHistory([]);
             }} 
             style={{ padding:'8px 16px', borderRadius:8, background: LEVEL_COLORS[level] || '#6366f1', border:'none', color:'white', fontWeight:700, outline:'none', cursor:'pointer', boxShadow:`0 4px 12px ${(LEVEL_COLORS[level]||'#6366f1')}55` }}
           >
