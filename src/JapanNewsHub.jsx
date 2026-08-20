@@ -5,7 +5,8 @@ import {
   Search, Bookmark, Plus, Loader, CheckCircle, RefreshCw, Layers, ShieldCheck, 
   Briefcase, HeartHandshake, Eye, VolumeX, PencilLine, Share2, X, Compass, 
   Flame, BookCheck, MessageSquareQuote, ChevronRight, Play, Pause, FastForward,
-  TrendingUp, Clock, Calendar, BookmarkCheck, Lightbulb, DollarSign, CloudSun
+  TrendingUp, Clock, Calendar, BookmarkCheck, Lightbulb, DollarSign, CloudSun,
+  Calculator, Check, ArrowRightLeft
 } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 import SelectionDictionary from './components/SelectionDictionary';
@@ -32,6 +33,29 @@ const JLPT_LEVEL_COLORS = {
   N1: '#ef4444'
 };
 
+const TRENDING_TOPICS = [
+  { id: 'news_tokutei_ginou_2026', title: 'Thủ tục xin Visa Kỹ năng đặc định Tokutei 2', tag: 'Visa', color: '#60a5fa' },
+  { id: 'news_tax_nenkin_guide', title: 'Hướng dẫn kê khai người phụ thuộc giảm thuế & Nenkin', tag: 'Thuế', color: '#f59e0b' },
+  { id: 'news_ur_housing_life', title: 'Kinh nghiệm thuê nhà UR không tiền lễ, không bảo lãnh', tag: 'Nhà ở', color: '#10b981' },
+  { id: 'news_bank_yucho_guide', title: 'Mở tài khoản Ngân hàng Yucho & ứng dụng chuyển tiền', tag: 'Ngân hàng', color: '#3b82f6' },
+  { id: 'news_medical_insurance_japan', title: 'Bảo hiểm Y tế Quốc dân & Chế độ Viện phí cao', tag: 'Y tế', color: '#ec4899' },
+  { id: 'news_driving_license_convert', title: 'Đổi bằng lái xe Việt Nam sang Nhật (Gaimen Kirikae)', tag: 'Bằng lái', color: '#8b5cf6' }
+];
+
+function removeVietnameseTones(str) {
+  if (!str) return '';
+  str = str.toLowerCase();
+  str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, 'a');
+  str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, 'e');
+  str = str.replace(/ì|í|ị|ỉ|ĩ/g, 'i');
+  str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, 'o');
+  str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, 'u');
+  str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, 'y');
+  str = str.replace(/đ/g, 'd');
+  str = str.replace(/[\u0300-\u036f]/g, '');
+  return str.trim();
+}
+
 const JapanNewsHub = () => {
   const navigate = useNavigate();
   const { articleId } = useParams();
@@ -41,6 +65,10 @@ const JapanNewsHub = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchKeyword, setSearchKeyword] = useState('');
   
+  // Currency Calculator Interactive State
+  const [jpyAmount, setJpyAmount] = useState('100000');
+  const JPY_VND_RATE = 168.5; // Reference exchange rate
+
   // Articles data & loading states
   const [articles, setArticles] = useState(CURATED_JAPAN_NEWS);
   const [isLoadingNews, setIsLoadingNews] = useState(false);
@@ -114,20 +142,42 @@ const JapanNewsHub = () => {
     }
   }, [selectedArticle]);
 
-  // Filtered articles by category & search
+  // Global & Category-aware Intelligent Search Filtering
   const filteredArticles = useMemo(() => {
-    return articles.filter(art => {
-      const matchesCat = activeCategory === 'all' || art.category === activeCategory;
-      const kw = searchKeyword.toLowerCase().trim();
-      const matchesSearch = !kw || 
-        art.title.toLowerCase().includes(kw) || 
-        (art.summary && art.summary.toLowerCase().includes(kw)) ||
-        (art.viTranslation && art.viTranslation.toLowerCase().includes(kw));
-      return matchesCat && matchesSearch;
-    });
+    const rawKw = searchKeyword.trim();
+    if (!rawKw) {
+      if (activeCategory === 'all') return articles;
+      return articles.filter(art => art.category === activeCategory);
+    }
+
+    const normKw = removeVietnameseTones(rawKw);
+
+    // Filter across articles
+    const searchMatch = (art) => {
+      const titleNorm = removeVietnameseTones(art.title);
+      const sumNorm = removeVietnameseTones(art.summary || '');
+      const viNorm = removeVietnameseTones(art.viTranslation || '');
+      const catNorm = removeVietnameseTones(art.categoryLabel || '');
+      const srcNorm = removeVietnameseTones(art.source || '');
+      
+      return titleNorm.includes(normKw) || 
+             sumNorm.includes(normKw) || 
+             viNorm.includes(normKw) || 
+             catNorm.includes(normKw) || 
+             srcNorm.includes(normKw) ||
+             art.title.toLowerCase().includes(rawKw.toLowerCase()) ||
+             (art.content && art.content.toLowerCase().includes(rawKw.toLowerCase()));
+    };
+
+    // First try matching in current category
+    const inCat = articles.filter(art => (activeCategory === 'all' || art.category === activeCategory) && searchMatch(art));
+    if (inCat.length > 0) return inCat;
+
+    // If 0 in current category, search across ALL categories so user gets results!
+    return articles.filter(searchMatch);
   }, [articles, activeCategory, searchKeyword]);
 
-  // Hero Featured Article (First article)
+  // Hero Featured Article
   const heroArticle = filteredArticles[0] || null;
   const standardArticles = filteredArticles.slice(1);
 
@@ -147,9 +197,17 @@ const JapanNewsHub = () => {
 
   // Navigation handlers
   const handleOpenArticle = (art) => {
+    if (!art) return;
     if (window.speechSynthesis) window.speechSynthesis.cancel();
     setIsPlayingTts(false);
     navigate(`/news/${art.id}`);
+  };
+
+  const handleOpenTopic = (topicId) => {
+    const art = articles.find(a => a.id === topicId) || CURATED_JAPAN_NEWS.find(a => a.id === topicId);
+    if (art) {
+      handleOpenArticle(art);
+    }
   };
 
   const handleBackToNewsList = () => {
@@ -227,7 +285,7 @@ const JapanNewsHub = () => {
         <SelectionDictionary />
 
         {/* STICKY TOP ACTION TOOLBAR */}
-        <div className="glass-panel" style={{ position: 'sticky', top: 10, zIndex: 100, padding: '12px 18px', background: 'rgba(15, 23, 42, 0.92)', backdropFilter: 'blur(12px)', border: '1px solid var(--glass-border-strong)', borderRadius: 14, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12, boxShadow: '0 8px 32px rgba(0,0,0,0.35)' }}>
+        <div className="glass-panel" style={{ position: 'sticky', top: 10, zIndex: 100, padding: '12px 18px', background: 'rgba(15, 23, 42, 0.94)', backdropFilter: 'blur(12px)', border: '1px solid var(--glass-border-strong)', borderRadius: 14, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12, boxShadow: '0 8px 32px rgba(0,0,0,0.45)' }}>
           
           {/* Back Button */}
           <button 
@@ -482,15 +540,24 @@ const JapanNewsHub = () => {
             {isLoadingNews ? 'Đang cập nhật...' : `Làm mới (${lastRefreshedTime})`}
           </button>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(0,0,0,0.35)', padding: '7px 16px', borderRadius: 20, border: '1px solid var(--glass-border)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(0,0,0,0.35)', padding: '7px 16px', borderRadius: 20, border: '1px solid var(--glass-border)', position: 'relative' }}>
             <Search size={16} color="var(--text-tertiary)"/>
             <input 
               type="text" 
-              placeholder="Tìm tin tức, visa, thuế, nenkin..." 
+              placeholder="Tìm tin tức, visa, thuế, nhà ở..." 
               value={searchKeyword} 
               onChange={e => setSearchKeyword(e.target.value)}
               style={{ background: 'transparent', border: 'none', color: 'white', outline: 'none', fontSize: '0.85rem', width: 200 }}
             />
+            {searchKeyword && (
+              <button 
+                onClick={() => setSearchKeyword('')}
+                style={{ background: 'transparent', border: 'none', color: 'var(--text-tertiary)', cursor: 'pointer', padding: 2, display: 'flex' }}
+                title="Xóa tìm kiếm"
+              >
+                <X size={14} />
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -503,7 +570,7 @@ const JapanNewsHub = () => {
           return (
             <button 
               key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
+              onClick={() => { setActiveCategory(cat.id); setSearchKeyword(''); }}
               className={`btn ${isActive ? 'btn-primary' : 'btn-outline'}`}
               style={{ padding: '9px 18px', fontSize: '0.86rem', whiteSpace: 'nowrap', borderRadius: 20, display: 'flex', alignItems: 'center', gap: 7, transition: 'all 0.2s', fontWeight: isActive ? 700 : 500 }}
             >
@@ -580,7 +647,7 @@ const JapanNewsHub = () => {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h3 style={{ margin: 0, fontSize: '1.25rem', color: 'white', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 8 }}>
               <Newspaper size={20} color="#60a5fa" />
-              {searchKeyword ? `Kết quả tìm kiếm ("${searchKeyword}")` : 'Danh sách tin tức mới nhất'}
+              {searchKeyword ? `Kết quả tìm kiếm cho "${searchKeyword}"` : 'Danh sách tin tức mới nhất'}
             </h3>
             <span style={{ fontSize: '0.85rem', color: 'var(--text-tertiary)' }}>{filteredArticles.length} bản tin</span>
           </div>
@@ -591,9 +658,16 @@ const JapanNewsHub = () => {
               <div>Đang nạp các bản tin nóng từ các nguồn tin tức Nhật Bản...</div>
             </div>
           ) : filteredArticles.length === 0 ? (
-            <div className="glass-panel" style={{ padding: 50, textAlign: 'center', color: 'var(--text-secondary)' }}>
-              <Newspaper size={36} style={{ margin: '0 auto 10px', opacity: 0.5 }} />
+            <div className="glass-panel" style={{ padding: 50, textAlign: 'center', color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+              <Newspaper size={36} style={{ opacity: 0.5 }} />
               <div>Không tìm thấy bản tin nào phù hợp với từ khóa "{searchKeyword}".</div>
+              <button 
+                onClick={() => { setActiveCategory('all'); setSearchKeyword(''); }}
+                className="btn btn-primary"
+                style={{ padding: '6px 16px', fontSize: '0.85rem' }}
+              >
+                Xem tất cả tin tức
+              </button>
             </div>
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 18 }}>
@@ -656,38 +730,61 @@ const JapanNewsHub = () => {
         {/* RIGHT SIDEBAR (WIDGETS & TIỆN ÍCH HỌC TẬP) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
           
-          {/* Widget 1: JPY / VND Exchange Rate & Market Info */}
+          {/* Widget 1: JPY / VND Interactive Exchange Rate Calculator */}
           <div className="glass-panel" style={{ padding: 20, borderRadius: 16, border: '1px solid var(--glass-border)', display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <h4 style={{ margin: 0, fontSize: '1rem', color: 'white', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 8 }}>
-              <DollarSign size={18} color="#10b981" /> Tỷ Giá & Thị Trường Hôm Nay
-            </h4>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(0,0,0,0.25)', padding: '12px 14px', borderRadius: 10 }}>
-              <div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)' }}>JPY / VND (Tham khảo)</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#34d399' }}>168.50 ₫</div>
-              </div>
-              <span style={{ fontSize: '0.75rem', padding: '2px 8px', borderRadius: 6, background: 'rgba(16,185,129,0.15)', color: '#34d399', fontWeight: 700 }}>+0.45%</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h4 style={{ margin: 0, fontSize: '1rem', color: 'white', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 8 }}>
+                <DollarSign size={18} color="#10b981" /> Quy Đổi Tỷ Giá JPY / VND
+              </h4>
+              <span style={{ fontSize: '0.75rem', padding: '2px 8px', borderRadius: 6, background: 'rgba(16,185,129,0.15)', color: '#34d399', fontWeight: 700 }}>1 JPY ≈ 168.5 ₫</span>
             </div>
-            <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
-              Đồng Yên đang duy trì vị thế ổn định, tạo thuận lợi cho kiều bào tích lũy và chuyển tiền về quê hương.
-            </p>
+
+            {/* Interactive Converter Input */}
+            <div style={{ background: 'rgba(0,0,0,0.3)', padding: '12px 14px', borderRadius: 12, display: 'flex', flexDirection: 'column', gap: 8 }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span style={{ fontSize: '0.78rem', color: 'var(--text-tertiary)' }}>Nhập số Yên Nhật (¥):</span>
+                <input 
+                  type="number" 
+                  value={jpyAmount} 
+                  onChange={e => setJpyAmount(e.target.value)}
+                  style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)', color: 'white', padding: '4px 8px', borderRadius: 6, width: 110, textAlign: 'right', fontSize: '0.9rem', fontWeight: 700, outline: 'none' }}
+                />
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 6 }}>
+                <span style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Quy đổi thành VNĐ:</span>
+                <span style={{ fontSize: '1.15rem', fontWeight: 800, color: '#34d399' }}>
+                  {((parseFloat(jpyAmount) || 0) * JPY_VND_RATE).toLocaleString('vi-VN')} ₫
+                </span>
+              </div>
+            </div>
+
+            <button 
+              onClick={() => handleOpenTopic('news_yen_exchange_rate')}
+              className="btn btn-outline"
+              style={{ padding: '6px 12px', fontSize: '0.78rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, color: '#60a5fa', borderColor: 'rgba(59,130,246,0.3)' }}
+            >
+              <TrendingUp size={14}/> Đọc bài phân tích Tỷ giá & Kinh tế
+            </button>
           </div>
 
-          {/* Widget 2: Trending Visa & Life Topics */}
+          {/* Widget 2: Trending Visa & Life Topics (100% WORKING DIRECT NAVIGATION) */}
           <div className="glass-panel" style={{ padding: 20, borderRadius: 16, border: '1px solid var(--glass-border)', display: 'flex', flexDirection: 'column', gap: 14 }}>
-            <h4 style={{ margin: 0, fontSize: '1rem', color: 'white', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 8 }}>
-              <Flame size={18} color="#f59e0b" /> Chủ Đề Đời Sống Nổi Bật
-            </h4>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h4 style={{ margin: 0, fontSize: '1rem', color: 'white', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 8 }}>
+                <Flame size={18} color="#f59e0b" /> Cẩm Nang Đời Sống & Visa
+              </h4>
+              <span style={{ fontSize: '0.72rem', color: 'var(--text-tertiary)' }}>Bấm để đọc ngay</span>
+            </div>
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              {[
-                { title: 'Thủ tục xin Visa Kỹ năng đặc định Tokutei 2', tag: 'Visa', color: '#60a5fa' },
-                { title: 'Hướng dẫn kê khai người phụ thuộc giảm thuế', tag: 'Thuế', color: '#f59e0b' },
-                { title: 'Kinh nghiệm thuê nhà UR không tiền lễ', tag: 'Nhà ở', color: '#10b981' }
-              ].map((topic, tIdx) => (
+              {TRENDING_TOPICS.map((topic, tIdx) => (
                 <div 
                   key={tIdx} 
-                  style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'rgba(255,255,255,0.03)', borderRadius: 10, cursor: 'pointer', transition: 'all 0.2s' }}
-                  onClick={() => setSearchKeyword(topic.tag)}
+                  style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'rgba(255,255,255,0.03)', borderRadius: 10, cursor: 'pointer', transition: 'all 0.2s', border: '1px solid rgba(255,255,255,0.04)' }}
+                  onClick={() => handleOpenTopic(topic.id)}
+                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(59,130,246,0.15)'; e.currentTarget.style.borderColor = 'rgba(59,130,246,0.4)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)'; }}
+                  title={`Đọc bài viết: ${topic.title}`}
                 >
                   <span style={{ fontSize: '0.72rem', padding: '2px 7px', borderRadius: 4, background: `${topic.color}22`, color: topic.color, fontWeight: 700 }}>
                     {topic.tag}
@@ -695,22 +792,43 @@ const JapanNewsHub = () => {
                   <span style={{ fontSize: '0.84rem', color: 'white', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                     {topic.title}
                   </span>
+                  <ChevronRight size={14} color="var(--text-tertiary)" />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Widget 3: Learning Guide */}
-          <div className="glass-panel" style={{ padding: 20, borderRadius: 16, border: '1px solid rgba(16,185,129,0.3)', background: 'linear-gradient(135deg, rgba(16,185,129,0.1), rgba(59,130,246,0.08))', display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {/* Widget 3: Active Learning Shortcuts */}
+          <div className="glass-panel" style={{ padding: 20, borderRadius: 16, border: '1px solid rgba(16,185,129,0.3)', background: 'linear-gradient(135deg, rgba(16,185,129,0.1), rgba(59,130,246,0.08))', display: 'flex', flexDirection: 'column', gap: 12 }}>
             <h4 style={{ margin: 0, fontSize: '0.98rem', color: '#34d399', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 8 }}>
-              <Lightbulb size={18} color="#34d399" /> Cách Học Qua Báo Hiệu Quả
+              <Lightbulb size={18} color="#34d399" /> Lối Tắt Công Cụ Học Tập
             </h4>
-            <ul style={{ margin: 0, paddingLeft: 18, fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <li>Bật <b>Furigana</b> để đọc trôi chảy mọi chữ Hán.</li>
-              <li>Bôi đen từ chưa biết để mở <b>Từ điển Hán-Việt 1-Click</b>.</li>
-              <li>Xem <b>Phân tích Ngữ pháp JLPT</b> ở chân bài viết.</li>
-              <li>Bấm <b>🗣️ Shadowing</b> để luyện phát âm theo câu.</li>
-            </ul>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              <button 
+                onClick={() => navigate('/dictionary')}
+                className="btn btn-outline"
+                style={{ padding: '7px 12px', fontSize: '0.8rem', justifyContent: 'flex-start', gap: 8, color: '#e2e8f0', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.08)' }}
+              >
+                <BookOpen size={14} color="#60a5fa"/> 📖 Mở Từ Điển Thông Minh
+              </button>
+
+              <button 
+                onClick={() => navigate('/grammar')}
+                className="btn btn-outline"
+                style={{ padding: '7px 12px', fontSize: '0.8rem', justifyContent: 'flex-start', gap: 8, color: '#e2e8f0', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.08)' }}
+              >
+                <Sparkles size={14} color="#c084fc"/> ✨ 2.191 Mẫu Ngữ Pháp Bunpro
+              </button>
+
+              <button 
+                onClick={() => navigate('/shadowing')}
+                className="btn btn-outline"
+                style={{ padding: '7px 12px', fontSize: '0.8rem', justifyContent: 'flex-start', gap: 8, color: '#e2e8f0', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.08)' }}
+              >
+                <Volume2 size={14} color="#34d399"/> 🗣️ Luyện Nói Shadowing Studio
+              </button>
+            </div>
           </div>
 
         </div>

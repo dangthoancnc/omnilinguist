@@ -145,6 +145,66 @@ UR賃貸住宅の最大のメリットは「礼金なし」「仲介手数料な
 Trong bối cảnh đó, hệ thống "Nhà ở UR (UR Chintai Jutaku)" do Cơ quan Tái thiết Đô thị Nhật Bản quản lý đang trở thành lựa chọn hàng đầu.
 Ưu điểm vượt trội của nhà UR là nguyên tắc 4 KHÔNG: Không tiền lễ, Không phí môi giới, Không phí gia hạn hợp đồng và Không cần người bảo lãnh.
 Chỉ cần chứng minh mức thu nhập hàng tháng đạt tiêu chuẩn quy định, người nước ngoài hoàn toàn có thể ký hợp đồng nhanh chóng, tận hưởng không gian sống rộng rãi và khuôn viên nhiều cây xanh.`
+  },
+  {
+    id: 'news_bank_yucho_guide',
+    title: '外国人向けのゆうちょ銀行口座開設と海外送金アプリの使い方',
+    category: 'life',
+    categoryLabel: '🗾 Đời sống, Visa & Thủ tục',
+    source: 'Japan Financial Life',
+    date: '2026-08-06',
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=60',
+    summary: 'Hướng dẫn mở tài khoản Ngân hàng Bưu điện Yucho (Japan Post Bank), đăng ký Internet Banking Yucho Direct và các ứng dụng chuyển tiền quốc tế hợp pháp, phí thấp.',
+    content: `日本に来て最初に直面する生活基盤づくりが「銀行口座の開設」です。
+多くのメガバンクでは「日本滞在期間が6ヶ月未満」の場合、口座開設を断られるケースがありますが、ゆうちょ銀行は来日直後の外国人でも比較的スムーズに開設できるため重宝されています。
+口座開設には、在留カード、パスポート、マイナンバーカード（通知カード）、そして印鑑（またはサイン）が必要です。
+また、スマートフォンの「ゆうちょダイレクト」や「ゆうちょ通帳アプリ」を利用することで、残高照会や振込をいつでも手軽に行うことができます。
+さらに、母国への送金には、銀行窓口よりも手数料が安く為替レートが良い公認の国際送金アプリ（DCOM、SBI Remit、Kyodai Remitなど）を連携させると便利です。`,
+    viTranslation: `Một trong những thủ tục quan trọng đầu tiên khi đặt chân đến Nhật Bản là "Mở tài khoản ngân hàng".
+Nhiều ngân hàng lớn thường từ chối mở tài khoản cho người nước ngoài cư trú dưới 6 tháng, nhưng Ngân hàng Bưu điện Yucho (Japan Post Bank) lại tạo điều kiện mở tài khoản rất thuận tiện ngay từ những ngày đầu.
+Hồ sơ mở tài khoản gồm có: Thẻ ngoại kiều (Zairyu Card), Hộ chiếu, Thẻ My Number và con dấu Inkan (hoặc chữ ký tay).
+Bạn nên đăng ký thêm ứng dụng "Yucho Direct" và "Sổ tiết kiệm Yucho điện tử" trên điện thoại để tra cứu số dư và chuyển khoản 24/7.
+Ngoài ra, để gửi tiền về Việt Nam cho gia đình, việc liên kết tài khoản Yucho với các ứng dụng chuyển tiền quốc tế hợp pháp (như DCOM, SBI Remit, Kyodai Remit...) sẽ giúp bạn tiết kiệm chi phí và hưởng tỷ giá quy đổi tốt nhất.`
+  },
+  {
+    id: 'news_medical_insurance_japan',
+    title: '日本の国民健康保険制度と高額療養費制度 病院のかかり方',
+    category: 'life',
+    categoryLabel: '🗾 Đời sống, Visa & Thủ tục',
+    source: 'NHK Easy Health',
+    date: '2026-08-04',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop&q=60',
+    summary: 'Tìm hiểu hệ thống Bảo hiểm Y tế Quốc dân (Kokumin Kenko Hoken), mức tự chi trả 30% và chế độ hỗ trợ chi phí khám chữa bệnh nặng (Kogaku Ryoyohi) tại Nhật Bản.',
+    content: `日本に3ヶ月以上滞在するすべての外国人は、公的な「健康保険」に加入する義務があります。
+会社員は「社会保険（健康保険）」、自営業や留学生は自治体の「国民健康保険」に加入します。
+保険証を医療機関の窓口で提示することで、診察料や薬代の自己負担割合は原則「3割（30%）」で済みます。
+さらに、入院や手術などで医療費が高額になった場合、月ごとの自己負担上限額を超えた分が払い戻される「高額療養費制度」が適用されます。
+急な病気やケガの際、日本語でのコミュニケーションに不安がある場合は、自治体や医療機関が提供する「医療通訳サービス」や多言語問診票を活用することができます。`,
+    viTranslation: `Mọi người nước ngoài cư trú tại Nhật Bản trên 3 tháng đều có nghĩa vụ tham gia "Bảo hiểm Y tế công (Kenko Hoken)".
+Người đi làm tại công ty sẽ tham gia "Bảo hiểm xã hội (Shakai Hoken)", trong khi du học sinh và lao động tự do sẽ tham gia "Bảo hiểm Y tế Quốc dân (Kokumin Kenko Hoken)" tại Tòa thị chính (Kuyakusho/Shiyakusho).
+Khi xuất trình thẻ bảo hiểm tại bệnh viện hoặc hiệu thuốc, bạn chỉ phải tự chi trả "30% (3割)" tổng chi phí khám chữa bệnh.
+Đặc biệt, nếu không may phải phẫu thuật hoặc nằm viện với chi phí lớn, chế độ "Hỗ trợ viện phí cao (Kogaku Ryoyohi)" sẽ giúp hoàn lại toàn bộ số tiền vượt quá hạn mức trần quy định trong tháng.
+Khi đi khám bệnh, nếu chưa tự tin về vốn tiếng Nhật chuyên ngành, bạn hoàn toàn có thể yêu cầu dịch vụ phiên dịch y tế đa ngôn ngữ của bệnh viện hoặc tải trước Bảng câu hỏi y tế đa ngôn ngữ (Multilingual Medical Questionnaire).`
+  },
+  {
+    id: 'news_driving_license_convert',
+    title: '日本の運転免許証への切り替え手続き「外免切替」完全ガイド',
+    category: 'life',
+    categoryLabel: '🗾 Đời sống, Visa & Thủ tục',
+    source: 'Driver Life Japan',
+    date: '2026-08-02',
+    image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&auto=format&fit=crop&q=60',
+    summary: 'Quy trình đổi bằng lái xe ô tô / xe máy từ Việt Nam sang bằng lái xe Nhật Bản (Gaimen Kirikae), hồ sơ JAF và mẹo thi sa hình đỗ ngay lần đầu.',
+    content: `日本で自動車やバイクを運転したい場合、母国の運転免許証を日本の免許証に切り替える「外免切替（がいめんきりかえ）」という制度があります。
+条件として、母国で免許を取得した後、通算して3ヶ月（90日）以上その国に滞在していた実績が必要です。
+手続きの流れは、まずJAF（日本自動車連盟）で母国の免許証の「公式日本語翻訳文」を作成してもらいます。
+その後、運転免許試験場（運転免許センター）にて書類審査、適性検査（視力検査など）、知識確認（学科試験）、そして実技確認（場内コース走行）を受けます。
+実技試験では「安全確認」「一時停止」「左折時の巻き込み防止確認」が非常に厳格に審査されるため、事前に練習コースでポイントを押さえておくことが合格への近道です。`,
+    viTranslation: `Nếu bạn muốn tự lái xe ô tô hoặc xe máy đi làm, đi chơi tại Nhật, chế độ "Đổi bằng lái xe nước ngoài (Gaimen Kirikae)" là giải pháp nhanh chóng và tiết kiệm chi phí nhất thay vì phải học lại từ đầu.
+Điều kiện tiên quyết là bạn phải có thời gian cư trú ở quê nhà ít nhất 3 tháng (90 ngày) sau ngày được cấp bằng lái xe.
+Quy trình thực hiện: Đầu tiên, bạn gửi bằng lái đến JAF (Liên đoàn Ô tô Nhật Bản) để xin Bản dịch tiếng Nhật chính thức.
+Sau đó, bạn mang hồ sơ đến Trung tâm sát hạch lái xe (Menkyo Center) để nộp hồ sơ, khám mắt, thi lý thuyết 10 câu trắc nghiệm và thi thực hành lái xe trên sa hình.
+Bài thi thực hành tại Nhật chấm rất gắt gao các thao tác "Quan sát an toàn (Anzen Kakunin)", "Dừng xe tuyệt đối trước vạch Stop" và "Kiểm tra góc chết khi rẽ trái", do đó việc tập lái sa hình trước ngày thi là chìa khóa để vượt qua ngay lần đầu.`
   }
 ];
 
