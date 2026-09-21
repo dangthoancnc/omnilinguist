@@ -582,62 +582,270 @@ export const STORY_MANGA_ARTWORKS = {
   }
 };
 
-// Hàm chọn Artwork phù hợp nhất với một tác phẩm cụ thể
-export const getStoryMangaArtwork = (story) => {
-  if (!story) return STORY_MANGA_ARTWORKS.momotaro;
-  const id = (story.id || '').toLowerCase();
-  const title = (story.title || '').toLowerCase();
-  const genre = (story.genre || '').toLowerCase();
+// ────────────────────────────────────────────────────────────
+// HỆ THỐNG HOẠT CẢNH ĐA TRANG (MULTI-SCENE EHON PAGES)
+// ────────────────────────────────────────────────────────────
+export const STORY_SCENES_MAP = {
+  momotaro: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Quả đào khổng lồ trôi sông',
+      jpTitle: '川から流れてきた大きな桃',
+      imageUrl: '/images/ehon/momotaro.jpg',
+      desc: 'Bà lão giặt đồ ở bờ sông vớt được quả đào khổng lồ trôi bồng bềnh từ thượng nguồn.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Cảnh 2: Momotarō chào đời & Bánh kê Kibi Dango',
+      jpTitle: '桃太郎の誕生と日本一のきび団子',
+      imageUrl: '/images/ehon/momotaro.jpg',
+      desc: 'Cậu bé kháu khỉnh chào đời từ quả đào, ăn bánh kê ngon số một Nhật Bản và lớn nhanh như thổi.'
+    },
+    {
+      sceneIdx: 3,
+      title: 'Cảnh 3: Kết bạn cùng Chó, Khỉ, Chim Trĩ',
+      jpTitle: '犬・猿・雉が仲間に',
+      imageUrl: '/images/ehon/momotaro.jpg',
+      desc: 'Momotarō chia bánh kê cho ba người bạn Chó, Khỉ, Trĩ cùng nhau vượt biển lên đường diệt quỷ.'
+    },
+    {
+      sceneIdx: 4,
+      title: 'Cảnh 4: Đại phá Đảo Quỷ & Thắng lợi trở về',
+      jpTitle: '鬼ヶ島の戦いと平和な村',
+      imageUrl: '/images/ehon/momotaro.jpg',
+      desc: 'Chiến đấu dũng cảm, đánh bại chúa quỷ và chở xe đầy ắp châu báu về làng chia cho bà con.'
+    }
+  ],
+  omusubi_kororin: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Nắm cơm lăn lông lốc xuống hang',
+      jpTitle: 'おむすびが穴へコロコロ',
+      imageUrl: '/images/ehon/omusubi_kororin.jpg',
+      desc: 'Ông lão ngồi gốc cây ăn trưa, lỡ tay để rơi nắm cơm thơm ngon lăn tròn tọt vào hang sâu.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Cảnh 2: Tiếng hát kỳ lạ & Lạc vào Vương quốc Chuột',
+      jpTitle: '不思議な歌声とねずみの国',
+      imageUrl: '/images/ehon/omusubi_kororin.jpg',
+      desc: 'Dưới đáy hang sáng bừng, đàn chuột con nhảy múa hát ca chào đón ông lão nhân hậu.'
+    },
+    {
+      sceneIdx: 3,
+      title: 'Cảnh 3: Chiếc rương nhỏ đầy vàng ngọc',
+      jpTitle: '小さなつづらと宝物',
+      imageUrl: '/images/ehon/omusubi_kororin.jpg',
+      desc: 'Ông lão chọn chiếc rương nhỏ đơn sơ, khi về nhà mở ra tràn ngập vàng bạc lụa là quý giá.'
+    },
+    {
+      sceneIdx: 4,
+      title: 'Cảnh 4: Lão già tham lam bị trừng phạt',
+      jpTitle: '欲張りじいさんの失敗',
+      imageUrl: '/images/ehon/omusubi_kororin.jpg',
+      desc: 'Lão già tham lam giả tiếng mèo dọa chuột, hang tối sầm lại và lão bị kẹt trong bùn lầy.'
+    }
+  ],
+  urashima_taro: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Giải cứu rùa biển trên bờ cát',
+      jpTitle: '浜辺で亀を助ける太郎',
+      imageUrl: '/images/ehon/urashima_taro.jpg',
+      desc: 'Chàng đánh cá Urashima Tarō nhân hậu chuộc chú rùa nhỏ từ đám trẻ và thả về biển.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Cảnh 2: Cưỡi rùa bơi đến Cung Điện Rồng',
+      jpTitle: '亀に乗って竜宮城へ',
+      imageUrl: '/images/ehon/urashima_taro.jpg',
+      desc: 'Rùa thần đưa Tarō rẽ sóng lặn xuống biển sâu chiêm ngưỡng cung điện ngọc bích lộng lẫy.'
+    },
+    {
+      sceneIdx: 3,
+      title: 'Cảnh 3: Yến tiệc & Hộp ngọc Tamatebako',
+      jpTitle: '乙姫様のもてなしと玉手箱',
+      imageUrl: '/images/ehon/urashima_taro.jpg',
+      desc: 'Công chúa Otohime tặng hộp ngọc dặn không được mở khi chàng từ biệt ra về.'
+    },
+    {
+      sceneIdx: 4,
+      title: 'Cảnh 4: Ba trăm năm trần thế & Làn khói trắng',
+      jpTitle: '三百年後の故郷と白い煙',
+      imageUrl: '/images/ehon/urashima_taro.jpg',
+      desc: 'Làng xưa không còn ai quen, Tarō mở hộp ngọc và hóa thành ông già tóc trắng.'
+    }
+  ],
+  kaguya_hime: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Bé gái trong ống tre phát sáng',
+      jpTitle: '光る竹から生まれた姫',
+      imageUrl: '/images/ehon/kaguya_hime.jpg',
+      desc: 'Ông lão đốn tre tìm thấy cô bé tí hon xinh xắn tỏa ánh sáng vàng lung linh dịu dàng.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Cảnh 2: Thiếu nữ tuyệt trần & Lời cầu hôn của các quý tộc',
+      jpTitle: '美しき姫と貴族たちの求婚',
+      imageUrl: '/images/ehon/kaguya_hime.jpg',
+      desc: 'Kaguya-hime lớn lên đẹp tựa trăng rằm, đưa ra các thử thách báu vật nan giải.'
+    },
+    {
+      sceneIdx: 3,
+      title: 'Cảnh 3: Đêm trăng rằm chia tay & Tiên nữ cưỡi mây',
+      jpTitle: '満月の夜と月への帰還',
+      imageUrl: '/images/ehon/kaguya_hime.jpg',
+      desc: 'Tiên nhân cưỡi mây hạ phàm, Kaguya-hime để lại thư tạ ơn rồi bay về cung trăng.'
+    }
+  ],
+  tsuru_no_ongaeshi: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Cứu hạc trắng & Cô nương xin tá túc',
+      jpTitle: '罠の鶴を助け、現れた娘',
+      imageUrl: '/images/ehon/tsuru_no_ongaeshi.jpg',
+      desc: 'Chàng trai nghèo cứu chim hạc dính bẫy tuyết, tối đó thiếu nữ xinh đẹp tới xin trú ngụ.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Cảnh 2: Tiếng dệt cửi lách cách trong đêm',
+      jpTitle: 'カタンコトンと機を織る音',
+      imageUrl: '/images/ehon/tsuru_no_ongaeshi.jpg',
+      desc: 'Nàng dệt nên những tấm vải gấm lấp lánh tuyệt mỹ đem lại cuộc sống no đủ.'
+    },
+    {
+      sceneIdx: 3,
+      title: 'Cảnh 3: Lời hứa bị phá vỡ & Cánh hạc bay xa',
+      jpTitle: '約束の破れと飛び立つ鶴',
+      imageUrl: '/images/ehon/tsuru_no_ongaeshi.jpg',
+      desc: 'Nhìn qua khe cửa thấy nàng là chim hạc tự nhổ lông dệt vải; hạc nghẹn ngào bay vút vào chiều đông.'
+    }
+  ],
+  kasajizo: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Năm chiếc nón ế ngày Ba mươi Tết',
+      jpTitle: '大晦日の売れ残った菅笠',
+      imageUrl: '/images/ehon/kasajizo.jpg',
+      desc: 'Ông lão nghèo không bán được nón rơm trong ngày giáp Tết tuyết rơi trắng xóa.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Cảnh 2: Đội nón cho sáu vị tượng Phật Jizō',
+      jpTitle: '六体のお地蔵様と笠',
+      imageUrl: '/images/ehon/kasajizo.jpg',
+      desc: 'Thương các pho tượng lạnh giá, ông đội 5 chiếc nón và cởi luôn nón cũ của mình cho vị thứ 6.'
+    },
+    {
+      sceneIdx: 3,
+      title: 'Cảnh 3: Tiếng hò dô & Núi báu vật trước sân',
+      jpTitle: '夜更けの歌声と山の宝物',
+      imageUrl: '/images/ehon/kasajizo.jpg',
+      desc: 'Đêm khuya các vị Jizō gánh bao gạo, bánh Tết và vàng bạc đến tạ ơn hai ông bà nhân từ.'
+    }
+  ]
+};
 
-  // 1. Khớp theo tác phẩm có tranh Ehon thực tế
-  if (id.includes('momo') || title.includes('桃太郎') || title.includes('momotarō')) {
-    return STORY_MANGA_ARTWORKS.momotaro;
-  }
-  if (id.includes('omusubi') || title.includes('おむすび') || title.includes('ころりん')) {
+// Hàm chọn Artwork phù hợp nhất với một tác phẩm cụ thể (hỗ trợ kiểm tra cả chương truyện)
+export const getStoryMangaArtwork = (story, chapterTitle = '') => {
+  if (!story && !chapterTitle) return STORY_MANGA_ARTWORKS.momotaro;
+  const id = (story?.id || '').toLowerCase();
+  const title = (story?.title || '').toLowerCase();
+  const cTitle = (chapterTitle || story?.chapterTitle || story?.currentChapterTitle || story?.currentChapter?.chapterTitle || '').toLowerCase();
+  const genre = (story?.genre || '').toLowerCase();
+
+  const fullSearch = `${id} ${title} ${cTitle}`.toLowerCase();
+
+  // 1. Khớp ưu tiên theo tác phẩm có tranh Ehon thực tế (ưu tiên tên chương trước)
+  if (fullSearch.includes('omusubi') || fullSearch.includes('おむすび') || fullSearch.includes('ころりん')) {
     return STORY_MANGA_ARTWORKS.omusubi_kororin;
   }
-  if (id.includes('kaguya') || title.includes('かぐや姫') || title.includes('竹取')) {
+  if (fullSearch.includes('momo') || fullSearch.includes('桃太郎') || fullSearch.includes('momotarō')) {
+    return STORY_MANGA_ARTWORKS.momotaro;
+  }
+  if (fullSearch.includes('kaguya') || fullSearch.includes('かぐや姫') || fullSearch.includes('竹取')) {
     return STORY_MANGA_ARTWORKS.kaguya_hime;
   }
-  if (id.includes('urashima') || title.includes('浦島太郎') || title.includes('竜宮')) {
+  if (fullSearch.includes('urashima') || fullSearch.includes('浦島太郎') || fullSearch.includes('竜宮')) {
     return STORY_MANGA_ARTWORKS.urashima_taro;
   }
-  if (id.includes('tsuru') || title.includes('鶴の恩返し') || title.includes('つるの恩返し')) {
+  if (fullSearch.includes('tsuru') || fullSearch.includes('鶴の恩返し') || fullSearch.includes('つるの恩返し')) {
     return STORY_MANGA_ARTWORKS.tsuru_no_ongaeshi;
   }
-  if (id.includes('kasajizo') || title.includes('笠地蔵') || title.includes('かさじぞう') || title.includes('地蔵')) {
+  if (fullSearch.includes('kasajizo') || fullSearch.includes('笠地蔵') || fullSearch.includes('かさじぞう') || fullSearch.includes('地蔵')) {
     return STORY_MANGA_ARTWORKS.kasajizo;
   }
-  if (id.includes('issun') || title.includes('一寸法師') || title.includes('いっすんぼうし')) {
+  if (fullSearch.includes('issun') || fullSearch.includes('一寸法師') || fullSearch.includes('いっすんぼうし')) {
     return STORY_MANGA_ARTWORKS.issun_boshi;
   }
-  if (id.includes('ginga') || title.includes('銀河鉄道') || title.includes('宮沢賢治') || title.includes('よだかの星')) {
+  if (fullSearch.includes('ginga') || fullSearch.includes('銀河鉄道') || fullSearch.includes('宮沢賢治') || fullSearch.includes('よだかの星')) {
     return STORY_MANGA_ARTWORKS.ginga_tetsudo;
   }
 
   // 2. Khớp theo tác phẩm đồng thoại & danh tác
-  if (id.includes('gon') || title.includes('ごんぎつね') || title.includes('狐') || title.includes('手袋を買')) {
+  if (fullSearch.includes('gon') || fullSearch.includes('ごんぎつね') || fullSearch.includes('狐') || fullSearch.includes('手袋を買')) {
     return STORY_MANGA_ARTWORKS.gongitsune;
   }
-  if (title.includes('羅生門') || title.includes('山月記') || title.includes('蜘蛛の糸') || title.includes('走れメロス') || title.includes('こころ') || title.includes('坊っちゃん') || title.includes('文学') || title.includes('芥川') || title.includes('太宰')) {
+  if (fullSearch.includes('羅生門') || fullSearch.includes('山月記') || fullSearch.includes('蜘蛛の糸') || fullSearch.includes('走れメロス') || fullSearch.includes('こころ') || fullSearch.includes('坊っちゃん') || fullSearch.includes('文学') || fullSearch.includes('芥川') || fullSearch.includes('太宰')) {
     return STORY_MANGA_ARTWORKS.classic_dramatic;
   }
 
   // 3. Khớp theo chuyên đề & thể loại
-  if (genre.includes('nature') || title.includes('桜') || title.includes('富士') || title.includes('春') || title.includes('秋') || title.includes('四季')) {
+  if (genre.includes('nature') || fullSearch.includes('桜') || fullSearch.includes('富士') || fullSearch.includes('春') || fullSearch.includes('秋') || fullSearch.includes('四季')) {
     return STORY_MANGA_ARTWORKS.japanese_nature;
   }
-  if (genre.includes('culture') || title.includes('祭り') || title.includes('神社') || title.includes('茶道') || title.includes('着物') || title.includes('伝統')) {
+  if (genre.includes('culture') || fullSearch.includes('祭り') || fullSearch.includes('神社') || fullSearch.includes('茶道') || fullSearch.includes('着物') || fullSearch.includes('伝統')) {
     return STORY_MANGA_ARTWORKS.culture_tradition;
   }
-  if (genre.includes('daily') || title.includes('学校') || title.includes('友だち') || title.includes('生活') || title.includes('朝') || title.includes('家族')) {
+  if (genre.includes('daily') || fullSearch.includes('学校') || fullSearch.includes('友だち') || fullSearch.includes('生活') || fullSearch.includes('朝') || fullSearch.includes('家族')) {
     return STORY_MANGA_ARTWORKS.daily_life;
   }
-  if (genre.includes('business') || genre.includes('news') || title.includes('東京') || title.includes('電車') || title.includes('コンビニ') || title.includes('メール') || title.includes('社会')) {
+  if (genre.includes('business') || genre.includes('news') || fullSearch.includes('東京') || fullSearch.includes('電車') || fullSearch.includes('コンビニ') || fullSearch.includes('メール') || fullSearch.includes('社会')) {
     return STORY_MANGA_ARTWORKS.modern_tokyo;
   }
 
   if (genre.includes('folktale')) return STORY_MANGA_ARTWORKS.momotaro;
   if (genre.includes('literature')) return STORY_MANGA_ARTWORKS.ginga_tetsudo;
   return STORY_MANGA_ARTWORKS.modern_tokyo;
+};
+
+// Hàm lấy thông tin Hoạt Cảnh theo tiến độ câu (Multi-Scene Resolution)
+export const getStorySceneArtwork = (story, chapterTitle = '', currentIdx = 0, totalCount = 1) => {
+  const baseArtwork = getStoryMangaArtwork(story, chapterTitle);
+  const cTitle = (chapterTitle || story?.chapterTitle || story?.title || '').toLowerCase();
+  
+  let sceneKey = null;
+  if (cTitle.includes('おむすび') || cTitle.includes('ころりん')) sceneKey = 'omusubi_kororin';
+  else if (cTitle.includes('桃太郎')) sceneKey = 'momotaro';
+  else if (cTitle.includes('浦島')) sceneKey = 'urashima_taro';
+  else if (cTitle.includes('かぐや')) sceneKey = 'kaguya_hime';
+  else if (cTitle.includes('鶴')) sceneKey = 'tsuru_no_ongaeshi';
+  else if (cTitle.includes('地蔵')) sceneKey = 'kasajizo';
+
+  if (!sceneKey || !STORY_SCENES_MAP[sceneKey]) {
+    return {
+      ...baseArtwork,
+      currentSceneIdx: 1,
+      totalScenes: 1,
+      sceneTitle: baseArtwork.title,
+      sceneJpTitle: '',
+      sceneDesc: ''
+    };
+  }
+
+  const scenes = STORY_SCENES_MAP[sceneKey];
+  const progressRatio = Math.max(0, Math.min(1, currentIdx / Math.max(1, totalCount - 1)));
+  const sceneIdx = Math.min(scenes.length - 1, Math.floor(progressRatio * scenes.length));
+  const activeScene = scenes[sceneIdx];
+
+  return {
+    ...baseArtwork,
+    imageUrl: activeScene.imageUrl || baseArtwork.imageUrl,
+    currentSceneIdx: activeScene.sceneIdx,
+    totalScenes: scenes.length,
+    sceneTitle: activeScene.title,
+    sceneJpTitle: activeScene.jpTitle,
+    sceneDesc: activeScene.desc
+  };
 };

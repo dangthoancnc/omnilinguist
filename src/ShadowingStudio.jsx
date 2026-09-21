@@ -357,7 +357,7 @@ const ShadowingStudio = () => {
       id: activeTab,
       title: activeTitle,
       genre: activeTab === 'reading' ? 'folktale' : activeTab
-    });
+    }, activeTitle);
   }, [activeTab, activeTitle]);
 
   // YouTube States
@@ -1983,7 +1983,7 @@ const ShadowingStudio = () => {
                 </div>
               ) : (
                 /* EHON / MANGA ARTWORK DISPLAY */
-                <div style={{ position: 'relative', width: '100%', height: 180, background: 'linear-gradient(135deg, #1e293b, #0f172a)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ position: 'relative', width: '100%', height: 290, background: 'linear-gradient(135deg, #1e293b, #0f172a)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {currentStoryArtwork?.imageUrl ? (
                     <img 
                       src={currentStoryArtwork.imageUrl} 

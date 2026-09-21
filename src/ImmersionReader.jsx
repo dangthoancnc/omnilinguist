@@ -16,6 +16,7 @@ import FuriganaText from './components/FuriganaText';
 import MangaReader from './components/MangaReader';
 import { READING_CORPUS, CLASSIC_STORIES } from './data/readingCorpus.js';
 import { ensureSegmentsHaveTranslation, batchTranslateSentences, getCachedTranslation } from './services/storyTranslationService.js';
+import { getStorySceneArtwork } from './data/mangaArtworks.jsx';
 
 const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
 
@@ -116,9 +117,23 @@ const ImmersionReader = () => {
   const [isPausedTTS, setIsPausedTTS] = useState(false);
   const [speakingLineIdx, setSpeakingLineIdx] = useState(null); // Chỉ số câu/đoạn đang được phát giọng đọc
   const [focusedLineIdx, setFocusedLineIdx] = useState(null);   // Chỉ số câu/đoạn người dùng click tập trung
+  const [ttsSpeed, setTtsSpeed] = useState(() => {
+    const saved = localStorage.getItem('omni_tts_speed');
+    return saved ? parseFloat(saved) : 0.85;
+  });
   const currentUtteranceRef = useRef(null);
   const isSpeechCancelledRef = useRef(false);
   const lineRefs = useRef([]);
+
+  // Tự động cuộn mượt đưa câu đang đọc vào giữa màn hình
+  useEffect(() => {
+    if (speakingLineIdx !== null && lineRefs.current[speakingLineIdx]) {
+      lineRefs.current[speakingLineIdx].scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }
+  }, [speakingLineIdx]);
 
   // Trình độ mục tiêu của người học để chẩn đoán lỗ hổng kiến thức
   const [myTargetLevel, setMyTargetLevel] = useState(() => {
@@ -333,6 +348,44 @@ const ImmersionReader = () => {
     }
     return null;
   }, [currentChapter]);
+
+  // Danh sách các câu/đoạn của bài đọc hiện tại kèm bản dịch tiếng Việt chuẩn
+  const storySentences = useMemo(() => {
+    if (!activeReadingContent) return [];
+    if (bilingualData && bilingualData.length > 0) {
+      return bilingualData
+        .filter(b => b.original && b.original.trim().length > 0)
+        .map((item, idx) => ({
+          idx,
+          text: item.original.trim(),
+          vi: item.translated || getCachedTranslation(item.original.trim()) || ''
+        }));
+    }
+    return activeReadingContent
+      .split('\n')
+      .map(line => line.trim())
+      .filter(line => line.length > 0)
+      .map((line, idx) => ({
+        idx,
+        text: line,
+        vi: getCachedTranslation(line) || ''
+      }));
+  }, [activeReadingContent, bilingualData]);
+
+  // Vị trí câu đang được phát hoặc đang được người dùng chọn
+  const activeSentenceIdx = speakingLineIdx !== null ? speakingLineIdx : (focusedLineIdx !== null ? focusedLineIdx : 0);
+  const activeSentence = storySentences[activeSentenceIdx] || storySentences[0];
+  const activeSentenceVi = activeSentence?.vi || (activeSentence?.text ? getCachedTranslation(activeSentence.text.trim()) : '');
+
+  // Tranh minh họa hoạt cảnh Ehon theo tiến độ câu chuyện
+  const activeSceneInfo = useMemo(() => {
+    return getStorySceneArtwork(
+      activeText,
+      currentChapter ? currentChapter.chapterTitle : '',
+      activeSentenceIdx,
+      storySentences.length || 1
+    );
+  }, [activeText, currentChapter, activeSentenceIdx, storySentences.length]);
 
   // Trích xuất 6-8 từ vựng tiêu biểu của bài đọc hiện tại để hiển thị ở cột tra cứu khi chưa chọn từ
   const keyChapterVocab = useMemo(() => {
@@ -700,13 +753,15 @@ const ImmersionReader = () => {
     window.speechSynthesis.cancel();
     isSpeechCancelledRef.current = false;
 
-    // Lấy danh sách các dòng văn bản cần đọc
+    // Lấy danh sách các câu cần đọc đồng bộ 100% với storySentences
     let lines = [];
-    if (bilingualData && bilingualData.length > 0) {
-      lines = bilingualData.map(b => b.original);
+    if (storySentences && storySentences.length > 0) {
+      lines = storySentences.map(s => s.text);
+    } else if (bilingualData && bilingualData.length > 0) {
+      lines = bilingualData.map(b => b.original.trim()).filter(l => l.length > 0);
     } else {
       const source = textToRead || activeReadingContent || '';
-      lines = source.split('\n');
+      lines = source.split('\n').map(l => l.trim()).filter(l => l.length > 0);
     }
 
     if (!lines || lines.length === 0) return;
@@ -741,7 +796,7 @@ const ImmersionReader = () => {
       const cleanText = rawLine.replace(/[「」『』（）()]/g, ' ').trim();
       const utterance = new SpeechSynthesisUtterance(cleanText);
       utterance.lang = 'ja-JP';
-      utterance.rate = 0.88;
+      utterance.rate = ttsSpeed;
       if (jpVoice) utterance.voice = jpVoice;
 
       utterance.onstart = () => {
@@ -776,6 +831,23 @@ const ImmersionReader = () => {
     setFocusedLineIdx(idx);
     if (isPlayingTTS) {
       handleGenerateTTS(null, idx);
+    }
+  };
+
+  // Điều hướng câu trước / câu sau trong Sách nói & Hoạt cảnh
+  const handlePrevSentence = () => {
+    const target = Math.max(0, activeSentenceIdx - 1);
+    setFocusedLineIdx(target);
+    if (isPlayingTTS) {
+      handleGenerateTTS(null, target);
+    }
+  };
+
+  const handleNextSentence = () => {
+    const target = Math.min(storySentences.length - 1, activeSentenceIdx + 1);
+    setFocusedLineIdx(target);
+    if (isPlayingTTS) {
+      handleGenerateTTS(null, target);
     }
   };
 
@@ -853,10 +925,12 @@ const ImmersionReader = () => {
     navigate('/shadowing', { state: { importedStory: payload, t: Date.now() } });
   };
 
-  // Tự động dừng phát âm thanh khi chuyển bài đọc hoặc khi component unmount
+  // Tự động dừng phát âm thanh khi chuyển bài đọc hoặc chuyển chương
   useEffect(() => {
     handleStopTTS();
-  }, [activeTextId]);
+    setFocusedLineIdx(0);
+    setSpeakingLineIdx(null);
+  }, [activeTextId, chapterIndex]);
 
   useEffect(() => {
     return () => {
@@ -2850,117 +2924,240 @@ const ImmersionReader = () => {
                 onTransferToShadowing={handleTransferToShadowing}
               />
             ) : (
-              <div style={{ maxWidth: 860, margin: '0 auto', width: '100%' }}>
-                {!hideSlaTip && (
-                  <div style={{ 
-                    fontSize: '0.74rem', 
-                    color: 'var(--accent-primary)', 
-                    marginBottom: 10, 
-                    padding: '3px 10px', 
-                    background: 'var(--accent-subtle)', 
-                    border: '1px solid var(--glass-border)', 
-                    borderRadius: 6, 
-                    display: 'inline-flex', 
-                    alignItems: 'center', 
-                    gap: 8 
-                  }}>
-                    <span>💡 <b>Mẹo tra từ:</b> Bôi đen (highlight) từ lạ để tra từ điển & nạp vào Flashcard FSRS.</span>
-                    <button 
-                      onClick={() => {
-                        setHideSlaTip(true);
-                        localStorage.setItem('omni_hide_sla_tip', 'true');
-                      }}
-                      title="Đóng mẹo này"
-                      style={{ background: 'none', border: 'none', color: 'var(--text-tertiary)', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}
-                    >
-                      <X size={12} />
-                    </button>
-                  </div>
-                )}
+              <div className="immersion-dual-container">
+                {/* ══════════════════════════════════════════════════════════════ */}
+                {/* CỘT TRÁI (42%): TRANH HOẠT CẢNH EHON + LIVE KARAOKE + PLAYER */}
+                {/* ══════════════════════════════════════════════════════════════ */}
+                <div className="immersion-left-panel">
+                  {/* Khung Tranh Hoạt Cảnh Ehon */}
+                  <div className="ehon-scene-card">
+                    <div className="ehon-scene-image-wrapper">
+                      <img 
+                        src={activeSceneInfo.imageUrl} 
+                        alt={activeSceneInfo.sceneTitle || activeReadingTitle}
+                        className="ehon-scene-image"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div className="ehon-scene-badge-row">
+                        <span className="ehon-scene-number-badge">
+                          🎨 Hoạt cảnh {activeSceneInfo.currentSceneIdx} / {activeSceneInfo.totalScenes}
+                        </span>
+                        {activeText.level && (
+                          <span className="ehon-level-badge" style={{ background: LEVEL_COLORS[activeText.level.slice(0, 2)] || 'var(--accent-primary)' }}>
+                            {activeText.level}
+                          </span>
+                        )}
+                      </div>
+                    </div>
 
-                {bilingualData ? (
-                   <div ref={contentRef} onMouseUp={handleSelection} onTouchEnd={handleSelection} style={{ fontSize: `${readerFontSize}rem`, lineHeight: 2.3, cursor: 'text' }}>
-                     {bilingualData.map((block, i) => {
-                       const isLineActive = speakingLineIdx === i || (speakingLineIdx === null && focusedLineIdx === i);
-                       const isSpeaking = speakingLineIdx === i;
-                       return (
-                         <div 
-                           key={i} 
-                           ref={el => (lineRefs.current[i] = el)}
-                           onClick={() => handleLineClick(i)}
-                           className={`reading-line-item ${isLineActive ? 'reading-active-line' : ''}`}
-                           style={{ marginBottom: block.original.trim() ? 16 : 0 }}
-                           title="Bấm để đặt tiêu điểm / nghe đọc từ câu này"
-                         >
-                           {isSpeaking && (
-                             <span className="reading-soundwave-badge">
-                               <Volume2 size={11} /> Đang đọc
-                             </span>
-                           )}
-                           {block.original.trim() && (
-                             <div className="immersion-prose jp-text" style={{ whiteSpace: 'pre-wrap', color: 'var(--text-primary)' }}>
-                               <FuriganaText text={block.original} />
-                             </div>
-                           )}
-                           {block.original.trim() && block.translated.trim() && (
-                             <div style={{ 
-                               fontSize: '0.9em', 
-                               color: 'var(--text-secondary)', 
-                               borderLeft: '3px solid var(--accent-primary)', 
-                               background: 'var(--bg-hover)',
-                               padding: '6px 12px', 
-                               borderRadius: '0 6px 6px 0',
-                               marginTop: 4, 
-                               fontStyle: 'italic', 
-                               lineHeight: 1.6 
-                             }}>
-                               {block.translated}
-                             </div>
-                           )}
-                         </div>
-                       );
-                     })}
-                   </div>
-                ) : (
+                    {/* Tiêu đề & Tóm tắt Hoạt cảnh */}
+                    <div className="ehon-scene-info">
+                      <div className="ehon-scene-titles">
+                        <div className="ehon-scene-title-vi">{activeSceneInfo.sceneTitle}</div>
+                        {activeSceneInfo.sceneJpTitle && (
+                          <div className="ehon-scene-title-jp jp-text">{activeSceneInfo.sceneJpTitle}</div>
+                        )}
+                      </div>
+                      {activeSceneInfo.sceneDesc && (
+                        <div className="ehon-scene-desc">{activeSceneInfo.sceneDesc}</div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Phụ Đề Nổi Bật / Live Karaoke Subtitle Card */}
+                  <div className="immersion-karaoke-card">
+                    <div className="immersion-karaoke-header">
+                      <div className="immersion-karaoke-title">
+                        <Volume2 size={15} className={isPlayingTTS ? "karaoke-pulse-icon" : ""} />
+                        <span>📖 Câu Đang Đọc ({storySentences.length > 0 ? `${activeSentenceIdx + 1}/${storySentences.length}` : '0/0'})</span>
+                      </div>
+                      <div className="immersion-karaoke-actions">
+                        <button 
+                          className="btn-icon-tiny"
+                          onClick={() => {
+                            if (activeSentence?.text) speak(activeSentence.text);
+                          }}
+                          title="Phát lại riêng câu này"
+                        >
+                          <Volume2 size={13} />
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="immersion-karaoke-body">
+                      <div className="immersion-karaoke-japanese jp-text">
+                        {activeSentence?.text ? (
+                          <FuriganaText text={activeSentence.text} />
+                        ) : (
+                          <span style={{ color: 'var(--text-tertiary)', fontSize: '0.9rem' }}>(Chọn một câu trong bài để đọc)</span>
+                        )}
+                      </div>
+                      {activeSentenceVi && (
+                        <div className="immersion-karaoke-vietnamese">
+                          {activeSentenceVi}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Cụm Nút Điều Khiển Sách Nói AI & Tốc Độ */}
+                  <div className="immersion-audiobook-card">
+                    <div className="immersion-audiobook-playback-bar">
+                      <button 
+                        type="button"
+                        className="btn btn-outline btn-sm"
+                        onClick={handlePrevSentence}
+                        disabled={activeSentenceIdx === 0}
+                        title="Tua về câu trước"
+                        style={{ padding: '6px 10px' }}
+                      >
+                        <ChevronLeft size={16} />
+                      </button>
+
+                      {isPlayingTTS ? (
+                        <button 
+                          type="button"
+                          className="btn btn-primary btn-playback-main"
+                          onClick={handlePauseResumeTTS}
+                          title={isPausedTTS ? "Tiếp tục phát" : "Tạm dừng"}
+                        >
+                          {isPausedTTS ? <Play size={15} fill="currentColor" /> : <Pause size={15} fill="currentColor" />}
+                          <span>{isPausedTTS ? 'Tiếp tục' : 'Tạm dừng'}</span>
+                        </button>
+                      ) : (
+                        <button 
+                          type="button"
+                          className="btn btn-primary btn-playback-main"
+                          onClick={() => handleGenerateTTS(activeReadingContent, activeSentenceIdx)}
+                          title="Bắt đầu nghe Sách nói từ câu này"
+                        >
+                          <Play size={15} fill="currentColor" />
+                          <span>Nghe Sách Nói</span>
+                        </button>
+                      )}
+
+                      <button 
+                        type="button"
+                        className="btn btn-outline btn-sm"
+                        onClick={handleNextSentence}
+                        disabled={activeSentenceIdx >= storySentences.length - 1}
+                        title="Tua sang câu sau"
+                        style={{ padding: '6px 10px' }}
+                      >
+                        <ChevronRight size={16} />
+                      </button>
+
+                      {isPlayingTTS && (
+                        <button 
+                          type="button"
+                          className="btn-danger-outline"
+                          onClick={handleStopTTS}
+                          title="Dừng đọc hoàn toàn"
+                        >
+                          <Square size={13} fill="currentColor" />
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Speed & Quick Transfer */}
+                    <div className="immersion-audiobook-subbar">
+                      <div className="immersion-speed-selector">
+                        <span className="speed-label">Tốc độ:</span>
+                        {[0.75, 0.85, 1.0, 1.25].map(speed => (
+                          <button
+                            key={speed}
+                            type="button"
+                            className={`btn-speed-pill ${ttsSpeed === speed ? 'active' : ''}`}
+                            onClick={() => {
+                              setTtsSpeed(speed);
+                              localStorage.setItem('omni_tts_speed', speed.toString());
+                            }}
+                          >
+                            {speed}x
+                          </button>
+                        ))}
+                      </div>
+
+                      <button 
+                        className="btn btn-shadowing-transfer"
+                        onClick={handleTransferToShadowing}
+                        title="Chuyển tác phẩm này sang Shadowing Studio"
+                        style={{ padding: '4px 10px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', gap: 4 }}
+                      >
+                        <Mic size={12} />
+                        <span>Shadowing</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ══════════════════════════════════════════════════════════════ */}
+                {/* CỘT PHẢI (58%): TOÀN BỘ NỘI DUNG CÂU CHUYỆN (AUTO-SCROLL FEED) */}
+                {/* ══════════════════════════════════════════════════════════════ */}
+                <div className="immersion-right-panel">
+                  {/* Top Feed Bar: Sentence Counter & Quick Actions */}
+                  <div className="immersion-feed-header">
+                    <div className="immersion-feed-title">
+                      <BookOpen size={14} />
+                      <span>📜 Toàn bộ câu chuyện ({storySentences.length} câu)</span>
+                    </div>
+                    <div className="immersion-feed-tools">
+                      {!hideSlaTip && (
+                        <span className="feed-hint">
+                          💡 Bôi đen từ lạ để tra cứu & nạp FSRS
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Scrollable Story Feed */}
                   <div 
-                    className="immersion-prose jp-text"
+                    className="immersion-feed-scroll"
                     ref={contentRef}
                     onMouseUp={handleSelection}
                     onTouchEnd={handleSelection}
-                    style={{ 
-                      fontSize: `${readerFontSize}rem`, 
-                      lineHeight: 2.4, 
-                      color: 'var(--text-primary)', 
-                      cursor: 'text' 
-                    }}
+                    style={{ fontSize: `${readerFontSize}rem` }}
                   >
-                    {activeReadingContent.split('\n').map((para, pIdx) => {
-                      const isLineActive = speakingLineIdx === pIdx || (speakingLineIdx === null && focusedLineIdx === pIdx);
-                      const isSpeaking = speakingLineIdx === pIdx;
+                    {storySentences.map((st, i) => {
+                      const isSpeaking = speakingLineIdx === i;
+                      const isFocused = activeSentenceIdx === i;
+                      const isLineActive = isSpeaking || isFocused;
+                      const rawText = st.text.trim();
+                      if (!rawText) return null;
+
                       return (
                         <div 
-                          key={pIdx} 
-                          ref={el => (lineRefs.current[pIdx] = el)}
-                          onClick={() => handleLineClick(pIdx)}
-                          className={`reading-line-item ${isLineActive ? 'reading-active-line' : ''}`}
-                          style={{ 
-                            minHeight: para.trim() ? '1.8em' : '1em', 
-                            marginBottom: para.trim() ? 12 : 6, 
-                            whiteSpace: 'pre-wrap' 
-                          }}
-                          title="Bấm để đặt tiêu điểm / nghe đọc từ câu này"
+                          key={i}
+                          ref={el => (lineRefs.current[i] = el)}
+                          onClick={() => handleLineClick(i)}
+                          className={`reading-feed-row ${isLineActive ? 'reading-active-row' : ''} ${isSpeaking ? 'reading-speaking-row' : ''}`}
+                          title="Bấm để chọn câu này & cập nhật tranh hoạt cảnh"
                         >
-                          {isSpeaking && (
-                            <span className="reading-soundwave-badge">
-                              <Volume2 size={11} /> Đang đọc
-                            </span>
-                          )}
-                          {para.trim() ? <FuriganaText text={para} /> : <br />}
+                          <div className="feed-row-left">
+                            <span className="feed-row-num">#{i + 1}</span>
+                            {isSpeaking && (
+                              <span className="feed-soundwave-badge">
+                                <Volume2 size={11} /> Đang đọc
+                              </span>
+                            )}
+                          </div>
+
+                          <div className="feed-row-content">
+                            <div className="feed-row-japanese jp-text">
+                              <FuriganaText text={st.text} />
+                            </div>
+                            {st.vi && (
+                              <div className="feed-row-vietnamese">
+                                {st.vi}
+                              </div>
+                            )}
+                          </div>
                         </div>
                       );
                     })}
                   </div>
-                )}
+                </div>
               </div>
             )}
           </div>
