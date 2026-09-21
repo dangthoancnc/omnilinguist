@@ -77,6 +77,10 @@ function App() {
     syncMasterData().then(() => {
       setIsSyncing(false);
     });
+    // Khởi tạo và nạp ngầm kho ngữ liệu IndexedDB (Dexie)
+    import('./services/corpusLoaderService.js').then(({ initCorpusStorage }) => {
+      initCorpusStorage();
+    }).catch(e => console.warn('Could not init corpus storage:', e));
   }, []);
 
   useEffect(() => {

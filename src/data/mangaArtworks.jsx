@@ -91,6 +91,36 @@ export const CHARACTER_AVATARS = {
     badgeColor: '#ea580c',
     theme: 'creature'
   },
+  jizo: {
+    name: 'Tượng Phật Jizō (お地蔵様)',
+    avatar: '🗿',
+    badgeColor: '#94a3b8',
+    theme: 'divine'
+  },
+  issun: {
+    name: 'Cậu bé Một Thốn (一寸法師)',
+    avatar: '🗡️',
+    badgeColor: '#0284c7',
+    theme: 'hero'
+  },
+  train: {
+    name: 'Tàu Ngân Hà (銀河鉄道)',
+    avatar: '🚂',
+    badgeColor: '#6366f1',
+    theme: 'mystic'
+  },
+  cat: {
+    name: 'Chú Mèo (猫)',
+    avatar: '🐱',
+    badgeColor: '#f97316',
+    theme: 'companion'
+  },
+  dog: {
+    name: 'Chú Chó (犬)',
+    avatar: '🐕',
+    badgeColor: '#eab308',
+    theme: 'companion'
+  },
   crane: {
     name: 'Nàng sếu (鶴)',
     avatar: '🕊️',
@@ -163,6 +193,11 @@ export const detectCharacter = (speakerName, text, storyTitle = '') => {
   if (normSpeaker.includes('ねずみ') || normTitle.includes('おむすび')) return CHARACTER_AVATARS.mouse;
   if (normSpeaker.includes('ごん') || normSpeaker.includes('狐') || normTitle.includes('ごんぎつね')) return CHARACTER_AVATARS.fox;
   if (normSpeaker.includes('鶴') || normTitle.includes('鶴')) return CHARACTER_AVATARS.crane;
+  if (normSpeaker.includes('地蔵') || normTitle.includes('地蔵') || normText.includes('地蔵')) return CHARACTER_AVATARS.jizo;
+  if (normSpeaker.includes('一寸法師') || normTitle.includes('一寸法師')) return CHARACTER_AVATARS.issun;
+  if (normSpeaker.includes('銀河') || normTitle.includes('銀河鉄道') || normText.includes('ジョバンニ')) return CHARACTER_AVATARS.train;
+  if (normSpeaker.includes('猫') || normText.includes('吾輩は猫')) return CHARACTER_AVATARS.cat;
+  if (normSpeaker.includes('犬') || normText.includes('ポチ')) return CHARACTER_AVATARS.dog;
   if (normSpeaker.includes('李徴') || normSpeaker.includes('虎') || normTitle.includes('山月記')) return CHARACTER_AVATARS.tiger;
   if (normSpeaker.includes('メロス') || normTitle.includes('メロス')) return CHARACTER_AVATARS.melos;
   if (normSpeaker.includes('釈迦') || normTitle.includes('蜘蛛の糸')) return CHARACTER_AVATARS.buddha;
@@ -205,103 +240,85 @@ export const STORY_MANGA_ARTWORKS = {
     )
   },
 
-  // 2. Kaguya-hime (かぐや姫)
+  // 2. Kaguya-hime (かぐや姫) — Ehon Style
   kaguya_hime: {
     title: '竹取物語 (Kaguya-hime - Nàng Tiên Ống Tre)',
+    imageUrl: '/images/ehon/kaguya_hime.jpg',
     renderIllustration: () => (
-      <svg viewBox="0 0 800 360" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#090d16" />
-            <stop offset="60%" stopColor="#1e1b4b" />
-            <stop offset="100%" stopColor="#064e3b" />
-          </linearGradient>
-          <radialGradient id="bambooGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#ffffff" />
-            <stop offset="40%" stopColor="#fef08a" />
-            <stop offset="80%" stopColor="#22c55e" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="transparent" />
-          </radialGradient>
-        </defs>
-
-        <rect width="800" height="360" fill="url(#nightSky)" />
-        {/* Trăng rằm */}
-        <circle cx="680" cy="80" r="45" fill="#fef9c3" filter="drop-shadow(0 0 15px #facc15)" />
-        {/* Sao đêm */}
-        <circle cx="120" cy="50" r="1.5" fill="#ffffff" opacity="0.8" />
-        <circle cx="280" cy="35" r="2" fill="#ffffff" opacity="0.9" />
-        <circle cx="450" cy="70" r="1.5" fill="#ffffff" opacity="0.6" />
-
-        {/* Rừng tre đêm */}
-        <g stroke="#064e3b" strokeWidth="20" strokeLinecap="round" opacity="0.7">
-          <line x1="80" y1="360" x2="80" y2="30" />
-          <line x1="180" y1="360" x2="180" y2="10" />
-          <line x1="580" y1="360" x2="580" y2="40" />
-          <line x1="740" y1="360" x2="740" y2="20" />
-        </g>
-        <g stroke="#16a34a" strokeWidth="26" strokeLinecap="round" opacity="0.85">
-          <line x1="260" y1="360" x2="260" y2="10" />
-          <line x1="480" y1="360" x2="480" y2="0" />
-        </g>
-
-        {/* Ống tre thần kỳ phát sáng ở giữa */}
-        <line x1="370" y1="360" x2="370" y2="20" stroke="#4ade80" strokeWidth="32" strokeLinecap="round" />
-        <line x1="352" y1="180" x2="388" y2="180" stroke="#166534" strokeWidth="5" />
-        <line x1="352" y1="280" x2="388" y2="280" stroke="#166534" strokeWidth="5" />
-
-        <circle cx="370" cy="225" r="70" fill="url(#bambooGlow)" />
-        <ellipse cx="370" cy="225" rx="15" ry="30" fill="#ffffff" filter="blur(2px)" />
-
-        <text x="210" y="150" fontFamily="'Noto Sans JP', sans-serif" fontWeight="900" fontSize="36" fill="#facc15" stroke="#1e1b4b" strokeWidth="5" paintOrder="stroke" transform="rotate(-15, 210, 150)">
-          ピカーッ！
-        </text>
-      </svg>
+      <img 
+        src="/images/ehon/kaguya_hime.jpg" 
+        alt="かぐや姫" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+      />
     )
   },
 
-  // 3. Urashima Tarō (浦島太郎)
+  // 3. Urashima Tarō (浦島太郎) — Ehon Style
   urashima_taro: {
     title: '浦島太郎 (Urashima Tarō - Chàng Ngư Phủ & Long Cung)',
+    imageUrl: '/images/ehon/urashima_taro.jpg',
     renderIllustration: () => (
-      <svg viewBox="0 0 800 360" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="oceanDeep" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#38bdf8" />
-            <stop offset="40%" stopColor="#0284c7" />
-            <stop offset="100%" stopColor="#082f49" />
-          </linearGradient>
-        </defs>
-
-        <rect width="800" height="360" fill="url(#oceanDeep)" />
-        {/* Tia sáng biển */}
-        <polygon points="120,0 200,0 350,360 230,360" fill="rgba(255,255,255,0.12)" />
-        <polygon points="380,0 480,0 620,360 500,360" fill="rgba(255,255,255,0.08)" />
-
-        {/* Rùa biển và Tarō */}
-        <g transform="translate(360, 200) scale(1.1)">
-          <ellipse cx="0" cy="0" rx="55" ry="38" fill="#059669" stroke="#022c22" strokeWidth="3" />
-          <ellipse cx="65" cy="-8" rx="16" ry="12" fill="#10b981" stroke="#022c22" strokeWidth="2" />
-          <circle cx="70" cy="-10" r="2.5" fill="#000000" />
-          <ellipse cx="35" cy="-40" rx="26" ry="12" fill="#059669" transform="rotate(-30, 35, -40)" />
-          <ellipse cx="35" cy="40" rx="26" ry="12" fill="#059669" transform="rotate(30, 35, 40)" />
-          {/* Tarō */}
-          <ellipse cx="-5" cy="-28" rx="12" ry="12" fill="#fed7aa" stroke="#7c2d12" strokeWidth="2" />
-          <path d="M-22,-16 C-20,-32 10,-32 12,-16 Z" fill="#3b82f6" stroke="#1e3a8a" strokeWidth="2" />
-        </g>
-
-        {/* Bong bóng biển */}
-        <circle cx="480" cy="170" r="12" fill="none" stroke="#bae6fd" strokeWidth="2.5" opacity="0.8" />
-        <circle cx="500" cy="130" r="8" fill="none" stroke="#bae6fd" strokeWidth="2" opacity="0.7" />
-        <circle cx="470" cy="100" r="15" fill="none" stroke="#bae6fd" strokeWidth="3" opacity="0.9" />
-
-        <text x="170" y="150" fontFamily="'Noto Sans JP', sans-serif" fontWeight="900" fontSize="36" fill="#bae6fd" stroke="#0369a1" strokeWidth="5" paintOrder="stroke" transform="rotate(-8, 170, 150)">
-          ス〜イ スイ！
-        </text>
-      </svg>
+      <img 
+        src="/images/ehon/urashima_taro.jpg" 
+        alt="浦島太郎" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+      />
     )
   },
 
-  // 4. Gongitsune (ごんぎつね)
+  // 4. Tsuru no Ongaeshi (鶴の恩返し) — Ehon Style
+  tsuru_no_ongaeshi: {
+    title: '鶴の恩返し (Tsuru no Ongaeshi - Con Hạc Đền Ơn)',
+    imageUrl: '/images/ehon/tsuru_no_ongaeshi.jpg',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/tsuru_no_ongaeshi.jpg" 
+        alt="鶴の恩返し" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+      />
+    )
+  },
+
+  // 5. Kasajizō (笠地蔵) — Ehon Style
+  kasajizo: {
+    title: '笠地蔵 (Kasajizō - Những Chiếc Nón Cho Tượng Phật)',
+    imageUrl: '/images/ehon/kasajizo.jpg',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/kasajizo.jpg" 
+        alt="笠地蔵" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+      />
+    )
+  },
+
+  // 6. Issun-bōshi (一寸法師) — Ehon Style
+  issun_boshi: {
+    title: '一寸法師 (Issun-bōshi - Cậu Bé Một Thốn)',
+    imageUrl: '/images/ehon/issun_boshi.jpg',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/issun_boshi.jpg" 
+        alt="一寸法師" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+      />
+    )
+  },
+
+  // 7. Ginga Tetsudō no Yoru (銀河鉄道の夜) — Ehon Style
+  ginga_tetsudo: {
+    title: '銀河鉄道の夜 (Night on the Galactic Railroad - Kenji Miyazawa)',
+    imageUrl: '/images/ehon/ginga_tetsudo.jpg',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/ginga_tetsudo.jpg" 
+        alt="銀河鉄道の夜" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+      />
+    )
+  },
+
+  // 8. Gongitsune (ごんぎつね) — Văn học mùa thu Niimi Nankichi
   gongitsune: {
     title: 'ごんぎつね (Gongitsune - Chú Cáo Nhỏ Gon)',
     renderIllustration: () => (
@@ -328,7 +345,6 @@ export const STORY_MANGA_ARTWORKS = {
           <polygon points="28,2 48,6 38,15" fill="#fff7ed" stroke="#9a3412" strokeWidth="1.5" />
           <circle cx="46" cy="6" r="3" fill="#1c1917" />
           <ellipse cx="28" cy="-4" rx="4" ry="5" fill="#1c1917" />
-          {/* Hạt dẻ */}
           <ellipse cx="55" cy="20" rx="8" ry="10" fill="#92400e" />
           <ellipse cx="68" cy="24" rx="7" ry="9" fill="#78350f" />
         </g>
@@ -340,7 +356,7 @@ export const STORY_MANGA_ARTWORKS = {
     )
   },
 
-  // 5. Classic Dramatic (Rashomon, Sangetsuki, Kokoro)
+  // 9. Classic Dramatic (Rashomon, Sangetsuki, Kokoro, Botchan, Melos)
   classic_dramatic: {
     title: '古典名作 (Rashōmon & Văn Học Kinh Điển)',
     renderIllustration: () => (
@@ -364,7 +380,7 @@ export const STORY_MANGA_ARTWORKS = {
           <line x1="700" y1="0" x2="660" y2="360" />
         </g>
 
-        {/* Cổng La Sinh */}
+        {/* Cổng La Sinh Môn */}
         <g transform="translate(180, 90)" fill="#0f172a" stroke="#475569" strokeWidth="3">
           <rect x="0" y="80" width="30" height="180" />
           <rect x="420" y="80" width="30" height="180" />
@@ -385,7 +401,143 @@ export const STORY_MANGA_ARTWORKS = {
     )
   },
 
-  // 6. Modern Life & Society
+  // 10. Japanese Nature & Seasons (Núi Phú Sĩ & Hoa Anh Đào)
+  japanese_nature: {
+    title: '日本の四季・富士山と桜 (Thiên Nhiên & Bốn Mùa Nhật Bản)',
+    renderIllustration: () => (
+      <svg viewBox="0 0 800 360" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="sakuraSky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#fed7aa" />
+            <stop offset="40%" stopColor="#fbcfe8" />
+            <stop offset="100%" stopColor="#f472b6" />
+          </linearGradient>
+          <linearGradient id="fujiGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#f8fafc" />
+            <stop offset="35%" stopColor="#93c5fd" />
+            <stop offset="100%" stopColor="#1e3a8a" />
+          </linearGradient>
+        </defs>
+
+        <rect width="800" height="360" fill="url(#sakuraSky)" />
+
+        {/* Mặt trời mọc đỏ rực */}
+        <circle cx="400" cy="180" r="95" fill="#ef4444" opacity="0.85" />
+
+        {/* Núi Phú Sĩ */}
+        <polygon points="400,90 220,360 580,360" fill="url(#fujiGrad)" />
+        <polygon points="400,90 355,175 445,175" fill="#ffffff" />
+        <polygon points="355,175 375,200 400,180 425,200 445,175" fill="#ffffff" />
+
+        {/* Cành hoa anh đào rủ */}
+        <g fill="#fda4af" stroke="#e11d48" strokeWidth="1">
+          <circle cx="120" cy="80" r="14" />
+          <circle cx="145" cy="70" r="12" />
+          <circle cx="160" cy="95" r="13" />
+          <circle cx="130" cy="110" r="15" />
+          <circle cx="105" cy="95" r="12" />
+          <circle cx="132" cy="90" r="5" fill="#facc15" stroke="none" />
+
+          <circle cx="680" cy="100" r="13" />
+          <circle cx="705" cy="90" r="11" />
+          <circle cx="720" cy="115" r="12" />
+          <circle cx="690" cy="130" r="14" />
+          <circle cx="665" cy="115" r="11" />
+          <circle cx="692" cy="110" r="4" fill="#facc15" stroke="none" />
+        </g>
+
+        {/* Cánh hoa bay */}
+        <ellipse cx="250" cy="140" rx="8" ry="4" fill="#ffe4e6" transform="rotate(25, 250, 140)" />
+        <ellipse cx="310" cy="220" rx="7" ry="3.5" fill="#ffe4e6" transform="rotate(-30, 310, 220)" />
+        <ellipse cx="520" cy="160" rx="9" ry="4" fill="#ffe4e6" transform="rotate(45, 520, 160)" />
+
+        <text x="180" y="290" fontFamily="'Noto Sans JP', sans-serif" fontWeight="900" fontSize="32" fill="#ffffff" stroke="#9d174d" strokeWidth="4" paintOrder="stroke">
+          ひらひら…春の風
+        </text>
+      </svg>
+    )
+  },
+
+  // 11. Culture & Tradition (Đền Thần Đạo & Lễ Hội Matsuri)
+  culture_tradition: {
+    title: '日本文化・伝統と祭り (Văn Hóa Truyền Thống & Lễ Hội)',
+    renderIllustration: () => (
+      <svg viewBox="0 0 800 360" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="festivalDusk" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#312e81" />
+            <stop offset="50%" stopColor="#4c1d95" />
+            <stop offset="100%" stopColor="#831843" />
+          </linearGradient>
+        </defs>
+
+        <rect width="800" height="360" fill="url(#festivalDusk)" />
+
+        {/* Cổng Torii lớn */}
+        <g fill="#dc2626" stroke="#991b1b" strokeWidth="2">
+          {/* Cột chính */}
+          <rect x="260" y="80" width="28" height="280" />
+          <rect x="512" y="80" width="28" height="280" />
+          {/* Xà ngang trên Kasagi */}
+          <path d="M210,85 C300,70 500,70 590,85 L585,115 C500,100 300,100 215,115 Z" />
+          {/* Xà ngang dưới Nuki */}
+          <rect x="230" y="140" width="340" height="22" />
+        </g>
+
+        {/* Lồng đèn Chōchin lễ hội */}
+        <g filter="drop-shadow(0 0 10px #f59e0b)">
+          <ellipse cx="140" cy="130" rx="26" ry="34" fill="#ef4444" stroke="#991b1b" strokeWidth="2" />
+          <ellipse cx="140" cy="130" rx="14" ry="20" fill="#fef08a" />
+          <line x1="140" y1="90" x2="140" y2="96" stroke="#ffffff" strokeWidth="3" />
+
+          <ellipse cx="660" cy="130" rx="26" ry="34" fill="#ef4444" stroke="#991b1b" strokeWidth="2" />
+          <ellipse cx="660" cy="130" rx="14" ry="20" fill="#fef08a" />
+          <line x1="660" y1="90" x2="660" y2="96" stroke="#ffffff" strokeWidth="3" />
+        </g>
+
+        <text x="340" y="240" fontFamily="'Noto Sans JP', sans-serif" fontWeight="900" fontSize="36" fill="#fef08a" stroke="#450a0a" strokeWidth="5" paintOrder="stroke">
+          わっしょい！
+        </text>
+      </svg>
+    )
+  },
+
+  // 12. Daily Life & Youth (Trường Học & Sinh Hoạt Đời Thường)
+  daily_life: {
+    title: '日常生活・学校と青春 (Đời Sống Hàng Ngày & Học Đường)',
+    renderIllustration: () => (
+      <svg viewBox="0 0 800 360" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="morningSky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#67e8f9" />
+            <stop offset="60%" stopColor="#bae6fd" />
+            <stop offset="100%" stopColor="#fef08a" />
+          </linearGradient>
+        </defs>
+
+        <rect width="800" height="360" fill="url(#morningSky)" />
+
+        {/* Mặt trời buổi sáng */}
+        <circle cx="120" cy="90" r="50" fill="#fef08a" opacity="0.9" />
+
+        {/* Con đường đến trường */}
+        <polygon points="350,180 450,180 750,360 50,360" fill="#cbd5e1" />
+        <line x1="400" y1="180" x2="400" y2="360" stroke="#ffffff" strokeWidth="4" strokeDasharray="12,12" />
+
+        {/* Cổng trường hoặc vạch qua đường */}
+        <g fill="#22c55e" opacity="0.8">
+          <circle cx="160" cy="240" r="60" />
+          <circle cx="640" cy="240" r="60" />
+        </g>
+
+        <text x="280" y="140" fontFamily="'Noto Sans JP', sans-serif" fontWeight="900" fontSize="34" fill="#0284c7" stroke="#ffffff" strokeWidth="5" paintOrder="stroke">
+          いってきまーす！
+        </text>
+      </svg>
+    )
+  },
+
+  // 13. Modern Tokyo & Society (Tokyo, Cao Ốc & Shinkansen)
   modern_tokyo: {
     title: '現代社会・東京生活 (Đời Sống Hiện Đại & Công Sở)',
     renderIllustration: () => (
@@ -437,6 +589,7 @@ export const getStoryMangaArtwork = (story) => {
   const title = (story.title || '').toLowerCase();
   const genre = (story.genre || '').toLowerCase();
 
+  // 1. Khớp theo tác phẩm có tranh Ehon thực tế
   if (id.includes('momo') || title.includes('桃太郎') || title.includes('momotarō')) {
     return STORY_MANGA_ARTWORKS.momotaro;
   }
@@ -449,17 +602,42 @@ export const getStoryMangaArtwork = (story) => {
   if (id.includes('urashima') || title.includes('浦島太郎') || title.includes('竜宮')) {
     return STORY_MANGA_ARTWORKS.urashima_taro;
   }
+  if (id.includes('tsuru') || title.includes('鶴の恩返し') || title.includes('つるの恩返し')) {
+    return STORY_MANGA_ARTWORKS.tsuru_no_ongaeshi;
+  }
+  if (id.includes('kasajizo') || title.includes('笠地蔵') || title.includes('かさじぞう') || title.includes('地蔵')) {
+    return STORY_MANGA_ARTWORKS.kasajizo;
+  }
+  if (id.includes('issun') || title.includes('一寸法師') || title.includes('いっすんぼうし')) {
+    return STORY_MANGA_ARTWORKS.issun_boshi;
+  }
+  if (id.includes('ginga') || title.includes('銀河鉄道') || title.includes('宮沢賢治') || title.includes('よだかの星')) {
+    return STORY_MANGA_ARTWORKS.ginga_tetsudo;
+  }
+
+  // 2. Khớp theo tác phẩm đồng thoại & danh tác
   if (id.includes('gon') || title.includes('ごんぎつね') || title.includes('狐') || title.includes('手袋を買')) {
     return STORY_MANGA_ARTWORKS.gongitsune;
   }
-  if (title.includes('羅生門') || title.includes('山月記') || title.includes('蜘蛛の糸') || title.includes('走れメロス') || title.includes('こころ')) {
+  if (title.includes('羅生門') || title.includes('山月記') || title.includes('蜘蛛の糸') || title.includes('走れメロス') || title.includes('こころ') || title.includes('坊っちゃん') || title.includes('文学') || title.includes('芥川') || title.includes('太宰')) {
     return STORY_MANGA_ARTWORKS.classic_dramatic;
   }
-  if (genre.includes('business') || genre.includes('news') || title.includes('東京') || title.includes('電車') || title.includes('コンビニ') || title.includes('メール')) {
+
+  // 3. Khớp theo chuyên đề & thể loại
+  if (genre.includes('nature') || title.includes('桜') || title.includes('富士') || title.includes('春') || title.includes('秋') || title.includes('四季')) {
+    return STORY_MANGA_ARTWORKS.japanese_nature;
+  }
+  if (genre.includes('culture') || title.includes('祭り') || title.includes('神社') || title.includes('茶道') || title.includes('着物') || title.includes('伝統')) {
+    return STORY_MANGA_ARTWORKS.culture_tradition;
+  }
+  if (genre.includes('daily') || title.includes('学校') || title.includes('友だち') || title.includes('生活') || title.includes('朝') || title.includes('家族')) {
+    return STORY_MANGA_ARTWORKS.daily_life;
+  }
+  if (genre.includes('business') || genre.includes('news') || title.includes('東京') || title.includes('電車') || title.includes('コンビニ') || title.includes('メール') || title.includes('社会')) {
     return STORY_MANGA_ARTWORKS.modern_tokyo;
   }
 
   if (genre.includes('folktale')) return STORY_MANGA_ARTWORKS.momotaro;
-  if (genre.includes('literature')) return STORY_MANGA_ARTWORKS.gongitsune;
+  if (genre.includes('literature')) return STORY_MANGA_ARTWORKS.ginga_tetsudo;
   return STORY_MANGA_ARTWORKS.modern_tokyo;
 };

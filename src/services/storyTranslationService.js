@@ -68,7 +68,67 @@ export const CURATED_SENTENCE_TRANSLATIONS = {
   '鬼たちは 泣きながら 謝りました。': 'Lũ quỷ vừa khóc ròng vừa cúi đầu tạ tội.',
   '桃太郎と 仲間たちは、たくさんの 宝物を 車に 積んで、村へ 帰りました。': 'Momotarō cùng các bạn chất đầy châu báu lên xe chở về làng.',
   'おじいさんと おばあさんは 涙を 流して 喜びました。': 'Ông lão và bà lão rơi lệ vì sung sướng nghẹn ngào.',
-  '桃太郎は 村の人々にも 宝物を 分けてあげて、みんなで いつまでも 幸せに 暮らしましたとさ。': 'Momotarō chia báu vật cho bà con dân làng, và tất cả mọi người từ đó sống êm đềm hạnh phúc mãi mãi.'
+  '桃太郎は 村の人々にも 宝物を 分けてあげて、みんなで いつまでも 幸せに 暮らしましたとさ。': 'Momotarō chia báu vật cho bà con dân làng, và tất cả mọi người từ đó sống êm đềm hạnh phúc mãi mãi.',
+
+  // --- CHÀNG ĐÁNH CÁ URASHIMA TARŌ (浦島太郎) ---
+  'むかし、浦島太郎という 心の優しい 漁師が いました。': 'Ngày xưa, có một chàng đánh cá nhân hậu tên là Urashima Tarō.',
+  'ある日、太郎が 浜辺を 歩いていると、子供たちが 小さな 亀を いじめていました。': 'Một ngày nọ, khi Tarō đang đi dạo trên bờ biển, chàng thấy lũ trẻ con đang bắt nạt một chú rùa nhỏ.',
+  '「亀を いじめては いけないよ。」': '「Đừng bắt nạt chú rùa chứ!」',
+  '太郎は お金を 払って 亀を 助け、海へ 逃がしてあげました。': 'Tarō bỏ tiền ra chuộc chú rùa và thả chú về với biển khơi.',
+  '数日後、太郎が 釣りを していると、大きな 亀が やってきました。': 'Vài ngày sau, khi Tarō đang buông câu, một chú rùa to lớn bơi đến.',
+  '「太郎さん、助けてくれた お礼に、竜宮城（りゅうぐうじょう）へ ご案内します。」': '「Anh Tarō ơi, để đền đáp ơn cứu mạng, tôi xin đưa anh tới Cung điện Rồng Ryūgū-jō!」',
+  '太郎は 亀の 背中に 乗って、海の 底の 竜宮城へ 行きました。': 'Tarō cưỡi lên lưng rùa, lặn xuống đáy biển đến Cung điện Rồng.',
+  '竜宮城では、美しい 乙姫（おとひめ）様が 太郎を 歓迎しました。': 'Tại Cung điện Rồng, nàng công chúa Otohime xinh đẹp nồng nhiệt chào đón Tarō.',
+  '魚たちの 楽しい 踊りを 見て、美味しい ごちそうを 食べました。': 'Chàng được xem các loài cá múa hát vui nhộn và thưởng thức những sơn hào hải vị tuyệt ngon.',
+  '夢のような 日々が 過ぎ、太郎は 村の お母さんが 心配になりました。': 'Những ngày thần tiên như mơ trôi qua, Tarō bắt đầu thấy lo lắng cho người mẹ già ở làng quê.',
+  '「そろそろ 家へ 帰ります。」': '「Tôi xin phép phải trở về nhà rồi.」',
+  '乙姫様は「決して 開けては なりません」と 言って、「玉手箱（たまてばこ）」を くれました。': 'Công chúa Otohime trao cho chàng chiếc hộp ngọc Tamatebako và dặn: “Tuyệt đối chàng không được mở ra nhé!”',
+  '太郎が 村へ 帰ると、知っている 人は 誰も いませんでした。': 'Khi Tarō về đến làng, chàng chẳng thấy một ai quen biết.',
+  'なんと、地上では 三百年も 経っていたのです。': 'Hóa ra, ở trên cõi trần gian đã ba trăm năm trôi qua.',
+  '困った 太郎が 玉手箱を 開けると、白い 煙が もくもくと 出て、太郎は 一瞬で 白髪の おじいさんに なってしまいました。': 'Bối rối và hoang mang, Tarō mở chiếc hộp ngọc ra, khói trắng nghi ngút bốc lên, chàng chớp mắt biến thành một ông lão râu tóc bạc phơ.',
+
+  // --- NÀNG TIÊN ỐNG TRE (かぐや姫 - KAGUYA-HIME) ---
+  'むかし、竹を取る おじいさんが いました。': 'Ngày xửa ngày xưa, có một ông lão chuyên nghề đốn tre.',
+  'ある日、光り輝く 竹を 見つけました。': 'Một ngày nọ, ông tìm thấy một thân tre phát ra ánh sáng lung linh rực rỡ.',
+  '切ってみると、中から 小さくて 可愛い 女の子が 出てきました。': 'Khi chặt thân tre ra, từ bên trong bước ra một bé gái nhỏ nhắn, vô cùng đáng yêu.',
+  'おじいさんと おばあさんは「かぐや姫」と 名付け、大切に 育てました。': 'Ông lão và bà lão đặt tên bé là Kaguya-hime (Nàng Tiên Ống Tre) và hết lòng chăm sóc, yêu thương.',
+  'かぐや姫は すくすくと 育ち、とても 美しい 娘に なりました。': 'Kaguya-hime lớn nhanh như thổi, trở thành một thiếu nữ dung mạo tuyệt trần.',
+  'たくさんの 貴族が「結婚してください」と 来ましたが、かぐや姫は 難しい 宝物を 頼んで、みんな 断りました。': 'Rất nhiều chàng quý tộc tới ngỏ lời cầu hôn, nhưng nàng đưa ra những yêu cầu báu vật khó vô cùng và từ chối tất cả.',
+  'やがて、かぐや姫は 月を 見て 泣くように なりました。': 'Thời gian trôi qua, Kaguya-hime thường ngắm trăng tròn rồi rơi nước mắt.',
+  '「私は 実は 月の 国の 人間です。次の 満月の 夜に、月へ 帰らなければ なりません。」': '「Thực ra con là người của Vương quốc Mặt Trăng. Vào đêm trăng rằm tới, con phải trở về đó.」',
+  '満月の 夜、空から 雲に 乗った 天人たちが 迎えに 来ました。': 'Vào đêm trăng rằm, từ trên mây cao những tiên nhân cưỡi mây hạ xuống đón nàng.',
+  'おじいさんたちは 悲しみましたが、止めることは できませんでした。': 'Hai ông bà đau lòng khôn xiết, nhưng không cách nào giữ nàng lại được.',
+  'かぐや姫は 感謝の 手紙を 残し、静かに 月へと 帰っていきました。': 'Kaguya-hime để lại bức thư tạ ơn chân thành, rồi lặng lẽ bay về cung trăng.',
+
+  // --- NÀNG SẾU ĐỀN ƠN (鶴の恩返し - TSURU NO ONGAESHI) ---
+  'ある 冬の日、貧しい 若者が 罠に かかった 鶴を 助けてあげました。': 'Vào một ngày mùa đông, một chàng trai nghèo giải thoát cho một con hạc trắng dính bẫy.',
+  'その夜、美しい 娘が 若者の 家を 訪ねてきました。': 'Tối hôm đó, một thiếu nữ xinh đẹp bất ngờ tìm đến nhà chàng trai.',
+  '「道に 迷いました。今夜 泊めてください。」': '「Em bị lạc đường, xin chàng cho em tá túc đêm nay.」',
+  '娘は 若者の 家に 留まり、やがて 二人は 夫婦に なりました。': 'Nàng ở lại căn nhà của chàng trai, rồi chẳng bao lâu sau hai người nên duyên vợ chồng.',
+  '娘は「機（はた）を 織ります。織っている 間は、決して 部屋を 見ないでください」と 約束させました。': 'Nàng bảo: “Thiếp sẽ dệt vải. Trong lúc dệt, chàng tuyệt đối không được nhìn vào phòng nhé!”',
+  '部屋からは カタン、コトンと 綺麗な 音が しました。': 'Từ trong phòng phát ra tiếng dệt cửi lách cách nhịp nhàng nghe thật êm tai.',
+  '出来上がった 布は、息を のむほど 美しい 織物でした。': 'Tấm vải dệt xong đẹp đến nín thở, lấp lánh như dát ngọc.',
+  '布は 町で とても 高く 売れました。': 'Tấm vải đem ra chợ thị trấn bán được giá rất cao.',
+  'しかし、若者は 好奇心に 負けて、戸の 隙間から 部屋を のぞいてしまいました。': 'Thế nhưng, vì tò mò không kìm được, chàng trai hé mắt nhìn qua khe cửa vào trong phòng.',
+  '中に いたのは、娘ではなく、自分の 羽を 抜いて 織っている 一羽の 鶴でした。': 'Bên trong chẳng phải là cô nương, mà là một con hạc trắng đang tự nhổ lông cánh của mình để dệt nên gấm vóc.',
+  '「正体を 見られました。もう ここには いられません。」': '「Chàng đã thấy hình hài thật của thiếp rồi. Thiếp không thể ở lại đây được nữa.」',
+  '鶴は 悲しそうに 鳴きながら、夕暮れの 空へ 飛び去っていきました。': 'Con hạc cất tiếng kêu nghẹn ngào thảm thiết, rồi vỗ cánh bay vút vào bầu trời chiều hoàng hôn.',
+
+  // --- CÁC VỊ BỒ TÁT ĐỘI NÓN (笠地蔵 - KASAJIZO) ---
+  'むかしむかし、ある山里に、貧しいけれど 心の 優しい おじいさんと おばあさんが すんでいました。': 'Ngày xửa ngày xưa, ở một ngôi làng ven núi, có hai ông bà nghèo khó nhưng tấm lòng vô cùng nhân từ.',
+  '大晦日の 日、お正月のお餅を買うお金がありませんでした。': 'Vào ngày Ba mươi Tết, ông bà chẳng có đồng nào để mua bánh mochi mừng năm mới.',
+  'おじいさんは 作った 五つの 菅笠（すげがさ）を 売りに 町へ 行きましたが、雪が 激しく 降り、笠は 一つも 売れませんでした。': 'Ông lão bèn đem 5 chiếc nón rơm tự đan ra chợ bán, nhưng tuyết rơi mù mịt, chẳng bán được chiếc nón nào.',
+  'とぼとぼと 帰る 道の 途中で、六体の お地蔵様が 雪を かぶって 寒そうに 並んで 立っていました。': 'Trên con đường lủi thủi trở về, ông thấy 6 bức tượng Phật Jizō đứng thành hàng giữa trời tuyết lạnh giá.',
+  '「ああ、お地蔵様、冷たい 雪を かぶって お気の毒に。」': '「Chao ôi, các ngài Jizō đội tuyết lạnh thế này, tội nghiệp quá!」',
+  'おじいさんは、売れ残った 五つの 笠を お地蔵様たちの 頭に かぶせました。': 'Ông lão đem 5 chiếc nón ế đội lên đầu cho các vị tượng Phật.',
+  'しかし、笠が 一つ 足りません。おじいさんは 自分の 古い 笠を 脱いで、最後の お地蔵様に かぶせました。': 'Nhưng vẫn thiếu mất một chiếc, ông bèn cởi chiếc nón rơm cũ kỹ của chính mình đội cho bức tượng cuối cùng.',
+  '手ぬぐいを 頭に 巻いて 帰ってきた おじいさんの 話を 聞いて、おばあさんは にっこり 笑いました。': 'Thấy ông lão chỉ quấn khăn vải trên đầu về nhà và nghe ông kể lại, bà lão mỉm cười đôn hậu.',
+  '「それは 良いことを なさいましたね。お餅は なくても、温かい お粥が あれば 幸せですよ。」': '「Ông làm thế là rất phải đạo. Dù không có bánh Tết, chỉ cần có bát cháo nóng là chúng ta hạnh phúc rồi!」',
+  'その 夜更けのことでした。': 'Đêm khuya thanh vắng hôm đó...',
+  '遠くから「よいしょ、よいしょ。笠売りの じいさんの 家は どこだ」と 不思議な 歌声が 聞こえてきました。': 'Từ đằng xa vang lên tiếng hát lạ lùng: “Hò dô ta, hò dô ta! Nhà ông lão bán nón rơm ở đâu nào!”',
+  'ドサリ！ と 重い 音が して 静かに なりました。': 'Bịch một tiếng thật lớn! Rồi mọi thứ trở lại tĩnh mịch.',
+  '戸を 開けてみると、そこには 米俵や お餅、野菜、そして 黄金の 財宝が 山のように 積まれていました。': 'Khi mở cửa ra, trước sân chất thành núi bao gạo, bánh mochi, rau củ và vô vàn châu báu vàng ròng.',
+  '見ると、笠を かぶった 六人の お地蔵様が、静かに 雪道を 去っていく 後ろ姿が 見えました。': 'Nhìn ra xa, bóng lưng 6 vị Phật Jizō đội nón rơm đang lặng lẽ dạo bước khuất dần trên con đường tuyết trắng.'
 };
 
 // ══════════════════════════════════════════════════════════════════════════════
