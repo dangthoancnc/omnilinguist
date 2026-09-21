@@ -179,57 +179,29 @@ export const detectCharacter = (speakerName, text, storyTitle = '') => {
 // ────────────────────────────────────────────────────────────
 
 export const STORY_MANGA_ARTWORKS = {
-  // 1. Momotarō (桃太郎) — Cổ tích thiếu nhi N5
+  // 1. Momotarō (桃太郎) — Cổ tích thiếu nhi N5 (Ehon Style)
   momotaro: {
     title: '桃太郎 (Momotarō - Cậu Bé Quả Đào)',
+    imageUrl: '/images/ehon/momotaro.jpg',
     renderIllustration: () => (
-      <svg viewBox="0 0 800 360" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="momoSky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#fbcfe8" />
-            <stop offset="50%" stopColor="#bae6fd" />
-            <stop offset="100%" stopColor="#7dd3fc" />
-          </linearGradient>
-          <linearGradient id="momoRiver" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#0284c7" />
-            <stop offset="50%" stopColor="#38bdf8" />
-            <stop offset="100%" stopColor="#0369a1" />
-          </linearGradient>
-          <linearGradient id="peachGrad" x1="0.2" y1="0.2" x2="0.8" y2="0.8">
-            <stop offset="0%" stopColor="#fff1f2" />
-            <stop offset="40%" stopColor="#fda4af" />
-            <stop offset="100%" stopColor="#e11d48" />
-          </linearGradient>
-        </defs>
+      <img 
+        src="/images/ehon/momotaro.jpg" 
+        alt="桃太郎" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+      />
+    )
+  },
 
-        <rect width="800" height="360" fill="url(#momoSky)" />
-        {/* Núi xa */}
-        <polygon points="260,220 400,90 540,220" fill="#93c5fd" opacity="0.6" />
-        <polygon points="360,126 400,90 440,126 425,138 400,128 375,138" fill="#ffffff" />
-        {/* Bờ sông */}
-        <path d="M0,220 Q200,190 450,210 T800,190 L800,360 L0,360 Z" fill="#15803d" opacity="0.8" />
-        <path d="M0,240 Q280,210 520,235 T800,215 L800,360 L0,360 Z" fill="#22c55e" />
-        {/* Dòng sông */}
-        <path d="M0,260 C240,230 460,300 800,260 L800,360 L0,360 Z" fill="url(#momoRiver)" />
-        {/* Sóng nước */}
-        <path d="M50,285 Q120,275 200,285" stroke="#ffffff" strokeWidth="3" fill="none" opacity="0.8" strokeLinecap="round" />
-        <path d="M300,305 Q400,290 520,310" stroke="#ffffff" strokeWidth="4" fill="none" opacity="0.9" strokeLinecap="round" />
-
-        {/* Quả đào trôi sông */}
-        <g transform="translate(420, 230) rotate(-10)">
-          <circle cx="0" cy="0" r="70" fill="#fef08a" opacity="0.4" filter="blur(6px)" />
-          <path d="M-15,-38 C-38,-65 -10,-80 10,-55 C28,-75 48,-60 22,-38 Z" fill="#15803d" />
-          <path d="M0,-38 C-55,-32 -70,22 -22,55 C0,70 10,70 22,55 C70,22 55,-32 0,-38 Z" fill="url(#peachGrad)" stroke="#be123c" strokeWidth="3" />
-          <path d="M0,-32 C-5,5 -10,32 0,68" stroke="#be123c" strokeWidth="3" fill="none" strokeLinecap="round" />
-          <ellipse cx="-55" cy="50" rx="14" ry="6" fill="#ffffff" opacity="0.9" />
-          <ellipse cx="55" cy="50" rx="12" ry="5" fill="#ffffff" opacity="0.9" />
-        </g>
-
-        {/* Chữ Manga Onomatopoeia */}
-        <text x="560" y="140" fontFamily="'Noto Sans JP', sans-serif" fontWeight="900" fontSize="36" fill="#e11d48" stroke="#ffffff" strokeWidth="5" paintOrder="stroke" transform="rotate(10, 560, 140)">
-          どんぶらこ！
-        </text>
-      </svg>
+  // 1.b. Omusubi Kororin (おむすびころりん) — Cổ tích thiếu nhi N5 (Ehon Style)
+  omusubi_kororin: {
+    title: 'おむすびころりん (Bánh Nắm Lăn Tròn)',
+    imageUrl: '/images/ehon/omusubi_kororin.jpg',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/omusubi_kororin.jpg" 
+        alt="おむすびころりん" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+      />
     )
   },
 
@@ -467,6 +439,9 @@ export const getStoryMangaArtwork = (story) => {
 
   if (id.includes('momo') || title.includes('桃太郎') || title.includes('momotarō')) {
     return STORY_MANGA_ARTWORKS.momotaro;
+  }
+  if (id.includes('omusubi') || title.includes('おむすび') || title.includes('ころりん')) {
+    return STORY_MANGA_ARTWORKS.omusubi_kororin;
   }
   if (id.includes('kaguya') || title.includes('かぐや姫') || title.includes('竹取')) {
     return STORY_MANGA_ARTWORKS.kaguya_hime;

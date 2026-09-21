@@ -8,13 +8,14 @@ import {
   Settings2, SkipBack, Play, Repeat, SkipForward, Pause, Square, List, Trash2, 
   Save, FolderOpen, Volume2, Cpu, Eye, EyeOff, FileText, Download, Edit3, 
   FolderPlus, RefreshCw, Bookmark, Sparkles, HelpCircle, Check, X, BookOpen, Layers,
-  Newspaper, ExternalLink, Link2, Wand2, Search, Headphones
+  Newspaper, ExternalLink, Link2, Wand2, Search, Headphones, ChevronDown, ChevronUp, Image as ImageIcon
 } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 import { API_BASE_URL } from './config.js';
 import { logListeningTime } from './studyStore.js';
 import { READING_CORPUS } from './data/readingCorpus.js';
 import { getCachedTranslation, ensureSegmentsHaveTranslation } from './services/storyTranslationService.js';
+import { getStoryMangaArtwork } from './data/mangaArtworks.jsx';
 
 const LEVEL_COLORS = { N5: '#10b981', N4: '#3b82f6', N3: '#f59e0b', N2: '#8b5cf6', N1: '#ef4444' };
 
@@ -348,6 +349,16 @@ const ShadowingStudio = () => {
   const [webUrlInput, setWebUrlInput] = useState('');
   const [customTextInput, setCustomTextInput] = useState('');
   const [customTextTitle, setCustomTextTitle] = useState('');
+  const [isStoryShelfOpen, setIsStoryShelfOpen] = useState(false);
+
+  // Selected Artwork for visual immersion (Ehon / Manga)
+  const currentStoryArtwork = useMemo(() => {
+    return getStoryMangaArtwork({
+      id: activeTab,
+      title: activeTitle,
+      genre: activeTab === 'reading' ? 'folktale' : activeTab
+    });
+  }, [activeTab, activeTitle]);
 
   // YouTube States
   const [urlInput, setUrlInput] = useState('');
@@ -690,6 +701,7 @@ const ShadowingStudio = () => {
       }
     }));
     setActiveTab('reading');
+    setIsStoryShelfOpen(false);
     setCurrentSegIdx(0);
     currentSegIdxRef.current = 0;
     loopCountRef.current = 0;
@@ -1558,158 +1570,183 @@ const ShadowingStudio = () => {
           </div>
         )}
 
-        {/* SLA READING CORPUS BROWSER & SHADOWING ADAPTER */}
+        {/* SLA READING CORPUS: COMPACT BAR & SMART COLLAPSIBLE DRAWER */}
         {activeTab === 'reading' && (
-          <div className="glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: 10, padding: 12 }}>
-            
-            {/* Active Story Bar */}
-            {activeTitle && segments.length > 0 && (
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 14px', background: 'rgba(16, 185, 129, 0.12)', border: '1px solid rgba(16, 185, 129, 0.35)', borderRadius: 10, flexWrap: 'wrap', gap: 8 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.84rem' }}>
-                  <span style={{ color: 'var(--accent-success)', fontWeight: 800 }}>🎯 Đang nạp bài luyện:</span>
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 700 }} className="jp-text">{activeTitle}</span>
-                  <span style={{ fontSize: '0.74rem', color: 'var(--text-tertiary)' }}>({segments.length} câu)</span>
-                </div>
+          !isStoryShelfOpen && segments.length > 0 ? (
+            <div className="glass-panel" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '6px 14px', borderRadius: 8, flexWrap: 'wrap', gap: 8 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.85rem' }}>
+                <span style={{ color: 'var(--accent-success)', fontWeight: 800, display: 'flex', alignItems: 'center', gap: 5 }}>
+                  <BookOpen size={14} /> Bài luyện:
+                </span>
+                <span style={{ color: 'var(--text-primary)', fontWeight: 700 }} className="jp-text">{activeTitle}</span>
+                <span style={{ fontSize: '0.74rem', color: 'var(--text-tertiary)', background: 'rgba(255,255,255,0.06)', padding: '2px 8px', borderRadius: 10 }}>
+                  {segments.length} câu
+                </span>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <button 
+                  onClick={() => setIsStoryShelfOpen(true)}
+                  className="btn btn-outline"
+                  style={{ padding: '3px 10px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4 }}
+                  title="Mở kho 294 tác phẩm để đổi câu chuyện khác"
+                >
+                  <FolderOpen size={12}/> Đổi Tác Phẩm ({READING_CORPUS?.length || 294}) <ChevronDown size={12} />
+                </button>
                 <button 
                   onClick={() => jumpToSegment(0)}
                   className="btn btn-primary"
-                  style={{ padding: '3px 12px', fontSize: '0.76rem', display: 'flex', alignItems: 'center', gap: 4 }}
+                  style={{ padding: '3px 10px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4 }}
                 >
-                  <Play size={12}/> Bắt đầu từ câu 1
+                  <Play size={12}/> Bắt đầu câu 1
                 </button>
               </div>
-            )}
-
-            {/* Top Bar: Level filter, search, & Active story info */}
-            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+            </div>
+          ) : (
+            <div className="glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: 10, padding: 12, borderRadius: 10 }}>
               
-              {/* Level Filter Buttons */}
-              <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', fontWeight: 700 }}>CẤP ĐỘ:</span>
-                {['ALL', 'N5', 'N4', 'N3', 'N2', 'N1'].map(lvl => {
-                  const isActive = readingLevelFilter === lvl;
-                  const color = LEVEL_COLORS[lvl] || 'var(--accent-primary)';
-                  return (
-                    <button
-                      key={lvl}
-                      onClick={() => setReadingLevelFilter(lvl)}
-                      className="btn"
-                      style={{
-                        padding: '4px 10px',
-                        fontSize: '0.75rem',
-                        fontWeight: 700,
-                        borderRadius: 6,
-                        border: `1px solid ${isActive ? color : 'var(--glass-border)'}`,
-                        background: isActive ? `${color}25` : 'transparent',
-                        color: isActive ? (lvl === 'ALL' ? 'var(--text-primary)' : color) : 'var(--text-secondary)'
-                      }}
-                    >
-                      {lvl === 'ALL' ? 'Tất cả (294)' : lvl}
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Search Box */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(0,0,0,0.25)', padding: '4px 10px', borderRadius: 8, border: '1px solid var(--glass-border)', minWidth: 220 }}>
-                <Search size={14} color="var(--text-tertiary)" />
-                <input
-                  type="text"
-                  placeholder="Tìm kiếm trong 294 bài đọc..."
-                  value={readingSearchQuery}
-                  onChange={e => setReadingSearchQuery(e.target.value)}
-                  style={{ background: 'transparent', border: 'none', outline: 'none', color: 'var(--text-primary)', fontSize: '0.8rem', width: '100%' }}
-                />
-                {readingSearchQuery && (
-                  <button onClick={() => setReadingSearchQuery('')} style={{ background: 'transparent', border: 'none', color: 'var(--text-tertiary)', cursor: 'pointer', padding: 0 }}>
-                    <X size={13} />
+              {/* Drawer Header */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: 6 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <span style={{ fontSize: '0.84rem', fontWeight: 800, color: 'var(--accent-primary)', display: 'flex', alignItems: 'center', gap: 5 }}>
+                    <BookOpen size={14} /> KHO TÁC PHẨM ĐỌC SLA ({READING_CORPUS?.length || 294} BÀI)
+                  </span>
+                  {activeTitle && <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>• Đang chọn: {activeTitle}</span>}
+                </div>
+                {segments.length > 0 && (
+                  <button 
+                    onClick={() => setIsStoryShelfOpen(false)}
+                    className="btn btn-ghost"
+                    style={{ padding: '2px 8px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4, color: 'var(--text-tertiary)' }}
+                  >
+                    <ChevronUp size={12}/> Thu gọn khay
                   </button>
                 )}
               </div>
-            </div>
 
-            {/* Stories Horizontal Scroller / Grid */}
-            <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 6 }}>
-              {filteredReadingStories.slice(0, 50).map(st => {
-                const isSelected = activeTitle.includes(st.title);
-                const lvlColor = LEVEL_COLORS[st.level] || 'var(--accent-primary)';
-                return (
-                  <div
-                    key={st.id}
-                    style={{
-                      minWidth: 220,
-                      maxWidth: 250,
-                      padding: '8px 11px',
-                      borderRadius: 8,
-                      background: isSelected ? 'rgba(16, 185, 129, 0.12)' : 'var(--bg-surface)',
-                      border: `1px solid ${isSelected ? '#10b981' : 'var(--glass-border)'}`,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'space-between',
-                      gap: 6,
-                      flexShrink: 0
-                    }}
-                  >
-                    <div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-                        <span style={{ fontSize: '0.66rem', fontWeight: 800, padding: '1px 5px', borderRadius: 4, background: `${lvlColor}20`, color: lvlColor }}>
-                          {st.level}
-                        </span>
-                        <span style={{ fontSize: '0.68rem', color: 'var(--text-tertiary)' }}>
-                          {st.readingTime || (st.isMultiChapter ? `${st.chapters?.length} chương` : '1 bài')}
-                        </span>
-                      </div>
-                      <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} title={st.title}>
-                        {st.title}
-                      </div>
-                      {st.summary && (
-                        <div style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', marginTop: 2, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', lineHeight: 1.3 }}>
-                          {st.summary}
-                        </div>
-                      )}
-                    </div>
+              {/* Top Bar: Level filter & Search */}
+              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', fontWeight: 700 }}>CẤP ĐỘ:</span>
+                  {['ALL', 'N5', 'N4', 'N3', 'N2', 'N1'].map(lvl => {
+                    const isActive = readingLevelFilter === lvl;
+                    const color = LEVEL_COLORS[lvl] || 'var(--accent-primary)';
+                    return (
+                      <button
+                        key={lvl}
+                        onClick={() => setReadingLevelFilter(lvl)}
+                        className="btn"
+                        style={{
+                          padding: '3px 8px',
+                          fontSize: '0.75rem',
+                          fontWeight: 700,
+                          borderRadius: 6,
+                          border: `1px solid ${isActive ? color : 'var(--glass-border)'}`,
+                          background: isActive ? `${color}25` : 'transparent',
+                          color: isActive ? (lvl === 'ALL' ? 'var(--text-primary)' : color) : 'var(--text-secondary)'
+                        }}
+                      >
+                        {lvl === 'ALL' ? 'Tất cả (294)' : lvl}
+                      </button>
+                    );
+                  })}
+                </div>
 
-                    <div style={{ display: 'flex', gap: 4, marginTop: 4 }}>
-                      {st.isMultiChapter && st.chapters && st.chapters.length > 1 ? (
-                        <select
-                          onChange={(e) => loadReadingStoryToShadowing(st, parseInt(e.target.value))}
-                          style={{
-                            flex: 1,
-                            padding: '4px 6px',
-                            fontSize: '0.72rem',
-                            borderRadius: 6,
-                            background: 'var(--bg-primary)',
-                            color: 'var(--text-primary)',
-                            border: '1px solid var(--glass-border)',
-                            cursor: 'pointer'
-                          }}
-                          defaultValue=""
-                        >
-                          <option value="" disabled>Chọn chương ({st.chapters.length})...</option>
-                          {st.chapters.map((ch, idx) => (
-                            <option key={idx} value={idx}>{ch.chapterTitle || `Chương ${idx + 1}`}</option>
-                          ))}
-                        </select>
-                      ) : (
-                        <button
-                          className="btn btn-primary"
-                          onClick={() => loadReadingStoryToShadowing(st, 0)}
-                          style={{ width: '100%', padding: '4px 8px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}
-                        >
-                          <Headphones size={12} /> Luyện Shadowing
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            {filteredReadingStories.length > 50 && (
-              <div style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)', textAlign: 'right' }}>
-                Đang hiển thị 50 / {filteredReadingStories.length} tác phẩm (Nhập từ khóa tìm kiếm để thu hẹp)
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(0,0,0,0.25)', padding: '3px 8px', borderRadius: 8, border: '1px solid var(--glass-border)', minWidth: 200 }}>
+                  <Search size={13} color="var(--text-tertiary)" />
+                  <input
+                    type="text"
+                    placeholder="Tìm kiếm tác phẩm..."
+                    value={readingSearchQuery}
+                    onChange={e => setReadingSearchQuery(e.target.value)}
+                    style={{ background: 'transparent', border: 'none', outline: 'none', color: 'var(--text-primary)', fontSize: '0.78rem', width: '100%' }}
+                  />
+                  {readingSearchQuery && (
+                    <button onClick={() => setReadingSearchQuery('')} style={{ background: 'transparent', border: 'none', color: 'var(--text-tertiary)', cursor: 'pointer', padding: 0 }}>
+                      <X size={12} />
+                    </button>
+                  )}
+                </div>
               </div>
-            )}
-          </div>
+
+              {/* Stories Horizontal Scroller */}
+              <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 6 }}>
+                {filteredReadingStories.slice(0, 50).map(st => {
+                  const isSelected = activeTitle.includes(st.title);
+                  const lvlColor = LEVEL_COLORS[st.level] || 'var(--accent-primary)';
+                  return (
+                    <div
+                      key={st.id}
+                      style={{
+                        minWidth: 200,
+                        maxWidth: 230,
+                        padding: '7px 10px',
+                        borderRadius: 8,
+                        background: isSelected ? 'rgba(16, 185, 129, 0.12)' : 'var(--bg-surface)',
+                        border: `1px solid ${isSelected ? '#10b981' : 'var(--glass-border)'}`,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        gap: 4,
+                        flexShrink: 0
+                      }}
+                    >
+                      <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 2 }}>
+                          <span style={{ fontSize: '0.64rem', fontWeight: 800, padding: '1px 5px', borderRadius: 4, background: `${lvlColor}20`, color: lvlColor }}>
+                            {st.level}
+                          </span>
+                          <span style={{ fontSize: '0.66rem', color: 'var(--text-tertiary)' }}>
+                            {st.readingTime || (st.isMultiChapter ? `${st.chapters?.length} chương` : '1 bài')}
+                          </span>
+                        </div>
+                        <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} title={st.title}>
+                          {st.title}
+                        </div>
+                        {st.summary && (
+                          <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginTop: 2, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', lineHeight: 1.25 }}>
+                            {st.summary}
+                          </div>
+                        )}
+                      </div>
+
+                      <div style={{ display: 'flex', gap: 4, marginTop: 3 }}>
+                        {st.isMultiChapter && st.chapters && st.chapters.length > 1 ? (
+                          <select
+                            onChange={(e) => loadReadingStoryToShadowing(st, parseInt(e.target.value))}
+                            style={{
+                              flex: 1,
+                              padding: '3px 5px',
+                              fontSize: '0.7rem',
+                              borderRadius: 6,
+                              background: 'var(--bg-primary)',
+                              color: 'var(--text-primary)',
+                              border: '1px solid var(--glass-border)',
+                              cursor: 'pointer'
+                            }}
+                            defaultValue=""
+                          >
+                            <option value="" disabled>Chọn chương ({st.chapters.length})...</option>
+                            {st.chapters.map((ch, idx) => (
+                              <option key={idx} value={idx}>{ch.chapterTitle || `Chương ${idx + 1}`}</option>
+                            ))}
+                          </select>
+                        ) : (
+                          <button
+                            className="btn btn-primary"
+                            onClick={() => loadReadingStoryToShadowing(st, 0)}
+                            style={{ width: '100%', padding: '3px 6px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}
+                          >
+                            <Headphones size={11} /> Luyện Shadowing
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )
         )}
 
         {/* OPEN WEB MATERIALS & NEWS FETCHER */}
@@ -1928,96 +1965,119 @@ const ShadowingStudio = () => {
           {/* LEFT PANE: MEDIA PLAYER & UNIFIED MEDIA CONTROL BAR */}
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12, maxWidth: '44%' }}>
             
-            {/* UNIFIED MEDIA BAR (UX FIX: Clear/Delete, Rename, Export/Import Subtitles) */}
-            <div className="glass-panel" style={{ padding: '10px 14px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {/* UNIFIED VISUALIZER & EHON ARTWORK CARD */}
+            <div className="glass-panel" style={{ padding: 0, borderRadius: 12, overflow: 'hidden', border: '1px solid var(--glass-border)', display: 'flex', flexDirection: 'column' }}>
               
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, marginRight: 8 }} title={activeTitle}>
-                  {activeTitle}
+              {/* YouTube Player Element */}
+              {activeTab === 'youtube' && videoId ? (
+                <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', background: '#000' }}>
+                  <div id="yt-player" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}></div>
                 </div>
+              ) : activeTab === 'local' && localMediaUrl ? (
+                <div style={{ position: 'relative', overflow: 'hidden', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 180 }}>
+                  {localMediaType === 'video' ? (
+                    <video ref={localPlayerRef} src={localMediaUrl} controls style={{ width: '100%', maxHeight: '35vh' }} onPlay={() => { setIsPlaying(true); if(!reqFrameRef.current) checkSync(); }} onPause={() => setIsPlaying(false)} />
+                  ) : (
+                    <audio ref={localPlayerRef} src={localMediaUrl} controls style={{ width: '90%', marginTop: 20, marginBottom: 20 }} onPlay={() => { setIsPlaying(true); if(!reqFrameRef.current) checkSync(); }} onPause={() => setIsPlaying(false)} />
+                  )}
+                </div>
+              ) : (
+                /* EHON / MANGA ARTWORK DISPLAY */
+                <div style={{ position: 'relative', width: '100%', height: 180, background: 'linear-gradient(135deg, #1e293b, #0f172a)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  {currentStoryArtwork?.imageUrl ? (
+                    <img 
+                      src={currentStoryArtwork.imageUrl} 
+                      alt={activeTitle} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                    />
+                  ) : currentStoryArtwork?.renderIllustration ? (
+                    currentStoryArtwork.renderIllustration()
+                  ) : (
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, opacity: 0.4 }}>
+                      <ImageIcon size={40} />
+                      <span style={{ fontSize: '0.75rem' }}>Ehon Illustration</span>
+                    </div>
+                  )}
+                  
+                  {/* Top Gradient Overlay with Lesson Type Badge & Actions */}
+                  <div style={{ 
+                    position: 'absolute', top: 0, left: 0, right: 0, 
+                    padding: '8px 12px', 
+                    background: 'linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, transparent 100%)',
+                    display: 'flex', justifyContent: 'space-between', alignItems: 'center'
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                      {activeTab === 'reading' ? (
+                        <span style={{ padding: '2px 8px', borderRadius: 10, background: 'rgba(16,185,129,0.9)', color: 'white', fontSize: '0.68rem', fontWeight: 800, backdropFilter: 'blur(4px)' }}>
+                          🎨 EHON NHẬT BẢN
+                        </span>
+                      ) : (
+                        <span style={{ padding: '2px 8px', borderRadius: 10, background: 'rgba(59,130,246,0.9)', color: 'white', fontSize: '0.68rem', fontWeight: 800, backdropFilter: 'blur(4px)' }}>
+                          {activeTab === 'web' ? '📰 TIN TỨC WEB' : '✨ BÀI HỌC MẪU'}
+                        </span>
+                      )}
+                      <span style={{ fontSize: '0.7rem', color: '#e2e8f0', fontWeight: 600, textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
+                        {segments.length} câu
+                      </span>
+                    </div>
 
-                <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
-                  <button className="btn-ghost" onClick={handleRenameActiveLesson} style={{ padding: 4 }} title="Đổi tên bài học">
-                    <Edit3 size={14}/>
-                  </button>
-                  <button className="btn-ghost" onClick={() => saveCurrentSessionToWorkspace()} style={{ padding: 4, color: 'var(--accent-primary)' }} title="Lưu vào Workspace">
-                    <Save size={14}/>
-                  </button>
-                  <button className="btn-ghost" onClick={handleClearCurrentMedia} style={{ padding: 4, color: 'var(--accent-danger)' }} title="🗑️ Xóa Media này / Tải bài mới">
-                    <Trash2 size={14}/>
-                  </button>
+                    <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+                      <button className="btn-ghost" onClick={handleRenameActiveLesson} style={{ padding: '3px 6px', color: 'white', background: 'rgba(0,0,0,0.45)', borderRadius: 4 }} title="Đổi tên bài học">
+                        <Edit3 size={13}/>
+                      </button>
+                      <button className="btn-ghost" onClick={() => saveCurrentSessionToWorkspace()} style={{ padding: '3px 6px', color: '#38bdf8', background: 'rgba(0,0,0,0.45)', borderRadius: 4 }} title="Lưu vào Workspace">
+                        <Save size={13}/>
+                      </button>
+                      <button className="btn-ghost" onClick={handleClearCurrentMedia} style={{ padding: '3px 6px', color: '#f87171', background: 'rgba(0,0,0,0.45)', borderRadius: 4 }} title="🗑️ Xóa / Tải bài mới">
+                        <Trash2 size={13}/>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Bottom Gradient Overlay with Story Title */}
+                  <div style={{ 
+                    position: 'absolute', bottom: 0, left: 0, right: 0, 
+                    padding: '16px 12px 6px 12px', 
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)'
+                  }}>
+                    <div style={{ 
+                      fontSize: '0.92rem', 
+                      fontWeight: 800, 
+                      color: '#ffffff', 
+                      textShadow: '0 2px 4px rgba(0,0,0,0.9)', 
+                      overflow: 'hidden', 
+                      textOverflow: 'ellipsis', 
+                      whiteSpace: 'nowrap' 
+                    }} className="jp-text" title={activeTitle}>
+                      {activeTitle}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Subtitle Action Toolbar */}
-              <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: 6 }}>
-                <label className="btn btn-outline" style={{ padding: '3px 8px', fontSize: '0.75rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4 }}>
-                  <Upload size={12}/> 📤 Nạp Sub SRT
-                  <input type="file" accept=".srt,.vtt" onChange={handleImportSRTFile} style={{ display: 'none' }} />
-                </label>
-
-                <button className="btn btn-outline" onClick={handleExportSRT} style={{ padding: '3px 8px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4 }}>
-                  <Download size={12}/> 📥 Xuất SRT
-                </button>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 10px', background: 'rgba(0,0,0,0.18)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+                  <label className="btn btn-outline" style={{ padding: '2px 8px', fontSize: '0.72rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4 }}>
+                    <Upload size={11}/> Nạp SRT
+                    <input type="file" accept=".srt,.vtt" onChange={handleImportSRTFile} style={{ display: 'none' }} />
+                  </label>
+                  <button className="btn btn-outline" onClick={handleExportSRT} style={{ padding: '2px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 4 }}>
+                    <Download size={11}/> Xuất SRT
+                  </button>
+                </div>
 
                 {shadowingMode === 'blind' && (
                   <button 
                     className="btn btn-outline" 
                     onClick={() => setIsBlindRevealed(prev => !prev)}
-                    style={{ padding: '3px 8px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4, marginLeft: 'auto', background: isBlindRevealed ? 'rgba(139,92,246,0.2)' : 'transparent' }}
+                    style={{ padding: '2px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 4, background: isBlindRevealed ? 'rgba(139,92,246,0.2)' : 'transparent' }}
                   >
-                    {isBlindRevealed ? <Eye size={12}/> : <EyeOff size={12}/>} {isBlindRevealed ? 'Ẩn lại' : 'Xem chữ nhanh'}
+                    {isBlindRevealed ? <Eye size={11}/> : <EyeOff size={11}/>} {isBlindRevealed ? 'Ẩn lại' : 'Xem chữ'}
                   </button>
                 )}
               </div>
-
             </div>
-
-            {/* YouTube Player Element */}
-            <div style={{ display: activeTab === 'youtube' && videoId ? 'block' : 'none', position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 10, overflow: 'hidden', background: '#000', boxShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
-              <div id="yt-player" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}></div>
-            </div>
-            
-            {/* Local Media Player Element */}
-            <div style={{ display: activeTab === 'local' && localMediaUrl ? 'flex' : 'none', position: 'relative', borderRadius: 10, overflow: 'hidden', background: '#000', boxShadow: '0 4px 20px rgba(0,0,0,0.5)', alignItems: 'center', justifyContent: 'center', minHeight: 220 }}>
-               {localMediaType === 'video' ? (
-                  <video ref={localPlayerRef} src={localMediaUrl} controls style={{ width: '100%', maxHeight: '45vh' }} onPlay={() => { setIsPlaying(true); if(!reqFrameRef.current) checkSync(); }} onPause={() => setIsPlaying(false)} />
-               ) : (
-                  <audio ref={localPlayerRef} src={localMediaUrl} controls style={{ width: '85%', marginTop: 20, marginBottom: 20 }} onPlay={() => { setIsPlaying(true); if(!reqFrameRef.current) checkSync(); }} onPause={() => setIsPlaying(false)} />
-               )}
-            </div>
-
-            {/* Presets & Web Open Materials & SLA Reading Player Banner */}
-            {(activeTab === 'presets' || activeTab === 'web' || activeTab === 'reading') && (
-              <div className="glass-panel" style={{ padding: 16, textAlign: 'center', background: 'var(--bg-card)', border: '1px solid var(--glass-border)', borderRadius: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 8 }}>
-                  {activeTab === 'reading' ? (
-                    <span style={{ padding: '3px 10px', borderRadius: 12, background: 'rgba(16,185,129,0.15)', color: '#10b981', fontSize: '0.72rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 4 }}>
-                      <BookOpen size={13} /> Bài Đọc SLA Đang Chọn
-                    </span>
-                  ) : activeTab === 'web' ? (
-                    <span style={{ padding: '3px 10px', borderRadius: 12, background: 'rgba(59,130,246,0.15)', color: '#3b82f6', fontSize: '0.72rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 4 }}>
-                      <Newspaper size={13} /> Bản Tin / Web Đang Chọn
-                    </span>
-                  ) : (
-                    <span style={{ padding: '3px 10px', borderRadius: 12, background: 'rgba(139,92,246,0.15)', color: '#8b5cf6', fontSize: '0.72rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 4 }}>
-                      <Sparkles size={13} /> Bài Học Mẫu
-                    </span>
-                  )}
-                  <span style={{ fontSize: '0.72rem', color: 'var(--text-tertiary)' }}>
-                    {segments.length} câu luyện tập
-                  </span>
-                </div>
-                <h3 style={{ margin: '0 0 6px 0', fontSize: '1.05rem', color: 'var(--text-primary)', fontWeight: 700 }} className="jp-text">{activeTitle}</h3>
-                <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
-                  {activeTab === 'reading'
-                    ? 'Ngữ liệu đọc SLA tích hợp đọc tự động AI TTS, Furigana & Luyện phát âm.'
-                    : activeTab === 'web'
-                    ? 'Bản tin / Web tích hợp đọc tự động AI TTS, Furigana & Nhại câu theo từng phân đoạn.'
-                    : 'Bài học tự do tích hợp sẵn đọc tự động AI TTS & Furigana.'}
-                </p>
-              </div>
-            )}
 
             {/* Empty States */}
             {activeTab === 'youtube' && !videoId && (
@@ -2097,7 +2157,7 @@ const ShadowingStudio = () => {
           </div>
 
           {/* RIGHT PANE: TRANSCRIPT LIST WITH AUTO-SCROLL & INTERACTIVE SEGMENTS */}
-          <div className="glass-panel" style={{ flex: 1, overflowY: 'auto', padding: '14px 18px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <div className="glass-panel" style={{ flex: 1, overflowY: 'auto', padding: '10px 14px', display: 'flex', flexDirection: 'column', gap: 6 }}>
               {!segments.length && <div style={{ color: 'var(--text-secondary)', textAlign: 'center', marginTop: 40 }}>Chưa có bài học. Chọn bài học mẫu, dán URL bài báo hoặc dán văn bản tùy ý ở trên.</div>}
               
               {segments.map((seg, idx) => {
@@ -2109,18 +2169,18 @@ const ShadowingStudio = () => {
                           <div 
                               ref={el => segmentRefs.current[idx] = el}
                               style={{
-                                  padding: '14px',
-                                  borderRadius: 10,
+                                  padding: '8px 12px',
+                                  borderRadius: 8,
                                   background: isCurrent ? 'rgba(59,130,246,0.15)' : 'transparent',
                                   border: `1px solid ${isCurrent ? 'rgba(59,130,246,0.4)' : 'rgba(255,255,255,0.03)'}`,
                                   transition: 'all 0.25s',
                                   display: 'flex',
                                   flexDirection: 'column',
-                                  gap: 10
+                                  gap: 6
                               }}
                           >
                               {/* Top Bar: ID, Time, Trim Offset Controls */}
-                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.72rem', color: 'var(--text-tertiary)' }}>
                                   <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                                       <span style={{ background: isCurrent ? 'var(--accent-primary)' : 'rgba(255,255,255,0.1)', color: 'white', padding: '1px 6px', borderRadius: 4, fontWeight: 700 }}>#{idx + 1}</span>
                                       <span>{Math.floor(seg.start / 60)}:{(Math.floor(seg.start % 60) + '').padStart(2, '0')}</span>
@@ -2152,18 +2212,18 @@ const ShadowingStudio = () => {
                                 }} 
                                 onClick={() => jumpToSegment(idx)}
                               >
-                                 <div className="jp-text" style={{ fontSize: '1.2rem', lineHeight: 1.8, color: isCurrent ? 'white' : '#cbd5e1' }}>
-                                     <FuriganaText text={seg.text} />
-                                 </div>
+                                  <div className="jp-text" style={{ fontSize: '1.12rem', lineHeight: 1.6, color: isCurrent ? 'white' : '#cbd5e1' }}>
+                                      <FuriganaText text={seg.text} />
+                                  </div>
                                   {showVi && (
                                       <div style={{ 
-                                          fontSize: '0.88rem', 
+                                          fontSize: '0.82rem', 
                                           color: 'var(--text-secondary)', 
-                                          marginTop: 6, 
+                                          marginTop: 4, 
                                           fontStyle: 'italic',
-                                          borderLeft: '3px solid var(--accent-primary)',
+                                          borderLeft: '2.5px solid var(--accent-primary)',
                                           paddingLeft: 8,
-                                          lineHeight: 1.5
+                                          lineHeight: 1.4
                                       }}>
                                           {seg.vi || (
                                               <span style={{ color: 'var(--text-tertiary)', fontSize: '0.78rem' }}>
