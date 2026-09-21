@@ -325,17 +325,26 @@ const GrammarExplorer = () => {
   const handleSendToShadowing = (text, meaning) => {
     if (!text) return;
     const session = {
-      title: `Luyện Ngữ Pháp: ${text.slice(0, 15)}...`,
-      segments: [{ start: 0, duration: 4.5, text, vi: meaning || '' }],
+      id: `grammar_${Date.now()}`,
+      title: `[Ngữ pháp] ${text.slice(0, 18)}...`,
+      segments: [{ start: 0, duration: 4.5, text, vi: meaning || '', startOffset: 0, endOffset: 0 }],
       currentSegIdx: 0,
-      scores: {}
+      scores: {},
+      sourceType: 'news'
     };
-    const savedStore = JSON.parse(localStorage.getItem('omni_shadowing_session_v3') || '{}');
-    if (!savedStore.sessionStore) savedStore.sessionStore = {};
-    savedStore.sessionStore.web = session;
-    savedStore.activeTab = 'web';
-    localStorage.setItem('omni_shadowing_session_v3', JSON.stringify(savedStore));
-    navigate('/shadowing');
+
+    localStorage.setItem('omni_shadowing_imported_news', JSON.stringify(session));
+
+    try {
+      const savedStore = JSON.parse(localStorage.getItem('omni_shadowing_session_v3') || '{}');
+      if (!savedStore.sessionStore) savedStore.sessionStore = {};
+      savedStore.sessionStore.web = session;
+      savedStore.activeTab = 'web';
+      localStorage.setItem('omni_shadowing_session_v3', JSON.stringify(savedStore));
+    } catch(e) {}
+
+    window.dispatchEvent(new CustomEvent('omni_shadowing_import', { detail: session }));
+    navigate('/shadowing', { state: { importedNews: session, t: Date.now() } });
   };
 
   return (

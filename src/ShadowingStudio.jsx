@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
@@ -7,10 +8,16 @@ import {
   Settings2, SkipBack, Play, Repeat, SkipForward, Pause, Square, List, Trash2, 
   Save, FolderOpen, Volume2, Cpu, Eye, EyeOff, FileText, Download, Edit3, 
   FolderPlus, RefreshCw, Bookmark, Sparkles, HelpCircle, Check, X, BookOpen, Layers,
-  Newspaper, ExternalLink, Link2, Wand2
+  Newspaper, ExternalLink, Link2, Wand2, Search, Headphones
 } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 import { API_BASE_URL } from './config.js';
+import { logListeningTime } from './studyStore.js';
+import { READING_CORPUS } from './data/readingCorpus.js';
+import { getCachedTranslation, ensureSegmentsHaveTranslation } from './services/storyTranslationService.js';
+
+const LEVEL_COLORS = { N5: '#10b981', N4: '#3b82f6', N3: '#f59e0b', N2: '#8b5cf6', N1: '#ef4444' };
+
 
 // Algorithm for speech score calculation
 const scoreMatch = (target, got) => {
@@ -76,11 +83,12 @@ const parseRawTextToSegments = (rawText) => {
   let currentTime = 0;
   return rawSentences.map((st) => {
     const duration = Math.max(3, Math.round(st.length * 0.28 * 10) / 10);
+    const sentenceText = st.endsWith('。') ? st : st + '。';
     const seg = {
       start: currentTime,
       duration: duration,
-      text: st.endsWith('。') ? st : st + '。',
-      vi: '',
+      text: sentenceText,
+      vi: getCachedTranslation(sentenceText) || '',
       startOffset: 0,
       endOffset: 0
     };
@@ -216,33 +224,97 @@ const OPEN_NEWS_CHANNELS = [
   }
 ];
 
+const getInitialActiveTab = () => {
+  try {
+    if (localStorage.getItem('omni_shadowing_imported_story')) return 'reading';
+    if (localStorage.getItem('omni_shadowing_imported_news')) return 'web';
+    const saved = JSON.parse(localStorage.getItem('omni_shadowing_session_v3') || '{}');
+    if (saved.activeTab) return saved.activeTab;
+  } catch(e) {}
+  return 'presets';
+};
+
+const getInitialSessionStore = () => {
+  const baseDefaults = {
+    presets: { title: PRESET_LESSONS[0].title, segments: PRESET_LESSONS[0].segments, currentSegIdx: 0, scores: {} },
+    web: { title: OPEN_NEWS_CHANNELS[0].title, segments: OPEN_NEWS_CHANNELS[0].segments, currentSegIdx: 0, scores: {} },
+    youtube: { title: '', segments: [], currentSegIdx: 0, scores: {} },
+    local: { title: '', segments: [], currentSegIdx: 0, scores: {} },
+    reading: { title: 'Chọn bài đọc SLA', segments: [], currentSegIdx: 0, scores: {} }
+  };
+
+  try {
+    // 1. Kiểm tra bài đọc chuyển từ Immersion Reader
+    const impStory = localStorage.getItem('omni_shadowing_imported_story');
+    if (impStory) {
+      const parsed = JSON.parse(impStory);
+      if (parsed?.segments?.length > 0) {
+        baseDefaults.reading = {
+          title: parsed.title || 'Bài đọc SLA',
+          segments: parsed.segments,
+          currentSegIdx: 0,
+          scores: {}
+        };
+        return baseDefaults;
+      }
+    }
+
+    // 2. Kiểm tra bản tin chuyển từ Japan News Hub
+    const impNews = localStorage.getItem('omni_shadowing_imported_news');
+    if (impNews) {
+      const parsed = JSON.parse(impNews);
+      if (parsed?.segments?.length > 0) {
+        baseDefaults.web = {
+          title: parsed.title || 'Bản tin Nhật Bản',
+          segments: parsed.segments,
+          currentSegIdx: 0,
+          scores: {}
+        };
+        return baseDefaults;
+      }
+    }
+
+    // 3. Fallback khôi phục phiên lưu gần nhất
+    const saved = JSON.parse(localStorage.getItem('omni_shadowing_session_v3') || '{}');
+    if (saved.sessionStore) {
+      return {
+        ...baseDefaults,
+        ...saved.sessionStore
+      };
+    }
+  } catch (e) {}
+
+  return baseDefaults;
+};
+
 const ShadowingStudio = () => {
+  const location = useLocation();
+
   // Live Dexie Database Queries
   const storedPlaylists = useLiveQuery(() => db.playlists?.toArray()) || [];
   const storedMediaFiles = useLiveQuery(() => db.mediaFiles?.toArray()) || [];
 
-  // Active Main Tab: 'presets', 'web', 'youtube', 'local', 'workspace'
-  const [activeTab, setActiveTab] = useState('presets');
+  // Active Main Tab: 'presets', 'web', 'youtube', 'local', 'workspace', 'reading'
+  const [activeTab, setActiveTab] = useState(getInitialActiveTab);
 
   // Shadowing Mode: 'text' (Text-Guided), 'blind' (Blind Shadowing), 'echo' (Echoing Method), 'record' (Record & Compare)
   const [shadowingMode, setShadowingMode] = useState('text');
   const [isBlindRevealed, setIsBlindRevealed] = useState(false);
 
-  // Per-tab session store: isolates Web Open Materials, YouTube, Local media, Presets
-  const [sessionStore, setSessionStore] = useState({
-    presets: { title: PRESET_LESSONS[0].title, segments: PRESET_LESSONS[0].segments, currentSegIdx: 0, scores: {} },
-    web: { title: OPEN_NEWS_CHANNELS[0].title, segments: OPEN_NEWS_CHANNELS[0].segments, currentSegIdx: 0, scores: {} },
-    youtube: { title: '', segments: [], currentSegIdx: 0, scores: {} },
-    local: { title: '', segments: [], currentSegIdx: 0, scores: {} }
-  });
+  // Per-tab session store: isolates Web Open Materials, YouTube, Local media, Presets, Reading SLA
+  const [sessionStore, setSessionStore] = useState(getInitialSessionStore);
 
   // Active Session derived getters
-  const activeTabStoreKey = activeTab === 'youtube' || activeTab === 'local' || activeTab === 'web' ? activeTab : 'presets';
+  const activeTabStoreKey = activeTab === 'youtube' || activeTab === 'local' || activeTab === 'web' || activeTab === 'reading' ? activeTab : 'presets';
   const activeSession = sessionStore[activeTabStoreKey] || sessionStore.presets;
   const segments = activeSession.segments || [];
   const currentSegIdx = activeSession.currentSegIdx || 0;
   const scores = activeSession.scores || {};
   const activeTitle = activeSession.title || 'Bài học Shadowing';
+
+  // Reading SLA States & Filters
+  const [readingLevelFilter, setReadingLevelFilter] = useState('ALL');
+  const [readingSearchQuery, setReadingSearchQuery] = useState('');
 
   // Setters for Active Session
   const setSegments = (segsOrFn) => {
@@ -340,6 +412,15 @@ const ShadowingStudio = () => {
   useEffect(() => { subSyncRef.current = subSync; }, [subSync]);
   useEffect(() => { shadowingModeRef.current = shadowingMode; }, [shadowingMode]);
 
+  // Stephen Krashen SLA Immersion Tracker: Tự động tích lũy thời gian nghe khi đang phát media hoặc TTS
+  useEffect(() => {
+    if (!isPlaying && !isTtsPlaying) return;
+    const interval = setInterval(() => {
+      logListeningTime(5, 'shadowing');
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isPlaying, isTtsPlaying]);
+
   // Auto-scroll active segment smoothly into center view
   useEffect(() => {
     if (segmentRefs.current[currentSegIdx]) {
@@ -434,6 +515,205 @@ const ShadowingStudio = () => {
     localStorage.setItem('omni_shadowing_session_v3', JSON.stringify(session));
   }, [activeTab, sessionStore, videoId, urlInput, playbackRate, repeatCount, waitMode, subSync, shadowingMode, showVi]);
 
+  // Helper để nạp và kích hoạt nội dung chuyển sang Shadowing Studio
+  const applyImportedPayload = useCallback((payload, targetTab = 'reading') => {
+    if (!payload || !payload.segments || payload.segments.length === 0) return false;
+    
+    pauseAllPlayers();
+    setSessionStore(prev => ({
+      ...prev,
+      [targetTab]: {
+        title: payload.title || (targetTab === 'web' ? 'Bản tin Nhật Bản' : 'Bài đọc SLA'),
+        segments: payload.segments,
+        currentSegIdx: 0,
+        scores: {}
+      }
+    }));
+    setActiveTab(targetTab);
+    setCurrentSegIdx(0);
+    currentSegIdxRef.current = 0;
+    loopCountRef.current = 0;
+    isWaitingRef.current = false;
+    segmentsRef.current = payload.segments;
+
+    // Tự động kiểm tra và bổ sung bản dịch tiếng Việt cho các câu chưa có
+    if (payload.segments.some(s => !s.vi)) {
+      ensureSegmentsHaveTranslation(payload.segments).then(enriched => {
+        setSessionStore(prev => ({
+          ...prev,
+          [targetTab]: {
+            ...prev[targetTab],
+            segments: enriched
+          }
+        }));
+        segmentsRef.current = enriched;
+      });
+    }
+
+    return true;
+  }, []);
+
+  // 1. Lắng nghe thay đổi Router (vì ShadowingStudio được giữ mounted ở App.jsx bằng display:none)
+  useEffect(() => {
+    if (location.pathname !== '/shadowing') return;
+
+    // Kiểm tra state truyền qua navigate
+    if (location.state?.importedStory) {
+      applyImportedPayload(location.state.importedStory, 'reading');
+      localStorage.removeItem('omni_shadowing_imported_story');
+      return;
+    }
+    if (location.state?.importedNews) {
+      applyImportedPayload(location.state.importedNews, 'web');
+      localStorage.removeItem('omni_shadowing_imported_news');
+      return;
+    }
+
+    // Kiểm tra localStorage
+    try {
+      const importedStory = localStorage.getItem('omni_shadowing_imported_story');
+      if (importedStory) {
+        const parsed = JSON.parse(importedStory);
+        if (parsed?.segments?.length > 0) {
+          applyImportedPayload(parsed, 'reading');
+          localStorage.removeItem('omni_shadowing_imported_story');
+          return;
+        }
+      }
+
+      const importedNews = localStorage.getItem('omni_shadowing_imported_news');
+      if (importedNews) {
+        const parsed = JSON.parse(importedNews);
+        if (parsed?.segments?.length > 0) {
+          applyImportedPayload(parsed, 'web');
+          localStorage.removeItem('omni_shadowing_imported_news');
+          return;
+        }
+      }
+    } catch (e) {
+      console.error('Lỗi khi nạp dữ liệu chuyển sang Shadowing Studio:', e);
+    }
+  }, [location.pathname, location.key, location.state, applyImportedPayload]);
+
+  // 2. Lắng nghe Custom Event tức thời
+  useEffect(() => {
+    const handleCustomImport = (e) => {
+      const data = e.detail;
+      if (data && data.segments && data.segments.length > 0) {
+        const targetTab = data.sourceType === 'news' ? 'web' : 'reading';
+        applyImportedPayload(data, targetTab);
+      }
+    };
+    window.addEventListener('omni_shadowing_import', handleCustomImport);
+    return () => window.removeEventListener('omni_shadowing_import', handleCustomImport);
+  }, [applyImportedPayload]);
+
+  // 3. Lắng nghe Storage Event
+  useEffect(() => {
+    const handleStorage = (e) => {
+      if (e.key === 'omni_shadowing_imported_story' || e.key === 'omni_shadowing_imported_news') {
+        try {
+          if (e.key === 'omni_shadowing_imported_story' && e.newValue) {
+            applyImportedPayload(JSON.parse(e.newValue), 'reading');
+            localStorage.removeItem('omni_shadowing_imported_story');
+          } else if (e.key === 'omni_shadowing_imported_news' && e.newValue) {
+            applyImportedPayload(JSON.parse(e.newValue), 'web');
+            localStorage.removeItem('omni_shadowing_imported_news');
+          }
+        } catch(err) {}
+      }
+    };
+    window.addEventListener('storage', handleStorage);
+    return () => window.removeEventListener('storage', handleStorage);
+  }, [applyImportedPayload]);
+
+  // 4. Tự động kiểm tra và bổ sung bản dịch tiếng Việt cho bài học đang mở nếu còn thiếu
+  useEffect(() => {
+    const currentSegments = sessionStore[activeTab]?.segments;
+    if (currentSegments && currentSegments.length > 0 && currentSegments.some(s => !s.vi)) {
+      ensureSegmentsHaveTranslation(currentSegments).then(enriched => {
+        setSessionStore(prev => {
+          if (!prev[activeTab]) return prev;
+          return {
+            ...prev,
+            [activeTab]: {
+              ...prev[activeTab],
+              segments: enriched
+            }
+          };
+        });
+        segmentsRef.current = enriched;
+      });
+    }
+  }, [activeTab]);
+
+  // Filtered stories from the 294-work SLA Reading Corpus
+  const filteredReadingStories = useMemo(() => {
+    if (!READING_CORPUS || !READING_CORPUS.length) return [];
+    return READING_CORPUS.filter(st => {
+      const matchLvl = readingLevelFilter === 'ALL' || (st.level && st.level.toUpperCase() === readingLevelFilter.toUpperCase());
+      if (!matchLvl) return false;
+      if (!readingSearchQuery.trim()) return true;
+      const q = readingSearchQuery.toLowerCase().trim();
+      return (st.title && st.title.toLowerCase().includes(q)) ||
+             (st.summary && st.summary.toLowerCase().includes(q)) ||
+             (st.genreLabel && st.genreLabel.toLowerCase().includes(q)) ||
+             (st.author && st.author.toLowerCase().includes(q));
+    });
+  }, [readingLevelFilter, readingSearchQuery]);
+
+  // SLA Reading Corpus Loader
+  const loadReadingStoryToShadowing = (story, chapterIdx = 0) => {
+    if (!story) return;
+    pauseAllPlayers();
+    let rawContent = '';
+    let chapterTitle = story.title;
+    if (story.isMultiChapter && story.chapters && story.chapters.length > 0) {
+      const ch = story.chapters[chapterIdx] || story.chapters[0];
+      rawContent = ch.content || '';
+      chapterTitle = `${story.title} - ${ch.chapterTitle}`;
+    } else {
+      rawContent = story.content || '';
+    }
+    const segs = parseRawTextToSegments(rawContent);
+    if (segs.length === 0) {
+      alert('Không tìm thấy nội dung câu văn để luyện tập Shadowing.');
+      return;
+    }
+    setSessionStore(prev => ({
+      ...prev,
+      reading: {
+        title: chapterTitle,
+        segments: segs,
+        currentSegIdx: 0,
+        scores: {}
+      }
+    }));
+    setActiveTab('reading');
+    setCurrentSegIdx(0);
+    currentSegIdxRef.current = 0;
+    loopCountRef.current = 0;
+    isWaitingRef.current = false;
+    segmentsRef.current = segs;
+
+    // Tự động kiểm tra và bổ sung bản dịch tiếng Việt cho các câu còn thiếu
+    ensureSegmentsHaveTranslation(segs).then(enriched => {
+      setSessionStore(prev => {
+        if (prev.reading?.title === chapterTitle) {
+          return {
+            ...prev,
+            reading: {
+              ...prev.reading,
+              segments: enriched
+            }
+          };
+        }
+        return prev;
+      });
+      segmentsRef.current = enriched;
+    });
+  };
+
   // Load Presets
   const loadPresetLesson = (preset) => {
     pauseAllPlayers();
@@ -477,7 +757,19 @@ const ShadowingStudio = () => {
           web: { title, segments: newSegs, currentSegIdx: 0, scores: {} }
         }));
         setActiveTab('web');
+        setCurrentSegIdx(0);
+        currentSegIdxRef.current = 0;
+        loopCountRef.current = 0;
+        isWaitingRef.current = false;
+        segmentsRef.current = newSegs;
         alert(`✅ Đã trích xuất thành công ${newSegs.length} câu Shadowing từ bài báo Online!`);
+        ensureSegmentsHaveTranslation(newSegs).then(enriched => {
+          setSessionStore(prev => ({
+            ...prev,
+            web: { ...prev.web, segments: enriched }
+          }));
+          segmentsRef.current = enriched;
+        });
       } else {
         alert('Không trích xuất được câu tiếng Nhật phù hợp từ URL này.');
       }
@@ -498,9 +790,21 @@ const ShadowingStudio = () => {
         web: { title, segments: newSegs, currentSegIdx: 0, scores: {} }
       }));
       setActiveTab('web');
+      setCurrentSegIdx(0);
+      currentSegIdxRef.current = 0;
+      loopCountRef.current = 0;
+      isWaitingRef.current = false;
+      segmentsRef.current = newSegs;
       setCustomTextInput('');
       setCustomTextTitle('');
       alert(`✅ Đã chuyển đổi ${newSegs.length} câu thành bài học Shadowing!`);
+      ensureSegmentsHaveTranslation(newSegs).then(enriched => {
+        setSessionStore(prev => ({
+          ...prev,
+          web: { ...prev.web, segments: enriched }
+        }));
+        segmentsRef.current = enriched;
+      });
     } else {
       alert('Vui lòng nhập văn bản tiếng Nhật có dấu chấm [。] hoặc xuống dòng.');
     }
@@ -823,7 +1127,7 @@ const ShadowingStudio = () => {
       if (promise !== undefined) { promise.catch(() => {}); }
     } else {
       // Preset / Web Open Material TTS playback
-      playTTS(seg.text);
+      playTTS(seg.text, idx);
     }
   };
 
@@ -841,8 +1145,10 @@ const ShadowingStudio = () => {
         if (promise !== undefined) { promise.catch(() => {}); }
       }
     } else {
-      if (segments[currentSegIdx]) {
-        playTTS(segments[currentSegIdx].text);
+      if (isPlaying || isTtsPlaying) {
+        pauseAllPlayers();
+      } else if (segments[currentSegIdx]) {
+        playTTS(segments[currentSegIdx].text, currentSegIdx);
       }
     }
   };
@@ -933,10 +1239,53 @@ const ShadowingStudio = () => {
     if (promise !== undefined) { promise.catch(() => {}); }
   };
 
-  // TTS Speech Synthesis
-  const playTTS = (text) => {
+  // TTS Segment Loop & Auto-Advance Handler
+  const handleTtsSegmentEnd = (segIdx) => {
+    loopCountRef.current += 1;
+    if (loopCountRef.current < repeatCountRef.current) {
+      if (segmentsRef.current[segIdx]) {
+        playTTS(segmentsRef.current[segIdx].text, segIdx);
+      }
+    } else {
+      loopCountRef.current = 0;
+      const isEchoingMode = shadowingModeRef.current === 'echo';
+      const effectiveWaitMode = isEchoingMode ? (waitModeRef.current === 'Off' ? '100' : waitModeRef.current) : waitModeRef.current;
+
+      if (effectiveWaitMode === 'Off') {
+        if (segIdx + 1 < segmentsRef.current.length) {
+          jumpToSegment(segIdx + 1);
+        } else {
+          setIsPlaying(false);
+        }
+      } else if (effectiveWaitMode === 'Manual') {
+        setIsPlaying(false);
+      } else {
+        const seg = segmentsRef.current[segIdx];
+        const waitPercent = parseInt(effectiveWaitMode) / 100;
+        const waitTime = Math.max(1200, (seg?.duration || 3) * waitPercent * 1000);
+        isWaitingRef.current = true;
+        if (waitTimeoutRef.current) clearTimeout(waitTimeoutRef.current);
+        waitTimeoutRef.current = setTimeout(() => {
+          isWaitingRef.current = false;
+          if (currentSegIdxRef.current + 1 < segmentsRef.current.length) {
+            jumpToSegment(currentSegIdxRef.current + 1);
+          } else {
+            setIsPlaying(false);
+          }
+        }, waitTime);
+      }
+    }
+  };
+
+  // TTS Speech Synthesis with Shadowing Loops
+  const playTTS = (text, segIdx = null) => {
     if (!text || !window.speechSynthesis) return;
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+    }
     setIsTtsPlaying(true);
+    setIsPlaying(true);
+    const targetIdx = segIdx !== null ? segIdx : currentSegIdxRef.current;
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'ja-JP';
     utterance.rate = playbackRate * 0.9;
@@ -944,8 +1293,14 @@ const ShadowingStudio = () => {
     const jpVoice = voices.find(v => v.lang === 'ja-JP' || v.lang === 'ja_JP');
     if (jpVoice) utterance.voice = jpVoice;
     
-    utterance.onend = () => setIsTtsPlaying(false);
-    utterance.onerror = () => setIsTtsPlaying(false);
+    utterance.onend = () => {
+      setIsTtsPlaying(false);
+      handleTtsSegmentEnd(targetIdx);
+    };
+    utterance.onerror = () => {
+      setIsTtsPlaying(false);
+      setIsPlaying(false);
+    };
     window.speechSynthesis.speak(utterance);
   };
 
@@ -1079,91 +1434,106 @@ const ShadowingStudio = () => {
     : workspaceItems.filter(i => i.playlistId === selectedPlaylistId);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 14, height: '88vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 10, height: '88vh' }}>
       
-      {/* TOP HEADER: NAVIGATION & SHADOWING MODES */}
-      <div className="glass-panel" style={{ display: 'flex', gap: 12, padding: '10px 16px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+      {/* TOP HEADER: COMPACT NAVIGATION & SHADOWING MODES */}
+      <div className="glass-panel" style={{ display: 'flex', gap: 8, padding: '6px 12px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between', borderRadius: 10 }}>
         
         {/* Source Tabs */}
-        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', alignItems: 'center' }}>
           <button 
             className={`btn ${activeTab === 'presets' ? 'btn-primary' : 'btn-outline'}`}
             onClick={() => handleTabChange('presets')}
-            style={{ padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}
+            style={{ padding: '4px 10px', display: 'flex', alignItems: 'center', gap: 5, fontSize: '0.78rem' }}
           >
-            <Sparkles size={15} /> Bài Học Mẫu
+            <Sparkles size={13} /> Bài Mẫu
+          </button>
+          <button 
+            className={`btn ${activeTab === 'reading' ? 'btn-primary' : 'btn-outline'}`}
+            onClick={() => handleTabChange('reading')}
+            style={{ padding: '4px 10px', display: 'flex', alignItems: 'center', gap: 5, fontSize: '0.78rem' }}
+          >
+            <BookOpen size={13} /> 📚 Truyện Đọc ({READING_CORPUS?.length || 294})
           </button>
           <button 
             className={`btn ${activeTab === 'web' ? 'btn-primary' : 'btn-outline'}`}
             onClick={() => handleTabChange('web')}
-            style={{ padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}
+            style={{ padding: '4px 10px', display: 'flex', alignItems: 'center', gap: 5, fontSize: '0.78rem' }}
           >
-            <Newspaper size={15} /> Web & Tin Tức Online
+            <Newspaper size={13} /> Tin Tức Web
           </button>
           <button 
             className={`btn ${activeTab === 'youtube' ? 'btn-primary' : 'btn-outline'}`}
             onClick={() => handleTabChange('youtube')}
-            style={{ padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}
+            style={{ padding: '4px 10px', display: 'flex', alignItems: 'center', gap: 5, fontSize: '0.78rem' }}
           >
-            <Globe size={15} /> Online YouTube
+            <Globe size={13} /> YouTube
           </button>
           <button 
             className={`btn ${activeTab === 'local' ? 'btn-primary' : 'btn-outline'}`}
             onClick={() => handleTabChange('local')}
-            style={{ padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}
+            style={{ padding: '4px 10px', display: 'flex', alignItems: 'center', gap: 5, fontSize: '0.78rem' }}
           >
-            <HardDrive size={15} /> Offline Media (Máy Tính)
+            <HardDrive size={13} /> Offline
           </button>
           <button 
             className={`btn ${activeTab === 'workspace' ? 'btn-primary' : 'btn-outline'}`}
             onClick={() => handleTabChange('workspace')}
-            style={{ padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}
+            style={{ padding: '4px 10px', display: 'flex', alignItems: 'center', gap: 5, fontSize: '0.78rem' }}
           >
-            <List size={15} /> Playlist & Workspace ({workspaceItems.length})
+            <List size={13} /> Playlist ({workspaceItems.length})
           </button>
         </div>
 
         {/* 4 Scientific Shadowing Modes Selector */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(0,0,0,0.3)', padding: '4px 8px', borderRadius: 10, border: '1px solid var(--glass-border)' }}>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', fontWeight: 600, marginRight: 4 }}>CHẾ ĐỘ:</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 4, background: 'rgba(0,0,0,0.25)', padding: '2px 6px', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
+          <span style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)', fontWeight: 700, marginRight: 2 }}>CHẾ ĐỘ:</span>
           
           <button 
             onClick={() => setShadowingMode('text')} 
             className={`btn ${shadowingMode === 'text' ? 'btn-primary' : 'btn-ghost'}`} 
-            style={{ padding: '4px 10px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4 }}
+            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3 }}
             title="Text-Guided: Nghe + Phụ đề tiếng Nhật + Furigana"
           >
-            <FileText size={13}/> Text-Guided
+            <FileText size={12}/> Text
           </button>
 
           <button 
             onClick={() => setShadowingMode('blind')} 
             className={`btn ${shadowingMode === 'blind' ? 'btn-primary' : 'btn-ghost'}`} 
-            style={{ padding: '4px 10px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4, background: shadowingMode === 'blind' ? '#8b5cf6' : 'transparent', color: 'white' }}
+            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3, background: shadowingMode === 'blind' ? '#8b5cf6' : 'transparent', color: 'white' }}
             title="Blind Shadowing: Làm mờ phụ đề luyện phản xạ nghe trực tiếp"
           >
-            <EyeOff size={13}/> Blind (Ẩn Chữ)
+            <EyeOff size={12}/> Blind
           </button>
 
           <button 
             onClick={() => setShadowingMode('echo')} 
             className={`btn ${shadowingMode === 'echo' ? 'btn-primary' : 'btn-ghost'}`} 
-            style={{ padding: '4px 10px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4, background: shadowingMode === 'echo' ? '#f59e0b' : 'transparent', color: 'white' }}
+            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3, background: shadowingMode === 'echo' ? '#f59e0b' : 'transparent', color: 'white' }}
             title="Echoing Method (Dr. Karen Chung): Tự động dừng sau từng câu để nhại lại"
           >
-            <Repeat size={13}/> Echoing
+            <Repeat size={12}/> Echo
           </button>
 
           <button 
             onClick={() => setShadowingMode('record')} 
             className={`btn ${shadowingMode === 'record' ? 'btn-primary' : 'btn-ghost'}`} 
-            style={{ padding: '4px 10px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: 4, background: shadowingMode === 'record' ? '#ef4444' : 'transparent', color: 'white' }}
+            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3, background: shadowingMode === 'record' ? '#ef4444' : 'transparent', color: 'white' }}
             title="Record & Compare: Thu âm giọng thực tế và nghe lại đối chiếu"
           >
-            <Mic size={13}/> Ghi Âm & Đối Chiếu
+            <Mic size={12}/> Record
+          </button>
+
+          <button 
+            onClick={() => setShadowingMode('relaxed')} 
+            className={`btn ${shadowingMode === 'relaxed' ? 'btn-primary' : 'btn-ghost'}`} 
+            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3, background: shadowingMode === 'relaxed' ? '#10b981' : 'transparent', color: 'white' }}
+            title="Stephen Krashen Relaxed Immersion: Tắm ngôn ngữ thư giãn, không chấm điểm phán xét, hạ thấp bộ lọc cảm xúc"
+          >
+            🌿 Relaxed
           </button>
         </div>
-
       </div>
 
       {/* TAB CONTENTS */}
@@ -1188,10 +1558,182 @@ const ShadowingStudio = () => {
           </div>
         )}
 
+        {/* SLA READING CORPUS BROWSER & SHADOWING ADAPTER */}
+        {activeTab === 'reading' && (
+          <div className="glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: 10, padding: 12 }}>
+            
+            {/* Active Story Bar */}
+            {activeTitle && segments.length > 0 && (
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 14px', background: 'rgba(16, 185, 129, 0.12)', border: '1px solid rgba(16, 185, 129, 0.35)', borderRadius: 10, flexWrap: 'wrap', gap: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.84rem' }}>
+                  <span style={{ color: 'var(--accent-success)', fontWeight: 800 }}>🎯 Đang nạp bài luyện:</span>
+                  <span style={{ color: 'var(--text-primary)', fontWeight: 700 }} className="jp-text">{activeTitle}</span>
+                  <span style={{ fontSize: '0.74rem', color: 'var(--text-tertiary)' }}>({segments.length} câu)</span>
+                </div>
+                <button 
+                  onClick={() => jumpToSegment(0)}
+                  className="btn btn-primary"
+                  style={{ padding: '3px 12px', fontSize: '0.76rem', display: 'flex', alignItems: 'center', gap: 4 }}
+                >
+                  <Play size={12}/> Bắt đầu từ câu 1
+                </button>
+              </div>
+            )}
+
+            {/* Top Bar: Level filter, search, & Active story info */}
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+              
+              {/* Level Filter Buttons */}
+              <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', fontWeight: 700 }}>CẤP ĐỘ:</span>
+                {['ALL', 'N5', 'N4', 'N3', 'N2', 'N1'].map(lvl => {
+                  const isActive = readingLevelFilter === lvl;
+                  const color = LEVEL_COLORS[lvl] || 'var(--accent-primary)';
+                  return (
+                    <button
+                      key={lvl}
+                      onClick={() => setReadingLevelFilter(lvl)}
+                      className="btn"
+                      style={{
+                        padding: '4px 10px',
+                        fontSize: '0.75rem',
+                        fontWeight: 700,
+                        borderRadius: 6,
+                        border: `1px solid ${isActive ? color : 'var(--glass-border)'}`,
+                        background: isActive ? `${color}25` : 'transparent',
+                        color: isActive ? (lvl === 'ALL' ? 'var(--text-primary)' : color) : 'var(--text-secondary)'
+                      }}
+                    >
+                      {lvl === 'ALL' ? 'Tất cả (294)' : lvl}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Search Box */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(0,0,0,0.25)', padding: '4px 10px', borderRadius: 8, border: '1px solid var(--glass-border)', minWidth: 220 }}>
+                <Search size={14} color="var(--text-tertiary)" />
+                <input
+                  type="text"
+                  placeholder="Tìm kiếm trong 294 bài đọc..."
+                  value={readingSearchQuery}
+                  onChange={e => setReadingSearchQuery(e.target.value)}
+                  style={{ background: 'transparent', border: 'none', outline: 'none', color: 'var(--text-primary)', fontSize: '0.8rem', width: '100%' }}
+                />
+                {readingSearchQuery && (
+                  <button onClick={() => setReadingSearchQuery('')} style={{ background: 'transparent', border: 'none', color: 'var(--text-tertiary)', cursor: 'pointer', padding: 0 }}>
+                    <X size={13} />
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Stories Horizontal Scroller / Grid */}
+            <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 6 }}>
+              {filteredReadingStories.slice(0, 50).map(st => {
+                const isSelected = activeTitle.includes(st.title);
+                const lvlColor = LEVEL_COLORS[st.level] || 'var(--accent-primary)';
+                return (
+                  <div
+                    key={st.id}
+                    style={{
+                      minWidth: 220,
+                      maxWidth: 250,
+                      padding: '8px 11px',
+                      borderRadius: 8,
+                      background: isSelected ? 'rgba(16, 185, 129, 0.12)' : 'var(--bg-surface)',
+                      border: `1px solid ${isSelected ? '#10b981' : 'var(--glass-border)'}`,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      gap: 6,
+                      flexShrink: 0
+                    }}
+                  >
+                    <div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
+                        <span style={{ fontSize: '0.66rem', fontWeight: 800, padding: '1px 5px', borderRadius: 4, background: `${lvlColor}20`, color: lvlColor }}>
+                          {st.level}
+                        </span>
+                        <span style={{ fontSize: '0.68rem', color: 'var(--text-tertiary)' }}>
+                          {st.readingTime || (st.isMultiChapter ? `${st.chapters?.length} chương` : '1 bài')}
+                        </span>
+                      </div>
+                      <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} title={st.title}>
+                        {st.title}
+                      </div>
+                      {st.summary && (
+                        <div style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', marginTop: 2, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', lineHeight: 1.3 }}>
+                          {st.summary}
+                        </div>
+                      )}
+                    </div>
+
+                    <div style={{ display: 'flex', gap: 4, marginTop: 4 }}>
+                      {st.isMultiChapter && st.chapters && st.chapters.length > 1 ? (
+                        <select
+                          onChange={(e) => loadReadingStoryToShadowing(st, parseInt(e.target.value))}
+                          style={{
+                            flex: 1,
+                            padding: '4px 6px',
+                            fontSize: '0.72rem',
+                            borderRadius: 6,
+                            background: 'var(--bg-primary)',
+                            color: 'var(--text-primary)',
+                            border: '1px solid var(--glass-border)',
+                            cursor: 'pointer'
+                          }}
+                          defaultValue=""
+                        >
+                          <option value="" disabled>Chọn chương ({st.chapters.length})...</option>
+                          {st.chapters.map((ch, idx) => (
+                            <option key={idx} value={idx}>{ch.chapterTitle || `Chương ${idx + 1}`}</option>
+                          ))}
+                        </select>
+                      ) : (
+                        <button
+                          className="btn btn-primary"
+                          onClick={() => loadReadingStoryToShadowing(st, 0)}
+                          style={{ width: '100%', padding: '4px 8px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}
+                        >
+                          <Headphones size={12} /> Luyện Shadowing
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            {filteredReadingStories.length > 50 && (
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)', textAlign: 'right' }}>
+                Đang hiển thị 50 / {filteredReadingStories.length} tác phẩm (Nhập từ khóa tìm kiếm để thu hẹp)
+              </div>
+            )}
+          </div>
+        )}
+
         {/* OPEN WEB MATERIALS & NEWS FETCHER */}
         {activeTab === 'web' && (
           <div className="glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: 12, padding: 14 }}>
             
+            {/* Active News Bar */}
+            {activeTitle && segments.length > 0 && (
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 14px', background: 'rgba(59, 130, 246, 0.12)', border: '1px solid rgba(59, 130, 246, 0.35)', borderRadius: 10, flexWrap: 'wrap', gap: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.84rem' }}>
+                  <span style={{ color: 'var(--accent-primary)', fontWeight: 800 }}>📰 Đang nạp bản tin:</span>
+                  <span style={{ color: 'var(--text-primary)', fontWeight: 700 }} className="jp-text">{activeTitle}</span>
+                  <span style={{ fontSize: '0.74rem', color: 'var(--text-tertiary)' }}>({segments.length} câu)</span>
+                </div>
+                <button 
+                  onClick={() => jumpToSegment(0)}
+                  className="btn btn-primary"
+                  style={{ padding: '3px 12px', fontSize: '0.76rem', display: 'flex', alignItems: 'center', gap: 4 }}
+                >
+                  <Play size={12}/> Bắt đầu từ câu 1
+                </button>
+              </div>
+            )}
+
             {/* Direct URL Fetcher & News Feeds */}
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
               <div style={{ display: 'flex', gap: 8, flex: 1, minWidth: 260 }}>
@@ -1445,12 +1987,35 @@ const ShadowingStudio = () => {
                )}
             </div>
 
-            {/* Presets & Web Open Materials Player Banner */}
-            {(activeTab === 'presets' || activeTab === 'web') && (
-              <div className="glass-panel" style={{ padding: 16, textAlign: 'center', background: 'linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1))', border: '1px solid rgba(59,130,246,0.3)', borderRadius: 12 }}>
-                <Newspaper size={32} color="#60a5fa" style={{ marginBottom: 8 }} />
-                <h3 style={{ margin: '0 0 4px 0', fontSize: '1rem', color: 'white' }}>{activeTitle}</h3>
-                <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Bài học tự do tích hợp sẵn đọc tự động AI TTS & Furigana.</p>
+            {/* Presets & Web Open Materials & SLA Reading Player Banner */}
+            {(activeTab === 'presets' || activeTab === 'web' || activeTab === 'reading') && (
+              <div className="glass-panel" style={{ padding: 16, textAlign: 'center', background: 'var(--bg-card)', border: '1px solid var(--glass-border)', borderRadius: 12 }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 8 }}>
+                  {activeTab === 'reading' ? (
+                    <span style={{ padding: '3px 10px', borderRadius: 12, background: 'rgba(16,185,129,0.15)', color: '#10b981', fontSize: '0.72rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                      <BookOpen size={13} /> Bài Đọc SLA Đang Chọn
+                    </span>
+                  ) : activeTab === 'web' ? (
+                    <span style={{ padding: '3px 10px', borderRadius: 12, background: 'rgba(59,130,246,0.15)', color: '#3b82f6', fontSize: '0.72rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                      <Newspaper size={13} /> Bản Tin / Web Đang Chọn
+                    </span>
+                  ) : (
+                    <span style={{ padding: '3px 10px', borderRadius: 12, background: 'rgba(139,92,246,0.15)', color: '#8b5cf6', fontSize: '0.72rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                      <Sparkles size={13} /> Bài Học Mẫu
+                    </span>
+                  )}
+                  <span style={{ fontSize: '0.72rem', color: 'var(--text-tertiary)' }}>
+                    {segments.length} câu luyện tập
+                  </span>
+                </div>
+                <h3 style={{ margin: '0 0 6px 0', fontSize: '1.05rem', color: 'var(--text-primary)', fontWeight: 700 }} className="jp-text">{activeTitle}</h3>
+                <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
+                  {activeTab === 'reading'
+                    ? 'Ngữ liệu đọc SLA tích hợp đọc tự động AI TTS, Furigana & Luyện phát âm.'
+                    : activeTab === 'web'
+                    ? 'Bản tin / Web tích hợp đọc tự động AI TTS, Furigana & Nhại câu theo từng phân đoạn.'
+                    : 'Bài học tự do tích hợp sẵn đọc tự động AI TTS & Furigana.'}
+                </p>
               </div>
             )}
 
@@ -1590,11 +2155,23 @@ const ShadowingStudio = () => {
                                  <div className="jp-text" style={{ fontSize: '1.2rem', lineHeight: 1.8, color: isCurrent ? 'white' : '#cbd5e1' }}>
                                      <FuriganaText text={seg.text} />
                                  </div>
-                                 {showVi && seg.vi && (
-                                     <div style={{ fontSize: '0.85rem', color: '#94a3b8', marginTop: 4, fontStyle: 'italic' }}>
-                                         {seg.vi}
-                                     </div>
-                                 )}
+                                  {showVi && (
+                                      <div style={{ 
+                                          fontSize: '0.88rem', 
+                                          color: 'var(--text-secondary)', 
+                                          marginTop: 6, 
+                                          fontStyle: 'italic',
+                                          borderLeft: '3px solid var(--accent-primary)',
+                                          paddingLeft: 8,
+                                          lineHeight: 1.5
+                                      }}>
+                                          {seg.vi || (
+                                              <span style={{ color: 'var(--text-tertiary)', fontSize: '0.78rem' }}>
+                                                  (Đang cập nhật bản dịch tiếng Việt...)
+                                              </span>
+                                          )}
+                                      </div>
+                                  )}
                               </div>
 
                               {/* Interactive Recording & Dual Audio Compare Tools */}
@@ -1602,11 +2179,15 @@ const ShadowingStudio = () => {
                                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 8, marginTop: 2, flexWrap: 'wrap', gap: 8 }}>
                                       
                                       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                                          {scores[idx] !== undefined && (
+                                          {shadowingMode === 'relaxed' ? (
+                                              <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#10b981', background: 'rgba(16,185,129,0.15)', padding: '2px 8px', borderRadius: 10 }}>
+                                                  🌿 Nghe ngấm tự nhiên
+                                              </span>
+                                          ) : scores[idx] !== undefined ? (
                                               <span style={{ fontSize: '0.85rem', fontWeight: 700, color: scores[idx] > 80 ? 'var(--accent-success)' : scores[idx] > 50 ? '#f59e0b' : 'var(--accent-danger)' }}>
                                                   Điểm: {scores[idx]}%
                                               </span>
-                                          )}
+                                          ) : null}
                                           <button 
                                               onClick={() => handleSaveWordToFlashcards(window.getSelection()?.toString() || seg.text.slice(0, 10))}
                                               className="btn btn-outline"

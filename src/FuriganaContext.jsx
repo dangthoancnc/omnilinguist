@@ -12,20 +12,38 @@ export const FuriganaProvider = ({ children }) => {
   });
 
   useEffect(() => {
+    let isCancelled = false;
     const initKuroshiro = async () => {
+      // Đợi Kuromoji script tải xong từ CDN nếu chưa sẵn sàng
+      for (let i = 0; i < 40; i++) {
+        if (isCancelled) return;
+        if (typeof window !== 'undefined' && window.kuromoji) {
+          break;
+        }
+        await new Promise(res => setTimeout(res, 150));
+      }
+
+      if (typeof window === 'undefined' || !window.kuromoji) {
+        console.warn("⚠️ Kuromoji CDN script is not available.");
+        return;
+      }
+
       try {
         const k = new Kuroshiro();
-        // Sử dụng CustomKuromojiAnalyzer gọi từ CDN để vượt qua lỗi của Vite
-        // Các file .dat.gz đã được đổi tên thành .dat.gz.bin và chặn qua XHR
+        // Sử dụng CustomKuromojiAnalyzer gọi từ local dictionary binaries /dict/*.dat.gz.bin
         await k.init(new CustomKuromojiAnalyzer({ dictPath: '/dict' }));
-        setKuroshiro(k);
-        setIsReady(true);
-        console.log("✅ Kuroshiro Furigana Engine initialized (via Local Binaries)!");
+        if (!isCancelled) {
+          setKuroshiro(k);
+          setIsReady(true);
+          console.log("✅ Kuroshiro Furigana Engine initialized (via Local Binaries)!");
+        }
       } catch (err) {
         console.error("❌ Failed to initialize Kuroshiro:", err);
       }
     };
+
     initKuroshiro();
+    return () => { isCancelled = true; };
   }, []);
 
   const toggleFurigana = () => {

@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { 
   Target, Flame, BookOpen, Mic, Brain, PencilLine, Map as MapIcon, ChevronRight, 
   AlertCircle, LogIn, UserPlus, CheckCircle2, History, BarChart2, ShieldCheck, 
-  Sparkles, Layers, RefreshCw, Clock, Play, RotateCcw
+  Sparkles, Layers, RefreshCw, Clock, Play, RotateCcw, Headphones, Award
 } from 'lucide-react';
-import { getStats, getStreak, updateStreak, getUserProfile, getFreeStudyHistory, getTodayStats } from './studyStore.js';
+import { getStats, getStreak, updateStreak, getUserProfile, getFreeStudyHistory, getTodayStats, getImmersionStats } from './studyStore.js';
 import { useAuth } from './AuthContext.jsx';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
@@ -59,6 +59,7 @@ const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('overview'); // 'overview' | 'history'
   const [showAuthModal, setShowAuthModal] = useState(false);
   const todayStats = getTodayStats();
+  const immersionStats = getImmersionStats();
 
   useEffect(() => {
     setStreak(updateStreak());
@@ -222,6 +223,117 @@ const Dashboard = () => {
 
       {activeTab === 'overview' ? (
         <>
+          {/* ============ STEPHEN KRASHEN SLA IMMERSION CENTER ============ */}
+          <div className="glass-panel" style={{
+            padding: '22px 24px',
+            borderRadius: 16,
+            background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95))',
+            border: '1px solid rgba(59, 130, 246, 0.35)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 16
+          }}>
+            {/* Header with SLA Level */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{ padding: 10, borderRadius: 12, background: 'rgba(59, 130, 246, 0.2)', color: '#60a5fa', display: 'flex' }}>
+                  <Headphones size={24} />
+                </div>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <h3 style={{ margin: 0, fontSize: '1.15rem', color: 'white', fontWeight: 700 }}>
+                      Vùng Thụ Đắc Ngôn Ngữ Tự Nhiên
+                    </h3>
+                    <span style={{ fontSize: '0.72rem', background: 'rgba(59, 130, 246, 0.25)', color: '#93c5fd', padding: '2px 8px', borderRadius: 10, fontWeight: 700 }}>
+                      Stephen Krashen SLA
+                    </span>
+                  </div>
+                  <p style={{ margin: '4px 0 0', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
+                    Tổng thời gian tắm ngôn ngữ (Comprehensible Input) — thước đo cốt lõi để hình thành phản xạ tự nhiên.
+                  </p>
+                </div>
+              </div>
+
+              {/* Current Milestone Badge */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'rgba(0,0,0,0.3)', padding: '6px 14px', borderRadius: 12, border: `1px solid ${immersionStats.levelColor}40` }}>
+                <Award size={18} color={immersionStats.levelColor} />
+                <div>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)', textTransform: 'uppercase' }}>Cấp độ SLA</div>
+                  <div style={{ fontSize: '0.88rem', fontWeight: 800, color: immersionStats.levelColor }}>
+                    Level {immersionStats.slaLevel} · {immersionStats.levelTitle}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Milestone Progress Bar */}
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', marginBottom: 6 }}>
+                <span style={{ color: 'var(--text-secondary)' }}>
+                  Tiến độ tích lũy: <strong style={{ color: 'white' }}>{immersionStats.totalImmersionHours} giờ</strong>
+                </span>
+                <span style={{ color: immersionStats.levelColor, fontWeight: 700 }}>
+                  Mục tiêu mốc tiếp theo: {immersionStats.nextMilestone} giờ ({immersionStats.progressInLevel}%)
+                </span>
+              </div>
+              <div style={{ width: '100%', height: 8, background: 'rgba(0,0,0,0.4)', borderRadius: 4, overflow: 'hidden' }}>
+                <div style={{ width: `${immersionStats.progressInLevel}%`, height: '100%', background: `linear-gradient(90deg, #3b82f6, ${immersionStats.levelColor})`, transition: 'width 0.5s ease' }} />
+              </div>
+            </div>
+
+            {/* 2 Core Input KPIs: Listening + Reading */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12 }}>
+              
+              {/* Listening Metric */}
+              <div style={{ padding: '14px 16px', background: 'rgba(59, 130, 246, 0.08)', borderRadius: 12, border: '1px solid rgba(59, 130, 246, 0.2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <div style={{ fontSize: '0.78rem', color: '#93c5fd', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
+                    <Headphones size={14} /> Nghe Ngấm Hôm Nay
+                  </div>
+                  <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#60a5fa', lineHeight: 1.1 }}>
+                    {immersionStats.todayListeningMinutes} <span style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-secondary)' }}>/ 30 phút</span>
+                  </div>
+                  <div style={{ fontSize: '0.73rem', color: 'var(--text-tertiary)', marginTop: 4 }}>
+                    Tổng tích lũy: {immersionStats.totalListeningHours} giờ nghe
+                  </div>
+                </div>
+                <button 
+                  onClick={() => navigate('/shadowing')} 
+                  style={{ padding: '8px 12px', borderRadius: 8, background: 'rgba(59, 130, 246, 0.2)', border: '1px solid rgba(59, 130, 246, 0.4)', color: '#93c5fd', cursor: 'pointer', fontSize: '0.78rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}
+                >
+                  Luyện Nghe <ChevronRight size={14} />
+                </button>
+              </div>
+
+              {/* Reading Metric */}
+              <div style={{ padding: '14px 16px', background: 'rgba(16, 185, 129, 0.08)', borderRadius: 12, border: '1px solid rgba(16, 185, 129, 0.2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <div style={{ fontSize: '0.78rem', color: '#6ee7b7', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
+                    <BookOpen size={14} /> Đọc Hiểu i+1 Hôm Nay
+                  </div>
+                  <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#34d399', lineHeight: 1.1 }}>
+                    {immersionStats.todayReadingWords} <span style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-secondary)' }}>/ 500 từ</span>
+                  </div>
+                  <div style={{ fontSize: '0.73rem', color: 'var(--text-tertiary)', marginTop: 4 }}>
+                    Tổng tích lũy: {immersionStats.totalReadingWords} từ đã đọc
+                  </div>
+                </div>
+                <button 
+                  onClick={() => navigate('/reading')} 
+                  style={{ padding: '8px 12px', borderRadius: 8, background: 'rgba(16, 185, 129, 0.2)', border: '1px solid rgba(16, 185, 129, 0.4)', color: '#6ee7b7', cursor: 'pointer', fontSize: '0.78rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}
+                >
+                  Kho Đọc i+1 <ChevronRight size={14} />
+                </button>
+              </div>
+
+            </div>
+
+            {/* Stephen Krashen Wisdom Tip */}
+            <div style={{ padding: '10px 14px', background: 'rgba(255,255,255,0.03)', borderRadius: 8, borderLeft: '3px solid #60a5fa', fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+              💬 <strong>Stephen Krashen:</strong> <em>"Ngôn ngữ được thụ đắc khi chúng ta tập trung vào ý nghĩa thông điệp chứ không phải cấu trúc ngữ pháp. Hãy nạp ít nhất 20-30 phút truyện ngắn hoặc podcast dễ hiểu hôm nay!"</em>
+            </div>
+          </div>
+
           {/* ============ NEW: PHÒNG LUYỆN TẬP & THỐNG KÊ HÔM NAY ============ */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20 }}>
             

@@ -1,8 +1,8 @@
 import { db } from './db.js';
 import localMasterDb from './data/jlpt_master_db.json';
 
-const CURRENT_DATA_VERSION = 'v16.0.0_full_joyo_2674_kanji';
-const CHUNK_SIZE = 200; // Chia nhỏ 200 bản ghi / đợt để nạp siêu mượt
+const CURRENT_DATA_VERSION = 'v17.0.0_full_10k_vocab_n5_n1';
+const CHUNK_SIZE = 250; // Chia nhỏ 250 bản ghi / đợt để nạp siêu mượt
 
 const parseField = (val) => {
   if (!val) return [];
@@ -37,7 +37,7 @@ export async function syncMasterData() {
     const grammarCount = await db.grammar.count();
 
     // ⚡ TỐI ƯU SIÊU TỐC: Nếu phiên bản đã khớp & đã có đủ dữ liệu từ vựng + kanji + ngữ pháp -> Bỏ qua nạp lại
-    if (savedVer === CURRENT_DATA_VERSION && grammarCount > 1000 && vocabCount > 2000 && kanjiCount > 2000) {
+    if (savedVer === CURRENT_DATA_VERSION && grammarCount > 1000 && vocabCount > 8000 && kanjiCount > 2000) {
       console.log(`⚡ [FastLoad] Master Data đã sẵn sàng (${vocabCount} từ vựng, ${kanjiCount} chữ Kanji & Bộ thủ, ${grammarCount} mẫu ngữ pháp Bunpro). Bỏ qua nạp lại!`);
       return;
     }

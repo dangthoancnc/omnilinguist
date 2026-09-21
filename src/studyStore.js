@@ -562,3 +562,144 @@ export async function pullCloudData() {
     return false;
   }
 }
+
+// ── Stephen Krashen SLA Immersion Tracking ──
+export function logListeningTime(seconds, source = 'shadowing') {
+  if (!seconds || seconds <= 0) return;
+  const dateStr = new Date().toLocaleDateString('en-CA');
+  const dailyKey = getStorageKey(`immersion_listening_${dateStr}`);
+  const totalKey = getStorageKey('immersion_listening_total');
+  
+  try {
+    const currentDaily = parseInt(localStorage.getItem(dailyKey) || '0', 10);
+    const newDaily = currentDaily + Math.round(seconds);
+    localStorage.setItem(dailyKey, newDaily.toString());
+
+    const currentTotal = parseInt(localStorage.getItem(totalKey) || '0', 10);
+    const newTotal = currentTotal + Math.round(seconds);
+    localStorage.setItem(totalKey, newTotal.toString());
+
+    // Đẩy vào hàng đợi sync offline
+    enqueueSync('omni_immersion_logs', {
+      type: 'listening',
+      seconds: Math.round(seconds),
+      source,
+      logged_at: new Date().toISOString()
+    });
+  } catch (e) {
+    console.warn('logListeningTime error:', e);
+  }
+}
+
+export function logReadingProgress(words, source = 'reader') {
+  if (!words || words <= 0) return;
+  const dateStr = new Date().toLocaleDateString('en-CA');
+  const dailyKey = getStorageKey(`immersion_reading_${dateStr}`);
+  const totalKey = getStorageKey('immersion_reading_total');
+  
+  try {
+    const currentDaily = parseInt(localStorage.getItem(dailyKey) || '0', 10);
+    const newDaily = currentDaily + Math.round(words);
+    localStorage.setItem(dailyKey, newDaily.toString());
+
+    const currentTotal = parseInt(localStorage.getItem(totalKey) || '0', 10);
+    const newTotal = currentTotal + Math.round(words);
+    localStorage.setItem(totalKey, newTotal.toString());
+
+    // Đẩy vào hàng đợi sync offline
+    enqueueSync('omni_immersion_logs', {
+      type: 'reading',
+      words: Math.round(words),
+      source,
+      logged_at: new Date().toISOString()
+    });
+  } catch (e) {
+    console.warn('logReadingProgress error:', e);
+  }
+}
+
+export function getImmersionStats() {
+  const dateStr = new Date().toLocaleDateString('en-CA');
+  const dailyListeningKey = getStorageKey(`immersion_listening_${dateStr}`);
+  const totalListeningKey = getStorageKey('immersion_listening_total');
+  const dailyReadingKey = getStorageKey(`immersion_reading_${dateStr}`);
+  const totalReadingKey = getStorageKey('immersion_reading_total');
+
+  try {
+    const todayListeningSec = parseInt(localStorage.getItem(dailyListeningKey) || '0', 10);
+    const totalListeningSec = parseInt(localStorage.getItem(totalListeningKey) || '0', 10);
+    const todayReadingWords = parseInt(localStorage.getItem(dailyReadingKey) || '0', 10);
+    const totalReadingWords = parseInt(localStorage.getItem(totalReadingKey) || '0', 10);
+
+    const todayListeningMinutes = Math.round(todayListeningSec / 60);
+    const totalListeningHours = Math.round((totalListeningSec / 3600) * 10) / 10;
+    
+    // Quy đổi từ ngữ đọc tương đương thời lượng tiếp thu: ~150-200 từ/phút
+    const readingEquivalentHours = Math.round((totalReadingWords / 150 / 60) * 10) / 10;
+    const totalImmersionHours = Math.round((totalListeningHours + readingEquivalentHours) * 10) / 10;
+
+    // SLA Milestone Levels (Thang thụ đắc Krashen/Refold)
+    let slaLevel = 1;
+    let levelTitle = 'Sơ Khai (Sound Familiarity)';
+    let levelColor = '#10b981';
+    let nextMilestone = 25;
+    let currentBase = 0;
+
+    if (totalImmersionHours >= 500) {
+      slaLevel = 5;
+      levelTitle = 'Bản Ngữ Hóa (Natural Flow)';
+      levelColor = '#ec4899';
+      nextMilestone = 1000;
+      currentBase = 500;
+    } else if (totalImmersionHours >= 200) {
+      slaLevel = 4;
+      levelTitle = 'Bứt Phá (Native Immersion)';
+      levelColor = '#8b5cf6';
+      nextMilestone = 500;
+      currentBase = 200;
+    } else if (totalImmersionHours >= 75) {
+      slaLevel = 3;
+      levelTitle = 'Thẩm Thấu (Comprehension Bridge)';
+      levelColor = '#3b82f6';
+      nextMilestone = 200;
+      currentBase = 75;
+    } else if (totalImmersionHours >= 25) {
+      slaLevel = 2;
+      levelTitle = 'Khởi Động (Sentence Catching)';
+      levelColor = '#f59e0b';
+      nextMilestone = 75;
+      currentBase = 25;
+    }
+
+    const progressInLevel = Math.min(
+      100,
+      Math.max(0, Math.round(((totalImmersionHours - currentBase) / (nextMilestone - currentBase)) * 100))
+    );
+
+    return {
+      todayListeningMinutes,
+      todayReadingWords,
+      totalListeningHours,
+      totalReadingWords,
+      totalImmersionHours,
+      slaLevel,
+      levelTitle,
+      levelColor,
+      nextMilestone,
+      progressInLevel
+    };
+  } catch (e) {
+    return {
+      todayListeningMinutes: 0,
+      todayReadingWords: 0,
+      totalListeningHours: 0,
+      totalReadingWords: 0,
+      totalImmersionHours: 0,
+      slaLevel: 1,
+      levelTitle: 'Sơ Khai (Sound Familiarity)',
+      levelColor: '#10b981',
+      nextMilestone: 25,
+      progressInLevel: 0
+    };
+  }
+}
