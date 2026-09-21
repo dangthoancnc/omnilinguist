@@ -15,7 +15,8 @@ import { API_BASE_URL } from './config.js';
 import { logListeningTime } from './studyStore.js';
 import { READING_CORPUS } from './data/readingCorpus.js';
 import { getCachedTranslation, ensureSegmentsHaveTranslation } from './services/storyTranslationService.js';
-import { getStoryMangaArtwork } from './data/mangaArtworks.jsx';
+import { getStoryMangaArtwork, getStorySceneArtwork } from './data/mangaArtworks.jsx';
+import { useFurigana } from './FuriganaContext';
 
 const LEVEL_COLORS = { N5: '#10b981', N4: '#3b82f6', N3: '#f59e0b', N2: '#8b5cf6', N1: '#ef4444' };
 
@@ -351,14 +352,16 @@ const ShadowingStudio = () => {
   const [customTextTitle, setCustomTextTitle] = useState('');
   const [isStoryShelfOpen, setIsStoryShelfOpen] = useState(false);
 
-  // Selected Artwork for visual immersion (Ehon / Manga)
+  const { showFurigana, toggleFurigana } = useFurigana();
+
+  // Selected Artwork for visual immersion (Ehon / Manga) with multi-scene dynamic sync
   const currentStoryArtwork = useMemo(() => {
-    return getStoryMangaArtwork({
+    return getStorySceneArtwork({
       id: activeTab,
       title: activeTitle,
       genre: activeTab === 'reading' ? 'folktale' : activeTab
-    }, activeTitle);
-  }, [activeTab, activeTitle]);
+    }, activeTitle, currentSegIdx, segments.length || 1);
+  }, [activeTab, activeTitle, currentSegIdx, segments.length]);
 
   // YouTube States
   const [urlInput, setUrlInput] = useState('');
@@ -461,8 +464,8 @@ const ShadowingStudio = () => {
     fetchWorkspaceItems();
   }, [fetchWorkspaceItems]);
 
-  // Cleanup players when switching main tabs to prevent audio state leaks & AbortErrors
-  const pauseAllPlayers = () => {
+  // Comprehensive Stop function for Shadowing Studio: Stop audio, video, TTS, and timers immediately
+  const handleStopAll = () => {
     if (playerRef.current && isPlayerReady.current && playerRef.current.pauseVideo) {
       try { playerRef.current.pauseVideo(); } catch(e){}
     }
@@ -473,11 +476,19 @@ const ShadowingStudio = () => {
     if (userAudioPlayerRef.current && userAudioPlayerRef.current.pause) {
       try { userAudioPlayerRef.current.pause(); } catch(e){}
     }
+    if (waitTimeoutRef.current) clearTimeout(waitTimeoutRef.current);
+    if (loopTimeoutRef.current) clearTimeout(loopTimeoutRef.current);
+    isWaitingRef.current = false;
     setIsPlaying(false);
+    setIsTtsPlaying(false);
+  };
+
+  const pauseAllPlayers = () => {
+    handleStopAll();
   };
 
   const handleTabChange = (newTab) => {
-    pauseAllPlayers();
+    handleStopAll();
     setActiveTab(newTab);
     if (reqFrameRef.current) cancelAnimationFrame(reqFrameRef.current);
   };
@@ -490,6 +501,9 @@ const ShadowingStudio = () => {
       if (e.code === 'Space') {
         e.preventDefault();
         togglePlayPause();
+      } else if (e.code === 'Escape' || e.key === 's' || e.key === 'S') {
+        e.preventDefault();
+        handleStopAll();
       } else if (e.code === 'ArrowDown' || e.code === 'ArrowRight') {
         e.preventDefault();
         jumpToSegment(currentSegIdxRef.current + 1);
@@ -1983,7 +1997,7 @@ const ShadowingStudio = () => {
                 </div>
               ) : (
                 /* EHON / MANGA ARTWORK DISPLAY */
-                <div style={{ position: 'relative', width: '100%', height: 290, background: 'var(--bg-card)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ position: 'relative', width: '100%', height: 380, background: 'var(--bg-card)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {currentStoryArtwork?.imageUrl ? (
                     <img 
                       src={currentStoryArtwork.imageUrl} 
@@ -2006,8 +2020,12 @@ const ShadowingStudio = () => {
                     background: 'linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, transparent 100%)',
                     display: 'flex', justifyContent: 'space-between', alignItems: 'center'
                   }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                      {activeTab === 'reading' ? (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
+                      {currentStoryArtwork?.totalScenes > 1 ? (
+                        <span style={{ padding: '2px 8px', borderRadius: 10, background: 'rgba(16,185,129,0.95)', color: 'white', fontSize: '0.68rem', fontWeight: 800, backdropFilter: 'blur(4px)' }}>
+                          🎨 Hoạt cảnh {currentStoryArtwork.currentSceneIdx}/{currentStoryArtwork.totalScenes}: {currentStoryArtwork.sceneTitle}
+                        </span>
+                      ) : activeTab === 'reading' ? (
                         <span style={{ padding: '2px 8px', borderRadius: 10, background: 'rgba(16,185,129,0.9)', color: 'white', fontSize: '0.68rem', fontWeight: 800, backdropFilter: 'blur(4px)' }}>
                           🎨 EHON NHẬT BẢN
                         </span>
@@ -2056,7 +2074,7 @@ const ShadowingStudio = () => {
               )}
 
               {/* Subtitle Action Toolbar */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 10px', background: 'var(--bg-card)', borderTop: '1px solid var(--glass-border)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 10px', background: 'var(--bg-card)', borderTop: '1px solid var(--glass-border)', flexWrap: 'wrap', gap: 6 }}>
                 <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
                   <label className="btn btn-outline" style={{ padding: '2px 8px', fontSize: '0.72rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4 }}>
                     <Upload size={11}/> Nạp SRT
@@ -2067,15 +2085,27 @@ const ShadowingStudio = () => {
                   </button>
                 </div>
 
-                {shadowingMode === 'blind' && (
+                <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+                  {/* Nút bật/tắt Furigana */}
                   <button 
-                    className="btn btn-outline" 
-                    onClick={() => setIsBlindRevealed(prev => !prev)}
-                    style={{ padding: '2px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 4, background: isBlindRevealed ? 'rgba(139,92,246,0.2)' : 'transparent' }}
+                    className={`btn ${showFurigana ? 'btn-primary' : 'btn-outline'}`}
+                    onClick={toggleFurigana}
+                    style={{ padding: '2px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 4 }}
+                    title="Bật/Tắt hiển thị Furigana phiên âm Kanji"
                   >
-                    {isBlindRevealed ? <Eye size={11}/> : <EyeOff size={11}/>} {isBlindRevealed ? 'Ẩn lại' : 'Xem chữ'}
+                    <span style={{ fontWeight: 800 }}>あ</span> {showFurigana ? 'Ẩn Furigana' : 'Hiện Furigana'}
                   </button>
-                )}
+
+                  {shadowingMode === 'blind' && (
+                    <button 
+                      className="btn btn-outline" 
+                      onClick={() => setIsBlindRevealed(prev => !prev)}
+                      style={{ padding: '2px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 4, background: isBlindRevealed ? 'rgba(139,92,246,0.2)' : 'transparent' }}
+                    >
+                      {isBlindRevealed ? <Eye size={11}/> : <EyeOff size={11}/>} {isBlindRevealed ? 'Ẩn lại' : 'Xem chữ'}
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -2109,10 +2139,19 @@ const ShadowingStudio = () => {
                </div>
 
                {/* Transport Control Buttons */}
-               <div style={{ display: 'flex', justifyContent: 'center', gap: 10, alignItems: 'center' }}>
+               <div style={{ display: 'flex', justifyContent: 'center', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
                    <button className="btn-ghost" onClick={() => jumpToSegment(currentSegIdx - 1)} style={{ padding: 8 }} title="Câu trước (Mũi tên Trái/Lên)"><SkipBack size={18}/></button>
                    <button className="btn-primary" onClick={togglePlayPause} style={{ padding: '8px 20px', borderRadius: 20 }}>
                        {isPlaying ? <Pause size={18}/> : <Play size={18}/>}
+                   </button>
+                   {/* NÚT DỪNG STOP MÀU ĐỎ NỔI BẬT */}
+                   <button 
+                       className="cinema-btn-stop" 
+                       onClick={handleStopAll} 
+                       style={{ padding: '8px 18px', borderRadius: 20, fontSize: '0.82rem' }}
+                       title="Dừng hẳn âm thanh/video/nhại giọng (Phím Esc hoặc S)"
+                   >
+                       <Square size={15} fill="currentColor"/> Dừng
                    </button>
                    <button className="btn-ghost" onClick={() => jumpToSegment(currentSegIdx)} style={{ padding: 8 }} title="Phát lại câu này (Phím R)"><Repeat size={18}/></button>
                    <button className="btn-ghost" onClick={() => jumpToSegment(currentSegIdx + 1)} style={{ padding: 8 }} title="Câu tiếp theo (Mũi tên Phải/Xuống)"><SkipForward size={18}/></button>

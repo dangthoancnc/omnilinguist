@@ -598,21 +598,21 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 2,
       title: 'Cảnh 2: Momotarō chào đời & Bánh kê Kibi Dango',
       jpTitle: '桃太郎の誕生と日本一のきび団子',
-      imageUrl: '/images/ehon/momotaro.jpg',
+      imageUrl: '/images/ehon/momotaro_scene2.jpg',
       desc: 'Cậu bé kháu khỉnh chào đời từ quả đào, ăn bánh kê ngon số một Nhật Bản và lớn nhanh như thổi.'
     },
     {
       sceneIdx: 3,
       title: 'Cảnh 3: Kết bạn cùng Chó, Khỉ, Chim Trĩ',
       jpTitle: '犬・猿・雉が仲間に',
-      imageUrl: '/images/ehon/momotaro.jpg',
+      imageUrl: '/images/ehon/momotaro_scene3.jpg',
       desc: 'Momotarō chia bánh kê cho ba người bạn Chó, Khỉ, Trĩ cùng nhau vượt biển lên đường diệt quỷ.'
     },
     {
       sceneIdx: 4,
       title: 'Cảnh 4: Đại phá Đảo Quỷ & Thắng lợi trở về',
       jpTitle: '鬼ヶ島の戦いと平和な村',
-      imageUrl: '/images/ehon/momotaro.jpg',
+      imageUrl: '/images/ehon/momotaro_scene4.jpg',
       desc: 'Chiến đấu dũng cảm, đánh bại chúa quỷ và chở xe đầy ắp châu báu về làng chia cho bà con.'
     }
   ],
@@ -628,21 +628,21 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 2,
       title: 'Cảnh 2: Tiếng hát kỳ lạ & Lạc vào Vương quốc Chuột',
       jpTitle: '不思議な歌声とねずみの国',
-      imageUrl: '/images/ehon/omusubi_kororin.jpg',
+      imageUrl: '/images/ehon/omusubi_scene2.jpg',
       desc: 'Dưới đáy hang sáng bừng, đàn chuột con nhảy múa hát ca chào đón ông lão nhân hậu.'
     },
     {
       sceneIdx: 3,
       title: 'Cảnh 3: Chiếc rương nhỏ đầy vàng ngọc',
       jpTitle: '小さなつづらと宝物',
-      imageUrl: '/images/ehon/omusubi_kororin.jpg',
+      imageUrl: '/images/ehon/omusubi_scene3.jpg',
       desc: 'Ông lão chọn chiếc rương nhỏ đơn sơ, khi về nhà mở ra tràn ngập vàng bạc lụa là quý giá.'
     },
     {
       sceneIdx: 4,
       title: 'Cảnh 4: Lão già tham lam bị trừng phạt',
       jpTitle: '欲張りじいさんの失敗',
-      imageUrl: '/images/ehon/omusubi_kororin.jpg',
+      imageUrl: '/images/ehon/omusubi_scene4.jpg',
       desc: 'Lão già tham lam giả tiếng mèo dọa chuột, hang tối sầm lại và lão bị kẹt trong bùn lầy.'
     }
   ],
@@ -658,7 +658,7 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 2,
       title: 'Cảnh 2: Cưỡi rùa bơi đến Cung Điện Rồng',
       jpTitle: '亀に乗って竜宮城へ',
-      imageUrl: '/images/ehon/urashima_taro.jpg',
+      imageUrl: '/images/ehon/urashima_scene2.jpg',
       desc: 'Rùa thần đưa Tarō rẽ sóng lặn xuống biển sâu chiêm ngưỡng cung điện ngọc bích lộng lẫy.'
     },
     {
@@ -672,7 +672,7 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 4,
       title: 'Cảnh 4: Ba trăm năm trần thế & Làn khói trắng',
       jpTitle: '三百年後の故郷と白い煙',
-      imageUrl: '/images/ehon/urashima_taro.jpg',
+      imageUrl: '/images/ehon/urashima_scene4.jpg',
       desc: 'Làng xưa không còn ai quen, Tarō mở hộp ngọc và hóa thành ông già tóc trắng.'
     }
   ],
@@ -688,14 +688,14 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 2,
       title: 'Cảnh 2: Thiếu nữ tuyệt trần & Lời cầu hôn của các quý tộc',
       jpTitle: '美しき姫と貴族たちの求婚',
-      imageUrl: '/images/ehon/kaguya_hime.jpg',
+      imageUrl: '/images/ehon/kaguya_scene2.jpg',
       desc: 'Kaguya-hime lớn lên đẹp tựa trăng rằm, đưa ra các thử thách báu vật nan giải.'
     },
     {
       sceneIdx: 3,
       title: 'Cảnh 3: Đêm trăng rằm chia tay & Tiên nữ cưỡi mây',
       jpTitle: '満月の夜と月への帰還',
-      imageUrl: '/images/ehon/kaguya_hime.jpg',
+      imageUrl: '/images/ehon/kaguya_scene3.jpg',
       desc: 'Tiên nhân cưỡi mây hạ phàm, Kaguya-hime để lại thư tạ ơn rồi bay về cung trăng.'
     }
   ],
@@ -711,14 +711,14 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 2,
       title: 'Cảnh 2: Tiếng dệt cửi lách cách trong đêm',
       jpTitle: 'カタンコトンと機を織る音',
-      imageUrl: '/images/ehon/tsuru_no_ongaeshi.jpg',
+      imageUrl: '/images/ehon/tsuru_scene2.jpg',
       desc: 'Nàng dệt nên những tấm vải gấm lấp lánh tuyệt mỹ đem lại cuộc sống no đủ.'
     },
     {
       sceneIdx: 3,
       title: 'Cảnh 3: Lời hứa bị phá vỡ & Cánh hạc bay xa',
       jpTitle: '約束の破れと飛び立つ鶴',
-      imageUrl: '/images/ehon/tsuru_no_ongaeshi.jpg',
+      imageUrl: '/images/ehon/tsuru_scene3.jpg',
       desc: 'Nhìn qua khe cửa thấy nàng là chim hạc tự nhổ lông dệt vải; hạc nghẹn ngào bay vút vào chiều đông.'
     }
   ],
@@ -734,14 +734,14 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 2,
       title: 'Cảnh 2: Đội nón cho sáu vị tượng Phật Jizō',
       jpTitle: '六体のお地蔵様と笠',
-      imageUrl: '/images/ehon/kasajizo.jpg',
+      imageUrl: '/images/ehon/kasajizo_scene2.jpg',
       desc: 'Thương các pho tượng lạnh giá, ông đội 5 chiếc nón và cởi luôn nón cũ của mình cho vị thứ 6.'
     },
     {
       sceneIdx: 3,
       title: 'Cảnh 3: Tiếng hò dô & Núi báu vật trước sân',
       jpTitle: '夜更けの歌声と山の宝物',
-      imageUrl: '/images/ehon/kasajizo.jpg',
+      imageUrl: '/images/ehon/kasajizo_scene3.jpg',
       desc: 'Đêm khuya các vị Jizō gánh bao gạo, bánh Tết và vàng bạc đến tạ ơn hai ông bà nhân từ.'
     }
   ]
@@ -813,15 +813,15 @@ export const getStoryMangaArtwork = (story, chapterTitle = '') => {
 // Hàm lấy thông tin Hoạt Cảnh theo tiến độ câu (Multi-Scene Resolution)
 export const getStorySceneArtwork = (story, chapterTitle = '', currentIdx = 0, totalCount = 1) => {
   const baseArtwork = getStoryMangaArtwork(story, chapterTitle);
-  const cTitle = (chapterTitle || story?.chapterTitle || story?.title || '').toLowerCase();
+  const fullSearch = `${story?.id || ''} ${story?.title || ''} ${chapterTitle || story?.chapterTitle || story?.currentChapterTitle || ''}`.toLowerCase();
   
   let sceneKey = null;
-  if (cTitle.includes('おむすび') || cTitle.includes('ころりん')) sceneKey = 'omusubi_kororin';
-  else if (cTitle.includes('桃太郎')) sceneKey = 'momotaro';
-  else if (cTitle.includes('浦島')) sceneKey = 'urashima_taro';
-  else if (cTitle.includes('かぐや')) sceneKey = 'kaguya_hime';
-  else if (cTitle.includes('鶴')) sceneKey = 'tsuru_no_ongaeshi';
-  else if (cTitle.includes('地蔵')) sceneKey = 'kasajizo';
+  if (fullSearch.includes('omusubi') || fullSearch.includes('おむすび') || fullSearch.includes('ころりん')) sceneKey = 'omusubi_kororin';
+  else if (fullSearch.includes('momo') || fullSearch.includes('桃太郎')) sceneKey = 'momotaro';
+  else if (fullSearch.includes('urashima') || fullSearch.includes('浦島') || fullSearch.includes('竜宮')) sceneKey = 'urashima_taro';
+  else if (fullSearch.includes('kaguya') || fullSearch.includes('かぐや') || fullSearch.includes('竹取')) sceneKey = 'kaguya_hime';
+  else if (fullSearch.includes('tsuru') || fullSearch.includes('鶴') || fullSearch.includes('つる')) sceneKey = 'tsuru_no_ongaeshi';
+  else if (fullSearch.includes('kasajizo') || fullSearch.includes('地蔵') || fullSearch.includes('かさじぞう')) sceneKey = 'kasajizo';
 
   if (!sceneKey || !STORY_SCENES_MAP[sceneKey]) {
     return {

@@ -13,6 +13,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
 import { addCustomCard, logReadingProgress, logListeningTime, getUserProfile, getCustomCards } from './studyStore.js';
 import FuriganaText from './components/FuriganaText';
+import { useFurigana } from './FuriganaContext';
 import MangaReader from './components/MangaReader';
 import { READING_CORPUS, CLASSIC_STORIES } from './data/readingCorpus.js';
 import { ensureSegmentsHaveTranslation, batchTranslateSentences, getCachedTranslation } from './services/storyTranslationService.js';
@@ -106,7 +107,8 @@ const ImmersionReader = () => {
 
   const navigate = useNavigate();
   const [readerFontSize, setReaderFontSize] = useState(1.25); // rem
-  const [readerMode, setReaderMode] = useState(() => localStorage.getItem('omni_reader_mode') || 'prose'); // 'prose' | 'manga'
+  const [readerMode, setReaderMode] = useState(() => localStorage.getItem('omni_reader_mode') || 'prose'); // 'prose' | 'manga' | 'theater'
+  const { showFurigana, toggleFurigana } = useFurigana();
 
   useEffect(() => {
     localStorage.setItem('omni_reader_mode', readerMode);
@@ -850,6 +852,32 @@ const ImmersionReader = () => {
       handleGenerateTTS(null, target);
     }
   };
+
+  // Phím tắt bàn phím toàn cục cho chế độ Đọc & Rạp Phim: Esc / S để Dừng, Mũi tên trái / phải để chuyển câu
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      const tag = e.target.tagName ? e.target.tagName.toLowerCase() : '';
+      if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+      if (e.key === 'Escape' || e.key === 's' || e.key === 'S') {
+        if (isPlayingTTS) {
+          e.preventDefault();
+          handleStopTTS();
+        }
+      } else if (e.key === 'ArrowRight') {
+        if (activeSentenceIdx < storySentences.length - 1) {
+          e.preventDefault();
+          handleNextSentence();
+        }
+      } else if (e.key === 'ArrowLeft') {
+        if (activeSentenceIdx > 0) {
+          e.preventDefault();
+          handlePrevSentence();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isPlayingTTS, activeSentenceIdx, storySentences.length]);
 
   // Chuyển toàn bộ câu chuyện sang Shadowing Studio
   const handleTransferToShadowing = async () => {
@@ -2553,12 +2581,12 @@ const ImmersionReader = () => {
                   )}
                 </div>
 
-                {/* Dual Mode Switcher: Văn Bản vs Manga */}
+                {/* Triple Mode Switcher: Văn Bản vs Manga vs Rạp Phim */}
                 <div style={{ display: 'inline-flex', alignItems: 'center', background: 'var(--bg-hover)', borderRadius: 16, border: '1px solid var(--glass-border-strong)', padding: '2px' }}>
                   <button
                     type="button"
                     onClick={() => setReaderMode('prose')}
-                    title="Chế độ đọc văn bản truyền thống"
+                    title="Chế độ đọc văn bản 2-Panel chuẩn SLA"
                     style={{
                       background: readerMode === 'prose' ? 'var(--accent-primary)' : 'transparent',
                       color: readerMode === 'prose' ? '#ffffff' : 'var(--text-secondary)',
@@ -2579,7 +2607,7 @@ const ImmersionReader = () => {
                   <button
                     type="button"
                     onClick={() => setReaderMode('manga')}
-                    title="Chế độ Manga Tương Tác Cấp Độ 3"
+                    title="Chế độ Manga Canvas Phân Ô"
                     style={{
                       background: readerMode === 'manga' ? 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)' : 'transparent',
                       color: readerMode === 'manga' ? '#ffffff' : 'var(--text-secondary)',
@@ -2595,6 +2623,27 @@ const ImmersionReader = () => {
                     }}
                   >
                     <Sparkles size={11} /> Manga
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setReaderMode('theater')}
+                    title="Chế độ Rạp phim / Sách tranh Ehon Màn ảnh rộng"
+                    style={{
+                      background: readerMode === 'theater' ? 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)' : 'transparent',
+                      color: readerMode === 'theater' ? '#ffffff' : 'var(--text-secondary)',
+                      border: 'none',
+                      borderRadius: 14,
+                      padding: '3px 8px',
+                      fontSize: '0.72rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 3
+                    }}
+                  >
+                    <Headphones size={11} /> Rạp phim
                   </button>
                 </div>
 
@@ -2620,6 +2669,24 @@ const ImmersionReader = () => {
                     A+
                   </button>
                 </div>
+
+                {/* Nút bật/tắt Furigana trực tiếp */}
+                <button
+                  type="button"
+                  onClick={toggleFurigana}
+                  className={`btn ${showFurigana ? 'btn-primary' : 'btn-outline'}`}
+                  title="Bật/Tắt phiên âm Furigana trên toàn bài"
+                  style={{
+                    padding: '4px 8px',
+                    fontSize: '0.74rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 4
+                  }}
+                >
+                  <span style={{ fontWeight: 800 }}>あ</span>
+                  <span>{showFurigana ? 'Ẩn Furigana' : 'Hiện Furigana'}</span>
+                </button>
 
                 {/* Tra từ Drawer toggle */}
                 <button
@@ -2654,61 +2721,57 @@ const ImmersionReader = () => {
                   {isTranslating ? 'Đang dịch...' : bilingualData ? 'Ẩn Dịch' : '🌐 Dịch'}
                 </button>
 
-                {/* Sách nói AI TTS Controls */}
+                {/* Sách nói AI TTS Controls & NÚT DỪNG ĐỎ NỔI BẬT */}
                 {isPlayingTTS ? (
                   <div style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 4,
-                    background: 'var(--accent-subtle)',
-                    border: '1px solid var(--accent-primary)',
-                    padding: '2px 6px',
-                    borderRadius: 16
+                    gap: 5
                   }}>
                     <button
                       type="button"
+                      className="btn btn-outline"
                       onClick={handlePauseResumeTTS}
                       title={isPausedTTS ? "Tiếp tục đọc" : "Tạm dừng"}
-                      style={{
-                        background: 'transparent',
-                        border: 'none',
-                        color: 'var(--accent-primary)',
-                        cursor: 'pointer',
-                        padding: '2px',
-                        display: 'flex',
-                        alignItems: 'center'
-                      }}
+                      style={{ padding: '4px 8px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', gap: 4 }}
                     >
                       {isPausedTTS ? <Play size={12} fill="currentColor" /> : <Pause size={12} fill="currentColor" />}
+                      <span>{isPausedTTS ? 'Tiếp' : 'Tạm dừng'}</span>
                     </button>
                     <button
                       type="button"
+                      className="cinema-btn-stop"
                       onClick={handleStopTTS}
-                      title="Dừng đọc"
-                      style={{
-                        background: 'none',
-                        border: 'none',
-                        color: '#ef4444',
-                        cursor: 'pointer',
-                        padding: '2px',
-                        display: 'flex',
-                        alignItems: 'center'
-                      }}
+                      title="Dừng đọc sách nói ngay lập tức"
+                      style={{ padding: '4px 10px', fontSize: '0.74rem' }}
                     >
                       <Square size={11} fill="currentColor" />
+                      <span>Dừng</span>
                     </button>
                   </div>
                 ) : (
-                  <button
-                    className="btn btn-primary"
-                    onClick={() => handleGenerateTTS(activeReadingContent)}
-                    disabled={isProcessing}
-                    title="Nghe sách nói AI phát âm giọng chuẩn bản xứ"
-                    style={{ padding: '4px 9px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', gap: 4 }}
-                  >
-                    {isProcessing ? <Loader size={12} className="spin" /> : <Volume2 size={12} />}
-                    <span className="hide-on-mobile">Sách nói</span>
-                  </button>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => handleGenerateTTS(activeReadingContent, activeSentenceIdx)}
+                      disabled={isProcessing}
+                      title="Nghe sách nói AI phát âm giọng chuẩn bản xứ"
+                      style={{ padding: '4px 9px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', gap: 4 }}
+                    >
+                      {isProcessing ? <Loader size={12} className="spin" /> : <Volume2 size={12} />}
+                      <span className="hide-on-mobile">Sách nói</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-outline"
+                      onClick={handleStopTTS}
+                      title="Dừng phát âm"
+                      style={{ padding: '4px 8px', fontSize: '0.74rem', color: '#ef4444', borderColor: 'rgba(239, 68, 68, 0.4)' }}
+                    >
+                      <Square size={11} fill="currentColor" />
+                      <span>Dừng</span>
+                    </button>
+                  </div>
                 )}
 
                 {/* Shadowing Transfer button */}
@@ -2911,8 +2974,156 @@ const ImmersionReader = () => {
                </div>
             )}
 
-            {/* Reading Content Container */}
-            {readerMode === 'manga' ? (
+            {/* Reading Content Container: 3 Modes (Rạp Phim Ehon, Manga Canvas, hoặc Văn Bản 2-Panel) */}
+            {readerMode === 'theater' ? (
+              <div className="ehon-theater-container">
+                {/* Khung Chiếu Rạp Phim Ehon Màn Ảnh Rộng */}
+                <div className="cinema-stage-card">
+                  <img 
+                    src={activeSceneInfo.imageUrl} 
+                    alt={activeSceneInfo.sceneTitle || activeReadingTitle}
+                    className="cinema-screen-image"
+                  />
+
+                  {/* Lớp phủ thông tin Hoạt Cảnh & Tiến độ trên đầu khung tranh */}
+                  <div className="cinema-screen-overlay-top">
+                    <div className="cinema-scene-tag">
+                      🎨 Hoạt cảnh {activeSceneInfo.currentSceneIdx}/{activeSceneInfo.totalScenes}: {activeSceneInfo.sceneTitle || activeReadingTitle}
+                    </div>
+                    <div className="cinema-progress-tag">
+                      📖 Câu {activeSentenceIdx + 1}/{storySentences.length || 1}
+                    </div>
+                  </div>
+
+                  {/* Lớp phủ phụ đề tiếng Nhật (Furigana to rõ) & tiếng Việt phía dưới */}
+                  <div className="cinema-subtitles-box">
+                    <div 
+                      className="cinema-subtitle-japanese jp-text"
+                      onClick={() => handleLineClick(activeSentenceIdx)}
+                      style={{ cursor: 'pointer' }}
+                      title="Nhấn để nghe riêng câu này"
+                    >
+                      <FuriganaText 
+                        text={activeSentence ? activeSentence.text : ''} 
+                        fontSize={`${readerFontSize * 1.3}rem`}
+                      />
+                    </div>
+                    {activeSentenceVi && (
+                      <div className="cinema-subtitle-vietnamese">
+                        {activeSentenceVi}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Thanh Điều Khiển Chiếu Rạp Phim (On-screen Controls Bar) */}
+                <div className="cinema-controls-bar">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                    <button
+                      type="button"
+                      className="btn btn-outline"
+                      onClick={handlePrevSentence}
+                      disabled={activeSentenceIdx === 0}
+                      title="Câu trước (Phím Mũi tên Trái)"
+                      style={{ padding: '6px 12px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: 4 }}
+                    >
+                      <ChevronLeft size={16} /> Câu trước
+                    </button>
+
+                    {isPlayingTTS ? (
+                      <button
+                        type="button"
+                        className="btn btn-primary"
+                        onClick={handlePauseResumeTTS}
+                        title={isPausedTTS ? "Tiếp tục đọc (Phím Space)" : "Tạm dừng (Phím Space)"}
+                        style={{ padding: '7px 18px', fontSize: '0.82rem', borderRadius: 20, display: 'flex', alignItems: 'center', gap: 6 }}
+                      >
+                        {isPausedTTS ? <Play size={15} fill="currentColor" /> : <Pause size={15} fill="currentColor" />}
+                        <span>{isPausedTTS ? 'Tiếp tục' : 'Tạm dừng'}</span>
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        className="btn btn-primary"
+                        onClick={() => handleGenerateTTS(activeReadingContent, activeSentenceIdx)}
+                        title="Bắt đầu chiếu & đọc sách nói AI"
+                        style={{ padding: '7px 18px', fontSize: '0.82rem', borderRadius: 20, display: 'flex', alignItems: 'center', gap: 6 }}
+                      >
+                        <Play size={15} fill="currentColor" />
+                        <span>Chiếu & Đọc</span>
+                      </button>
+                    )}
+
+                    {/* NÚT DỪNG STOP MÀU ĐỎ NỔI BẬT */}
+                    <button
+                      type="button"
+                      className="cinema-btn-stop"
+                      onClick={handleStopTTS}
+                      title="Dừng đọc hoàn toàn (Phím Esc hoặc S)"
+                    >
+                      <Square size={13} fill="currentColor" />
+                      <span>⏹ Dừng</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      className="btn btn-outline"
+                      onClick={handleNextSentence}
+                      disabled={activeSentenceIdx >= storySentences.length - 1}
+                      title="Câu sau (Phím Mũi tên Phải)"
+                      style={{ padding: '6px 12px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: 4 }}
+                    >
+                      Câu sau <ChevronRight size={16} />
+                    </button>
+                  </div>
+
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+                    {/* Tốc độ đọc */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                      <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Tốc độ:</span>
+                      {[0.75, 0.85, 1.0, 1.25].map(speed => (
+                        <button
+                          key={speed}
+                          type="button"
+                          className={`btn-speed-pill ${ttsSpeed === speed ? 'active' : ''}`}
+                          onClick={() => {
+                            setTtsSpeed(speed);
+                            localStorage.setItem('omni_tts_speed', speed.toString());
+                          }}
+                          style={{ padding: '2px 7px', fontSize: '0.72rem' }}
+                        >
+                          {speed}x
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Nút bật/tắt Furigana trực tiếp */}
+                    <button
+                      type="button"
+                      className={`btn ${showFurigana ? 'btn-primary' : 'btn-outline'}`}
+                      onClick={toggleFurigana}
+                      title="Bật/Tắt phiên âm Furigana trên câu thoại"
+                      style={{ padding: '5px 12px', fontSize: '0.76rem', display: 'inline-flex', alignItems: 'center', gap: 4, borderRadius: 16 }}
+                    >
+                      <span style={{ fontWeight: 800 }}>あ</span>
+                      <span>{showFurigana ? 'Ẩn Furigana' : 'Hiện Furigana'}</span>
+                    </button>
+
+                    {/* Chuyển sang Shadowing */}
+                    <button
+                      type="button"
+                      className="btn btn-shadowing-transfer"
+                      onClick={handleTransferToShadowing}
+                      title="Chuyển tác phẩm sang Shadowing Studio để luyện phát âm ngữ điệu"
+                      style={{ padding: '5px 12px', fontSize: '0.76rem', borderRadius: 16 }}
+                    >
+                      <Mic size={13} />
+                      <span>Shadowing</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : readerMode === 'manga' ? (
               <MangaReader
                 story={activeText}
                 content={activeReadingContent}
@@ -3048,16 +3259,16 @@ const ImmersionReader = () => {
                         <ChevronRight size={16} />
                       </button>
 
-                      {isPlayingTTS && (
-                        <button 
-                          type="button"
-                          className="btn-danger-outline"
-                          onClick={handleStopTTS}
-                          title="Dừng đọc hoàn toàn"
-                        >
-                          <Square size={13} fill="currentColor" />
-                        </button>
-                      )}
+                      <button 
+                        type="button"
+                        className="cinema-btn-stop"
+                        onClick={handleStopTTS}
+                        title="Dừng đọc hoàn toàn (Phím Esc hoặc S)"
+                        style={{ padding: '6px 14px', fontSize: '0.78rem' }}
+                      >
+                        <Square size={13} fill="currentColor" />
+                        <span>⏹ Dừng</span>
+                      </button>
                     </div>
 
                     {/* Speed & Quick Transfer */}
