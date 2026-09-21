@@ -131,7 +131,7 @@ const Roadmap = () => {
                 {['Mới bắt đầu / N5', 'Sơ cấp (N4)', 'Trung cấp (N3)', 'Cao cấp (N2)'].map((l, i) => {
                   const val = ['N5','N4','N3','N2'][i];
                   return (
-                    <button key={val} onClick={() => { setFormData(f => ({ ...f, currentLevel: val })); setSetupStep(2); }} style={{ padding: 16, borderRadius: 10, background: formData.currentLevel === val ? 'var(--accent-primary)' : 'rgba(255,255,255,0.05)', border: `1px solid ${formData.currentLevel === val ? '#60a5fa' : 'var(--glass-border)'}`, color: 'white', cursor: 'pointer', fontSize: '1.05rem', transition: 'all 0.2s' }}>
+                    <button key={val} onClick={() => { setFormData(f => ({ ...f, currentLevel: val })); setSetupStep(2); }} style={{ padding: 16, borderRadius: 10, background: formData.currentLevel === val ? 'var(--accent-primary)' : 'var(--bg-surface)', border: `1px solid ${formData.currentLevel === val ? '#60a5fa' : 'var(--glass-border)'}`, color: formData.currentLevel === val ? 'white' : 'var(--text-primary)', cursor: 'pointer', fontSize: '1.05rem', transition: 'all 0.2s' }}>
                       {l}
                     </button>
                   );
@@ -145,7 +145,7 @@ const Roadmap = () => {
               <h3 style={{ marginBottom: 20 }}>Mục tiêu bạn muốn đạt được?</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {GOALS.map(g => (
-                  <button key={g.id} onClick={() => { setFormData(f => ({ ...f, goal: g.id })); setSetupStep(3); }} style={{ padding: 16, borderRadius: 10, background: formData.goal === g.id ? `${g.color}33` : 'rgba(255,255,255,0.05)', border: `1px solid ${formData.goal === g.id ? g.color : 'var(--glass-border)'}`, color: 'white', cursor: 'pointer', fontSize: '1.05rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <button key={g.id} onClick={() => { setFormData(f => ({ ...f, goal: g.id })); setSetupStep(3); }} style={{ padding: 16, borderRadius: 10, background: formData.goal === g.id ? `${g.color}33` : 'var(--bg-surface)', border: `1px solid ${formData.goal === g.id ? g.color : 'var(--glass-border)'}`, color: 'var(--text-primary)', cursor: 'pointer', fontSize: '1.05rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                       <span style={{ fontSize: '1.2rem', fontWeight: 800, color: g.color }}>{g.label}</span>
                       <span>{g.sub}</span>
@@ -162,7 +162,7 @@ const Roadmap = () => {
               <h3 style={{ marginBottom: 20 }}>Thời gian học mỗi ngày?</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 30 }}>
                 {[1, 2, 3].map(h => (
-                  <button key={h} onClick={() => setFormData(f => ({ ...f, timePerDay: h }))} style={{ padding: 16, borderRadius: 10, background: formData.timePerDay === h ? 'var(--accent-primary)' : 'rgba(255,255,255,0.05)', border: `1px solid ${formData.timePerDay === h ? '#60a5fa' : 'var(--glass-border)'}`, color: 'white', cursor: 'pointer', fontSize: '1.05rem' }}>
+                  <button key={h} onClick={() => setFormData(f => ({ ...f, timePerDay: h }))} style={{ padding: 16, borderRadius: 10, background: formData.timePerDay === h ? 'var(--accent-primary)' : 'var(--bg-surface)', border: `1px solid ${formData.timePerDay === h ? '#60a5fa' : 'var(--glass-border)'}`, color: formData.timePerDay === h ? 'white' : 'var(--text-primary)', cursor: 'pointer', fontSize: '1.05rem' }}>
                     {h} tiếng / ngày
                   </button>
                 ))}
@@ -256,7 +256,7 @@ const Roadmap = () => {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: 20, marginBottom: 24 }}>
         {/* Thống kê hôm nay */}
         <div className="glass-panel" style={{ padding: '24px', borderRadius: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'white', fontWeight: 600, fontSize: '1.05rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--text-primary)', fontWeight: 600, fontSize: '1.05rem' }}>
             <BarChart2 size={20} color="#60a5fa" />
             Lịch Sử Học Hôm Nay
           </div>
@@ -298,7 +298,7 @@ const Roadmap = () => {
 
         {/* Phòng luyện tập chuyên đề */}
         <div className="glass-panel" style={{ padding: '24px', borderRadius: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'white', fontWeight: 600, fontSize: '1.05rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--text-primary)', fontWeight: 600, fontSize: '1.05rem' }}>
             <Target size={20} color="#f59e0b" />
             🏋️ Phòng Luyện Tập Chuyên Đề
           </div>

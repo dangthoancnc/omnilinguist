@@ -224,7 +224,7 @@ const JishoOpenDict = ({ query }) => {
             <div key={idx} className="glass-panel" style={{ padding: '16px 20px', border: '1px solid rgba(96, 165, 250, 0.3)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8, flexWrap: 'wrap', gap: 8 }}>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 12 }}>
-                  <span className="jp-text" style={{ fontSize: '1.3rem', fontWeight: 700, color: 'white' }}>{word}</span>
+                  <span className="jp-text" style={{ fontSize: '1.3rem', fontWeight: 700, color: 'var(--text-primary)' }}>{word}</span>
                   {reading && reading !== word && <span style={{ fontSize: '1rem', color: '#93c5fd' }}>【{reading}】</span>}
                 </div>
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
@@ -243,7 +243,7 @@ const JishoOpenDict = ({ query }) => {
                   return (
                     <div key={sIdx} style={{ fontSize: '0.95rem' }}>
                       {partsOfSpeech && <span style={{ fontSize: '0.8rem', color: '#94a3b8', fontStyle: 'italic', marginRight: 8 }}>[{partsOfSpeech}]</span>}
-                      <span style={{ color: '#f1f5f9' }}><ViText text={definitions} /></span>
+                      <span style={{ color: 'var(--text-primary)' }}><ViText text={definitions} /></span>
                       <div style={{ fontSize: '0.8rem', color: '#64748b' }}>({definitions})</div>
                     </div>
                   );
@@ -291,14 +291,14 @@ const CrossDictEnVn = ({ query }) => {
       <h3 style={{ fontSize: '1.05rem', color: '#a78bfa', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 8 }}>
         <BookA size={18}/> Từ điển Anh - Việt (Cross-Search)
       </h3>
-      <div style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: 16, color: 'white' }}>{data[0]?.[0]?.[0] || query}</div>
+      <div style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: 16, color: 'var(--text-primary)' }}>{data[0]?.[0]?.[0] || query}</div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         {data[1].map((posGroup, idx) => (
-          <div key={idx} style={{ background: 'rgba(0,0,0,0.2)', padding: 12, borderRadius: 8 }}>
+          <div key={idx} style={{ background: 'var(--bg-surface)', padding: 12, borderRadius: 8 }}>
             <div style={{ color: '#c4b5fd', fontWeight: 'bold', fontStyle: 'italic', marginBottom: 8, textTransform: 'capitalize' }}>{posGroup[0]}</div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {posGroup[1].map((meaning, i) => (
-                <span key={i} style={{ padding: '4px 10px', background: 'rgba(139, 92, 246, 0.15)', borderRadius: 16, fontSize: '0.9rem', color: '#e2e8f0' }}>{meaning}</span>
+                <span key={i} style={{ padding: '4px 10px', background: 'rgba(139, 92, 246, 0.15)', borderRadius: 16, fontSize: '0.9rem', color: 'var(--text-primary)' }}>{meaning}</span>
               ))}
             </div>
           </div>
@@ -646,7 +646,7 @@ const Dictionary = () => {
               if (e.key === 'Enter') setSearchQuery(query);
             }}
             placeholder="Nhập tiếng Nhật, Romaji, Hán tự hoặc Nghĩa tiếng Việt... (Nhấn Enter để tìm)"
-            style={{ width: '100%', padding: '16px 120px 16px 48px', fontSize: '1.1rem', borderRadius: 12, border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.3)', color: 'white', outline: 'none', opacity: isSearching ? 0.7 : 1 }}
+            style={{ width: '100%', padding: '16px 120px 16px 48px', fontSize: '1.1rem', borderRadius: 12, border: '1px solid var(--glass-border)', background: 'var(--bg-surface)', color: 'var(--text-primary)', outline: 'none', opacity: isSearching ? 0.7 : 1 }}
             autoFocus
           />
           <button

@@ -249,18 +249,18 @@ const SessionReview = ({ sessionLog, onClose, onGrade }) => {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 16 }}>
           {sessionLog.map((entry, i) => (
-            <div key={i} style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 12, padding: 12, border: `1px solid ${entry.grade === 'good' ? 'rgba(16,185,129,0.4)' : entry.grade === 'bad' ? 'rgba(239,68,68,0.4)' : 'rgba(255,255,255,0.1)'}` }}>
+            <div key={i} style={{ background: 'var(--bg-card-solid)', borderRadius: 12, padding: 12, border: `1px solid ${entry.grade === 'good' ? 'rgba(16,185,129,0.4)' : entry.grade === 'bad' ? 'rgba(239,68,68,0.4)' : 'var(--glass-border)'}` }}>
               <div style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
                 {/* User drawing */}
                 <div style={{ flex: 1, textAlign: 'center' }}>
                   <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: 4 }}>Bạn vẽ</div>
-                  <img src={entry.snapshot} alt="drawing" style={{ width: '100%', maxWidth: 110, borderRadius: 8, background: 'rgba(0,0,0,0.5)', border: '1px solid var(--glass-border)' }}/>
+                  <img src={entry.snapshot} alt="drawing" style={{ width: '100%', maxWidth: 110, borderRadius: 8, background: 'var(--bg-surface)', border: '1px solid var(--glass-border)' }}/>
                 </div>
                 {/* Correct answer */}
                 <div style={{ flex: 1, textAlign: 'center' }}>
                   <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: 4 }}>Đáp án</div>
-                  <div style={{ width: '100%', maxWidth: 110, aspectRatio: '1', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.5)', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
-                    <span className="jp-text" style={{ fontSize: '3.5rem', color: 'white' }}>{entry.kanji}</span>
+                  <div style={{ width: '100%', maxWidth: 110, aspectRatio: '1', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-surface)', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
+                    <span className="jp-text" style={{ fontSize: '3.5rem', color: 'var(--text-primary)' }}>{entry.kanji}</span>
                   </div>
                 </div>
               </div>
@@ -494,13 +494,13 @@ const KanjiStudio = () => {
             style={{ padding:'8px 16px', borderRadius:8, background: LEVEL_COLORS[level] || '#6366f1', border:'none', color:'white', fontWeight:700, outline:'none', cursor:'pointer', boxShadow:`0 4px 12px ${(LEVEL_COLORS[level]||'#6366f1')}55` }}
           >
             {LEVELS.map(l => (
-              <option key={l} value={l} style={{ background: '#1e293b' }}>
+              <option key={l} value={l} style={{ background: 'var(--bg-card-solid)', color: 'var(--text-primary)' }}>
                 {l === 'Bộ Thủ' ? '⛩️ Bộ Thủ' : `Thẻ ${l}`} ({kanjiByLevel[l] || 0})
               </option>
             ))}
           </select>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(0,0,0,0.2)', padding: '6px 12px', borderRadius: 20 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'var(--bg-surface)', padding: '6px 12px', borderRadius: 20 }}>
             <span style={{ fontSize: '0.85rem', color: isStrict ? 'var(--text-secondary)' : '#6ee7b7' }}>Tự do (Dễ)</span>
             <button 
               onClick={() => setIsStrict(!isStrict)}

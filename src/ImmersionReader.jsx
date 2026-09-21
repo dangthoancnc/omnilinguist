@@ -1410,9 +1410,9 @@ const ImmersionReader = () => {
                   style={{
                     padding: '8px 10px',
                     borderRadius: 8,
-                    border: corpusMode === m.id ? `1px solid ${m.color}` : '1px solid rgba(255,255,255,0.06)',
-                    background: corpusMode === m.id ? `${m.color}20` : 'rgba(255,255,255,0.02)',
-                    color: corpusMode === m.id ? '#fff' : 'var(--text-secondary)',
+                    border: corpusMode === m.id ? `1px solid ${m.color}` : '1px solid var(--glass-border)',
+                    background: corpusMode === m.id ? `${m.color}20` : 'var(--bg-surface)',
+                    color: corpusMode === m.id ? m.color : 'var(--text-secondary)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
@@ -1423,7 +1423,7 @@ const ImmersionReader = () => {
                   }}
                 >
                   <span>{m.label}</span>
-                  <span style={{ fontSize: '0.72rem', background: 'rgba(255,255,255,0.08)', padding: '1px 6px', borderRadius: 4 }}>
+                  <span style={{ fontSize: '0.72rem', background: 'var(--bg-hover)', padding: '1px 6px', borderRadius: 4 }}>
                     {m.count}
                   </span>
                 </button>
@@ -1448,7 +1448,7 @@ const ImmersionReader = () => {
                     cursor: 'pointer',
                     background: corpusLevel === lvl 
                       ? (LEVEL_COLORS[lvl] || 'var(--accent-primary)') 
-                      : 'rgba(255,255,255,0.05)',
+                      : 'var(--bg-surface)',
                     color: corpusLevel === lvl ? '#fff' : 'var(--text-secondary)',
                     transition: 'all 0.15s'
                   }}

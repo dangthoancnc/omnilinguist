@@ -117,7 +117,7 @@ const WritingStudio = () => {
               </button>
             </div>
           </div>
-          <div style={{ fontSize: '0.95rem', color: 'white', background: 'rgba(0,0,0,0.2)', padding: 14, borderRadius: 8, borderLeft: `3px solid ${LEVEL_COLORS[template.level]}`, lineHeight: 1.5 }}>
+          <div style={{ fontSize: '0.95rem', color: 'var(--text-primary)', background: 'var(--bg-surface)', padding: 14, borderRadius: 8, borderLeft: `3px solid ${LEVEL_COLORS[template.level]}`, lineHeight: 1.5 }}>
             {template.scenario}
           </div>
         </div>
@@ -138,7 +138,7 @@ const WritingStudio = () => {
                 onChange={e => setInputText(e.target.value)}
                 placeholder={`Hãy viết bài của bạn vào đây...\n\nGợi ý dàn ý:\n${template.structure}`}
                 className="jp-text"
-                style={{ flex: 1, width: '100%', padding: 20, background: 'transparent', border: 'none', color: 'white', fontSize: '1.05rem', lineHeight: 1.7, resize: 'none', outline: 'none' }}
+                style={{ flex: 1, width: '100%', padding: 20, background: 'transparent', border: 'none', color: 'var(--text-primary)', fontSize: '1.05rem', lineHeight: 1.7, resize: 'none', outline: 'none' }}
               />
             </div>
 
@@ -154,7 +154,7 @@ const WritingStudio = () => {
                   {targetVocab.map((v, i) => {
                     const isUsed = inputText.includes(v.word);
                     return (
-                      <span key={i} title={v.vi} style={{ fontSize: '0.8rem', padding: '4px 8px', borderRadius: 6, background: isUsed ? '#10b981' : 'rgba(0,0,0,0.3)', color: isUsed ? 'white' : 'var(--text-secondary)', textDecoration: isUsed ? 'line-through' : 'none', border: `1px solid ${isUsed ? '#10b981' : 'var(--glass-border)'}`, transition: 'all 0.2s' }}>
+                      <span key={i} title={v.vi} style={{ fontSize: '0.8rem', padding: '4px 8px', borderRadius: 6, background: isUsed ? '#10b981' : 'var(--bg-surface)', color: isUsed ? 'white' : 'var(--text-secondary)', textDecoration: isUsed ? 'line-through' : 'none', border: `1px solid ${isUsed ? '#10b981' : 'var(--glass-border)'}`, transition: 'all 0.2s' }}>
                         {v.word}
                       </span>
                     );
@@ -182,7 +182,7 @@ const WritingStudio = () => {
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: iss.type === 'keigo' ? '#fca5a5' : iss.type === 'success' ? '#10b981' : '#fcd34d', fontSize: '0.8rem', fontWeight: 700, marginBottom: 6 }}>
                         {iss.type === 'success' ? <CheckCircle size={14}/> : <AlertTriangle size={14}/>} {iss.message}
                       </div>
-                      <div style={{ fontSize: '0.85rem', color: 'white', lineHeight: 1.5 }}>
+                      <div style={{ fontSize: '0.85rem', color: 'var(--text-primary)', lineHeight: 1.5 }}>
                         {iss.suggestion}
                       </div>
                     </div>
@@ -200,7 +200,7 @@ const WritingStudio = () => {
                 <Copy size={14}/> Copy
               </button>
             </div>
-            <pre className="jp-text" style={{ background: 'rgba(0,0,0,0.3)', padding: 24, borderRadius: 10, whiteSpace: 'pre-wrap', fontSize: '1.1rem', lineHeight: 1.8, color: '#e2e8f0', fontFamily: 'inherit', border: '1px solid var(--glass-border)' }}>
+            <pre className="jp-text" style={{ background: 'var(--bg-surface)', padding: 24, borderRadius: 10, whiteSpace: 'pre-wrap', fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--text-primary)', fontFamily: 'inherit', border: '1px solid var(--glass-border)' }}>
               {template.sample}
             </pre>
           </div>

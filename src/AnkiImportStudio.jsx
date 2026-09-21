@@ -144,7 +144,7 @@ const AnkiImportStudio = () => {
               onChange={(e) => setPin(e.target.value)}
               placeholder="Nhập PIN Code" 
               autoFocus
-              style={{ flex: 1, padding: '10px 16px', borderRadius: 8, border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.3)', color: 'white', textAlign: 'center', letterSpacing: 4, fontSize: '1.2rem' }}
+              style={{ flex: 1, padding: '10px 16px', borderRadius: 8, border: '1px solid var(--glass-border)', background: 'var(--bg-surface)', color: 'var(--text-primary)', textAlign: 'center', letterSpacing: 4, fontSize: '1.2rem' }}
             />
             <button type="submit" className="btn btn-primary" style={{ padding: '0 20px' }}>Mở khóa</button>
           </form>
@@ -165,12 +165,12 @@ const AnkiImportStudio = () => {
 
       <div className="glass-panel" style={{ padding: 24, marginBottom: 24 }}>
         <h3 style={{ marginTop: 0, marginBottom: 16, color: 'var(--accent-primary)' }}>1. Chọn File Anki (.apkg)</h3>
-        <label style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px', borderRadius: 8, border: '1px dashed var(--glass-border-strong)', background: 'rgba(0,0,0,0.2)', cursor: 'pointer', marginBottom: 24, transition: 'all 0.2s' }}>
+        <label style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px', borderRadius: 8, border: '1px dashed var(--glass-border-strong)', background: 'var(--bg-surface)', cursor: 'pointer', marginBottom: 24, transition: 'all 0.2s' }}>
           <div style={{ padding: 10, background: 'var(--accent-subtle)', borderRadius: '50%', color: 'var(--accent-primary)' }}>
             <DownloadCloud size={24} />
           </div>
           <div style={{ flex: 1 }}>
-            <div style={{ fontWeight: 600, fontSize: '1.05rem', color: selectedFile ? '#10b981' : 'white' }}>
+            <div style={{ fontWeight: 600, fontSize: '1.05rem', color: selectedFile ? '#10b981' : 'var(--text-primary)' }}>
               {selectedFile ? selectedFile.name : 'Nhấn để duyệt file (.apkg)'}
             </div>
             <div style={{ fontSize: '0.85rem', color: 'var(--text-tertiary)', marginTop: 4 }}>
@@ -179,7 +179,7 @@ const AnkiImportStudio = () => {
           </div>
           <input 
             type="file" 
-            accept=".apkg"
+            accept=".apkg" 
             onChange={handleFileChange}
             style={{ display: 'none' }}
           />
@@ -189,16 +189,16 @@ const AnkiImportStudio = () => {
         <div style={{ display: 'flex', gap: 16 }}>
           <div 
             onClick={() => setTargetDeck('shadowing')}
-            style={{ flex: 1, padding: 20, borderRadius: 12, border: `2px solid ${targetDeck === 'shadowing' ? '#10b981' : 'var(--glass-border)'}`, background: targetDeck === 'shadowing' ? 'rgba(16,185,129,0.1)' : 'rgba(0,0,0,0.2)', cursor: 'pointer', transition: 'all 0.2s' }}
+            style={{ flex: 1, padding: 20, borderRadius: 12, border: `2px solid ${targetDeck === 'shadowing' ? '#10b981' : 'var(--glass-border)'}`, background: targetDeck === 'shadowing' ? 'rgba(16,185,129,0.1)' : 'var(--bg-surface)', cursor: 'pointer', transition: 'all 0.2s' }}
           >
-            <h4 style={{ margin: '0 0 8px 0', color: targetDeck === 'shadowing' ? '#10b981' : 'white' }}>🗣️ Luyện Đọc Đuổi (Shadowing)</h4>
+            <h4 style={{ margin: '0 0 8px 0', color: targetDeck === 'shadowing' ? '#10b981' : 'var(--text-primary)' }}>🗣️ Luyện Đọc Đuổi (Shadowing)</h4>
             <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Trích xuất câu, nghĩa và tự động map link Audio MP3 từ Github CDN.</p>
           </div>
           <div 
             onClick={() => setTargetDeck('mock')}
-            style={{ flex: 1, padding: 20, borderRadius: 12, border: `2px solid ${targetDeck === 'mock' ? '#3b82f6' : 'var(--glass-border)'}`, background: targetDeck === 'mock' ? 'rgba(59,130,246,0.1)' : 'rgba(0,0,0,0.2)', cursor: 'pointer', transition: 'all 0.2s' }}
+            style={{ flex: 1, padding: 20, borderRadius: 12, border: `2px solid ${targetDeck === 'mock' ? '#3b82f6' : 'var(--glass-border)'}`, background: targetDeck === 'mock' ? 'rgba(59,130,246,0.1)' : 'var(--bg-surface)', cursor: 'pointer', transition: 'all 0.2s' }}
           >
-            <h4 style={{ margin: '0 0 8px 0', color: targetDeck === 'mock' ? '#3b82f6' : 'white' }}>📝 Thi Thử (Mock Test)</h4>
+            <h4 style={{ margin: '0 0 8px 0', color: targetDeck === 'mock' ? '#3b82f6' : 'var(--text-primary)' }}>📝 Thi Thử (Mock Test)</h4>
             <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Bóc tách câu hỏi trắc nghiệm, đáp án và giải thích chi tiết.</p>
           </div>
         </div>
@@ -217,7 +217,7 @@ const AnkiImportStudio = () => {
       </div>
 
       {logs.length > 0 && (
-        <div className="glass-panel" style={{ padding: 24, background: 'rgba(0,0,0,0.4)' }}>
+        <div className="glass-panel" style={{ padding: 24, background: 'var(--bg-surface)' }}>
           <h3 style={{ margin: '0 0 16px 0', fontSize: '1rem', color: 'var(--text-secondary)' }}>Tiến trình xử lý (Console)</h3>
           
           {(status === 'extracting' || status === 'syncing' || status === 'done') && (

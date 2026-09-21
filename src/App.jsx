@@ -62,7 +62,15 @@ class ChunkErrorBoundary extends React.Component {
 function App() {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 1024);
-  const [theme, setTheme] = useState(() => localStorage.getItem('omni_theme') || 'dark');
+  const [theme, setTheme] = useState(() => {
+    const migrated = localStorage.getItem('omni_theme_default_v2');
+    if (!migrated) {
+      localStorage.setItem('omni_theme_default_v2', 'true');
+      localStorage.setItem('omni_theme', 'light');
+      return 'light';
+    }
+    return localStorage.getItem('omni_theme') || 'light';
+  });
   const [isSyncing, setIsSyncing] = useState(true);
   const { user, loading } = useAuth();
   // P0-1: Track nếu user đã từng vào ShadowingStudio → chỉ mount khi cần

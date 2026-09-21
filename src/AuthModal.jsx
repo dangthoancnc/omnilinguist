@@ -60,6 +60,7 @@ const AuthModal = ({ isOpen, onClose }) => {
     }}>
       <div className="glass-panel" style={{
         width: '100%', maxWidth: 440, padding: 32, borderRadius: 16,
+        background: 'var(--bg-card-solid)',
         boxShadow: '0 20px 50px rgba(0,0,0,0.5)', border: '1px solid var(--glass-border)',
         position: 'relative'
       }}>
@@ -83,7 +84,7 @@ const AuthModal = ({ isOpen, onClose }) => {
           }}>
             {isSignUp ? <UserPlus size={28} /> : <LogIn size={28} />}
           </div>
-          <h2 style={{ margin: '0 0 6px 0', fontSize: '1.4rem', color: 'white' }}>
+          <h2 style={{ margin: '0 0 6px 0', fontSize: '1.4rem', color: 'var(--text-primary)' }}>
             {isSignUp ? 'Tạo Tài Khoản Mới' : 'Đăng Nhập Tài Khoản'}
           </h2>
           <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
@@ -123,15 +124,15 @@ const AuthModal = ({ isOpen, onClose }) => {
             <label style={{ display: 'block', fontSize: '0.83rem', fontWeight: 600, marginBottom: 6, color: 'var(--text-secondary)' }}>
               Email
             </label>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'rgba(0,0,0,0.3)', padding: '10px 14px', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'var(--bg-surface)', padding: '10px 14px', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
               <Mail size={16} color="var(--text-tertiary)" />
               <input 
                 type="email" 
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                placeholder="name@example.com"
-                required
-                style={{ background: 'transparent', border: 'none', color: 'white', outline: 'none', fontSize: '0.9rem', width: '100%' }}
+                value={email} 
+                onChange={e => setEmail(e.target.value)} 
+                placeholder="name@example.com" 
+                required 
+                style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', outline: 'none', fontSize: '0.9rem', width: '100%' }}
               />
             </div>
           </div>
@@ -140,15 +141,15 @@ const AuthModal = ({ isOpen, onClose }) => {
             <label style={{ display: 'block', fontSize: '0.83rem', fontWeight: 600, marginBottom: 6, color: 'var(--text-secondary)' }}>
               Mật khẩu
             </label>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'rgba(0,0,0,0.3)', padding: '10px 14px', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'var(--bg-surface)', padding: '10px 14px', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
               <Lock size={16} color="var(--text-tertiary)" />
               <input 
                 type="password" 
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                placeholder="••••••••"
-                required
-                style={{ background: 'transparent', border: 'none', color: 'white', outline: 'none', fontSize: '0.9rem', width: '100%' }}
+                value={password} 
+                onChange={e => setPassword(e.target.value)} 
+                placeholder="••••••••" 
+                required 
+                style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', outline: 'none', fontSize: '0.9rem', width: '100%' }}
               />
             </div>
           </div>

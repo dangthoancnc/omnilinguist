@@ -149,7 +149,7 @@ const Dashboard = () => {
                 </span>
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>Lưu trên thiết bị này</span>
               </div>
-              <h2 style={{ margin: 0, fontSize: '1.2rem', color: 'white' }}>
+              <h2 style={{ margin: 0, fontSize: '1.2rem', color: 'var(--text-primary)' }}>
                 Tiến Độ Học Tự Do Cá Nhân
               </h2>
               <p style={{ margin: '4px 0 0 0', fontSize: '0.83rem', color: 'var(--text-secondary)' }}>
@@ -184,7 +184,7 @@ const Dashboard = () => {
                 </span>
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>{user?.email}</span>
               </div>
-              <h2 style={{ margin: 0, fontSize: '1.2rem', color: 'white' }}>
+              <h2 style={{ margin: 0, fontSize: '1.2rem', color: 'var(--text-primary)' }}>
                 Lộ Trình SRS Cá Nhân Hóa ({goalLabel})
               </h2>
               <p style={{ margin: '4px 0 0 0', fontSize: '0.83rem', color: 'var(--text-secondary)' }}>
@@ -241,10 +241,10 @@ const Dashboard = () => {
                 </div>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <h3 style={{ margin: 0, fontSize: '1.15rem', color: 'white', fontWeight: 700 }}>
+                    <h3 style={{ margin: 0, fontSize: '1.15rem', color: 'var(--text-primary)', fontWeight: 700 }}>
                       Vùng Thụ Đắc Ngôn Ngữ Tự Nhiên
                     </h3>
-                    <span style={{ fontSize: '0.72rem', background: 'rgba(59, 130, 246, 0.25)', color: '#93c5fd', padding: '2px 8px', borderRadius: 10, fontWeight: 700 }}>
+                    <span style={{ fontSize: '0.72rem', background: 'rgba(59, 130, 246, 0.25)', color: '#2563eb', padding: '2px 8px', borderRadius: 10, fontWeight: 700 }}>
                       Stephen Krashen SLA
                     </span>
                   </div>
@@ -255,7 +255,7 @@ const Dashboard = () => {
               </div>
 
               {/* Current Milestone Badge */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'rgba(0,0,0,0.3)', padding: '6px 14px', borderRadius: 12, border: `1px solid ${immersionStats.levelColor}40` }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'var(--bg-surface)', padding: '6px 14px', borderRadius: 12, border: `1px solid ${immersionStats.levelColor}40` }}>
                 <Award size={18} color={immersionStats.levelColor} />
                 <div>
                   <div style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)', textTransform: 'uppercase' }}>Cấp độ SLA</div>
@@ -270,13 +270,13 @@ const Dashboard = () => {
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', marginBottom: 6 }}>
                 <span style={{ color: 'var(--text-secondary)' }}>
-                  Tiến độ tích lũy: <strong style={{ color: 'white' }}>{immersionStats.totalImmersionHours} giờ</strong>
+                  Tiến độ tích lũy: <strong style={{ color: 'var(--text-primary)' }}>{immersionStats.totalImmersionHours} giờ</strong>
                 </span>
                 <span style={{ color: immersionStats.levelColor, fontWeight: 700 }}>
                   Mục tiêu mốc tiếp theo: {immersionStats.nextMilestone} giờ ({immersionStats.progressInLevel}%)
                 </span>
               </div>
-              <div style={{ width: '100%', height: 8, background: 'rgba(0,0,0,0.4)', borderRadius: 4, overflow: 'hidden' }}>
+              <div style={{ width: '100%', height: 8, background: 'var(--bg-hover)', border: '1px solid var(--glass-border)', borderRadius: 4, overflow: 'hidden' }}>
                 <div style={{ width: `${immersionStats.progressInLevel}%`, height: '100%', background: `linear-gradient(90deg, #3b82f6, ${immersionStats.levelColor})`, transition: 'width 0.5s ease' }} />
               </div>
             </div>
@@ -339,7 +339,7 @@ const Dashboard = () => {
             
             {/* Thống kê hôm nay */}
             <div className="glass-panel" style={{ padding: '24px', borderRadius: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'white', fontWeight: 600, fontSize: '1.05rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--text-primary)', fontWeight: 600, fontSize: '1.05rem' }}>
                 <BarChart2 size={20} color="#60a5fa" />
                 Lịch Sử Học Hôm Nay
               </div>
@@ -386,7 +386,7 @@ const Dashboard = () => {
 
             {/* Phòng luyện tập chuyên đề */}
             <div className="glass-panel" style={{ padding: '24px', borderRadius: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'white', fontWeight: 600, fontSize: '1.05rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--text-primary)', fontWeight: 600, fontSize: '1.05rem' }}>
                 <Target size={20} color="#f59e0b" />
                 🏋️ Phòng Luyện Tập Chuyên Đề
               </div>
@@ -483,7 +483,7 @@ const Dashboard = () => {
                         <strong>{prog.learned}</strong> / {prog.total} từ ({pct}%)
                       </span>
                     </div>
-                    <div style={{ height: 8, background: 'rgba(0,0,0,0.3)', borderRadius: 4, overflow: 'hidden' }}>
+                    <div style={{ height: 8, background: 'var(--bg-hover)', border: '1px solid var(--glass-border)', borderRadius: 4, overflow: 'hidden' }}>
                       <div style={{ height: '100%', width: `${pct}%`, background: color, transition: 'width 0.4s ease' }} />
                     </div>
                   </div>
@@ -499,9 +499,9 @@ const Dashboard = () => {
               <h3 style={{ fontSize:'0.92rem', marginBottom:14 }}>⚡ Bắt đầu nhanh</h3>
               <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
                 {QUICK_LINKS.map((q, i) => (
-                  <div key={i} onClick={()=>navigate(q.route)} style={{ display:'flex', alignItems:'center', gap:12, padding:'10px 12px', borderRadius:8, background:'rgba(255,255,255,0.04)', border:'1px solid var(--glass-border)', cursor:'pointer', transition:'all 0.15s' }}
+                  <div key={i} onClick={()=>navigate(q.route)} style={{ display:'flex', alignItems:'center', gap:12, padding:'10px 12px', borderRadius:8, background:'var(--bg-hover)', border:'1px solid var(--glass-border)', cursor:'pointer', transition:'all 0.15s' }}
                     onMouseEnter={e=>e.currentTarget.style.borderColor=q.color}
-                    onMouseLeave={e=>e.currentTarget.style.borderColor='rgba(255,255,255,0.08)'}
+                    onMouseLeave={e=>e.currentTarget.style.borderColor='var(--glass-border)'}
                   >
                     <div style={{ color:q.color }}>{q.icon}</div>
                     <div style={{ flex:1 }}>
@@ -530,9 +530,9 @@ const Dashboard = () => {
                   { icon:'☀️', text:'Trưa: FSRS Flashcards (30p)', done: dueStats.learnedCount > 0 },
                   { icon:'🌙', text:'Tối: Shadowing + Writing (60p)', done: false },
                 ].map((t,i)=>(
-                  <div key={i} style={{ display:'flex', alignItems:'center', gap:10, padding:'7px 0', borderBottom: i<2?'1px solid rgba(255,255,255,0.04)':'' }}>
+                  <div key={i} style={{ display:'flex', alignItems:'center', gap:10, padding:'7px 0', borderBottom: i<2?'1px solid var(--glass-border)':'' }}>
                     <span>{t.icon}</span>
-                    <span style={{ flex:1, fontSize:'0.83rem', color: t.done?'var(--text-secondary)':'white', textDecoration: t.done?'line-through':'' }}>{t.text}</span>
+                    <span style={{ flex:1, fontSize:'0.83rem', color: t.done?'var(--text-secondary)':'var(--text-primary)', textDecoration: t.done?'line-through':'' }}>{t.text}</span>
                     {t.done && <span style={{ color:'#10b981', fontSize:'0.75rem' }}>✓</span>}
                   </div>
                 ))}
@@ -557,7 +557,7 @@ const Dashboard = () => {
               {recentHistoryLogs.map((log, idx) => (
                 <div key={idx} style={{
                   display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                  padding: '12px 16px', borderRadius: 10, background: 'rgba(255,255,255,0.02)',
+                  padding: '12px 16px', borderRadius: 10, background: 'var(--bg-hover)',
                   border: '1px solid var(--glass-border)'
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -565,7 +565,7 @@ const Dashboard = () => {
                       {log.level}
                     </span>
                     <div>
-                      <div style={{ fontWeight: 600, fontSize: '1rem', color: 'white' }} className="jp-text">
+                      <div style={{ fontWeight: 600, fontSize: '1rem', color: 'var(--text-primary)' }} className="jp-text">
                         {log.word} {log.reading ? `(${log.reading})` : ''}
                       </div>
                       <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{log.meaning}</div>

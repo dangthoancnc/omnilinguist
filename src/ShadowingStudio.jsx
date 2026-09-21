@@ -1498,7 +1498,7 @@ const ShadowingStudio = () => {
         </div>
 
         {/* 4 Scientific Shadowing Modes Selector */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 4, background: 'rgba(0,0,0,0.25)', padding: '2px 6px', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 4, background: 'var(--bg-surface)', padding: '2px 6px', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
           <span style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)', fontWeight: 700, marginRight: 2 }}>CHẾ ĐỘ:</span>
           
           <button 
@@ -1513,7 +1513,7 @@ const ShadowingStudio = () => {
           <button 
             onClick={() => setShadowingMode('blind')} 
             className={`btn ${shadowingMode === 'blind' ? 'btn-primary' : 'btn-ghost'}`} 
-            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3, background: shadowingMode === 'blind' ? '#8b5cf6' : 'transparent', color: 'white' }}
+            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3, background: shadowingMode === 'blind' ? '#8b5cf6' : 'transparent', color: shadowingMode === 'blind' ? '#ffffff' : 'var(--text-secondary)' }}
             title="Blind Shadowing: Làm mờ phụ đề luyện phản xạ nghe trực tiếp"
           >
             <EyeOff size={12}/> Blind
@@ -1522,7 +1522,7 @@ const ShadowingStudio = () => {
           <button 
             onClick={() => setShadowingMode('echo')} 
             className={`btn ${shadowingMode === 'echo' ? 'btn-primary' : 'btn-ghost'}`} 
-            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3, background: shadowingMode === 'echo' ? '#f59e0b' : 'transparent', color: 'white' }}
+            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3, background: shadowingMode === 'echo' ? '#f59e0b' : 'transparent', color: shadowingMode === 'echo' ? '#ffffff' : 'var(--text-secondary)' }}
             title="Echoing Method (Dr. Karen Chung): Tự động dừng sau từng câu để nhại lại"
           >
             <Repeat size={12}/> Echo
@@ -1531,7 +1531,7 @@ const ShadowingStudio = () => {
           <button 
             onClick={() => setShadowingMode('record')} 
             className={`btn ${shadowingMode === 'record' ? 'btn-primary' : 'btn-ghost'}`} 
-            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3, background: shadowingMode === 'record' ? '#ef4444' : 'transparent', color: 'white' }}
+            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3, background: shadowingMode === 'record' ? '#ef4444' : 'transparent', color: shadowingMode === 'record' ? '#ffffff' : 'var(--text-secondary)' }}
             title="Record & Compare: Thu âm giọng thực tế và nghe lại đối chiếu"
           >
             <Mic size={12}/> Record
@@ -1540,7 +1540,7 @@ const ShadowingStudio = () => {
           <button 
             onClick={() => setShadowingMode('relaxed')} 
             className={`btn ${shadowingMode === 'relaxed' ? 'btn-primary' : 'btn-ghost'}`} 
-            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3, background: shadowingMode === 'relaxed' ? '#10b981' : 'transparent', color: 'white' }}
+            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3, background: shadowingMode === 'relaxed' ? '#10b981' : 'transparent', color: shadowingMode === 'relaxed' ? '#ffffff' : 'var(--text-secondary)' }}
             title="Stephen Krashen Relaxed Immersion: Tắm ngôn ngữ thư giãn, không chấm điểm phán xét, hạ thấp bộ lọc cảm xúc"
           >
             🌿 Relaxed
@@ -1652,7 +1652,7 @@ const ShadowingStudio = () => {
                   })}
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(0,0,0,0.25)', padding: '3px 8px', borderRadius: 8, border: '1px solid var(--glass-border)', minWidth: 200 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'var(--bg-surface)', padding: '3px 8px', borderRadius: 8, border: '1px solid var(--glass-border)', minWidth: 200 }}>
                   <Search size={13} color="var(--text-tertiary)" />
                   <input
                     type="text"
@@ -1780,7 +1780,7 @@ const ShadowingStudio = () => {
                   value={webUrlInput}
                   onChange={e => setWebUrlInput(e.target.value)}
                   onKeyDown={e => { if(e.key === 'Enter') handleFetchWebArticle(); }}
-                  style={{ flex: 1, padding: '8px 12px', borderRadius: 8, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', outline: 'none', fontSize: '0.85rem' }}
+                  style={{ flex: 1, padding: '8px 12px', borderRadius: 8, background: 'var(--bg-surface)', border: '1px solid var(--glass-border-strong)', color: 'var(--text-primary)', outline: 'none', fontSize: '0.85rem' }}
                 />
                 <button className="btn btn-primary" onClick={() => handleFetchWebArticle()} disabled={isFetching} style={{ display: 'flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap', fontSize: '0.85rem' }}>
                   {isFetching ? <Loader size={14} className="spin" /> : <Link2 size={14} />} Trích Xuất Web
@@ -1806,13 +1806,13 @@ const ShadowingStudio = () => {
             </div>
 
             {/* Custom Raw Text Importer */}
-            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'flex-start', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: 10 }}>
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'flex-start', borderTop: '1px solid var(--glass-border)', paddingTop: 10 }}>
                <input 
                  type="text" 
                  placeholder="Tiêu đề bài viết..."
                  value={customTextTitle}
                  onChange={e => setCustomTextTitle(e.target.value)}
-                 style={{ width: 220, padding: '6px 10px', borderRadius: 6, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', fontSize: '0.8rem' }}
+                 style={{ width: 220, padding: '6px 10px', borderRadius: 6, background: 'var(--bg-surface)', border: '1px solid var(--glass-border-strong)', color: 'var(--text-primary)', fontSize: '0.8rem' }}
                />
                <input 
                  type="text"
@@ -1820,7 +1820,7 @@ const ShadowingStudio = () => {
                  value={customTextInput}
                  onChange={e => setCustomTextInput(e.target.value)}
                  onKeyDown={e => { if(e.key === 'Enter') handleParseCustomText(); }}
-                 style={{ flex: 1, minWidth: 200, padding: '6px 10px', borderRadius: 6, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', fontSize: '0.8rem' }}
+                 style={{ flex: 1, minWidth: 200, padding: '6px 10px', borderRadius: 6, background: 'var(--bg-surface)', border: '1px solid var(--glass-border-strong)', color: 'var(--text-primary)', fontSize: '0.8rem' }}
                />
                <button className="btn btn-primary" onClick={handleParseCustomText} style={{ padding: '6px 14px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: 4, whiteSpace: 'nowrap' }}>
                  <Wand2 size={13}/> Biến Thành Bài Shadowing
@@ -1838,7 +1838,7 @@ const ShadowingStudio = () => {
               value={urlInput}
               onChange={e => setUrlInput(e.target.value)}
               onKeyDown={e => { if(e.key === 'Enter') handleFetchYouTube(); }}
-              style={{ flex: 1, padding: '8px 12px', borderRadius: 8, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', outline: 'none', fontSize: '0.9rem' }}
+              style={{ flex: 1, padding: '8px 12px', borderRadius: 8, background: 'var(--bg-surface)', border: '1px solid var(--glass-border-strong)', color: 'var(--text-primary)', outline: 'none', fontSize: '0.9rem' }}
             />
             <button className="btn btn-primary" onClick={handleFetchYouTube} disabled={isFetching} style={{ display: 'flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap' }}>
               {isFetching ? <Loader size={15} className="spin" /> : <Globe size={15} />} Học Ngay
@@ -1853,13 +1853,13 @@ const ShadowingStudio = () => {
                 <input type="file" accept="video/*,audio/*" onChange={handleUploadLocal} disabled={isFetching} style={{ display: 'none' }} />
              </label>
 
-             <select value={sttLang} onChange={e => setSttLang(e.target.value)} style={{ padding: '6px 10px', borderRadius: 6, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', fontSize: '0.8rem' }}>
+             <select value={sttLang} onChange={e => setSttLang(e.target.value)} style={{ padding: '6px 10px', borderRadius: 6, background: 'var(--bg-surface)', border: '1px solid var(--glass-border-strong)', color: 'var(--text-primary)', fontSize: '0.8rem' }}>
                 <option value="ja">🇯🇵 Tiếng Nhật</option>
                 <option value="en">🇺🇸 Tiếng Anh</option>
                 <option value="vi">🇻🇳 Tiếng Việt</option>
              </select>
 
-             <select value={sttModel} onChange={e => setSttModel(e.target.value)} style={{ padding: '6px 10px', borderRadius: 6, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', fontSize: '0.8rem' }}>
+             <select value={sttModel} onChange={e => setSttModel(e.target.value)} style={{ padding: '6px 10px', borderRadius: 6, background: 'var(--bg-surface)', border: '1px solid var(--glass-border-strong)', color: 'var(--text-primary)', fontSize: '0.8rem' }}>
                 <option value="base">⚡ Whisper Base</option>
                 <option value="small">📊 Whisper Small</option>
                 <option value="medium">🎯 Whisper Medium</option>
@@ -1886,7 +1886,7 @@ const ShadowingStudio = () => {
                       placeholder="Tên Playlist mới..."
                       value={newPlaylistTitle}
                       onChange={e => setNewPlaylistTitle(e.target.value)}
-                      style={{ padding: '6px 12px', borderRadius: 6, background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', fontSize: '0.85rem' }}
+                      style={{ padding: '6px 12px', borderRadius: 6, background: 'var(--bg-surface)', border: '1px solid var(--glass-border-strong)', color: 'var(--text-primary)', fontSize: '0.85rem' }}
                     />
                     <button className="btn btn-primary" onClick={handleCreatePlaylist} style={{ padding: '6px 12px', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 4 }}>
                       <FolderPlus size={15}/> Tạo Playlist
@@ -1983,7 +1983,7 @@ const ShadowingStudio = () => {
                 </div>
               ) : (
                 /* EHON / MANGA ARTWORK DISPLAY */
-                <div style={{ position: 'relative', width: '100%', height: 290, background: 'linear-gradient(135deg, #1e293b, #0f172a)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ position: 'relative', width: '100%', height: 290, background: 'var(--bg-card)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {currentStoryArtwork?.imageUrl ? (
                     <img 
                       src={currentStoryArtwork.imageUrl} 
@@ -2056,7 +2056,7 @@ const ShadowingStudio = () => {
               )}
 
               {/* Subtitle Action Toolbar */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 10px', background: 'rgba(0,0,0,0.18)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 10px', background: 'var(--bg-card)', borderTop: '1px solid var(--glass-border)' }}>
                 <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
                   <label className="btn btn-outline" style={{ padding: '2px 8px', fontSize: '0.72rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4 }}>
                     <Upload size={11}/> Nạp SRT
@@ -2307,7 +2307,7 @@ const ShadowingStudio = () => {
 
                               {/* Live Speech Recognition Display */}
                               {recordingIdx === idx && (
-                                  <div className="jp-text" style={{ fontSize: '0.85rem', padding: 6, background: 'rgba(0,0,0,0.3)', borderRadius: 6, color: '#fca5a5' }}>
+                                  <div className="jp-text" style={{ fontSize: '0.85rem', padding: 6, background: 'var(--bg-surface)', borderRadius: 6, color: '#fca5a5' }}>
                                       🎙️ {transcript || 'Đang nghe giọng bạn nhại âm...'}
                                   </div>
                               )}

@@ -358,7 +358,7 @@ const GrammarExplorer = () => {
             <Flame size={20} color="white"/>
           </div>
           <div>
-            <h1 style={{ margin: 0, fontSize: '1.2rem', color: 'white', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <h1 style={{ margin: 0, fontSize: '1.2rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: 8 }}>
               Bunpro Grammar Engine <span style={{ fontSize: '0.75rem', background: '#f59e0b', color: 'black', padding: '2px 8px', borderRadius: 10, fontWeight: 700 }}>v11.1 Master</span>
             </h1>
             <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
@@ -368,7 +368,7 @@ const GrammarExplorer = () => {
         </div>
 
         {/* Main Tab Switcher */}
-        <div style={{ display: 'flex', gap: 8, background: 'rgba(0,0,0,0.3)', padding: 4, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
+        <div style={{ display: 'flex', gap: 8, background: 'var(--bg-surface)', padding: 4, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
           <button 
             className={`btn ${activeTab === 'library' ? 'btn-primary' : 'btn-ghost'}`}
             onClick={() => setActiveTab('library')}
@@ -388,7 +388,7 @@ const GrammarExplorer = () => {
           <button 
             className={`btn ${activeTab === 'cram' ? 'btn-primary' : 'btn-ghost'}`}
             onClick={() => setActiveTab('cram')}
-            style={{ padding: '6px 14px', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: 6, background: activeTab === 'cram' ? '#ef4444' : 'transparent', color: 'white' }}
+            style={{ padding: '6px 14px', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: 6, background: activeTab === 'cram' ? '#ef4444' : 'transparent', color: activeTab === 'cram' ? 'white' : 'var(--text-secondary)' }}
           >
             <Flame size={15}/> 🔥 Cram Mode (Ép Xung)
           </button>
@@ -405,14 +405,14 @@ const GrammarExplorer = () => {
             
             {/* Search Input & Level Pills */}
             <div className="glass-panel" style={{ padding: 12, display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(0,0,0,0.3)', padding: '6px 12px', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'var(--bg-surface)', padding: '6px 12px', borderRadius: 8, border: '1px solid var(--glass-border)' }}>
                 <Search size={16} color="var(--text-tertiary)"/>
                 <input 
                   type="text" 
                   placeholder="Tra mẫu ngữ pháp, nghĩa tiếng Việt..." 
                   value={query}
                   onChange={e => setQuery(e.target.value)}
-                  style={{ background: 'transparent', border: 'none', color: 'white', outline: 'none', fontSize: '0.85rem', flex: 1 }}
+                  style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', outline: 'none', fontSize: '0.85rem', flex: 1 }}
                 />
               </div>
 
@@ -455,7 +455,7 @@ const GrammarExplorer = () => {
                             {g.level || 'N3'}
                           </span>
                           <div>
-                            <div style={{ fontWeight: 600, fontSize: '1.05rem', color: 'white' }} className="jp-text">
+                            <div style={{ fontWeight: 600, fontSize: '1.05rem', color: 'var(--text-primary)' }} className="jp-text">
                               <FuriganaText text={g.pattern} />
                             </div>
                             <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{g.meaning}</div>
@@ -490,7 +490,7 @@ const GrammarExplorer = () => {
                     <span style={{ fontSize: '0.8rem', fontWeight: 700, padding: '3px 10px', borderRadius: 6, background: (LEVEL_COLORS[selectedItem.level] || '#3b82f6') + '22', color: LEVEL_COLORS[selectedItem.level] || '#3b82f6', marginRight: 10 }}>
                       {selectedItem.level || 'N3'}
                     </span>
-                    <h2 style={{ display: 'inline', margin: 0, fontSize: '1.6rem', color: 'white' }} className="jp-text">
+                    <h2 style={{ display: 'inline', margin: 0, fontSize: '1.6rem', color: 'var(--text-primary)' }} className="jp-text">
                       <FuriganaText text={selectedItem.pattern} />
                     </h2>
                   </div>
@@ -510,14 +510,14 @@ const GrammarExplorer = () => {
                   <div style={{ fontSize: '0.85rem', color: 'var(--accent-primary)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 6 }}>
                     Ý Nghĩa Cấu Trúc
                   </div>
-                  <div style={{ fontSize: '1.2rem', fontWeight: 600, color: 'white', marginBottom: 12 }}>
+                  <div style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 12 }}>
                     {selectedItem.meaning}
                   </div>
 
                   {selectedItem.formation && (
                     <div style={{ borderTop: '1px dashed rgba(59,130,246,0.3)', paddingTop: 10 }}>
                       <div style={{ fontSize: '0.85rem', color: 'var(--text-tertiary)', fontWeight: 600, marginBottom: 6 }}>CÔNG THỨC CHIA (STRUCTURE FORMULA):</div>
-                      <div style={{ background: 'rgba(0,0,0,0.3)', padding: '8px 14px', borderRadius: 8, fontSize: '1.05rem', color: '#60a5fa', fontFamily: 'monospace' }}>
+                      <div style={{ background: 'var(--bg-surface)', padding: '8px 14px', borderRadius: 8, fontSize: '1.05rem', color: '#60a5fa', fontFamily: 'monospace' }}>
                         {Array.isArray(selectedItem.formation) ? selectedItem.formation.join(' / ') : selectedItem.formation}
                       </div>
                     </div>
@@ -527,7 +527,7 @@ const GrammarExplorer = () => {
                 {/* Detailed Explanation & Nuance */}
                 {selectedItem.explanation && (
                   <div>
-                    <h3 style={{ margin: '0 0 8px 0', fontSize: '1rem', color: 'white', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <h3 style={{ margin: '0 0 8px 0', fontSize: '1rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: 6 }}>
                       <Info size={16} color="#f59e0b" /> Giải Thích Sắc Thái (Nuance Breakdown)
                     </h3>
                     <p style={{ margin: 0, fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
@@ -539,7 +539,7 @@ const GrammarExplorer = () => {
                 {/* Examples */}
                 {selectedItem.examples && selectedItem.examples.length > 0 && (
                   <div>
-                    <h3 style={{ margin: '0 0 12px 0', fontSize: '1rem', color: 'white', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '1rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: 6 }}>
                       <List size={16} color="#10b981" /> Câu Ví Dụ Minh Họa
                     </h3>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -549,7 +549,7 @@ const GrammarExplorer = () => {
                         return (
                           <div key={i} style={{ padding: 14, background: 'rgba(255,255,255,0.03)', borderRadius: 10, border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <div>
-                              <div className="jp-text" style={{ fontSize: '1.1rem', color: 'white', marginBottom: 4 }}>
+                              <div className="jp-text" style={{ fontSize: '1.1rem', color: 'var(--text-primary)', marginBottom: 4 }}>
                                 <FuriganaText text={jp} />
                               </div>
                               {vi && <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{vi}</div>}
@@ -583,7 +583,7 @@ const GrammarExplorer = () => {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--glass-border)', paddingBottom: 14 }}>
               
               {/* Dual Mode Switcher (Active Typing vs Multiple Choice) */}
-              <div style={{ display: 'flex', gap: 6, background: 'rgba(0,0,0,0.3)', padding: 4, borderRadius: 10 }}>
+              <div style={{ display: 'flex', gap: 6, background: 'var(--bg-surface)', padding: 4, borderRadius: 10 }}>
                 <button 
                   onClick={() => setQuizMode('typing')}
                   className={`btn ${quizMode === 'typing' ? 'btn-primary' : 'btn-ghost'}`}
@@ -646,7 +646,7 @@ const GrammarExplorer = () => {
                 CẤU TRÚC NGỮ PHÁP #{currentQuizIdx + 1} ({currentQuestion.level})
               </div>
               
-              <div className="jp-text" style={{ fontSize: '1.6rem', fontWeight: 700, color: 'white', lineHeight: 1.6, marginBottom: 8 }}>
+              <div className="jp-text" style={{ fontSize: '1.6rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.6, marginBottom: 8 }}>
                 <FuriganaText text={currentQuestion.promptSentence} />
               </div>
 
@@ -669,9 +669,9 @@ const GrammarExplorer = () => {
                     onKeyDown={e => { if (e.key === 'Enter') handleCheckTypingAnswer(); }}
                     disabled={feedback?.status === 'correct'}
                     style={{ 
-                      flex: 1, padding: '12px 16px', borderRadius: 10, background: 'rgba(0,0,0,0.4)', 
+                      flex: 1, padding: '12px 16px', borderRadius: 10, background: 'var(--bg-surface)', 
                       border: `2px solid ${feedback?.status === 'correct' ? '#10b981' : feedback?.status === 'warning' ? '#f59e0b' : 'var(--glass-border-strong)'}`, 
-                      color: 'white', outline: 'none', fontSize: '1.1rem', textAlign: 'center'
+                      color: 'var(--text-primary)', outline: 'none', fontSize: '1.1rem', textAlign: 'center'
                     }}
                   />
                   <button className="btn btn-primary" onClick={handleCheckTypingAnswer} disabled={feedback?.status === 'correct'} style={{ padding: '0 20px', fontSize: '0.9rem' }}>
@@ -702,7 +702,7 @@ const GrammarExplorer = () => {
                       disabled={selectedOptionIdx !== null}
                       style={{ 
                         padding: '14px 18px', borderRadius: 10, background: bg, border, 
-                        color: 'white', fontSize: '1.1rem', fontWeight: 600, cursor: 'pointer',
+                        color: 'var(--text-primary)', fontSize: '1.1rem', fontWeight: 600, cursor: 'pointer',
                         transition: 'all 0.2s', textAlign: 'center'
                       }}
                       className="jp-text"
@@ -720,7 +720,7 @@ const GrammarExplorer = () => {
                 padding: 14, borderRadius: 10, 
                 background: feedback.status === 'correct' ? 'rgba(16,185,129,0.15)' : feedback.status === 'warning' ? 'rgba(245,158,11,0.15)' : 'rgba(239,68,68,0.15)',
                 border: `1px solid ${feedback.status === 'correct' ? '#10b981' : feedback.status === 'warning' ? '#f59e0b' : '#ef4444'}`,
-                color: 'white', fontSize: '0.92rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between'
+                color: 'var(--text-primary)', fontSize: '0.92rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between'
               }}>
                 <div>
                   <div style={{ fontWeight: 700, marginBottom: 2 }}>{feedback.msg}</div>

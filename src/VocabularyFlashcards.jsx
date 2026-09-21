@@ -548,7 +548,7 @@ const VocabularyFlashcards = () => {
         </p>
 
         {/* Session Log Quick Stats */}
-        <div style={{ display: 'flex', gap: 16, width: '100%', maxWidth: 620, marginBottom: 28, background: 'rgba(0,0,0,0.3)', padding: '16px 20px', borderRadius: 14, justifyContent: 'space-around', border: '1px solid var(--glass-border)', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: 16, width: '100%', maxWidth: 620, marginBottom: 28, background: 'var(--bg-surface)', padding: '16px 20px', borderRadius: 14, justifyContent: 'space-around', border: '1px solid var(--glass-border)', flexWrap: 'wrap' }}>
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#60a5fa' }}>{sessionHistory.length}</div>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginTop: 2 }}>Đã học phiên này</div>
@@ -565,8 +565,8 @@ const VocabularyFlashcards = () => {
             <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#ef4444' }}>{sessionBreakdown.again}</div>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginTop: 2 }}>Cần xem lại</div>
           </div>
-          <div style={{ textAlign: 'center', borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: 16 }}>
-            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: 'white' }}>{stats.learnedCount} <span style={{ fontSize: '0.9rem', opacity: 0.6 }}>/ {stats.total}</span></div>
+          <div style={{ textAlign: 'center', borderLeft: '1px solid var(--glass-border)', paddingLeft: 16 }}>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--text-primary)' }}>{stats.learnedCount} <span style={{ fontSize: '0.9rem', opacity: 0.6 }}>/ {stats.total}</span></div>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginTop: 2 }}>Tổng thuộc cấp {level}</div>
           </div>
         </div>
@@ -641,9 +641,9 @@ const VocabularyFlashcards = () => {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 14 }}>
               {effectiveReviewList.map((item, idx) => (
-                <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', padding: 14, borderRadius: 12, border: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div key={idx} style={{ background: 'var(--bg-card-solid)', padding: 14, borderRadius: 12, border: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
-                    <div style={{ fontSize: '1.3rem', fontWeight: 700, color: 'white', marginBottom: 2 }}>{item.word}</div>
+                    <div style={{ fontSize: '1.3rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 2 }}>{item.word}</div>
                     {item.reading && <div style={{ fontSize: '0.82rem', color: '#60a5fa', marginBottom: 4 }}>{item.reading}</div>}
                     <div style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>{item.vi || item.meaning}</div>
                   </div>
@@ -687,14 +687,14 @@ const VocabularyFlashcards = () => {
             style={{ padding:'8px 16px', borderRadius:8, background: LEVEL_COLORS[level] || '#6366f1', border:'none', color:'white', fontWeight:700, outline:'none', cursor:'pointer', boxShadow:`0 4px 12px ${(LEVEL_COLORS[level]||'#6366f1')}55` }}
           >
             {[...LEVELS, 'Khác'].map(l => (
-              <option key={l} value={l} style={{ background: '#1e293b' }}>
+              <option key={l} value={l} style={{ background: 'var(--bg-card-solid)', color: 'var(--text-primary)' }}>
                 Thẻ {l} {vocabLevelCounts[l] !== undefined ? `(${vocabLevelCounts[l]} từ)` : ''}
               </option>
             ))}
           </select>
 
           {!isGuest() ? (
-            <div style={{ display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: 8, padding: 4 }}>
+            <div style={{ display: 'flex', background: 'var(--bg-surface)', borderRadius: 8, padding: 4 }}>
               <button onClick={() => setLearningMode('roadmap')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: learningMode === 'roadmap' ? 'rgba(59,130,246,0.3)' : 'transparent', color: learningMode === 'roadmap' ? '#60a5fa' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6, fontWeight: learningMode === 'roadmap' ? 600 : 400 }}>
                 <ListOrdered size={16}/> Lộ Trình FSRS
               </button>
@@ -709,11 +709,11 @@ const VocabularyFlashcards = () => {
             </div>
           )}
 
-          <div style={{ display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: 8, padding: 4 }}>
-            <button onClick={() => setStudyMode('fsrs')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: studyMode === 'fsrs' ? 'rgba(255,255,255,0.1)' : 'transparent', color: studyMode === 'fsrs' ? 'white' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+          <div style={{ display: 'flex', background: 'var(--bg-surface)', borderRadius: 8, padding: 4 }}>
+            <button onClick={() => setStudyMode('fsrs')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: studyMode === 'fsrs' ? 'rgba(255,255,255,0.1)' : 'transparent', color: studyMode === 'fsrs' ? 'var(--text-primary)' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6 }}>
               <Brain size={16}/> Lật thẻ
             </button>
-            <button onClick={() => setStudyMode('quiz')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: studyMode === 'quiz' ? 'rgba(255,255,255,0.1)' : 'transparent', color: studyMode === 'quiz' ? 'white' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+            <button onClick={() => setStudyMode('quiz')} style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', background: studyMode === 'quiz' ? 'rgba(255,255,255,0.1)' : 'transparent', color: studyMode === 'quiz' ? 'var(--text-primary)' : 'var(--text-secondary)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6 }}>
               <Target size={16}/> Trắc nghiệm
             </button>
           </div>
@@ -741,12 +741,12 @@ const VocabularyFlashcards = () => {
                   onChange={e => setFilterMode(e.target.value)}
                   style={{ background:'transparent', border:'none', color:'var(--text-secondary)', cursor:'pointer', outline:'none', fontWeight: 500 }}
                 >
-                  <option value="all" style={{ background:'#1e293b' }}>Học thông thường ({allIds.length})</option>
-                  <option value="due" style={{ background:'#1e293b' }}>Chỉ thẻ đến hạn ({getDueCards(allIds).length})</option>
-                  <option value="skipped" style={{ background:'#1e293b' }}>Thẻ bị bỏ qua / Chưa học ({unlearnedCount})</option>
-                  <option value="bookmark" style={{ background:'#1e293b' }}>Thẻ đã Bookmark ({allIds.filter(id => isBookmarked(id)).length})</option>
-                  <option value="again" style={{ background:'#1e293b' }}>Thẻ đánh giá: Lại</option>
-                  <option value="hard" style={{ background:'#1e293b' }}>Thẻ đánh giá: Khó</option>
+                  <option value="all" style={{ background:'var(--bg-card-solid)', color: 'var(--text-primary)' }}>Học thông thường ({allIds.length})</option>
+                  <option value="due" style={{ background:'var(--bg-card-solid)', color: 'var(--text-primary)' }}>Chỉ thẻ đến hạn ({getDueCards(allIds).length})</option>
+                  <option value="skipped" style={{ background:'var(--bg-card-solid)', color: 'var(--text-primary)' }}>Thẻ bị bỏ qua / Chưa học ({unlearnedCount})</option>
+                  <option value="bookmark" style={{ background:'var(--bg-card-solid)', color: 'var(--text-primary)' }}>Thẻ đã Bookmark ({allIds.filter(id => isBookmarked(id)).length})</option>
+                  <option value="again" style={{ background:'var(--bg-card-solid)', color: 'var(--text-primary)' }}>Thẻ đánh giá: Lại</option>
+                  <option value="hard" style={{ background:'var(--bg-card-solid)', color: 'var(--text-primary)' }}>Thẻ đánh giá: Khó</option>
                 </select>
               </div>
 
@@ -760,10 +760,10 @@ const VocabularyFlashcards = () => {
                   style={{ background:'transparent', border:'none', color: priorityFilter === '1' ? '#f59e0b' : priorityFilter === '2' ? '#60a5fa' : priorityFilter === '3' ? '#c084fc' : 'var(--text-secondary)', cursor:'pointer', outline:'none', fontWeight: 600 }}
                   title="Lọc từ vựng theo mức độ quan trọng & tần suất sử dụng"
                 >
-                  <option value="all" style={{ background:'#1e293b', color:'white' }}>Tất cả mức độ</option>
-                  <option value="1" style={{ background:'#1e293b', color:'#f59e0b' }}>⭐⭐⭐ Cốt lõi</option>
-                  <option value="2" style={{ background:'#1e293b', color:'#60a5fa' }}>⭐⭐ Phổ biến</option>
-                  <option value="3" style={{ background:'#1e293b', color:'#c084fc' }}>⭐ Nâng cao</option>
+                  <option value="all" style={{ background:'var(--bg-card-solid)', color:'var(--text-primary)' }}>Tất cả mức độ</option>
+                  <option value="1" style={{ background:'var(--bg-card-solid)', color:'#f59e0b' }}>⭐⭐⭐ Cốt lõi</option>
+                  <option value="2" style={{ background:'var(--bg-card-solid)', color:'#60a5fa' }}>⭐⭐ Phổ biến</option>
+                  <option value="3" style={{ background:'var(--bg-card-solid)', color:'#c084fc' }}>⭐ Nâng cao</option>
                 </select>
               </div>
               
@@ -876,9 +876,9 @@ const VocabularyFlashcards = () => {
                     <button 
                       key={idx}
                       onClick={(e) => { e.stopPropagation(); setQuizAnswered(opt); setShowAnswer(true); }}
-                      style={{ padding: '14px', borderRadius: 10, border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.3)', color: 'white', cursor: 'pointer', fontSize: '1rem', transition: 'all 0.2s' }}
-                      onMouseOver={e => e.currentTarget.style.background='rgba(255,255,255,0.1)'}
-                      onMouseOut={e => e.currentTarget.style.background='rgba(0,0,0,0.3)'}
+                      style={{ padding: '14px', borderRadius: 10, border: '1px solid var(--glass-border)', background: 'var(--bg-surface)', color: 'var(--text-primary)', cursor: 'pointer', fontSize: '1rem', transition: 'all 0.2s' }}
+                      onMouseOver={e => e.currentTarget.style.background='var(--bg-hover)'}
+                      onMouseOut={e => e.currentTarget.style.background='var(--bg-surface)'}
                     >
                       {String.fromCharCode(65 + idx)}. {opt}
                     </button>
@@ -1045,8 +1045,8 @@ const VocabularyFlashcards = () => {
 
       {showSettings && (
         <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(6px)' }} onClick={() => setShowSettings(false)}>
-          <div style={{ background: '#1e293b', border: '1px solid var(--glass-border)', borderRadius: 16, padding: 24, width: '90%', maxWidth: 480, boxShadow: '0 20px 40px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: 18 }} onClick={e => e.stopPropagation()}>
-            <h2 style={{ margin: 0, fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: 10, color: 'white' }}>
+          <div style={{ background: 'var(--bg-card-solid)', border: '1px solid var(--glass-border)', borderRadius: 16, padding: 24, width: '90%', maxWidth: 480, boxShadow: '0 20px 40px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: 18 }} onClick={e => e.stopPropagation()}>
+            <h2 style={{ margin: 0, fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: 10, color: 'var(--text-primary)' }}>
               <Settings size={20} color="#60a5fa" /> Cài Đặt Lật Thẻ & Thời Gian Xác Nhận
             </h2>
 
@@ -1064,12 +1064,12 @@ const VocabularyFlashcards = () => {
                     padding: 14,
                     borderRadius: 10,
                     border: revealMode === 'on_rating' ? '1px solid #3b82f6' : '1px solid var(--glass-border)',
-                    background: revealMode === 'on_rating' ? 'rgba(59,130,246,0.15)' : 'rgba(0,0,0,0.2)',
+                    background: revealMode === 'on_rating' ? 'rgba(59,130,246,0.15)' : 'var(--bg-surface)',
                     cursor: 'pointer',
                     transition: 'all 0.2s'
                   }}
                 >
-                  <label style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', fontWeight: 600, color: 'white', fontSize: '0.9rem' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.9rem' }}>
                     <input 
                       type="radio" 
                       name="revealMode"
@@ -1108,12 +1108,12 @@ const VocabularyFlashcards = () => {
                     padding: 14,
                     borderRadius: 10,
                     border: revealMode === 'always' ? '1px solid #3b82f6' : '1px solid var(--glass-border)',
-                    background: revealMode === 'always' ? 'rgba(59,130,246,0.15)' : 'rgba(0,0,0,0.2)',
+                    background: revealMode === 'always' ? 'rgba(59,130,246,0.15)' : 'var(--bg-surface)',
                     cursor: 'pointer',
                     transition: 'all 0.2s'
                   }}
                 >
-                  <label style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', fontWeight: 600, color: 'white', fontSize: '0.9rem' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.9rem' }}>
                     <input 
                       type="radio" 
                       name="revealMode"
@@ -1131,9 +1131,9 @@ const VocabularyFlashcards = () => {
             </div>
 
             {/* 2. Tự động phát âm */}
-            <div style={{ background: 'rgba(0,0,0,0.2)', padding: 14, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
+            <div style={{ background: 'var(--bg-surface)', padding: 14, borderRadius: 10, border: '1px solid var(--glass-border)' }}>
               <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
-                <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'white' }}>🔊 Tự động phát âm thanh tiếng Nhật</span>
+                <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-primary)' }}>🔊 Tự động phát âm thanh tiếng Nhật</span>
                 <input 
                   type="checkbox" 
                   checked={autoPlay} 
@@ -1161,8 +1161,8 @@ const VocabularyFlashcards = () => {
                       padding: '10px 14px',
                       borderRadius: 8,
                       border: autoAdvanceDelay === opt.value ? '1px solid #3b82f6' : '1px solid var(--glass-border)',
-                      background: autoAdvanceDelay === opt.value ? 'rgba(59,130,246,0.15)' : 'rgba(0,0,0,0.2)',
-                      color: autoAdvanceDelay === opt.value ? '#60a5fa' : 'white',
+                      background: autoAdvanceDelay === opt.value ? 'rgba(59,130,246,0.15)' : 'var(--bg-surface)',
+                      color: autoAdvanceDelay === opt.value ? '#60a5fa' : 'var(--text-primary)',
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',

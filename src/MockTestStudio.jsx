@@ -186,7 +186,7 @@ const ExamBankStudio = () => {
                     <div style={{ fontWeight: 700, color: drillAnswer === drillQ.correctIndex ? '#10b981' : '#ef4444', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 6 }}>
                       {drillAnswer === drillQ.correctIndex ? <><CheckCircle size={16}/> Chính xác!</> : <><XCircle size={16}/> Sai rồi!</>}
                     </div>
-                    <div style={{ fontSize: '0.9rem', color: 'white', lineHeight: 1.5 }}>
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-primary)', lineHeight: 1.5 }}>
                       💡 <FuriganaText text={drillQ.explanation} />
                     </div>
                   </div>
@@ -247,8 +247,8 @@ const ExamBankStudio = () => {
                           </div>
                           <div style={{ display: 'grid', gap: 10 }}>
                             {q.options.map((opt, optIdx) => (
-                              <div key={optIdx} onClick={() => setMockAnswers(p => ({ ...p, [q.id]: optIdx }))} className="jp-text" style={{ padding: '12px 16px', borderRadius: 8, cursor: 'pointer', background: mockAnswers[q.id] === optIdx ? 'rgba(59,130,246,0.2)' : 'rgba(0,0,0,0.2)', border: `1px solid ${mockAnswers[q.id] === optIdx ? '#3b82f6' : 'var(--glass-border)'}`, display: 'flex', alignItems: 'center', gap: 12 }}>
-                                <div style={{ width: 24, height: 24, borderRadius: '50%', border: `2px solid ${mockAnswers[q.id] === optIdx ? '#3b82f6' : 'rgba(255,255,255,0.3)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', background: mockAnswers[q.id] === optIdx ? '#3b82f6' : 'transparent', color: 'white', fontSize: '0.8rem', fontWeight: 700 }}>{optIdx + 1}</div>
+                              <div key={optIdx} onClick={() => setMockAnswers(p => ({ ...p, [q.id]: optIdx }))} className="jp-text" style={{ padding: '12px 16px', borderRadius: 8, cursor: 'pointer', background: mockAnswers[q.id] === optIdx ? 'rgba(59,130,246,0.2)' : 'var(--bg-surface)', border: `1px solid ${mockAnswers[q.id] === optIdx ? '#3b82f6' : 'var(--glass-border)'}`, display: 'flex', alignItems: 'center', gap: 12 }}>
+                                <div style={{ width: 24, height: 24, borderRadius: '50%', border: `2px solid ${mockAnswers[q.id] === optIdx ? '#3b82f6' : 'var(--glass-border-strong)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', background: mockAnswers[q.id] === optIdx ? '#3b82f6' : 'transparent', color: mockAnswers[q.id] === optIdx ? 'white' : 'var(--text-secondary)', fontSize: '0.8rem', fontWeight: 700 }}>{optIdx + 1}</div>
                                 <span><FuriganaText text={opt} /></span>
                               </div>
                             ))}
