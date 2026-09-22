@@ -16,6 +16,7 @@ import FuriganaText from './components/FuriganaText';
 import { useFurigana } from './FuriganaContext';
 import MangaReader from './components/MangaReader';
 import { READING_CORPUS, CLASSIC_STORIES } from './data/readingCorpus.js';
+import { corpusDb, initCorpusStorage } from './services/corpusLoaderService.js';
 import { ensureSegmentsHaveTranslation, batchTranslateSentences, getCachedTranslation } from './services/storyTranslationService.js';
 import { getStorySceneArtwork } from './data/mangaArtworks.jsx';
 
@@ -158,19 +159,45 @@ const ImmersionReader = () => {
     };
   }, [zenMode]);
 
+  // Đồng bộ ngầm kho ngữ liệu mở rộng (1,000+ tác phẩm) vào IndexedDB
+  useEffect(() => {
+    initCorpusStorage();
+  }, []);
+
+  // Lắng nghe dữ liệu kho tác phẩm từ IndexedDB (Dexie) theo thời gian thực
+  const dbStories = useLiveQuery(
+    async () => {
+      try {
+        const count = await corpusDb.stories.count();
+        if (count >= READING_CORPUS.length) {
+          return await corpusDb.stories.toArray();
+        }
+      } catch (e) {
+        // fallback
+      }
+      return null;
+    },
+    [],
+    null
+  );
+
+  const activeCorpus = useMemo(() => {
+    return (dbStories && dbStories.length >= READING_CORPUS.length) ? dbStories : READING_CORPUS;
+  }, [dbStories]);
+
   const levelCounts = useMemo(() => {
-    const counts = { ALL: READING_CORPUS.length, N5: 0, N4: 0, N3: 0, N2: 0, N1: 0 };
-    READING_CORPUS.forEach(s => {
+    const counts = { ALL: activeCorpus.length, N5: 0, N4: 0, N3: 0, N2: 0, N1: 0 };
+    activeCorpus.forEach(s => {
       const lvl = s.level ? s.level.slice(0, 2) : 'N5';
       if (counts[lvl] !== undefined) counts[lvl]++;
     });
     return counts;
-  }, []);
+  }, [activeCorpus]);
 
   const filteredStories = useMemo(() => {
     const q = storySearch.toLowerCase().trim();
-    return READING_CORPUS.filter(s => {
-      const matchLevel = levelFilter === 'ALL' || s.level.includes(levelFilter);
+    return activeCorpus.filter(s => {
+      const matchLevel = levelFilter === 'ALL' || (s.level && s.level.includes(levelFilter));
       const matchGenre = genreFilter === 'ALL' || 
                          s.genre === genreFilter || 
                          (genreFilter === 'folktale' && (s.genre === 'folktale' || s.genreLabel?.includes('Cổ tích'))) ||
@@ -181,7 +208,7 @@ const ImmersionReader = () => {
              (s.author && s.author.toLowerCase().includes(q)) ||
              (s.summary && s.summary.toLowerCase().includes(q));
     });
-  }, [levelFilter, genreFilter, storySearch]);
+  }, [activeCorpus, levelFilter, genreFilter, storySearch]);
 
   // Mặc định chọn truyện kinh điển đầu tiên để app luôn có dữ liệu chạy ngay lập tức
   const [activeTextId, setActiveTextId] = useState(() => {
@@ -305,9 +332,9 @@ const ImmersionReader = () => {
     setCorpusPage(1);
   };
 
-  // Tìm bài đọc hiện tại từ Kho ngữ liệu hoặc danh sách tự tạo
-  const allAvailableTexts = useMemo(() => [...READING_CORPUS, ...texts], [texts]);
-  const activeText = allAvailableTexts.find(t => t.id === activeTextId) || READING_CORPUS[0];
+  // Tìm bài đọc hiện tại từ Kho ngữ liệu (đại quy mô 1,000+ bài) hoặc danh sách tự tạo
+  const allAvailableTexts = useMemo(() => [...activeCorpus, ...texts], [activeCorpus, texts]);
+  const activeText = allAvailableTexts.find(t => t.id === activeTextId) || activeCorpus[0] || READING_CORPUS[0];
 
   // Hỗ trợ Sách Trường Thiên Nhiều Chương (Multi-Chapter Books)
   const [chapterIndex, setChapterIndex] = useState(() => {
@@ -1269,10 +1296,10 @@ const ImmersionReader = () => {
           <>
             <div style={{ padding: '3px 4px', fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: 0.5, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span>Thư viện tác phẩm</span>
-              <span style={{ fontSize: '0.7rem', color: 'var(--accent-primary)', fontWeight: 600 }}>{filteredStories.length} / {READING_CORPUS.length} tác phẩm</span>
+              <span style={{ fontSize: '0.7rem', color: 'var(--accent-primary)', fontWeight: 600 }}>{filteredStories.length} / {activeCorpus.length} tác phẩm</span>
             </div>
 
-            {filteredStories.map(story => {
+            {filteredStories.slice(0, 100).map(story => {
               const parsed = parseStoryTitle(story.title);
               const isActive = activeTextId === story.id && !isEditing;
               const lvlColor = LEVEL_COLORS[story.level.slice(0, 2)] || '#3b82f6';
@@ -1323,13 +1350,8 @@ const ImmersionReader = () => {
                     )}
                   </div>
                   
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: '0.7rem', color: 'var(--text-tertiary)', flexWrap: 'wrap' }}>
-                    <span style={{ background: `${lvlColor}20`, color: lvlColor, padding: '1px 6px', borderRadius: 4, fontWeight: 800 }}>{story.level}</span>
-                    {story.chapters && story.chapters.length > 0 && (
-                      <span style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#d97706', padding: '1px 5px', borderRadius: 4, fontWeight: 700, display: 'flex', alignItems: 'center', gap: 3 }}>
-                        📖 {story.chapters.length} chương
-                      </span>
-                    )}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.7rem', color: 'var(--text-tertiary)', flexWrap: 'wrap' }}>
+                    <span style={{ color: lvlColor, fontWeight: 700 }}>{story.level}</span>
                     {story.genreLabel && <span style={{ color: 'var(--accent-primary)' }}>{story.genreLabel.split(' ')[0]}</span>}
                     {story.author && <span style={{ color: 'var(--text-secondary)' }}>✍️ {story.author}</span>}
                     <span>⏱️ {story.readingTime}</span>
@@ -1337,6 +1359,11 @@ const ImmersionReader = () => {
                 </div>
               );
             })}
+            {filteredStories.length > 100 && (
+              <div style={{ padding: '10px 8px', textAlign: 'center', fontSize: '0.72rem', color: 'var(--text-tertiary)', background: 'var(--bg-hover)', borderRadius: 6 }}>
+                Đang hiển thị 100 / {filteredStories.length} tác phẩm. Vui lòng nhập từ khóa hoặc chọn cấp độ N5–N1 để lọc nhanh.
+              </div>
+            )}
             {filteredStories.length === 0 && (
               <div style={{ padding: 20, textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.8rem' }}>
                 Không tìm thấy tác phẩm nào phù hợp với bộ lọc hiện tại.
@@ -2318,7 +2345,7 @@ const ImmersionReader = () => {
                   title="Mở Danh Mục Kho Tác Phẩm (294 tác phẩm)"
                   style={{ padding: '3px 8px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', gap: 4, fontWeight: 600 }}
                 >
-                  <BookOpen size={13} /> Kho ({READING_CORPUS.length})
+                  <BookOpen size={13} /> Kho ({activeCorpus.length})
                 </button>
 
                 {activeText.level && (
@@ -3133,6 +3160,9 @@ const ImmersionReader = () => {
                 speak={speak}
                 onWordClick={(w) => setSelectedText(w)}
                 onTransferToShadowing={handleTransferToShadowing}
+                isPlayingTTS={isPlayingTTS}
+                onStopTTS={handleStopTTS}
+                ttsSpeed={ttsSpeed}
               />
             ) : (
               <div className="immersion-dual-container">
@@ -3411,9 +3441,9 @@ const ImmersionReader = () => {
             boxShadow: '-4px 0 16px rgba(0,0,0,0.25)',
             letterSpacing: '1px'
           }}
-          title="Mở Kho Tác Phẩm (294 tác phẩm) & Tra cứu từ vựng"
+          title={`Mở Kho Tác Phẩm (${activeCorpus.length} tác phẩm) & Tra cứu từ vựng`}
         >
-          <BookOpen size={14} /> KHO TÁC PHẨM · {READING_CORPUS.length}
+          <BookOpen size={14} /> KHO TÁC PHẨM · {activeCorpus.length}
         </button>
       )}
 
@@ -3486,7 +3516,7 @@ const ImmersionReader = () => {
                   transition: 'all 0.15s ease'
                 }}
               >
-                <BookOpen size={13} /> Kho Tác Phẩm ({READING_CORPUS.length})
+                <BookOpen size={13} /> Kho Tác Phẩm ({activeCorpus.length})
               </button>
               <button
                 onClick={() => setRightDrawerTab('dictionary')}

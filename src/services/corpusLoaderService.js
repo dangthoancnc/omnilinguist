@@ -1,4 +1,4 @@
-// corpusLoaderService.js — Dịch Vụ Nạp & Quản Lý Kho Ngữ Liệu Quy Mô Lớn (Thousands of Stories)
+// corpusLoaderService.js — Dịch Vụ Nạp & Quản Lý Kho Ngữ Liệu Đại Quy Mô (Thousands of Stories)
 // Kết hợp IndexedDB (Dexie.js) + Dynamic Chunk Streaming + Tìm Kiếm Tức Thì (0ms)
 import Dexie from 'dexie';
 import { READING_CORPUS } from '../data/readingCorpus.js';
@@ -18,14 +18,17 @@ export const corpusDb = new OmniCorpusDatabase();
 let isSyncing = false;
 let isSynced = false;
 
-// 1. Đồng bộ nền kho truyện hiện hữu vào IndexedDB
+// 1. Đồng bộ nền kho truyện hiện hữu & Nạp ngầm các gói Chunk mở rộng
 export const initCorpusStorage = async () => {
   if (isSynced || isSyncing) return;
   isSyncing = true;
+
   try {
-    const count = await corpusDb.stories.count();
-    if (count < READING_CORPUS.length) {
-      console.log(`⚡ [CorpusLoader] Đang đồng bộ ${READING_CORPUS.length} tác phẩm vào IndexedDB...`);
+    const currentCount = await corpusDb.stories.count();
+
+    // Bước A: Nạp kho cơ sở 294 tác phẩm cốt lõi nếu chưa có
+    if (currentCount < READING_CORPUS.length) {
+      console.log(`⚡ [CorpusLoader] Đang đồng bộ ${READING_CORPUS.length} tác phẩm cốt lõi vào IndexedDB...`);
       await corpusDb.transaction('rw', corpusDb.stories, corpusDb.metadata, async () => {
         const bulkData = READING_CORPUS.map(story => ({
           id: story.id,
@@ -33,6 +36,7 @@ export const initCorpusStorage = async () => {
           author: story.author || 'Dân gian Nhật Bản',
           level: story.level || 'N5',
           genre: story.genre || 'folktale',
+          genreLabel: story.genreLabel || '🏛️ Cổ tích & Ngụ ngôn',
           summary: story.summary || '',
           content: story.content || '',
           chapters: story.chapters || null,
@@ -40,10 +44,50 @@ export const initCorpusStorage = async () => {
           wordCount: story.content ? story.content.length : 0
         }));
         await corpusDb.stories.bulkPut(bulkData);
-        await corpusDb.metadata.put({ key: 'last_sync', value: Date.now(), count: bulkData.length });
+        await corpusDb.metadata.put({ key: 'core_sync', value: Date.now(), count: bulkData.length });
       });
-      console.log('✅ [CorpusLoader] Đồng bộ kho tác phẩm vào IndexedDB thành công!');
+      console.log('✅ [CorpusLoader] Đã đồng bộ kho tác phẩm cốt lõi vào IndexedDB!');
     }
+
+    // Bước B: Tự động chạy ngầm nạp các gói mở rộng từ /data/corpus/manifest.json
+    const scheduleBackgroundChunks = () => {
+      setTimeout(async () => {
+        try {
+          const res = await fetch('/data/corpus/manifest.json');
+          if (!res.ok) return;
+          const manifest = await res.json();
+          if (manifest && Array.isArray(manifest.chunks)) {
+            const countNow = await corpusDb.stories.count();
+            const targetTotal = (manifest.totalStories || 0) + READING_CORPUS.length;
+
+            if (countNow < targetTotal) {
+              console.log(`📥 [CorpusLoader Background] Bắt đầu nạp ngầm ${manifest.chunks.length} gói mở rộng (${manifest.totalStories} bài)...`);
+              
+              for (let i = 0; i < manifest.chunks.length; i++) {
+                const chunk = manifest.chunks[i];
+                await loadExtendedCorpusChunk(chunk.url);
+                // Nghỉ 400ms giữa các chunk để CPU hoàn toàn rảnh rỗi cho người dùng học tập
+                await new Promise(r => setTimeout(r, 400));
+              }
+
+              const finalCount = await corpusDb.stories.count();
+              console.log(`🎉 [CorpusLoader Background] Hoàn tất nạp ngầm đại quy mô! Tổng kho hiện tại: ${finalCount} tác phẩm.`);
+            }
+          }
+        } catch (manifestErr) {
+          // Bỏ qua nếu manifest chưa sẵn sàng hoặc môi trường không hỗ trợ fetch static
+        }
+      }, 1200); // Chờ 1.2s sau khi trang web đã render xong hoàn toàn
+    };
+
+    if (typeof window !== 'undefined') {
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(scheduleBackgroundChunks);
+      } else {
+        scheduleBackgroundChunks();
+      }
+    }
+
     isSynced = true;
   } catch (err) {
     console.warn('⚠️ [CorpusLoader] Lỗi đồng bộ IndexedDB, dùng bộ nhớ RAM fallback:', err);
@@ -60,7 +104,7 @@ export const loadExtendedCorpusChunk = async (chunkUrl) => {
     const chunkData = await res.json();
     if (Array.isArray(chunkData)) {
       await corpusDb.stories.bulkPut(chunkData);
-      console.log(`📥 [CorpusLoader] Đã nạp thêm ${chunkData.length} tác phẩm từ ${chunkUrl}`);
+      console.log(`📥 [CorpusLoader] Đã nạp thành công ${chunkData.length} tác phẩm từ ${chunkUrl}`);
       return chunkData.length;
     }
   } catch (err) {
@@ -141,6 +185,6 @@ export const getCorpusStats = async () => {
     const n1 = await corpusDb.stories.where('level').equals('N1').count();
     return { total: Math.max(total, READING_CORPUS.length), n5, n4, n3, n2, n1 };
   } catch (e) {
-    return { total: READING_CORPUS.length, n5: 50, n4: 60, n3: 80, n2: 60, n1: 44 };
+    return { total: READING_CORPUS.length, n5: 56, n4: 56, n3: 59, n2: 59, n1: 64 };
   }
 };

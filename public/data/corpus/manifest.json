@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "updatedAt": "2026-09-22T00:26:28.199Z",
+  "totalStories": 936,
+  "chunks": [
+    {
+      "fileName": "corpus_chunk_1.json",
+      "url": "/data/corpus/corpus_chunk_1.json",
+      "count": 250,
+      "sizeBytes": 415544
+    },
+    {
+      "fileName": "corpus_chunk_2.json",
+      "url": "/data/corpus/corpus_chunk_2.json",
+      "count": 250,
+      "sizeBytes": 434114
+    },
+    {
+      "fileName": "corpus_chunk_3.json",
+      "url": "/data/corpus/corpus_chunk_3.json",
+      "count": 250,
+      "sizeBytes": 447764
+    },
+    {
+      "fileName": "corpus_chunk_4.json",
+      "url": "/data/corpus/corpus_chunk_4.json",
+      "count": 186,
+      "sizeBytes": 332458
+    }
+  ]
+}

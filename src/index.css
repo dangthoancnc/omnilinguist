@@ -1498,5 +1498,39 @@ body.zen-mode .app-main {
   transform: translateY(-1px) !important;
 }
 
+/* ========== MANGA MOTION AUTO-PLAY & ACTIVE BEAT ========== */
+.manga-beat-reading-active {
+  border: 2px solid #f59e0b !important;
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.55), 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  background: var(--accent-subtle) !important;
+  transform: scale(1.015);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.manga-beat-reading-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f59e0b;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+  animation: pulseBeat 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseBeat {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(0.97); }
+}
+
+.manga-frame-active {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.25) !important;
+}
+
 
 
