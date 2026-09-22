@@ -906,10 +906,10 @@ body.zen-mode .app-main {
 /* ========== DUAL-PANEL SLA IMMERSION READER STUDIO ========== */
 .immersion-dual-container {
   display: grid;
-  grid-template-columns: 40% 60%;
-  gap: 18px;
+  grid-template-columns: 34% 66%;
+  gap: 16px;
   width: 100%;
-  max-width: 1560px;
+  max-width: 100%;
   margin: 0 auto;
   align-items: start;
 }
@@ -1215,8 +1215,8 @@ body.zen-mode .app-main {
 }
 
 .immersion-feed-scroll {
-  padding: 12px 14px;
-  max-height: calc(100vh - 180px);
+  padding: 12px 18px;
+  max-height: calc(100vh - 120px);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -1344,33 +1344,44 @@ body.zen-mode .app-main {
 /* ========== EHON CINEMA THEATER MODE ========== */
 .ehon-theater-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
-  max-width: 1360px;
-  margin: 0 auto;
-  gap: 14px;
-  padding-bottom: 50px;
+  max-width: 100%;
+  gap: 16px;
+  align-items: stretch;
+  height: calc(100vh - 105px);
+  min-height: 520px;
+  overflow: hidden;
 }
 
-.cinema-stage-card {
+@media (max-width: 1024px) {
+  .ehon-theater-container {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+    padding-bottom: 40px;
+  }
+}
+
+.cinema-screen-viewport {
   position: relative;
-  background: #000000;
-  border: 2px solid var(--text-primary);
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  background: #020617;
+  border: 2px solid var(--glass-border-strong);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  max-height: 76vh;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .cinema-stage-card {
-    aspect-ratio: 4 / 3;
-    max-height: 60vh;
+@media (max-width: 1024px) {
+  .cinema-screen-viewport {
+    height: 50vh;
+    min-height: 320px;
   }
 }
 
@@ -1378,7 +1389,7 @@ body.zen-mode .app-main {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: #090d16;
+  background: #040813;
   display: block;
   transition: opacity 0.4s ease, transform 0.6s ease;
 }
@@ -1388,37 +1399,40 @@ body.zen-mode .app-main {
   top: 0;
   left: 0;
   right: 0;
-  padding: 14px 20px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+  padding: 12px 18px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 10;
+  pointer-events: none;
 }
 
 .cinema-scene-tag {
   background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   color: #f8fafc;
   padding: 4px 12px;
   border-radius: 20px;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
   border: 1px solid rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   gap: 6px;
+  pointer-events: auto;
 }
 
 .cinema-progress-tag {
   background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   color: #38bdf8;
   padding: 4px 12px;
   border-radius: 20px;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 700;
   border: 1px solid rgba(56, 189, 248, 0.3);
+  pointer-events: auto;
 }
 
 .cinema-subtitles-box {
@@ -1426,8 +1440,8 @@ body.zen-mode .app-main {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 24px 28px 18px 28px;
-  background: linear-gradient(to top, rgba(5, 8, 18, 0.95) 0%, rgba(5, 8, 18, 0.75) 60%, transparent 100%);
+  padding: 20px 24px 16px 24px;
+  background: linear-gradient(to top, rgba(2, 6, 23, 0.96) 0%, rgba(2, 6, 23, 0.8) 60%, transparent 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1437,69 +1451,146 @@ body.zen-mode .app-main {
 }
 
 .cinema-subtitle-japanese {
-  font-size: 1.55rem;
-  line-height: 2.2;
+  font-size: 1.45rem;
+  line-height: 2.1;
   font-weight: 700;
   color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
   max-width: 95%;
+  transition: transform 0.2s ease;
+}
+
+.cinema-subtitle-japanese:hover {
+  transform: scale(1.01);
 }
 
 @media (max-width: 768px) {
   .cinema-subtitle-japanese {
-    font-size: 1.2rem;
-    line-height: 1.9;
+    font-size: 1.15rem;
+    line-height: 1.85;
   }
 }
 
 .cinema-subtitle-vietnamese {
-  font-size: 1.05rem;
-  line-height: 1.5;
+  font-size: 0.96rem;
+  line-height: 1.45;
   color: #fef08a;
   font-style: italic;
-  margin-top: 6px;
+  margin-top: 4px;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
   max-width: 90%;
 }
 
 @media (max-width: 768px) {
   .cinema-subtitle-vietnamese {
-    font-size: 0.88rem;
+    font-size: 0.84rem;
   }
 }
 
-.cinema-controls-bar {
+/* Widescreen Cinema Side Console */
+.cinema-widescreen-console {
+  width: 370px;
+  flex-shrink: 0;
+  height: 100%;
   background: var(--bg-card);
   border: 1px solid var(--glass-border-strong);
-  border-radius: 14px;
-  padding: 10px 18px;
+  border-radius: 16px;
+  padding: 12px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 1024px) {
+  .cinema-widescreen-console {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.cinema-console-header {
+  background: var(--bg-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 9px 12px;
+}
+
+.cinema-console-paginator {
+  background: var(--bg-hover);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.cinema-console-controls {
+  background: var(--bg-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 10px 12px;
 }
 
 .cinema-btn-stop {
-  background: #ef4444 !important;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
   color: #ffffff !important;
   border: none !important;
-  padding: 8px 18px !important;
-  border-radius: 20px !important;
-  font-size: 0.84rem !important;
-  font-weight: 700 !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  font-size: 0.8rem !important;
+  font-weight: 800 !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
+  justify-content: center !important;
+  gap: 5px !important;
   cursor: pointer !important;
-  box-shadow: 0 2px 10px rgba(239, 68, 68, 0.4) !important;
-  transition: transform 0.15s ease, background 0.15s ease !important;
+  box-shadow: 0 2px 10px rgba(239, 68, 68, 0.45) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
 }
 
 .cinema-btn-stop:hover {
-  background: #dc2626 !important;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%) !important;
   transform: translateY(-1px) !important;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.6) !important;
+}
+
+.cinema-console-sentences {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cinema-sentences-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-right: 4px;
+}
+
+.cinema-sentence-item {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  background: var(--bg-surface);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cinema-sentence-item:hover {
+  background: var(--bg-hover);
+  border-left-color: var(--accent-primary);
+}
+
+.cinema-sentence-item.active {
+  background: linear-gradient(90deg, var(--accent-subtle) 0%, rgba(59, 130, 246, 0.04) 100%);
+  border-left: 3px solid var(--accent-primary);
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
 }
 
 /* ========== MANGA MOTION AUTO-PLAY & ACTIVE BEAT ========== */

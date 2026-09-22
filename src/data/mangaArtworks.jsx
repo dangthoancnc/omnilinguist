@@ -351,10 +351,10 @@ export const STORY_MANGA_ARTWORKS = {
   // 6.b. Kintarō (金太郎) — Cậu Bé Núi Ashigara
   kintaro: {
     title: '金太郎 (Kintarō - Cậu Bé Sức Mạnh Núi Ashigara)',
-    imageUrl: '/images/ehon/kintaro.svg',
+    imageUrl: '/images/ehon/kintaro.jpg',
     renderIllustration: () => (
       <img 
-        src="/images/ehon/kintaro.svg" 
+        src="/images/ehon/kintaro.jpg" 
         alt="金太郎" 
         style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
@@ -364,10 +364,10 @@ export const STORY_MANGA_ARTWORKS = {
   // 6.c. Hanasaka Jīsan (花咲か爺さん) — Ông Lão Làm Hoa Nở
   hanasaka_jiisan: {
     title: '花咲か爺さん (Hanasaka Jīsan - Ông Lão Làm Hoa Nở)',
-    imageUrl: '/images/ehon/hanasaka_jiisan.svg',
+    imageUrl: '/images/ehon/hanasaka_jiisan.jpg',
     renderIllustration: () => (
       <img 
-        src="/images/ehon/hanasaka_jiisan.svg" 
+        src="/images/ehon/hanasaka_jiisan.jpg" 
         alt="花咲か爺さん" 
         style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
@@ -377,10 +377,10 @@ export const STORY_MANGA_ARTWORKS = {
   // 6.d. Shitakiri Suzume (舌切り雀) — Chú Chim Sẻ Bị Cắt Lưỡi
   shitakiri_suzume: {
     title: '舌切り雀 (Shitakiri Suzume - Chú Chim Sẻ Bị Cắt Lưỡi)',
-    imageUrl: '/images/ehon/shitakiri_suzume.svg',
+    imageUrl: '/images/ehon/shitakiri_suzume.jpg',
     renderIllustration: () => (
       <img 
-        src="/images/ehon/shitakiri_suzume.svg" 
+        src="/images/ehon/shitakiri_suzume.jpg" 
         alt="舌切り雀" 
         style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
@@ -390,10 +390,10 @@ export const STORY_MANGA_ARTWORKS = {
   // 6.e. Bunbuku Chagama (分福茶釜) — Ấm Trà Biến Hình
   bunbuku_chagama: {
     title: '分福茶釜 (Bunbuku Chagama - Ấm Trà Biến Hình)',
-    imageUrl: '/images/ehon/bunbuku_chagama.svg',
+    imageUrl: '/images/ehon/bunbuku_chagama.jpg',
     renderIllustration: () => (
       <img 
-        src="/images/ehon/bunbuku_chagama.svg" 
+        src="/images/ehon/bunbuku_chagama.jpg" 
         alt="分福茶釜" 
         style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
@@ -403,10 +403,10 @@ export const STORY_MANGA_ARTWORKS = {
   // 6.f. Sarukani Gassen (猿蟹合戦) — Cuộc Chiến Khỉ Và Cua
   sarukani_gassen: {
     title: '猿蟹合戦 (Sarukani Gassen - Cuộc Chiến Khỉ Và Cua)',
-    imageUrl: '/images/ehon/sarukani_gassen.svg',
+    imageUrl: '/images/ehon/sarukani_gassen.jpg',
     renderIllustration: () => (
       <img 
-        src="/images/ehon/sarukani_gassen.svg" 
+        src="/images/ehon/sarukani_gassen.jpg" 
         alt="猿蟹合戦" 
         style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
@@ -941,28 +941,28 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 1,
       title: 'Cảnh 1: Cậu bé Kintarō núi Ashigara với rìu lớn & yếm đỏ',
       jpTitle: '足柄山の金太郎と赤い前掛け',
-      imageUrl: '/images/ehon/kintaro.svg',
+      imageUrl: '/images/ehon/kintaro.jpg',
       desc: 'Cậu bé khỏe mạnh sinh ra ở núi Ashigara, vai vác rìu lớn, mặc yếm đỏ chữ Kim.'
     },
     {
       sceneIdx: 2,
       title: 'Cảnh 2: Đấu vật Sumo cùng muôn thú & Quật ngã gấu đen',
       jpTitle: '相撲大会と大きな黒熊の勝負',
-      imageUrl: '/images/ehon/kintaro.svg',
+      imageUrl: '/images/ehon/kintaro.jpg',
       desc: 'Kintarō thi đấu vật ngã chú gấu đen khổng lồ của núi rừng và kết bạn thân thiết cùng muôn thú.'
     },
     {
       sceneIdx: 3,
       title: 'Cảnh 3: Đẩy đổ cây tuyết tùng làm cầu bắc qua suối',
       jpTitle: '杉の木を倒して作った橋',
-      imageUrl: '/images/ehon/kintaro.svg',
+      imageUrl: '/images/ehon/kintaro_scene2.jpg',
       desc: 'Dùng sức mạnh vô địch bẻ gãy thân cây tuyết tùng làm cầu giúp đàn thú vượt qua dòng suối sâu.'
     },
     {
       sceneIdx: 4,
       title: 'Cảnh 4: Lên kinh đô trở thành dũng tướng Sakata no Kintoki',
       jpTitle: '坂田金時と都の英雄へ',
-      imageUrl: '/images/ehon/kintaro.svg',
+      imageUrl: '/images/ehon/kintaro_scene2.jpg',
       desc: 'Được vị quan võ thu nhận, Kintarō lên kinh thành trở thành dũng tướng bảo vệ đất nước.'
     }
   ],
@@ -971,21 +971,21 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 1,
       title: 'Cảnh 1: Chú chó Shiro tìm thấy kho báu vàng dưới đất',
       jpTitle: 'ここ掘れワンワンと小判の山',
-      imageUrl: '/images/ehon/hanasaka_jiisan.svg',
+      imageUrl: '/images/ehon/hanasaka_scene1.jpg',
       desc: 'Chú chó trung thành sủa vang chỉ nơi chôn giấu kho báu vàng bạc cho hai ông bà tốt bụng.'
     },
     {
       sceneIdx: 2,
       title: 'Cảnh 2: Chiếc cối giã gạo thần kỳ biến thành châu báu',
       jpTitle: '不思議な臼と黄金のお餅',
-      imageUrl: '/images/ehon/hanasaka_jiisan.svg',
+      imageUrl: '/images/ehon/hanasaka_scene1.jpg',
       desc: 'Chiếc cối làm từ cây thông kỷ niệm của Shiro biến gạo trắng thành tiền vàng lấp lánh.'
     },
     {
       sceneIdx: 3,
       title: 'Cảnh 3: Rắc tro trên cây khô, hoa anh đào nở rộ đón lãnh chúa',
       jpTitle: '枯れ木に花を咲かせましょう',
-      imageUrl: '/images/ehon/hanasaka_jiisan.svg',
+      imageUrl: '/images/ehon/hanasaka_jiisan.jpg',
       desc: 'Ông lão rắc tro thần kỳ, cây anh đào khô cằn bừng nở hoa rực rỡ đón đoàn rước lãnh chúa.'
     }
   ],
@@ -1001,7 +1001,7 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 2,
       title: 'Cảnh 2: Đại náo bụng quỷ dữ & Nhặt búa thần Uchide no Kozuchi',
       jpTitle: '鬼退治と打出の小槌',
-      imageUrl: '/images/ehon/issun_boshi.jpg',
+      imageUrl: '/images/ehon/issun_boshi_scene2.jpg',
       desc: 'Dùng kiếm kim đâm bụng quỷ cứu nàng công chúa và lắc búa thần kỳ biến thành tráng sĩ cao lớn.'
     }
   ],
@@ -1010,14 +1010,14 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 1,
       title: 'Cảnh 1: Ông lão tìm đến quán trọ chim sẻ giữa rừng trúc',
       jpTitle: '竹藪の奥の雀の宿',
-      imageUrl: '/images/ehon/shitakiri_suzume.svg',
+      imageUrl: '/images/ehon/shitakiri_suzume.jpg',
       desc: 'Vượt đèo lội suối, ông lão hiền hậu tìm được đến quán trọ rộn ràng tiếng hát của loài chim sẻ.'
     },
     {
       sceneIdx: 2,
       title: 'Cảnh 2: Điệu múa quạt của chim sẻ & Chiếc tráp báu vật',
       jpTitle: '雀の舌切り踊りと宝物のつづら',
-      imageUrl: '/images/ehon/shitakiri_suzume.svg',
+      imageUrl: '/images/ehon/shitakiri_suzume.jpg',
       desc: 'Đàn chim sẻ múa quạt đãi tiệc linh đình và tặng ông lão chiếc tráp nhỏ tràn đầy vàng bạc lụa là.'
     }
   ],
@@ -1026,7 +1026,7 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 1,
       title: 'Cảnh 1: Ấm trà Tanuki múa xiếc đi dây trên sân khấu',
       jpTitle: '分福茶釜の綱渡り芸',
-      imageUrl: '/images/ehon/bunbuku_chagama.svg',
+      imageUrl: '/images/ehon/bunbuku_chagama.jpg',
       desc: 'Chú chồn biến thành ấm trà đồng xoay ô đi dây ngoạn mục đền ơn cứu mạng cho bác thợ nghèo.'
     }
   ],
@@ -1035,7 +1035,7 @@ export const STORY_SCENES_MAP = {
       sceneIdx: 1,
       title: 'Cảnh 1: Cây hồng mùa thu trĩu quả & Liên minh công lý',
       jpTitle: '柿の木と正義の仲間たち',
-      imageUrl: '/images/ehon/sarukani_gassen.svg',
+      imageUrl: '/images/ehon/sarukani_gassen.jpg',
       desc: 'Cua mẹ, Hạt dẻ, Bò cào, Ong và Cối đá cùng hợp lực đòi lại công lý cho muôn loài.'
     }
   ],

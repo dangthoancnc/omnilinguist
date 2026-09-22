@@ -412,27 +412,42 @@ export const resolveStoryPageArtwork = ({
   }
 
   if (fullSearch.includes('kintaro') || fullSearch.includes('金太郎') || fullSearch.includes('きんたろう')) {
-    return { imageUrl: '/images/ehon/kintaro.svg', isProcedural: false };
+    const scenes = [
+      '/images/ehon/kintaro.jpg',
+      '/images/ehon/kintaro.jpg',
+      '/images/ehon/kintaro_scene2.jpg',
+      '/images/ehon/kintaro_scene2.jpg'
+    ];
+    return { imageUrl: scenes[Math.min(scenes.length - 1, pageIdx)], isProcedural: false };
   }
 
   if (fullSearch.includes('hanasaka') || fullSearch.includes('花咲か') || fullSearch.includes('はなさか')) {
-    return { imageUrl: '/images/ehon/hanasaka_jiisan.svg', isProcedural: false };
+    const scenes = [
+      '/images/ehon/hanasaka_scene1.jpg',
+      '/images/ehon/hanasaka_scene1.jpg',
+      '/images/ehon/hanasaka_jiisan.jpg'
+    ];
+    return { imageUrl: scenes[Math.min(scenes.length - 1, pageIdx)], isProcedural: false };
   }
 
   if (fullSearch.includes('issun') || fullSearch.includes('一寸法師') || fullSearch.includes('いっすん')) {
-    return { imageUrl: '/images/ehon/issun_boshi.jpg', isProcedural: false };
+    const scenes = [
+      '/images/ehon/issun_boshi.jpg',
+      '/images/ehon/issun_boshi_scene2.jpg'
+    ];
+    return { imageUrl: scenes[Math.min(scenes.length - 1, pageIdx)], isProcedural: false };
   }
 
   if (fullSearch.includes('suzume') || fullSearch.includes('舌切り雀') || fullSearch.includes('すずめ')) {
-    return { imageUrl: '/images/ehon/shitakiri_suzume.svg', isProcedural: false };
+    return { imageUrl: '/images/ehon/shitakiri_suzume.jpg', isProcedural: false };
   }
 
   if (fullSearch.includes('chagama') || fullSearch.includes('分福茶釜') || fullSearch.includes('ぶんぶく')) {
-    return { imageUrl: '/images/ehon/bunbuku_chagama.svg', isProcedural: false };
+    return { imageUrl: '/images/ehon/bunbuku_chagama.jpg', isProcedural: false };
   }
 
   if (fullSearch.includes('sarukani') || fullSearch.includes('猿蟹') || fullSearch.includes('さるかに')) {
-    return { imageUrl: '/images/ehon/sarukani_gassen.svg', isProcedural: false };
+    return { imageUrl: '/images/ehon/sarukani_gassen.jpg', isProcedural: false };
   }
 
   if (fullSearch.includes('ginga') || fullSearch.includes('銀河鉄道')) {

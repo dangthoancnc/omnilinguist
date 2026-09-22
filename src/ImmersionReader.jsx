@@ -2344,9 +2344,9 @@ const ImmersionReader = () => {
               background: 'var(--bg-card)',
               border: '1px solid var(--glass-border)',
               borderRadius: 10,
-              padding: '6px 12px',
-              marginBottom: 10,
-              gap: 8,
+              padding: '4px 10px',
+              marginBottom: 6,
+              gap: 6,
               flexWrap: 'wrap',
               position: 'sticky',
               top: 0,
@@ -2893,17 +2893,19 @@ const ImmersionReader = () => {
               </div>
             )}
 
-            {/* COMPACT CHAPTER / STORY TITLE */}
-            <div style={{ textAlign: 'center', margin: '4px 0 12px 0' }}>
-              <h2 className="jp-text" style={{ fontSize: '1.25rem', color: 'var(--text-primary)', margin: 0, fontWeight: 700, lineHeight: 1.3 }}>
-                <FuriganaText text={chapterInfo ? chapterInfo.main : bookInfo.main} />
-              </h2>
-              {(chapterInfo ? chapterInfo.sub : bookInfo.sub) && (
-                <div style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', marginTop: 2, fontWeight: 500 }}>
-                  {chapterInfo ? chapterInfo.sub : bookInfo.sub}
-                </div>
-              )}
-            </div>
+            {/* COMPACT CHAPTER / STORY TITLE (CHỈ HIỆN KHI Ở CHẾ ĐỘ VĂN BẢN/MANGA, ẨN KHI Ở RẠP PHIM ĐỂ TỐI ƯU KHÔNG GIAN) */}
+            {readerMode !== 'theater' && (
+              <div style={{ textAlign: 'center', margin: '2px 0 8px 0' }}>
+                <h2 className="jp-text" style={{ fontSize: '1.2rem', color: 'var(--text-primary)', margin: 0, fontWeight: 700, lineHeight: 1.3 }}>
+                  <FuriganaText text={chapterInfo ? chapterInfo.main : bookInfo.main} />
+                </h2>
+                {(chapterInfo ? chapterInfo.sub : bookInfo.sub) && (
+                  <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: 2, fontWeight: 500 }}>
+                    {chapterInfo ? chapterInfo.sub : bookInfo.sub}
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* EXPANDABLE GAP REMEDIATION ACCORDION DRAWER */}
             {showGapDrawer && (
@@ -3028,8 +3030,10 @@ const ImmersionReader = () => {
             {/* Reading Content Container: 3 Modes (Rạp Phim Ehon, Manga Canvas, hoặc Văn Bản 2-Panel) */}
             {readerMode === 'theater' ? (
               <div className="ehon-theater-container">
-                {/* Khung Chiếu Rạp Phim Ehon Màn Ảnh Rộng */}
-                <div className="cinema-stage-card">
+                {/* ══════════════════════════════════════════════════════════════════ */}
+                {/* CỘT TRÁI: MÀN ẢNH CHIẾU PHIM EHON (OBJECT-FIT CONTAIN, 100% VISIBLE) */}
+                {/* ══════════════════════════════════════════════════════════════════ */}
+                <div className="cinema-screen-viewport">
                   <img 
                     src={activeSceneInfo.imageUrl} 
                     alt={activeSceneInfo.sceneTitle || activeReadingTitle}
@@ -3056,7 +3060,7 @@ const ImmersionReader = () => {
                     >
                       <FuriganaText 
                         text={activeSentence ? activeSentence.text : ''} 
-                        fontSize={`${readerFontSize * 1.3}rem`}
+                        fontSize={`${Math.max(1.2, readerFontSize * 1.35)}rem`}
                       />
                     </div>
                     {activeSentenceVi && (
@@ -3067,45 +3071,91 @@ const ImmersionReader = () => {
                   </div>
                 </div>
 
-                {/* Thanh Lật Trang Sách Tranh Ehon (Page Navigator) */}
-                {activeText.chapters && activeText.chapters.length > 1 && (
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '8px 16px',
-                    background: 'var(--bg-card)',
-                    border: '1px solid var(--glass-border-strong)',
-                    borderRadius: 12,
-                    marginBottom: 10,
-                    gap: 10,
-                    flexWrap: 'wrap'
-                  }}>
-                    <button
-                      type="button"
-                      onClick={() => handleSelectChapter(Math.max(0, chapterIndex - 1))}
-                      disabled={chapterIndex === 0}
-                      className="btn btn-outline"
-                      style={{ padding: '5px 12px', fontSize: '0.78rem', display: 'flex', alignItems: 'center', gap: 4 }}
-                    >
-                      <ChevronLeft size={14} /> Trang trước
-                    </button>
-
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
-                      <span style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--accent-primary)' }}>
-                        📖 Trang {chapterIndex + 1} / {activeText.chapters.length}: {currentChapter ? parseStoryTitle(currentChapter.chapterTitle).main : ''}
+                {/* ══════════════════════════════════════════════════════════════════ */}
+                {/* CỘT PHẢI (CINEMA SIDE CONSOLE - TẬN DỤNG TỐI ĐA KHÔNG GIAN BÊN CẠNH) */}
+                {/* ══════════════════════════════════════════════════════════════════ */}
+                <div className="cinema-widescreen-console">
+                  {/* Header card of Console: Title & Level */}
+                  <div className="cinema-console-header">
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 6 }}>
+                      <span style={{
+                        background: 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)',
+                        color: '#ffffff',
+                        borderRadius: 6,
+                        padding: '2px 8px',
+                        fontSize: '0.68rem',
+                        fontWeight: 800,
+                        letterSpacing: 0.5
+                      }}>
+                        🎬 RẠP PHIM EHON
                       </span>
-                      <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+                      {activeText.level && (
+                        <span style={{
+                          background: LEVEL_COLORS[activeText.level.slice(0, 2)] || 'var(--accent-primary)',
+                          color: '#fff',
+                          borderRadius: 6,
+                          padding: '2px 7px',
+                          fontSize: '0.68rem',
+                          fontWeight: 800
+                        }}>
+                          {activeText.level}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="jp-text" style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--text-primary)', marginTop: 4, lineHeight: 1.3 }}>
+                      <FuriganaText text={chapterInfo ? chapterInfo.main : bookInfo.main} />
+                    </div>
+                    {(chapterInfo ? chapterInfo.sub : bookInfo.sub) && (
+                      <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: 2 }}>
+                        {chapterInfo ? chapterInfo.sub : bookInfo.sub}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Bộ lật trang Ehon / Multi-chapter Navigator */}
+                  {activeText.chapters && activeText.chapters.length > 1 && (
+                    <div className="cinema-console-paginator">
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
+                        <span style={{ fontSize: '0.74rem', fontWeight: 700, color: 'var(--accent-primary)' }}>
+                          Trang {chapterIndex + 1} / {activeText.chapters.length}
+                        </span>
+                        <div style={{ display: 'flex', gap: 4 }}>
+                          <button
+                            type="button"
+                            onClick={() => handleSelectChapter(Math.max(0, chapterIndex - 1))}
+                            disabled={chapterIndex === 0}
+                            className="btn btn-outline btn-xs"
+                            style={{ padding: '2px 7px', fontSize: '0.72rem' }}
+                            title="Trang trước"
+                          >
+                            <ChevronLeft size={12} />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleSelectChapter(Math.min(activeText.chapters.length - 1, chapterIndex + 1))}
+                            disabled={chapterIndex === activeText.chapters.length - 1}
+                            className="btn btn-outline btn-xs"
+                            style={{ padding: '2px 7px', fontSize: '0.72rem' }}
+                            title="Trang sau"
+                          >
+                            <ChevronRight size={12} />
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Dots list */}
+                      <div style={{ display: 'flex', gap: 3, flexWrap: 'wrap', alignItems: 'center' }}>
                         {activeText.chapters.map((ch, idx) => (
                           <button
                             key={idx}
                             type="button"
                             onClick={() => handleSelectChapter(idx)}
-                            title={`Chuyển đến Trang ${idx + 1}: ${ch.chapterTitle || ''}`}
+                            title={`Trang ${idx + 1}: ${ch.chapterTitle || ''}`}
                             style={{
-                              width: chapterIndex === idx ? 22 : 10,
-                              height: 10,
-                              borderRadius: 5,
+                              width: chapterIndex === idx ? 18 : 7,
+                              height: 7,
+                              borderRadius: 4,
                               background: chapterIndex === idx ? 'linear-gradient(135deg, #10b981 0%, #3b82f6 100%)' : 'var(--glass-border-strong)',
                               border: 'none',
                               cursor: 'pointer',
@@ -3116,123 +3166,155 @@ const ImmersionReader = () => {
                         ))}
                       </div>
                     </div>
+                  )}
 
-                    <button
-                      type="button"
-                      onClick={() => handleSelectChapter(Math.min(activeText.chapters.length - 1, chapterIndex + 1))}
-                      disabled={chapterIndex === activeText.chapters.length - 1}
-                      className="btn btn-outline"
-                      style={{ padding: '5px 12px', fontSize: '0.78rem', display: 'flex', alignItems: 'center', gap: 4 }}
-                    >
-                      Trang sau <ChevronRight size={14} />
-                    </button>
-                  </div>
-                )}
-
-                {/* Thanh Điều Khiển Chiếu Rạp Phim (On-screen Controls Bar) */}
-                <div className="cinema-controls-bar">
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                    <button
-                      type="button"
-                      className="btn btn-outline"
-                      onClick={handlePrevSentence}
-                      disabled={activeSentenceIdx === 0}
-                      title="Câu trước (Phím Mũi tên Trái)"
-                      style={{ padding: '6px 12px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: 4 }}
-                    >
-                      <ChevronLeft size={16} /> Câu trước
-                    </button>
-
-                    {isPlayingTTS ? (
-                      <button
-                        type="button"
-                        className="btn btn-primary"
-                        onClick={handlePauseResumeTTS}
-                        title={isPausedTTS ? "Tiếp tục đọc (Phím Space)" : "Tạm dừng (Phím Space)"}
-                        style={{ padding: '7px 18px', fontSize: '0.82rem', borderRadius: 20, display: 'flex', alignItems: 'center', gap: 6 }}
-                      >
-                        {isPausedTTS ? <Play size={15} fill="currentColor" /> : <Pause size={15} fill="currentColor" />}
-                        <span>{isPausedTTS ? 'Tiếp tục' : 'Tạm dừng'}</span>
-                      </button>
-                    ) : (
-                      <button
-                        type="button"
-                        className="btn btn-primary"
-                        onClick={() => handleGenerateTTS(activeReadingContent, activeSentenceIdx)}
-                        title="Bắt đầu chiếu & đọc sách nói AI"
-                        style={{ padding: '7px 18px', fontSize: '0.82rem', borderRadius: 20, display: 'flex', alignItems: 'center', gap: 6 }}
-                      >
-                        <Play size={15} fill="currentColor" />
-                        <span>Chiếu & Đọc</span>
-                      </button>
-                    )}
-
-                    {/* NÚT DỪNG STOP MÀU ĐỎ NỔI BẬT */}
-                    <button
-                      type="button"
-                      className="cinema-btn-stop"
-                      onClick={handleStopTTS}
-                      title="Dừng đọc hoàn toàn (Phím Esc hoặc S)"
-                    >
-                      <Square size={13} fill="currentColor" />
-                      <span>⏹ Dừng</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      className="btn btn-outline"
-                      onClick={handleNextSentence}
-                      disabled={activeSentenceIdx >= storySentences.length - 1}
-                      title="Câu sau (Phím Mũi tên Phải)"
-                      style={{ padding: '6px 12px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: 4 }}
-                    >
-                      Câu sau <ChevronRight size={16} />
-                    </button>
-                  </div>
-
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
-                    {/* Tốc độ đọc */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                      <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Tốc độ:</span>
-                      {[0.75, 0.85, 1.0, 1.25].map(speed => (
+                  {/* BẢNG ĐIỀU KHIỂN CHIẾU & PHÁT ÂM (LUÔN CÓ NÚT DỪNG ĐỎ NỔI BẬT) */}
+                  <div className="cinema-console-controls">
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 8 }}>
+                      {isPlayingTTS ? (
                         <button
-                          key={speed}
                           type="button"
-                          className={`btn-speed-pill ${ttsSpeed === speed ? 'active' : ''}`}
-                          onClick={() => {
-                            setTtsSpeed(speed);
-                            localStorage.setItem('omni_tts_speed', speed.toString());
-                          }}
-                          style={{ padding: '2px 7px', fontSize: '0.72rem' }}
+                          className="btn btn-primary"
+                          onClick={handlePauseResumeTTS}
+                          title={isPausedTTS ? "Tiếp tục đọc (Phím Space)" : "Tạm dừng (Phím Space)"}
+                          style={{ padding: '7px 10px', fontSize: '0.78rem', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5 }}
                         >
-                          {speed}x
+                          {isPausedTTS ? <Play size={14} fill="currentColor" /> : <Pause size={14} fill="currentColor" />}
+                          <span>{isPausedTTS ? 'Tiếp tục' : 'Tạm dừng'}</span>
                         </button>
-                      ))}
+                      ) : (
+                        <button
+                          type="button"
+                          className="btn btn-primary"
+                          onClick={() => handleGenerateTTS(activeReadingContent, activeSentenceIdx)}
+                          title="Bắt đầu chiếu & đọc sách nói AI"
+                          style={{ padding: '7px 10px', fontSize: '0.78rem', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5 }}
+                        >
+                          <Play size={14} fill="currentColor" />
+                          <span>Chiếu & Đọc</span>
+                        </button>
+                      )}
+
+                      {/* NÚT DỪNG STOP ĐỎ NỔI BẬT */}
+                      <button
+                        type="button"
+                        className="cinema-btn-stop"
+                        onClick={handleStopTTS}
+                        title="Dừng đọc hoàn toàn (Phím Esc hoặc S)"
+                        style={{ padding: '7px 10px', fontSize: '0.78rem' }}
+                      >
+                        <Square size={12} fill="currentColor" />
+                        <span>⏹ DỪNG</span>
+                      </button>
                     </div>
 
-                    {/* Nút bật/tắt Furigana trực tiếp */}
-                    <button
-                      type="button"
-                      className={`btn ${showFurigana ? 'btn-primary' : 'btn-outline'}`}
-                      onClick={toggleFurigana}
-                      title="Bật/Tắt phiên âm Furigana trên câu thoại"
-                      style={{ padding: '5px 12px', fontSize: '0.76rem', display: 'inline-flex', alignItems: 'center', gap: 4, borderRadius: 16 }}
-                    >
-                      <span style={{ fontWeight: 800 }}>あ</span>
-                      <span>{showFurigana ? 'Ẩn Furigana' : 'Hiện Furigana'}</span>
-                    </button>
+                    {/* Prev / Next Sentence */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 8 }}>
+                      <button
+                        type="button"
+                        className="btn btn-outline"
+                        onClick={handlePrevSentence}
+                        disabled={activeSentenceIdx === 0}
+                        title="Câu trước"
+                        style={{ padding: '4px 8px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}
+                      >
+                        <ChevronLeft size={14} /> Câu trước
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-outline"
+                        onClick={handleNextSentence}
+                        disabled={activeSentenceIdx >= storySentences.length - 1}
+                        title="Câu sau"
+                        style={{ padding: '4px 8px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}
+                      >
+                        Câu sau <ChevronRight size={14} />
+                      </button>
+                    </div>
 
-                    {/* Chuyển sang Shadowing */}
-                    <button
-                      type="button"
-                      className="btn btn-shadowing-transfer"
-                      onClick={handleTransferToShadowing}
-                      title="Chuyển tác phẩm sang Shadowing Studio để luyện phát âm ngữ điệu"
-                      style={{ padding: '5px 12px', fontSize: '0.76rem', borderRadius: 16 }}
-                    >
-                      <Mic size={13} />
-                      <span>Shadowing</span>
-                    </button>
+                    {/* Speed, Furigana & Shadowing Quick Bar */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 6, paddingTop: 6, borderTop: '1px solid var(--glass-border)' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <span style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)' }}>Tốc độ:</span>
+                        <div style={{ display: 'flex', gap: 3 }}>
+                          {[0.75, 0.85, 1.0, 1.25].map(speed => (
+                            <button
+                              key={speed}
+                              type="button"
+                              className={`btn-speed-pill ${ttsSpeed === speed ? 'active' : ''}`}
+                              onClick={() => {
+                                setTtsSpeed(speed);
+                                localStorage.setItem('omni_tts_speed', speed.toString());
+                              }}
+                              style={{ padding: '1px 5px', fontSize: '0.68rem' }}
+                            >
+                              {speed}x
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div style={{ display: 'flex', gap: 6, alignItems: 'center', justifyContent: 'space-between' }}>
+                        <button
+                          type="button"
+                          className={`btn ${showFurigana ? 'btn-primary' : 'btn-outline'}`}
+                          onClick={toggleFurigana}
+                          style={{ flex: 1, padding: '3px 6px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4, borderRadius: 6 }}
+                        >
+                          <span style={{ fontWeight: 800 }}>あ</span>
+                          <span>{showFurigana ? 'Ẩn Furigana' : 'Hiện Furigana'}</span>
+                        </button>
+                        <button
+                          type="button"
+                          className="btn btn-shadowing-transfer"
+                          onClick={handleTransferToShadowing}
+                          style={{ flex: 1, padding: '3px 6px', fontSize: '0.72rem', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}
+                          title="Chuyển tác phẩm sang Shadowing Studio"
+                        >
+                          <Mic size={12} />
+                          <span>Shadowing</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* DANH SÁCH CÂU THOẠI TRONG PHÂN ĐOẠN (INTERACTIVE SCENE SENTENCES) */}
+                  <div className="cinema-console-sentences">
+                    <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 4 }}>
+                      📜 Lời Thoại ({storySentences.length} câu)
+                    </div>
+                    <div className="cinema-sentences-list">
+                      {storySentences.map((st, idx) => {
+                        const isActive = activeSentenceIdx === idx;
+                        return (
+                          <div
+                            key={idx}
+                            onClick={() => handleLineClick(idx)}
+                            className={`cinema-sentence-item ${isActive ? 'active' : ''}`}
+                            title="Bấm để chuyển và phát câu này"
+                          >
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 2 }}>
+                              <span style={{ fontSize: '0.65rem', fontWeight: 700, color: isActive ? 'var(--accent-primary)' : 'var(--text-tertiary)' }}>
+                                #{idx + 1}
+                              </span>
+                              {isActive && (
+                                <span style={{ fontSize: '0.64rem', color: '#10b981', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 2 }}>
+                                  <Volume2 size={10} /> Đang phát
+                                </span>
+                              )}
+                            </div>
+                            <div className="jp-text" style={{ fontSize: '0.82rem', lineHeight: 1.55, color: isActive ? 'var(--accent-primary)' : 'var(--text-primary)', fontWeight: isActive ? 700 : 500 }}>
+                              <FuriganaText text={st.text} />
+                            </div>
+                            {st.vi && (
+                              <div style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', marginTop: 2, fontStyle: 'italic', lineHeight: 1.3 }}>
+                                {st.vi}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>
