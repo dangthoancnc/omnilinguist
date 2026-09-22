@@ -200,6 +200,7 @@ const ImmersionReader = () => {
       const matchLevel = levelFilter === 'ALL' || (s.level && s.level.includes(levelFilter));
       const matchGenre = genreFilter === 'ALL' || 
                          s.genre === genreFilter || 
+                         (genreFilter === 'ehon' && (s.isPictureBook || s.genreLabel?.includes('Ehon') || s.genreLabel?.includes('Sách Tranh'))) ||
                          (genreFilter === 'folktale' && (s.genre === 'folktale' || s.genreLabel?.includes('Cổ tích'))) ||
                          (genreFilter === 'literature' && (s.genre === 'literature' || s.genreLabel?.includes('Văn học')));
       if (!matchLevel || !matchGenre) return false;
@@ -406,15 +407,26 @@ const ImmersionReader = () => {
   const activeSentence = storySentences[activeSentenceIdx] || storySentences[0];
   const activeSentenceVi = activeSentence?.vi || (activeSentence?.text ? getCachedTranslation(activeSentence.text.trim()) : '');
 
-  // Tranh minh họa hoạt cảnh Ehon theo tiến độ câu chuyện
+  // Tranh minh họa hoạt cảnh Ehon theo tiến độ câu chuyện / từng trang
   const activeSceneInfo = useMemo(() => {
+    if (currentChapter?.imageUrl) {
+      const p = parseStoryTitle(currentChapter.chapterTitle || '');
+      return {
+        imageUrl: currentChapter.imageUrl,
+        currentSceneIdx: chapterIndex + 1,
+        totalScenes: activeText?.chapters?.length || 1,
+        sceneTitle: p.sub ? `${p.main} (${p.sub})` : (p.main || currentChapter.chapterTitle || activeReadingTitle),
+        sceneJpTitle: p.main || '',
+        sceneDesc: currentChapter.summary || ''
+      };
+    }
     return getStorySceneArtwork(
       activeText,
       currentChapter ? currentChapter.chapterTitle : '',
       activeSentenceIdx,
       storySentences.length || 1
     );
-  }, [activeText, currentChapter, activeSentenceIdx, storySentences.length]);
+  }, [activeText, currentChapter, chapterIndex, activeSentenceIdx, storySentences.length, activeReadingTitle]);
 
   // Trích xuất 6-8 từ vựng tiêu biểu của bài đọc hiện tại để hiển thị ở cột tra cứu khi chưa chọn từ
   const keyChapterVocab = useMemo(() => {
@@ -800,6 +812,17 @@ const ImmersionReader = () => {
 
     const speakLineAt = (idx) => {
       if (isSpeechCancelledRef.current || idx >= lines.length) {
+        // Tự động lật trang kế tiếp nếu tác phẩm có nhiều trang/chương
+        if (!isSpeechCancelledRef.current && activeText?.chapters && chapterIndex < activeText.chapters.length - 1) {
+          handleSelectChapter(chapterIndex + 1);
+          setTimeout(() => {
+            if (!isSpeechCancelledRef.current) {
+              handleGenerateTTS(null, 0);
+            }
+          }, 800);
+          return;
+        }
+
         setIsPlayingTTS(false);
         setIsPausedTTS(false);
         setSpeakingLineIdx(null);
@@ -1259,6 +1282,7 @@ const ImmersionReader = () => {
             <div style={{ display: 'flex', gap: 4, overflowX: 'auto', paddingBottom: 2, scrollbarWidth: 'none' }}>
               {[
                 { id: 'ALL', label: 'Toàn bộ thể loại' },
+                { id: 'ehon', label: '🎨 Sách Tranh Ehon' },
                 { id: 'folktale', label: '🏛️ Cổ tích' },
                 { id: 'literature', label: '📚 Văn học' },
                 { id: 'daily', label: '🌱 Đời sống' },
@@ -3043,6 +3067,68 @@ const ImmersionReader = () => {
                   </div>
                 </div>
 
+                {/* Thanh Lật Trang Sách Tranh Ehon (Page Navigator) */}
+                {activeText.chapters && activeText.chapters.length > 1 && (
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '8px 16px',
+                    background: 'var(--bg-card)',
+                    border: '1px solid var(--glass-border-strong)',
+                    borderRadius: 12,
+                    marginBottom: 10,
+                    gap: 10,
+                    flexWrap: 'wrap'
+                  }}>
+                    <button
+                      type="button"
+                      onClick={() => handleSelectChapter(Math.max(0, chapterIndex - 1))}
+                      disabled={chapterIndex === 0}
+                      className="btn btn-outline"
+                      style={{ padding: '5px 12px', fontSize: '0.78rem', display: 'flex', alignItems: 'center', gap: 4 }}
+                    >
+                      <ChevronLeft size={14} /> Trang trước
+                    </button>
+
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
+                      <span style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--accent-primary)' }}>
+                        📖 Trang {chapterIndex + 1} / {activeText.chapters.length}: {currentChapter ? parseStoryTitle(currentChapter.chapterTitle).main : ''}
+                      </span>
+                      <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+                        {activeText.chapters.map((ch, idx) => (
+                          <button
+                            key={idx}
+                            type="button"
+                            onClick={() => handleSelectChapter(idx)}
+                            title={`Chuyển đến Trang ${idx + 1}: ${ch.chapterTitle || ''}`}
+                            style={{
+                              width: chapterIndex === idx ? 22 : 10,
+                              height: 10,
+                              borderRadius: 5,
+                              background: chapterIndex === idx ? 'linear-gradient(135deg, #10b981 0%, #3b82f6 100%)' : 'var(--glass-border-strong)',
+                              border: 'none',
+                              cursor: 'pointer',
+                              padding: 0,
+                              transition: 'all 0.2s ease'
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => handleSelectChapter(Math.min(activeText.chapters.length - 1, chapterIndex + 1))}
+                      disabled={chapterIndex === activeText.chapters.length - 1}
+                      className="btn btn-outline"
+                      style={{ padding: '5px 12px', fontSize: '0.78rem', display: 'flex', alignItems: 'center', gap: 4 }}
+                    >
+                      Trang sau <ChevronRight size={14} />
+                    </button>
+                  </div>
+                )}
+
                 {/* Thanh Điều Khiển Chiếu Rạp Phim (On-screen Controls Bar) */}
                 <div className="cinema-controls-bar">
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
@@ -3204,6 +3290,41 @@ const ImmersionReader = () => {
                         <div className="ehon-scene-desc">{activeSceneInfo.sceneDesc}</div>
                       )}
                     </div>
+
+                    {/* Bộ lật trang nhanh cho Ehon / Truyện nhiều trang */}
+                    {activeText.chapters && activeText.chapters.length > 1 && (
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '6px 12px',
+                        background: 'var(--bg-hover)',
+                        borderTop: '1px solid var(--glass-border)',
+                        gap: 6
+                      }}>
+                        <button
+                          type="button"
+                          onClick={() => handleSelectChapter(Math.max(0, chapterIndex - 1))}
+                          disabled={chapterIndex === 0}
+                          className="btn btn-outline btn-xs"
+                          style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3 }}
+                        >
+                          <ChevronLeft size={13} /> Trang trước
+                        </button>
+                        <span style={{ fontSize: '0.74rem', fontWeight: 800, color: 'var(--accent-primary)' }}>
+                          📖 Trang {chapterIndex + 1} / {activeText.chapters.length}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => handleSelectChapter(Math.min(activeText.chapters.length - 1, chapterIndex + 1))}
+                          disabled={chapterIndex === activeText.chapters.length - 1}
+                          className="btn btn-outline btn-xs"
+                          style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3 }}
+                        >
+                          Trang sau <ChevronRight size={13} />
+                        </button>
+                      </div>
+                    )}
                   </div>
 
                   {/* Phụ Đề Nổi Bật / Live Karaoke Subtitle Card */}

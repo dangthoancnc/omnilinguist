@@ -1,5 +1,6 @@
 // mangaArtworks.jsx — Thư viện Minh Họa & Visual Assets chuẩn Manga / Anime cho OmniLinguist SLA Reader
 import React from 'react';
+import { resolveStoryPageArtwork, generateProceduralCarleSVG } from '../services/ehonArtEngine.js';
 
 // Danh mục từ tượng thanh tiếng Nhật thường gặp trong truyện tranh & ý nghĩa
 export const MANGA_ONOMATOPOEIA_MAP = {
@@ -214,6 +215,48 @@ export const detectCharacter = (speakerName, text, storyTitle = '') => {
 // ────────────────────────────────────────────────────────────
 
 export const STORY_MANGA_ARTWORKS = {
+  // 0.a. はらぺこあおむし (Chú Sâu Bướm Háu Ăn - Eric Carle Collage)
+  harapeko_aomushi: {
+    title: 'はらぺこあおむし (Chú Sâu Bướm Háu Ăn)',
+    imageUrl: '/images/ehon/harapeko_p1_leaf.jpg',
+    style: 'harapeko_collage',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/harapeko_p1_leaf.jpg" 
+        alt="はらぺこあおむし" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+      />
+    )
+  },
+
+  // 0.b. おおきなかぶ (Củ Cải Khổng Lồ - Eric Carle Collage)
+  ookina_kabu: {
+    title: 'おおきなかぶ (Củ Cải Khổng Lồ)',
+    imageUrl: '/images/ehon/ookinakabu_p1_planting.jpg',
+    style: 'harapeko_collage',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/ookinakabu_p1_planting.jpg" 
+        alt="おおきなかぶ" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+      />
+    )
+  },
+
+  // 0.c. さんびきのこぶた (Ba Chú Heo Con - Eric Carle Collage)
+  sanbiki_no_kobuta: {
+    title: 'さんびきのこぶた (Ba Chú Heo Con)',
+    imageUrl: '/images/ehon/sanbiki_p1_leaving_home.jpg',
+    style: 'harapeko_collage',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/sanbiki_p1_leaving_home.jpg" 
+        alt="さんびきのこぶた" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+      />
+    )
+  },
+
   // 1. Momotarō (桃太郎) — Cổ tích thiếu nhi N5 (Ehon Style)
   momotaro: {
     title: '桃太郎 (Momotarō - Cậu Bé Quả Đào)',
@@ -586,6 +629,89 @@ export const STORY_MANGA_ARTWORKS = {
 // HỆ THỐNG HOẠT CẢNH ĐA TRANG (MULTI-SCENE EHON PAGES)
 // ────────────────────────────────────────────────────────────
 export const STORY_SCENES_MAP = {
+  harapeko_aomushi: [
+    {
+      sceneIdx: 1,
+      title: 'Trang 1: Đêm trăng trên chiếc lá',
+      jpTitle: 'おつきさまと 小さな たまご',
+      imageUrl: '/images/ehon/harapeko_p1_leaf.jpg',
+      desc: 'Quả trứng nhỏ xíu nằm yên bình trên chiếc lá xanh dưới ánh trăng bạc mỉm cười.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Trang 2: Mặt trời mọc & Sâu nhỏ chào đời',
+      jpTitle: 'おひさまと あおむしの たんじょう',
+      imageUrl: '/images/ehon/harapeko_p2_sun_caterpillar.jpg',
+      desc: 'Sáng Chủ Nhật nắng ấm, mặt trời rực rỡ, chú sâu nhỏ chui ra đói meo meo đi tìm thức ăn.'
+    },
+    {
+      sceneIdx: 3,
+      title: 'Trang 3: Ăn trái cây suốt tuần',
+      jpTitle: 'くだものを もりもり たべたよ',
+      imageUrl: '/images/ehon/harapeko_p3_fruits.jpg',
+      desc: 'Táo đỏ, lê xanh, mận tím, dâu tây đỏ mọng lần lượt bị chú sâu cắn lủng những lỗ tròn.'
+    },
+    {
+      sceneIdx: 4,
+      title: 'Trang 4: Bữa tiệc bánh kẹo & Cơn đau bụng',
+      jpTitle: 'ごちそうと おなかの いたみ',
+      imageUrl: '/images/ehon/harapeko_p4_junk_feast.jpg',
+      desc: 'Thứ Bảy chú ăn bánh kem socola, kem que, kẹo mút, dưa hấu và bị đau bụng ôm rốn khóc.'
+    },
+    {
+      sceneIdx: 5,
+      title: 'Trang 5: Chiếc lá xanh mát lành & Chiếc kén ngủ say',
+      jpTitle: 'みどりの はっぱと さなぎの まゆ',
+      imageUrl: '/images/ehon/harapeko_p5_green_leaf_cocoon.jpg',
+      desc: 'Ăn một chiếc lá non tươi ngon bụng êm ru, chú hóa thành sâu béo múp và dệt kén ngủ hai tuần.'
+    },
+    {
+      sceneIdx: 6,
+      title: 'Trang 6: Hóa bướm ngũ sắc khổng lồ tuyệt mỹ',
+      jpTitle: 'きれいな ちょうちょうに へんしん！',
+      imageUrl: '/images/ehon/harapeko_p6_beautiful_butterfly.jpg',
+      desc: 'Cựa mình chui ra khỏi kén, chú hóa thành cánh bướm khổng lồ ngũ sắc lộng lẫy tung cánh giữa trời!'
+    }
+  ],
+  ookina_kabu: [
+    {
+      sceneIdx: 1,
+      title: 'Trang 1: Gieo hạt củ cải trong vườn',
+      jpTitle: 'おじいさんの かぶの たねまき',
+      imageUrl: '/images/ehon/ookinakabu_p1_planting.jpg',
+      desc: 'Ông lão gieo hạt giống trong mảnh vườn rực rỡ nắng ấm phong cách cắt dán giấy màu.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Trang 2: Ông lão hết sức kéo củ cải khổng lồ',
+      jpTitle: 'うんとこしょ、どっこいしょ',
+      imageUrl: '/images/ehon/ookinakabu_p2_giant_turnip.jpg',
+      desc: 'Củ cải to như quả núi, ông lão nắm lá kéo: "うんとこしょ、どっこいしょ" mà không nhúc nhích.'
+    },
+    {
+      sceneIdx: 3,
+      title: 'Trang 3: Cả nhà đồng lòng, củ cải bật lên!',
+      jpTitle: 'みんなで ちからを あわせたら！',
+      imageUrl: '/images/ehon/ookinakabu_p3_all_pulling.jpg',
+      desc: 'Ông, bà, cháu, chó, mèo và chú chuột nhỏ cùng chung sức, củ cải bật lên reo hò hạnh phúc!'
+    }
+  ],
+  sanbiki_no_kobuta: [
+    {
+      sceneIdx: 1,
+      title: 'Trang 1: Ba chú heo con lên đường xây nhà',
+      jpTitle: 'こぶたの たびだち',
+      imageUrl: '/images/ehon/sanbiki_p1_leaving_home.jpg',
+      desc: 'Ba chú heo con hồng hào mang ba lô sắc màu chào mẹ lên đường xây tổ ấm.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Trang 2: Ngôi nhà gạch đỏ kiên cố & Chó sói rơi nồi súp',
+      jpTitle: 'レンガの いえと オオカミ',
+      imageUrl: '/images/ehon/sanbiki_p2_brick_house.jpg',
+      desc: 'Sói chui ống khói rơi vào nồi súp nóng rát đuôi chạy trối chết, ba chú heo an toàn ca hát bên bếp lửa.'
+    }
+  ],
   momotaro: [
     {
       sceneIdx: 1,
@@ -757,6 +883,17 @@ export const getStoryMangaArtwork = (story, chapterTitle = '') => {
 
   const fullSearch = `${id} ${title} ${cTitle}`.toLowerCase();
 
+  // 0. Khớp ưu tiên theo tác phẩm Ehon Eric Carle
+  if (fullSearch.includes('harapeko') || fullSearch.includes('あおむし') || fullSearch.includes('caterpillar')) {
+    return STORY_MANGA_ARTWORKS.harapeko_aomushi;
+  }
+  if (fullSearch.includes('kabu') || fullSearch.includes('かぶ') || fullSearch.includes('turnip')) {
+    return STORY_MANGA_ARTWORKS.ookina_kabu;
+  }
+  if (fullSearch.includes('sanbiki') || fullSearch.includes('こぶた') || fullSearch.includes('pig')) {
+    return STORY_MANGA_ARTWORKS.sanbiki_no_kobuta;
+  }
+
   // 1. Khớp ưu tiên theo tác phẩm có tranh Ehon thực tế (ưu tiên tên chương trước)
   if (fullSearch.includes('omusubi') || fullSearch.includes('おむすび') || fullSearch.includes('ころりん')) {
     return STORY_MANGA_ARTWORKS.omusubi_kororin;
@@ -816,7 +953,10 @@ export const getStorySceneArtwork = (story, chapterTitle = '', currentIdx = 0, t
   const fullSearch = `${story?.id || ''} ${story?.title || ''} ${chapterTitle || story?.chapterTitle || story?.currentChapterTitle || ''}`.toLowerCase();
   
   let sceneKey = null;
-  if (fullSearch.includes('omusubi') || fullSearch.includes('おむすび') || fullSearch.includes('ころりん')) sceneKey = 'omusubi_kororin';
+  if (fullSearch.includes('harapeko') || fullSearch.includes('あおむし') || fullSearch.includes('caterpillar')) sceneKey = 'harapeko_aomushi';
+  else if (fullSearch.includes('kabu') || fullSearch.includes('かぶ') || fullSearch.includes('turnip')) sceneKey = 'ookina_kabu';
+  else if (fullSearch.includes('sanbiki') || fullSearch.includes('こぶた') || fullSearch.includes('pig')) sceneKey = 'sanbiki_no_kobuta';
+  else if (fullSearch.includes('omusubi') || fullSearch.includes('おむすび') || fullSearch.includes('ころりん')) sceneKey = 'omusubi_kororin';
   else if (fullSearch.includes('momo') || fullSearch.includes('桃太郎')) sceneKey = 'momotaro';
   else if (fullSearch.includes('urashima') || fullSearch.includes('浦島') || fullSearch.includes('竜宮')) sceneKey = 'urashima_taro';
   else if (fullSearch.includes('kaguya') || fullSearch.includes('かぐや') || fullSearch.includes('竹取')) sceneKey = 'kaguya_hime';
@@ -824,10 +964,20 @@ export const getStorySceneArtwork = (story, chapterTitle = '', currentIdx = 0, t
   else if (fullSearch.includes('kasajizo') || fullSearch.includes('地蔵') || fullSearch.includes('かさじぞう')) sceneKey = 'kasajizo';
 
   if (!sceneKey || !STORY_SCENES_MAP[sceneKey]) {
+    // Tích hợp công cụ dài hạn: Tự động phân giải tranh đa trang theo ngữ cảnh qua ehonArtEngine
+    const fallbackProcedural = resolveStoryPageArtwork({
+      story,
+      chapterTitle,
+      pageIdx: currentIdx,
+      totalPages: totalCount,
+      sentenceText: ''
+    });
+
     return {
       ...baseArtwork,
-      currentSceneIdx: 1,
-      totalScenes: 1,
+      imageUrl: fallbackProcedural.imageUrl || baseArtwork.imageUrl,
+      currentSceneIdx: Math.min(totalCount, currentIdx + 1),
+      totalScenes: Math.max(1, totalCount),
       sceneTitle: baseArtwork.title,
       sceneJpTitle: '',
       sceneDesc: ''

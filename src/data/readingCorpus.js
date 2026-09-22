@@ -3,6 +3,125 @@
 
 export const READING_CORPUS = [
   {
+    "id": "story_harapeko_aomushi",
+    "title": "🐛 はらぺこあおむし (Chú Sâu Bướm Háu Ăn - Eric Carle)",
+    "level": "N5",
+    "genre": "folktale",
+    "genreLabel": "🎨 Sách Tranh Ehon (Eric Carle Collage)",
+    "author": "Eric Carle (Bản Nhật ngữ)",
+    "readingTime": "5 phút",
+    "summary": "Tuyệt phẩm sách tranh thiếu nhi kinh điển thế giới với nghệ thuật cắt dán giấy màu Eric Carle. Chú sâu nhỏ háu ăn từ lúc nở khỏi trứng đến khi dệt kén hóa bướm ngũ sắc lộng lẫy.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：おつきさまと 小さな たまご (Trang 1: Đêm Trăng & Quả Trứng Nhỏ)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/harapeko_p1_leaf.jpg",
+        "content": "おつきさまの よる、おほしさまが そらで きらきらと ひかっています。\nみどりの はっぱの うえに、ぽつんと ちいさな たまごが ひとつ ありました。\nしずかな、しずかな、おつきさまの よるのことでした。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：おひさまと あおむしの たんじょう (Trang 2: Mặt Trời Mọc & Sâu Nhỏ Chào Đời)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/harapeko_p2_sun_caterpillar.jpg",
+        "content": "あたたかい にちようびの あさが やってきました。\nぽかぽかと あたたかい おひさまが、やまの むこうから のぼってきます。\nすると、ぽん！と おとがして、たまごから ちっぽけな あおむしが うまれました。\nあおむしは とても おなかを すかせていました。\n「ぼく、おなかが ぺこぺこだよ。なにか たべるものを さがしに いこう！」"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：くだものを もりもり たべたよ (Trang 3: Ăn Trái Cây Suốt Tuần)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/harapeko_p3_fruits.jpg",
+        "content": "げつようび、あおむしは あかい りんごを ひとつ たべました。でも、まだ おなかは ぺこぺこ。\nかようび、みどりの なしを ふたつ たべました。でも、まだ おなかは ぺこぺこ。\nすいようび、むらさきの すももを みっつ たべました。でも、まだ おなかは ぺこぺこ。\nもくようび、まっかな いちごを よっつ たべました。でも、まだ おなかは ぺこぺこ。\nきんようび、オレンジを いつつ たべました。それでも、やっぱり おなかは ぺこぺこでした。"
+      },
+      {
+        "chapterNumber": 4,
+        "chapterTitle": "第4場面：ごちそうと おなかの いたみ (Trang 4: Bữa Tiệc Bánh Kẹo & Đau Bụng)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/harapeko_p4_junk_feast.jpg",
+        "content": "どようび、あおむしは たくさん ごちそうを たべました。\nチョコレートケーキを ひとつ、アイスクリームを ひとつ、ペロペロキャンディーを ひとつ、すいかを ひとくち たべました。\nそのばん、あおむしは「いたたたた！」と おなかを かかえて なきました。\nたべすぎて、おなかが いたくなって しまったのです。"
+      },
+      {
+        "chapterNumber": 5,
+        "chapterTitle": "第5場面：みどりの はっぱと さなぎの まゆ (Trang 5: Chiếc Lá Xanh & Chiếc Kén Ngủ Say)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/harapeko_p5_green_leaf_cocoon.jpg",
+        "content": "つぎの ひは、また あたたかい にちようびでした。\nあおむしは、みずみずしい みどりの はっぱを むしゃむしゃと たべました。\nすると、おなかの ぐあいは すっかり よくなりました。\nもう ちっぽけな あおむしでは ありません。まんまるに ふとった おおきな あおむしに なりました。\nあおむしは じぶんの まわりに「さなぎの まゆ」を つくって、ふかしゅうかんの あいだ、ぐっすりと ねむりました。"
+      },
+      {
+        "chapterNumber": 6,
+        "chapterTitle": "第6場面：きれいな ちょうちょうに へんしん！ (Trang 6: Hóa Cánh Bướm Ngũ Sắc Tuyệt Mỹ)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/harapeko_p6_beautiful_butterfly.jpg",
+        "content": "それから、あおむしは まゆに あなを あけて、よいしょ、よいしょと おしだして でてきました。\nなんと！あおむしは、いろとりどりの はねを ひろげた、めを みはるほど きれいな ちょうちょうに なっていました！\nあおかい そらへと、たのしそうに パタパタと とびたっていきましたとさ。"
+      }
+    ]
+  },
+  {
+    "id": "story_ookina_kabu",
+    "title": "🥕 おおきなかぶ (Củ Cải Khổng Lồ - The Enormous Turnip)",
+    "level": "N5",
+    "genre": "folktale",
+    "genreLabel": "🎨 Sách Tranh Ehon (Eric Carle Collage)",
+    "author": "Đồng thoại kinh điển thế giới (Bản Nhật)",
+    "readingTime": "4 phút",
+    "summary": "Câu chuyện thiếu nhi quốc dân Nhật Bản về tinh thần hợp lực. Ông lão, bà lão, cháu gái, chó, mèo và chú chuột nhỏ cùng kéo củ cải khổng lồ.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：おじいさんの かぶの たねまき (Trang 1: Gieo Hạt Củ Cải Trong Vườn)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ookinakabu_p1_planting.jpg",
+        "content": "おじいさんが、はたけに かぶの たねを まきました。\n「あまい、あまい かぶに なれ。おおきな、おおきな かぶに なれ。」\nおひさまの ひかりを あびて、やさしい あめの しずくを のんで、かぶは ぐんぐん そだちました。\nそして、みたことも ないほど とてつもなく おおきな かぶに なりました。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：うんとこしょ、どっこいしょ (Trang 2: Ông Lão Hết Sức Kéo Củ Cải)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ookinakabu_p2_giant_turnip.jpg",
+        "content": "おじいさんは、かぶを ぬこうと しました。\nかぶの くきを 両手で しっかり にぎりしめて、\n「うんとこしょ、どっこいしょ！」\nけれども、かぶは びくとも しません。ちっとも ぬけません。\n「これは たいへんだ。おばあさん、てつだって おくれ！」"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：みんなで ちからを あわせたら！ (Trang 3: Cả Nhà Đồng Lòng, Củ Cải Bật Lên!)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ookinakabu_p3_all_pulling.jpg",
+        "content": "おばあさんが おじいさんを ひっぱり、まごむすめが おばあさんを ひっぱり、いぬが まごを ひっぱり、ねこが いぬを ひっぱり、ちいさな ねずみが ねこを ひっぱりました。\n「うんとこしょ、どっこいしょ！ うんとこしょ、どっこいしょ！」\nぽーん！\nとうとう、おおきな かぶが ぬけました！\nみんなは おおよろこびで、あまくて おいしい かぶの スープを おなかいっぱい たべましたとさ。"
+      }
+    ]
+  },
+  {
+    "id": "story_sanbiki_kobuta",
+    "title": "🐷 さんびきのこぶた (Ba Chú Heo Con - The Three Little Pigs)",
+    "level": "N5",
+    "genre": "folktale",
+    "genreLabel": "🎨 Sách Tranh Ehon (Eric Carle Collage)",
+    "author": "Đồng thoại kinh điển thế giới (Bản Nhật)",
+    "readingTime": "4 phút",
+    "summary": "Truyện cổ tích thiếu nhi kinh điển về 3 chú heo con xây nhà bằng rơm, gỗ và gạch kiên cố đánh lui chó sói hung dữ.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：こぶたの たびだち (Trang 1: Ba Chú Heo Con Lên Đường Xây Nhà)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/sanbiki_p1_leaving_home.jpg",
+        "content": "むかしむかし、かわいい さんびきの こぶたが すんでいました。\nあるひ、おかあさんぶたが いいました。\n「あなたたちも もう おおきくなりました。じぶんの いえを つくりなさい。」\nさんびきの こぶたは、げんきよく「いってきます！」と てを ふって、たびだちました。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：レンガの いえと オオカミ (Trang 2: Ngôi Nhà Gạch Đỏ & Chó Sói Rơi Nồi Súp)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/sanbiki_p2_brick_house.jpg",
+        "content": "いちばんめの こぶたは わらの いえを つくりましたが、オオカミの いきで ふきとばされて しまいました。\nにばんめの こぶたは きの いえを つくりましたが、オオカミに こわされて しまいました。\nでも、がんばりやの さんばんめの こぶたは、じょうぶな あかい レンガの いえを つくりました。\nオオカミが えんとつから はいってくると、したで にえたぎる なべの なかに どぼーん！\n「あちちち！」と オオカミは にげだし、さんびきの こぶたは いつまでも なかよく くらしましたとさ。"
+      }
+    ]
+  },
+  {
     "id": "book_n5_folktales_full",
     "title": "📚 日本昔話全集 (Tuyển Tập Cổ Tích Dân Gian Sơ Cấp Toàn Tập)",
     "level": "N5",
