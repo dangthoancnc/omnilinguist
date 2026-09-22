@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="springSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bae6fd" />
+      <stop offset="60%" stop-color="#f0f9ff" />
+      <stop offset="100%" stop-color="#fdf2f8" />
+    </linearGradient>
+    <linearGradient id="trunkGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4e342e" />
+      <stop offset="50%" stop-color="#3e2723" />
+      <stop offset="100%" stop-color="#271b17" />
+    </linearGradient>
+    <radialGradient id="sakuraBurst" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbcfe8" stop-opacity="0.95" />
+      <stop offset="70%" stop-color="#f472b6" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#db2777" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Bầu trời mùa xuân trong trẻo -->
+  <rect width="800" height="500" fill="url(#springSky)" />
+
+  <!-- Mặt trời vàng ấm áp rạng rỡ -->
+  <circle cx="680" cy="90" r="45" fill="#fde047" opacity="0.4" />
+  <circle cx="680" cy="90" r="32" fill="#facc15" />
+
+  <!-- Núi non xa xa mờ ảo -->
+  <path d="M-50,380 Q150,260 400,320 T850,280 L850,500 L-50,500 Z" fill="#93c5fd" opacity="0.35" />
+  <path d="M-20,400 Q250,320 550,380 T850,350 L850,500 L-20,500 Z" fill="#86efac" opacity="0.45" />
+
+  <!-- Mặt đất cỏ mùa xuân xanh mướt -->
+  <path d="M-20,430 Q280,380 580,440 T850,410 L850,500 L-20,500 Z" fill="#4ade80" />
+  <path d="M-20,460 Q350,420 620,470 T850,450 L850,500 L-20,500 Z" fill="#22c55e" />
+
+  <!-- Ngôi nhà tranh cổ kính Nhật Bản góc trái xa -->
+  <g transform="translate(60, 310)" opacity="0.85">
+    <polygon points="0,60 50,20 100,60" fill="#78350f" stroke="#451a03" stroke-width="2" />
+    <rect x="15" y="60" width="70" height="50" fill="#fef3c7" stroke="#451a03" stroke-width="2" />
+    <rect x="35" y="70" width="30" height="40" fill="#d97706" />
+    <!-- Hàng rào tre -->
+    <line x1="-20" y1="105" x2="130" y2="105" stroke="#a16207" stroke-width="3" />
+    ${[ -15, 5, 25, 45, 65, 85, 105, 125 ].map(x => `<line x1="${x}" y1="95" x2="${x}" y2="115" stroke="#a16207" stroke-width="3" />`).join('')}
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- CÂY HOA ANH ĐÀO CỔ THỤ NỞ HOA RỰC RỠ (枯れ木に花が咲く) -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <g filter="url(#softShadow)">
+    <!-- Thân cây hoa anh đào uốn lượn cổ thụ -->
+    <path d="M420,480 C400,380 430,300 380,240 C350,200 290,180 220,170" stroke="url(#trunkGrad)" stroke-width="36" stroke-linecap="round" fill="none" />
+    <path d="M385,250 C430,210 520,180 600,160" stroke="url(#trunkGrad)" stroke-width="24" stroke-linecap="round" fill="none" />
+    <path d="M395,280 C450,260 510,240 560,260" stroke="url(#trunkGrad)" stroke-width="16" stroke-linecap="round" fill="none" />
+    <path d="M340,190 C320,130 270,90 200,80" stroke="url(#trunkGrad)" stroke-width="18" stroke-linecap="round" fill="none" />
+    <path d="M400,210 C420,140 450,90 510,70" stroke="url(#trunkGrad)" stroke-width="16" stroke-linecap="round" fill="none" />
+
+    <!-- Những đám mây hoa anh đào bung nở rực rỡ lấp lánh (Sakura Clouds) -->
+    <g filter="url(#glowEffect)">
+      <circle cx="210" cy="140" r="85" fill="url(#sakuraBurst)" />
+      <circle cx="280" cy="110" r="95" fill="url(#sakuraBurst)" />
+      <circle cx="410" cy="90" r="105" fill="url(#sakuraBurst)" />
+      <circle cx="530" cy="105" r="95" fill="url(#sakuraBurst)" />
+      <circle cx="620" cy="150" r="85" fill="url(#sakuraBurst)" />
+      <circle cx="540" cy="220" r="75" fill="url(#sakuraBurst)" />
+      <circle cx="160" cy="180" r="65" fill="url(#sakuraBurst)" />
+    </g>
+
+    <!-- Các bông hoa sakura 5 cánh vẽ chi tiết rải đều các tán -->
+    <g fill="#fdf2f8" stroke="#f472b6" stroke-width="1.2">
+      <!-- Cụm trái -->
+      <circle cx="220" cy="120" r="8" fill="#f43f5e" opacity="0.3" />
+      <circle cx="270" cy="95" r="9" />
+      <circle cx="310" cy="130" r="10" />
+      <!-- Cụm trung tâm -->
+      <circle cx="400" cy="70" r="11" />
+      <circle cx="430" cy="100" r="12" />
+      <circle cx="470" cy="80" r="9" />
+      <!-- Cụm phải -->
+      <circle cx="560" cy="120" r="11" />
+      <circle cx="610" cy="150" r="10" />
+      <circle cx="530" cy="200" r="9" />
+    </g>
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- NHÂN VẬT 1: ÔNG LÃO NHÂN TỪ NGỒI TRÊN CÀNH CÂY RẮC TRO HOA -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(360, 160)" filter="url(#softShadow)">
+    <!-- Áo Kimono màu xanh lam hiền hòa -->
+    <path d="M-15,35 L20,30 L35,80 L-25,80 Z" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2" />
+    <line x1="2" y1="32" x2="5" y2="80" stroke="#93c5fd" stroke-width="2" />
+
+    <!-- Hộp đựng tro thần kỳ (箕) -->
+    <polygon points="-40,55 -15,48 -10,75 -35,78" fill="#d97706" stroke="#92400e" stroke-width="2" />
+    <ellipse cx="-25" cy="55" rx="12" ry="6" fill="#f1f5f9" />
+
+    <!-- Cánh tay rắc tro vung lên cao -->
+    <path d="M10,40 Q35,10 55,-5" stroke="#fbc4ab" stroke-width="10" stroke-linecap="round" fill="none" />
+    <circle cx="58" cy="-8" r="6" fill="#fbc4ab" />
+
+    <!-- Làn tro thần kỳ phát sáng lấp lánh biến thành hoa -->
+    <path d="M60,-10 Q90,-40 140,-30 T220,-10" stroke="#ffffff" stroke-width="3" stroke-dasharray="4,6" fill="none" opacity="0.9" />
+    <g fill="#fef08a">
+      <polygon points="80,-20 83,-15 88,-14 84,-10 85,-5 80,-8 75,-5 76,-10 72,-14 77,-15" />
+      <polygon points="120,-35 122,-31 126,-30 123,-27 124,-23 120,-25 116,-23 117,-27 114,-30 118,-31" />
+      <polygon points="170,-25 172,-21 176,-20 173,-17 174,-13 170,-15 166,-13 167,-17 164,-20 168,-21" />
+    </g>
+
+    <!-- Đầu & Khuôn mặt ông lão nhân từ -->
+    <circle cx="0" cy="15" r="22" fill="#fbc4ab" stroke="#dd9b7f" stroke-width="1.5" />
+    <!-- Mái tóc trắng búi chỏm cổ truyền -->
+    <path d="M-18,12 C-20,-8 18,-8 16,12 C10,-2 -10,-2 -18,12 Z" fill="#f8fafc" />
+    <circle cx="0" cy="-6" r="6" fill="#f8fafc" />
+    <!-- Chòm râu bạc hiền hậu -->
+    <path d="M-8,24 Q0,40 8,24 Z" fill="#f8fafc" />
+    <!-- Đôi mắt cười tít hạt đỗ -->
+    <path d="M-10,14 Q-5,10 0,14" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round" fill="none" />
+    <path d="M4,14 Q9,10 14,14" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round" fill="none" />
+    <!-- Nụ cười rạng rỡ -->
+    <path d="M-4,22 Q2,28 8,22" stroke="#dc2626" stroke-width="2" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- NHÂN VẬT 2: CHÚ CHÓ TRẮNG TRUNG NGHĨA SHIRO (シロ) DƯỚI GỐC CÂY -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(480, 390)" filter="url(#softShadow)">
+    <!-- Thân chó trắng tinh -->
+    <ellipse cx="30" cy="30" rx="35" ry="24" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" />
+    <!-- 4 chân khỏe khoắn -->
+    <rect x="5" y="45" width="10" height="24" rx="5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="25" y="45" width="10" height="24" rx="5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="42" y="45" width="10" height="24" rx="5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+
+    <!-- Cái đuôi cong tít vẫy vui mừng -->
+    <path d="M60,25 Q80,15 75,-5" stroke="#ffffff" stroke-width="9" stroke-linecap="round" fill="none" />
+
+    <!-- Khăn quàng cổ đỏ tươi -->
+    <rect x="-6" y="14" width="14" height="22" rx="4" fill="#ef4444" />
+
+    <!-- Đầu chó ngước lên mừng rỡ nhìn ông lão -->
+    <circle cx="-10" cy="10" r="20" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" />
+    <!-- Tai cụp nâu vàng xinh xắn -->
+    <ellipse cx="-18" cy="4" rx="6" ry="12" transform="rotate(-20, -18, 4)" fill="#d97706" />
+    <ellipse cx="-2" cy="0" rx="5" ry="10" transform="rotate(15, -2, 0)" fill="#d97706" />
+    <!-- Mắt chó lấp lánh tình cảm -->
+    <circle cx="-14" cy="8" r="3.5" fill="#1e293b" />
+    <circle cx="-13" cy="7" r="1.2" fill="#ffffff" />
+    <!-- Mũi đen & lưỡi hồng liếm mép -->
+    <circle cx="-25" cy="12" r="3" fill="#0f172a" />
+    <path d="M-22,16 Q-18,22 -14,16" stroke="#0f172a" stroke-width="2" fill="none" />
+    <ellipse cx="-19" cy="20" rx="3" ry="4" fill="#fb7185" />
+  </g>
+
+  <!-- Những cánh hoa anh đào bay lả tả trong gió mùa xuân (桜吹雪) -->
+  <g fill="#fbcfe8" opacity="0.85">
+    <ellipse cx="280" cy="220" rx="6" ry="3" transform="rotate(25, 280, 220)" />
+    <ellipse cx="320" cy="270" rx="7" ry="4" transform="rotate(-35, 320, 270)" />
+    <ellipse cx="440" cy="310" rx="6" ry="3" transform="rotate(45, 440, 310)" />
+    <ellipse cx="490" cy="260" rx="7" ry="3" transform="rotate(-15, 490, 260)" />
+    <ellipse cx="610" cy="320" rx="8" ry="4" transform="rotate(30, 610, 320)" />
+    <ellipse cx="680" cy="240" rx="6" ry="3" transform="rotate(-50, 680, 240)" />
+    <ellipse cx="380" cy="380" rx="7" ry="4" transform="rotate(15, 380, 380)" />
+    <ellipse cx="540" cy="420" rx="6" ry="3" transform="rotate(-25, 540, 420)" />
+  </g>
+
+  <!-- BANNER HUY HIỆU TÁC PHẨM CHUẨN ĐỒ HỌA CAO CẤP -->
+  <g transform="translate(40, 40)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="310" height="46" rx="23" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5" />
+    <circle cx="24" cy="23" r="16" fill="#ec4899" />
+    <text x="24" y="29" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="16" fill="#ffffff" text-anchor="middle">桜</text>
+    <text x="52" y="22" font-family="'Noto Sans JP', sans-serif" font-weight="800" font-size="15" fill="#ffffff">第6章: 花咲か爺さん</text>
+    <text x="52" y="37" font-family="'Noto Sans JP', sans-serif" font-weight="600" font-size="11" fill="#94a3b8">Hanasaka Jīsan - Ông Lão Làm Hoa Nở</text>
+  </g>
+</svg>

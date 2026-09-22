@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="circusSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fed7aa" />
+      <stop offset="60%" stop-color="#ffedd5" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+    <radialGradient id="copperPot" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#b45309" />
+      <stop offset="60%" stop-color="#78350f" />
+      <stop offset="100%" stop-color="#451a03" />
+    </radialGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#circusSky)" />
+
+  <!-- Dây thừng xiếc giăng ngang sân khấu (Tightrope) -->
+  <line x1="50" y1="360" x2="750" y2="360" stroke="#78350f" stroke-width="8" stroke-linecap="round" />
+  <line x1="50" y1="360" x2="750" y2="360" stroke="#d97706" stroke-width="4" stroke-dasharray="8,6" />
+
+  <!-- Cọc dựng dây thừng -->
+  <rect x="50" y="340" width="20" height="160" fill="#451a03" />
+  <rect x="730" y="340" width="20" height="160" fill="#451a03" />
+
+  <!-- Đèn lồng lễ hội treo trên dây -->
+  <g transform="translate(150, 80)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#1c1917" stroke-width="2" />
+    <ellipse cx="0" cy="65" rx="22" ry="28" fill="#dc2626" />
+    <rect x="-14" y="35" width="28" height="6" fill="#1c1917" />
+    <rect x="-14" y="90" width="28" height="6" fill="#1c1917" />
+    <text x="0" y="72" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="16" fill="#fef08a" text-anchor="middle">祭</text>
+  </g>
+  <g transform="translate(650, 80)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#1c1917" stroke-width="2" />
+    <ellipse cx="0" cy="65" rx="22" ry="28" fill="#dc2626" />
+    <rect x="-14" y="35" width="28" height="6" fill="#1c1917" />
+    <rect x="-14" y="90" width="28" height="6" fill="#1c1917" />
+    <text x="0" y="72" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="16" fill="#fef08a" text-anchor="middle">福</text>
+  </g>
+
+  <!-- CHÚ CHỒN TANUKI TRONG LỐT ẤM TRÀ ĐỒNG ĐANG ĐI DÂY VÀ XOAY Ô -->
+  <g transform="translate(400, 240)" filter="url(#softShadow)">
+    <!-- Thân ấm trà bằng đồng cổ phình to tròn -->
+    <ellipse cx="0" cy="40" rx="75" ry="65" fill="url(#copperPot)" stroke="#271b17" stroke-width="3" />
+    <!-- Quai ấm và núm nắp ấm -->
+    <path d="M-60,10 C-60,-35 60,-35 60,10" stroke="#451a03" stroke-width="8" fill="none" />
+    <ellipse cx="0" cy="-18" rx="28" ry="8" fill="#78350f" stroke="#271b17" stroke-width="2" />
+    <circle cx="0" cy="-26" r="8" fill="#d97706" />
+
+    <!-- ĐẦU CHÚ CHỒN THÒ RA TỪ MẶT ẤM -->
+    <circle cx="0" cy="-5" r="32" fill="#a16207" stroke="#451a03" stroke-width="2" />
+    <!-- Vệt lông quanh mắt đen đặc trưng của chồn Tanuki -->
+    <ellipse cx="-12" cy="-6" rx="10" ry="12" transform="rotate(-15, -12, -6)" fill="#1c1917" />
+    <ellipse cx="12" cy="-6" rx="10" ry="12" transform="rotate(15, 12, -6)" fill="#1c1917" />
+    <!-- Mắt tròn lấp lánh -->
+    <circle cx="-10" cy="-7" r="4.5" fill="#fef08a" />
+    <circle cx="-10" cy="-7" r="2.5" fill="#1c1917" />
+    <circle cx="10" cy="-7" r="4.5" fill="#fef08a" />
+    <circle cx="10" cy="-7" r="2.5" fill="#1c1917" />
+    <!-- Mũi và miệng cười toe toét -->
+    <polygon points="-3,3 3,3 0,7" fill="#1c1917" />
+    <path d="M-6,9 Q0,15 6,9" stroke="#1c1917" stroke-width="2" fill="none" />
+    <!-- Đôi tai nhỏ của chồn -->
+    <circle cx="-22" cy="-30" r="8" fill="#a16207" />
+    <circle cx="22" cy="-30" r="8" fill="#a16207" />
+
+    <!-- TAY CẦM CHIẾC Ô GIẤY NHẬT BẢN XOAY TÍT (Wagasa) -->
+    <path d="M-50,30 L-95,0" stroke="#fbc4ab" stroke-width="7" stroke-linecap="round" />
+    <g transform="translate(-115, -25) rotate(-30)">
+      <!-- Cán dù -->
+      <line x1="0" y1="-50" x2="0" y2="70" stroke="#78350f" stroke-width="4" />
+      <!-- Mái dù wagasa đỏ vàng nan hoa -->
+      <path d="M-60,0 Q0,-30 60,0 L0,15 Z" fill="#dc2626" stroke="#b91c1c" stroke-width="2" />
+      <path d="M-35,-8 L-20,0 M35,-8 L20,0 M0,-14 L0,0" stroke="#fef08a" stroke-width="2" />
+    </g>
+
+    <!-- CHIẾC ĐUÔI XÙ LỚN ĐẶC TRƯNG CỦA CHỒN PHÍA SAU -->
+    <path d="M65,40 C110,20 140,80 110,105 C85,115 70,80 65,65 Z" fill="#78350f" stroke="#451a03" stroke-width="3" />
+    <ellipse cx="115" cy="85" rx="14" ry="18" fill="#ca8a04" opacity="0.6" />
+
+    <!-- 2 CHÂN NHỎ KHÉO LÉO ĐỨNG THĂNG BẰNG TRÊN DÂY -->
+    <ellipse cx="-15" cy="118" rx="8" ry="6" fill="#1c1917" />
+    <ellipse cx="15" cy="118" rx="8" ry="6" fill="#1c1917" />
+  </g>
+
+  <!-- Khán giả vỗ tay tán thưởng phía dưới -->
+  <g fill="#475569" opacity="0.6">
+    <circle cx="250" cy="460" r="24" />
+    <circle cx="340" cy="450" r="26" />
+    <circle cx="460" cy="455" r="28" />
+    <circle cx="560" cy="460" r="25" />
+  </g>
+
+  <!-- Banner Tiêu Đề -->
+  <g transform="translate(40, 40)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="310" height="46" rx="23" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5" />
+    <circle cx="24" cy="23" r="16" fill="#b45309" />
+    <text x="24" y="29" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="16" fill="#ffffff" text-anchor="middle">釜</text>
+    <text x="52" y="22" font-family="'Noto Sans JP', sans-serif" font-weight="800" font-size="15" fill="#ffffff">第9章: 分福茶釜</text>
+    <text x="52" y="37" font-family="'Noto Sans JP', sans-serif" font-weight="600" font-size="11" fill="#94a3b8">Bunbuku Chagama - Ấm Trà Biến Hình</text>
+  </g>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bambooSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bbf7d0" />
+      <stop offset="50%" stop-color="#f0fdf4" />
+      <stop offset="100%" stop-color="#fef9c3" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bambooSky)" />
+
+  <!-- Rừng trúc xanh mát rượi (Bamboo Grove - 雀の宿) -->
+  <g stroke="#15803d" stroke-width="14" stroke-linecap="round">
+    <line x1="60" y1="0" x2="60" y2="500" />
+    <line x1="120" y1="0" x2="120" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="500" />
+    <line x1="680" y1="0" x2="680" y2="500" />
+    <line x1="740" y1="0" x2="740" y2="500" />
+  </g>
+  <!-- Khớp đốt tre -->
+  <g stroke="#86efac" stroke-width="4">
+    <line x1="50" y1="120" x2="70" y2="120" />
+    <line x1="50" y1="260" x2="70" y2="260" />
+    <line x1="110" y1="180" x2="130" y2="180" />
+    <line x1="110" y1="340" x2="130" y2="340" />
+    <line x1="190" y1="140" x2="210" y2="140" />
+    <line x1="670" y1="200" x2="690" y2="200" />
+    <line x1="730" y1="160" x2="750" y2="160" />
+  </g>
+  <!-- Lá tre thanh thoát -->
+  <g fill="#16a34a">
+    <polygon points="60,120 20,105 50,115" />
+    <polygon points="60,120 30,135 55,125" />
+    <polygon points="120,180 80,165 110,175" />
+    <polygon points="200,140 240,125 205,135" />
+    <polygon points="680,200 640,185 675,195" />
+    <polygon points="740,160 700,145 735,155" />
+  </g>
+
+  <!-- Nền chiếu tatami / sân quán trọ chim sẻ -->
+  <path d="M0,380 L800,380 L800,500 L0,500 Z" fill="#d97706" opacity="0.2" />
+  <rect x="180" y="360" width="440" height="140" rx="8" fill="#fef08a" stroke="#ca8a04" stroke-width="3" />
+
+  <!-- Chú chim sẻ nhảy múa cầm quạt vui nhộn -->
+  <g transform="translate(400, 310)" filter="url(#softShadow)">
+    <!-- Thân chim sẻ màu nâu xinh xắn -->
+    <ellipse cx="0" cy="10" rx="45" ry="38" fill="#78350f" />
+    <ellipse cx="0" cy="18" rx="30" ry="24" fill="#fef3c7" />
+    <!-- Đôi cánh xòe bay -->
+    <ellipse cx="-45" cy="5" rx="20" ry="12" transform="rotate(-30, -45, 5)" fill="#522509" />
+    <ellipse cx="45" cy="5" rx="20" ry="12" transform="rotate(30, 45, 5)" fill="#522509" />
+    <!-- Đầu chim sẻ -->
+    <circle cx="0" cy="-30" r="32" fill="#78350f" />
+    <circle cx="-16" cy="-28" r="8" fill="#ffffff" />
+    <circle cx="16" cy="-28" r="8" fill="#ffffff" />
+    <circle cx="-14" cy="-28" r="4" fill="#1e293b" />
+    <circle cx="14" cy="-28" r="4" fill="#1e293b" />
+    <!-- Mỏ vàng nhỏ xinh -->
+    <polygon points="-6,-18 6,-18 0,-8" fill="#facc15" stroke="#a16207" stroke-width="1.5" />
+    <!-- Chiếc quạt giấy đỏ xòe múa -->
+    <path d="M40,-10 L85,-45 A 50 50 0 0 1 100,10 Z" fill="#ef4444" stroke="#b91c1c" stroke-width="2" />
+    <line x1="40" y1="-10" x2="85" y2="-45" stroke="#fef08a" stroke-width="1.5" />
+    <line x1="40" y1="-10" x2="100" y2="10" stroke="#fef08a" stroke-width="1.5" />
+  </g>
+
+  <!-- Chiếc tráp báu vật sơn son thếp vàng của chim sẻ tặng -->
+  <g transform="translate(240, 390)" filter="url(#softShadow)">
+    <rect x="0" y="10" width="70" height="50" rx="4" fill="#991b1b" stroke="#fef08a" stroke-width="2" />
+    <rect x="-4" y="0" width="78" height="15" rx="3" fill="#b91c1c" stroke="#fef08a" stroke-width="2" />
+    <circle cx="35" cy="30" r="8" fill="#facc15" />
+  </g>
+
+  <!-- Banner Tiêu Đề -->
+  <g transform="translate(40, 40)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="310" height="46" rx="23" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5" />
+    <circle cx="24" cy="23" r="16" fill="#15803d" />
+    <text x="24" y="29" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="16" fill="#ffffff" text-anchor="middle">雀</text>
+    <text x="52" y="22" font-family="'Noto Sans JP', sans-serif" font-weight="800" font-size="15" fill="#ffffff">第8章: 舌切り雀</text>
+    <text x="52" y="37" font-family="'Noto Sans JP', sans-serif" font-weight="600" font-size="11" fill="#94a3b8">Shitakiri Suzume - Chú Chim Sẻ Bị Cắt Lưỡi</text>
+  </g>
+</svg>

@@ -193,36 +193,83 @@ export const generateProceduralCarleSVG = ({
     </g>
   `;
 
-  // Nhân vật tiêu biểu ở trung tâm
-  let centerPiece = `
-    <!-- Chú sâu bướm Eric Carle đáng yêu đang bò -->
-    <g transform="translate(380, 480) scale(0.95)">
-      <!-- Các đốt thân tròn màu xanh lục loang -->
-      <circle cx="-110" cy="0" r="22" fill="${CARLE_PALETTES.greens[4]}" />
-      <circle cx="-85" cy="-5" r="23" fill="${CARLE_PALETTES.greens[3]}" />
-      <circle cx="-60" cy="-10" r="24" fill="${CARLE_PALETTES.greens[2]}" />
-      <circle cx="-35" cy="-8" r="23" fill="${CARLE_PALETTES.greens[1]}" />
-      <circle cx="-10" cy="-4" r="22" fill="${CARLE_PALETTES.greens[2]}" />
-      <circle cx="15" cy="-8" r="23" fill="${CARLE_PALETTES.greens[4]}" />
-      <circle cx="40" cy="-5" r="24" fill="${CARLE_PALETTES.greens[3]}" />
-      
-      <!-- Đầu đỏ to tròn -->
-      <circle cx="70" cy="-10" r="28" fill="#d90429" />
-      <!-- Đôi mắt tím vàng đặc trưng Eric Carle -->
-      <ellipse cx="64" cy="-18" rx="6" ry="8" fill="#fca311" />
-      <ellipse cx="64" cy="-18" rx="3" ry="5" fill="#3a0ca3" />
-      <ellipse cx="78" cy="-18" rx="6" ry="8" fill="#fca311" />
-      <ellipse cx="78" cy="-18" rx="3" ry="5" fill="#3a0ca3" />
-      <!-- Ăng-ten râu tím -->
-      <path d="M 68,-38 Q 62,-54 54,-58" stroke="#3a0ca3" stroke-width="4" stroke-linecap="round" fill="none" />
-      <path d="M 76,-38 Q 82,-54 90,-58" stroke="#3a0ca3" stroke-width="4" stroke-linecap="round" fill="none" />
-      
-      <!-- Chân bé xinh màu tím -->
-      ${[-105, -80, -55, -30, -5, 20, 45].map(x => `
-        <ellipse cx="${x}" cy="22" rx="4" ry="6" fill="#3a0ca3" />
-      `).join('')}
-    </g>
-  `;
+  // Nhân vật / Chủ đề ở trung tâm (Được tạo động theo đúng chủ đề câu chuyện, TUYỆT ĐỐI không gán sâu bướm vào truyện khác)
+  let centerPiece = '';
+
+  if (motifs.includes('caterpillar_butterfly') || title.includes('あおむし') || text.includes('あおむし')) {
+    // Chỉ vẽ sâu bướm khi ĐÚNG là truyện Chú Sâu Bướm Háu Ăn (はらぺこあおむし)
+    centerPiece = `
+      <!-- Chú sâu bướm Eric Carle đáng yêu đang bò -->
+      <g transform="translate(380, 480) scale(0.95)">
+        <circle cx="-110" cy="0" r="22" fill="${CARLE_PALETTES.greens[4]}" />
+        <circle cx="-85" cy="-5" r="23" fill="${CARLE_PALETTES.greens[3]}" />
+        <circle cx="-60" cy="-10" r="24" fill="${CARLE_PALETTES.greens[2]}" />
+        <circle cx="-35" cy="-8" r="23" fill="${CARLE_PALETTES.greens[1]}" />
+        <circle cx="-10" cy="-4" r="22" fill="${CARLE_PALETTES.greens[2]}" />
+        <circle cx="15" cy="-8" r="23" fill="${CARLE_PALETTES.greens[4]}" />
+        <circle cx="40" cy="-5" r="24" fill="${CARLE_PALETTES.greens[3]}" />
+        
+        <circle cx="70" cy="-10" r="28" fill="#d90429" />
+        <ellipse cx="64" cy="-18" rx="6" ry="8" fill="#fca311" />
+        <ellipse cx="64" cy="-18" rx="3" ry="5" fill="#3a0ca3" />
+        <ellipse cx="78" cy="-18" rx="6" ry="8" fill="#fca311" />
+        <ellipse cx="78" cy="-18" rx="3" ry="5" fill="#3a0ca3" />
+        <path d="M 68,-38 Q 62,-54 54,-58" stroke="#3a0ca3" stroke-width="4" stroke-linecap="round" fill="none" />
+        <path d="M 76,-38 Q 82,-54 90,-58" stroke="#3a0ca3" stroke-width="4" stroke-linecap="round" fill="none" />
+        
+        ${[-105, -80, -55, -30, -5, 20, 45].map(x => `
+          <ellipse cx="${x}" cy="22" rx="4" ry="6" fill="#3a0ca3" />
+        `).join('')}
+      </g>
+    `;
+  } else if (motifs.includes('turnip_garden') || title.includes('かぶ') || text.includes('かぶ')) {
+    // Củ cải khổng lồ
+    centerPiece = `
+      <g transform="translate(400, 440) scale(0.9)">
+        <ellipse cx="0" cy="20" rx="70" ry="80" fill="#f8fafc" stroke="#e2e8f0" stroke-width="3" />
+        <path d="M-40,-50 C-80,-120 0,-140 0,-70 C0,-140 80,-120 40,-50 Z" fill="${CARLE_PALETTES.greens[2]}" />
+      </g>
+    `;
+  } else if (motifs.includes('flowers') || title.includes('花') || title.includes('桜') || text.includes('桜')) {
+    // Cây hoa anh đào nở rộ
+    centerPiece = `
+      <g transform="translate(400, 360)">
+        <path d="M-15,140 C-10,60 10,20 0,-20 C-10,-50 -40,-80 -80,-90" stroke="#5c3a21" stroke-width="22" fill="none" stroke-linecap="round" />
+        <path d="M0,-20 C20,-60 60,-80 100,-90" stroke="#5c3a21" stroke-width="16" fill="none" stroke-linecap="round" />
+        <circle cx="-70" cy="-90" r="50" fill="#fbcfe8" opacity="0.85" />
+        <circle cx="90" cy="-90" r="50" fill="#fbcfe8" opacity="0.85" />
+        <circle cx="10" cy="-120" r="60" fill="#f472b6" opacity="0.8" />
+        <circle cx="0" cy="-70" r="45" fill="#fdf2f8" opacity="0.9" />
+      </g>
+    `;
+  } else if (timeOfDay === 'night' || title.includes('銀河') || text.includes('星')) {
+    // Chuyến tàu ánh sáng ngân hà băng qua trời đêm
+    centerPiece = `
+      <g transform="translate(400, 320)">
+        <path d="M-280,60 Q0,-40 280,20" stroke="#fef08a" stroke-width="4" stroke-dasharray="10,8" fill="none" opacity="0.8" />
+        <rect x="-60" y="-10" width="120" height="35" rx="8" fill="#1e3a8a" stroke="#60a5fa" stroke-width="2" />
+        <circle cx="-40" cy="8" r="8" fill="#fef08a" />
+        <circle cx="-10" cy="8" r="8" fill="#fef08a" />
+        <circle cx="20" cy="8" r="8" fill="#fef08a" />
+      </g>
+    `;
+  } else {
+    // Bối cảnh núi Phú Sĩ & cổng Torii truyền thống thanh bình (Tuyệt đối không có sâu bướm lạc đề)
+    centerPiece = `
+      <g transform="translate(400, 390)">
+        <!-- Núi Phú Sĩ uy nghiêm xa xa -->
+        <path d="M-180,90 L0,-110 L180,90 Z" fill="#0284c7" opacity="0.35" />
+        <polygon points="0,-110 -45,-60 0,-70 45,-60" fill="#ffffff" opacity="0.9" />
+        <!-- Đền thờ / Cổng Torii đỏ rực rỡ phong vị Nhật Bản -->
+        <g transform="translate(0, 50) scale(0.7)">
+          <rect x="-70" y="-45" width="140" height="12" rx="3" fill="#dc2626" />
+          <rect x="-60" y="-30" width="120" height="8" rx="2" fill="#dc2626" />
+          <rect x="-42" y="-30" width="12" height="80" rx="3" fill="#b91c1c" />
+          <rect x="30" y="-30" width="12" height="80" rx="3" fill="#b91c1c" />
+        </g>
+      </g>
+    `;
+  }
 
   // Khung viền giấy xé mỹ thuật (Torn paper border)
   const tornBorder = `
@@ -362,6 +409,34 @@ export const resolveStoryPageArtwork = ({
       '/images/ehon/tsuru_scene3.jpg'
     ];
     return { imageUrl: scenes[Math.min(scenes.length - 1, pageIdx)], isProcedural: false };
+  }
+
+  if (fullSearch.includes('kintaro') || fullSearch.includes('金太郎') || fullSearch.includes('きんたろう')) {
+    return { imageUrl: '/images/ehon/kintaro.svg', isProcedural: false };
+  }
+
+  if (fullSearch.includes('hanasaka') || fullSearch.includes('花咲か') || fullSearch.includes('はなさか')) {
+    return { imageUrl: '/images/ehon/hanasaka_jiisan.svg', isProcedural: false };
+  }
+
+  if (fullSearch.includes('issun') || fullSearch.includes('一寸法師') || fullSearch.includes('いっすん')) {
+    return { imageUrl: '/images/ehon/issun_boshi.jpg', isProcedural: false };
+  }
+
+  if (fullSearch.includes('suzume') || fullSearch.includes('舌切り雀') || fullSearch.includes('すずめ')) {
+    return { imageUrl: '/images/ehon/shitakiri_suzume.svg', isProcedural: false };
+  }
+
+  if (fullSearch.includes('chagama') || fullSearch.includes('分福茶釜') || fullSearch.includes('ぶんぶく')) {
+    return { imageUrl: '/images/ehon/bunbuku_chagama.svg', isProcedural: false };
+  }
+
+  if (fullSearch.includes('sarukani') || fullSearch.includes('猿蟹') || fullSearch.includes('さるかに')) {
+    return { imageUrl: '/images/ehon/sarukani_gassen.svg', isProcedural: false };
+  }
+
+  if (fullSearch.includes('ginga') || fullSearch.includes('銀河鉄道')) {
+    return { imageUrl: '/images/ehon/ginga_tetsudo.jpg', isProcedural: false };
   }
 
   if (fullSearch.includes('kasajizo') || fullSearch.includes('地蔵') || fullSearch.includes('かさじぞう')) {

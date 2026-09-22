@@ -224,7 +224,7 @@ export const STORY_MANGA_ARTWORKS = {
       <img 
         src="/images/ehon/harapeko_p1_leaf.jpg" 
         alt="はらぺこあおむし" 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
     )
   },
@@ -238,7 +238,7 @@ export const STORY_MANGA_ARTWORKS = {
       <img 
         src="/images/ehon/ookinakabu_p1_planting.jpg" 
         alt="おおきなかぶ" 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
     )
   },
@@ -252,7 +252,7 @@ export const STORY_MANGA_ARTWORKS = {
       <img 
         src="/images/ehon/sanbiki_p1_leaving_home.jpg" 
         alt="さんびきのこぶた" 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
     )
   },
@@ -265,7 +265,7 @@ export const STORY_MANGA_ARTWORKS = {
       <img 
         src="/images/ehon/momotaro.jpg" 
         alt="桃太郎" 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
     )
   },
@@ -278,7 +278,7 @@ export const STORY_MANGA_ARTWORKS = {
       <img 
         src="/images/ehon/omusubi_kororin.jpg" 
         alt="おむすびころりん" 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
     )
   },
@@ -291,7 +291,7 @@ export const STORY_MANGA_ARTWORKS = {
       <img 
         src="/images/ehon/kaguya_hime.jpg" 
         alt="かぐや姫" 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
     )
   },
@@ -304,7 +304,7 @@ export const STORY_MANGA_ARTWORKS = {
       <img 
         src="/images/ehon/urashima_taro.jpg" 
         alt="浦島太郎" 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
     )
   },
@@ -317,7 +317,7 @@ export const STORY_MANGA_ARTWORKS = {
       <img 
         src="/images/ehon/tsuru_no_ongaeshi.jpg" 
         alt="鶴の恩返し" 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
     )
   },
@@ -330,7 +330,7 @@ export const STORY_MANGA_ARTWORKS = {
       <img 
         src="/images/ehon/kasajizo.jpg" 
         alt="笠地蔵" 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
     )
   },
@@ -343,7 +343,72 @@ export const STORY_MANGA_ARTWORKS = {
       <img 
         src="/images/ehon/issun_boshi.jpg" 
         alt="一寸法師" 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
+      />
+    )
+  },
+
+  // 6.b. Kintarō (金太郎) — Cậu Bé Núi Ashigara
+  kintaro: {
+    title: '金太郎 (Kintarō - Cậu Bé Sức Mạnh Núi Ashigara)',
+    imageUrl: '/images/ehon/kintaro.svg',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/kintaro.svg" 
+        alt="金太郎" 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
+      />
+    )
+  },
+
+  // 6.c. Hanasaka Jīsan (花咲か爺さん) — Ông Lão Làm Hoa Nở
+  hanasaka_jiisan: {
+    title: '花咲か爺さん (Hanasaka Jīsan - Ông Lão Làm Hoa Nở)',
+    imageUrl: '/images/ehon/hanasaka_jiisan.svg',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/hanasaka_jiisan.svg" 
+        alt="花咲か爺さん" 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
+      />
+    )
+  },
+
+  // 6.d. Shitakiri Suzume (舌切り雀) — Chú Chim Sẻ Bị Cắt Lưỡi
+  shitakiri_suzume: {
+    title: '舌切り雀 (Shitakiri Suzume - Chú Chim Sẻ Bị Cắt Lưỡi)',
+    imageUrl: '/images/ehon/shitakiri_suzume.svg',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/shitakiri_suzume.svg" 
+        alt="舌切り雀" 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
+      />
+    )
+  },
+
+  // 6.e. Bunbuku Chagama (分福茶釜) — Ấm Trà Biến Hình
+  bunbuku_chagama: {
+    title: '分福茶釜 (Bunbuku Chagama - Ấm Trà Biến Hình)',
+    imageUrl: '/images/ehon/bunbuku_chagama.svg',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/bunbuku_chagama.svg" 
+        alt="分福茶釜" 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
+      />
+    )
+  },
+
+  // 6.f. Sarukani Gassen (猿蟹合戦) — Cuộc Chiến Khỉ Và Cua
+  sarukani_gassen: {
+    title: '猿蟹合戦 (Sarukani Gassen - Cuộc Chiến Khỉ Và Cua)',
+    imageUrl: '/images/ehon/sarukani_gassen.svg',
+    renderIllustration: () => (
+      <img 
+        src="/images/ehon/sarukani_gassen.svg" 
+        alt="猿蟹合戦" 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
     )
   },
@@ -356,7 +421,7 @@ export const STORY_MANGA_ARTWORKS = {
       <img 
         src="/images/ehon/ginga_tetsudo.jpg" 
         alt="銀河鉄道の夜" 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
     )
   },
@@ -870,6 +935,118 @@ export const STORY_SCENES_MAP = {
       imageUrl: '/images/ehon/kasajizo_scene3.jpg',
       desc: 'Đêm khuya các vị Jizō gánh bao gạo, bánh Tết và vàng bạc đến tạ ơn hai ông bà nhân từ.'
     }
+  ],
+  kintaro: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Cậu bé Kintarō núi Ashigara với rìu lớn & yếm đỏ',
+      jpTitle: '足柄山の金太郎と赤い前掛け',
+      imageUrl: '/images/ehon/kintaro.svg',
+      desc: 'Cậu bé khỏe mạnh sinh ra ở núi Ashigara, vai vác rìu lớn, mặc yếm đỏ chữ Kim.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Cảnh 2: Đấu vật Sumo cùng muôn thú & Quật ngã gấu đen',
+      jpTitle: '相撲大会と大きな黒熊の勝負',
+      imageUrl: '/images/ehon/kintaro.svg',
+      desc: 'Kintarō thi đấu vật ngã chú gấu đen khổng lồ của núi rừng và kết bạn thân thiết cùng muôn thú.'
+    },
+    {
+      sceneIdx: 3,
+      title: 'Cảnh 3: Đẩy đổ cây tuyết tùng làm cầu bắc qua suối',
+      jpTitle: '杉の木を倒して作った橋',
+      imageUrl: '/images/ehon/kintaro.svg',
+      desc: 'Dùng sức mạnh vô địch bẻ gãy thân cây tuyết tùng làm cầu giúp đàn thú vượt qua dòng suối sâu.'
+    },
+    {
+      sceneIdx: 4,
+      title: 'Cảnh 4: Lên kinh đô trở thành dũng tướng Sakata no Kintoki',
+      jpTitle: '坂田金時と都の英雄へ',
+      imageUrl: '/images/ehon/kintaro.svg',
+      desc: 'Được vị quan võ thu nhận, Kintarō lên kinh thành trở thành dũng tướng bảo vệ đất nước.'
+    }
+  ],
+  hanasaka_jiisan: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Chú chó Shiro tìm thấy kho báu vàng dưới đất',
+      jpTitle: 'ここ掘れワンワンと小判の山',
+      imageUrl: '/images/ehon/hanasaka_jiisan.svg',
+      desc: 'Chú chó trung thành sủa vang chỉ nơi chôn giấu kho báu vàng bạc cho hai ông bà tốt bụng.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Cảnh 2: Chiếc cối giã gạo thần kỳ biến thành châu báu',
+      jpTitle: '不思議な臼と黄金のお餅',
+      imageUrl: '/images/ehon/hanasaka_jiisan.svg',
+      desc: 'Chiếc cối làm từ cây thông kỷ niệm của Shiro biến gạo trắng thành tiền vàng lấp lánh.'
+    },
+    {
+      sceneIdx: 3,
+      title: 'Cảnh 3: Rắc tro trên cây khô, hoa anh đào nở rộ đón lãnh chúa',
+      jpTitle: '枯れ木に花を咲かせましょう',
+      imageUrl: '/images/ehon/hanasaka_jiisan.svg',
+      desc: 'Ông lão rắc tro thần kỳ, cây anh đào khô cằn bừng nở hoa rực rỡ đón đoàn rước lãnh chúa.'
+    }
+  ],
+  issun_boshi: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Chàng tí hon chèo thuyền chén ăn cơm bằng đũa',
+      jpTitle: 'お椀の船と箸の櫂',
+      imageUrl: '/images/ehon/issun_boshi.jpg',
+      desc: 'Cậu bé chỉ cao một thốn dũng cảm chèo thuyền chén ăn cơm với kiếm kim khâu lên kinh đô.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Cảnh 2: Đại náo bụng quỷ dữ & Nhặt búa thần Uchide no Kozuchi',
+      jpTitle: '鬼退治と打出の小槌',
+      imageUrl: '/images/ehon/issun_boshi.jpg',
+      desc: 'Dùng kiếm kim đâm bụng quỷ cứu nàng công chúa và lắc búa thần kỳ biến thành tráng sĩ cao lớn.'
+    }
+  ],
+  shitakiri_suzume: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Ông lão tìm đến quán trọ chim sẻ giữa rừng trúc',
+      jpTitle: '竹藪の奥の雀の宿',
+      imageUrl: '/images/ehon/shitakiri_suzume.svg',
+      desc: 'Vượt đèo lội suối, ông lão hiền hậu tìm được đến quán trọ rộn ràng tiếng hát của loài chim sẻ.'
+    },
+    {
+      sceneIdx: 2,
+      title: 'Cảnh 2: Điệu múa quạt của chim sẻ & Chiếc tráp báu vật',
+      jpTitle: '雀の舌切り踊りと宝物のつづら',
+      imageUrl: '/images/ehon/shitakiri_suzume.svg',
+      desc: 'Đàn chim sẻ múa quạt đãi tiệc linh đình và tặng ông lão chiếc tráp nhỏ tràn đầy vàng bạc lụa là.'
+    }
+  ],
+  bunbuku_chagama: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Ấm trà Tanuki múa xiếc đi dây trên sân khấu',
+      jpTitle: '分福茶釜の綱渡り芸',
+      imageUrl: '/images/ehon/bunbuku_chagama.svg',
+      desc: 'Chú chồn biến thành ấm trà đồng xoay ô đi dây ngoạn mục đền ơn cứu mạng cho bác thợ nghèo.'
+    }
+  ],
+  sarukani_gassen: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Cây hồng mùa thu trĩu quả & Liên minh công lý',
+      jpTitle: '柿の木と正義の仲間たち',
+      imageUrl: '/images/ehon/sarukani_gassen.svg',
+      desc: 'Cua mẹ, Hạt dẻ, Bò cào, Ong và Cối đá cùng hợp lực đòi lại công lý cho muôn loài.'
+    }
+  ],
+  ginga_tetsudo: [
+    {
+      sceneIdx: 1,
+      title: 'Cảnh 1: Bầu trời đêm ngàn sao & Chuyến tàu ngân hà hơi nước',
+      jpTitle: '銀河ステーションと星めぐりの旅',
+      imageUrl: '/images/ehon/ginga_tetsudo.jpg',
+      desc: 'Chuyến tàu thần tiên rực rỡ ánh sáng băng qua các chòm sao Thiên Nga và Thập Tự Phương Nam.'
+    }
   ]
 };
 
@@ -895,6 +1072,24 @@ export const getStoryMangaArtwork = (story, chapterTitle = '') => {
   }
 
   // 1. Khớp ưu tiên theo tác phẩm có tranh Ehon thực tế (ưu tiên tên chương trước)
+  if (fullSearch.includes('kintaro') || fullSearch.includes('金太郎') || fullSearch.includes('きんたろう')) {
+    return STORY_MANGA_ARTWORKS.kintaro;
+  }
+  if (fullSearch.includes('hanasaka') || fullSearch.includes('花咲か') || fullSearch.includes('はなさか')) {
+    return STORY_MANGA_ARTWORKS.hanasaka_jiisan;
+  }
+  if (fullSearch.includes('issun') || fullSearch.includes('一寸法師') || fullSearch.includes('いっすんぼうし')) {
+    return STORY_MANGA_ARTWORKS.issun_boshi;
+  }
+  if (fullSearch.includes('suzume') || fullSearch.includes('舌切り雀') || fullSearch.includes('すずめ')) {
+    return STORY_MANGA_ARTWORKS.shitakiri_suzume;
+  }
+  if (fullSearch.includes('chagama') || fullSearch.includes('分福茶釜') || fullSearch.includes('ぶんぶく')) {
+    return STORY_MANGA_ARTWORKS.bunbuku_chagama;
+  }
+  if (fullSearch.includes('sarukani') || fullSearch.includes('猿蟹') || fullSearch.includes('さるかに')) {
+    return STORY_MANGA_ARTWORKS.sarukani_gassen;
+  }
   if (fullSearch.includes('omusubi') || fullSearch.includes('おむすび') || fullSearch.includes('ころりん')) {
     return STORY_MANGA_ARTWORKS.omusubi_kororin;
   }
@@ -913,10 +1108,7 @@ export const getStoryMangaArtwork = (story, chapterTitle = '') => {
   if (fullSearch.includes('kasajizo') || fullSearch.includes('笠地蔵') || fullSearch.includes('かさじぞう') || fullSearch.includes('地蔵')) {
     return STORY_MANGA_ARTWORKS.kasajizo;
   }
-  if (fullSearch.includes('issun') || fullSearch.includes('一寸法師') || fullSearch.includes('いっすんぼうし')) {
-    return STORY_MANGA_ARTWORKS.issun_boshi;
-  }
-  if (fullSearch.includes('ginga') || fullSearch.includes('銀河鉄道') || fullSearch.includes('宮沢賢治') || fullSearch.includes('よだかの星')) {
+  if (fullSearch.includes('ginga') || fullSearch.includes('銀河鉄道') || fullSearch.includes('よだかの星') || fullSearch.includes('ケンジ') || fullSearch.includes('宮沢賢治')) {
     return STORY_MANGA_ARTWORKS.ginga_tetsudo;
   }
 
@@ -943,7 +1135,7 @@ export const getStoryMangaArtwork = (story, chapterTitle = '') => {
   }
 
   if (genre.includes('folktale')) return STORY_MANGA_ARTWORKS.momotaro;
-  if (genre.includes('literature')) return STORY_MANGA_ARTWORKS.ginga_tetsudo;
+  if (genre.includes('literature')) return STORY_MANGA_ARTWORKS.classic_dramatic;
   return STORY_MANGA_ARTWORKS.modern_tokyo;
 };
 
@@ -954,6 +1146,12 @@ export const getStorySceneArtwork = (story, chapterTitle = '', currentIdx = 0, t
   
   let sceneKey = null;
   if (fullSearch.includes('harapeko') || fullSearch.includes('あおむし') || fullSearch.includes('caterpillar')) sceneKey = 'harapeko_aomushi';
+  else if (fullSearch.includes('kintaro') || fullSearch.includes('金太郎') || fullSearch.includes('きんたろう')) sceneKey = 'kintaro';
+  else if (fullSearch.includes('hanasaka') || fullSearch.includes('花咲か') || fullSearch.includes('はなさか')) sceneKey = 'hanasaka_jiisan';
+  else if (fullSearch.includes('issun') || fullSearch.includes('一寸法師') || fullSearch.includes('いっすん')) sceneKey = 'issun_boshi';
+  else if (fullSearch.includes('suzume') || fullSearch.includes('舌切り雀') || fullSearch.includes('すずめ')) sceneKey = 'shitakiri_suzume';
+  else if (fullSearch.includes('chagama') || fullSearch.includes('分福茶釜') || fullSearch.includes('ぶんぶく')) sceneKey = 'bunbuku_chagama';
+  else if (fullSearch.includes('sarukani') || fullSearch.includes('猿蟹') || fullSearch.includes('さるかに')) sceneKey = 'sarukani_gassen';
   else if (fullSearch.includes('kabu') || fullSearch.includes('かぶ') || fullSearch.includes('turnip')) sceneKey = 'ookina_kabu';
   else if (fullSearch.includes('sanbiki') || fullSearch.includes('こぶた') || fullSearch.includes('pig')) sceneKey = 'sanbiki_no_kobuta';
   else if (fullSearch.includes('omusubi') || fullSearch.includes('おむすび') || fullSearch.includes('ころりん')) sceneKey = 'omusubi_kororin';
@@ -962,6 +1160,9 @@ export const getStorySceneArtwork = (story, chapterTitle = '', currentIdx = 0, t
   else if (fullSearch.includes('kaguya') || fullSearch.includes('かぐや') || fullSearch.includes('竹取')) sceneKey = 'kaguya_hime';
   else if (fullSearch.includes('tsuru') || fullSearch.includes('鶴') || fullSearch.includes('つる')) sceneKey = 'tsuru_no_ongaeshi';
   else if (fullSearch.includes('kasajizo') || fullSearch.includes('地蔵') || fullSearch.includes('かさじぞう')) sceneKey = 'kasajizo';
+  else if (fullSearch.includes('ginga') || fullSearch.includes('銀河鉄道')) sceneKey = 'ginga_tetsudo';
+
+  const resolvedTitle = chapterTitle || story?.chapterTitle || story?.title || baseArtwork.title;
 
   if (!sceneKey || !STORY_SCENES_MAP[sceneKey]) {
     // Tích hợp công cụ dài hạn: Tự động phân giải tranh đa trang theo ngữ cảnh qua ehonArtEngine
@@ -978,7 +1179,7 @@ export const getStorySceneArtwork = (story, chapterTitle = '', currentIdx = 0, t
       imageUrl: fallbackProcedural.imageUrl || baseArtwork.imageUrl,
       currentSceneIdx: Math.min(totalCount, currentIdx + 1),
       totalScenes: Math.max(1, totalCount),
-      sceneTitle: baseArtwork.title,
+      sceneTitle: resolvedTitle,
       sceneJpTitle: '',
       sceneDesc: ''
     };
@@ -994,7 +1195,7 @@ export const getStorySceneArtwork = (story, chapterTitle = '', currentIdx = 0, t
     imageUrl: activeScene.imageUrl || baseArtwork.imageUrl,
     currentSceneIdx: activeScene.sceneIdx,
     totalScenes: scenes.length,
-    sceneTitle: activeScene.title,
+    sceneTitle: activeScene.title || resolvedTitle,
     sceneJpTitle: activeScene.jpTitle,
     sceneDesc: activeScene.desc
   };
