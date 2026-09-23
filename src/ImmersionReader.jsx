@@ -6,7 +6,7 @@ import {
   Sparkles, Clock, CheckCheck, Award, Headphones, Layers, Flame, BookMarked,
   Sliders, AlertCircle, BookmarkPlus, Zap, Check, Scissors, ChevronLeft, ChevronRight,
   ChevronDown, ChevronUp, Sidebar, X, Pin, PinOff, Play, Pause, Square, Mic,
-  Info, Maximize2, Minimize2, Grid, Table as TableIcon
+  Info, Maximize2, Minimize2, Grid, Table as TableIcon, RotateCcw
 } from 'lucide-react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
@@ -413,15 +413,61 @@ const ImmersionReader = () => {
   const allAvailableTexts = useMemo(() => [...activeCorpus, ...texts], [activeCorpus, texts]);
   const activeText = allAvailableTexts.find(t => t.id === activeTextId) || activeCorpus[0] || READING_CORPUS[0];
 
-  // Hỗ trợ Sách Trường Thiên Nhiều Chương (Multi-Chapter Books)
+  // Hỗ trợ Sách Trường Thiên Nhiều Chương (Multi-Chapter Books) & Chế độ Đọc Liên Tục
   const [chapterIndex, setChapterIndex] = useState(() => {
     const saved = localStorage.getItem(`omni_book_chap_${activeTextId}`);
     return saved ? parseInt(saved, 10) : 0;
   });
 
+  // Chế độ đọc liên tục (Continuous Reading Mode) — Tự động chuyển trang/tập kế tiếp, không lặp lại trang cũ
+  const [isContinuousReading, setIsContinuousReading] = useState(() => {
+    return localStorage.getItem('omni_continuous_reading') !== 'false'; // Mặc định BẬT
+  });
+
+  const toggleContinuousReading = useCallback(() => {
+    setIsContinuousReading(prev => {
+      const next = !prev;
+      localStorage.setItem('omni_continuous_reading', String(next));
+      return next;
+    });
+  }, []);
+
+  // Các Ref chống stale closure cho async TTS engine
+  const isContinuousReadingRef = useRef(isContinuousReading);
+  useEffect(() => {
+    isContinuousReadingRef.current = isContinuousReading;
+  }, [isContinuousReading]);
+
+  const chapterIndexRef = useRef(chapterIndex);
+  useEffect(() => {
+    chapterIndexRef.current = chapterIndex;
+  }, [chapterIndex]);
+
+  const activeTextRef = useRef(activeText);
+  useEffect(() => {
+    activeTextRef.current = activeText;
+  }, [activeText]);
+
+  const allTextsRef = useRef(allAvailableTexts);
+  useEffect(() => {
+    allTextsRef.current = allAvailableTexts;
+  }, [allAvailableTexts]);
+
+  const ttsSpeedRef = useRef(ttsSpeed);
+  useEffect(() => {
+    ttsSpeedRef.current = ttsSpeed;
+  }, [ttsSpeed]);
+
+  const seriesNavRef = useRef(seriesNav);
+  useEffect(() => {
+    seriesNavRef.current = seriesNav;
+  }, [seriesNav]);
+
   useEffect(() => {
     const saved = localStorage.getItem(`omni_book_chap_${activeTextId}`);
-    setChapterIndex(saved ? parseInt(saved, 10) : 0);
+    const nextIdx = saved ? parseInt(saved, 10) : 0;
+    setChapterIndex(nextIdx);
+    chapterIndexRef.current = nextIdx;
   }, [activeTextId]);
 
   const currentChapter = useMemo(() => {
@@ -434,6 +480,7 @@ const ImmersionReader = () => {
 
   const handleSelectChapter = (idx, autoPlayAfter = false) => {
     handleStopTTS();
+    chapterIndexRef.current = idx;
     setChapterIndex(idx);
     localStorage.setItem(`omni_book_chap_${activeTextId}`, idx.toString());
     setSpeakingLineIdx(null);
@@ -443,9 +490,12 @@ const ImmersionReader = () => {
     setHasLoggedReading(false);
 
     if (autoPlayAfter) {
+      const bookNow = activeTextRef.current || activeText;
+      const targetChap = bookNow?.chapters?.[idx];
+      const chapContent = targetChap?.content || null;
       setTimeout(() => {
-        handleGenerateTTS(null, 0);
-      }, 500);
+        handleGenerateTTS(chapContent, 0, idx);
+      }, 350);
     }
   };
 
@@ -891,7 +941,8 @@ const ImmersionReader = () => {
   };
 
   // Phát TTS tuần tự từng đoạn/câu kèm hiệu ứng highlight dòng đang đọc và tự động cuộn
-  const handleGenerateTTS = (textToRead, startIndex = 0) => {
+  // Hỗ trợ chế độ Đọc Liên Tục: Tự động chuyển trang/tập tiếp theo, không lặp lại một trang
+  const handleGenerateTTS = (textToRead, startIndex = 0, specificChapterIdx = null) => {
     if (!window.speechSynthesis) {
       alert('Trình duyệt của bạn không hỗ trợ Text-to-Speech.');
       return;
@@ -903,14 +954,28 @@ const ImmersionReader = () => {
     isSpeechCancelledRef.current = false;
     window.speechSynthesis.cancel();
 
-    // Lấy danh sách các câu cần đọc đồng bộ 100% với storySentences
+    // 2. Xác định chính xác chương cần đọc
+    const currentBook = activeTextRef.current || activeText;
+    let targetChapIdx = specificChapterIdx;
+    if (targetChapIdx === null || targetChapIdx === undefined) {
+      targetChapIdx = chapterIndexRef.current;
+    }
+    chapterIndexRef.current = targetChapIdx;
+
+    // Lấy danh sách các câu cần đọc đồng bộ
     let lines = [];
-    if (storySentences && storySentences.length > 0) {
+    if (specificChapterIdx !== null && currentBook?.chapters?.[specificChapterIdx]) {
+      const chapContent = currentBook.chapters[specificChapterIdx].content || '';
+      lines = chapContent.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+    } else if (textToRead && typeof textToRead === 'string' && textToRead.trim().length > 0) {
+      lines = textToRead.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+    } else if (storySentences && storySentences.length > 0 && targetChapIdx === chapterIndex) {
       lines = storySentences.map(s => s.text);
-    } else if (bilingualData && bilingualData.length > 0) {
-      lines = bilingualData.map(b => b.original.trim()).filter(l => l.length > 0);
+    } else if (currentBook?.chapters && currentBook.chapters.length > 0) {
+      const activeChap = currentBook.chapters[targetChapIdx] || currentBook.chapters[0];
+      lines = (activeChap?.content || '').split('\n').map(l => l.trim()).filter(l => l.length > 0);
     } else {
-      const source = textToRead || activeReadingContent || '';
+      const source = activeReadingContent || currentBook?.content || '';
       lines = source.split('\n').map(l => l.trim()).filter(l => l.length > 0);
     }
 
@@ -931,16 +996,67 @@ const ImmersionReader = () => {
       }
 
       if (idx >= lines.length) {
-        // Tự động lật trang kế tiếp nếu tác phẩm có nhiều trang/chương
-        if (!isSpeechCancelledRef.current && activeText?.chapters && chapterIndex < activeText.chapters.length - 1) {
-          handleSelectChapter(chapterIndex + 1, true);
-          return;
+        // Đã hoàn tất mọi câu của trang/chương hiện tại!
+        const bookNow = activeTextRef.current || activeText;
+        const currentChap = chapterIndexRef.current;
+
+        // KIỂM TRA CHẾ ĐỘ ĐỌC LIÊN TỤC (Tự động sang trang/tập tiếp theo, không lặp lại)
+        if (isContinuousReadingRef.current) {
+          // Trường hợp 1: Tác phẩm có nhiều trang/chương và chưa tới trang cuối cùng
+          if (bookNow?.chapters && currentChap < bookNow.chapters.length - 1) {
+            const nextChapIdx = currentChap + 1;
+            chapterIndexRef.current = nextChapIdx;
+            setChapterIndex(nextChapIdx);
+            localStorage.setItem(`omni_book_chap_${bookNow.id}`, nextChapIdx.toString());
+            setSpeakingLineIdx(0);
+            setFocusedLineIdx(0);
+            setBilingualData(null);
+
+            const nextChapObj = bookNow.chapters[nextChapIdx];
+            const nextChapContent = nextChapObj?.content || '';
+
+            // Tạm dừng 450ms tạo cảm giác tự nhiên như lật trang sách, sau đó đọc tiếp trang kế
+            setTimeout(() => {
+              if (speechSessionIdRef.current === currentSessionId && !isSpeechCancelledRef.current) {
+                handleGenerateTTS(nextChapContent, 0, nextChapIdx);
+              }
+            }, 450);
+            return;
+          }
+
+          // Trường hợp 2: Đã hết trang cuối của tác phẩm, nhưng tác phẩm thuộc Series nhiều tập
+          const nav = seriesNavRef.current;
+          if (nav && nav.isSeries && nav.nextPart) {
+            const nextStoryId = nav.nextPart.id;
+            setActiveTextId(nextStoryId);
+            localStorage.setItem('omni_active_reader_id', nextStoryId);
+            chapterIndexRef.current = 0;
+            setChapterIndex(0);
+            localStorage.setItem(`omni_book_chap_${nextStoryId}`, '0');
+            setSpeakingLineIdx(0);
+            setFocusedLineIdx(0);
+            setBilingualData(null);
+
+            const nextStoryObj = allTextsRef.current?.find(t => t.id === nextStoryId) || nav.nextPart;
+            if (nextStoryObj) {
+              activeTextRef.current = nextStoryObj;
+            }
+
+            setTimeout(() => {
+              if (speechSessionIdRef.current === currentSessionId && !isSpeechCancelledRef.current) {
+                handleGenerateTTS(null, 0, 0);
+              }
+            }, 600);
+            return;
+          }
         }
 
+        // Chế độ liên tục TẮT hoặc đã đọc hết toàn bộ câu chuyện/bộ truyện: Dừng dứt điểm
         setIsPlayingTTS(false);
         setIsPausedTTS(false);
         setSpeakingLineIdx(null);
         currentUtteranceRef.current = null;
+        logListeningTime(5);
         return;
       }
 
@@ -962,7 +1078,7 @@ const ImmersionReader = () => {
       const cleanText = rawLine.replace(/[「」『』（）()]/g, ' ').trim();
       const utterance = new SpeechSynthesisUtterance(cleanText);
       utterance.lang = 'ja-JP';
-      utterance.rate = ttsSpeed;
+      utterance.rate = ttsSpeedRef.current || ttsSpeed;
       if (jpVoice) utterance.voice = jpVoice;
 
       utterance.onstart = () => {
@@ -996,29 +1112,56 @@ const ImmersionReader = () => {
     speakLineAt(Math.max(0, Math.min(startIdx, lines.length - 1)));
   };
 
+  // Chiếu & đọc lại từ Trang 1 tới hết câu chuyện (hỗ trợ người nghe trọn vẹn cả câu chuyện)
+  const handlePlayFromBeginning = () => {
+    handleStopTTS();
+    chapterIndexRef.current = 0;
+    setChapterIndex(0);
+    localStorage.setItem(`omni_book_chap_${activeText?.id || activeTextId}`, '0');
+    setSpeakingLineIdx(null);
+    setFocusedLineIdx(0);
+    setBilingualData(null);
+    setAudioUrl(null);
+    setHasLoggedReading(false);
+    const bookNow = activeTextRef.current || activeText;
+    const targetChap = bookNow?.chapters?.[0];
+    const chapContent = targetChap?.content || null;
+    setTimeout(() => {
+      handleGenerateTTS(chapContent, 0, 0);
+    }, 250);
+  };
+
   // Người dùng bấm vào một dòng trong truyện để đặt tiêu điểm hoặc bắt đầu TTS từ dòng đó
   const handleLineClick = (idx) => {
     const validIdx = Math.max(0, Math.min(idx, (storySentences.length || 1) - 1));
     setFocusedLineIdx(validIdx);
     if (isPlayingTTS) {
-      handleGenerateTTS(null, validIdx);
+      handleGenerateTTS(null, validIdx, chapterIndex);
     }
   };
 
-  // Điều hướng câu trước / câu sau trong Sách nói & Hoạt cảnh
+  // Điều hướng câu trước / câu sau trong Sách nói & Hoạt cảnh (hỗ trợ chuyển tiếp qua ranh giới trang)
   const handlePrevSentence = () => {
+    if (activeSentenceIdx <= 0 && chapterIndex > 0 && activeText?.chapters) {
+      handleSelectChapter(chapterIndex - 1, isPlayingTTS);
+      return;
+    }
     const target = Math.max(0, activeSentenceIdx - 1);
     setFocusedLineIdx(target);
     if (isPlayingTTS) {
-      handleGenerateTTS(null, target);
+      handleGenerateTTS(null, target, chapterIndex);
     }
   };
 
   const handleNextSentence = () => {
+    if (activeSentenceIdx >= (storySentences.length || 1) - 1 && activeText?.chapters && chapterIndex < activeText.chapters.length - 1) {
+      handleSelectChapter(chapterIndex + 1, isPlayingTTS);
+      return;
+    }
     const target = Math.min(Math.max(0, (storySentences.length || 1) - 1), activeSentenceIdx + 1);
     setFocusedLineIdx(target);
     if (isPlayingTTS) {
-      handleGenerateTTS(null, target);
+      handleGenerateTTS(null, target, chapterIndex);
     }
   };
 
@@ -3199,7 +3342,7 @@ const ImmersionReader = () => {
                   <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
                     <button
                       className="btn btn-primary"
-                      onClick={() => handleGenerateTTS(activeReadingContent, activeSentenceIdx)}
+                      onClick={() => handleGenerateTTS(null, activeSentenceIdx, chapterIndex)}
                       disabled={isProcessing}
                       title="Nghe sách nói AI phát âm giọng chuẩn bản xứ"
                       style={{ padding: '4px 9px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', gap: 4 }}
@@ -3219,6 +3362,30 @@ const ImmersionReader = () => {
                     </button>
                   </div>
                 )}
+
+                {/* Continuous Reading Toggle Button */}
+                <button
+                  type="button"
+                  onClick={toggleContinuousReading}
+                  title={isContinuousReading ? "Chế độ đọc liên tục: Đang BẬT (Tự động lật sang các trang kế tiếp của câu chuyện)" : "Chế độ đọc liên tục: Đang TẮT (Chỉ đọc duy nhất trang hiện tại)"}
+                  style={{
+                    background: isContinuousReading ? 'rgba(16, 185, 129, 0.12)' : 'var(--bg-surface)',
+                    border: `1px solid ${isContinuousReading ? 'rgba(16, 185, 129, 0.4)' : 'var(--glass-border-strong)'}`,
+                    color: isContinuousReading ? '#10b981' : 'var(--text-secondary)',
+                    borderRadius: 6,
+                    padding: '4px 8px',
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 4,
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <RotateCcw size={12} style={{ transform: isContinuousReading ? 'none' : 'rotate(-45deg)' }} />
+                  <span className="hide-on-mobile">{isContinuousReading ? 'Liên tục' : 'Từng trang'}</span>
+                </button>
 
                 {/* Shadowing Transfer button */}
                 <button
@@ -3508,12 +3675,12 @@ const ImmersionReader = () => {
                     )}
                   </div>
 
-                  {/* Bộ lật trang Ehon / Multi-chapter Navigator */}
+                  {/* Bộ lật trang Ehon / Multi-chapter Navigator & Chế độ Đọc Liên Tục */}
                   {activeText.chapters && activeText.chapters.length > 1 && (
                     <div className="cinema-console-paginator">
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
-                        <span style={{ fontSize: '0.74rem', fontWeight: 700, color: 'var(--accent-primary)' }}>
-                          Trang {chapterIndex + 1} / {activeText.chapters.length}
+                        <span style={{ fontSize: '0.74rem', fontWeight: 800, color: 'var(--accent-primary)' }}>
+                          📖 Trang {chapterIndex + 1} / {activeText.chapters.length}
                         </span>
                         <div style={{ display: 'flex', gap: 4 }}>
                           <button
@@ -3540,7 +3707,7 @@ const ImmersionReader = () => {
                       </div>
 
                       {/* Dots list */}
-                      <div style={{ display: 'flex', gap: 3, flexWrap: 'wrap', alignItems: 'center' }}>
+                      <div style={{ display: 'flex', gap: 3, flexWrap: 'wrap', alignItems: 'center', marginBottom: 8 }}>
                         {activeText.chapters.map((ch, idx) => (
                           <button
                             key={idx}
@@ -3548,7 +3715,7 @@ const ImmersionReader = () => {
                             onClick={() => handleSelectChapter(idx)}
                             title={`Trang ${idx + 1}: ${ch.chapterTitle || ''}`}
                             style={{
-                              width: chapterIndex === idx ? 18 : 7,
+                              width: chapterIndex === idx ? 20 : 8,
                               height: 7,
                               borderRadius: 4,
                               background: chapterIndex === idx ? 'linear-gradient(135deg, #10b981 0%, #3b82f6 100%)' : 'var(--glass-border-strong)',
@@ -3559,6 +3726,55 @@ const ImmersionReader = () => {
                             }}
                           />
                         ))}
+                      </div>
+
+                      {/* Tùy chọn Đọc Liên Tục & Nút Chiếu Từ Trang 1 */}
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 6, borderTop: '1px dashed var(--glass-border-strong)', gap: 6, flexWrap: 'wrap' }}>
+                        <button
+                          type="button"
+                          onClick={toggleContinuousReading}
+                          style={{
+                            background: isContinuousReading ? 'rgba(16, 185, 129, 0.12)' : 'rgba(255, 255, 255, 0.04)',
+                            border: `1px solid ${isContinuousReading ? 'rgba(16, 185, 129, 0.45)' : 'var(--glass-border-strong)'}`,
+                            color: isContinuousReading ? '#10b981' : 'var(--text-muted)',
+                            borderRadius: 6,
+                            padding: '3px 8px',
+                            fontSize: '0.71rem',
+                            fontWeight: 700,
+                            cursor: 'pointer',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: 5,
+                            transition: 'all 0.2s ease'
+                          }}
+                          title={isContinuousReading ? "Đọc liên tục: Đang BẬT (Tự động lật tiếp các trang khi nghe xong)" : "Đọc liên tục: Đang TẮT (Chỉ đọc trang hiện tại)"}
+                        >
+                          <RotateCcw size={11} style={{ transform: isContinuousReading ? 'none' : 'rotate(-45deg)' }} />
+                          <span>Đọc liên tục: {isContinuousReading ? 'BẬT' : 'TẮT'}</span>
+                        </button>
+
+                        {chapterIndex > 0 && (
+                          <button
+                            type="button"
+                            onClick={handlePlayFromBeginning}
+                            style={{
+                              background: 'rgba(59, 130, 246, 0.12)',
+                              border: '1px solid rgba(59, 130, 246, 0.35)',
+                              color: '#3b82f6',
+                              borderRadius: 6,
+                              padding: '3px 8px',
+                              fontSize: '0.71rem',
+                              fontWeight: 700,
+                              cursor: 'pointer',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: 4
+                            }}
+                            title="Quay về Trang 1 và chiếu đọc liên tục đến hết câu chuyện"
+                          >
+                            ⏮ Chiếu từ Trang 1
+                          </button>
+                        )}
                       </div>
                     </div>
                   )}
@@ -3581,7 +3797,7 @@ const ImmersionReader = () => {
                         <button
                           type="button"
                           className="btn btn-primary"
-                          onClick={() => handleGenerateTTS(activeReadingContent, activeSentenceIdx)}
+                          onClick={() => handleGenerateTTS(null, activeSentenceIdx, chapterIndex)}
                           title="Bắt đầu chiếu & đọc sách nói AI"
                           style={{ padding: '7px 10px', fontSize: '0.78rem', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5 }}
                         >
@@ -3609,8 +3825,8 @@ const ImmersionReader = () => {
                         type="button"
                         className="btn btn-outline"
                         onClick={handlePrevSentence}
-                        disabled={activeSentenceIdx === 0}
-                        title="Câu trước"
+                        disabled={activeSentenceIdx === 0 && (!activeText?.chapters || chapterIndex === 0)}
+                        title="Câu trước (Lùi sang trang trước nếu ở đầu trang)"
                         style={{ padding: '4px 8px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}
                       >
                         <ChevronLeft size={14} /> Câu trước
@@ -3619,8 +3835,8 @@ const ImmersionReader = () => {
                         type="button"
                         className="btn btn-outline"
                         onClick={handleNextSentence}
-                        disabled={activeSentenceIdx >= storySentences.length - 1}
-                        title="Câu sau"
+                        disabled={activeSentenceIdx >= (storySentences.length || 1) - 1 && (!activeText?.chapters || chapterIndex >= activeText.chapters.length - 1)}
+                        title="Câu sau (Tiến sang trang sau nếu ở cuối trang)"
                         style={{ padding: '4px 8px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}
                       >
                         Câu sau <ChevronRight size={14} />
@@ -3769,7 +3985,7 @@ const ImmersionReader = () => {
                       )}
                     </div>
 
-                    {/* Bộ lật trang nhanh cho Ehon / Truyện nhiều trang */}
+                    {/* Bộ lật trang nhanh cho Ehon / Truyện nhiều trang & Chế độ Đọc Liên Tục */}
                     {activeText.chapters && activeText.chapters.length > 1 && (
                       <div style={{
                         display: 'flex',
@@ -3780,27 +3996,57 @@ const ImmersionReader = () => {
                         borderTop: '1px solid var(--glass-border)',
                         gap: 6
                       }}>
-                        <button
-                          type="button"
-                          onClick={() => handleSelectChapter(Math.max(0, chapterIndex - 1))}
-                          disabled={chapterIndex === 0}
-                          className="btn btn-outline btn-xs"
-                          style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3 }}
-                        >
-                          <ChevronLeft size={13} /> Trang trước
-                        </button>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                          <button
+                            type="button"
+                            onClick={() => handleSelectChapter(Math.max(0, chapterIndex - 1))}
+                            disabled={chapterIndex === 0}
+                            className="btn btn-outline btn-xs"
+                            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3 }}
+                          >
+                            <ChevronLeft size={13} /> Trang trước
+                          </button>
+                          {chapterIndex > 0 && (
+                            <button
+                              type="button"
+                              onClick={handlePlayFromBeginning}
+                              className="btn btn-outline btn-xs"
+                              style={{ padding: '3px 8px', fontSize: '0.71rem', color: '#3b82f6', borderColor: 'rgba(59, 130, 246, 0.35)', background: 'rgba(59, 130, 246, 0.08)' }}
+                              title="Chiếu & đọc lại từ Trang 1 tới hết"
+                            >
+                              ⏮ Về Trang 1
+                            </button>
+                          )}
+                        </div>
                         <span style={{ fontSize: '0.74rem', fontWeight: 800, color: 'var(--accent-primary)' }}>
                           📖 Trang {chapterIndex + 1} / {activeText.chapters.length}
                         </span>
-                        <button
-                          type="button"
-                          onClick={() => handleSelectChapter(Math.min(activeText.chapters.length - 1, chapterIndex + 1))}
-                          disabled={chapterIndex === activeText.chapters.length - 1}
-                          className="btn btn-outline btn-xs"
-                          style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3 }}
-                        >
-                          Trang sau <ChevronRight size={13} />
-                        </button>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                          <button
+                            type="button"
+                            onClick={toggleContinuousReading}
+                            className="btn btn-outline btn-xs"
+                            style={{
+                              padding: '3px 8px',
+                              fontSize: '0.71rem',
+                              background: isContinuousReading ? 'rgba(16, 185, 129, 0.1)' : 'transparent',
+                              color: isContinuousReading ? '#10b981' : 'var(--text-secondary)',
+                              borderColor: isContinuousReading ? 'rgba(16, 185, 129, 0.4)' : 'var(--glass-border-strong)'
+                            }}
+                            title="Tự động lật tiếp các trang khi nghe xong"
+                          >
+                            <RotateCcw size={11} style={{ transform: isContinuousReading ? 'none' : 'rotate(-45deg)' }} /> {isContinuousReading ? 'Liên tục: BẬT' : 'Từng trang'}
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleSelectChapter(Math.min(activeText.chapters.length - 1, chapterIndex + 1))}
+                            disabled={chapterIndex === activeText.chapters.length - 1}
+                            className="btn btn-outline btn-xs"
+                            style={{ padding: '3px 8px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: 3 }}
+                          >
+                            Trang sau <ChevronRight size={13} />
+                          </button>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -3848,8 +4094,8 @@ const ImmersionReader = () => {
                         type="button"
                         className="btn btn-outline btn-sm"
                         onClick={handlePrevSentence}
-                        disabled={activeSentenceIdx === 0}
-                        title="Tua về câu trước"
+                        disabled={activeSentenceIdx === 0 && (!activeText?.chapters || chapterIndex === 0)}
+                        title="Tua về câu trước (Lùi sang trang trước nếu ở đầu trang)"
                         style={{ padding: '6px 10px' }}
                       >
                         <ChevronLeft size={16} />
@@ -3869,7 +4115,7 @@ const ImmersionReader = () => {
                         <button 
                           type="button"
                           className="btn btn-primary btn-playback-main"
-                          onClick={() => handleGenerateTTS(activeReadingContent, activeSentenceIdx)}
+                          onClick={() => handleGenerateTTS(null, activeSentenceIdx, chapterIndex)}
                           title="Bắt đầu nghe Sách nói từ câu này"
                         >
                           <Play size={15} fill="currentColor" />
@@ -3881,8 +4127,8 @@ const ImmersionReader = () => {
                         type="button"
                         className="btn btn-outline btn-sm"
                         onClick={handleNextSentence}
-                        disabled={activeSentenceIdx >= storySentences.length - 1}
-                        title="Tua sang câu sau"
+                        disabled={activeSentenceIdx >= (storySentences.length || 1) - 1 && (!activeText?.chapters || chapterIndex >= activeText.chapters.length - 1)}
+                        title="Tua sang câu sau (Tiến sang trang sau nếu ở cuối trang)"
                         style={{ padding: '6px 10px' }}
                       >
                         <ChevronRight size={16} />
@@ -4084,17 +4330,28 @@ const ImmersionReader = () => {
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, flexWrap: 'wrap' }}>
                           {chapterIndex > 0 && (
-                            <button
-                              type="button"
-                              className="btn btn-outline"
-                              onClick={() => {
-                                handleSelectChapter(chapterIndex - 1);
-                                if (contentRef.current) contentRef.current.scrollTop = 0;
-                              }}
-                              style={{ fontSize: '0.78rem', padding: '6px 14px' }}
-                            >
-                              <ChevronLeft size={14} /> Chương {chapterIndex}
-                            </button>
+                            <>
+                              <button
+                                type="button"
+                                className="btn btn-outline"
+                                onClick={handlePlayFromBeginning}
+                                style={{ fontSize: '0.78rem', padding: '6px 14px', color: '#3b82f6', borderColor: 'rgba(59, 130, 246, 0.35)', display: 'inline-flex', alignItems: 'center', gap: 5 }}
+                                title="Quay về Trang 1 và phát lại từ đầu câu chuyện"
+                              >
+                                <RotateCcw size={13} /> Đọc lại từ Trang 1
+                              </button>
+                              <button
+                                type="button"
+                                className="btn btn-outline"
+                                onClick={() => {
+                                  handleSelectChapter(chapterIndex - 1);
+                                  if (contentRef.current) contentRef.current.scrollTop = 0;
+                                }}
+                                style={{ fontSize: '0.78rem', padding: '6px 14px' }}
+                              >
+                                <ChevronLeft size={14} /> Chương {chapterIndex}
+                              </button>
+                            </>
                           )}
                           {chapterIndex < activeText.chapters.length - 1 ? (
                             <button
