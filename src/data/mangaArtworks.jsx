@@ -218,11 +218,11 @@ export const STORY_MANGA_ARTWORKS = {
   // 0.a. はらぺこあおむし (Chú Sâu Bướm Háu Ăn - Eric Carle Collage)
   harapeko_aomushi: {
     title: 'はらぺこあおむし (Chú Sâu Bướm Háu Ăn)',
-    imageUrl: '/images/ehon/harapeko_p1_leaf.jpg',
+    imageUrl: '/images/ehon/harapeko_aomushi.jpg',
     style: 'harapeko_collage',
     renderIllustration: () => (
       <img 
-        src="/images/ehon/harapeko_p1_leaf.jpg" 
+        src="/images/ehon/harapeko_aomushi.jpg" 
         alt="はらぺこあおむし" 
         style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
@@ -232,11 +232,11 @@ export const STORY_MANGA_ARTWORKS = {
   // 0.b. おおきなかぶ (Củ Cải Khổng Lồ - Eric Carle Collage)
   ookina_kabu: {
     title: 'おおきなかぶ (Củ Cải Khổng Lồ)',
-    imageUrl: '/images/ehon/ookinakabu_p1_planting.jpg',
+    imageUrl: '/images/ehon/ookina_kabu.jpg',
     style: 'harapeko_collage',
     renderIllustration: () => (
       <img 
-        src="/images/ehon/ookinakabu_p1_planting.jpg" 
+        src="/images/ehon/ookina_kabu.jpg" 
         alt="おおきなかぶ" 
         style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
@@ -246,14 +246,204 @@ export const STORY_MANGA_ARTWORKS = {
   // 0.c. さんびきのこぶた (Ba Chú Heo Con - Eric Carle Collage)
   sanbiki_no_kobuta: {
     title: 'さんびきのこぶた (Ba Chú Heo Con)',
-    imageUrl: '/images/ehon/sanbiki_p1_leaving_home.jpg',
+    imageUrl: '/images/ehon/sanbiki_kobuta.jpg',
     style: 'harapeko_collage',
     renderIllustration: () => (
       <img 
-        src="/images/ehon/sanbiki_p1_leaving_home.jpg" 
+        src="/images/ehon/sanbiki_kobuta.jpg" 
         alt="さんびきのこぶた" 
         style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} 
       />
+    )
+  },
+
+  // 0.d. ぐりとぐら (Guri và Gura - Ehon Quốc Dân Nhật Bản)
+  guri_to_gura: {
+    title: 'ぐりとぐら (Guri và Gura)',
+    imageUrl: '/images/ehon/guri_to_gura.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/guri_to_gura.jpg" alt="ぐりとぐら" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.e. しろくまちゃんのほっとけーき (Bánh Kếp Của Gấu Trắng)
+  shirokuma_pancake: {
+    title: 'しろくまちゃんのほっとけーき (Bánh Kếp Của Gấu Trắng)',
+    imageUrl: '/images/ehon/shirokuma_pancake.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/shirokuma_pancake.jpg" alt="しろくまちゃんのほっとけーき" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.f. てぶくろ (Chiếc Găng Tay Ấm Áp Trong Tuyết)
+  tebukuro: {
+    title: 'てぶくろ (Chiếc Găng Tay Ấm Áp)',
+    imageUrl: '/images/ehon/tebukuro.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/tebukuro.jpg" alt="てぶくろ" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.g. かちかち山 (Núi Lách Tách - Thỏ Trắng & Tanuki)
+  kachikachi_yama: {
+    title: 'かちかち山 (Núi Lách Tách)',
+    imageUrl: '/images/ehon/kachikachi_yama.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/kachikachi_yama.jpg" alt="かちかち山" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.h. 兎と亀 (Rùa & Thỏ)
+  usagi_to_kame: {
+    title: '兎と亀 (Rùa và Thỏ)',
+    imageUrl: '/images/ehon/usagi_to_kame.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/usagi_to_kame.jpg" alt="兎と亀" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.i. 北風と太陽 (Gió Bắc và Mặt Trời)
+  kitakaze_to_taiyo: {
+    title: '北風と太陽 (Gió Bắc và Mặt Trời)',
+    imageUrl: '/images/ehon/kitakaze_to_taiyo.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/kitakaze_to_taiyo.jpg" alt="北風と太陽" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.j. 蟻とキリギリス (Kiến và Châu Chấu)
+  ari_to_kirigirisu: {
+    title: '蟻とキリギリス (Kiến và Châu Chấu)',
+    imageUrl: '/images/ehon/ari_to_kirigirisu.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/ari_to_kirigirisu.jpg" alt="蟻とキリギリス" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.k. ねずみの嫁入り (Lễ Cưới Của Chuột)
+  nezumi_yomeiri: {
+    title: 'ねずみの嫁入り (Lễ Cưới Của Chuột)',
+    imageUrl: '/images/ehon/nezumi_yomeiri.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/nezumi_yomeiri.jpg" alt="ねずみの嫁入り" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.l. 雪女 (Người Đàn Bà Tuyết)
+  yukionna: {
+    title: '雪女 (Người Đàn Bà Tuyết Yuki-Onna)',
+    imageUrl: '/images/ehon/yukionna.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/yukionna.jpg" alt="雪女" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.m. 天狗の隠れ蓑 (Áo Tàng Hình Của Tengu)
+  tengu_kakuremino: {
+    title: '天狗の隠れ蓑 (Áo Tàng Hình Của Tengu)',
+    imageUrl: '/images/ehon/tengu_kakuremino.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/tengu_kakuremino.jpg" alt="天狗の隠れ蓑" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.n. 三枚のお札 (Ba Lá Bùa Trừ Tà)
+  sanmai_no_ofuda: {
+    title: '三枚のお札 (Ba Lá Bùa Trừ Tà)',
+    imageUrl: '/images/ehon/sanmai_no_ofuda.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/sanmai_no_ofuda.jpg" alt="三枚のお札" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.o. 鉢かづき姫 (Công Chúa Đội Nồi Gốm)
+  hachikazuki: {
+    title: '鉢かづき姫 (Công Chúa Đội Nồi Gốm)',
+    imageUrl: '/images/ehon/hachikazuki.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/hachikazuki.jpg" alt="鉢かづき姫" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.p. 忠犬ハチ公 (Chú Chó Trung Nghĩa Hachiko)
+  hachiko: {
+    title: '忠犬ハチ公 (Chú Chó Hachiko)',
+    imageUrl: '/images/ehon/hachiko.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/hachiko.jpg" alt="忠犬ハチ公" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.q. 手袋を買いに (Cáo Con Đi Mua Găng Tay - Niimi Nankichi)
+  tebukuro_wo_kaini: {
+    title: '手袋を買いに (Cáo Con Đi Mua Găng Tay)',
+    imageUrl: '/images/ehon/tebukuro_wo_kaini.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/tebukuro_wo_kaini.jpg" alt="手袋を買いに" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.r. 注文の多い料理店 (Quán Ăn Nhiều Yêu Cầu - Miyazawa Kenji)
+  chumon_ryoriten: {
+    title: '注文の多い料理店 (Quán Ăn Nhiều Yêu Cầu)',
+    imageUrl: '/images/ehon/chumon_ryoriten.jpg',
+    style: 'japanese_ehon',
+    renderIllustration: () => (
+      <img src="/images/ehon/chumon_ryoriten.jpg" alt="注文の多い料理店" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.s. 走れメロス (Chạy Đi Melos - Dazai Osamu)
+  hashire_merosu: {
+    title: '走れメロス (Chạy Đi Melos)',
+    imageUrl: '/images/ehon/hashire_merosu.jpg',
+    style: 'dramatic_manga',
+    renderIllustration: () => (
+      <img src="/images/ehon/hashire_merosu.jpg" alt="走れメロス" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.t. 吾輩は猫である (Tôi Là Con Mèo - Natsume Soseki)
+  wagahai_neko: {
+    title: '吾輩は猫である (Tôi Là Con Mèo)',
+    imageUrl: '/images/ehon/wagahai_neko.jpg',
+    style: 'classic_literary',
+    renderIllustration: () => (
+      <img src="/images/ehon/wagahai_neko.jpg" alt="吾輩は猫である" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.u. 蜘蛛の糸 (Sợi Tơ Nhện - Akutagawa Ryunosuke)
+  kumo_no_ito: {
+    title: '蜘蛛の糸 (Sợi Tơ Nhện)',
+    imageUrl: '/images/ehon/kumo_no_ito.jpg',
+    style: 'dramatic_manga',
+    renderIllustration: () => (
+      <img src="/images/ehon/kumo_no_ito.jpg" alt="蜘蛛の糸" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+    )
+  },
+
+  // 0.v. 山月記 (Sơn Nguyệt Ký - Nakajima Atsushi)
+  sangetsuki: {
+    title: '山月記 (Sơn Nguyệt Ký)',
+    imageUrl: '/images/ehon/sangetsuki.jpg',
+    style: 'classic_literary',
+    renderIllustration: () => (
+      <img src="/images/ehon/sangetsuki.jpg" alt="山月記" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
     )
   },
 
@@ -1060,7 +1250,27 @@ export const getStoryMangaArtwork = (story, chapterTitle = '') => {
 
   const fullSearch = `${id} ${title} ${cTitle}`.toLowerCase();
 
-  // 0. Khớp ưu tiên theo tác phẩm Ehon Eric Carle
+  // 0. Khớp ưu tiên theo tác phẩm có ảnh riêng được định nghĩa sẵn trong story
+  if (story?.coverArtwork) {
+    return {
+      title: story.title || 'OmniLinguist Story',
+      imageUrl: story.coverArtwork,
+      renderIllustration: () => (
+        <img src={story.coverArtwork} alt={story.title} style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+      )
+    };
+  }
+  if (story?.imageUrl) {
+    return {
+      title: story.title || 'OmniLinguist Story',
+      imageUrl: story.imageUrl,
+      renderIllustration: () => (
+        <img src={story.imageUrl} alt={story.title} style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+      )
+    };
+  }
+
+  // 1. Khớp ưu tiên theo tác phẩm Ehon & Sách Tranh Thiếu Nhi Quốc Dân
   if (fullSearch.includes('harapeko') || fullSearch.includes('あおむし') || fullSearch.includes('caterpillar')) {
     return STORY_MANGA_ARTWORKS.harapeko_aomushi;
   }
@@ -1070,8 +1280,50 @@ export const getStoryMangaArtwork = (story, chapterTitle = '') => {
   if (fullSearch.includes('sanbiki') || fullSearch.includes('こぶた') || fullSearch.includes('pig')) {
     return STORY_MANGA_ARTWORKS.sanbiki_no_kobuta;
   }
+  if (fullSearch.includes('guri') || fullSearch.includes('ぐりとぐら')) {
+    return STORY_MANGA_ARTWORKS.guri_to_gura;
+  }
+  if (fullSearch.includes('shirokuma') || fullSearch.includes('ほっとけーき') || fullSearch.includes('しろくま')) {
+    return STORY_MANGA_ARTWORKS.shirokuma_pancake;
+  }
+  if (fullSearch.includes('手袋を買') || fullSearch.includes('tebukuro_kaini') || fullSearch.includes('tebukuro_wo_kaini')) {
+    return STORY_MANGA_ARTWORKS.tebukuro_wo_kaini;
+  }
+  if (fullSearch.includes('tebukuro') || fullSearch.includes('てぶくろ')) {
+    return STORY_MANGA_ARTWORKS.tebukuro;
+  }
+  if (fullSearch.includes('kachikachi') || fullSearch.includes('かちかち山') || fullSearch.includes('かちかちやま')) {
+    return STORY_MANGA_ARTWORKS.kachikachi_yama;
+  }
+  if (fullSearch.includes('usagi') || fullSearch.includes('兎と亀') || fullSearch.includes('うさぎとかめ')) {
+    return STORY_MANGA_ARTWORKS.usagi_to_kame;
+  }
+  if (fullSearch.includes('kitakaze') || fullSearch.includes('北風と太陽') || fullSearch.includes('きたかぜ')) {
+    return STORY_MANGA_ARTWORKS.kitakaze_to_taiyo;
+  }
+  if (fullSearch.includes('ari') || fullSearch.includes('キリギリス') || fullSearch.includes('蟻とキリギリス')) {
+    return STORY_MANGA_ARTWORKS.ari_to_kirigirisu;
+  }
+  if (fullSearch.includes('nezumi') || fullSearch.includes('ねずみの嫁入り') || fullSearch.includes('ねずみ')) {
+    return STORY_MANGA_ARTWORKS.nezumi_yomeiri;
+  }
+  if (fullSearch.includes('yukionna') || fullSearch.includes('雪女') || fullSearch.includes('ゆきおんな')) {
+    return STORY_MANGA_ARTWORKS.yukionna;
+  }
+  if (fullSearch.includes('tengu') || fullSearch.includes('天狗') || fullSearch.includes('隠れ蓑')) {
+    return STORY_MANGA_ARTWORKS.tengu_kakuremino;
+  }
+  if (fullSearch.includes('sanmai') || fullSearch.includes('三枚のお札') || fullSearch.includes('お札')) {
+    return STORY_MANGA_ARTWORKS.sanmai_no_ofuda;
+  }
+  if (fullSearch.includes('hachikazuki') || fullSearch.includes('鉢かづき') || fullSearch.includes('はちかづき')) {
+    return STORY_MANGA_ARTWORKS.hachikazuki;
+  }
+  if (fullSearch.includes('hachiko') || fullSearch.includes('ハチ公') || fullSearch.includes('忠犬')) {
+    return STORY_MANGA_ARTWORKS.hachiko;
+  }
 
-  // 1. Khớp ưu tiên theo tác phẩm có tranh Ehon thực tế (ưu tiên tên chương trước)
+  // 2. Khớp theo tác phẩm Cổ Tích Dân Gian Kinh Điển
   if (fullSearch.includes('kintaro') || fullSearch.includes('金太郎') || fullSearch.includes('きんたろう')) {
     return STORY_MANGA_ARTWORKS.kintaro;
   }
@@ -1084,7 +1336,7 @@ export const getStoryMangaArtwork = (story, chapterTitle = '') => {
   if (fullSearch.includes('suzume') || fullSearch.includes('舌切り雀') || fullSearch.includes('すずめ')) {
     return STORY_MANGA_ARTWORKS.shitakiri_suzume;
   }
-  if (fullSearch.includes('chagama') || fullSearch.includes('分福茶釜') || fullSearch.includes('ぶんぶく')) {
+  if (fullSearch.includes('chagama') || fullSearch.includes('分福茶釜') || fullSearch.includes('文福茶釜') || fullSearch.includes('ぶんぶく')) {
     return STORY_MANGA_ARTWORKS.bunbuku_chagama;
   }
   if (fullSearch.includes('sarukani') || fullSearch.includes('猿蟹') || fullSearch.includes('さるかに')) {
@@ -1112,15 +1364,30 @@ export const getStoryMangaArtwork = (story, chapterTitle = '') => {
     return STORY_MANGA_ARTWORKS.ginga_tetsudo;
   }
 
-  // 2. Khớp theo tác phẩm đồng thoại & danh tác
-  if (fullSearch.includes('gon') || fullSearch.includes('ごんぎつね') || fullSearch.includes('狐') || fullSearch.includes('手袋を買')) {
+  // 3. Khớp theo tác phẩm đồng thoại & danh tác văn học
+  if (fullSearch.includes('chumon') || fullSearch.includes('注文の多い料理店')) {
+    return STORY_MANGA_ARTWORKS.chumon_ryoriten;
+  }
+  if (fullSearch.includes('gon') || fullSearch.includes('ごんぎつね') || fullSearch.includes('狐')) {
     return STORY_MANGA_ARTWORKS.gongitsune;
   }
-  if (fullSearch.includes('羅生門') || fullSearch.includes('山月記') || fullSearch.includes('蜘蛛の糸') || fullSearch.includes('走れメロス') || fullSearch.includes('こころ') || fullSearch.includes('坊っちゃん') || fullSearch.includes('文学') || fullSearch.includes('芥川') || fullSearch.includes('太宰')) {
+  if (fullSearch.includes('走れメロス') || fullSearch.includes('メロス') || fullSearch.includes('melos')) {
+    return STORY_MANGA_ARTWORKS.hashire_merosu;
+  }
+  if (fullSearch.includes('吾輩は猫') || fullSearch.includes('夏目漱石') || fullSearch.includes('猫である')) {
+    return STORY_MANGA_ARTWORKS.wagahai_neko;
+  }
+  if (fullSearch.includes('蜘蛛の糸') || fullSearch.includes('芥川') || fullSearch.includes('カンダタ')) {
+    return STORY_MANGA_ARTWORKS.kumo_no_ito;
+  }
+  if (fullSearch.includes('山月記') || fullSearch.includes('李徴') || fullSearch.includes('虎')) {
+    return STORY_MANGA_ARTWORKS.sangetsuki;
+  }
+  if (fullSearch.includes('羅生門') || fullSearch.includes('こころ') || fullSearch.includes('坊っちゃん') || fullSearch.includes('人間失格') || fullSearch.includes('斜陽') || fullSearch.includes('太宰')) {
     return STORY_MANGA_ARTWORKS.classic_dramatic;
   }
 
-  // 3. Khớp theo chuyên đề & thể loại
+  // 4. Khớp theo chuyên đề & thể loại đời sống, văn hóa, công sở
   if (genre.includes('nature') || fullSearch.includes('桜') || fullSearch.includes('富士') || fullSearch.includes('春') || fullSearch.includes('秋') || fullSearch.includes('四季')) {
     return STORY_MANGA_ARTWORKS.japanese_nature;
   }
@@ -1134,7 +1401,7 @@ export const getStoryMangaArtwork = (story, chapterTitle = '') => {
     return STORY_MANGA_ARTWORKS.modern_tokyo;
   }
 
-  if (genre.includes('folktale')) return STORY_MANGA_ARTWORKS.momotaro;
+  if (genre.includes('folktale')) return STORY_MANGA_ARTWORKS.culture_tradition;
   if (genre.includes('literature')) return STORY_MANGA_ARTWORKS.classic_dramatic;
   return STORY_MANGA_ARTWORKS.modern_tokyo;
 };

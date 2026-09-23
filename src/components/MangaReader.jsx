@@ -1,5 +1,5 @@
 // MangaReader.jsx — Trình Đọc Manga Tương Tác Cấp Độ 3 (Interactive Dual-Panel Motion Manga Canvas Reader)
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { 
   Volume2, Eye, EyeOff, Sparkles, LayoutGrid, Rows, 
   MessageSquare, BookOpen, ChevronRight, ChevronLeft, Check, Mic, Square,
@@ -47,7 +47,8 @@ const MangaReader = ({
   // Props đồng bộ từ ImmersionReader nếu có
   isPlayingTTS,
   onStopTTS,
-  ttsSpeed: parentTtsSpeed
+  ttsSpeed: parentTtsSpeed,
+  activeSentenceIdx
 }) => {
   const [layoutMode, setLayoutMode] = useState('webtoon'); // 'webtoon' | 'grid'
   const [translatedLines, setTranslatedLines] = useState({});
@@ -66,6 +67,7 @@ const MangaReader = ({
 
   const beatRefs = useRef({});
   const autoPlayCancelledRef = useRef(false);
+  const mangaSessionIdRef = useRef(0);
   const currentUtteranceRef = useRef(null);
 
   // Phân tích văn bản tiếng Nhật thành các Khung tranh Manga (Panels) & Bong bóng thoại (Speech Bubbles)
@@ -78,7 +80,7 @@ const MangaReader = ({
     let currentBeats = [];
     let globalBeatIdx = 0;
 
-    rawParagraphs.forEach((para) => {
+    rawParagraphs.forEach((para, paraIdx) => {
       const trimmed = para.trim();
 
       // Kiểm tra câu thoại trong ngoặc vuông「...」hoặc 『...』
@@ -111,6 +113,7 @@ const MangaReader = ({
         const beatObj = {
           id: `beat_${globalBeatIdx}`,
           beatIdx: globalBeatIdx,
+          paraIdx: paraIdx,
           type: isDialogue ? 'dialogue' : 'narration',
           text: cleanText,
           originalText: part,
@@ -147,6 +150,19 @@ const MangaReader = ({
   }, [content, story]);
 
   const activeBeat = allBeats[activeBeatIdx] || allBeats[0];
+
+  // Sync with global ImmersionReader activeSentenceIdx
+  useEffect(() => {
+    if (activeSentenceIdx !== undefined && (isPlayingTTS || !isPlayingAuto)) {
+      const targetBeatIndex = allBeats.findIndex(b => b.paraIdx === activeSentenceIdx);
+      if (targetBeatIndex !== -1 && targetBeatIndex !== activeBeatIdx) {
+        setActiveBeatIdx(targetBeatIndex);
+        if (beatRefs.current[targetBeatIndex]) {
+          beatRefs.current[targetBeatIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    }
+  }, [activeSentenceIdx, isPlayingTTS, allBeats]);
 
   // Hoạt cảnh Ehon tương ứng với câu thoại đang đọc / đang chọn
   const activeSceneInfo = useMemo(() => {
@@ -188,18 +204,37 @@ const MangaReader = ({
     setLoadingLines(prev => ({ ...prev, [beatId]: false }));
   };
 
+  // Dừng đọc Manga tự động và hủy phiên
+  const handleStopAutoPlay = useCallback(() => {
+    mangaSessionIdRef.current += 1;
+    autoPlayCancelledRef.current = true;
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    setIsPlayingAuto(false);
+    setIsPausedAuto(false);
+    currentUtteranceRef.current = null;
+    if (onStopTTS) onStopTTS();
+  }, [onStopTTS]);
+
+  // Khi đổi nội dung bài đọc hoặc tác phẩm, lập tức dừng đọc Manga và reset về beat 0
+  useEffect(() => {
+    handleStopAutoPlay();
+    setActiveBeatIdx(0);
+  }, [content, story?.id, handleStopAutoPlay]);
+
   // ────────────────────────────────────────────────────────────
   // MOTION MANGA AUTO-PLAY TTS ENGINE (CHỮ TỰ CHẠY TUẦN TỰ)
   // ────────────────────────────────────────────────────────────
   const startAutoPlay = (startIdx = 0) => {
     if (!window.speechSynthesis || allBeats.length === 0) return;
-    window.speechSynthesis.cancel();
+    mangaSessionIdRef.current += 1;
+    const currentSessionId = mangaSessionIdRef.current;
     autoPlayCancelledRef.current = false;
+    window.speechSynthesis.cancel();
     setIsPlayingAuto(true);
     setIsPausedAuto(false);
 
     const playBeatAt = (idx) => {
-      if (autoPlayCancelledRef.current || idx >= allBeats.length) {
+      if (mangaSessionIdRef.current !== currentSessionId || autoPlayCancelledRef.current || idx >= allBeats.length) {
         setIsPlayingAuto(false);
         setIsPausedAuto(false);
         currentUtteranceRef.current = null;
@@ -226,9 +261,9 @@ const MangaReader = ({
       if (jpVoice) utter.voice = jpVoice;
 
       utter.onend = () => {
-        if (!autoPlayCancelledRef.current) {
+        if (mangaSessionIdRef.current === currentSessionId && !autoPlayCancelledRef.current) {
           setTimeout(() => {
-            if (!autoPlayCancelledRef.current) {
+            if (mangaSessionIdRef.current === currentSessionId && !autoPlayCancelledRef.current) {
               playBeatAt(idx + 1);
             }
           }, 380);
@@ -236,8 +271,15 @@ const MangaReader = ({
       };
 
       utter.onerror = (e) => {
-        if (e.error !== 'canceled' && !autoPlayCancelledRef.current) {
-          setTimeout(() => playBeatAt(idx + 1), 300);
+        if (e?.error === 'canceled' || e?.error === 'interrupted') {
+          return;
+        }
+        if (mangaSessionIdRef.current === currentSessionId && !autoPlayCancelledRef.current) {
+          setTimeout(() => {
+            if (mangaSessionIdRef.current === currentSessionId && !autoPlayCancelledRef.current) {
+              playBeatAt(idx + 1);
+            }
+          }, 300);
         }
       };
 
@@ -246,15 +288,6 @@ const MangaReader = ({
     };
 
     playBeatAt(startIdx);
-  };
-
-  const handleStopAutoPlay = () => {
-    autoPlayCancelledRef.current = true;
-    if (window.speechSynthesis) window.speechSynthesis.cancel();
-    setIsPlayingAuto(false);
-    setIsPausedAuto(false);
-    currentUtteranceRef.current = null;
-    if (onStopTTS) onStopTTS();
   };
 
   const handlePauseResumeAutoPlay = () => {

@@ -6,13 +6,15 @@ export const READING_CORPUS = [
     "id": "story_harapeko_aomushi",
     "title": "🐛 はらぺこあおむし (Chú Sâu Bướm Háu Ăn - Eric Carle)",
     "level": "N5",
-    "genre": "folktale",
+    "genre": "ehon",
     "genreLabel": "🎨 Sách Tranh Ehon (Eric Carle Collage)",
     "author": "Eric Carle (Bản Nhật ngữ)",
     "readingTime": "5 phút",
     "summary": "Tuyệt phẩm sách tranh thiếu nhi kinh điển thế giới với nghệ thuật cắt dán giấy màu Eric Carle. Chú sâu nhỏ háu ăn từ lúc nở khỏi trứng đến khi dệt kén hóa bướm ngũ sắc lộng lẫy.",
     "isPictureBook": true,
     "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/harapeko_aomushi.jpg",
+    "imageUrl": "/images/ehon/harapeko_aomushi.jpg",
     "chapters": [
       {
         "chapterNumber": 1,
@@ -62,13 +64,15 @@ export const READING_CORPUS = [
     "id": "story_ookina_kabu",
     "title": "🥕 おおきなかぶ (Củ Cải Khổng Lồ - The Enormous Turnip)",
     "level": "N5",
-    "genre": "folktale",
-    "genreLabel": "🎨 Sách Tranh Ehon (Eric Carle Collage)",
+    "genre": "ehon",
+    "genreLabel": "🎨 Sách Tranh Ehon Thiếu Nhi",
     "author": "Đồng thoại kinh điển thế giới (Bản Nhật)",
     "readingTime": "4 phút",
     "summary": "Câu chuyện thiếu nhi quốc dân Nhật Bản về tinh thần hợp lực. Ông lão, bà lão, cháu gái, chó, mèo và chú chuột nhỏ cùng kéo củ cải khổng lồ.",
     "isPictureBook": true,
     "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ookina_kabu.jpg",
+    "imageUrl": "/images/ehon/ookina_kabu.jpg",
     "chapters": [
       {
         "chapterNumber": 1,
@@ -86,7 +90,7 @@ export const READING_CORPUS = [
       },
       {
         "chapterNumber": 3,
-        "chapterTitle": "第3場面：みんなで ちからを あわせたら！ (Trang 3: Cả Nhà Đồng Lòng, Củ Cải Bật Lên!)",
+        "chapterTitle": "第3場面：みんなで ち力あわせたら！ (Trang 3: Cả Nhà Đồng Lòng, Củ Cải Bật Lên!)",
         "readingTime": "1 phút",
         "imageUrl": "/images/ehon/ookinakabu_p3_all_pulling.jpg",
         "content": "おばあさんが おじいさんを ひっぱり、まごむすめが おばあさんを ひっぱり、いぬが まごを ひっぱり、ねこが いぬを ひっぱり、ちいさな ねずみが ねこを ひっぱりました。\n「うんとこしょ、どっこいしょ！ うんとこしょ、どっこいしょ！」\nぽーん！\nとうとう、おおきな かぶが ぬけました！\nみんなは おおよろこびで、あまくて おいしい かぶの スープを おなかいっぱい たべましたとさ。"
@@ -97,13 +101,15 @@ export const READING_CORPUS = [
     "id": "story_sanbiki_kobuta",
     "title": "🐷 さんびきのこぶた (Ba Chú Heo Con - The Three Little Pigs)",
     "level": "N5",
-    "genre": "folktale",
-    "genreLabel": "🎨 Sách Tranh Ehon (Eric Carle Collage)",
+    "genre": "ehon",
+    "genreLabel": "🎨 Sách Tranh Ehon Thiếu Nhi",
     "author": "Đồng thoại kinh điển thế giới (Bản Nhật)",
     "readingTime": "4 phút",
     "summary": "Truyện cổ tích thiếu nhi kinh điển về 3 chú heo con xây nhà bằng rơm, gỗ và gạch kiên cố đánh lui chó sói hung dữ.",
     "isPictureBook": true,
     "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/sanbiki_kobuta.jpg",
+    "imageUrl": "/images/ehon/sanbiki_kobuta.jpg",
     "chapters": [
       {
         "chapterNumber": 1,
@@ -118,6 +124,206 @@ export const READING_CORPUS = [
         "readingTime": "2 phút",
         "imageUrl": "/images/ehon/sanbiki_p2_brick_house.jpg",
         "content": "いちばんめの こぶたは わらの いえを つくりましたが、オオカミの いきで ふきとばされて しまいました。\nにばんめの こぶたは きの いえを つくりましたが、オオカミに こわされて しまいました。\nでも、がんばりやの さんばんめの こぶたは、じょうぶな あかい レンガの いえを つくりました。\nオオカミが えんとつから はいってくると、したで にえたぎる なべの なかに どぼーん！\n「あちちち！」と オオカミは にげだし、さんびきの こぶたは いつまでも なかよく くらしましたとさ。"
+      }
+    ]
+  },
+  {
+    "id": "story_guri_to_gura",
+    "title": "🐭 ぐりとぐら (Guri và Gura - Chiếc Bánh Bông Lan Khổng Lồ Trong Rừng)",
+    "level": "N5",
+    "genre": "ehon",
+    "genreLabel": "🎨 Sách Tranh Ehon Quốc Dân",
+    "author": "Nakagawa Rieko & Yamawaki Yuriko (Bản Nhật ngữ)",
+    "readingTime": "5 phút",
+    "summary": "Tuyệt phẩm sách tranh thiếu nhi quốc dân Nhật Bản về hai chú chuột đồng sinh đôi Guri và Gura yêu thích nấu nướng, tìm thấy quả trứng khổng lồ trong rừng và nướng chiếc bánh bông lan vàng óng thơm lừng mời muôn thú.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/guri_to_gura.jpg",
+    "imageUrl": "/images/ehon/guri_to_gura.jpg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：もりでの はっけん (Trang 1: Quả Trứng Khổng Lồ Trong Rừng)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/guri_to_gura.jpg",
+        "content": "ぼくらの なまえは ぐりとぐら。このよで いちばん すきなのは、おりょうりすること、たべること。\nあき晴れの あさ、ふたりは かごを もって、どんぐりや くりを ひろいに 森へ でかけました。\n道の まんなかに、とてつもなく おおきな たまごが ひとつ、ぽつんと おちていました。\n「わあ！ こんなに おおきな たまご、みたことが ないよ！」と ぐりが さけびました。\n「めだまやきに する？ それとも おおきな カステラを やこうか！」と ぐらは 目を かがやかせました。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：カステラを やこう！ (Trang 2: Nướng Chiếc Bánh Khổng Lồ)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/guri_to_gura.jpg",
+        "content": "ふたりは いえから おおきな なべと フライパン、こむぎこ、さとう、バターを 森へ はこんできました。\nいしで かまどを つくり、まきに ひを つけます。\nたまごを ぱちんと わって、おおきな なべの なかで さとうと いっしょに まぜました。\n「ぐりと ぐら、ぐりと ぐら、おいしい カステラ、いいにおい！」\nなべから ふわふわと きいろい ゆげが たちのぼり、森じゅうに あまくて 香ばしい においが 広がりました。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：もりの なかまたちと ごちそう (Trang 3: Muôn Thú Cùng Thưởng Thức Bánh)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/guri_to_gura.jpg",
+        "content": "においに さそわれて、森の どうぶつたちが つぎつぎと あつまってきました。\nリス、うさぎ、キツネ、アナグマ、小鳥たち、おおきな クマさんまで やってきました。\nふたを あけると、なべいっぱいに ふっくら ふくらんだ、きんいろの カステラが やきあがっていました！\n「みんな、できたての カステラを たべよう！」\nみんなで なかよく わけあって、おなかいっぱい たべました。\nのこった おおきな たまごの からは、かっこいい くるまに へんしんしましたとさ。"
+      }
+    ]
+  },
+  {
+    "id": "story_shirokuma_cake",
+    "title": "🥞 しろくまちゃんのほっとけーき (Bánh Kếp Thơm Lừng Của Gấu Trắng)",
+    "level": "N5",
+    "genre": "ehon",
+    "genreLabel": "🎨 Sách Tranh Ehon Thiếu Nhi",
+    "author": "Wakayama Ken (Bản Nhật ngữ)",
+    "readingTime": "4 phút",
+    "summary": "Tác phẩm tranh thiếu nhi kinh điển nuôi dưỡng tình yêu nấu nướng. Chú gấu trắng Shirokuma tự tay đong bột, đập trứng, đổ bánh xèo xèo trên chảo nóng và mời bạn gấu nâu cùng ăn vui vẻ.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/shirokuma_pancake.jpg",
+    "imageUrl": "/images/ehon/shirokuma_pancake.jpg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ほっとけーきを つくろう (Trang 1: Chuẩn Bị Bột Mì, Trứng & Sữa)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/shirokuma_pancake.jpg",
+        "content": "わたし、ほっとけーきを つくるの。\nボールに こむぎこを いれます。さらさら さら。\nつぎは たまごを ぽんと わります。ぎゅうにゅうを とくとく いれます。\nあわだてきで まぜましょう。ぐるぐる ぐるぐる まぜましょう。\nだまが なくなるまで、ていねいに まぜます。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：ぽたあん、やけたかな？ (Trang 2: Đổ Bánh Lên Chảo, Xèo Xèo Vàng Óng)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/shirokuma_pancake.jpg",
+        "content": "フライパンを あたためて、あぶらを ひきます。\nたねを おたまですくって、ぽたあん。\nどろどろ ぴちぴち ぷつぷつ。\nちいさな あわが ふつふつと でてきました。\nフライがえしで よいしょ、ぺたん！ ひっくりかえします。\nこんがり おいしそうな きつねいろに やけました！"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：おいしいね、いただきます！ (Trang 3: Mời Bạn Cùng Ăn)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/shirokuma_pancake.jpg",
+        "content": "お皿に ほっとけーきを つみかさねます。\nうえに バターを のせて、メープルシロップを とろーり。\nピンポーン！ おともだちの こぐまちゃんが やってきました。\n「ふたりで たべると、もっと おいしいね！」\n「おいしいね、もぐもぐ。」\nたべおわったら、お皿も ふたりで きれいに あらいましたとさ。"
+      }
+    ]
+  },
+  {
+    "id": "story_tebukuro",
+    "title": "🧤 てぶくろ (Chiếc Găng Tay Ấm Áp Giữa Rừng Tuyết)",
+    "level": "N5",
+    "genre": "ehon",
+    "genreLabel": "🎨 Sách Tranh Ehon Thiếu Nhi",
+    "author": "Đồng thoại Ukraine (Bản Nhật Uchida Risako)",
+    "readingTime": "4 phút",
+    "summary": "Câu chuyện mùa đông ấm áp về chiếc găng tay len đỏ rơi trên nền tuyết trắng, lần lượt là nơi trú ẩn yêu thương của chuột, ếch, thỏ, cáo, sói và chú gấu to lớn.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/tebukuro.jpg",
+    "imageUrl": "/images/ehon/tebukuro.jpg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ゆきの なかの おとしもの (Trang 1: Chiếc Găng Tay Rơi Trên Tuyết)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/tebukuro.jpg",
+        "content": "ふゆの 森に、白い ゆきが しんしんと ふっていました。\nおじいさんが 森を あるいていると、あかい てぶくろを かたほう おとして しまいました。\nそこへ、ちいさな クイナねずみが やってきました。\n「まあ、あたたかそうな おうち！ わたし、ここに すみましょう。」"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：つぎつぎ やってくる なかまたち (Trang 2: Muôn Thú Cùng Xin Vào Trú Ẩn)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/tebukuro.jpg",
+        "content": "ぴょんぴょん ガエルが やってきて「わたしも いれて！」\n「どうぞ、おはいり。」\nはやあし ウサギも やってきて「わたしも いれて！」\n「どうぞ、どうぞ。」\nおしゃれ キツネも、はいいろ オオカミも やってきました。\nてぶくろは どんどん ふくらんで、もう はちきれそうです。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：おおきな クマさんと てぶくろ (Trang 3: Chiếc Găng Tay Căng Phồng Ấm Áp)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/tebukuro.jpg",
+        "content": "のっしのっしと おおきな のっそりグマが やってきました。\n「わしも いれておくれ！」\n「ええっ！ もう いっぱいですよ。でも、さむいから どうぞ。」\nみんなで ぎゅうぎゅうづめに なって、なかよく あたたまりました。\nそこへ おじいさんの こいぬが わんわん！と かけてきて、どうぶつたちは びっくりして 森へと かえっていきましたとさ。"
+      }
+    ]
+  },
+  {
+    "id": "story_kachikachi_yama",
+    "title": "🐰 かちかち山 (Núi Lách Tách - Thỏ Trắng Thông Minh)",
+    "level": "N5",
+    "genre": "ehon",
+    "genreLabel": "🏛️ Cổ Tích & Sách Tranh Ehon",
+    "author": "Dân gian Nhật Bản tuyển chọn",
+    "readingTime": "5 phút",
+    "summary": "Truyện cổ tích nổi tiếng về chú thỏ trắng thông minh dùng trí tuệ trừng phạt con lửng Tanuki nghịch ngợm để giúp đỡ ông bà lão nhân hậu.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/kachikachi_yama.jpg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：たばねた まきと ひうちいし (Trang 1: Bó Củi Trên Lưng & Tiếng Kêu Lách Tách)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/kachikachi_yama.jpg",
+        "content": "むかしむかし、心やさしい おじいさんと おばあさんが すんでいました。\nうらにわの はたけを あらす いたずらなたぬきを、おじいさんは こらしめようと しました。\nなかよしの 白い ウサギが「ぼくに まかせてください！」と いいました。\nウサギは たぬきを さそって、山へ まきを ひろいに いきました。\nたぬきが まきを せおって あるいていると、うしろで ウサギが ひうちいしを カチカチ！と ならしました。\n「ウサギさん、いまの カチカチという 音は なあに？」\n「ここは カチカチ山だから、カチカチ鳥が ないているのさ。」"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：どろぶねと 木のふね (Trang 2: Thuyền Bùn & Bài Học Nhớ Đời)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/kachikachi_yama.jpg",
+        "content": "まきに 火がついて「あちちち！」と たぬきは やけどを しました。\nこんどは ウサギは「湖へ さかなつりに いこう」と いいました。\nウサギは じょうぶな 木のふねに のり、たぬきには どろで つくった ふねに のせました。\n湖の まんなかへ くると、どろぶねは 水に とけて ぐずぐずと しずんで いきました。\n「たすけてくれー！ もう 二度と いたずらは しません！」と たぬきは 心から あやまりました。\nウサギは たぬきを たすけてあげ、それから たぬきは まじめに くらすようになりましたとさ。"
+      }
+    ]
+  },
+  {
+    "id": "story_usagi_to_kame",
+    "title": "🐢 兎と亀 (Rùa & Thỏ - Cuộc Chạy Đua Dưới Hoa Anh Đào)",
+    "level": "N5",
+    "genre": "ehon",
+    "genreLabel": "🎨 Sách Tranh Ngụ Ngôn Thiếu Nhi",
+    "author": "Ngụ ngôn kinh điển (Bản Nhật ngữ)",
+    "readingTime": "4 phút",
+    "summary": "Câu chuyện ngụ ngôn thiếu nhi về chú thỏ kiêu ngạo chạy nhanh nhưng chủ quan ngủ quên, và chú rùa chăm chỉ từng bước kiên trì tiến về đích.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/usagi_to_kame.jpg",
+    "imageUrl": "/images/ehon/usagi_to_kame.jpg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：やまの てっぺんまで かけっこだ (Trang 1: Lời Thách Thức Chạy Đua)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/usagi_to_kame.jpg",
+        "content": "ある はるの ひ、ウサギが カメの のろのろあるく すがたを みて わらいました。\n「カメさん、きみは どうして そんなに あるくのが おそいんだい？」\nカメは にっこり わらって いいました。\n「そんなに いうなら、あちらの 山の てっぺんまで かけっこを しましょう。」\n「よし、しょうぶだ！」\n森の どうぶつたちが みまもるなか、よーい、どん！で ふたりは スタートしました。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：こつこつ あゆむ カメの しょうり (Trang 2: Rùa Chạm Đích Trong Niềm Reo Hò)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/usagi_to_kame.jpg",
+        "content": "ウサギは あっというまに カメを ひきはなしました。\n「ふふん、カメさんは まだ ずっと うしろだ。すこし さくらの 木のしたで ひるねを しよう。」\nウサギは 気持ちよく ぐうぐうと ねむりこんで しまいました。\nそのあいだも、カメは やすむことなく、いっぽ、いっぽ、まえへ すすみました。\nウサギが めを さましたときには、なんと カメが ゴールテープを きるところでした！\n「やったー！ カメさんの かちだ！」\nゆだんした ウサギは はずかしそうに あたまを かきましたとさ。"
+      }
+    ]
+  },
+  {
+    "id": "story_kitakaze_to_taiyo",
+    "title": "☀️ 北風と太陽 (Gió Bắc Và Mặt Trời - Sức Mạnh Của Sự Ấm Áp)",
+    "level": "N5",
+    "genre": "ehon",
+    "genreLabel": "🎨 Sách Tranh Ngụ Ngôn Thiếu Nhi",
+    "author": "Ngụ ngôn Aesop (Bản Nhật ngữ)",
+    "readingTime": "4 phút",
+    "summary": "Truyện ngụ ngôn giàu ý nghĩa giáo dục: Gió Bắc hung hăng thổi mạnh chỉ làm lữ khách giữ chặt áo, trong khi Mặt Trời dịu dàng sưởi ấm khiến người ta tự nguyện cởi áo khoác ngoài.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/kitakaze_to_taiyo.jpg",
+    "imageUrl": "/images/ehon/kitakaze_to_taiyo.jpg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：きたかぜの つよい いぶき (Trang 1: Gió Bắc Thổi Cơn Lốc Lạnh Giá)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/kitakaze_to_taiyo.jpg",
+        "content": "そらの うえで、北風と 太陽が じぶんの 力の つよさを じまんしあって いました。\n「ぼくの ほうが つよいぞ！」と 北風がいえば、「いいや、わたしの ほうが つよいわ」と 太陽がいいます。\nそこへ、あたたかい マントを はおった たびびとが、道を あるいてきました。\n「よし、あの たびびとの マントを ぬがせた ほうが かちという ことに しよう！」\n北風は おおきく いきを すいこんで、びゅうびゅう！と つめたい かぜを ふきつけました。\nしかし、たびびとは「うう、さむい！」と マントを ますます しっかりと おさえこんで しまいました。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：あたたかい おひさまの ほほえみ (Trang 2: Mặt Trời Dịu Dàng Sưởi Ấm)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/kitakaze_to_taiyo.jpg",
+        "content": "北風は つかれはてて、ためいきを つきました。\n「こんどは わたしの ばんね。」\n太陽は くもの あいだから、ぽかぽかと あたたかい 光を ふりそそぎました。\nみどりのはっぱも、野原の花も、きらきらと かがやきはじめます。\n「ああ、なんて いい お天気なんだろう。ぽかぽかして あたたかくなってきたぞ。」\nたびびとは えがおに なって、じぶんから マントを ぬぎました。\n力づくで おさえつけるよりも、やさしさと あたたかさの ほうが 人の 心を うごかすのです。"
       }
     ]
   },

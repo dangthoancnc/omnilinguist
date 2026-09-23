@@ -9,11 +9,11 @@ import { useFurigana } from './FuriganaContext';
 import AuthModal from './AuthModal';
 import BottomNav from './components/BottomNav';
 import GlobalPopupDictionary from './GlobalPopupDictionary';
+import ShadowingStudio from './ShadowingStudio';
 import './index.css';
 
 // Lazy load heavy components to optimize web bundle size (<300KB initial chunk)
 const Dashboard = lazy(() => import('./Dashboard'));
-const ShadowingStudio = lazy(() => import('./ShadowingStudio'));
 const JapanNewsHub = lazy(() => import('./JapanNewsHub'));
 const VocabularyFlashcards = lazy(() => import('./VocabularyFlashcards'));
 const GrammarExplorer = lazy(() => import('./GrammarExplorer'));
@@ -38,14 +38,20 @@ class ChunkErrorBoundary extends React.Component {
     return { hasError: true };
   }
   componentDidCatch(error, info) {
-    console.error('[ErrorBoundary] Chunk load failed:', error, info);
+    console.error('[ErrorBoundary] Caught error:', error, info);
+    this.setState({ error, info });
   }
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', gap: 16, padding: 40 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', gap: 16, padding: 40, overflow: 'auto' }}>
           <h3 style={{ color: 'var(--text-primary)' }}>⚠️ Đã xảy ra lỗi khi tải trang</h3>
-          <p style={{ color: 'var(--text-secondary)', textAlign: 'center' }}>Có thể do mạng không ổn định hoặc ứng dụng đã được cập nhật phiên bản mới.</p>
+          <p style={{ color: 'var(--text-secondary)', textAlign: 'center' }}>
+            {this.state.error && this.state.error.message ? this.state.error.message : 'Lỗi không xác định'}
+          </p>
+          <pre style={{ fontSize: '0.7rem', color: 'red', maxWidth: '80%', overflow: 'auto', background: '#f5f5f5', padding: 10 }}>
+            {this.state.error && this.state.error.stack ? this.state.error.stack : JSON.stringify(this.state.error)}
+          </pre>
           <button
             onClick={() => window.location.reload()}
             style={{ padding: '10px 24px', background: 'var(--accent-primary)', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer', fontSize: '0.9rem' }}

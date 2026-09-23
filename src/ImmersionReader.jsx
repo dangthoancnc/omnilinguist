@@ -1,5 +1,4 @@
-// v13.1.0 — Stephen Krashen SLA Immersion Reader (Modern Auto-collapse/Hover Sidebar, Robust Chapter Titles, Full TTS Controls)
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   BookOpen, PlusCircle, Search, FileText, CheckCircle, UploadCloud, 
@@ -7,7 +6,7 @@ import {
   Sparkles, Clock, CheckCheck, Award, Headphones, Layers, Flame, BookMarked,
   Sliders, AlertCircle, BookmarkPlus, Zap, Check, Scissors, ChevronLeft, ChevronRight,
   ChevronDown, ChevronUp, Sidebar, X, Pin, PinOff, Play, Pause, Square, Mic,
-  Info, Maximize2, Minimize2
+  Info, Maximize2, Minimize2, Grid, Table as TableIcon
 } from 'lucide-react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
@@ -19,6 +18,8 @@ import { READING_CORPUS, CLASSIC_STORIES } from './data/readingCorpus.js';
 import { corpusDb, initCorpusStorage } from './services/corpusLoaderService.js';
 import { ensureSegmentsHaveTranslation, batchTranslateSentences, getCachedTranslation } from './services/storyTranslationService.js';
 import { getStorySceneArtwork } from './data/mangaArtworks.jsx';
+import { groupStoriesIntoSeries, findSeriesForStory } from './utils/seriesGrouper.js';
+import StoryLibraryModal from './components/StoryLibraryModal.jsx';
 
 const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
 
@@ -126,7 +127,19 @@ const ImmersionReader = () => {
   });
   const currentUtteranceRef = useRef(null);
   const isSpeechCancelledRef = useRef(false);
+  const speechSessionIdRef = useRef(0);
   const lineRefs = useRef([]);
+
+  // Dừng đọc TTS dứt điểm & huỷ toàn bộ tiến trình callback tồn dư
+  const handleStopTTS = useCallback(() => {
+    speechSessionIdRef.current += 1;
+    isSpeechCancelledRef.current = true;
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    setIsPlayingTTS(false);
+    setIsPausedTTS(false);
+    setSpeakingLineIdx(null);
+    currentUtteranceRef.current = null;
+  }, []);
 
   // Tự động cuộn mượt đưa câu đang đọc vào giữa màn hình
   useEffect(() => {
@@ -169,7 +182,7 @@ const ImmersionReader = () => {
     async () => {
       try {
         const count = await corpusDb.stories.count();
-        if (count >= READING_CORPUS.length) {
+        if (count > 0) {
           return await corpusDb.stories.toArray();
         }
       } catch (e) {
@@ -181,8 +194,20 @@ const ImmersionReader = () => {
     null
   );
 
+  // Hợp nhất kho mở rộng từ IndexedDB với kho tác phẩm cốt lõi giàu hình ảnh & phân cảnh
   const activeCorpus = useMemo(() => {
-    return (dbStories && dbStories.length >= READING_CORPUS.length) ? dbStories : READING_CORPUS;
+    if (!dbStories || dbStories.length === 0) return READING_CORPUS;
+    const storyMap = new Map();
+    for (const s of dbStories) {
+      storyMap.set(s.id, s);
+    }
+    for (const s of READING_CORPUS) {
+      storyMap.set(s.id, {
+        ...(storyMap.get(s.id) || {}),
+        ...s
+      });
+    }
+    return Array.from(storyMap.values());
   }, [dbStories]);
 
   const levelCounts = useMemo(() => {
@@ -192,6 +217,11 @@ const ImmersionReader = () => {
       if (counts[lvl] !== undefined) counts[lvl]++;
     });
     return counts;
+  }, [activeCorpus]);
+
+  // Gom nhóm toàn bộ tác phẩm thành Series Bộ Truyện (sắp xếp tăng dần theo tập)
+  const allGroupedSeries = useMemo(() => {
+    return groupStoriesIntoSeries(activeCorpus);
   }, [activeCorpus]);
 
   const filteredStories = useMemo(() => {
@@ -211,10 +241,44 @@ const ImmersionReader = () => {
     });
   }, [activeCorpus, levelFilter, genreFilter, storySearch]);
 
+  // Gom nhóm các tác phẩm đã lọc theo tiêu chí tìm kiếm/cấp độ/thể loại
+  const filteredGroupedSeries = useMemo(() => {
+    const q = storySearch.toLowerCase().trim();
+    return allGroupedSeries.filter(series => {
+      if (levelFilter !== 'ALL' && !series.level?.includes(levelFilter)) return false;
+      if (genreFilter !== 'ALL') {
+        if (genreFilter === 'ehon' && !(series.genre === 'ehon' || series.genreLabel?.includes('Ehon') || series.genreLabel?.includes('Tranh'))) return false;
+        if (genreFilter === 'folktale' && !(series.genre === 'folktale' || series.genreLabel?.includes('Cổ tích') || series.genreLabel?.includes('Dân gian'))) return false;
+        if (genreFilter === 'business' && !(series.genre === 'business' || series.genreLabel?.includes('Công sở') || series.genreLabel?.includes('Thương mại'))) return false;
+        if (genreFilter === 'literature' && !(series.genre === 'literature' || series.genreLabel?.includes('Văn học'))) return false;
+        if (genreFilter === 'news' && !(series.genre === 'news' || series.genreLabel?.includes('Thời sự') || series.genreLabel?.includes('Tin tức'))) return false;
+        if (genreFilter === 'culture' && !(series.genre === 'culture' || series.genreLabel?.includes('Văn hóa'))) return false;
+      }
+      if (q) {
+        const matchTitle = series.title?.toLowerCase().includes(q);
+        const matchAuthor = series.author?.toLowerCase().includes(q);
+        const matchSummary = series.summary?.toLowerCase().includes(q);
+        const matchParts = series.parts.some(p => p.title?.toLowerCase().includes(q));
+        if (!matchTitle && !matchAuthor && !matchSummary && !matchParts) return false;
+      }
+      return true;
+    });
+  }, [allGroupedSeries, levelFilter, genreFilter, storySearch]);
+
+  // State cho Thư Viện Tác Phẩm chuyên sâu (Lưới / Bảng / Thẻ Bộ)
+  const [isLibraryModalOpen, setIsLibraryModalOpen] = useState(false);
+  const [catalogGroupMode, setCatalogGroupMode] = useState('series'); // 'series' | 'flat'
+  const [expandedDrawerSeriesKeys, setExpandedDrawerSeriesKeys] = useState(new Set());
+
   // Mặc định chọn truyện kinh điển đầu tiên để app luôn có dữ liệu chạy ngay lập tức
   const [activeTextId, setActiveTextId] = useState(() => {
     return localStorage.getItem('omni_active_reader_id') || CLASSIC_STORIES[0].id;
   });
+  
+  // Xác định vị trí tập hiện tại và tập tiếp theo/trước đó trong Series
+  const seriesNav = useMemo(() => {
+    return findSeriesForStory(activeTextId, allGroupedSeries);
+  }, [activeTextId, allGroupedSeries]);
   
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState('');
@@ -263,11 +327,23 @@ const ImmersionReader = () => {
     localStorage.setItem('immersion_texts', JSON.stringify(texts));
   }, [texts]);
 
-  // Reset bilingual when text changes
+  // Reset toàn diện trạng thái đọc & ngắt dứt điểm TTS khi đổi sang bài đọc khác
   useEffect(() => {
+    handleStopTTS();
+    setSpeakingLineIdx(null);
+    setFocusedLineIdx(0);
     setBilingualData(null);
     setHasLoggedReading(false);
+    setAudioUrl(null);
+    setSelectedText('');
   }, [activeTextId]);
+
+  // Dọn dẹp triệt để TTS khi unmount ImmersionReader
+  useEffect(() => {
+    return () => {
+      handleStopTTS();
+    };
+  }, []);
 
   const speak = (text) => {
     if (!window.speechSynthesis || !text) return;
@@ -356,15 +432,53 @@ const ImmersionReader = () => {
     return null;
   }, [activeText, chapterIndex]);
 
-  const handleSelectChapter = (idx) => {
+  const handleSelectChapter = (idx, autoPlayAfter = false) => {
+    handleStopTTS();
     setChapterIndex(idx);
     localStorage.setItem(`omni_book_chap_${activeTextId}`, idx.toString());
+    setSpeakingLineIdx(null);
+    setFocusedLineIdx(0);
     setBilingualData(null);
     setAudioUrl(null);
     setHasLoggedReading(false);
-    if (window.speechSynthesis) window.speechSynthesis.cancel();
-    setIsPlayingTTS(false);
-    setIsPausedTTS(false);
+
+    if (autoPlayAfter) {
+      setTimeout(() => {
+        handleGenerateTTS(null, 0);
+      }, 500);
+    }
+  };
+
+  // Chọn tác phẩm từ Thư viện / Kho ngữ liệu hoặc danh sách tự tạo
+  const handleSelectStory = (storyId, chapIdx = null) => {
+    if (storyId === activeTextId) {
+      if (chapIdx !== null && chapIdx !== undefined) {
+        handleSelectChapter(chapIdx);
+      }
+      if (!isCatalogPinned) setIsCatalogDrawerOpen(false);
+      return;
+    }
+    handleStopTTS();
+    setActiveTextId(storyId);
+    setSpeakingLineIdx(null);
+    setFocusedLineIdx(0);
+    setIsEditing(false);
+    setSelectedText('');
+    setAudioUrl(null);
+    setBilingualData(null);
+    setHasLoggedReading(false);
+
+    if (chapIdx !== null && chapIdx !== undefined) {
+      setChapterIndex(chapIdx);
+      localStorage.setItem(`omni_book_chap_${storyId}`, String(chapIdx));
+    } else {
+      const savedChap = localStorage.getItem(`omni_book_chap_${storyId}`);
+      setChapterIndex(savedChap ? parseInt(savedChap, 10) : 0);
+    }
+
+    if (!isCatalogPinned) {
+      setIsCatalogDrawerOpen(false);
+    }
   };
 
   const activeReadingContent = currentChapter ? currentChapter.content : (activeText?.content || '');
@@ -765,15 +879,6 @@ const ImmersionReader = () => {
     localStorage.setItem('omni_tts_voice', ttsVoice);
   }, [ttsEngine, ttsVoice]);
 
-  const handleStopTTS = () => {
-    isSpeechCancelledRef.current = true;
-    if (window.speechSynthesis) window.speechSynthesis.cancel();
-    setIsPlayingTTS(false);
-    setIsPausedTTS(false);
-    setSpeakingLineIdx(null);
-    currentUtteranceRef.current = null;
-  };
-
   const handlePauseResumeTTS = () => {
     if (!window.speechSynthesis) return;
     if (isPausedTTS) {
@@ -791,8 +896,12 @@ const ImmersionReader = () => {
       alert('Trình duyệt của bạn không hỗ trợ Text-to-Speech.');
       return;
     }
-    window.speechSynthesis.cancel();
+
+    // 1. Huỷ triệt để mọi phiên đọc trước đó và kích hoạt session ID mới
+    speechSessionIdRef.current += 1;
+    const currentSessionId = speechSessionIdRef.current;
     isSpeechCancelledRef.current = false;
+    window.speechSynthesis.cancel();
 
     // Lấy danh sách các câu cần đọc đồng bộ 100% với storySentences
     let lines = [];
@@ -805,21 +914,26 @@ const ImmersionReader = () => {
       lines = source.split('\n').map(l => l.trim()).filter(l => l.length > 0);
     }
 
-    if (!lines || lines.length === 0) return;
+    if (!lines || lines.length === 0) {
+      setIsPlayingTTS(false);
+      setIsPausedTTS(false);
+      setSpeakingLineIdx(null);
+      return;
+    }
 
     const voices = window.speechSynthesis.getVoices();
     const jpVoice = voices.find(v => v.lang === 'ja-JP' || v.lang === 'ja_JP');
 
     const speakLineAt = (idx) => {
-      if (isSpeechCancelledRef.current || idx >= lines.length) {
+      // Nếu session ID đã đổi hoặc bị huỷ, tuyệt đối không tiếp tục đọc
+      if (speechSessionIdRef.current !== currentSessionId || isSpeechCancelledRef.current) {
+        return;
+      }
+
+      if (idx >= lines.length) {
         // Tự động lật trang kế tiếp nếu tác phẩm có nhiều trang/chương
         if (!isSpeechCancelledRef.current && activeText?.chapters && chapterIndex < activeText.chapters.length - 1) {
-          handleSelectChapter(chapterIndex + 1);
-          setTimeout(() => {
-            if (!isSpeechCancelledRef.current) {
-              handleGenerateTTS(null, 0);
-            }
-          }, 800);
+          handleSelectChapter(chapterIndex + 1, true);
           return;
         }
 
@@ -852,18 +966,22 @@ const ImmersionReader = () => {
       if (jpVoice) utterance.voice = jpVoice;
 
       utterance.onstart = () => {
+        if (speechSessionIdRef.current !== currentSessionId) return;
         setIsPlayingTTS(true);
         setIsPausedTTS(false);
       };
 
       utterance.onend = () => {
-        if (!isSpeechCancelledRef.current) {
+        if (speechSessionIdRef.current === currentSessionId && !isSpeechCancelledRef.current) {
           speakLineAt(idx + 1);
         }
       };
 
-      utterance.onerror = () => {
-        if (!isSpeechCancelledRef.current) {
+      utterance.onerror = (e) => {
+        if (e?.error === 'canceled' || e?.error === 'interrupted') {
+          return; // Bị huỷ chủ động khi đổi bài hoặc nhảy dòng, ngắt lập tức
+        }
+        if (speechSessionIdRef.current === currentSessionId && !isSpeechCancelledRef.current) {
           speakLineAt(idx + 1);
         }
       };
@@ -880,9 +998,10 @@ const ImmersionReader = () => {
 
   // Người dùng bấm vào một dòng trong truyện để đặt tiêu điểm hoặc bắt đầu TTS từ dòng đó
   const handleLineClick = (idx) => {
-    setFocusedLineIdx(idx);
+    const validIdx = Math.max(0, Math.min(idx, (storySentences.length || 1) - 1));
+    setFocusedLineIdx(validIdx);
     if (isPlayingTTS) {
-      handleGenerateTTS(null, idx);
+      handleGenerateTTS(null, validIdx);
     }
   };
 
@@ -896,7 +1015,7 @@ const ImmersionReader = () => {
   };
 
   const handleNextSentence = () => {
-    const target = Math.min(storySentences.length - 1, activeSentenceIdx + 1);
+    const target = Math.min(Math.max(0, (storySentences.length || 1) - 1), activeSentenceIdx + 1);
     setFocusedLineIdx(target);
     if (isPlayingTTS) {
       handleGenerateTTS(null, target);
@@ -1149,8 +1268,36 @@ const ImmersionReader = () => {
       </div>
 
       <div style={{ padding: '0 10px 14px', display: 'flex', flexDirection: 'column', gap: 8, flex: 1, overflowY: 'auto' }}>
+        {/* Nút Mở Thư Viện Chuyên Sâu Toàn Màn Hình */}
+        <button
+          onClick={() => {
+            setIsLibraryModalOpen(true);
+            if (!isCatalogPinned) setIsCatalogDrawerOpen(false);
+          }}
+          style={{
+            width: '100%',
+            padding: '8px 12px',
+            marginTop: 8,
+            borderRadius: 8,
+            fontSize: '0.78rem',
+            fontWeight: 800,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 6,
+            background: 'linear-gradient(135deg, rgba(59,130,246,0.18) 0%, rgba(139,92,246,0.18) 100%)',
+            border: '1.5px solid var(--accent-primary)',
+            color: 'var(--accent-primary)',
+            cursor: 'pointer',
+            boxShadow: '0 2px 8px rgba(59,130,246,0.15)',
+            transition: 'all 0.15s'
+          }}
+        >
+          <Grid size={15} /> Mở Thư Viện Chuyên Sâu (Lưới / Bảng)
+        </button>
+
         {/* Instant Search Bar */}
-        <div style={{ marginTop: 8, position: 'relative' }}>
+        <div style={{ position: 'relative' }}>
           <Search size={13} style={{ position: 'absolute', left: 9, top: '50%', transform: 'translateY(-50%)', color: 'var(--text-tertiary)' }} />
           <input
             type="text"
@@ -1312,83 +1459,253 @@ const ImmersionReader = () => {
                 </button>
               ))}
             </div>
+
+            {/* Group Mode Toggle: Gom theo Bộ vs Từng tập */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '4px 2px 2px' }}>
+              <div style={{ fontSize: '0.7rem', fontWeight: 800, color: 'var(--text-tertiary)', textTransform: 'uppercase' }}>
+                {catalogGroupMode === 'series' 
+                  ? `Bộ Truyện (${filteredGroupedSeries.length})` 
+                  : `Tất cả tập (${filteredStories.length})`}
+              </div>
+              <div style={{ display: 'flex', gap: 2, background: 'var(--bg-hover)', padding: 2, borderRadius: 6, border: '1px solid var(--glass-border)' }}>
+                <button
+                  onClick={() => setCatalogGroupMode('series')}
+                  style={{
+                    padding: '2px 8px',
+                    fontSize: '0.68rem',
+                    fontWeight: catalogGroupMode === 'series' ? 800 : 500,
+                    borderRadius: 4,
+                    border: 'none',
+                    cursor: 'pointer',
+                    background: catalogGroupMode === 'series' ? 'var(--accent-primary)' : 'transparent',
+                    color: catalogGroupMode === 'series' ? '#fff' : 'var(--text-secondary)'
+                  }}
+                  title="Gom các phần thành từng Bộ truyện gọn gàng"
+                >
+                  Gom Bộ
+                </button>
+                <button
+                  onClick={() => setCatalogGroupMode('flat')}
+                  style={{
+                    padding: '2px 8px',
+                    fontSize: '0.68rem',
+                    fontWeight: catalogGroupMode === 'flat' ? 800 : 500,
+                    borderRadius: 4,
+                    border: 'none',
+                    cursor: 'pointer',
+                    background: catalogGroupMode === 'flat' ? 'var(--accent-primary)' : 'transparent',
+                    color: catalogGroupMode === 'flat' ? '#fff' : 'var(--text-secondary)'
+                  }}
+                  title="Hiển thị danh sách phẳng từng tập"
+                >
+                  Từng tập
+                </button>
+              </div>
+            </div>
           </div>
         )}
 
         {/* TAB 1: KHO TÁC PHẨM KINH ĐIỂN */}
         {leftTab === 'classics' && (
           <>
-            <div style={{ padding: '3px 4px', fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: 0.5, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span>Thư viện tác phẩm</span>
-              <span style={{ fontSize: '0.7rem', color: 'var(--accent-primary)', fontWeight: 600 }}>{filteredStories.length} / {activeCorpus.length} tác phẩm</span>
-            </div>
+            {catalogGroupMode === 'series' ? (
+              /* Gom nhóm theo Bộ truyện */
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {filteredGroupedSeries.slice(0, 100).map(series => {
+                  const isExpanded = expandedDrawerSeriesKeys.has(series.seriesKey);
+                  const hasActivePart = series.parts.some(p => p.id === activeTextId);
+                  const lvlColor = LEVEL_COLORS[series.level?.slice(0, 2)] || '#3b82f6';
 
-            {filteredStories.slice(0, 100).map(story => {
-              const parsed = parseStoryTitle(story.title);
-              const isActive = activeTextId === story.id && !isEditing;
-              const lvlColor = LEVEL_COLORS[story.level.slice(0, 2)] || '#3b82f6';
-              return (
-                <div 
-                  key={story.id} 
-                  onClick={() => {
-                    setActiveTextId(story.id);
-                    setIsEditing(false);
-                    setSelectedText('');
-                    setAudioUrl(null);
-                    if (!isCatalogPinned) {
-                      setIsCatalogDrawerOpen(false);
-                    }
-                  }}
-                  style={{ 
-                    padding: '8px 10px', 
-                    borderRadius: 8, 
-                    cursor: 'pointer', 
-                    background: isActive ? 'var(--accent-subtle)' : 'var(--bg-surface)', 
-                    borderLeft: `3px solid ${isActive ? 'var(--accent-primary)' : 'transparent'}`,
-                    border: isActive ? '1px solid var(--accent-primary)' : '1px solid var(--glass-border)',
-                    transition: 'all 0.15s',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 4
-                  }}
-                >
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                    <div style={{ 
-                      fontSize: '0.88rem', 
-                      fontWeight: 600, 
-                      color: isActive ? 'var(--accent-primary)' : 'var(--text-primary)', 
-                      lineHeight: 1.35,
-                      wordBreak: 'break-word'
-                    }}>
-                      {parsed.main}
-                    </div>
-                    {parsed.sub && (
-                      <div style={{ 
-                        fontSize: '0.74rem', 
-                        color: 'var(--text-secondary)', 
-                        lineHeight: 1.3,
-                        wordBreak: 'break-word'
-                      }}>
-                        {parsed.sub}
+                  return (
+                    <div
+                      key={series.seriesKey}
+                      style={{
+                        borderRadius: 8,
+                        background: hasActivePart ? 'var(--accent-subtle)' : 'var(--bg-surface)',
+                        border: `1.5px solid ${hasActivePart ? 'var(--accent-primary)' : 'var(--glass-border)'}`,
+                        overflow: 'hidden',
+                        transition: 'all 0.15s'
+                      }}
+                    >
+                      {/* Series Header Bar */}
+                      <div
+                        onClick={() => {
+                          if (series.totalParts > 1) {
+                            setExpandedDrawerSeriesKeys(prev => {
+                              const next = new Set(prev);
+                              if (next.has(series.seriesKey)) next.delete(series.seriesKey);
+                              else next.add(series.seriesKey);
+                              return next;
+                            });
+                          } else {
+                            handleSelectStory(series.parts[0].id);
+                          }
+                        }}
+                        style={{
+                          padding: '8px 10px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          cursor: 'pointer',
+                          gap: 8
+                        }}
+                      >
+                        <div style={{ minWidth: 0, flex: 1 }}>
+                          <div style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-primary)', wordBreak: 'break-word', lineHeight: 1.3 }}>
+                            {series.parsedTitle?.main || series.title}
+                          </div>
+                          {series.parsedTitle?.sub && (
+                            <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)', wordBreak: 'break-word', marginTop: 1 }}>
+                              {series.parsedTitle.sub}
+                            </div>
+                          )}
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.68rem', color: 'var(--text-tertiary)', marginTop: 4, flexWrap: 'wrap' }}>
+                            <span style={{ color: lvlColor, fontWeight: 800 }}>{series.level}</span>
+                            {series.genreLabel && <span>{series.genreLabel.split(' ')[0]}</span>}
+                            <span>⏱️ {series.readingTime}</span>
+                          </div>
+                        </div>
+
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
+                          {series.totalParts > 1 ? (
+                            <>
+                              <span style={{
+                                fontSize: '0.68rem',
+                                fontWeight: 800,
+                                padding: '2px 6px',
+                                borderRadius: 5,
+                                background: 'rgba(59,130,246,0.15)',
+                                color: 'var(--accent-primary)'
+                              }}>
+                                {series.totalParts} tập
+                              </span>
+                              {isExpanded ? <ChevronDown size={15} color="var(--text-tertiary)" /> : <ChevronRight size={15} color="var(--text-tertiary)" />}
+                            </>
+                          ) : (
+                            <ChevronRight size={14} color="var(--text-tertiary)" />
+                          )}
+                        </div>
                       </div>
-                    )}
-                  </div>
-                  
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.7rem', color: 'var(--text-tertiary)', flexWrap: 'wrap' }}>
-                    <span style={{ color: lvlColor, fontWeight: 700 }}>{story.level}</span>
-                    {story.genreLabel && <span style={{ color: 'var(--accent-primary)' }}>{story.genreLabel.split(' ')[0]}</span>}
-                    {story.author && <span style={{ color: 'var(--text-secondary)' }}>✍️ {story.author}</span>}
-                    <span>⏱️ {story.readingTime}</span>
-                  </div>
+
+                      {/* Expanded Episodes list in Drawer */}
+                      {isExpanded && series.totalParts > 1 && (
+                        <div style={{ padding: '4px 8px 8px', background: 'var(--bg-card)', borderTop: '1px solid var(--glass-border)', display: 'flex', flexDirection: 'column', gap: 4 }}>
+                          {series.parts.map((part, idx) => {
+                            const isCurrent = part.id === activeTextId;
+                            return (
+                              <div
+                                key={part.id || idx}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  if (part.isChapterOfBook) {
+                                    handleSelectStory(part.bookId, part.chapterIndex);
+                                  } else {
+                                    handleSelectStory(part.id);
+                                  }
+                                }}
+                                style={{
+                                  padding: '6px 8px',
+                                  borderRadius: 6,
+                                  background: isCurrent ? 'var(--accent-primary)' : 'var(--bg-surface)',
+                                  color: isCurrent ? '#fff' : 'var(--text-primary)',
+                                  fontSize: '0.78rem',
+                                  cursor: 'pointer',
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'space-between',
+                                  gap: 6,
+                                  border: `1px solid ${isCurrent ? 'transparent' : 'var(--glass-border)'}`
+                                }}
+                              >
+                                <div style={{ display: 'flex', alignItems: 'center', gap: 6, minWidth: 0 }}>
+                                  <span style={{ fontWeight: 800, fontSize: '0.72rem', opacity: 0.8 }}>
+                                    Tập {part.partNumber || idx + 1}
+                                  </span>
+                                  <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', fontSize: '0.76rem' }}>
+                                    {part.title}
+                                  </span>
+                                </div>
+                                <span style={{ fontSize: '0.68rem', opacity: 0.8, flexShrink: 0 }}>
+                                  {part.readingTime || '2p'}
+                                </span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              /* Danh sách phẳng từng tập */
+              <>
+                <div style={{ padding: '3px 4px', fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: 0.5, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span>Tất cả các tập</span>
+                  <span style={{ fontSize: '0.7rem', color: 'var(--accent-primary)', fontWeight: 600 }}>{filteredStories.length} / {activeCorpus.length} tập</span>
                 </div>
-              );
-            })}
-            {filteredStories.length > 100 && (
+
+                {filteredStories.slice(0, 100).map(story => {
+                  const parsed = parseStoryTitle(story.title);
+                  const isActive = activeTextId === story.id && !isEditing;
+                  const lvlColor = LEVEL_COLORS[story.level?.slice(0, 2)] || '#3b82f6';
+                  return (
+                    <div 
+                      key={story.id} 
+                      onClick={() => handleSelectStory(story.id)}
+                      style={{ 
+                        padding: '8px 10px', 
+                        borderRadius: 8, 
+                        cursor: 'pointer', 
+                        background: isActive ? 'var(--accent-subtle)' : 'var(--bg-surface)', 
+                        borderLeft: `3px solid ${isActive ? 'var(--accent-primary)' : 'transparent'}`,
+                        border: isActive ? '1px solid var(--accent-primary)' : '1px solid var(--glass-border)',
+                        transition: 'all 0.15s',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 4
+                      }}
+                    >
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                        <div style={{ 
+                          fontSize: '0.88rem', 
+                          fontWeight: 600, 
+                          color: isActive ? 'var(--accent-primary)' : 'var(--text-primary)', 
+                          lineHeight: 1.35,
+                          wordBreak: 'break-word'
+                        }}>
+                          {parsed.main}
+                        </div>
+                        {parsed.sub && (
+                          <div style={{ 
+                            fontSize: '0.74rem', 
+                            color: 'var(--text-secondary)', 
+                            lineHeight: 1.3,
+                            wordBreak: 'break-word'
+                          }}>
+                            {parsed.sub}
+                          </div>
+                        )}
+                      </div>
+                      
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.7rem', color: 'var(--text-tertiary)', flexWrap: 'wrap' }}>
+                        <span style={{ color: lvlColor, fontWeight: 700 }}>{story.level}</span>
+                        {story.genreLabel && <span style={{ color: 'var(--accent-primary)' }}>{story.genreLabel.split(' ')[0]}</span>}
+                        {story.author && <span style={{ color: 'var(--text-secondary)' }}>✍️ {story.author}</span>}
+                        <span>⏱️ {story.readingTime}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </>
+            )}
+
+            {(catalogGroupMode === 'series' ? filteredGroupedSeries.length : filteredStories.length) > 100 && (
               <div style={{ padding: '10px 8px', textAlign: 'center', fontSize: '0.72rem', color: 'var(--text-tertiary)', background: 'var(--bg-hover)', borderRadius: 6 }}>
-                Đang hiển thị 100 / {filteredStories.length} tác phẩm. Vui lòng nhập từ khóa hoặc chọn cấp độ N5–N1 để lọc nhanh.
+                Đang hiển thị 100 tác phẩm đầu tiên. Hãy nhấn <strong>"Mở Thư Viện Chuyên Sâu"</strong> ở trên để duyệt toàn bộ kho tác phẩm dạng Lưới & Bảng.
               </div>
             )}
-            {filteredStories.length === 0 && (
+            {(catalogGroupMode === 'series' ? filteredGroupedSeries.length : filteredStories.length) === 0 && (
               <div style={{ padding: 20, textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.8rem' }}>
                 Không tìm thấy tác phẩm nào phù hợp với bộ lọc hiện tại.
               </div>
@@ -1408,15 +1725,7 @@ const ImmersionReader = () => {
               return (
                 <div 
                   key={t.id} 
-                  onClick={() => {
-                    setActiveTextId(t.id);
-                    setIsEditing(false);
-                    setSelectedText('');
-                    setAudioUrl(null);
-                    if (!isCatalogPinned) {
-                      setIsCatalogDrawerOpen(false);
-                    }
-                  }}
+                  onClick={() => handleSelectStory(t.id)}
                   style={{ 
                     padding: '8px 10px', 
                     borderRadius: 8, 
@@ -2366,10 +2675,30 @@ const ImmersionReader = () => {
                       setRightDrawerTab('catalog');
                     }
                   }} 
-                  title="Mở Danh Mục Kho Tác Phẩm (294 tác phẩm)"
+                  title="Mở Danh Mục Kho Tác Phẩm"
                   style={{ padding: '3px 8px', fontSize: '0.74rem', display: 'flex', alignItems: 'center', gap: 4, fontWeight: 600 }}
                 >
                   <BookOpen size={13} /> Kho ({activeCorpus.length})
+                </button>
+
+                {/* Nút Mở Thư Viện Chuyên Sâu (Lưới bìa thẻ, Bảng dữ liệu, Lọc Bộ truyện) */}
+                <button
+                  className="btn btn-outline"
+                  onClick={() => setIsLibraryModalOpen(true)}
+                  title="Mở Thư Viện Chuyên Sâu (Lưới bìa thẻ, Bảng dữ liệu, Lọc theo Series)"
+                  style={{
+                    padding: '3px 9px',
+                    fontSize: '0.74rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 5,
+                    fontWeight: 600,
+                    background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(168, 85, 247, 0.12))',
+                    border: '1px solid rgba(99, 102, 241, 0.35)',
+                    color: 'var(--accent-primary)'
+                  }}
+                >
+                  <Grid size={13} /> Thư Viện ({allGroupedSeries.length})
                 </button>
 
                 {activeText.level && (
@@ -2385,7 +2714,7 @@ const ImmersionReader = () => {
                   </span>
                 )}
 
-                {/* Chapter Selector & Title */}
+                {/* Chapter Selector & Title OR Series Episode Selector */}
                 {activeText?.chapters && activeText.chapters.length > 0 ? (
                   <div style={{ display: 'flex', alignItems: 'center', gap: 3, background: 'var(--bg-surface)', padding: '2px 6px', borderRadius: 6, border: '1px solid var(--glass-border-strong)' }}>
                     <button
@@ -2443,6 +2772,72 @@ const ImmersionReader = () => {
                         color: 'var(--text-primary)',
                         cursor: chapterIndex === activeText.chapters.length - 1 ? 'not-allowed' : 'pointer',
                         opacity: chapterIndex === activeText.chapters.length - 1 ? 0.3 : 1,
+                        padding: '2px 3px',
+                        display: 'flex',
+                        alignItems: 'center'
+                      }}
+                    >
+                      <ChevronRight size={14} />
+                    </button>
+                  </div>
+                ) : seriesNav && seriesNav.isSeries ? (
+                  /* Bộ truyện nhiều tập: Điều hướng Prev/Next tập & dropdown chọn tập nhanh */
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 3, background: 'var(--bg-surface)', padding: '2px 6px', borderRadius: 6, border: '1px solid var(--glass-border-strong)' }}>
+                    <button
+                      type="button"
+                      onClick={() => seriesNav.prevPart && handleSelectStory(seriesNav.prevPart.id)}
+                      disabled={!seriesNav.prevPart}
+                      title={seriesNav.prevPart ? `Tập trước: ${seriesNav.prevPart.title}` : 'Đang ở tập đầu'}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        color: 'var(--text-primary)',
+                        cursor: !seriesNav.prevPart ? 'not-allowed' : 'pointer',
+                        opacity: !seriesNav.prevPart ? 0.3 : 1,
+                        padding: '2px 3px',
+                        display: 'flex',
+                        alignItems: 'center'
+                      }}
+                    >
+                      <ChevronLeft size={14} />
+                    </button>
+
+                    <select
+                      value={activeTextId}
+                      onChange={e => handleSelectStory(e.target.value)}
+                      style={{
+                        background: 'transparent',
+                        color: 'var(--text-primary)',
+                        border: 'none',
+                        fontSize: '0.8rem',
+                        fontWeight: 700,
+                        outline: 'none',
+                        cursor: 'pointer',
+                        maxWidth: 240
+                      }}
+                    >
+                      {seriesNav.series.parts.map((p, idx) => {
+                        const parsed = parseStoryTitle(p.title);
+                        const label = parsed.sub ? `${parsed.main} (${parsed.sub})` : parsed.main;
+                        return (
+                          <option key={p.id || idx} value={p.id}>
+                            {`[Tập ${p.partNumber || idx + 1}/${seriesNav.totalParts}] ${label}`}
+                          </option>
+                        );
+                      })}
+                    </select>
+
+                    <button
+                      type="button"
+                      onClick={() => seriesNav.nextPart && handleSelectStory(seriesNav.nextPart.id)}
+                      disabled={!seriesNav.nextPart}
+                      title={seriesNav.nextPart ? `Tập sau: ${seriesNav.nextPart.title}` : 'Đang ở tập cuối'}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        color: 'var(--text-primary)',
+                        cursor: !seriesNav.nextPart ? 'not-allowed' : 'pointer',
+                        opacity: !seriesNav.nextPart ? 0.3 : 1,
                         padding: '2px 3px',
                         display: 'flex',
                         alignItems: 'center'
@@ -3331,6 +3726,7 @@ const ImmersionReader = () => {
                 isPlayingTTS={isPlayingTTS}
                 onStopTTS={handleStopTTS}
                 ttsSpeed={ttsSpeed}
+                activeSentenceIdx={activeSentenceIdx}
               />
             ) : (
               <div className="immersion-dual-container">
@@ -3600,6 +3996,127 @@ const ImmersionReader = () => {
                         </div>
                       );
                     })}
+
+                    {/* Hộp điều hướng cuối bài: Chuyển Tập tiếp theo trong Bộ truyện */}
+                    {seriesNav && seriesNav.isSeries && (
+                      <div style={{
+                        marginTop: 28,
+                        marginBottom: 16,
+                        padding: '16px 20px',
+                        background: 'var(--bg-surface)',
+                        borderRadius: 12,
+                        border: '1px solid var(--glass-border-strong)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 12,
+                        textAlign: 'center',
+                        boxShadow: '0 4px 16px rgba(0,0,0,0.06)'
+                      }}>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, color: 'var(--accent-primary)', fontWeight: 700, fontSize: '0.88rem' }}>
+                          <CheckCircle size={18} />
+                          <span>Bạn đã xem hết Tập {seriesNav.partNumber} / {seriesNav.totalParts} của bộ truyện này!</span>
+                        </div>
+                        
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, flexWrap: 'wrap' }}>
+                          {seriesNav.prevPart && (
+                            <button
+                              type="button"
+                              className="btn btn-outline"
+                              onClick={() => {
+                                handleSelectStory(seriesNav.prevPart.id);
+                                if (contentRef.current) contentRef.current.scrollTop = 0;
+                              }}
+                              style={{ fontSize: '0.78rem', padding: '6px 14px' }}
+                            >
+                              <ChevronLeft size={14} /> Tập {seriesNav.prevPart.partNumber || seriesNav.partIndex}
+                            </button>
+                          )}
+                          
+                          {seriesNav.nextPart ? (
+                            <button
+                              type="button"
+                              className="btn btn-primary"
+                              onClick={() => {
+                                handleSelectStory(seriesNav.nextPart.id);
+                                if (contentRef.current) contentRef.current.scrollTop = 0;
+                              }}
+                              style={{ fontSize: '0.84rem', padding: '7px 20px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}
+                            >
+                              <span>Tiếp tục đọc Tập {seriesNav.nextPart.partNumber || seriesNav.partIndex + 2}</span>
+                              <ChevronRight size={15} />
+                            </button>
+                          ) : (
+                            <span style={{ fontSize: '0.82rem', color: 'var(--text-tertiary)', fontStyle: 'italic' }}>
+                              🎉 Bạn đã hoàn thành trọn bộ tất cả các tập!
+                            </span>
+                          )}
+
+                          <button
+                            type="button"
+                            className="btn btn-outline"
+                            onClick={() => setIsLibraryModalOpen(true)}
+                            style={{ fontSize: '0.78rem', padding: '6px 12px' }}
+                          >
+                            <Grid size={13} /> Thư viện bộ truyện
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Hộp điều hướng cuối bài: Chuyển Chương cho sách nhiều chương */}
+                    {activeText.chapters && activeText.chapters.length > 1 && (
+                      <div style={{
+                        marginTop: 28,
+                        marginBottom: 16,
+                        padding: '16px 20px',
+                        background: 'var(--bg-surface)',
+                        borderRadius: 12,
+                        border: '1px solid var(--glass-border-strong)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 12,
+                        textAlign: 'center',
+                        boxShadow: '0 4px 16px rgba(0,0,0,0.06)'
+                      }}>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, color: 'var(--accent-primary)', fontWeight: 700, fontSize: '0.88rem' }}>
+                          <CheckCircle size={18} />
+                          <span>Bạn đã đọc xong Chương {chapterIndex + 1} / {activeText.chapters.length}!</span>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, flexWrap: 'wrap' }}>
+                          {chapterIndex > 0 && (
+                            <button
+                              type="button"
+                              className="btn btn-outline"
+                              onClick={() => {
+                                handleSelectChapter(chapterIndex - 1);
+                                if (contentRef.current) contentRef.current.scrollTop = 0;
+                              }}
+                              style={{ fontSize: '0.78rem', padding: '6px 14px' }}
+                            >
+                              <ChevronLeft size={14} /> Chương {chapterIndex}
+                            </button>
+                          )}
+                          {chapterIndex < activeText.chapters.length - 1 ? (
+                            <button
+                              type="button"
+                              className="btn btn-primary"
+                              onClick={() => {
+                                handleSelectChapter(chapterIndex + 1);
+                                if (contentRef.current) contentRef.current.scrollTop = 0;
+                              }}
+                              style={{ fontSize: '0.84rem', padding: '7px 20px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}
+                            >
+                              <span>Đọc tiếp Chương {chapterIndex + 2}</span>
+                              <ChevronRight size={15} />
+                            </button>
+                          ) : (
+                            <span style={{ fontSize: '0.82rem', color: 'var(--text-tertiary)', fontStyle: 'italic' }}>
+                              🎉 Bạn đã đọc xong tất cả các chương của tác phẩm này!
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -3801,6 +4318,18 @@ const ImmersionReader = () => {
           <CheckCircle size={18}/> Đã thêm vào Flashcards!
         </div>
       )}
+
+      {/* Thư Viện Tác Phẩm Chuyên Sâu Modal (Lưới bìa thẻ / Bảng dữ liệu / Gom nhóm Series) */}
+      <StoryLibraryModal
+        isOpen={isLibraryModalOpen}
+        onClose={() => setIsLibraryModalOpen(false)}
+        stories={activeCorpus}
+        activeStoryId={activeTextId}
+        onSelectStory={(storyId, chapIdx) => {
+          handleSelectStory(storyId, chapIdx);
+          setIsLibraryModalOpen(false);
+        }}
+      />
     </div>
   );
 };

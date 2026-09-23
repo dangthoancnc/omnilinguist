@@ -24,27 +24,30 @@ export const initCorpusStorage = async () => {
   isSyncing = true;
 
   try {
-    const currentCount = await corpusDb.stories.count();
+    const coreSyncMeta = await corpusDb.metadata.get('core_sync_v3');
 
-    // Bước A: Nạp kho cơ sở 294 tác phẩm cốt lõi nếu chưa có
-    if (currentCount < READING_CORPUS.length) {
+    // Bước A: Nạp kho cơ sở tác phẩm cốt lõi với đầy đủ tranh ảnh & metadata
+    if (!coreSyncMeta || coreSyncMeta.count !== READING_CORPUS.length) {
       console.log(`⚡ [CorpusLoader] Đang đồng bộ ${READING_CORPUS.length} tác phẩm cốt lõi vào IndexedDB...`);
       await corpusDb.transaction('rw', corpusDb.stories, corpusDb.metadata, async () => {
         const bulkData = READING_CORPUS.map(story => ({
-          id: story.id,
-          title: story.title,
+          ...story,
           author: story.author || 'Dân gian Nhật Bản',
           level: story.level || 'N5',
           genre: story.genre || 'folktale',
-          genreLabel: story.genreLabel || '🏛️ Cổ tích & Ngụ ngôn',
+          genreLabel: story.genreLabel || (story.genre === 'ehon' ? '🎨 Sách Tranh Ehon' : '🏛️ Cổ tích & Ngụ ngôn'),
           summary: story.summary || '',
           content: story.content || '',
           chapters: story.chapters || null,
           isMultiChapter: !!story.isMultiChapter,
-          wordCount: story.content ? story.content.length : 0
+          isPictureBook: !!story.isPictureBook,
+          coverArtwork: story.coverArtwork || story.imageUrl || null,
+          imageUrl: story.imageUrl || story.coverArtwork || null,
+          readingTime: story.readingTime || '3 phút',
+          wordCount: story.content ? story.content.length : (story.chapters ? story.chapters.reduce((acc, c) => acc + (c.content?.length || 0), 0) : 0)
         }));
         await corpusDb.stories.bulkPut(bulkData);
-        await corpusDb.metadata.put({ key: 'core_sync', value: Date.now(), count: bulkData.length });
+        await corpusDb.metadata.put({ key: 'core_sync_v3', value: Date.now(), count: bulkData.length });
       });
       console.log('✅ [CorpusLoader] Đã đồng bộ kho tác phẩm cốt lõi vào IndexedDB!');
     }
