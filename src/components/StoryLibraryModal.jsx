@@ -40,6 +40,7 @@ export const StoryLibraryModal = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [levelFilter, setLevelFilter] = useState('ALL');
   const [genreFilter, setGenreFilter] = useState('ALL');
+  const [ehonAgeFilter, setEhonAgeFilter] = useState('ALL'); // 'ALL' | 'ehon_nensho' | 'ehon_nenchu' | 'ehon_nencho'
   const [formatFilter, setFormatFilter] = useState('ALL'); // 'ALL' | 'series' | 'single'
   const [sortBy, setSortBy] = useState('parts_desc'); // 'parts_desc' | 'level_asc' | 'level_desc' | 'title_asc'
   
@@ -85,6 +86,21 @@ export const StoryLibraryModal = ({
     return counts;
   }, [allSeries]);
 
+  // Dynamic counts for Ehon age brackets
+  const ehonAgeCounts = useMemo(() => {
+    const counts = { ALL: 0, ehon_nensho: 0, ehon_nenchu: 0, ehon_nencho: 0 };
+    allSeries.forEach(s => {
+      const isEhon = s.genre === 'ehon' || s.subGenre?.startsWith('ehon_') || s.genreLabel?.includes('Ehon') || s.genreLabel?.includes('Tranh');
+      if (isEhon) {
+        counts.ALL++;
+        if (s.subGenre === 'ehon_nensho') counts.ehon_nensho++;
+        else if (s.subGenre === 'ehon_nenchu') counts.ehon_nenchu++;
+        else if (s.subGenre === 'ehon_nencho') counts.ehon_nencho++;
+      }
+    });
+    return counts;
+  }, [allSeries]);
+
   // Filter and sort series
   const filteredSeries = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
@@ -101,23 +117,20 @@ export const StoryLibraryModal = ({
 
       // Genre filter
       if (genreFilter !== 'ALL') {
-        if (genreFilter === 'ehon' && !(series.genre === 'ehon' || series.genreLabel?.includes('Ehon') || series.genreLabel?.includes('Tranh'))) {
-          return false;
-        }
-        if (genreFilter === 'folktale' && !(series.genre === 'folktale' || series.genreLabel?.includes('Cổ tích') || series.genreLabel?.includes('Dân gian'))) {
-          return false;
-        }
-        if (genreFilter === 'business' && !(series.genre === 'business' || series.genreLabel?.includes('Công sở') || series.genreLabel?.includes('Thương mại'))) {
-          return false;
-        }
-        if (genreFilter === 'literature' && !(series.genre === 'literature' || series.genreLabel?.includes('Văn học'))) {
-          return false;
-        }
-        if (genreFilter === 'news' && !(series.genre === 'news' || series.genreLabel?.includes('Thời sự') || series.genreLabel?.includes('Tin tức'))) {
-          return false;
-        }
-        if (genreFilter === 'culture' && !(series.genre === 'culture' || series.genreLabel?.includes('Văn hóa'))) {
-          return false;
+        if (genreFilter === 'ehon') {
+          const isEhon = series.genre === 'ehon' || series.subGenre?.startsWith('ehon_') || series.genreLabel?.includes('Ehon') || series.genreLabel?.includes('Tranh');
+          if (!isEhon) return false;
+          if (ehonAgeFilter !== 'ALL' && series.subGenre !== ehonAgeFilter) return false;
+        } else if (genreFilter === 'folktale') {
+          if (!(series.genre === 'folktale' || series.genreLabel?.includes('Cổ tích') || series.genreLabel?.includes('Dân gian'))) return false;
+        } else if (genreFilter === 'business') {
+          if (!(series.genre === 'business' || series.genreLabel?.includes('Công sở') || series.genreLabel?.includes('Thương mại'))) return false;
+        } else if (genreFilter === 'literature') {
+          if (!(series.genre === 'literature' || series.genreLabel?.includes('Văn học'))) return false;
+        } else if (genreFilter === 'news') {
+          if (!(series.genre === 'news' || series.genreLabel?.includes('Thời sự') || series.genreLabel?.includes('Tin tức'))) return false;
+        } else if (genreFilter === 'culture') {
+          if (!(series.genre === 'culture' || series.genreLabel?.includes('Văn hóa'))) return false;
         }
       }
 
@@ -148,7 +161,7 @@ export const StoryLibraryModal = ({
       }
       return 0;
     });
-  }, [allSeries, searchQuery, levelFilter, genreFilter, formatFilter, sortBy]);
+  }, [allSeries, searchQuery, levelFilter, genreFilter, ehonAgeFilter, formatFilter, sortBy]);
 
   if (!isOpen) return null;
 
@@ -529,6 +542,55 @@ export const StoryLibraryModal = ({
               })}
             </div>
           </div>
+
+          {/* Ehon Age Brackets Sub-Filter Bar */}
+          {genreFilter === 'ehon' && (
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 6,
+              padding: '8px 12px',
+              background: 'linear-gradient(135deg, rgba(236,72,153,0.1) 0%, rgba(139,92,246,0.06) 100%)',
+              borderRadius: 10,
+              border: '1px solid rgba(236,72,153,0.25)',
+              marginTop: 10,
+              overflowX: 'auto',
+              scrollbarWidth: 'none'
+            }}>
+              <span style={{ fontSize: '0.74rem', fontWeight: 800, color: '#ec4899', display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0 }}>
+                🎨 Phân Cấp Mầm Non (SLA):
+              </span>
+              {[
+                { id: 'ALL', label: `Tất cả Ehon (${ehonAgeCounts.ALL})` },
+                { id: 'ehon_nensho', label: `🐣 3–4 tuổi (年少: ${ehonAgeCounts.ehon_nensho})` },
+                { id: 'ehon_nenchu', label: `👦 4–5 tuổi (年中: ${ehonAgeCounts.ehon_nenchu})` },
+                { id: 'ehon_nencho', label: `🎒 5–6 tuổi (年長: ${ehonAgeCounts.ehon_nencho})` }
+              ].map(tab => {
+                const isSel = ehonAgeFilter === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setEhonAgeFilter(tab.id)}
+                    style={{
+                      padding: '4px 11px',
+                      borderRadius: 7,
+                      fontSize: '0.72rem',
+                      fontWeight: isSel ? 800 : 500,
+                      cursor: 'pointer',
+                      border: isSel ? '1px solid #ec4899' : '1px solid transparent',
+                      background: isSel ? '#ec4899' : 'rgba(255,255,255,0.08)',
+                      color: isSel ? '#ffffff' : 'var(--text-secondary)',
+                      whiteSpace: 'nowrap',
+                      flexShrink: 0,
+                      transition: 'all 0.15s'
+                    }}
+                  >
+                    {tab.label}
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* ═══════════════════════════════════════════════════════════════ */}
@@ -659,8 +721,23 @@ export const StoryLibraryModal = ({
                           {series.level || 'N5'}
                         </span>
 
-                        <div style={{ display: 'flex', gap: 6 }}>
-                          {isEhon && (
+                        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                          {series.ageGroup && (
+                            <span style={{
+                              fontSize: '0.68rem',
+                              fontWeight: 800,
+                              padding: '3px 7px',
+                              borderRadius: 6,
+                              background: '#8b5cf6',
+                              color: '#fff',
+                              boxShadow: '0 2px 6px rgba(0,0,0,0.4)',
+                              whiteSpace: 'nowrap'
+                            }}>
+                              👶 {series.ageGroup}
+                            </span>
+                          )}
+
+                          {isEhon && !series.ageGroup && (
                             <span style={{
                               fontSize: '0.7rem',
                               fontWeight: 800,
@@ -680,14 +757,14 @@ export const StoryLibraryModal = ({
                               fontWeight: 800,
                               padding: '3px 8px',
                               borderRadius: 6,
-                              background: 'rgba(37,99,235,0.92)',
+                              background: isEhon ? 'rgba(16,185,129,0.92)' : 'rgba(37,99,235,0.92)',
                               color: '#fff',
                               boxShadow: '0 2px 6px rgba(0,0,0,0.4)',
                               display: 'flex',
                               alignItems: 'center',
                               gap: 4
                             }}>
-                              <Layers size={11} /> {series.totalParts} tập
+                              <Layers size={11} /> {series.totalParts} {isEhon ? 'trang' : 'tập'}
                             </span>
                           ) : (
                             <span style={{
@@ -924,14 +1001,14 @@ export const StoryLibraryModal = ({
                               fontWeight: 800,
                               padding: '2px 8px',
                               borderRadius: 6,
-                              background: 'rgba(59,130,246,0.15)',
-                              color: 'var(--accent-primary)',
+                              background: isEhon ? 'rgba(16,185,129,0.15)' : 'rgba(59,130,246,0.15)',
+                              color: isEhon ? '#10b981' : 'var(--accent-primary)',
                               whiteSpace: 'nowrap'
                             }}>
-                              Bộ {series.totalParts} tập
+                              {isEhon ? `${series.totalParts} trang` : `Bộ ${series.totalParts} tập`}
                             </span>
                           ) : (
-                            <span style={{ fontSize: '0.72rem', color: 'var(--text-tertiary)' }}>1 tập</span>
+                            <span style={{ fontSize: '0.72rem', color: 'var(--text-tertiary)' }}>1 {isEhon ? 'trang' : 'tập'}</span>
                           )}
                         </td>
 
@@ -950,7 +1027,18 @@ export const StoryLibraryModal = ({
                         </td>
 
                         <td style={{ padding: '12px 14px', color: 'var(--text-secondary)', fontSize: '0.78rem' }}>
-                          {series.genreLabel || 'Bài đọc'}
+                          <div>{series.genreLabel || 'Bài đọc'}</div>
+                          {series.ageGroup && (
+                            <span style={{
+                              fontSize: '0.68rem',
+                              fontWeight: 700,
+                              color: '#8b5cf6',
+                              display: 'inline-block',
+                              marginTop: 2
+                            }}>
+                              👶 {series.ageGroup}
+                            </span>
+                          )}
                         </td>
 
                         <td style={{ padding: '12px 14px', color: 'var(--text-tertiary)', fontSize: '0.76rem' }}>
@@ -971,7 +1059,7 @@ export const StoryLibraryModal = ({
                               className="btn btn-outline"
                               style={{ padding: '4px 10px', fontSize: '0.74rem', borderRadius: 6 }}
                             >
-                              Chọn tập ({series.totalParts})
+                              {isEhon ? `Mở sách (${series.totalParts} trang)` : `Chọn tập (${series.totalParts})`}
                             </button>
                           ) : (
                             <button
@@ -1000,6 +1088,7 @@ export const StoryLibraryModal = ({
               {filteredSeries.map(series => {
                 const isExpanded = expandedSeriesKeys.has(series.seriesKey);
                 const lvlColor = LEVEL_COLORS[series.level?.slice(0, 2)] || '#3b82f6';
+                const isEhon = series.genre === 'ehon' || series.subGenre?.startsWith('ehon_') || series.genreLabel?.includes('Ehon') || series.genreLabel?.includes('Tranh');
 
                 return (
                   <div
@@ -1025,7 +1114,7 @@ export const StoryLibraryModal = ({
                         transition: 'background 0.15s'
                       }}
                     >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
                         <span style={{
                           fontSize: '0.72rem',
                           fontWeight: 800,
@@ -1048,16 +1137,32 @@ export const StoryLibraryModal = ({
                           )}
                         </div>
 
+                        {series.ageGroup && (
+                          <span style={{
+                            fontSize: '0.68rem',
+                            fontWeight: 700,
+                            padding: '2px 8px',
+                            borderRadius: 6,
+                            background: '#8b5cf622',
+                            color: '#8b5cf6',
+                            border: '1px solid #8b5cf644',
+                            whiteSpace: 'nowrap'
+                          }}>
+                            👶 {series.ageGroup}
+                          </span>
+                        )}
+
                         {series.totalParts > 1 && (
                           <span style={{
                             fontSize: '0.7rem',
                             fontWeight: 800,
                             padding: '2px 8px',
                             borderRadius: 6,
-                            background: 'rgba(59,130,246,0.15)',
-                            color: 'var(--accent-primary)'
+                            background: isEhon ? 'rgba(16,185,129,0.15)' : 'rgba(59,130,246,0.15)',
+                            color: isEhon ? '#10b981' : 'var(--accent-primary)',
+                            whiteSpace: 'nowrap'
                           }}>
-                            {series.totalParts} tập
+                            {isEhon ? `${series.totalParts} trang` : `${series.totalParts} tập`}
                           </span>
                         )}
                       </div>
@@ -1206,8 +1311,20 @@ export const StoryLibraryModal = ({
                       }}>
                         {inspectSeries.level}
                       </span>
+                      {inspectSeries.ageGroup && (
+                        <span style={{
+                          fontSize: '0.72rem',
+                          fontWeight: 800,
+                          padding: '2px 8px',
+                          borderRadius: 6,
+                          background: '#8b5cf6',
+                          color: '#fff'
+                        }}>
+                          👶 {inspectSeries.ageGroup}
+                        </span>
+                      )}
                       <span style={{ fontSize: '0.76rem', color: 'var(--text-secondary)' }}>
-                        {inspectSeries.genreLabel} • Tổng {inspectSeries.totalParts} tập
+                        {inspectSeries.genreLabel} • Tổng {inspectSeries.totalParts} {(inspectSeries.genre === 'ehon' || inspectSeries.subGenre?.startsWith('ehon_') || inspectSeries.genreLabel?.includes('Ehon') || inspectSeries.genreLabel?.includes('Tranh')) ? 'trang' : 'tập'}
                       </span>
                     </div>
                     <h3 style={{ margin: 0, fontSize: '1.18rem', fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1.3 }}>
@@ -1247,7 +1364,9 @@ export const StoryLibraryModal = ({
               {/* Episodes List */}
               <div style={{ flex: 1, overflowY: 'auto', padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <div style={{ fontSize: '0.78rem', fontWeight: 800, color: 'var(--text-tertiary)', textTransform: 'uppercase' }}>
-                  Danh Sách Các Tập Theo Thứ Tự Đọc ({inspectSeries.parts.length} Tập)
+                  {(inspectSeries.genre === 'ehon' || inspectSeries.subGenre?.startsWith('ehon_') || inspectSeries.genreLabel?.includes('Ehon') || inspectSeries.genreLabel?.includes('Tranh'))
+                    ? `Danh Sách Các Trang Tranh Phân Cảnh (${inspectSeries.parts.length} Trang)`
+                    : `Danh Sách Các Tập Theo Thứ Tự Đọc (${inspectSeries.parts.length} Tập)`}
                 </div>
 
                 {inspectSeries.parts.map((part, idx) => {
@@ -1288,6 +1407,21 @@ export const StoryLibraryModal = ({
                           {part.partNumber || idx + 1}
                         </div>
 
+                        {part.imageUrl && (
+                          <div style={{
+                            width: 54,
+                            height: 38,
+                            borderRadius: 6,
+                            overflow: 'hidden',
+                            border: '1px solid var(--glass-border)',
+                            flexShrink: 0,
+                            background: 'var(--bg-elevated)',
+                            boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                          }}>
+                            <img src={part.imageUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                          </div>
+                        )}
+
                         <div style={{ minWidth: 0 }}>
                           <div style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {part.title}
@@ -1308,7 +1442,7 @@ export const StoryLibraryModal = ({
                           className="btn btn-primary"
                           style={{ padding: '5px 12px', fontSize: '0.76rem', borderRadius: 7, display: 'flex', alignItems: 'center', gap: 4 }}
                         >
-                          Đọc tập này <ChevronRight size={13} />
+                          {(inspectSeries.genre === 'ehon' || inspectSeries.subGenre?.startsWith('ehon_') || inspectSeries.genreLabel?.includes('Ehon') || inspectSeries.genreLabel?.includes('Tranh')) ? 'Đọc trang này' : 'Đọc tập này'} <ChevronRight size={13} />
                         </button>
                       </div>
                     </div>

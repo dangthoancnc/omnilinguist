@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffae0" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+    <filter id="paperTexture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.08 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </defs>
+
+  <!-- Nền Gradient Mỹ Thuật -->
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+
+  <!-- Yếu tố Minh Họa Trung Tâm -->
+  
+        <!-- Cá vàng đỏ bơi lội -->
+        <g transform="translate(400, 320)">
+          <!-- Bong bóng nước -->
+          <circle cx="-160" cy="-100" r="18" fill="#caf0f8" opacity="0.7"/>
+          <circle cx="-120" cy="-160" r="12" fill="#caf0f8" opacity="0.6"/>
+          <circle cx="180" cy="-80" r="22" fill="#caf0f8" opacity="0.75"/>
+          <!-- Thân cá vàng -->
+          <ellipse cx="0" cy="0" rx="110" ry="75" fill="#ff4d6d" stroke="#c9184a" stroke-width="5"/>
+          <!-- Đuôi xòe lụa -->
+          <path d="M-100,0 C-180,-70 -200,-10 -230,-60 C-210,0 -230,50 -200,30 C-170,80 -100,10 -100,0 Z" fill="#ff758f" opacity="0.9"/>
+          <!-- Vây ngực và vây lưng -->
+          <path d="M20,-75 Q40,-120 70,-70 Z" fill="#ff758f"/>
+          <path d="M10,65 Q-20,110 5,60 Z" fill="#ff758f"/>
+          <!-- Mắt tròn xoe ngộ nghĩnh -->
+          <circle cx="65" cy="-15" r="18" fill="#ffffff" stroke="#c9184a" stroke-width="3"/>
+          <circle cx="68" cy="-15" r="9" fill="#001219"/>
+          <circle cx="70" cy="-18" r="3" fill="#ffffff"/>
+          <!-- Rong biển xanh -->
+          <path d="M-280,240 Q-240,100 -260,-20 Q-280,-120 -250,-200" stroke="#2d6a4f" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.8"/>
+          <path d="M280,240 Q320,120 290,20 Q260,-80 300,-180" stroke="#40916c" stroke-width="22" stroke-linecap="round" fill="none" opacity="0.7"/>
+        </g>
+      
+
+  <!-- Lớp phủ chất liệu giấy mỹ thuật thủ công -->
+  <rect width="800" height="600" fill="#ffffff" opacity="0.05" filter="url(#paperTexture)" pointer-events="none" />
+
+  <!-- Khung viền tranh Ehon cổ điển -->
+  <rect x="16" y="16" width="768" height="568" rx="20" fill="none" stroke="#e2e8f0" stroke-width="4" opacity="0.8" />
+
+  <!-- Bảng Thông Tin Tác Phẩm & Phân Cảnh Trang Nhã Ở Đáy Tranh -->
+  <g transform="translate(400, 545)">
+    <rect x="-320" y="-22" width="640" height="44" rx="22" fill="rgba(255, 255, 255, 0.92)" stroke="#cbd5e1" stroke-width="2" />
+    <text x="0" y="4" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="'Zen Maru Gothic', 'Hiragino Sans', 'Meiryo', sans-serif">
+      きんぎょの おひるね (Giấc Ngủ Trưa Của Đàn Cá Vàng) — すいすいから、すやすやへ (Trang 2: Từ bơi lội chuyển sang giấc ngủ êm)
+    </text>
+  </g>
+</svg>

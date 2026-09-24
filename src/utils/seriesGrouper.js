@@ -78,6 +78,9 @@ export const groupStoriesIntoSeries = (stories = []) => {
         parsedTitle: parsed,
         level: story.level || 'N5',
         genre: story.genre || 'literature',
+        subGenre: story.subGenre || null,
+        ageGroup: story.ageGroup || null,
+        isPictureBook: !!story.isPictureBook,
         genreLabel: story.genreLabel || (story.genre === 'ehon' ? '🎨 Sách Tranh Ehon' : '📚 Văn học & Cổ tích'),
         author: story.author || 'OmniLinguist Literature Lab',
         readingTime: story.readingTime || `${story.chapters.length * 3} phút`,
@@ -95,6 +98,8 @@ export const groupStoriesIntoSeries = (stories = []) => {
           content: ch.content || '',
           level: story.level || 'N5',
           genre: story.genre || 'literature',
+          subGenre: story.subGenre || null,
+          ageGroup: story.ageGroup || null,
           genreLabel: story.genreLabel || (story.genre === 'ehon' ? '🎨 Sách Tranh Ehon' : '📚 Văn học & Cổ tích'),
           author: story.author || '',
           imageUrl: ch.imageUrl || story.coverArtwork || story.imageUrl || null,
@@ -118,6 +123,9 @@ export const groupStoriesIntoSeries = (stories = []) => {
         parsedTitle: info.parsed,
         level: story.level || 'N5',
         genre: story.genre || 'general',
+        subGenre: story.subGenre || null,
+        ageGroup: story.ageGroup || null,
+        isPictureBook: !!story.isPictureBook,
         genreLabel: story.genreLabel || (story.genre === 'ehon' ? '🎨 Sách Tranh Ehon' : '📖 Bài đọc'),
         author: story.author || 'Tác giả Nhật Bản',
         summary: story.summary || '',
@@ -136,6 +144,9 @@ export const groupStoriesIntoSeries = (stories = []) => {
     if (!currentSeries.summary && story.summary) {
       currentSeries.summary = story.summary;
     }
+    if (!currentSeries.subGenre && story.subGenre) currentSeries.subGenre = story.subGenre;
+    if (!currentSeries.ageGroup && story.ageGroup) currentSeries.ageGroup = story.ageGroup;
+    if (!currentSeries.isPictureBook && story.isPictureBook) currentSeries.isPictureBook = true;
 
     // Add this episode/part (avoid duplicate ids)
     if (!currentSeries.parts.some(p => p.id === story.id)) {

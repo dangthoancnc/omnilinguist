@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffae0" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+    <filter id="paperTexture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.08 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </defs>
+
+  <!-- Nền Gradient Mỹ Thuật -->
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+
+  <!-- Yếu tố Minh Họa Trung Tâm -->
+  
+        <!-- Hộp cơm bento xe buýt ngộ nghĩnh -->
+        <g transform="translate(400, 330)">
+          <!-- Thân xe buýt cơm hộp đỏ -->
+          <rect x="-220" y="-100" width="440" height="230" rx="35" fill="#e63946" stroke="#b7094c" stroke-width="7"/>
+          <rect x="-195" y="-75" width="390" height="95" rx="15" fill="#fdf0d5"/>
+          <!-- Bạn Cơm Nắm tam giác vẫy tay -->
+          <g transform="translate(-110, -25)">
+            <polygon points="0,-45 -40,30 40,30" fill="#ffffff" stroke="#ced4da" stroke-width="3"/>
+            <rect x="-18" y="5" width="36" height="25" fill="#212529"/>
+            <circle cx="-10" cy="-5" r="4" fill="#212529"/>
+            <circle cx="10" cy="-5" r="4" fill="#212529"/>
+          </g>
+          <!-- Trứng cuộn vàng tươi -->
+          <g transform="translate(0, -25)">
+            <rect x="-35" y="-25" width="70" height="50" rx="12" fill="#ffd166" stroke="#f4a261" stroke-width="3"/>
+            <path d="M-15,-2 C0,15 15,-10 25,5" stroke="#f4a261" stroke-width="3" fill="none"/>
+          </g>
+          <!-- Xúc xích bạch tuộc đỏ -->
+          <g transform="translate(110, -25)">
+            <ellipse cx="0" cy="-15" rx="25" ry="30" fill="#d90429"/>
+            <path d="M-15,10 Q-25,35 -15,40 M-5,12 Q-5,38 0,40 M5,12 Q10,38 12,40 M15,10 Q25,35 22,40" stroke="#d90429" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="-8" cy="-18" r="3" fill="#ffffff"/>
+            <circle cx="8" cy="-18" r="3" fill="#ffffff"/>
+          </g>
+          <!-- Bánh xe buýt đen tròn -->
+          <circle cx="-130" cy="130" r="35" fill="#212529" stroke="#fdf0d5" stroke-width="6"/>
+          <circle cx="130" cy="130" r="35" fill="#212529" stroke="#fdf0d5" stroke-width="6"/>
+        </g>
+      
+
+  <!-- Lớp phủ chất liệu giấy mỹ thuật thủ công -->
+  <rect width="800" height="600" fill="#ffffff" opacity="0.05" filter="url(#paperTexture)" pointer-events="none" />
+
+  <!-- Khung viền tranh Ehon cổ điển -->
+  <rect x="16" y="16" width="768" height="568" rx="20" fill="none" stroke="#e2e8f0" stroke-width="4" opacity="0.8" />
+
+  <!-- Bảng Thông Tin Tác Phẩm & Phân Cảnh Trang Nhã Ở Đáy Tranh -->
+  <g transform="translate(400, 545)">
+    <rect x="-320" y="-22" width="640" height="44" rx="22" fill="rgba(255, 255, 255, 0.92)" stroke="#cbd5e1" stroke-width="2" />
+    <text x="0" y="4" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="'Zen Maru Gothic', 'Hiragino Sans', 'Meiryo', sans-serif">
+      おべんとうバス (Chuyến Xe Buýt Hộp Cơm Trưa) — たまごやきさんと タコさん (Trang 2: Đón trứng cuộn và xúc xích bạch tuộc)
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffae0" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+    <filter id="paperTexture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.08 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </defs>
+
+  <!-- Nền Gradient Mỹ Thuật -->
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+
+  <!-- Yếu tố Minh Họa Trung Tâm -->
+  
+        <g transform="translate(400, 320)">
+          <!-- Cây cối collage nhiều tầng giấy -->
+          <path d="M-30,180 L-15,-20 L15,-20 L30,180 Z" fill="#7f4f24"/>
+          <ellipse cx="0" cy="-70" rx="110" ry="130" fill="#2d6a4f" opacity="0.95"/>
+          <ellipse cx="-40" cy="-50" rx="80" ry="100" fill="#40916c" opacity="0.9"/>
+          <ellipse cx="45" cy="-40" rx="75" ry="90" fill="#52b788" opacity="0.85"/>
+          <circle cx="0" cy="-120" r="60" fill="#74c69d" opacity="0.8"/>
+          <!-- Mặt trời Eric Carle rực rỡ góc trời -->
+          <g transform="translate(240, -160)">
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(0)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(45)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(90)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(135)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(180)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(225)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(270)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(315)" fill="#e85d04" opacity="0.9"/>
+            
+            <circle cx="0" cy="0" r="42" fill="#ffb703"/>
+            <circle cx="0" cy="0" r="32" fill="#fb8500"/>
+          </g>
+          <!-- Đồi cỏ lượn sóng -->
+          <path d="M-400,160 Q-200,90 0,130 T400,100 L400,280 L-400,280 Z" fill="#52b788"/>
+          <path d="M-400,190 Q-150,140 100,170 T400,150 L400,280 L-400,280 Z" fill="#40916c"/>
+        </g>
+      
+
+  <!-- Lớp phủ chất liệu giấy mỹ thuật thủ công -->
+  <rect width="800" height="600" fill="#ffffff" opacity="0.05" filter="url(#paperTexture)" pointer-events="none" />
+
+  <!-- Khung viền tranh Ehon cổ điển -->
+  <rect x="16" y="16" width="768" height="568" rx="20" fill="none" stroke="#e2e8f0" stroke-width="4" opacity="0.8" />
+
+  <!-- Bảng Thông Tin Tác Phẩm & Phân Cảnh Trang Nhã Ở Đáy Tranh -->
+  <g transform="translate(400, 545)">
+    <rect x="-320" y="-22" width="640" height="44" rx="22" fill="rgba(255, 255, 255, 0.92)" stroke="#cbd5e1" stroke-width="2" />
+    <text x="0" y="4" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="'Zen Maru Gothic', 'Hiragino Sans', 'Meiryo', sans-serif">
+      しょうがっこうへいこう (Tự Tin Bước Vào Lớp 1 Nào!) — ともだち 100人 できるかな？ (Trang 3: Kết 100 người bạn cùng nhau tiến bước)
+    </text>
+  </g>
+</svg>
