@@ -44,6 +44,10 @@ const Settings = () => {
   };
 
   const handleSelectAnkiFolder = async () => {
+    if (typeof window === 'undefined' || !window.showDirectoryPicker) {
+      alert('Trình duyệt của bạn hiện chưa hỗ trợ File System Access API. Vui lòng sử dụng Google Chrome hoặc Microsoft Edge trên máy tính để chọn thư mục Anki.');
+      return;
+    }
     try {
       const dirHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
       await saveAnkiWorkspaceHandle(dirHandle, dirHandle.name);
@@ -57,8 +61,9 @@ const Settings = () => {
     }
   };
 
-  const handleResetDefaultAnkiFolder = () => {
+  const handleResetDefaultAnkiFolder = async () => {
     localStorage.setItem('omni_anki_workspace_name', DEFAULT_ANKI_FOLDER);
+    await saveAnkiWorkspaceHandle(null, DEFAULT_ANKI_FOLDER);
     setAnkiFolder(DEFAULT_ANKI_FOLDER);
     setSaved(true);
     setTimeout(() => setSaved(false), 3000);

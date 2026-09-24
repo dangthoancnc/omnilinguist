@@ -19,7 +19,7 @@ const SelectionDictionary = () => {
       // Chỉ tra cứu nếu văn bản có độ dài vừa phải và chứa ký tự tiếng Nhật (Hiragana, Katakana, Kanji)
       const isJapanese = /[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]/.test(text);
 
-      if (text && text.length <= 15 && isJapanese) {
+      if (text && text.length <= 15 && isJapanese && sel.rangeCount > 0) {
         const range = sel.getRangeAt(0);
         const rect = range.getBoundingClientRect();
         
@@ -69,8 +69,8 @@ const SelectionDictionary = () => {
             if (data.words && data.words.length > 0) {
               // Map to match the expected Jisho UI format below
               jishoData = data.words.slice(0, 2).map(w => ({
-                japanese: [{ word: w.reading.kanji || w.reading.kana, reading: w.reading.kana }],
-                senses: w.senses.map(s => ({ english_definitions: s.glosses, parts_of_speech: s.pos }))
+                japanese: [{ word: w.reading?.kanji || w.reading?.kana || '', reading: w.reading?.kana || '' }],
+                senses: (w.senses || []).map(s => ({ english_definitions: s.glosses || [], parts_of_speech: s.pos || [] }))
               }));
             }
           }
@@ -194,11 +194,11 @@ const SelectionDictionary = () => {
                   {results.jisho.map((item, i) => (
                     <div key={i} style={{ background: 'rgba(16,185,129,0.05)', padding: 10, borderRadius: 8, border: '1px solid rgba(16,185,129,0.2)' }}>
                       <div style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2 }}>
-                        {item.japanese[0].word || item.japanese[0].reading} 
-                        {item.japanese[0].word && <span style={{ color: 'var(--text-tertiary)', fontSize: '0.85rem', marginLeft: 6, fontWeight: 400 }}>{item.japanese[0].reading}</span>}
+                        {item.japanese?.[0]?.word || item.japanese?.[0]?.reading || ''} 
+                        {item.japanese?.[0]?.word && <span style={{ color: 'var(--text-tertiary)', fontSize: '0.85rem', marginLeft: 6, fontWeight: 400 }}>{item.japanese?.[0]?.reading}</span>}
                       </div>
                       <ul style={{ margin: 0, paddingLeft: 18, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                        {item.senses[0].english_definitions.map((def, j) => (
+                        {item.senses?.[0]?.english_definitions?.map((def, j) => (
                           <li key={j}>{def}</li>
                         ))}
                       </ul>

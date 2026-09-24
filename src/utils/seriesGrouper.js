@@ -28,8 +28,8 @@ export const extractSeriesInfo = (rawTitle) => {
     };
   }
 
-  // Remove leading emojis or icons like 📖, 📚, 🎨 etc.
-  const cleanTitle = rawTitle.replace(/^[\p{Emoji}\u2000-\u3300\s]+/u, '').trim();
+  // Remove leading emojis or decorative icons like 📖, 📚, 🎨, ⭐, ✨ etc. (preserve Japanese kana/kanji)
+  const cleanTitle = rawTitle.replace(/^[\p{Extended_Pictographic}\u2600-\u27BF\u2B50\s]+/u, '').trim();
 
   // Match episode indicator: (Phần X), (Tập X), (Chapter X), (Part X), (Hồi X)
   const partMatch = cleanTitle.match(/[\(（]\s*(?:Phần|Tập|Hồi|Chapter|Part)\s*(\d+)\s*[\)）]/i);

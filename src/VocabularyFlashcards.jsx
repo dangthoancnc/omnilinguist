@@ -135,14 +135,13 @@ const VocabularyFlashcards = () => {
           return;
         }
       }
-      console.warn(`⚠️ IndexedDB đang có ${vocabCount} từ vựng — đang tự động nâng cấp...`);
+      // Bảo vệ an toàn dữ liệu: Tuyệt đối không gọi db.vocab.clear() để tránh mất dữ liệu custom của người dùng
+      console.info(`ℹ️ IndexedDB đang có ${vocabCount} từ vựng. Kiểm tra đồng bộ dữ liệu bổ trợ...`);
       localStorage.setItem(repairKey, Date.now().toString());
-      db.vocab.clear().then(() => db.kanji.clear()).then(() => {
-        return syncMasterData();
-      }).then(() => {
-        console.log('✅ Auto-repair hoàn tất! Từ vựng đã được nạp.');
+      syncMasterData().then(() => {
+        console.log('✅ Đồng bộ bổ trợ hoàn tất.');
       }).catch((err) => {
-        console.error('❌ Auto-repair thất bại:', err);
+        console.error('❌ Lỗi đồng bộ bổ trợ:', err);
       });
     }
   }, [vocabCount]);

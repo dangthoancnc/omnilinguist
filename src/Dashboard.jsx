@@ -161,7 +161,7 @@ const Dashboard = () => {
       desc: 'Tất cả thẻ SRS, thời lượng nghe ngấm và đọc hiểu đều đạt chuẩn. Bạn có thể luyện thêm bài kiểm tra thử hoặc ôn lại thẻ khó.',
       btnText: 'Phòng Luyện Đề Mock Test',
       icon: <Award size={16} />,
-      action: () => navigate('/mock-test')
+      action: () => navigate('/mocktest')
     };
   }, [dueStats.dueCount, immersionStats.todayListeningMinutes, immersionStats.todayReadingWords, navigate]);
 
@@ -320,14 +320,14 @@ const Dashboard = () => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          borderLeft: `4px solid ${goalInfo.color}`
+          borderLeft: `4px solid ${goalInfo?.color || '#3b82f6'}`
         }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
             <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: 5 }}>
-              <Target size={15} color={goalInfo.color} /> Lộ Trình Mục Tiêu
+              <Target size={15} color={goalInfo?.color || '#3b82f6'} /> Lộ Trình Mục Tiêu
             </span>
-            <span style={{ fontSize: '0.68rem', fontWeight: 700, padding: '1px 6px', borderRadius: 4, background: `${goalInfo.color}22`, color: goalInfo.color }}>
-              {goalInfo.label} ({goalInfo.sub})
+            <span style={{ fontSize: '0.68rem', fontWeight: 700, padding: '1px 6px', borderRadius: 4, background: `${goalInfo?.color || '#3b82f6'}22`, color: goalInfo?.color || '#3b82f6' }}>
+              {goalInfo?.label || 'JLPT'} ({goalInfo?.sub || ''})
             </span>
           </div>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
@@ -552,11 +552,11 @@ const Dashboard = () => {
                         cursor: 'pointer',
                         transition: 'all 0.15s'
                       }}
-                      onMouseEnter={e => e.currentTarget.style.borderColor = activePhase.color}
+                      onMouseEnter={e => e.currentTarget.style.borderColor = activePhase?.color || 'var(--accent-primary)'}
                       onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--glass-border)'}
                     >
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <span style={{ color: activePhase.color }}>{task.icon}</span>
+                        <span style={{ color: activePhase?.color || 'var(--accent-primary)' }}>{task.icon}</span>
                         <span style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-primary)' }}>
                           {task.label}
                         </span>

@@ -10,22 +10,27 @@ const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N
 
 const WritingStudio = () => {
   const vocabData = useLiveQuery(() => db.vocab.toArray()) || [];
-  const [selectedId, setSelectedId] = useState(writingData[0].id);
+  const [selectedId, setSelectedId] = useState(() => (Array.isArray(writingData) && writingData.length > 0) ? writingData[0].id : null);
   const [inputText, setInputText] = useState('');
   const [issues, setIssues] = useState([]);
   const [viewMode, setViewMode] = useState('write'); // 'write' | 'template'
   const [targetVocab, setTargetVocab] = useState([]);
   
-  const template = writingData.find(e => e.id === selectedId);
+  const template = useMemo(() => {
+    if (!Array.isArray(writingData) || writingData.length === 0) return null;
+    return writingData.find(e => e.id === selectedId) || writingData[0];
+  }, [selectedId]);
 
-  // Lấy ngẫu nhiên 5 từ vựng cùng Level khi chọn bài viết mới
+  // Lấy ngẫu nhiên 5 từ vựng cùng Level khi chọn bài viết mới (tránh re-shuffle khi đang gõ bài)
   useEffect(() => {
-    if (template) {
+    if (template && vocabData && vocabData.length > 0) {
       const levelWords = vocabData.filter(v => v.level === template.level);
-      const shuffled = [...levelWords].sort(() => 0.5 - Math.random());
-      setTargetVocab(shuffled.slice(0, 5));
+      if (levelWords.length > 0) {
+        const shuffled = [...levelWords].sort(() => 0.5 - Math.random());
+        setTargetVocab(shuffled.slice(0, 5));
+      }
     }
-  }, [template?.id, vocabData]);
+  }, [template?.id]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -103,10 +108,10 @@ const WritingStudio = () => {
         <div className="glass-panel" style={{ padding: '16px 20px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
             <div>
-              <span style={{ fontSize: '0.75rem', padding: '3px 8px', borderRadius: 4, background: `${LEVEL_COLORS[template.level]}22`, color: LEVEL_COLORS[template.level], fontWeight: 800, marginRight: 10 }}>
-                {template.level}
+              <span style={{ fontSize: '0.75rem', padding: '3px 8px', borderRadius: 4, background: `${LEVEL_COLORS[template?.level || 'N3']}22`, color: LEVEL_COLORS[template?.level || 'N3'], fontWeight: 800, marginRight: 10 }}>
+                {template?.level || 'N3'}
               </span>
-              <strong style={{ fontSize: '1.2rem' }}>{template.title}</strong>
+              <strong style={{ fontSize: '1.2rem' }}>{template?.title || 'Chủ đề luyện viết'}</strong>
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
               <button onClick={() => setViewMode('write')} style={{ padding: '6px 12px', borderRadius: 6, border: 'none', cursor: 'pointer', background: viewMode === 'write' ? 'var(--accent-primary)' : 'rgba(255,255,255,0.08)', color: 'white', fontSize: '0.85rem' }}>
@@ -117,8 +122,8 @@ const WritingStudio = () => {
               </button>
             </div>
           </div>
-          <div style={{ fontSize: '0.95rem', color: 'var(--text-primary)', background: 'var(--bg-surface)', padding: 14, borderRadius: 8, borderLeft: `3px solid ${LEVEL_COLORS[template.level]}`, lineHeight: 1.5 }}>
-            {template.scenario}
+          <div style={{ fontSize: '0.95rem', color: 'var(--text-primary)', background: 'var(--bg-surface)', padding: 14, borderRadius: 8, borderLeft: `3px solid ${LEVEL_COLORS[template?.level || 'N3']}`, lineHeight: 1.5 }}>
+            {template?.scenario || 'Chọn một bài tập từ danh sách bên trái để bắt đầu luyện viết.'}
           </div>
         </div>
 

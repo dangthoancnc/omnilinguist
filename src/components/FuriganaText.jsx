@@ -1,8 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { useFurigana } from '../FuriganaContext';
 
-// Global memory cache để lưu kết quả parse Furigana, giúp hiển thị tức thì khi người dùng bật nút
+// Global memory cache với giới hạn tối đa 1000 items (FIFO Eviction)
+const MAX_CACHE_SIZE = 1000;
 const furiganaGlobalCache = new Map();
+
+const setCachedRuby = (key, val) => {
+  if (furiganaGlobalCache.size >= MAX_CACHE_SIZE) {
+    const firstKey = furiganaGlobalCache.keys().next().value;
+    furiganaGlobalCache.delete(firstKey);
+  }
+  furiganaGlobalCache.set(key, val);
+};
+
+// Hàm lọc HTML an toàn (chỉ giữ thẻ ruby hợp lệ, loại bỏ script/xss)
+const sanitizeRubyHtml = (html) => {
+  if (!html) return '';
+  if (!html.includes('<ruby')) {
+    return html.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  return html
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+    .replace(/\son\w+="[^"]*"/gi, '')
+    .replace(/javascript:/gi, '');
+};
 
 const FuriganaText = ({ text, className = "jp-text", style = {} }) => {
   const { kuroshiro, isReady, showFurigana } = useFurigana();
@@ -10,7 +31,7 @@ const FuriganaText = ({ text, className = "jp-text", style = {} }) => {
     if (text && furiganaGlobalCache.has(text)) {
       return furiganaGlobalCache.get(text);
     }
-    return text;
+    return text || '';
   });
 
   useEffect(() => {
@@ -23,15 +44,14 @@ const FuriganaText = ({ text, className = "jp-text", style = {} }) => {
     }
 
     const parseText = async () => {
-      // Nếu rỗng, không bật tính năng, hoặc text không có Kanji thì bỏ qua
       if (!text || !showFurigana) {
-        if (isMounted) setRubyHtml(text);
+        if (isMounted) setRubyHtml(text || '');
         return;
       }
       
       const hasKanji = /[\u4e00-\u9faf\u3400-\u4dbf]/.test(text);
       if (!hasKanji) {
-        furiganaGlobalCache.set(text, text);
+        setCachedRuby(text, text);
         if (isMounted) setRubyHtml(text);
         return;
       }
@@ -41,9 +61,8 @@ const FuriganaText = ({ text, className = "jp-text", style = {} }) => {
       }
 
       try {
-        // Kuroshiro parse to HTML ruby
         const result = await kuroshiro.convert(text, { mode: 'furigana', to: 'hiragana' });
-        furiganaGlobalCache.set(text, result);
+        setCachedRuby(text, result);
         if (isMounted) setRubyHtml(result);
       } catch (err) {
         console.error("Furigana parse error:", err);
@@ -60,11 +79,14 @@ const FuriganaText = ({ text, className = "jp-text", style = {} }) => {
     return <span className={className} style={style}>{text}</span>;
   }
 
+  // Ưu tiên đọc từ cache ngay trong lúc render để loại bỏ hiện tượng flicker
+  const activeRuby = (text && furiganaGlobalCache.has(text)) ? furiganaGlobalCache.get(text) : (rubyHtml || text);
+
   return (
     <span 
       className={className} 
       style={{ ...style, lineHeight: 2.2 }}
-      dangerouslySetInnerHTML={{ __html: rubyHtml || text }} 
+      dangerouslySetInnerHTML={{ __html: sanitizeRubyHtml(activeRuby) }} 
     />
   );
 };

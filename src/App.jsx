@@ -6,7 +6,6 @@ import Sidebar from './Sidebar';
 import { Menu, BookOpen, Loader } from 'lucide-react';
 import { useAuth } from './AuthContext';
 import { useFurigana } from './FuriganaContext';
-import AuthModal from './AuthModal';
 import BottomNav from './components/BottomNav';
 import GlobalPopupDictionary from './GlobalPopupDictionary';
 import ShadowingStudio from './ShadowingStudio';
@@ -87,10 +86,11 @@ function App() {
   }, [location.pathname]);
 
   useEffect(() => {
-    // Gọi đồng bộ dữ liệu Master khi app khởi động
-    syncMasterData().then(() => {
-      setIsSyncing(false);
-    });
+    // Gọi đồng bộ dữ liệu Master khi app khởi động với catch & finally để không bao giờ kẹt spinner
+    syncMasterData()
+      .catch(err => console.error('Lỗi nạp master data:', err))
+      .finally(() => setIsSyncing(false));
+
     // Khởi tạo và nạp ngầm kho ngữ liệu IndexedDB (Dexie)
     import('./services/corpusLoaderService.js').then(({ initCorpusStorage }) => {
       initCorpusStorage();
@@ -121,7 +121,6 @@ function App() {
   return (
     <>
       <GlobalPopupDictionary />
-      {!loading && !user && <AuthModal />}
       <div className="app-shell">
         <Sidebar
           isOpen={sidebarOpen}
@@ -207,6 +206,7 @@ function App() {
                       <Route path="/dictionary" element={<Dictionary/>} />
                       <Route path="/email" element={<GrammarStudio/>} />
                       <Route path="/mocktest" element={<MockTestStudio/>} />
+                      <Route path="/mock-test" element={<MockTestStudio/>} />
                       <Route path="/kanji" element={<KanjiStudio/>} />
                       <Route path="/media" element={<MediaStudio/>} />
                       <Route path="/anki-import" element={<AnkiImportStudio/>} />

@@ -237,7 +237,8 @@ const GrammarExplorer = () => {
     return pool;
   }, [activeTab, cramLevel, selectedPracticeLevel]);
 
-  const currentQuestion = activeQuizBank[currentQuizIdx % activeQuizBank.length] || FALLBACK_PRACTICE_BANK[0];
+  const qLen = activeQuizBank && activeQuizBank.length > 0 ? activeQuizBank.length : 1;
+  const currentQuestion = (activeQuizBank && activeQuizBank.length > 0 ? activeQuizBank[currentQuizIdx % qLen] : null) || FALLBACK_PRACTICE_BANK[0];
 
   // Reset answer states on question change
   useEffect(() => {
@@ -245,6 +246,15 @@ const GrammarExplorer = () => {
     setSelectedOptionIdx(null);
     setFeedback(null);
   }, [currentQuizIdx, activeTab]);
+
+  // Cleanup speech audio on unmount
+  useEffect(() => {
+    return () => {
+      if (typeof window !== 'undefined' && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
 
   // TTS Speech Reader
   const playAudio = (text) => {
@@ -684,7 +694,7 @@ const GrammarExplorer = () => {
             {/* MODE B: MULTIPLE CHOICE 4 OPTIONS */}
             {quizMode === 'choice' && (
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, width: '100%' }}>
-                {currentQuestion.options.map((opt, optIdx) => {
+                {(currentQuestion.options || []).map((opt, optIdx) => {
                   const isSel = selectedOptionIdx === optIdx;
                   const isCorrect = opt === currentQuestion.target;
                   let bg = 'rgba(255,255,255,0.03)';

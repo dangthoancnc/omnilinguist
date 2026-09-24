@@ -65,7 +65,7 @@ const translateToVi = async (enText) => {
         if (viText === enText && data.matches && data.matches.length > 1) {
           viText = data.matches[1].translation || viText;
         }
-        localStorage.setItem(cacheKey, viText);
+        try { localStorage.setItem(cacheKey, viText); } catch (e) {}
         return viText;
       }
     }
@@ -83,7 +83,7 @@ const translateToVi = async (enText) => {
     clearTimeout(timer);
     const data = await res.json();
     const viText = data[0][0][0];
-    localStorage.setItem(cacheKey, viText);
+    try { localStorage.setItem(cacheKey, viText); } catch (e) {}
     return viText;
   } catch (e) { return enText; }
 };
@@ -123,8 +123,17 @@ const toHiragana = (str) => {
   return res;
 };
 
-// RAM Cache for ultra fast 0ms repeated lookups
+// RAM Cache với giới hạn tối đa 500 mục để ngăn chặn rò rỉ bộ nhớ
+const JISHO_CACHE_LIMIT = 500;
 const jishoRamCache = new Map();
+
+const setJishoCache = (key, val) => {
+  if (jishoRamCache.size >= JISHO_CACHE_LIMIT) {
+    const firstKey = jishoRamCache.keys().next().value;
+    jishoRamCache.delete(firstKey);
+  }
+  jishoRamCache.set(key, val);
+};
 
 // Direct Jotoba API (Mapped to Jisho format) + Multi-layer Cache
 const fetchJishoData = async (keyword, maxResults = 2) => {
@@ -139,7 +148,7 @@ const fetchJishoData = async (keyword, maxResults = 2) => {
     const lsData = localStorage.getItem(`jisho_${q}`);
     if (lsData) {
       const parsed = JSON.parse(lsData);
-      jishoRamCache.set(q, parsed);
+      setJishoCache(q, parsed);
       return parsed.slice(0, maxResults);
     }
   } catch (e) {}
@@ -174,7 +183,7 @@ const fetchJishoData = async (keyword, maxResults = 2) => {
           jlpt: [] // Jotoba doesn't provide JLPT cleanly in the word search by default
         }));
         
-        jishoRamCache.set(q, mappedData);
+        setJishoCache(q, mappedData);
         try { localStorage.setItem(`jisho_${q}`, JSON.stringify(mappedData)); } catch(e){}
         return mappedData.slice(0, maxResults);
       }

@@ -160,27 +160,37 @@ export function migrateGuestToUser(newUserId) {
 
   const migratedFeatures = [];
   let totalItems = 0;
+  const prefix = `omni_${guestId}_`;
+  const allGuestKeys = getKeysForUser(guestId);
 
-  FEATURES.forEach(feature => {
-    const guestKey = getStorageKeyFor(guestId, feature);
-    const userKey = getStorageKeyFor(newUserId, feature);
+  allGuestKeys.forEach(guestKey => {
+    const featureSuffix = guestKey.slice(prefix.length);
+    const userKey = `omni_${newUserId}_${featureSuffix}`;
     const data = localStorage.getItem(guestKey);
 
     if (data) {
-      // Chỉ ghi đè nếu user chưa có dữ liệu cho feature này
+      // Chỉ ghi đè nếu user chưa có dữ liệu cho key này
       const existingUserData = localStorage.getItem(userKey);
       if (!existingUserData) {
         localStorage.setItem(userKey, data);
-        migratedFeatures.push(feature);
+        migratedFeatures.push(featureSuffix);
         try {
           const parsed = JSON.parse(data);
-          totalItems += typeof parsed === 'object' ? Object.keys(parsed).length : 1;
+          totalItems += typeof parsed === 'object' && parsed !== null ? Object.keys(parsed).length : 1;
         } catch {
           totalItems += 1;
         }
       }
     }
   });
+
+  // Di chuyển các tác vụ chờ đồng bộ trong IndexedDB syncQueue
+  import('./db.js').then(({ db }) => {
+    if (db?.syncQueue) {
+      db.syncQueue.where('owner_id').equals(guestId).modify({ owner_id: newUserId })
+        .catch(err => console.warn('[IdentityManager] Error migrating syncQueue tasks:', err));
+    }
+  }).catch(() => {});
 
   // Đặt thời hạn xóa backup Guest = 7 ngày
   const expiryDate = new Date();
@@ -214,12 +224,11 @@ export function cleanupExpiredGuestData() {
     if (now > expiry) {
       // Xóa toàn bộ dữ liệu Guest đã hết hạn
       const guestId = backup.guestId;
-      FEATURES.forEach(feature => {
-        localStorage.removeItem(getStorageKeyFor(guestId, feature));
-      });
+      const allGuestKeys = getKeysForUser(guestId);
+      allGuestKeys.forEach(key => localStorage.removeItem(key));
       localStorage.removeItem(GUEST_UUID_KEY);
       localStorage.removeItem(GUEST_BACKUP_EXPIRY_KEY);
-      console.log(`🧹 [IdentityManager] Cleaned up expired guest data for ${guestId}`);
+      console.log(`🧹 [IdentityManager] Cleaned up ${allGuestKeys.length} expired guest data keys for ${guestId}`);
     }
   } catch (e) {
     console.warn('[IdentityManager] Error cleaning up guest data:', e);

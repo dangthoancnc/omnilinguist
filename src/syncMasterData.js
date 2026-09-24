@@ -56,6 +56,7 @@ export async function syncMasterData() {
         id: v.id || `v_${i}`,
         level: v.level || 'N3',
         word: v.word,
+        kanji: v.kanji || v.word || '',
         reading: v.reading || '',
         vi: v.vi || v.meaning || '',
         meaning: v.vi || v.meaning || '',

@@ -34,13 +34,13 @@ const AuthModal = ({ isOpen, onClose }) => {
         await signUp({ email, password });
         setSuccessMsg('Đăng ký thành công! Dữ liệu học vãng lai đã được chuyển sang tài khoản của bạn.');
         setTimeout(() => {
-          onClose();
+          if (typeof onClose === 'function') onClose();
         }, 1500);
       } else {
         await signIn({ email, password });
         setSuccessMsg('Đăng nhập thành công!');
         setTimeout(() => {
-          onClose();
+          if (typeof onClose === 'function') onClose();
         }, 1000);
       }
     } catch (err) {

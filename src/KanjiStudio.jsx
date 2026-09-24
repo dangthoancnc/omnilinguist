@@ -58,7 +58,7 @@ const CanvasDrawing = ({ kanji, showAnswer, onClearRef, onSnapshotRef }) => {
 
   const draw = (e) => {
     if (!isDrawing) return;
-    e.preventDefault();
+    if (e.cancelable) e.preventDefault();
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     const rect = canvas.getBoundingClientRect();
@@ -374,13 +374,17 @@ const KanjiStudio = () => {
     if (isStrict || !currentKanji) return;
     const snapshot = snapshotRef.current && snapshotRef.current();
     if (snapshot) {
-      setSessionLog(prev => [...prev, {
-        id: currentKanji.id,
-        kanji: currentKanji.kanji,
-        meanings: currentKanji.meanings.join(', '),
-        snapshot,
-        grade: null
-      }]);
+      setSessionLog(prev => {
+        const nextLog = [...prev, {
+          id: currentKanji.id,
+          kanji: currentKanji.kanji,
+          meanings: Array.isArray(currentKanji.meanings) ? currentKanji.meanings.join(', ') : (currentKanji.meanings || ''),
+          snapshot,
+          grade: null
+        }];
+        // Giới hạn tối đa 15 snapshot gần nhất để tránh phình bộ nhớ RAM
+        return nextLog.length > 15 ? nextLog.slice(-15) : nextLog;
+      });
     }
   };
 
@@ -554,11 +558,11 @@ const KanjiStudio = () => {
                   Hãy viết Kanji có nghĩa sau:
                 </div>
                 <div style={{ fontSize: '1.6rem', fontWeight: 700, color: 'var(--accent-primary)', lineHeight: 1.4 }}>
-                  {currentKanji.meanings.join(', ')}
+                  {Array.isArray(currentKanji.meanings) ? currentKanji.meanings.join(', ') : (currentKanji.meanings || '')}
                 </div>
                 {currentKanji.vi_meanings && (
                   <div style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginTop: 4 }}>
-                    {currentKanji.vi_meanings.join(', ')}
+                    {Array.isArray(currentKanji.vi_meanings) ? currentKanji.vi_meanings.join(', ') : currentKanji.vi_meanings}
                   </div>
                 )}
 
@@ -566,13 +570,13 @@ const KanjiStudio = () => {
                   <div style={{ flex: 1 }}>
                     <span style={{ fontSize: '0.75rem', color: '#ef4444', fontWeight: 700 }}>ON:</span>
                     <div className="jp-text" style={{ fontSize: '1.15rem', marginTop: 4 }}>
-                      {currentKanji.onyomi.join('、 ') || '---'}
+                      {(Array.isArray(currentKanji.onyomi) ? currentKanji.onyomi.join('、 ') : currentKanji.onyomi) || '---'}
                     </div>
                   </div>
                   <div style={{ flex: 1 }}>
                     <span style={{ fontSize: '0.75rem', color: '#3b82f6', fontWeight: 700 }}>KUN:</span>
                     <div className="jp-text" style={{ fontSize: '1.15rem', marginTop: 4 }}>
-                      {currentKanji.kunyomi.join('、 ') || '---'}
+                      {(Array.isArray(currentKanji.kunyomi) ? currentKanji.kunyomi.join('、 ') : currentKanji.kunyomi) || '---'}
                     </div>
                   </div>
                 </div>

@@ -57,6 +57,7 @@ function nextRecallStability(d, s, r, rating, w = DEFAULT_PARAMS.w) {
   const hardPenalty = rating === Rating.Hard ? w[15] : 1;
   const easyBonus = rating === Rating.Easy ? w[16] : 1;
   return s * (
+    1 +
     Math.exp(w[8]) *
     (11 - d) *
     Math.pow(s, -w[9]) *
@@ -99,9 +100,10 @@ export function scheduleCard(card, rating, now = new Date()) {
     due.setDate(due.getDate() + daysAdd);
     updated.due = due.toISOString();
 
-  } else if (card.state === State.Review || card.state === State.Learning) {
-    const elapsed = card.lastReview
-      ? Math.max((now - new Date(card.lastReview)) / 86400000, 0)
+  } else if (card.state === State.Review || card.state === State.Learning || card.state === State.Relearning) {
+    const lastRev = card.lastReview || card.last_review;
+    const elapsed = lastRev
+      ? Math.max((now - new Date(lastRev)) / 86400000, 0)
       : 0;
     const r = forgettingCurve(elapsed, card.stability);
 

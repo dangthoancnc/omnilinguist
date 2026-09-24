@@ -137,9 +137,12 @@ export function logReview(cardId, moduleType, rating) {
     localStorage.setItem(key, JSON.stringify(logs));
   } catch(e) {}
   
-  // Push to cloud (dùng crypto.randomUUID() để làm ID giả cho lệnh upsert)
+  // Push to cloud (dùng UUID an toàn cho lệnh upsert)
+  const logId = (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function')
+    ? crypto.randomUUID()
+    : 'rev_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
   enqueueSync('omni_review_logs', {
-    id: crypto.randomUUID(),
+    id: logId,
     card_id: cardId,
     module_type: moduleType,
     rating: rating,
@@ -487,6 +490,7 @@ export async function pullCloudData() {
             stability: c.stability,
             difficulty: c.difficulty,
             reps: c.reps,
+            lastReview: c.updated_at,
             last_review: c.updated_at, // Use updated_at as proxy for last_review
             updated_at: c.updated_at
           };

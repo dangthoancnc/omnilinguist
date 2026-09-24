@@ -142,10 +142,21 @@ export const normalizeJpSentence = (str) => {
   return str.trim().replace(/\s+/g, ' ');
 };
 
-// Đọc bản dịch từ bộ nhớ đệm
+
+// Tạo khóa băm duy nhất cho câu (tránh xung đột 32 ký tự đầu giữa các truyện cổ tích)
+const getSentenceHashKey = (norm) => {
+  let hash = 5381;
+  for (let i = 0; i < norm.length; i++) {
+    hash = ((hash << 5) + hash) + norm.charCodeAt(i);
+    hash |= 0;
+  }
+  return `omni_vi_${Math.abs(hash)}_${norm.length}`;
+};
+
+// Kiểm tra bản dịch trong Cache
 export const getCachedTranslation = (rawSentence) => {
+  if (!rawSentence) return '';
   const norm = normalizeJpSentence(rawSentence);
-  if (!norm) return '';
 
   // 1. Kiểm tra kho bản dịch biên tập viên
   if (CURATED_SENTENCE_TRANSLATIONS[norm]) {
@@ -164,9 +175,10 @@ export const getCachedTranslation = (rawSentence) => {
     return MEMORY_CACHE.get(norm);
   }
 
-  // 3. Kiểm tra localStorage
+  // 3. Kiểm tra localStorage với khóa băm
   try {
-    const saved = localStorage.getItem(`omni_vi_trans_${norm.slice(0, 32)}`);
+    const cacheKey = getSentenceHashKey(norm);
+    const saved = localStorage.getItem(cacheKey);
     if (saved) {
       MEMORY_CACHE.set(norm, saved);
       return saved;
@@ -182,7 +194,8 @@ export const setCachedTranslation = (rawSentence, viTranslation) => {
   const norm = normalizeJpSentence(rawSentence);
   MEMORY_CACHE.set(norm, viTranslation);
   try {
-    localStorage.setItem(`omni_vi_trans_${norm.slice(0, 32)}`, viTranslation);
+    const cacheKey = getSentenceHashKey(norm);
+    localStorage.setItem(cacheKey, viTranslation);
   } catch (e) {}
 };
 
@@ -194,51 +207,47 @@ export const batchTranslateSentences = async (sentences) => {
 
   // Lọc ra các câu chưa có bản dịch
   const results = new Array(sentences.length).fill('');
-  const missingIndices = [];
-  const missingSentences = [];
+  const missing = [];
 
   sentences.forEach((st, idx) => {
     const cached = getCachedTranslation(st);
     if (cached) {
       results[idx] = cached;
     } else {
-      missingIndices.push(idx);
-      missingSentences.push(st.trim().replace(/\n/g, ' '));
+      missing.push({ idx, text: st.trim() });
     }
   });
 
-  if (missingSentences.length === 0) {
+  if (missing.length === 0) {
     return results;
   }
 
   try {
-    // Gom nhóm gửi theo lô tối đa 25 câu mỗi request
-    const chunkSize = 25;
-    for (let c = 0; c < missingSentences.length; c += chunkSize) {
-      const chunk = missingSentences.slice(c, c + chunkSize);
-      const chunkIndices = missingIndices.slice(c, c + chunkSize);
-      const combinedText = chunk.join('\n');
-
-      const res = await fetch(
-        `https://translate.googleapis.com/translate_a/single?client=gtx&sl=ja&tl=vi&dt=t&q=${encodeURIComponent(combinedText)}`
-      );
-
-      if (res.ok) {
-        const data = await res.json();
-        if (data && data[0]) {
-          let fullTranslated = '';
-          data[0].forEach(part => {
-            if (part[0]) fullTranslated += part[0];
-          });
-          const translatedLines = fullTranslated.split('\n');
-
-          chunkIndices.forEach((origIdx, i) => {
-            const vi = translatedLines[i] ? translatedLines[i].trim() : '';
-            results[origIdx] = vi;
-            setCachedTranslation(sentences[origIdx], vi);
-          });
+    // Dịch song song theo từng đợt 5 câu để bảo đảm độ chính xác 100% không bao giờ bị lệch dòng
+    const CONCURRENCY = 5;
+    for (let c = 0; c < missing.length; c += CONCURRENCY) {
+      const chunk = missing.slice(c, c + CONCURRENCY);
+      await Promise.all(chunk.map(async (item) => {
+        try {
+          const res = await fetch(
+            `https://translate.googleapis.com/translate_a/single?client=gtx&sl=ja&tl=vi&dt=t&q=${encodeURIComponent(item.text)}`
+          );
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data[0]) {
+              let vi = '';
+              data[0].forEach(part => {
+                if (part[0]) vi += part[0];
+              });
+              vi = vi.trim();
+              results[item.idx] = vi;
+              setCachedTranslation(sentences[item.idx], vi);
+            }
+          }
+        } catch (err) {
+          console.warn('[StoryTranslationService] Lỗi dịch câu:', item.text, err);
         }
-      }
+      }));
     }
   } catch (err) {
     console.warn('[StoryTranslationService] Lỗi dịch batch theo lô:', err);

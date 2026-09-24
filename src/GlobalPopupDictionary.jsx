@@ -86,7 +86,7 @@ const GlobalPopupDictionary = () => {
       const isJapanese = /[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]/.test(text);
       const isSearchable = text.length > 0 && (isJapanese ? text.length <= 40 : text.length <= 500);
 
-      if (isSearchable) {
+      if (isSearchable && sel.rangeCount > 0) {
         const range = sel.getRangeAt(0);
         const rect = range.getBoundingClientRect();
         
@@ -94,6 +94,8 @@ const GlobalPopupDictionary = () => {
           text,
           x: rect.left + (rect.width / 2),
           y: rect.bottom + window.scrollY,
+          topY: rect.top + window.scrollY,
+          viewportY: rect.bottom,
           show: true
         });
         
@@ -124,7 +126,7 @@ const GlobalPopupDictionary = () => {
             finalY += rect.top + window.scrollY;
           }
           
-          setSelection({ text, x: finalX, y: finalY, show: true });
+          setSelection({ text, x: finalX, y: finalY, topY: finalY - 30, viewportY: finalY - window.scrollY, show: true });
           lookupWord(text);
         } else {
           setSelection(s => ({ ...s, show: false }));
@@ -133,10 +135,12 @@ const GlobalPopupDictionary = () => {
     };
 
     document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('touchend', handleMouseUp);
     document.addEventListener('keydown', handleKeyDown);
     window.addEventListener('message', handleMessage);
     return () => {
       document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('touchend', handleMouseUp);
       document.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('message', handleMessage);
     };
@@ -260,8 +264,16 @@ const GlobalPopupDictionary = () => {
 
   if (!selection.show) return null;
 
-  // Tính toán vị trí Popup để không bị tràn màn hình
-  const leftPos = Math.max(10, Math.min(selection.x - 175, window.innerWidth - 360));
+  // Tính toán vị trí Popup để không bị tràn màn hình (Auto-flip Y & Responsive width)
+  const popupWidth = Math.min(360, typeof window !== 'undefined' ? window.innerWidth - 24 : 360);
+  const leftPos = Math.max(12, Math.min(selection.x - (popupWidth / 2), (typeof window !== 'undefined' ? window.innerWidth : 400) - popupWidth - 12));
+  
+  const popupHeight = 450;
+  const currentViewportY = selection.viewportY !== undefined ? selection.viewportY : (selection.y - (typeof window !== 'undefined' ? window.scrollY : 0));
+  const isNearBottom = (currentViewportY + popupHeight + 20) > (typeof window !== 'undefined' ? window.innerHeight : 800);
+  const topPos = isNearBottom
+    ? Math.max(12 + (typeof window !== 'undefined' ? window.scrollY : 0), (selection.topY || selection.y) - popupHeight - 12)
+    : selection.y + 10;
 
   return (
     <div 
@@ -269,10 +281,10 @@ const GlobalPopupDictionary = () => {
       id="global-popup-dict"
       style={{
         position: 'absolute',
-        top: selection.y + 10,
+        top: topPos,
         left: leftPos,
-        width: 350,
-        maxHeight: 450,
+        width: popupWidth,
+        maxHeight: popupHeight,
         background: 'var(--bg-surface)',
         border: '1px solid var(--glass-border-strong)',
         borderRadius: 12,
@@ -300,7 +312,7 @@ const GlobalPopupDictionary = () => {
           <Search size={18} color="var(--accent-primary)" />
           <span style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)' }} className="jp-text">{selection.text}</span>
         </div>
-        <button onClick={() => setSelection(s => ({ ...s, show: false }))} style={{ background: 'none', border: 'none', color: 'var(--text-tertiary)', cursor: 'pointer', padding: 4 }}>
+        <button onClick={() => setSelection(s => ({ ...s, show: false }))} aria-label="Đóng từ điển" title="Đóng từ điển (Esc)" style={{ background: 'none', border: 'none', color: 'var(--text-tertiary)', cursor: 'pointer', padding: 4 }}>
           <X size={18} />
         </button>
       </div>

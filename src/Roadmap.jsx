@@ -670,8 +670,9 @@ const Roadmap = () => {
   const goalInfo = GOALS.find(g => g.id === currentGoalId) || GOALS[2];
   const phases = ROADMAP[currentGoalId] || ROADMAP['N3'] || [];
   const currentPhaseIdx = Math.min(profile.currentPhase || 0, Math.max(0, phases.length - 1));
-  const activePhase = phases[currentPhaseIdx] || phases[0];
-  const inspectedPhase = phases[inspectPhaseIdx] || activePhase;
+  const activePhase = phases[currentPhaseIdx] || phases[0] || {};
+  const safeInspectIdx = Math.min(inspectPhaseIdx, Math.max(0, phases.length - 1));
+  const inspectedPhase = phases[safeInspectIdx] || activePhase || {};
 
   // Timeline calculation
   const startDate = profile?.startDate ? new Date(profile.startDate) : new Date();
@@ -1420,12 +1421,12 @@ const Roadmap = () => {
             <div style={{
               padding: '12px 16px',
               borderRadius: 10,
-              background: `${inspectedPhase.color}10`,
-              border: `1px solid ${inspectedPhase.color}33`,
+              background: `${inspectedPhase.color || '#3b82f6'}10`,
+              border: `1px solid ${inspectedPhase.color || '#3b82f6'}33`,
               marginBottom: 14
             }}>
-              <div style={{ fontSize: '0.85rem', fontWeight: 700, color: inspectedPhase.color }}>
-                🎯 Mốc then chốt: {inspectedPhase.milestone}
+              <div style={{ fontSize: '0.85rem', fontWeight: 700, color: inspectedPhase.color || '#3b82f6' }}>
+                🎯 Mốc then chốt: {inspectedPhase.milestone || 'Hoàn thành các mục tiêu của giai đoạn'}
               </div>
             </div>
 

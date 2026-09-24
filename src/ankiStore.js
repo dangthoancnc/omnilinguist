@@ -32,7 +32,7 @@ export async function saveAnkiWorkspaceHandle(handle, pathName = null) {
     const tx = db.transaction(STORE_NAME, 'readwrite');
     const store = tx.objectStore(STORE_NAME);
     store.put(handle, 'workspace_handle');
-    const nameToSave = pathName || handle.name || DEFAULT_ANKI_FOLDER;
+    const nameToSave = pathName || (handle ? handle.name : null) || DEFAULT_ANKI_FOLDER;
     store.put(nameToSave, 'workspace_path');
     await new Promise((res) => { tx.oncomplete = res; });
     localStorage.setItem('omni_anki_workspace_name', nameToSave);
@@ -53,11 +53,16 @@ export async function getAnkiWorkspaceHandle() {
     const tx = db.transaction(STORE_NAME, 'readonly');
     const store = tx.objectStore(STORE_NAME);
     
-    const handleReq = store.get('workspace_handle');
-    const pathReq = store.get('workspace_path');
-
-    const handle = await new Promise((res) => { handleReq.onsuccess = () => res(handleReq.result); });
-    const path = await new Promise((res) => { pathReq.onsuccess = () => res(pathReq.result); });
+    const [handle, path] = await Promise.all([
+      new Promise((res) => {
+        handleReq.onsuccess = () => res(handleReq.result);
+        handleReq.onerror = () => res(null);
+      }),
+      new Promise((res) => {
+        pathReq.onsuccess = () => res(pathReq.result);
+        pathReq.onerror = () => res(null);
+      })
+    ]);
 
     const savedName = path || localStorage.getItem('omni_anki_workspace_name') || DEFAULT_ANKI_FOLDER;
     return { handle: handle || null, path: savedName };

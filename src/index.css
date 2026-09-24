@@ -12,7 +12,7 @@
   --bg-active: rgba(37, 99, 235, 0.08);
   --text-primary: #0f172a;
   --text-secondary: #475569;
-  --text-tertiary: #94a3b8;
+  --text-tertiary: #64748b;
   --accent-primary: #2563eb;
   --accent-hover: #1d4ed8;
   --accent-subtle: rgba(37, 99, 235, 0.08);
@@ -108,6 +108,12 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 0 0 2px var(--accent-subtle);
 }
 
+/* Accessibility Focus Rings (WCAG 2.1 Focus Visible) */
+button:focus-visible, a:focus-visible, [role="button"]:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent-primary) !important;
+  outline-offset: 2px !important;
+}
+
 option {
   background-color: var(--bg-surface);
   color: var(--text-primary);
@@ -149,12 +155,12 @@ rt {
   line-height: 1;
 }
 
-[data-theme="dark"] rt, :root rt {
-  color: #93c5fd;
+:root rt, [data-theme="light"] rt {
+  color: #1d4ed8;
 }
 
-[data-theme="light"] rt {
-  color: #1d4ed8;
+[data-theme="dark"] rt {
+  color: #93c5fd;
 }
 
 .immersion-prose rt {
@@ -235,17 +241,6 @@ rt {
 }
 .btn-ghost:hover { background: var(--bg-hover); color: var(--text-primary); }
 
-/* ========== SIDEBAR DRAWER ========== */
-.sidebar-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 998;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-normal);
-}
-.sidebar-overlay.open { opacity: 1; pointer-events: auto; }
 
 /* ========== SIDEBAR DRAWER & AUTO-COLLAPSE RAIL ========== */
 .sidebar-overlay {
@@ -531,7 +526,9 @@ rt {
 
 /* Zen Mode: Full Focus Reading (Hides app topbar, sidebar, and maximizes reader canvas) */
 body.zen-mode .app-topbar,
-body.zen-mode .sidebar,
+body.zen-mode .sidebar-rail-wrapper,
+body.zen-mode .sidebar-drawer,
+body.zen-mode .sidebar-overlay,
 body.zen-mode .bottom-nav {
   display: none !important;
 }
@@ -541,8 +538,9 @@ body.zen-mode .app-content {
 }
 
 body.zen-mode .app-main {
-  width: 100vw !important;
-  max-width: 100vw !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
 }
 
 /* ========== GRID ========== */
@@ -662,10 +660,11 @@ body.zen-mode .app-main {
   position: absolute;
   top: 2px;
   left: 2px;
-  transition: left var(--transition-fast);
+  transform: translateX(0);
+  transition: transform var(--transition-fast);
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
-.theme-toggle.active .theme-toggle-knob { left: 20px; }
+.theme-toggle.active .theme-toggle-knob { transform: translateX(18px); }
 
 /* ========== MOBILE BOTTOM NAVIGATION ========== */
 .bottom-nav {
@@ -713,7 +712,7 @@ body.zen-mode .app-main {
   display: none !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .hide-on-desktop {
     display: flex !important;
   }
@@ -724,7 +723,7 @@ body.zen-mode .app-main {
   body {
     overscroll-behavior-y: none;
   }
-  /* B  sidebar-brand n u m  menu t  More     g n h n */
+  /* Căn chỉnh header sidebar drawer trên thiết bị di động/tablet */
   .sidebar-drawer .sidebar-brand {
     padding-top: calc(16px + env(safe-area-inset-top));
   }

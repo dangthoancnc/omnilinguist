@@ -10,7 +10,6 @@ import {
   BadgeCheck, Award, Zap, AlertCircle
 } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
-import SelectionDictionary from './components/SelectionDictionary';
 import { 
   fetchLiveNews, 
   CURATED_JAPAN_NEWS, 
@@ -384,9 +383,6 @@ const JapanNewsHub = () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 16, minHeight: '88vh', maxWidth: 1360, margin: '0 auto', paddingBottom: 60 }}>
         
-        {/* SELECTION DICTIONARY (Interactive popup on text highlight) */}
-        <SelectionDictionary />
-
         {/* STICKY TOP ACTION TOOLBAR */}
         <div 
           className="glass-panel" 
@@ -727,9 +723,6 @@ const JapanNewsHub = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16, minHeight: '88vh', maxWidth: 1360, margin: '0 auto', paddingBottom: 60 }}>
       
-      {/* SELECTION DICTIONARY GLOBAL POPUP */}
-      <SelectionDictionary />
-
       {/* 🔴 1. BREAKING NEWS TICKER (速報 · ĐIỂM TIN NÓNG LIÊN TỤC) */}
       <div 
         className="glass-panel" 

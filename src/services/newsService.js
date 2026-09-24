@@ -141,11 +141,11 @@ export async function fetchLiveNews(category = 'all', forceRefresh = false) {
         const data = await response.json();
         if (data.status === 'ok' && Array.isArray(data.items)) {
           const items = data.items.map(item => {
-            const rawDesc = (item.description || item.content || '').replace(/<[^>]+>/g, '').trim();
-            const id = `rss_json_${Math.abs(item.title.split('').reduce((a,b)=>((a<<5)-a)+b.charCodeAt(0),0))}`;
+            const rawTitle = item.title || item.link || 'tin_tuc';
+            const id = `rss_json_${Math.abs(rawTitle.split('').reduce((a,b)=>((a<<5)-a)+b.charCodeAt(0),0))}`;
             return {
               id,
-              title: item.title,
+              title: item.title || 'Tin tức Nhật Bản',
               category: feed.category,
               categoryLabel: feed.category === 'economy' ? '📈 Kinh tế & Tỷ giá' : feed.category === 'life' ? '🗾 Đời sống & Visa' : feed.category === 'culture' ? '🌸 Văn hóa & Tiếng Nhật Dễ' : '🏛️ Thời sự & Xã hội',
               level: feed.category === 'culture' ? 'N4' : 'N2',
@@ -154,7 +154,7 @@ export async function fetchLiveNews(category = 'all', forceRefresh = false) {
               link: item.link,
               image: item.thumbnail || item.enclosure?.link || FALLBACK_IMAGES[feed.category] || FALLBACK_IMAGES.society,
               summary: rawDesc.slice(0, 180) + (rawDesc.length > 180 ? '...' : ''),
-              content: rawDesc || item.title,
+              content: rawDesc || item.title || '',
               viTranslation: '',
               isLive: true
             };

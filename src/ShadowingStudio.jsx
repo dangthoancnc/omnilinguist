@@ -414,6 +414,16 @@ const ShadowingStudio = () => {
   const loopCountRef = useRef(0);
   const isWaitingRef = useRef(false);
   const waitTimeoutRef = useRef(null);
+  const loopTimeoutRef = useRef(null);
+
+  // Cleanup user recorded audio object URLs on unmount
+  useEffect(() => {
+    return () => {
+      Object.values(userAudioBlobs).forEach(url => {
+        try { URL.revokeObjectURL(url); } catch(e){}
+      });
+    };
+  }, []);
 
   // Speech Recognition Recording
   const [recordingIdx, setRecordingIdx] = useState(null);
@@ -1239,7 +1249,12 @@ const ShadowingStudio = () => {
         mediaRecorder.onstop = () => {
           const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
           const audioUrl = URL.createObjectURL(audioBlob);
-          setUserAudioBlobs(prev => ({ ...prev, [idx]: audioUrl }));
+          setUserAudioBlobs(prev => {
+            if (prev[idx]) {
+              try { URL.revokeObjectURL(prev[idx]); } catch(e){}
+            }
+            return { ...prev, [idx]: audioUrl };
+          });
           stream.getTracks().forEach(track => track.stop());
         };
         
