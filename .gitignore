@@ -22,9 +22,11 @@ __pycache__/
 *.local
 .env
 .env.*
+!.env.example
 .env-old
 
 # Archives, Binaries & Executables
+backups/
 *.rar
 *.zip
 *.7z
