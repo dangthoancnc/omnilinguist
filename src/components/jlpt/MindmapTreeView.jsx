@@ -1,9 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import { 
   ZoomIn, ZoomOut, RotateCcw, ChevronDown, ChevronRight, 
-  ArrowRight, Maximize2, Minimize2, X, ExternalLink, Sparkles, BookOpen, Network 
+  ArrowRight, Maximize2, Minimize2, X, ExternalLink, Sparkles, BookOpen, Network,
+  Lightbulb, Volume2 
 } from 'lucide-react';
 import FuriganaText from '../FuriganaText';
+import { speakJapanese } from './speechHelper';
 import { JLPT_LEVEL_COLORS, getLevelBadgeStyle } from '../../theme';
 
 /**
@@ -48,8 +50,10 @@ export default function MindmapTreeView({
   const [internalModalOpen, setInternalModalOpen] = useState(false);
   const [modalView, setModalView] = useState('lesson'); // 'lesson' | 'level'
   const [selectedModalLesson, setSelectedModalLesson] = useState(null);
+  const [selectedLevel, setSelectedLevel] = useState(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [viewDensity, setViewDensity] = useState('structure'); // 'compact' | 'structure' | 'full'
+  const [lessonDetailMode, setLessonDetailMode] = useState('rich'); // 'compact' | 'rich'
   const [collapsedTrunks, setCollapsedTrunks] = useState({});
 
   const toggleTrunkCollapse = (trunkId) => {
@@ -76,6 +80,7 @@ export default function MindmapTreeView({
     if (onClose) onClose();
     setInternalModalOpen(false);
     setSelectedModalLesson(null);
+    setSelectedLevel(null);
   };
   const openModal = () => {
     if (onOpenFullscreen) onOpenFullscreen();
@@ -90,14 +95,24 @@ export default function MindmapTreeView({
   const handleZoomOut = () => setZoom(z => Math.max(z - 0.15, 0.5));
   const handleResetZoom = () => setZoom(1);
 
-  const currentLessonInModal = selectedModalLesson || lesson;
-  const currentLevel = currentLessonInModal?.level || level;
+  const currentLevel = selectedLevel || currentLessonInModal?.level || level;
   const accentColor = JLPT_LEVEL_COLORS[currentLevel] || '#3b82f6';
 
+  const handleSwitchLevel = (lvl) => {
+    setSelectedLevel(lvl);
+    const pool = (allLessons && allLessons.length > 0) ? allLessons : lessons;
+    const targetLessons = pool.filter(l => l.level === lvl);
+    if (targetLessons.length > 0) {
+      setSelectedModalLesson(targetLessons[0]);
+    }
+  };
+
+  const currentLessonInModal = selectedModalLesson || lesson;
+
   const levelLessons = useMemo(() => {
-    if (lessons && lessons.length > 0) return lessons;
-    if (allLessons && allLessons.length > 0) {
-      return allLessons.filter(l => l.level === currentLevel);
+    const pool = (allLessons && allLessons.length > 0) ? allLessons : lessons;
+    if (pool && pool.length > 0) {
+      return pool.filter(l => l.level === currentLevel);
     }
     return [];
   }, [lessons, allLessons, currentLevel]);
@@ -105,16 +120,46 @@ export default function MindmapTreeView({
   const branches = useMemo(() => {
     const target = currentLessonInModal;
     if (!target) return [];
-    return target.mindmap?.branches ||
-      (target.grammarPoints || []).map((gp, i) => ({
-        name: gp.pattern,
-        color: ['#3b82f6', '#8b5cf6', '#10b981', '#f59e0b', '#06b6d4'][i % 5],
-        formula: gp.formula,
-        nuance: gp.nuance,
-        metaphor: gp.metaphor,
-        mnemonic: gp.mnemonic,
-        example: gp.examples?.[0],
-      }));
+
+    const gpList = target.grammarPoints || [];
+
+    // If target has pre-configured mindmap branches, merge them with matching grammarPoints
+    if (target.mindmap?.branches && target.mindmap.branches.length > 0) {
+      return target.mindmap.branches.map((b, i) => {
+        const matchingGp = gpList.find(g => 
+          g.pattern === b.name || 
+          g.pattern?.includes(b.name) || 
+          b.name?.includes(g.pattern)
+        ) || gpList[i];
+
+        return {
+          name: b.name,
+          color: b.color || ['#3b82f6', '#8b5cf6', '#10b981', '#f59e0b', '#06b6d4'][i % 5],
+          formula: b.formula || matchingGp?.formula,
+          nuance: b.nuance || matchingGp?.nuance || matchingGp?.meaning,
+          meaning: matchingGp?.meaning,
+          metaphor: b.metaphor || matchingGp?.metaphor,
+          mnemonic: b.mnemonic || matchingGp?.mnemonic,
+          example: b.example || matchingGp?.examples?.[0],
+          traps: matchingGp?.traps || matchingGp?.notes || matchingGp?.caution,
+          collocations: matchingGp?.collocations,
+        };
+      });
+    }
+
+    // Direct fallback from grammarPoints
+    return gpList.map((gp, i) => ({
+      name: gp.pattern,
+      color: ['#3b82f6', '#8b5cf6', '#10b981', '#f59e0b', '#06b6d4'][i % 5],
+      formula: gp.formula,
+      nuance: gp.nuance || gp.meaning,
+      meaning: gp.meaning,
+      metaphor: gp.metaphor,
+      mnemonic: gp.mnemonic,
+      example: gp.examples?.[0],
+      traps: gp.traps || gp.notes || gp.caution,
+      collocations: gp.collocations,
+    }));
   }, [currentLessonInModal]);
 
   const handleBranchClick = (idx) => {
@@ -329,10 +374,26 @@ export default function MindmapTreeView({
       <div className={`jlpt-mindmap-modal-content ${isFullscreen ? 'jlpt-mindmap-modal-content--fullscreen' : ''}`} onClick={(e) => e.stopPropagation()}>
         {/* Modal Header Bar with View Switcher */}
         <div className="jlpt-mindmap-modal-header">
+          {/* Level Switcher (N5, N4, N3, N2, N1) */}
+          <div className="jlpt-modal-level-switcher">
+            {['N5', 'N4', 'N3', 'N2', 'N1'].map((lvl) => {
+              const isActive = lvl === currentLevel;
+              return (
+                <button
+                  key={lvl}
+                  type="button"
+                  className={`jlpt-modal-level-btn ${isActive ? 'jlpt-modal-level-btn--active' : ''}`}
+                  style={isActive ? getLevelBadgeStyle(lvl) : undefined}
+                  onClick={() => handleSwitchLevel(lvl)}
+                  title={`Chuyển sang bản đồ cấp độ ${lvl}`}
+                >
+                  {lvl}
+                </button>
+              );
+            })}
+          </div>
+
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 'fit-content' }}>
-            <span style={getLevelBadgeStyle(currentLevel)}>
-              {currentLevel}
-            </span>
             <span style={{ fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)' }}>
               {modalView === 'lesson' 
                 ? `Bài ${currentLessonInModal?.lessonNumber}: ${currentLessonInModal?.jpTitle || ''}`
@@ -359,6 +420,30 @@ export default function MindmapTreeView({
               <span>Toàn cảnh ({levelLessons.length} bài)</span>
             </button>
           </div>
+
+          {/* Lesson View Detail Mode: Gọn vs Đầy đủ (Ví dụ & Chú ý) */}
+          {modalView === 'lesson' && (
+            <div className="jlpt-modal-tabs" style={{ padding: '1px' }}>
+              <button
+                type="button"
+                className={`jlpt-modal-tab-btn ${lessonDetailMode === 'compact' ? 'jlpt-modal-tab-btn--active' : ''}`}
+                style={{ padding: '2px 8px', fontSize: '10.5px' }}
+                onClick={() => setLessonDetailMode('compact')}
+                title="Chế độ tinh gọn (Công thức + Sắc thái)"
+              >
+                ☷ Gọn
+              </button>
+              <button
+                type="button"
+                className={`jlpt-modal-tab-btn ${lessonDetailMode === 'rich' ? 'jlpt-modal-tab-btn--active' : ''}`}
+                style={{ padding: '2px 8px', fontSize: '10.5px' }}
+                onClick={() => setLessonDetailMode('rich')}
+                title="Chế độ đầy đủ (Kèm Ví dụ mẫu mực & Chú ý mẹo nhớ)"
+              >
+                ⊞ Đầy đủ (Ví dụ & Chú ý)
+              </button>
+            </div>
+          )}
 
           {/* Panoramic Level Toolbar: Density & Quick Collapse (Only in Level mode) */}
           {modalView === 'level' && (
@@ -504,23 +589,77 @@ export default function MindmapTreeView({
                     {branches.map((b, idx) => {
                       const branchColor = b.color || accentColor;
                       return (
-                        <div key={idx} className="jlpt-tree-branch-col">
+                        <div key={idx} className={`jlpt-tree-branch-col ${lessonDetailMode === 'rich' ? 'jlpt-tree-branch-col--rich' : ''}`}>
                           <div className="jlpt-tree-vline jlpt-tree-vline--short" style={{ '--line-color': branchColor }} />
                           <div
-                            className="jlpt-tree-branch-card"
+                            className={`jlpt-tree-branch-card ${lessonDetailMode === 'rich' ? 'jlpt-tree-branch-card--rich' : ''}`}
                             style={{ '--branch-color': branchColor }}
                             onClick={() => handleBranchClick(idx)}
                           >
                             <div className="jlpt-tree-branch-header">
                               <span className="jlpt-tree-branch-dot" style={{ background: branchColor }} />
                               <span className="jlpt-tree-branch-name"><FuriganaText text={b.name} /></span>
-                            </div>
-                            <div className="jlpt-tree-branch-details">
-                              {b.formula && (
-                                <div className="jlpt-tree-branch-formula"><FuriganaText text={b.formula} /></div>
+                              {lessonDetailMode === 'rich' && b.example?.jp && (
+                                <button
+                                  type="button"
+                                  className="jlpt-icon-btn jlpt-icon-btn--sm"
+                                  style={{ padding: '2px 4px', marginLeft: 'auto' }}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    speakJapanese(b.example.jp);
+                                  }}
+                                  title="Nghe phát âm ví dụ"
+                                >
+                                  <Volume2 size={12} />
+                                </button>
                               )}
-                              {b.nuance && (
-                                <div className="jlpt-tree-branch-nuance"><FuriganaText text={b.nuance} /></div>
+                            </div>
+
+                            <div className="jlpt-tree-branch-details">
+                              {/* Formula */}
+                              {b.formula && (
+                                <div className="jlpt-tree-branch-formula">
+                                  <span className="jlpt-tree-branch-badge-label">Công thức:</span>
+                                  <FuriganaText text={b.formula} />
+                                </div>
+                              )}
+
+                              {/* Nuance / Meaning */}
+                              {(b.nuance || b.meaning) && (
+                                <div className="jlpt-tree-branch-nuance">
+                                  <FuriganaText text={b.nuance || b.meaning} />
+                                </div>
+                              )}
+
+                              {/* Rich Mode: Anchor Example */}
+                              {lessonDetailMode === 'rich' && b.example && (
+                                <div className="jlpt-tree-branch-rich-example">
+                                  <div className="jlpt-tree-branch-rich-label" style={{ color: 'var(--tint-amber-text, #b45309)' }}>
+                                    <Sparkles size={10} />
+                                    <span>Ví dụ tiêu biểu:</span>
+                                  </div>
+                                  <div className="jlpt-tree-branch-rich-ex-jp">
+                                    <FuriganaText text={b.example.jp} />
+                                  </div>
+                                  {b.example.vi && (
+                                    <div className="jlpt-tree-branch-rich-ex-vi">
+                                      {b.example.vi}
+                                    </div>
+                                  )}
+                                </div>
+                              )}
+
+                              {/* Rich Mode: Mnemonic / Traps / Caution */}
+                              {lessonDetailMode === 'rich' && (b.mnemonic || b.traps || b.metaphor) && (
+                                <div className="jlpt-tree-branch-rich-note">
+                                  <div className="jlpt-tree-branch-rich-label" style={{ color: 'var(--tint-sky-text, #0284c7)' }}>
+                                    <Lightbulb size={10} />
+                                    <span>{b.mnemonic ? 'Mẹo nhớ phản xạ:' : 'Chú ý cạm bẫy:'}</span>
+                                  </div>
+                                  <div className="jlpt-tree-branch-rich-note-text">
+                                    {b.mnemonic || b.traps || b.metaphor}
+                                  </div>
+                                </div>
                               )}
                             </div>
                           </div>
