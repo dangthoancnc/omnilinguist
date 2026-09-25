@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { 
   ZoomIn, ZoomOut, RotateCcw, ChevronDown, ChevronRight, 
-  ArrowRight, Maximize2, X, ExternalLink, Sparkles 
+  ArrowRight, Maximize2, X, ExternalLink, Sparkles, BookOpen, Network 
 } from 'lucide-react';
 import FuriganaText from '../FuriganaText';
 import { JLPT_LEVEL_COLORS, getLevelBadgeStyle } from '../../theme';
