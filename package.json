@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "audit:stories": "node scripts/audit_story_illustrations.mjs",
+    "backup": "node scripts/package_backup.mjs",
     "postinstall": "node scripts/patch-zlib.cjs"
   },
   "dependencies": {
