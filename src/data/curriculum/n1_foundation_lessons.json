@@ -9,13 +9,19 @@
     "summary": "Toàn diện Chuyên Đề 101 Thượng Cấp N1: Tương quan khoảnh khắc Thượng cấp (Tốc độ tức thời). Trụ cột học thuật: Tốc độ chớp nhoáng.",
     "mindmap": {
       "center": "Bài 101: Tương quan khoảnh khắc Thượng cấp (Tốc độ tức thời)",
+      "mascotIcon": "⚡",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 100 (N2 Bài 100)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 102",
+      "trapRadar": "~そばから (vừa làm xong lại bị mất công/lặp lại tiêu cực) vs ~が早いか (vừa chớp mắt đã làm hành động tức khắc)",
       "tip": "Làm chủ mẫu câu Tốc độ chớp nhoáng để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~そばから",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~そばから",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~そばから trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tốc độ chớp nhoáng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~そばからの視点から多角的に検証されるべきである。",
@@ -24,9 +30,11 @@
         },
         {
           "name": "~が早いか",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~が早いか",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~が早いか trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tốc độ chớp nhoáng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~が早いかの視点から多角的に検証されるべきである。",
@@ -35,9 +43,11 @@
         },
         {
           "name": "~や / ~や否や",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~や / ~や否や",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~や / ~や否や trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tốc độ chớp nhoáng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~や / ~や否やの視点から多角的に検証されるべきである。",
@@ -46,9 +56,11 @@
         },
         {
           "name": "~なり",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~なり",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~なり trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tốc độ chớp nhoáng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~なりの視点から多角的に検証されるべきである。",
@@ -61,10 +73,12 @@
       {
         "id": "n1_lesson_101_1",
         "pattern": "~そばから",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~そばから trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~そばから",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tương quan khoảnh khắc Thượng cấp (Tốc độ tức thời)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~そばから (vừa làm xong lại bị mất công/lặp lại tiêu cực) vs ~が早いか (vừa chớp mắt đã làm hành động tức khắc)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tốc độ chớp nhoáng\".",
         "examples": [
           {
@@ -89,10 +103,12 @@
       {
         "id": "n1_lesson_101_2",
         "pattern": "~が早いか",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~が早いか trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~が早いか",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tương quan khoảnh khắc Thượng cấp (Tốc độ tức thời)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~そばから (vừa làm xong lại bị mất công/lặp lại tiêu cực) vs ~が早いか (vừa chớp mắt đã làm hành động tức khắc)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tốc độ chớp nhoáng\".",
         "examples": [
           {
@@ -117,10 +133,12 @@
       {
         "id": "n1_lesson_101_3",
         "pattern": "~や / ~や否や",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~や / ~や否や trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~や / ~や否や",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tương quan khoảnh khắc Thượng cấp (Tốc độ tức thời)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~そばから (vừa làm xong lại bị mất công/lặp lại tiêu cực) vs ~が早いか (vừa chớp mắt đã làm hành động tức khắc)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tốc độ chớp nhoáng\".",
         "examples": [
           {
@@ -145,10 +163,12 @@
       {
         "id": "n1_lesson_101_4",
         "pattern": "~なり",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~なり trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~なり",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tương quan khoảnh khắc Thượng cấp (Tốc độ tức thời)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~そばから (vừa làm xong lại bị mất công/lặp lại tiêu cực) vs ~が早いか (vừa chớp mắt đã làm hành động tức khắc)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tốc độ chớp nhoáng\".",
         "examples": [
           {
@@ -182,13 +202,19 @@
     "summary": "Toàn diện Chuyên Đề 102 Thượng Cấp N1: Khởi điểm lịch sử, Giới hạn tối thượng & Mốc thời gian. Trụ cột học thuật: Mốc thời gian tối thượng.",
     "mindmap": {
       "center": "Bài 102: Khởi điểm lịch sử, Giới hạn tối thượng & Mốc thời gian",
+      "mascotIcon": "🏛️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 101 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 103",
+      "trapRadar": "~を皮切りに (khởi đầu cho một chuỗi sự kiện lớn tương tự) vs ~をもって (tính đến thời điểm trang trọng này là chấm dứt)",
       "tip": "Làm chủ mẫu câu Mốc thời gian tối thượng để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~を皮切りに (して)",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~を皮切りに (して)",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~を皮切りに (して) trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Mốc thời gian tối thượng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~を皮切りに (して)の視点から多角的に検証されるべきである。",
@@ -197,9 +223,11 @@
         },
         {
           "name": "~を限りに",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~を限りに",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~を限りに trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Mốc thời gian tối thượng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~を限りにの視点から多角的に検証されるべきである。",
@@ -208,9 +236,11 @@
         },
         {
           "name": "~をもって",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~をもって",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~をもって trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Mốc thời gian tối thượng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~をもっての視点から多角的に検証されるべきである。",
@@ -219,9 +249,11 @@
         },
         {
           "name": "~を皮切りとして",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~を皮切りとして",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~を皮切りとして trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Mốc thời gian tối thượng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~を皮切りとしての視点から多角的に検証されるべきである。",
@@ -234,10 +266,12 @@
       {
         "id": "n1_lesson_102_1",
         "pattern": "~を皮切りに (して)",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~を皮切りに (して) trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~を皮切りに (して)",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Khởi điểm lịch sử, Giới hạn tối thượng & Mốc thời gian",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~を皮切りに (khởi đầu cho một chuỗi sự kiện lớn tương tự) vs ~をもって (tính đến thời điểm trang trọng này là chấm dứt)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Mốc thời gian tối thượng\".",
         "examples": [
           {
@@ -262,10 +296,12 @@
       {
         "id": "n1_lesson_102_2",
         "pattern": "~を限りに",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~を限りに trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~を限りに",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Khởi điểm lịch sử, Giới hạn tối thượng & Mốc thời gian",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~を皮切りに (khởi đầu cho một chuỗi sự kiện lớn tương tự) vs ~をもって (tính đến thời điểm trang trọng này là chấm dứt)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Mốc thời gian tối thượng\".",
         "examples": [
           {
@@ -290,10 +326,12 @@
       {
         "id": "n1_lesson_102_3",
         "pattern": "~をもって",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~をもって trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~をもって",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Khởi điểm lịch sử, Giới hạn tối thượng & Mốc thời gian",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~を皮切りに (khởi đầu cho một chuỗi sự kiện lớn tương tự) vs ~をもって (tính đến thời điểm trang trọng này là chấm dứt)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Mốc thời gian tối thượng\".",
         "examples": [
           {
@@ -318,10 +356,12 @@
       {
         "id": "n1_lesson_102_4",
         "pattern": "~を皮切りとして",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~を皮切りとして trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~を皮切りとして",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Khởi điểm lịch sử, Giới hạn tối thượng & Mốc thời gian",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~を皮切りに (khởi đầu cho một chuỗi sự kiện lớn tương tự) vs ~をもって (tính đến thời điểm trang trọng này là chấm dứt)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Mốc thời gian tối thượng\".",
         "examples": [
           {
@@ -355,13 +395,19 @@
     "summary": "Toàn diện Chuyên Đề 103 Thượng Cấp N1: Tương tác đa chiều & Điều kiện tiên quyết tuyệt đối. Trụ cột học thuật: Điều kiện tuyệt đối.",
     "mindmap": {
       "center": "Bài 103: Tương tác đa chiều & Điều kiện tiên quyết tuyệt đối",
+      "mascotIcon": "🌌",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 102 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 104",
+      "trapRadar": "~なくしては (nếu thiếu đi yếu tố cốt lõi này thì tuyệt đối không thể thành công)",
       "tip": "Làm chủ mẫu câu Điều kiện tuyệt đối để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~と相まって",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~と相まって",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~と相まって trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Điều kiện tuyệt đối\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~と相まっての視点から多角的に検証されるべきである。",
@@ -370,9 +416,11 @@
         },
         {
           "name": "~なくして (は)",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~なくして (は)",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~なくして (は) trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Điều kiện tuyệt đối\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~なくして (は)の視点から多角的に検証されるべきである。",
@@ -381,9 +429,11 @@
         },
         {
           "name": "~なしに (は)",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~なしに (は)",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~なしに (は) trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Điều kiện tuyệt đối\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~なしに (は)の視点から多角的に検証されるべきである。",
@@ -392,9 +442,11 @@
         },
         {
           "name": "~たるもの",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~たるもの",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~たるもの trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Điều kiện tuyệt đối\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~たるものの視点から多角的に検証されるべきである。",
@@ -407,10 +459,12 @@
       {
         "id": "n1_lesson_103_1",
         "pattern": "~と相まって",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~と相まって trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~と相まって",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tương tác đa chiều & Điều kiện tiên quyết tuyệt đối",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~なくしては (nếu thiếu đi yếu tố cốt lõi này thì tuyệt đối không thể thành công)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Điều kiện tuyệt đối\".",
         "examples": [
           {
@@ -435,10 +489,12 @@
       {
         "id": "n1_lesson_103_2",
         "pattern": "~なくして (は)",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~なくして (は) trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~なくして (は)",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tương tác đa chiều & Điều kiện tiên quyết tuyệt đối",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~なくしては (nếu thiếu đi yếu tố cốt lõi này thì tuyệt đối không thể thành công)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Điều kiện tuyệt đối\".",
         "examples": [
           {
@@ -463,10 +519,12 @@
       {
         "id": "n1_lesson_103_3",
         "pattern": "~なしに (は)",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~なしに (は) trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~なしに (は)",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tương tác đa chiều & Điều kiện tiên quyết tuyệt đối",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~なくしては (nếu thiếu đi yếu tố cốt lõi này thì tuyệt đối không thể thành công)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Điều kiện tuyệt đối\".",
         "examples": [
           {
@@ -491,10 +549,12 @@
       {
         "id": "n1_lesson_103_4",
         "pattern": "~たるもの",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~たるもの trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~たるもの",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tương tác đa chiều & Điều kiện tiên quyết tuyệt đối",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~なくしては (nếu thiếu đi yếu tố cốt lõi này thì tuyệt đối không thể thành công)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Điều kiện tuyệt đối\".",
         "examples": [
           {
@@ -528,13 +588,19 @@
     "summary": "Toàn diện Chuyên Đề 104 Thượng Cấp N1: Lý do trang trọng, Nguồn gốc học thuật & Tự trọng. Trụ cột học thuật: Lý do trang trọng.",
     "mindmap": {
       "center": "Bài 104: Lý do trang trọng, Nguồn gốc học thuật & Tự trọng",
+      "mascotIcon": "📜",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 103 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 105",
+      "trapRadar": "~手前 (vì thể diện/danh dự trước mặt người khác nên bắt buộc phải làm)",
       "tip": "Làm chủ mẫu câu Lý do trang trọng để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~ゆえに",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~ゆえに",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~ゆえに trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Lý do trang trọng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~ゆえにの視点から多角的に検証されるべきである。",
@@ -543,9 +609,11 @@
         },
         {
           "name": "~とあって",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~とあって",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~とあって trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Lý do trang trọng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~とあっての視点から多角的に検証されるべきである。",
@@ -554,9 +622,11 @@
         },
         {
           "name": "~手前",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~手前",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~手前 trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Lý do trang trọng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~手前の視点から多角的に検証されるべきである。",
@@ -565,9 +635,11 @@
         },
         {
           "name": "~にかまけて",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~にかまけて",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~にかまけて trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Lý do trang trọng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~にかまけての視点から多角的に検証されるべきである。",
@@ -580,10 +652,12 @@
       {
         "id": "n1_lesson_104_1",
         "pattern": "~ゆえに",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~ゆえに trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~ゆえに",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Lý do trang trọng, Nguồn gốc học thuật & Tự trọng",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~手前 (vì thể diện/danh dự trước mặt người khác nên bắt buộc phải làm)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Lý do trang trọng\".",
         "examples": [
           {
@@ -608,10 +682,12 @@
       {
         "id": "n1_lesson_104_2",
         "pattern": "~とあって",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~とあって trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~とあって",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Lý do trang trọng, Nguồn gốc học thuật & Tự trọng",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~手前 (vì thể diện/danh dự trước mặt người khác nên bắt buộc phải làm)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Lý do trang trọng\".",
         "examples": [
           {
@@ -636,10 +712,12 @@
       {
         "id": "n1_lesson_104_3",
         "pattern": "~手前",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~手前 trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~手前",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Lý do trang trọng, Nguồn gốc học thuật & Tự trọng",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~手前 (vì thể diện/danh dự trước mặt người khác nên bắt buộc phải làm)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Lý do trang trọng\".",
         "examples": [
           {
@@ -664,10 +742,12 @@
       {
         "id": "n1_lesson_104_4",
         "pattern": "~にかまけて",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~にかまけて trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~にかまけて",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Lý do trang trọng, Nguồn gốc học thuật & Tự trọng",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~手前 (vì thể diện/danh dự trước mặt người khác nên bắt buộc phải làm)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Lý do trang trọng\".",
         "examples": [
           {
@@ -701,13 +781,19 @@
     "summary": "Toàn diện Chuyên Đề 105 Thượng Cấp N1: Bản sắc độc quyền, Giả định cực hạn & Ví von triết lý. Trụ cột học thuật: Bản sắc & Ví von.",
     "mindmap": {
       "center": "Bài 105: Bản sắc độc quyền, Giả định cực hạn & Ví von triết lý",
+      "mascotIcon": "👑",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 104 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 106",
+      "trapRadar": "~ならでは (chỉ có ở nơi đây, mang bản sắc độc quyền không nơi nào có)",
       "tip": "Làm chủ mẫu câu Bản sắc & Ví von để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~ならでは (の)",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~ならでは (の)",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~ならでは (の) trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bản sắc & Ví von\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~ならでは (の)の視点から多角的に検証されるべきである。",
@@ -716,9 +802,11 @@
         },
         {
           "name": "~であれ",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~であれ",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~であれ trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bản sắc & Ví von\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~であれの視点から多角的に検証されるべきである。",
@@ -727,9 +815,11 @@
         },
         {
           "name": "~ごとき / ごとく",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~ごとき / ごとく",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~ごとき / ごとく trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bản sắc & Ví von\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~ごとき / ごとくの視点から多角的に検証されるべきである。",
@@ -738,9 +828,11 @@
         },
         {
           "name": "~かのようだ",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~かのようだ",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~かのようだ trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bản sắc & Ví von\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~かのようだの視点から多角的に検証されるべきである。",
@@ -753,10 +845,12 @@
       {
         "id": "n1_lesson_105_1",
         "pattern": "~ならでは (の)",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~ならでは (の) trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~ならでは (の)",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Bản sắc độc quyền, Giả định cực hạn & Ví von triết lý",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~ならでは (chỉ có ở nơi đây, mang bản sắc độc quyền không nơi nào có)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bản sắc & Ví von\".",
         "examples": [
           {
@@ -781,10 +875,12 @@
       {
         "id": "n1_lesson_105_2",
         "pattern": "~であれ",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~であれ trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~であれ",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Bản sắc độc quyền, Giả định cực hạn & Ví von triết lý",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~ならでは (chỉ có ở nơi đây, mang bản sắc độc quyền không nơi nào có)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bản sắc & Ví von\".",
         "examples": [
           {
@@ -809,10 +905,12 @@
       {
         "id": "n1_lesson_105_3",
         "pattern": "~ごとき / ごとく",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~ごとき / ごとく trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~ごとき / ごとく",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Bản sắc độc quyền, Giả định cực hạn & Ví von triết lý",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~ならでは (chỉ có ở nơi đây, mang bản sắc độc quyền không nơi nào có)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bản sắc & Ví von\".",
         "examples": [
           {
@@ -837,10 +935,12 @@
       {
         "id": "n1_lesson_105_4",
         "pattern": "~かのようだ",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~かのようだ trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~かのようだ",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Bản sắc độc quyền, Giả định cực hạn & Ví von triết lý",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~ならでは (chỉ có ở nơi đây, mang bản sắc độc quyền không nơi nào có)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bản sắc & Ví von\".",
         "examples": [
           {
@@ -874,13 +974,19 @@
     "summary": "Toàn diện Chuyên Đề 106 Thượng Cấp N1: Nghịch lý tư tưởng & Bất ngờ trước diễn biến thực tế. Trụ cột học thuật: Nghịch lý & Bất ngờ.",
     "mindmap": {
       "center": "Bài 106: Nghịch lý tư tưởng & Bất ngờ trước diễn biến thực tế",
+      "mascotIcon": "🌀",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 105 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 107",
+      "trapRadar": "~と思いきや (cứ ngỡ chắc chắn là A, ai ngờ thực tế lại đảo ngược 180 độ)",
       "tip": "Làm chủ mẫu câu Nghịch lý & Bất ngờ để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~とはいえ",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~とはいえ",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~とはいえ trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nghịch lý & Bất ngờ\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~とはいえの視点から多角的に検証されるべきである。",
@@ -889,9 +995,11 @@
         },
         {
           "name": "~と思いきや",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~と思いきや",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~と思いきや trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nghịch lý & Bất ngờ\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~と思いきやの視点から多角的に検証されるべきである。",
@@ -900,9 +1008,11 @@
         },
         {
           "name": "~ものを",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~ものを",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~ものを trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nghịch lý & Bất ngờ\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~ものをの視点から多角的に検証されるべきである。",
@@ -911,9 +1021,11 @@
         },
         {
           "name": "~とあれば",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~とあれば",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~とあれば trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nghịch lý & Bất ngờ\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~とあればの視点から多角的に検証されるべきである。",
@@ -926,10 +1038,12 @@
       {
         "id": "n1_lesson_106_1",
         "pattern": "~とはいえ",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~とはいえ trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~とはいえ",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Nghịch lý tư tưởng & Bất ngờ trước diễn biến thực tế",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~と思いきや (cứ ngỡ chắc chắn là A, ai ngờ thực tế lại đảo ngược 180 độ)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nghịch lý & Bất ngờ\".",
         "examples": [
           {
@@ -954,10 +1068,12 @@
       {
         "id": "n1_lesson_106_2",
         "pattern": "~と思いきや",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~と思いきや trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~と思いきや",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Nghịch lý tư tưởng & Bất ngờ trước diễn biến thực tế",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~と思いきや (cứ ngỡ chắc chắn là A, ai ngờ thực tế lại đảo ngược 180 độ)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nghịch lý & Bất ngờ\".",
         "examples": [
           {
@@ -982,10 +1098,12 @@
       {
         "id": "n1_lesson_106_3",
         "pattern": "~ものを",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~ものを trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~ものを",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Nghịch lý tư tưởng & Bất ngờ trước diễn biến thực tế",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~と思いきや (cứ ngỡ chắc chắn là A, ai ngờ thực tế lại đảo ngược 180 độ)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nghịch lý & Bất ngờ\".",
         "examples": [
           {
@@ -1010,10 +1128,12 @@
       {
         "id": "n1_lesson_106_4",
         "pattern": "~とあれば",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~とあれば trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~とあれば",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Nghịch lý tư tưởng & Bất ngờ trước diễn biến thực tế",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~と思いきや (cứ ngỡ chắc chắn là A, ai ngờ thực tế lại đảo ngược 180 độ)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nghịch lý & Bất ngờ\".",
         "examples": [
           {
@@ -1047,13 +1167,19 @@
     "summary": "Toàn diện Chuyên Đề 107 Thượng Cấp N1: Nhượng bộ tối cao & Quyết định bất di bất dịch. Trụ cột học thuật: Nhượng bộ tối cao.",
     "mindmap": {
       "center": "Bài 107: Nhượng bộ tối cao & Quyết định bất di bất dịch",
+      "mascotIcon": "🗿",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 106 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 108",
+      "trapRadar": "~いかんにかかわらず (bất kể kết quả/lý do ra sao thì quyết định vẫn không đổi)",
       "tip": "Làm chủ mẫu câu Nhượng bộ tối cao để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~いかんにかかわらず",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~いかんにかかわらず",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~いかんにかかわらず trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nhượng bộ tối cao\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~いかんにかかわらずの視点から多角的に検証されるべきである。",
@@ -1062,9 +1188,11 @@
         },
         {
           "name": "~いかんだ",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~いかんだ",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~いかんだ trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nhượng bộ tối cao\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~いかんだの視点から多角的に検証されるべきである。",
@@ -1073,9 +1201,11 @@
         },
         {
           "name": "~のいかんによらず",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~のいかんによらず",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~のいかんによらず trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nhượng bộ tối cao\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~のいかんによらずの視点から多角的に検証されるべきである。",
@@ -1084,9 +1214,11 @@
         },
         {
           "name": "~によらず",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~によらず",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~によらず trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nhượng bộ tối cao\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~によらずの視点から多角的に検証されるべきである。",
@@ -1099,10 +1231,12 @@
       {
         "id": "n1_lesson_107_1",
         "pattern": "~いかんにかかわらず",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~いかんにかかわらず trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~いかんにかかわらず",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Nhượng bộ tối cao & Quyết định bất di bất dịch",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~いかんにかかわらず (bất kể kết quả/lý do ra sao thì quyết định vẫn không đổi)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nhượng bộ tối cao\".",
         "examples": [
           {
@@ -1127,10 +1261,12 @@
       {
         "id": "n1_lesson_107_2",
         "pattern": "~いかんだ",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~いかんだ trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~いかんだ",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Nhượng bộ tối cao & Quyết định bất di bất dịch",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~いかんにかかわらず (bất kể kết quả/lý do ra sao thì quyết định vẫn không đổi)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nhượng bộ tối cao\".",
         "examples": [
           {
@@ -1155,10 +1291,12 @@
       {
         "id": "n1_lesson_107_3",
         "pattern": "~のいかんによらず",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~のいかんによらず trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~のいかんによらず",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Nhượng bộ tối cao & Quyết định bất di bất dịch",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~いかんにかかわらず (bất kể kết quả/lý do ra sao thì quyết định vẫn không đổi)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nhượng bộ tối cao\".",
         "examples": [
           {
@@ -1183,10 +1321,12 @@
       {
         "id": "n1_lesson_107_4",
         "pattern": "~によらず",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~によらず trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~によらず",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Nhượng bộ tối cao & Quyết định bất di bất dịch",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~いかんにかかわらず (bất kể kết quả/lý do ra sao thì quyết định vẫn không đổi)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Nhượng bộ tối cao\".",
         "examples": [
           {
@@ -1220,13 +1360,19 @@
     "summary": "Toàn diện Chuyên Đề 108 Thượng Cấp N1: Cấm chỉ văn bản công quyền & Không thể chấp nhận. Trụ cột học thuật: Cấm chỉ công quyền.",
     "mindmap": {
       "center": "Bài 108: Cấm chỉ văn bản công quyền & Không thể chấp nhận",
+      "mascotIcon": "⚖️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 107 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 109",
+      "trapRadar": "~べからず (cấm chỉ công quyền trên biển báo) vs ~まじき (với tư cách đạo đức không thể chấp nhận được)",
       "tip": "Làm chủ mẫu câu Cấm chỉ công quyền để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~べからず / べからざる",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~べからず / べからざる",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~べからず / べからざる trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cấm chỉ công quyền\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~べからず / べからざるの視点から多角的に検証されるべきである。",
@@ -1235,9 +1381,11 @@
         },
         {
           "name": "~まじき",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~まじき",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~まじき trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cấm chỉ công quyền\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~まじきの視点から多角的に検証されるべきである。",
@@ -1246,9 +1394,11 @@
         },
         {
           "name": "~にたえない",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~にたえない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~にたえない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cấm chỉ công quyền\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~にたえないの視点から多角的に検証されるべきである。",
@@ -1257,9 +1407,11 @@
         },
         {
           "name": "~を許さない",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~を許さない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~を許さない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cấm chỉ công quyền\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~を許さないの視点から多角的に検証されるべきである。",
@@ -1272,10 +1424,12 @@
       {
         "id": "n1_lesson_108_1",
         "pattern": "~べからず / べからざる",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~べからず / べからざる trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~べからず / べからざる",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Cấm chỉ văn bản công quyền & Không thể chấp nhận",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~べからず (cấm chỉ công quyền trên biển báo) vs ~まじき (với tư cách đạo đức không thể chấp nhận được)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cấm chỉ công quyền\".",
         "examples": [
           {
@@ -1300,10 +1454,12 @@
       {
         "id": "n1_lesson_108_2",
         "pattern": "~まじき",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~まじき trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~まじき",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Cấm chỉ văn bản công quyền & Không thể chấp nhận",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~べからず (cấm chỉ công quyền trên biển báo) vs ~まじき (với tư cách đạo đức không thể chấp nhận được)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cấm chỉ công quyền\".",
         "examples": [
           {
@@ -1328,10 +1484,12 @@
       {
         "id": "n1_lesson_108_3",
         "pattern": "~にたえない",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~にたえない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~にたえない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Cấm chỉ văn bản công quyền & Không thể chấp nhận",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~べからず (cấm chỉ công quyền trên biển báo) vs ~まじき (với tư cách đạo đức không thể chấp nhận được)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cấm chỉ công quyền\".",
         "examples": [
           {
@@ -1356,10 +1514,12 @@
       {
         "id": "n1_lesson_108_4",
         "pattern": "~を許さない",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~を許さない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~を許さない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Cấm chỉ văn bản công quyền & Không thể chấp nhận",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~べからず (cấm chỉ công quyền trên biển báo) vs ~まじき (với tư cách đạo đức không thể chấp nhận được)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cấm chỉ công quyền\".",
         "examples": [
           {
@@ -1393,13 +1553,19 @@
     "summary": "Toàn diện Chuyên Đề 109 Thượng Cấp N1: Tính tất yếu lịch sử, Cưỡng chế bắt buộc. Trụ cột học thuật: Tất yếu lịch sử.",
     "mindmap": {
       "center": "Bài 109: Tính tất yếu lịch sử, Cưỡng chế bắt buộc",
+      "mascotIcon": "⛓️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 108 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 110",
+      "trapRadar": "~を余儀なくされる (bị hoàn cảnh khách quan ép buộc phải thay đổi dù không muốn)",
       "tip": "Làm chủ mẫu câu Tất yếu lịch sử để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~ずにはおかない",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~ずにはおかない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~ずにはおかない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tất yếu lịch sử\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~ずにはおかないの視点から多角的に検証されるべきである。",
@@ -1408,9 +1574,11 @@
         },
         {
           "name": "~ないではおかない",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~ないではおかない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~ないではおかない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tất yếu lịch sử\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~ないではおかないの視点から多角的に検証されるべきである。",
@@ -1419,9 +1587,11 @@
         },
         {
           "name": "~を余儀なくされる",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~を余儀なくされる",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~を余儀なくされる trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tất yếu lịch sử\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~を余儀なくされるの視点から多角的に検証されるべきである。",
@@ -1430,9 +1600,11 @@
         },
         {
           "name": "~を余儀なくさせる",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~を余儀なくさせる",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~を余儀なくさせる trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tất yếu lịch sử\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~を余儀なくさせるの視点から多角的に検証されるべきである。",
@@ -1445,10 +1617,12 @@
       {
         "id": "n1_lesson_109_1",
         "pattern": "~ずにはおかない",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~ずにはおかない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~ずにはおかない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tính tất yếu lịch sử, Cưỡng chế bắt buộc",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~を余儀なくされる (bị hoàn cảnh khách quan ép buộc phải thay đổi dù không muốn)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tất yếu lịch sử\".",
         "examples": [
           {
@@ -1473,10 +1647,12 @@
       {
         "id": "n1_lesson_109_2",
         "pattern": "~ないではおかない",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~ないではおかない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~ないではおかない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tính tất yếu lịch sử, Cưỡng chế bắt buộc",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~を余儀なくされる (bị hoàn cảnh khách quan ép buộc phải thay đổi dù không muốn)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tất yếu lịch sử\".",
         "examples": [
           {
@@ -1501,10 +1677,12 @@
       {
         "id": "n1_lesson_109_3",
         "pattern": "~を余儀なくされる",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~を余儀なくされる trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~を余儀なくされる",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tính tất yếu lịch sử, Cưỡng chế bắt buộc",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~を余儀なくされる (bị hoàn cảnh khách quan ép buộc phải thay đổi dù không muốn)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tất yếu lịch sử\".",
         "examples": [
           {
@@ -1529,10 +1707,12 @@
       {
         "id": "n1_lesson_109_4",
         "pattern": "~を余儀なくさせる",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~を余儀なくさせる trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~を余儀なくさせる",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tính tất yếu lịch sử, Cưỡng chế bắt buộc",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~を余儀なくされる (bị hoàn cảnh khách quan ép buộc phải thay đổi dù không muốn)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tất yếu lịch sử\".",
         "examples": [
           {
@@ -1566,13 +1746,19 @@
     "summary": "Toàn diện Chuyên Đề 110 Thượng Cấp N1: Trạng thái cùng cực đỉnh điểm & Cảm xúc tột cùng. Trụ cột học thuật: Cảm xúc tột cùng.",
     "mindmap": {
       "center": "Bài 110: Trạng thái cùng cực đỉnh điểm & Cảm xúc tột cùng",
+      "mascotIcon": "🌋",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 109 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 111",
+      "trapRadar": "~の至り (tột cùng của vinh dự / xấu hổ trong văn phong trang trọng nhất)",
       "tip": "Làm chủ mẫu câu Cảm xúc tột cùng để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~極まる / 極まりない",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~極まる / 極まりない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~極まる / 極まりない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cảm xúc tột cùng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~極まる / 極まりないの視点から多角的に検証されるべきである。",
@@ -1581,9 +1767,11 @@
         },
         {
           "name": "~の極み",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~の極み",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~の極み trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cảm xúc tột cùng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~の極みの視点から多角的に検証されるべきである。",
@@ -1592,9 +1780,11 @@
         },
         {
           "name": "~の至り",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~の至り",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~の至り trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cảm xúc tột cùng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~の至りの視点から多角的に検証されるべきである。",
@@ -1603,9 +1793,11 @@
         },
         {
           "name": "~にたえない",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~にたえない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~にたえない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cảm xúc tột cùng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~にたえないの視点から多角的に検証されるべきである。",
@@ -1618,10 +1810,12 @@
       {
         "id": "n1_lesson_110_1",
         "pattern": "~極まる / 極まりない",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~極まる / 極まりない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~極まる / 極まりない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Trạng thái cùng cực đỉnh điểm & Cảm xúc tột cùng",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~の至り (tột cùng của vinh dự / xấu hổ trong văn phong trang trọng nhất)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cảm xúc tột cùng\".",
         "examples": [
           {
@@ -1646,10 +1840,12 @@
       {
         "id": "n1_lesson_110_2",
         "pattern": "~の極み",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~の極み trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~の極み",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Trạng thái cùng cực đỉnh điểm & Cảm xúc tột cùng",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~の至り (tột cùng của vinh dự / xấu hổ trong văn phong trang trọng nhất)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cảm xúc tột cùng\".",
         "examples": [
           {
@@ -1674,10 +1870,12 @@
       {
         "id": "n1_lesson_110_3",
         "pattern": "~の至り",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~の至り trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~の至り",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Trạng thái cùng cực đỉnh điểm & Cảm xúc tột cùng",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~の至り (tột cùng của vinh dự / xấu hổ trong văn phong trang trọng nhất)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cảm xúc tột cùng\".",
         "examples": [
           {
@@ -1702,10 +1900,12 @@
       {
         "id": "n1_lesson_110_4",
         "pattern": "~にたえない",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~にたえない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~にたえない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Trạng thái cùng cực đỉnh điểm & Cảm xúc tột cùng",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~の至り (tột cùng của vinh dự / xấu hổ trong văn phong trang trọng nhất)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Cảm xúc tột cùng\".",
         "examples": [
           {
@@ -1739,13 +1939,19 @@
     "summary": "Toàn diện Chuyên Đề 111 Thượng Cấp N1: Tư cách tôn nghiêm, Danh dự & Bổn phận xã hội. Trụ cột học thuật: Tôn nghiêm & Sứ mệnh.",
     "mindmap": {
       "center": "Bài 111: Tư cách tôn nghiêm, Danh dự & Bổn phận xã hội",
+      "mascotIcon": "🎖️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 110 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 112",
+      "trapRadar": "~ともあろう者が (đường đường là bậc lãnh đạo/thầy giáo mà lại làm việc đáng hổ thẹn)",
       "tip": "Làm chủ mẫu câu Tôn nghiêm & Sứ mệnh để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~たる者",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~たる者",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~たる者 trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tôn nghiêm & Sứ mệnh\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~たる者の視点から多角的に検証されるべきである。",
@@ -1754,9 +1960,11 @@
         },
         {
           "name": "~ともあろう者が",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~ともあろう者が",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~ともあろう者が trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tôn nghiêm & Sứ mệnh\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~ともあろう者がの視点から多角的に検証されるべきである。",
@@ -1765,9 +1973,11 @@
         },
         {
           "name": "~に恥じない",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~に恥じない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~に恥じない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tôn nghiêm & Sứ mệnh\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~に恥じないの視点から多角的に検証されるべきである。",
@@ -1776,9 +1986,11 @@
         },
         {
           "name": "~をおいて~ない",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~をおいて~ない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~をおいて~ない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tôn nghiêm & Sứ mệnh\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~をおいて~ないの視点から多角的に検証されるべきである。",
@@ -1791,10 +2003,12 @@
       {
         "id": "n1_lesson_111_1",
         "pattern": "~たる者",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~たる者 trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~たる者",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tư cách tôn nghiêm, Danh dự & Bổn phận xã hội",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~ともあろう者が (đường đường là bậc lãnh đạo/thầy giáo mà lại làm việc đáng hổ thẹn)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tôn nghiêm & Sứ mệnh\".",
         "examples": [
           {
@@ -1819,10 +2033,12 @@
       {
         "id": "n1_lesson_111_2",
         "pattern": "~ともあろう者が",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~ともあろう者が trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~ともあろう者が",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tư cách tôn nghiêm, Danh dự & Bổn phận xã hội",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~ともあろう者が (đường đường là bậc lãnh đạo/thầy giáo mà lại làm việc đáng hổ thẹn)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tôn nghiêm & Sứ mệnh\".",
         "examples": [
           {
@@ -1847,10 +2063,12 @@
       {
         "id": "n1_lesson_111_3",
         "pattern": "~に恥じない",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~に恥じない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~に恥じない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tư cách tôn nghiêm, Danh dự & Bổn phận xã hội",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~ともあろう者が (đường đường là bậc lãnh đạo/thầy giáo mà lại làm việc đáng hổ thẹn)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tôn nghiêm & Sứ mệnh\".",
         "examples": [
           {
@@ -1875,10 +2093,12 @@
       {
         "id": "n1_lesson_111_4",
         "pattern": "~をおいて~ない",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~をおいて~ない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~をおいて~ない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Tư cách tôn nghiêm, Danh dự & Bổn phận xã hội",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~ともあろう者が (đường đường là bậc lãnh đạo/thầy giáo mà lại làm việc đáng hổ thẹn)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Tôn nghiêm & Sứ mệnh\".",
         "examples": [
           {
@@ -1912,13 +2132,19 @@
     "summary": "Toàn diện Chuyên Đề 112 Thượng Cấp N1: Đánh giá học thuật, Xu hướng tiêu cực & Giới hạn. Trụ cột học thuật: Phê bình học thuật.",
     "mindmap": {
       "center": "Bài 112: Đánh giá học thuật, Xu hướng tiêu cực & Giới hạn",
+      "mascotIcon": "🔍",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 111 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 113",
+      "trapRadar": "~きらいがある (có xu hướng tiêu cực không tốt hay lặp lại)",
       "tip": "Làm chủ mẫu câu Phê bình học thuật để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~きらいがある",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~きらいがある",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~きらいがある trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Phê bình học thuật\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~きらいがあるの視点から多角的に検証されるべきである。",
@@ -1927,9 +2153,11 @@
         },
         {
           "name": "~までもない",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~までもない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~までもない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Phê bình học thuật\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~までもないの視点から多角的に検証されるべきである。",
@@ -1938,9 +2166,11 @@
         },
         {
           "name": "~までだ / までのことだ",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~までだ / までのことだ",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~までだ / までのことだ trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Phê bình học thuật\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~までだ / までのことだの視点から多角的に検証されるべきである。",
@@ -1949,9 +2179,11 @@
         },
         {
           "name": "~にとどまらない",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~にとどまらない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~にとどまらない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Phê bình học thuật\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~にとどまらないの視点から多角的に検証されるべきである。",
@@ -1964,10 +2196,12 @@
       {
         "id": "n1_lesson_112_1",
         "pattern": "~きらいがある",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~きらいがある trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~きらいがある",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Đánh giá học thuật, Xu hướng tiêu cực & Giới hạn",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~きらいがある (có xu hướng tiêu cực không tốt hay lặp lại)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Phê bình học thuật\".",
         "examples": [
           {
@@ -1992,10 +2226,12 @@
       {
         "id": "n1_lesson_112_2",
         "pattern": "~までもない",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~までもない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~までもない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Đánh giá học thuật, Xu hướng tiêu cực & Giới hạn",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~きらいがある (có xu hướng tiêu cực không tốt hay lặp lại)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Phê bình học thuật\".",
         "examples": [
           {
@@ -2020,10 +2256,12 @@
       {
         "id": "n1_lesson_112_3",
         "pattern": "~までだ / までのことだ",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~までだ / までのことだ trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~までだ / までのことだ",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Đánh giá học thuật, Xu hướng tiêu cực & Giới hạn",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~きらいがある (có xu hướng tiêu cực không tốt hay lặp lại)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Phê bình học thuật\".",
         "examples": [
           {
@@ -2048,10 +2286,12 @@
       {
         "id": "n1_lesson_112_4",
         "pattern": "~にとどまらない",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~にとどまらない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~にとどまらない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Đánh giá học thuật, Xu hướng tiêu cực & Giới hạn",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~きらいがある (có xu hướng tiêu cực không tốt hay lặp lại)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Phê bình học thuật\".",
         "examples": [
           {
@@ -2085,13 +2325,19 @@
     "summary": "Toàn diện Chuyên Đề 113 Thượng Cấp N1: Khả năng & Sự bất nhẫn tâm lý trong văn học. Trụ cột học thuật: Bất nhẫn tâm lý.",
     "mindmap": {
       "center": "Bài 113: Khả năng & Sự bất nhẫn tâm lý trong văn học",
+      "mascotIcon": "💔",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 112 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 114",
+      "trapRadar": "~に忍びない (tâm lý xót xa không nỡ lòng nào chứng kiến cảnh đau lòng)",
       "tip": "Làm chủ mẫu câu Bất nhẫn tâm lý để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~ようにも~ない",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~ようにも~ない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~ようにも~ない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bất nhẫn tâm lý\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~ようにも~ないの視点から多角的に検証されるべきである。",
@@ -2100,9 +2346,11 @@
         },
         {
           "name": "~に忍びない",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~に忍びない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~に忍びない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bất nhẫn tâm lý\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~に忍びないの視点から多角的に検証されるべきである。",
@@ -2111,9 +2359,11 @@
         },
         {
           "name": "~に耐える / 耐えない",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~に耐える / 耐えない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~に耐える / 耐えない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bất nhẫn tâm lý\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~に耐える / 耐えないの視点から多角的に検証されるべきである。",
@@ -2122,9 +2372,11 @@
         },
         {
           "name": "~を禁じ得ない",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~を禁じ得ない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~を禁じ得ない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bất nhẫn tâm lý\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~を禁じ得ないの視点から多角的に検証されるべきである。",
@@ -2137,10 +2389,12 @@
       {
         "id": "n1_lesson_113_1",
         "pattern": "~ようにも~ない",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~ようにも~ない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~ようにも~ない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Khả năng & Sự bất nhẫn tâm lý trong văn học",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~に忍びない (tâm lý xót xa không nỡ lòng nào chứng kiến cảnh đau lòng)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bất nhẫn tâm lý\".",
         "examples": [
           {
@@ -2165,10 +2419,12 @@
       {
         "id": "n1_lesson_113_2",
         "pattern": "~に忍びない",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~に忍びない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~に忍びない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Khả năng & Sự bất nhẫn tâm lý trong văn học",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~に忍びない (tâm lý xót xa không nỡ lòng nào chứng kiến cảnh đau lòng)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bất nhẫn tâm lý\".",
         "examples": [
           {
@@ -2193,10 +2449,12 @@
       {
         "id": "n1_lesson_113_3",
         "pattern": "~に耐える / 耐えない",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~に耐える / 耐えない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~に耐える / 耐えない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Khả năng & Sự bất nhẫn tâm lý trong văn học",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~に忍びない (tâm lý xót xa không nỡ lòng nào chứng kiến cảnh đau lòng)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bất nhẫn tâm lý\".",
         "examples": [
           {
@@ -2221,10 +2479,12 @@
       {
         "id": "n1_lesson_113_4",
         "pattern": "~を禁じ得ない",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~を禁じ得ない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~を禁じ得ない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Khả năng & Sự bất nhẫn tâm lý trong văn học",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~に忍びない (tâm lý xót xa không nỡ lòng nào chứng kiến cảnh đau lòng)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Bất nhẫn tâm lý\".",
         "examples": [
           {
@@ -2258,13 +2518,19 @@
     "summary": "Toàn diện Chuyên Đề 114 Thượng Cấp N1: Hành động xen kẽ nhịp nhàng & Liệt kê cực đoan. Trụ cột học thuật: Liệt kê nhịp nhàng.",
     "mindmap": {
       "center": "Bài 114: Hành động xen kẽ nhịp nhàng & Liệt kê cực đoan",
+      "mascotIcon": "🎭",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 113 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 115",
+      "trapRadar": "~つ~つ (hành động đối lập diễn ra nhịp nhàng: 行きつ戻りつ - đi đi lại lại)",
       "tip": "Làm chủ mẫu câu Liệt kê nhịp nhàng để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~つ~つ",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~つ~つ",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~つ~つ trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Liệt kê nhịp nhàng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~つ~つの視点から多角的に検証されるべきである。",
@@ -2273,9 +2539,11 @@
         },
         {
           "name": "~なり~なり",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~なり~なり",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~なり~なり trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Liệt kê nhịp nhàng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~なり~なりの視点から多角的に検証されるべきである。",
@@ -2284,9 +2552,11 @@
         },
         {
           "name": "~であれ~であれ",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~であれ~であれ",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~であれ~であれ trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Liệt kê nhịp nhàng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~であれ~であれの視点から多角的に検証されるべきである。",
@@ -2295,9 +2565,11 @@
         },
         {
           "name": "~といい~といい",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~といい~といい",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~といい~といい trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Liệt kê nhịp nhàng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~といい~といいの視点から多角的に検証されるべきである。",
@@ -2310,10 +2582,12 @@
       {
         "id": "n1_lesson_114_1",
         "pattern": "~つ~つ",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~つ~つ trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~つ~つ",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Hành động xen kẽ nhịp nhàng & Liệt kê cực đoan",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~つ~つ (hành động đối lập diễn ra nhịp nhàng: 行きつ戻りつ - đi đi lại lại)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Liệt kê nhịp nhàng\".",
         "examples": [
           {
@@ -2338,10 +2612,12 @@
       {
         "id": "n1_lesson_114_2",
         "pattern": "~なり~なり",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~なり~なり trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~なり~なり",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Hành động xen kẽ nhịp nhàng & Liệt kê cực đoan",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~つ~つ (hành động đối lập diễn ra nhịp nhàng: 行きつ戻りつ - đi đi lại lại)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Liệt kê nhịp nhàng\".",
         "examples": [
           {
@@ -2366,10 +2642,12 @@
       {
         "id": "n1_lesson_114_3",
         "pattern": "~であれ~であれ",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~であれ~であれ trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~であれ~であれ",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Hành động xen kẽ nhịp nhàng & Liệt kê cực đoan",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~つ~つ (hành động đối lập diễn ra nhịp nhàng: 行きつ戻りつ - đi đi lại lại)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Liệt kê nhịp nhàng\".",
         "examples": [
           {
@@ -2394,10 +2672,12 @@
       {
         "id": "n1_lesson_114_4",
         "pattern": "~といい~といい",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~といい~といい trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~といい~といい",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Hành động xen kẽ nhịp nhàng & Liệt kê cực đoan",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: ~つ~つ (hành động đối lập diễn ra nhịp nhàng: 行きつ戻りつ - đi đi lại lại)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Liệt kê nhịp nhàng\".",
         "examples": [
           {
@@ -2431,13 +2711,19 @@
     "summary": "Toàn diện Chuyên Đề 115 Thượng Cấp N1: Xã luận Báo chí Asahi & Nikkei (Chính trị - Kinh tế). Trụ cột học thuật: Xã luận báo chí.",
     "mindmap": {
       "center": "Bài 115: Xã luận Báo chí Asahi & Nikkei (Chính trị - Kinh tế)",
+      "mascotIcon": "📰",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 114 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 116",
+      "trapRadar": "Bóc tách câu đa tầng nghị luận: '論を俟たない' (rõ như ban ngày không cần bàn cãi)",
       "tip": "Làm chủ mẫu câu Xã luận báo chí để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "論を俟たない",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：論を俟たない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 論を俟たない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Xã luận báo chí\".",
           "example": {
             "jp": "現代社会における複雑な課題は、論を俟たないの視点から多角的に検証されるべきである。",
@@ -2446,9 +2732,11 @@
         },
         {
           "name": "看過できない",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：看過できない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 看過できない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Xã luận báo chí\".",
           "example": {
             "jp": "現代社会における複雑な課題は、看過できないの視点から多角的に検証されるべきである。",
@@ -2457,9 +2745,11 @@
         },
         {
           "name": "疑う余地がない",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：疑う余地がない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 疑う余地がない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Xã luận báo chí\".",
           "example": {
             "jp": "現代社会における複雑な課題は、疑う余地がないの視点から多角的に検証されるべきである。",
@@ -2468,9 +2758,11 @@
         },
         {
           "name": "是とする",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：是とする",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 是とする trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Xã luận báo chí\".",
           "example": {
             "jp": "現代社会における複雑な課題は、是とするの視点から多角的に検証されるべきである。",
@@ -2483,10 +2775,12 @@
       {
         "id": "n1_lesson_115_1",
         "pattern": "論を俟たない",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng 論を俟たない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：論を俟たない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Xã luận Báo chí Asahi & Nikkei (Chính trị - Kinh tế)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Bóc tách câu đa tầng nghị luận: '論を俟たない' (rõ như ban ngày không cần bàn cãi)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Xã luận báo chí\".",
         "examples": [
           {
@@ -2511,10 +2805,12 @@
       {
         "id": "n1_lesson_115_2",
         "pattern": "看過できない",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng 看過できない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：看過できない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Xã luận Báo chí Asahi & Nikkei (Chính trị - Kinh tế)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Bóc tách câu đa tầng nghị luận: '論を俟たない' (rõ như ban ngày không cần bàn cãi)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Xã luận báo chí\".",
         "examples": [
           {
@@ -2539,10 +2835,12 @@
       {
         "id": "n1_lesson_115_3",
         "pattern": "疑う余地がない",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng 疑う余地がない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：疑う余地がない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Xã luận Báo chí Asahi & Nikkei (Chính trị - Kinh tế)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Bóc tách câu đa tầng nghị luận: '論を俟たない' (rõ như ban ngày không cần bàn cãi)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Xã luận báo chí\".",
         "examples": [
           {
@@ -2567,10 +2865,12 @@
       {
         "id": "n1_lesson_115_4",
         "pattern": "是とする",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng 是とする trong nghị luận xã luận.",
         "formula": "文語・硬度表現：是とする",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Xã luận Báo chí Asahi & Nikkei (Chính trị - Kinh tế)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Bóc tách câu đa tầng nghị luận: '論を俟たない' (rõ như ban ngày không cần bàn cãi)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Xã luận báo chí\".",
         "examples": [
           {
@@ -2604,13 +2904,19 @@
     "summary": "Toàn diện Chuyên Đề 116 Thượng Cấp N1: Ngôn ngữ Pháp luật, Hiến pháp & Văn kiện Nhà nước. Trụ cột học thuật: Văn bản pháp luật.",
     "mindmap": {
       "center": "Bài 116: Ngôn ngữ Pháp luật, Hiến pháp & Văn kiện Nhà nước",
+      "mascotIcon": "🏛️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 115 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 117",
+      "trapRadar": "Ngôn ngữ pháp lý: '規定に鑑み' (xét trên tinh thần quy định của pháp luật)",
       "tip": "Làm chủ mẫu câu Văn bản pháp luật để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "解釈の余地",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：解釈の余地",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 解釈の余地 trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn bản pháp luật\".",
           "example": {
             "jp": "現代社会における複雑な課題は、解釈の余地の視点から多角的に検証されるべきである。",
@@ -2619,9 +2925,11 @@
         },
         {
           "name": "規定に鑑み",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：規定に鑑み",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 規定に鑑み trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn bản pháp luật\".",
           "example": {
             "jp": "現代社会における複雑な課題は、規定に鑑みの視点から多角的に検証されるべきである。",
@@ -2630,9 +2938,11 @@
         },
         {
           "name": "効力を有する",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：効力を有する",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 効力を有する trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn bản pháp luật\".",
           "example": {
             "jp": "現代社会における複雑な課題は、効力を有するの視点から多角的に検証されるべきである。",
@@ -2641,9 +2951,11 @@
         },
         {
           "name": "この旨を公示する",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：この旨を公示する",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng この旨を公示する trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn bản pháp luật\".",
           "example": {
             "jp": "現代社会における複雑な課題は、この旨を公示するの視点から多角的に検証されるべきである。",
@@ -2656,10 +2968,12 @@
       {
         "id": "n1_lesson_116_1",
         "pattern": "解釈の余地",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng 解釈の余地 trong nghị luận xã luận.",
         "formula": "文語・硬度表現：解釈の余地",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Ngôn ngữ Pháp luật, Hiến pháp & Văn kiện Nhà nước",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Ngôn ngữ pháp lý: '規定に鑑み' (xét trên tinh thần quy định của pháp luật)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn bản pháp luật\".",
         "examples": [
           {
@@ -2684,10 +2998,12 @@
       {
         "id": "n1_lesson_116_2",
         "pattern": "規定に鑑み",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng 規定に鑑み trong nghị luận xã luận.",
         "formula": "文語・硬度表現：規定に鑑み",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Ngôn ngữ Pháp luật, Hiến pháp & Văn kiện Nhà nước",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Ngôn ngữ pháp lý: '規定に鑑み' (xét trên tinh thần quy định của pháp luật)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn bản pháp luật\".",
         "examples": [
           {
@@ -2712,10 +3028,12 @@
       {
         "id": "n1_lesson_116_3",
         "pattern": "効力を有する",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng 効力を有する trong nghị luận xã luận.",
         "formula": "文語・硬度表現：効力を有する",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Ngôn ngữ Pháp luật, Hiến pháp & Văn kiện Nhà nước",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Ngôn ngữ pháp lý: '規定に鑑み' (xét trên tinh thần quy định của pháp luật)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn bản pháp luật\".",
         "examples": [
           {
@@ -2740,10 +3058,12 @@
       {
         "id": "n1_lesson_116_4",
         "pattern": "この旨を公示する",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng この旨を公示する trong nghị luận xã luận.",
         "formula": "文語・硬度表現：この旨を公示する",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Ngôn ngữ Pháp luật, Hiến pháp & Văn kiện Nhà nước",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Ngôn ngữ pháp lý: '規定に鑑み' (xét trên tinh thần quy định của pháp luật)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn bản pháp luật\".",
         "examples": [
           {
@@ -2777,13 +3097,19 @@
     "summary": "Toàn diện Chuyên Đề 117 Thượng Cấp N1: Văn học Cận đại Nhật Bản & Cổ ngữ còn lưu truyền. Trụ cột học thuật: Văn học & Cổ ngữ.",
     "mindmap": {
       "center": "Bài 117: Văn học Cận đại Nhật Bản & Cổ ngữ còn lưu truyền",
+      "mascotIcon": "🏮",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 116 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 118",
+      "trapRadar": "Dấu tích cổ ngữ: 'ずんば' (~なければ - nếu không thì)",
       "tip": "Làm chủ mẫu câu Văn học & Cổ ngữ để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~たまへ",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~たまへ",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~たまへ trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn học & Cổ ngữ\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~たまへの視点から多角的に検証されるべきである。",
@@ -2792,9 +3118,11 @@
         },
         {
           "name": "~ずんば",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~ずんば",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~ずんば trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn học & Cổ ngữ\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~ずんばの視点から多角的に検証されるべきである。",
@@ -2803,9 +3131,11 @@
         },
         {
           "name": "~ならで",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：~ならで",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~ならで trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn học & Cổ ngữ\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~ならでの視点から多角的に検証されるべきである。",
@@ -2814,9 +3144,11 @@
         },
         {
           "name": "~ごとし",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：~ごとし",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~ごとし trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn học & Cổ ngữ\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~ごとしの視点から多角的に検証されるべきである。",
@@ -2829,10 +3161,12 @@
       {
         "id": "n1_lesson_117_1",
         "pattern": "~たまへ",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~たまへ trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~たまへ",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Văn học Cận đại Nhật Bản & Cổ ngữ còn lưu truyền",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Dấu tích cổ ngữ: 'ずんば' (~なければ - nếu không thì)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn học & Cổ ngữ\".",
         "examples": [
           {
@@ -2857,10 +3191,12 @@
       {
         "id": "n1_lesson_117_2",
         "pattern": "~ずんば",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~ずんば trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~ずんば",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Văn học Cận đại Nhật Bản & Cổ ngữ còn lưu truyền",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Dấu tích cổ ngữ: 'ずんば' (~なければ - nếu không thì)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn học & Cổ ngữ\".",
         "examples": [
           {
@@ -2885,10 +3221,12 @@
       {
         "id": "n1_lesson_117_3",
         "pattern": "~ならで",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~ならで trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~ならで",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Văn học Cận đại Nhật Bản & Cổ ngữ còn lưu truyền",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Dấu tích cổ ngữ: 'ずんば' (~なければ - nếu không thì)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn học & Cổ ngữ\".",
         "examples": [
           {
@@ -2913,10 +3251,12 @@
       {
         "id": "n1_lesson_117_4",
         "pattern": "~ごとし",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~ごとし trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~ごとし",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Văn học Cận đại Nhật Bản & Cổ ngữ còn lưu truyền",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Dấu tích cổ ngữ: 'ずんば' (~なければ - nếu không thì)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Văn học & Cổ ngữ\".",
         "examples": [
           {
@@ -2950,13 +3290,19 @@
     "summary": "Toàn diện Chuyên Đề 118 Thượng Cấp N1: Ngoại giao quốc tế, Đàm phán đa phương & Diễn văn. Trụ cột học thuật: Ngoại giao quốc tế.",
     "mindmap": {
       "center": "Bài 118: Ngoại giao quốc tế, Đàm phán đa phương & Diễn văn",
+      "mascotIcon": "🌐",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 117 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 119",
+      "trapRadar": "Ngoại giao cấp cao: '遺憾の意を表明する' (bày tỏ quan ngại sâu sắc)",
       "tip": "Làm chủ mẫu câu Ngoại giao quốc tế để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "深い憂慮の念を禁じ得ない",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：深い憂慮の念を禁じ得ない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 深い憂慮の念を禁じ得ない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Ngoại giao quốc tế\".",
           "example": {
             "jp": "現代社会における複雑な課題は、深い憂慮の念を禁じ得ないの視点から多角的に検証されるべきである。",
@@ -2965,9 +3311,11 @@
         },
         {
           "name": "協調の精神に基づき",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：協調の精神に基づき",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 協調の精神に基づき trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Ngoại giao quốc tế\".",
           "example": {
             "jp": "現代社会における複雑な課題は、協調の精神に基づきの視点から多角的に検証されるべきである。",
@@ -2976,9 +3324,11 @@
         },
         {
           "name": "遺憾の意を表明する",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：遺憾の意を表明する",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 遺憾の意を表明する trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Ngoại giao quốc tế\".",
           "example": {
             "jp": "現代社会における複雑な課題は、遺憾の意を表明するの視点から多角的に検証されるべきである。",
@@ -2987,9 +3337,11 @@
         },
         {
           "name": "確固たる決意を示す",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：確固たる決意を示す",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 確固たる決意を示す trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Ngoại giao quốc tế\".",
           "example": {
             "jp": "現代社会における複雑な課題は、確固たる決意を示すの視点から多角的に検証されるべきである。",
@@ -3002,10 +3354,12 @@
       {
         "id": "n1_lesson_118_1",
         "pattern": "深い憂慮の念を禁じ得ない",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng 深い憂慮の念を禁じ得ない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：深い憂慮の念を禁じ得ない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Ngoại giao quốc tế, Đàm phán đa phương & Diễn văn",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Ngoại giao cấp cao: '遺憾の意を表明する' (bày tỏ quan ngại sâu sắc)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Ngoại giao quốc tế\".",
         "examples": [
           {
@@ -3030,10 +3384,12 @@
       {
         "id": "n1_lesson_118_2",
         "pattern": "協調の精神に基づき",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng 協調の精神に基づき trong nghị luận xã luận.",
         "formula": "文語・硬度表現：協調の精神に基づき",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Ngoại giao quốc tế, Đàm phán đa phương & Diễn văn",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Ngoại giao cấp cao: '遺憾の意を表明する' (bày tỏ quan ngại sâu sắc)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Ngoại giao quốc tế\".",
         "examples": [
           {
@@ -3058,10 +3414,12 @@
       {
         "id": "n1_lesson_118_3",
         "pattern": "遺憾の意を表明する",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng 遺憾の意を表明する trong nghị luận xã luận.",
         "formula": "文語・硬度表現：遺憾の意を表明する",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Ngoại giao quốc tế, Đàm phán đa phương & Diễn văn",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Ngoại giao cấp cao: '遺憾の意を表明する' (bày tỏ quan ngại sâu sắc)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Ngoại giao quốc tế\".",
         "examples": [
           {
@@ -3086,10 +3444,12 @@
       {
         "id": "n1_lesson_118_4",
         "pattern": "確固たる決意を示す",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng 確固たる決意を示す trong nghị luận xã luận.",
         "formula": "文語・硬度表現：確固たる決意を示す",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Ngoại giao quốc tế, Đàm phán đa phương & Diễn văn",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Ngoại giao cấp cao: '遺憾の意を表明する' (bày tỏ quan ngại sâu sắc)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Ngoại giao quốc tế\".",
         "examples": [
           {
@@ -3123,13 +3483,19 @@
     "summary": "Toàn diện Chuyên Đề 119 Thượng Cấp N1: Bẻ khóa Đọc hiểu Luận văn dài (Tư tưởng tác giả). Trụ cột học thuật: Đọc hiểu tư tưởng.",
     "mindmap": {
       "center": "Bài 119: Bẻ khóa Đọc hiểu Luận văn dài (Tư tưởng tác giả)",
+      "mascotIcon": "🧠",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 118 (N1)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Chuyên đề 120",
+      "trapRadar": "Bắt mạch luận điểm ngầm: 'のではないだろうか' (quan điểm đắt giá nhất của tác giả)",
       "tip": "Làm chủ mẫu câu Đọc hiểu tư tưởng để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "~のではないだろうか",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：~のではないだろうか",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~のではないだろうか trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đọc hiểu tư tưởng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~のではないだろうかの視点から多角的に検証されるべきである。",
@@ -3138,9 +3504,11 @@
         },
         {
           "name": "~にほかならない",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：~にほかならない",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng ~にほかならない trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đọc hiểu tư tưởng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、~にほかならないの視点から多角的に検証されるべきである。",
@@ -3149,9 +3517,11 @@
         },
         {
           "name": "換言すれば",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：換言すれば",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 換言すれば trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đọc hiểu tư tưởng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、換言すればの視点から多角的に検証されるべきである。",
@@ -3160,9 +3530,11 @@
         },
         {
           "name": "帰結する",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：帰結する",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 帰結する trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đọc hiểu tư tưởng\".",
           "example": {
             "jp": "現代社会における複雑な課題は、帰結するの視点から多角的に検証されるべきである。",
@@ -3175,10 +3547,12 @@
       {
         "id": "n1_lesson_119_1",
         "pattern": "~のではないだろうか",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~のではないだろうか trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~のではないだろうか",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Bẻ khóa Đọc hiểu Luận văn dài (Tư tưởng tác giả)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Bắt mạch luận điểm ngầm: 'のではないだろうか' (quan điểm đắt giá nhất của tác giả)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đọc hiểu tư tưởng\".",
         "examples": [
           {
@@ -3203,10 +3577,12 @@
       {
         "id": "n1_lesson_119_2",
         "pattern": "~にほかならない",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng ~にほかならない trong nghị luận xã luận.",
         "formula": "文語・硬度表現：~にほかならない",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Bẻ khóa Đọc hiểu Luận văn dài (Tư tưởng tác giả)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Bắt mạch luận điểm ngầm: 'のではないだろうか' (quan điểm đắt giá nhất của tác giả)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đọc hiểu tư tưởng\".",
         "examples": [
           {
@@ -3231,10 +3607,12 @@
       {
         "id": "n1_lesson_119_3",
         "pattern": "換言すれば",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng 換言すれば trong nghị luận xã luận.",
         "formula": "文語・硬度表現：換言すれば",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Bẻ khóa Đọc hiểu Luận văn dài (Tư tưởng tác giả)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Bắt mạch luận điểm ngầm: 'のではないだろうか' (quan điểm đắt giá nhất của tác giả)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đọc hiểu tư tưởng\".",
         "examples": [
           {
@@ -3259,10 +3637,12 @@
       {
         "id": "n1_lesson_119_4",
         "pattern": "帰結する",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng 帰結する trong nghị luận xã luận.",
         "formula": "文語・硬度表現：帰結する",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Bẻ khóa Đọc hiểu Luận văn dài (Tư tưởng tác giả)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Bắt mạch luận điểm ngầm: 'のではないだろうか' (quan điểm đắt giá nhất của tác giả)",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đọc hiểu tư tưởng\".",
         "examples": [
           {
@@ -3296,13 +3676,19 @@
     "summary": "Toàn diện Chuyên Đề 120 Thượng Cấp N1: Đại Bách Khoa Toàn Thư Thượng Cấp N1 (Đỉnh Cao Bản Ngữ). Trụ cột học thuật: Đỉnh cao bản ngữ N1.",
     "mindmap": {
       "center": "Bài 120: Đại Bách Khoa Toàn Thư Thượng Cấp N1 (Đỉnh Cao Bản Ngữ)",
+      "mascotIcon": "👑",
+      "rootConnection": "🔙 Rễ cây: Nối từ Chuyên đề 119 (N1)",
+      "nextLeap": "🔜 Đỉnh cao: Thành thạo năng lực bản ngữ N1",
+      "trapRadar": "Hệ thống hóa toàn bộ 180 mẫu ngữ pháp Thượng cấp đỉnh cao của tiếng Nhật",
       "tip": "Làm chủ mẫu câu Đỉnh cao bản ngữ N1 để đạt trình độ ngôn ngữ tương đương cử nhân đại học Nhật Bản.",
       "branches": [
         {
           "name": "180 Mẫu ngữ pháp hàn lâm",
+          "icon": "👑",
           "color": "#ef4444",
           "formula": "文語・硬度表現：180 Mẫu ngữ pháp hàn lâm",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng 180 Mẫu ngữ pháp hàn lâm trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đỉnh cao bản ngữ N1\".",
           "example": {
             "jp": "現代社会における複雑な課題は、180 Mẫu ngữ pháp hàn lâmの視点から多角的に検証されるべきである。",
@@ -3311,9 +3697,11 @@
         },
         {
           "name": "Khả năng phản biện xã luận",
+          "icon": "📜",
           "color": "#f59e0b",
           "formula": "文語・硬度表現：Khả năng phản biện xã luận",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng Khả năng phản biện xã luận trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đỉnh cao bản ngữ N1\".",
           "example": {
             "jp": "現代社会における複雑な課題は、Khả năng phản biện xã luậnの視点から多角的に検証されるべきである。",
@@ -3322,9 +3710,11 @@
         },
         {
           "name": "Cảm thụ tinh hoa văn hóa",
+          "icon": "🏛️",
           "color": "#8b5cf6",
           "formula": "文語・硬度表現：Cảm thụ tinh hoa văn hóa",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng Cảm thụ tinh hoa văn hóa trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đỉnh cao bản ngữ N1\".",
           "example": {
             "jp": "現代社会における複雑な課題は、Cảm thụ tinh hoa văn hóaの視点から多角的に検証されるべきである。",
@@ -3333,9 +3723,11 @@
         },
         {
           "name": "Diễn đạt chuẩn mực ngoại giao",
+          "icon": "💎",
           "color": "#06b6d4",
           "formula": "文語・硬度表現：Diễn đạt chuẩn mực ngoại giao",
           "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
+          "metaphor": "Tình huống học thuật: Ứng dụng Diễn đạt chuẩn mực ngoại giao trong nghị luận xã luận.",
           "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đỉnh cao bản ngữ N1\".",
           "example": {
             "jp": "現代社会における複雑な課題は、Diễn đạt chuẩn mực ngoại giaoの視点から多角的に検証されるべきである。",
@@ -3348,10 +3740,12 @@
       {
         "id": "n1_lesson_120_1",
         "pattern": "180 Mẫu ngữ pháp hàn lâm",
+        "icon": "👑",
+        "metaphor": "Tình huống học thuật: Ứng dụng 180 Mẫu ngữ pháp hàn lâm trong nghị luận xã luận.",
         "formula": "文語・硬度表現：180 Mẫu ngữ pháp hàn lâm",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Đại Bách Khoa Toàn Thư Thượng Cấp N1 (Đỉnh Cao Bản Ngữ)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Hệ thống hóa toàn bộ 180 mẫu ngữ pháp Thượng cấp đỉnh cao của tiếng Nhật",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đỉnh cao bản ngữ N1\".",
         "examples": [
           {
@@ -3376,10 +3770,12 @@
       {
         "id": "n1_lesson_120_2",
         "pattern": "Khả năng phản biện xã luận",
+        "icon": "📜",
+        "metaphor": "Tình huống học thuật: Ứng dụng Khả năng phản biện xã luận trong nghị luận xã luận.",
         "formula": "文語・硬度表現：Khả năng phản biện xã luận",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Đại Bách Khoa Toàn Thư Thượng Cấp N1 (Đỉnh Cao Bản Ngữ)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Hệ thống hóa toàn bộ 180 mẫu ngữ pháp Thượng cấp đỉnh cao của tiếng Nhật",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đỉnh cao bản ngữ N1\".",
         "examples": [
           {
@@ -3404,10 +3800,12 @@
       {
         "id": "n1_lesson_120_3",
         "pattern": "Cảm thụ tinh hoa văn hóa",
+        "icon": "🏛️",
+        "metaphor": "Tình huống học thuật: Ứng dụng Cảm thụ tinh hoa văn hóa trong nghị luận xã luận.",
         "formula": "文語・硬度表現：Cảm thụ tinh hoa văn hóa",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Đại Bách Khoa Toàn Thư Thượng Cấp N1 (Đỉnh Cao Bản Ngữ)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Hệ thống hóa toàn bộ 180 mẫu ngữ pháp Thượng cấp đỉnh cao của tiếng Nhật",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đỉnh cao bản ngữ N1\".",
         "examples": [
           {
@@ -3432,10 +3830,12 @@
       {
         "id": "n1_lesson_120_4",
         "pattern": "Diễn đạt chuẩn mực ngoại giao",
+        "icon": "💎",
+        "metaphor": "Tình huống học thuật: Ứng dụng Diễn đạt chuẩn mực ngoại giao trong nghị luận xã luận.",
         "formula": "文語・硬度表現：Diễn đạt chuẩn mực ngoại giao",
         "meaning": "Mẫu ngữ pháp thượng cấp văn phong hàn lâm: Đại Bách Khoa Toàn Thư Thượng Cấp N1 (Đỉnh Cao Bản Ngữ)",
         "nuance": "Dùng trong văn kiện chính thức, xã luận báo chí danh tiếng (Asahi, Nikkei) và đề thi JLPT N1.",
-        "trapBuster": "Bẫy đề thi N1: Cực kỳ tinh vi về sắc thái cảm xúc của người viết (thường mang tính phê phán hoặc trang trọng tuyệt đối).",
+        "trapBuster": "Bẫy đề thi N1: Hệ thống hóa toàn bộ 180 mẫu ngữ pháp Thượng cấp đỉnh cao của tiếng Nhật",
         "mnemonic": "Mẹo nhớ AI: Nhớ theo cấu trúc câu đối ngẫu triết luận \"Đỉnh cao bản ngữ N1\".",
         "examples": [
           {

@@ -308,9 +308,33 @@ function generateDetailedGrammarPoints(meta) {
   ];
 }
 
-const all50Lessons = LESSON_METAS.map((meta) => {
+const MINNA_MASCOTS = [
+  "🌸", "📦", "🏫", "⏰", "🚄", "🍱", "🥢", "🎨", "🎸", "🐕",
+  "🍎", "⛩️", "🍜", "⏳", "📷", "🏃", "⚠️", "⛷️", "🗻", "💬",
+  "💭", "🎁", "📚", "🤝", "☔", "💡", "🎹", "🎧", "🚪", "🗓️",
+  "🎬", "💊", "🛑", "📝", "🌸", "🏃‍♂️", "🥺", "🖼️", "⚡", "❓",
+  "🎁", "✈️", "☁️", "🍰", "🌧️", "🍕", "📻", "😿", "🙇", "💼"
+];
+
+const all50Lessons = LESSON_METAS.map((meta, idx) => {
   const gps = generateDetailedGrammarPoints(meta);
   const colors = ['#38bdf8', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899'];
+  const branchIcons = ['🎯', '💡', '✨', '⚡', '🌟'];
+
+  let trapRadarText = `Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của ${meta.pillar}.`;
+  if (meta.num === 1) trapRadarText = "Bẫy trợ từ: は (đọc là wa, đánh dấu chủ đề) vs が (đánh dấu chủ thể phán đoán).";
+  if (meta.num === 29) trapRadarText = "Bẫy cốt tử: ~ています (tự động từ trạng thái tự nhiên) vs ~てあります (tha động từ có chủ đích người làm).";
+  if (meta.num === 48) trapRadarText = "Bẫy ác mộng JLPT: 使役 (Bắt làm) vs 受身 (Bị mắng) vs 使役受身 (Bị ép làm điều đau khổ ngoài ý muốn).";
+  if (meta.num === 49 || meta.num === 50) trapRadarText = "Bẫy công sở: Nhầm lẫn giữa Tôn kính ngữ (Nâng đối phương lên) và Khiêm nhường ngữ (Hạ mình xuống).";
+
+  const rootConn = meta.num > 1 
+    ? `🔙 Rễ cây: Nối từ Bài ${meta.num - 1} (${LESSON_METAS[meta.num - 2].vi})`
+    : "🔙 Rễ cây: Nền tảng khởi đầu từ bảng chữ cái Hiragana & Katakana";
+
+  const nextLp = meta.num < 50
+    ? `🔜 Chồi non: Bước đệm sang Bài ${meta.num + 1} (${LESSON_METAS[meta.num].vi})`
+    : "🔜 Chồi non: Chuyển giao nòng cốt lên Trung cấp N3 (Bài 51: Thời gian & Đời sống Nhật)";
+
   return {
     lessonNumber: meta.num,
     title: `第${meta.num}課：${meta.jp} (${meta.vi})`,
@@ -321,13 +345,19 @@ const all50Lessons = LESSON_METAS.map((meta) => {
     summary: `Toàn diện Bài ${meta.num} Giáo trình Minna no Nihongo: ${meta.vi}. Trụ cột: ${meta.pillar}.`,
     mindmap: {
       center: `Bài ${meta.num}: ${meta.vi}`,
+      mascotIcon: MINNA_MASCOTS[idx] || "🌸",
+      rootConnection: rootConn,
+      nextLeap: nextLp,
+      trapRadar: trapRadarText,
       tip: `Nắm chắc cấu trúc Bài ${meta.num} để làm bệ phóng vững vàng cho trình độ ${meta.level === 'N5' ? 'N4' : 'N3'}.`,
-      branches: gps.map((p, idx) => ({
+      branches: gps.map((p, pIdx) => ({
         name: p.pattern,
-        color: colors[idx % colors.length],
+        icon: branchIcons[pIdx % branchIcons.length],
+        color: colors[pIdx % colors.length],
         formula: p.formula,
         nuance: p.nuance,
-        mnemonic: `Mẹo nhớ: Nắm chắc bản chất ${p.pattern} trong ngữ cảnh bài học.`,
+        metaphor: `Tình huống biểu tượng: Ứng dụng ${p.pattern} trong đời sống Nhật.`,
+        mnemonic: `Mẹo nhớ 3s: Gắn liền ${p.pattern} với ngữ cảnh trực quan.`,
         example: p.examples?.[0] || { jp: meta.jp, vi: meta.vi }
       }))
     },

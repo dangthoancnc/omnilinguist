@@ -497,18 +497,19 @@ export default function JlptMasterDojo() {
               </p>
             </div>
 
-            {/* Sơ đồ tư duy (Tree Mindmap Box) */}
+            {/* Sơ đồ tư duy Sketchnote Sakura (Tree Mindmap Box) */}
             <div style={{
-              background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(99, 102, 241, 0.08))',
-              border: '1.5px solid rgba(56, 189, 248, 0.3)',
+              background: 'linear-gradient(135deg, rgba(244, 63, 94, 0.06), rgba(99, 102, 241, 0.08))',
+              border: '1.5px solid rgba(244, 63, 94, 0.3)',
               borderRadius: 14,
               padding: 20,
               marginBottom: 24,
-              boxShadow: '0 4px 20px rgba(56, 189, 248, 0.1)'
+              boxShadow: '0 4px 20px rgba(244, 63, 94, 0.08)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, marginBottom: 14 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 800, color: '#38bdf8', fontSize: '1.05rem' }}>
-                  <Compass size={20} /> SƠ ĐỒ TƯ DUY BẢN LỀ (TREE MINDMAP): {activeLesson.mindmap.center}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontWeight: 800, color: '#f43f5e', fontSize: '1.05rem' }}>
+                  <span style={{ fontSize: '1.4rem' }}>{activeLesson.mindmap?.mascotIcon || '🌸'}</span>
+                  <span>SƠ ĐỒ TƯ DUY SKETCHNOTE SAKURA: {activeLesson.mindmap?.center || activeLesson.jpTitle}</span>
                 </div>
                 <button
                   onClick={() => setActiveMindmapLesson(activeLesson)}
@@ -516,7 +517,7 @@ export default function JlptMasterDojo() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: 6,
-                    background: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
+                    background: 'linear-gradient(135deg, #f43f5e, #8b5cf6)',
                     color: '#fff',
                     border: 'none',
                     padding: '8px 16px',
@@ -524,28 +525,48 @@ export default function JlptMasterDojo() {
                     fontSize: '0.85rem',
                     fontWeight: 800,
                     cursor: 'pointer',
-                    boxShadow: '0 2px 10px rgba(14, 165, 233, 0.35)'
+                    boxShadow: '0 2px 10px rgba(244, 63, 94, 0.35)'
                   }}
                 >
-                  <Sparkles size={15} /> 🗺️ Mở Sơ Đồ Tư Duy Mindmap AI (Toàn Màn Hình)
+                  <Sparkles size={15} /> 🌸 🗺️ Mở Sơ Đồ Sketchnote Mindmap (Toàn Màn Hình)
                 </button>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 12, fontSize: '0.9rem' }}>
-                {activeLesson.mindmap.branches.map((branch, bIdx) => {
+              {/* Root connection */}
+              {activeLesson.mindmap?.rootConnection && (
+                <div style={{ fontSize: '0.8rem', color: '#38bdf8', background: 'rgba(56, 189, 248, 0.1)', padding: '6px 12px', borderRadius: 8, marginBottom: 12 }}>
+                  🌱 <strong>Cội nguồn:</strong> {activeLesson.mindmap.rootConnection}
+                </div>
+              )}
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 10, marginBottom: 12 }}>
+                {activeLesson.mindmap.branches?.map((branch, bIdx) => {
                   const bName = typeof branch === 'object' ? branch.name : branch;
                   const bFormula = typeof branch === 'object' ? branch.formula : null;
+                  const bIcon = typeof branch === 'object' ? branch.icon : '🌸';
+                  const bMetaphor = typeof branch === 'object' ? branch.metaphor : null;
                   return (
-                    <div key={bIdx} style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--text-secondary)' }}>
-                      <span style={{ color: '#38bdf8', fontWeight: 800 }}>•</span>
-                      <strong style={{ color: 'var(--text-primary)' }}>{bName}</strong>
-                      {bFormula && <span style={{ color: '#94a3b8', fontSize: '0.8rem', fontFamily: 'monospace' }}>({bFormula})</span>}
+                    <div key={bIdx} style={{ background: 'var(--bg-surface)', border: '1px solid var(--glass-border)', padding: '10px 12px', borderRadius: 8, display: 'flex', flexDirection: 'column', gap: 4 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                        <span style={{ fontSize: '1rem' }}>{bIcon || '🌸'}</span>
+                        <strong style={{ color: 'var(--text-primary)', fontSize: '0.9rem' }}>{bName}</strong>
+                      </div>
+                      {bFormula && <div style={{ color: '#94a3b8', fontSize: '0.76rem', fontFamily: 'monospace' }}>{bFormula}</div>}
+                      {bMetaphor && <div style={{ color: '#f59e0b', fontSize: '0.74rem' }}>🎨 {bMetaphor}</div>}
                     </div>
                   );
                 })}
               </div>
-              <div style={{ fontSize: '0.85rem', color: '#f59e0b', background: 'rgba(245, 158, 11, 0.1)', padding: '8px 14px', borderRadius: 8 }}>
-                💡 <strong>Mẹo ghi nhớ bản chất:</strong> {activeLesson.mindmap.tip}
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                <div style={{ fontSize: '0.84rem', color: '#f59e0b', background: 'rgba(245, 158, 11, 0.1)', padding: '8px 12px', borderRadius: 8 }}>
+                  💡 <strong>Mẹo ghi nhớ bản chất:</strong> {activeLesson.mindmap?.tip}
+                </div>
+                {activeLesson.mindmap?.trapRadar && (
+                  <div style={{ fontSize: '0.82rem', color: '#ec4899', background: 'rgba(236, 72, 153, 0.1)', padding: '8px 12px', borderRadius: 8 }}>
+                    🛡️ <strong>Khiên bẫy đề thi:</strong> {activeLesson.mindmap.trapRadar}
+                  </div>
+                )}
               </div>
             </div>
 
@@ -890,18 +911,19 @@ export default function JlptMasterDojo() {
                   </p>
                 </div>
 
-                {/* Sơ đồ tư duy (Tree Mindmap Box) */}
+                {/* Sơ đồ tư duy Sketchnote Sakura (Tree Mindmap Box) */}
                 <div style={{
-                  background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(139, 92, 246, 0.08))',
-                  border: '1.5px solid rgba(56, 189, 248, 0.3)',
+                  background: 'linear-gradient(135deg, rgba(244, 63, 94, 0.06), rgba(139, 92, 246, 0.08))',
+                  border: '1.5px solid rgba(244, 63, 94, 0.3)',
                   borderRadius: 14,
                   padding: 20,
                   marginBottom: 24,
-                  boxShadow: '0 4px 20px rgba(56, 189, 248, 0.1)'
+                  boxShadow: '0 4px 20px rgba(244, 63, 94, 0.08)'
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, marginBottom: 14 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 800, color: '#38bdf8', fontSize: '1.05rem' }}>
-                      <Compass size={20} /> SƠ ĐỒ TƯ DUY BẢN LỀ (TREE MINDMAP): {activeFoundationLesson.mindmap.center}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontWeight: 800, color: '#f43f5e', fontSize: '1.05rem' }}>
+                      <span style={{ fontSize: '1.4rem' }}>{activeFoundationLesson.mindmap?.mascotIcon || '🌸'}</span>
+                      <span>SƠ ĐỒ TƯ DUY SKETCHNOTE SAKURA: {activeFoundationLesson.mindmap?.center || activeFoundationLesson.jpTitle}</span>
                     </div>
                     <button
                       onClick={() => setActiveMindmapLesson(activeFoundationLesson)}
@@ -909,7 +931,7 @@ export default function JlptMasterDojo() {
                         display: 'flex',
                         alignItems: 'center',
                         gap: 6,
-                        background: 'linear-gradient(135deg, #0ea5e9, #8b5cf6)',
+                        background: 'linear-gradient(135deg, #f43f5e, #8b5cf6)',
                         color: '#fff',
                         border: 'none',
                         padding: '8px 16px',
@@ -917,28 +939,48 @@ export default function JlptMasterDojo() {
                         fontSize: '0.85rem',
                         fontWeight: 800,
                         cursor: 'pointer',
-                        boxShadow: '0 2px 10px rgba(14, 165, 233, 0.35)'
+                        boxShadow: '0 2px 10px rgba(244, 63, 94, 0.35)'
                       }}
                     >
-                      <Sparkles size={15} /> 🗺️ Mở Sơ Đồ Tư Duy Mindmap AI (Toàn Màn Hình)
+                      <Sparkles size={15} /> 🌸 🗺️ Mở Sơ Đồ Sketchnote Mindmap (Toàn Màn Hình)
                     </button>
                   </div>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 12, fontSize: '0.9rem' }}>
+                  {/* Root connection */}
+                  {activeFoundationLesson.mindmap?.rootConnection && (
+                    <div style={{ fontSize: '0.8rem', color: '#38bdf8', background: 'rgba(56, 189, 248, 0.1)', padding: '6px 12px', borderRadius: 8, marginBottom: 12 }}>
+                      🌱 <strong>Cội nguồn:</strong> {activeFoundationLesson.mindmap.rootConnection}
+                    </div>
+                  )}
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 10, marginBottom: 12 }}>
                     {activeFoundationLesson.mindmap.branches?.map((branch, bIdx) => {
                       const bName = typeof branch === 'object' ? branch.name : branch;
                       const bFormula = typeof branch === 'object' ? branch.formula : null;
+                      const bIcon = typeof branch === 'object' ? branch.icon : '🌸';
+                      const bMetaphor = typeof branch === 'object' ? branch.metaphor : null;
                       return (
-                        <div key={bIdx} style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--text-secondary)' }}>
-                          <span style={{ color: '#38bdf8', fontWeight: 800 }}>•</span>
-                          <strong style={{ color: 'var(--text-primary)' }}>{bName}</strong>
-                          {bFormula && <span style={{ color: '#94a3b8', fontSize: '0.8rem', fontFamily: 'monospace' }}>({bFormula})</span>}
+                        <div key={bIdx} style={{ background: 'var(--bg-surface)', border: '1px solid var(--glass-border)', padding: '10px 12px', borderRadius: 8, display: 'flex', flexDirection: 'column', gap: 4 }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                            <span style={{ fontSize: '1rem' }}>{bIcon || '🌸'}</span>
+                            <strong style={{ color: 'var(--text-primary)', fontSize: '0.9rem' }}>{bName}</strong>
+                          </div>
+                          {bFormula && <div style={{ color: '#94a3b8', fontSize: '0.76rem', fontFamily: 'monospace' }}>{bFormula}</div>}
+                          {bMetaphor && <div style={{ color: '#f59e0b', fontSize: '0.74rem' }}>🎨 {bMetaphor}</div>}
                         </div>
                       );
                     })}
                   </div>
-                  <div style={{ fontSize: '0.85rem', color: '#f59e0b', background: 'rgba(245, 158, 11, 0.1)', padding: '8px 14px', borderRadius: 8 }}>
-                    💡 <strong>Mẹo ghi nhớ bản chất:</strong> {activeFoundationLesson.mindmap.tip}
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    <div style={{ fontSize: '0.84rem', color: '#f59e0b', background: 'rgba(245, 158, 11, 0.1)', padding: '8px 12px', borderRadius: 8 }}>
+                      💡 <strong>Mẹo ghi nhớ bản chất:</strong> {activeFoundationLesson.mindmap?.tip}
+                    </div>
+                    {activeFoundationLesson.mindmap?.trapRadar && (
+                      <div style={{ fontSize: '0.82rem', color: '#ec4899', background: 'rgba(236, 72, 153, 0.1)', padding: '8px 12px', borderRadius: 8 }}>
+                        🛡️ <strong>Khiên bẫy đề thi:</strong> {activeFoundationLesson.mindmap.trapRadar}
+                      </div>
+                    )}
                   </div>
                 </div>
 

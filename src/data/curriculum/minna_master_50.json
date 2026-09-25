@@ -9,14 +9,20 @@
     "summary": "Toàn diện Bài 1 Giáo trình Minna no Nihongo: Giới thiệu bản thân & Câu danh từ. Trụ cột: Khởi đầu & Câu danh từ.",
     "mindmap": {
       "center": "Bài 1: Giới thiệu bản thân & Câu danh từ",
+      "mascotIcon": "🌸",
+      "rootConnection": "🔙 Rễ cây: Nền tảng khởi đầu từ bảng chữ cái Hiragana & Katakana",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 2 (Đại từ chỉ định Kore/Sore/Are & Sở hữu)",
+      "trapRadar": "Bẫy trợ từ: は (đọc là wa, đánh dấu chủ đề) vs が (đánh dấu chủ thể phán đoán).",
       "tip": "Nắm chắc cấu trúc Bài 1 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "N1 は N2 です",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Danh từ 1 + は (wa) + Danh từ 2 + です",
           "nuance": "Trợ từ は phát âm là 'wa', dùng để xác định chủ đề được nói tới trong câu. です đặt ở cuối câu biểu thị thái độ lịch sự.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất N1 は N2 です trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng N1 は N2 です trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền N1 は N2 です với ngữ cảnh trực quan.",
           "example": {
             "jp": "わたしは マイク・ミラーです。",
             "vi": "Tôi là Mike Miller."
@@ -24,10 +30,12 @@
         },
         {
           "name": "N1 は N2 じゃ ありません",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Danh từ 1 + は + Danh từ 2 + じゃ (では) ありません",
           "nuance": "じゃ ありません dùng phổ biến trong giao tiếp hàng ngày; では ありません trang trọng hơn, thường dùng trong văn viết hoặc phát biểu.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất N1 は N2 じゃ ありません trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng N1 は N2 じゃ ありません trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền N1 は N2 じゃ ありません với ngữ cảnh trực quan.",
           "example": {
             "jp": "サントスさんは 学生じゃ ありません。",
             "vi": "Anh Santos không phải là sinh viên."
@@ -35,10 +43,12 @@
         },
         {
           "name": "N1 は N2 ですか",
+          "icon": "✨",
           "color": "#f59e0b",
           "formula": "Câu trần thuật + か？",
           "nuance": "Thêm trợ từ か vào cuối câu để tạo thành câu hỏi, không cần đổi thứ tự từ trong câu. Lên giọng nhẹ ở cuối từ か.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất N1 は N2 ですか trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng N1 は N2 ですか trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền N1 は N2 ですか với ngữ cảnh trực quan.",
           "example": {
             "jp": "ミラーさんは アメリカ人ですか。…はい、アメリカ人です。",
             "vi": "Anh Miller có phải người Mỹ không? ...Vâng, là người Mỹ."
@@ -142,14 +152,20 @@
     "summary": "Toàn diện Bài 2 Giáo trình Minna no Nihongo: Đại từ chỉ định Kore/Sore/Are & Sở hữu. Trụ cột: Đại từ chỉ định & Sở hữu.",
     "mindmap": {
       "center": "Bài 2: Đại từ chỉ định Kore/Sore/Are & Sở hữu",
+      "mascotIcon": "📦",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 1 (Giới thiệu bản thân & Câu danh từ)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 3 (Vị trí, địa điểm Koko/Soko/Asoko)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Đại từ chỉ định & Sở hữu.",
       "tip": "Nắm chắc cấu trúc Bài 2 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "これは 本です",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 2: これは 本です",
           "nuance": "Trụ cột Đại từ chỉ định & Sở hữu: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất これは 本です trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng これは 本です trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền これは 本です với ngữ cảnh trực quan.",
           "example": {
             "jp": "これは 本です。",
             "vi": "Câu ví dụ chuẩn cho bài học 2 (Đại từ chỉ định Kore/Sore/Are & Sở hữu)."
@@ -157,10 +173,12 @@
         },
         {
           "name": "これは 本です (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất これは 本です (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng これは 本です (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền これは 本です (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -238,14 +256,20 @@
     "summary": "Toàn diện Bài 3 Giáo trình Minna no Nihongo: Vị trí, địa điểm Koko/Soko/Asoko. Trụ cột: Địa điểm & Giá cả.",
     "mindmap": {
       "center": "Bài 3: Vị trí, địa điểm Koko/Soko/Asoko",
+      "mascotIcon": "🏫",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 2 (Đại từ chỉ định Kore/Sore/Are & Sở hữu)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 4 (Thời gian, ngày tháng & Động từ V-masu)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Địa điểm & Giá cả.",
       "tip": "Nắm chắc cấu trúc Bài 3 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "ここは 教室です",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 3: ここは 教室です",
           "nuance": "Trụ cột Địa điểm & Giá cả: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất ここは 教室です trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng ここは 教室です trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền ここは 教室です với ngữ cảnh trực quan.",
           "example": {
             "jp": "ここは 教室です。",
             "vi": "Câu ví dụ chuẩn cho bài học 3 (Vị trí, địa điểm Koko/Soko/Asoko)."
@@ -253,10 +277,12 @@
         },
         {
           "name": "ここは 教室です (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất ここは 教室です (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng ここは 教室です (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền ここは 教室です (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -334,14 +360,20 @@
     "summary": "Toàn diện Bài 4 Giáo trình Minna no Nihongo: Thời gian, ngày tháng & Động từ V-masu. Trụ cột: Thời gian & Động từ.",
     "mindmap": {
       "center": "Bài 4: Thời gian, ngày tháng & Động từ V-masu",
+      "mascotIcon": "⏰",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 3 (Vị trí, địa điểm Koko/Soko/Asoko)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 5 (Động từ di chuyển & Phương tiện đi lại)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Thời gian & Động từ.",
       "tip": "Nắm chắc cấu trúc Bài 4 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "今 何時ですか",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 4: 今 何時ですか",
           "nuance": "Trụ cột Thời gian & Động từ: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 今 何時ですか trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 今 何時ですか trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 今 何時ですか với ngữ cảnh trực quan.",
           "example": {
             "jp": "今 何時ですか。",
             "vi": "Câu ví dụ chuẩn cho bài học 4 (Thời gian, ngày tháng & Động từ V-masu)."
@@ -349,10 +381,12 @@
         },
         {
           "name": "今 何時ですか (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 今 何時ですか (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 今 何時ですか (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 今 何時ですか (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -430,14 +464,20 @@
     "summary": "Toàn diện Bài 5 Giáo trình Minna no Nihongo: Động từ di chuyển & Phương tiện đi lại. Trụ cột: Di chuyển & Phương tiện.",
     "mindmap": {
       "center": "Bài 5: Động từ di chuyển & Phương tiện đi lại",
+      "mascotIcon": "🚄",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 4 (Thời gian, ngày tháng & Động từ V-masu)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 6 (Tha động từ trợ từ を & Lời rủ rê)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Di chuyển & Phương tiện.",
       "tip": "Nắm chắc cấu trúc Bài 5 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "甲子園へ 行きます",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 5: 甲子園へ 行きます",
           "nuance": "Trụ cột Di chuyển & Phương tiện: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 甲子園へ 行きます trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 甲子園へ 行きます trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 甲子園へ 行きます với ngữ cảnh trực quan.",
           "example": {
             "jp": "甲子園へ 行きます。",
             "vi": "Câu ví dụ chuẩn cho bài học 5 (Động từ di chuyển & Phương tiện đi lại)."
@@ -445,10 +485,12 @@
         },
         {
           "name": "甲子園へ 行きます (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 甲子園へ 行きます (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 甲子園へ 行きます (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 甲子園へ 行きます (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -526,14 +568,20 @@
     "summary": "Toàn diện Bài 6 Giáo trình Minna no Nihongo: Tha động từ trợ từ を & Lời rủ rê. Trụ cột: Tha động từ & Rủ rê.",
     "mindmap": {
       "center": "Bài 6: Tha động từ trợ từ を & Lời rủ rê",
+      "mascotIcon": "🍱",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 5 (Động từ di chuyển & Phương tiện đi lại)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 7 (Công cụ, phương tiện で & Cho nhận quà)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Tha động từ & Rủ rê.",
       "tip": "Nắm chắc cấu trúc Bài 6 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "いっしょに 行きませんか",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 6: いっしょに 行きませんか",
           "nuance": "Trụ cột Tha động từ & Rủ rê: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất いっしょに 行きませんか trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng いっしょに 行きませんか trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền いっしょに 行きませんか với ngữ cảnh trực quan.",
           "example": {
             "jp": "いっしょに 行きませんか。",
             "vi": "Câu ví dụ chuẩn cho bài học 6 (Tha động từ trợ từ を & Lời rủ rê)."
@@ -541,10 +589,12 @@
         },
         {
           "name": "いっしょに 行きませんか (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất いっしょに 行きませんか (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng いっしょに 行きませんか (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền いっしょに 行きませんか (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -622,14 +672,20 @@
     "summary": "Toàn diện Bài 7 Giáo trình Minna no Nihongo: Công cụ, phương tiện で & Cho nhận quà. Trụ cột: Công cụ & Cho nhận sơ cấp.",
     "mindmap": {
       "center": "Bài 7: Công cụ, phương tiện で & Cho nhận quà",
+      "mascotIcon": "🥢",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 6 (Tha động từ trợ từ を & Lời rủ rê)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 8 (Tính từ đuôi い và Tính từ đuôi な)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Công cụ & Cho nhận sơ cấp.",
       "tip": "Nắm chắc cấu trúc Bài 7 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "箸で 食べます",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 7: 箸で 食べます",
           "nuance": "Trụ cột Công cụ & Cho nhận sơ cấp: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 箸で 食べます trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 箸で 食べます trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 箸で 食べます với ngữ cảnh trực quan.",
           "example": {
             "jp": "箸で 食べます。",
             "vi": "Câu ví dụ chuẩn cho bài học 7 (Công cụ, phương tiện で & Cho nhận quà)."
@@ -637,10 +693,12 @@
         },
         {
           "name": "箸で 食べます (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 箸で 食べます (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 箸で 食べます (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 箸で 食べます (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -718,14 +776,20 @@
     "summary": "Toàn diện Bài 8 Giáo trình Minna no Nihongo: Tính từ đuôi い và Tính từ đuôi な. Trụ cột: Hệ thống Tính từ.",
     "mindmap": {
       "center": "Bài 8: Tính từ đuôi い và Tính từ đuôi な",
+      "mascotIcon": "🎨",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 7 (Công cụ, phương tiện で & Cho nhận quà)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 9 (Sở thích, sở trường & Trợ từ が)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Hệ thống Tính từ.",
       "tip": "Nắm chắc cấu trúc Bài 8 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "桜は きれいです",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 8: 桜は きれいです",
           "nuance": "Trụ cột Hệ thống Tính từ: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 桜は きれいです trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 桜は きれいです trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 桜は きれいです với ngữ cảnh trực quan.",
           "example": {
             "jp": "桜は きれいです。",
             "vi": "Câu ví dụ chuẩn cho bài học 8 (Tính từ đuôi い và Tính từ đuôi な)."
@@ -733,10 +797,12 @@
         },
         {
           "name": "桜は きれいです (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 桜は きれいです (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 桜は きれいです (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 桜は きれいです (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -814,14 +880,20 @@
     "summary": "Toàn diện Bài 9 Giáo trình Minna no Nihongo: Sở thích, sở trường & Trợ từ が. Trụ cột: Khả năng & Sở thích.",
     "mindmap": {
       "center": "Bài 9: Sở thích, sở trường & Trợ từ が",
+      "mascotIcon": "🎸",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 8 (Tính từ đuôi い và Tính từ đuôi な)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 10 (Sự tồn tại của người & vật (います/あります))",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Khả năng & Sở thích.",
       "tip": "Nắm chắc cấu trúc Bài 9 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "日本語が わかります",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 9: 日本語が わかります",
           "nuance": "Trụ cột Khả năng & Sở thích: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 日本語が わかります trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 日本語が わかります trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 日本語が わかります với ngữ cảnh trực quan.",
           "example": {
             "jp": "日本語が わかります。",
             "vi": "Câu ví dụ chuẩn cho bài học 9 (Sở thích, sở trường & Trợ từ が)."
@@ -829,10 +901,12 @@
         },
         {
           "name": "日本語が わかります (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 日本語が わかります (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 日本語が わかります (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 日本語が わかります (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -910,14 +984,20 @@
     "summary": "Toàn diện Bài 10 Giáo trình Minna no Nihongo: Sự tồn tại của người & vật (います/あります). Trụ cột: Sự tồn tại & Vị trí.",
     "mindmap": {
       "center": "Bài 10: Sự tồn tại của người & vật (います/あります)",
+      "mascotIcon": "🐕",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 9 (Sở thích, sở trường & Trợ từ が)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 11 (Số lượng từ & Khoảng thời gian)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Sự tồn tại & Vị trí.",
       "tip": "Nắm chắc cấu trúc Bài 10 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "あそこに 犬が います",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 10: あそこに 犬が います",
           "nuance": "Trụ cột Sự tồn tại & Vị trí: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất あそこに 犬が います trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng あそこに 犬が います trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền あそこに 犬が います với ngữ cảnh trực quan.",
           "example": {
             "jp": "あそこに 犬が います。",
             "vi": "Câu ví dụ chuẩn cho bài học 10 (Sự tồn tại của người & vật (います/あります))."
@@ -925,10 +1005,12 @@
         },
         {
           "name": "あそこに 犬が います (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất あそこに 犬が います (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng あそこに 犬が います (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền あそこに 犬が います (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -1006,14 +1088,20 @@
     "summary": "Toàn diện Bài 11 Giáo trình Minna no Nihongo: Số lượng từ & Khoảng thời gian. Trụ cột: Lượng từ & Thời lượng.",
     "mindmap": {
       "center": "Bài 11: Số lượng từ & Khoảng thời gian",
+      "mascotIcon": "🍎",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 10 (Sự tồn tại của người & vật (います/あります))",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 12 (Quá khứ của tính từ & So sánh hơn/nhất)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Lượng từ & Thời lượng.",
       "tip": "Nắm chắc cấu trúc Bài 11 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "りんごを いくつ 買いましたか",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 11: りんごを いくつ 買いましたか",
           "nuance": "Trụ cột Lượng từ & Thời lượng: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất りんごを いくつ 買いましたか trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng りんごを いくつ 買いましたか trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền りんごを いくつ 買いましたか với ngữ cảnh trực quan.",
           "example": {
             "jp": "りんごを いくつ 買いましたか。",
             "vi": "Câu ví dụ chuẩn cho bài học 11 (Số lượng từ & Khoảng thời gian)."
@@ -1021,10 +1109,12 @@
         },
         {
           "name": "りんごを いくつ 買いましたか (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất りんごを いくつ 買いましたか (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng りんごを いくつ 買いましたか (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền りんごを いくつ 買いましたか (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -1102,14 +1192,20 @@
     "summary": "Toàn diện Bài 12 Giáo trình Minna no Nihongo: Quá khứ của tính từ & So sánh hơn/nhất. Trụ cột: So sánh & Quá khứ tính từ.",
     "mindmap": {
       "center": "Bài 12: Quá khứ của tính từ & So sánh hơn/nhất",
+      "mascotIcon": "⛩️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 11 (Số lượng từ & Khoảng thời gian)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 13 (Mong muốn ほしい, V-たい & Mục đích に行く)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của So sánh & Quá khứ tính từ.",
       "tip": "Nắm chắc cấu trúc Bài 12 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "京都は 静かでした",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 12: 京都は 静かでした",
           "nuance": "Trụ cột So sánh & Quá khứ tính từ: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 京都は 静かでした trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 京都は 静かでした trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 京都は 静かでした với ngữ cảnh trực quan.",
           "example": {
             "jp": "京都は 静かでした。",
             "vi": "Câu ví dụ chuẩn cho bài học 12 (Quá khứ của tính từ & So sánh hơn/nhất)."
@@ -1117,10 +1213,12 @@
         },
         {
           "name": "京都は 静かでした (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 京都は 静かでした (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 京都は 静かでした (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 京都は 静かでした (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -1198,14 +1296,20 @@
     "summary": "Toàn diện Bài 13 Giáo trình Minna no Nihongo: Mong muốn ほしい, V-たい & Mục đích に行く. Trụ cột: Mong muốn & Mục đích.",
     "mindmap": {
       "center": "Bài 13: Mong muốn ほしい, V-たい & Mục đích に行く",
+      "mascotIcon": "🍜",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 12 (Quá khứ của tính từ & So sánh hơn/nhất)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 14 (Thể て (Te): Sai khiến nhẹ, đang làm)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Mong muốn & Mục đích.",
       "tip": "Nắm chắc cấu trúc Bài 13 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "天ぷらが 食べたいです",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 13: 天ぷらが 食べたいです",
           "nuance": "Trụ cột Mong muốn & Mục đích: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 天ぷらが 食べたいです trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 天ぷらが 食べたいです trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 天ぷらが 食べたいです với ngữ cảnh trực quan.",
           "example": {
             "jp": "天ぷらが 食べたいです。",
             "vi": "Câu ví dụ chuẩn cho bài học 13 (Mong muốn ほしい, V-たい & Mục đích に行く)."
@@ -1213,10 +1317,12 @@
         },
         {
           "name": "天ぷらが 食べたいです (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 天ぷらが 食べたいです (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 天ぷらが 食べたいです (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 天ぷらが 食べたいです (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -1294,14 +1400,20 @@
     "summary": "Toàn diện Bài 14 Giáo trình Minna no Nihongo: Thể て (Te): Sai khiến nhẹ, đang làm. Trụ cột: Thể て Nền Tảng.",
     "mindmap": {
       "center": "Bài 14: Thể て (Te): Sai khiến nhẹ, đang làm",
+      "mascotIcon": "⏳",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 13 (Mong muốn ほしい, V-たい & Mục đích に行く)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 15 (Xin phép てもいい & Cấm đoán てはいけない)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Thể て Nền Tảng.",
       "tip": "Nắm chắc cấu trúc Bài 14 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "ちょっと 待ってください",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 14: ちょっと 待ってください",
           "nuance": "Trụ cột Thể て Nền Tảng: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất ちょっと 待ってください trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng ちょっと 待ってください trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền ちょっと 待ってください với ngữ cảnh trực quan.",
           "example": {
             "jp": "ちょっと 待ってください。",
             "vi": "Câu ví dụ chuẩn cho bài học 14 (Thể て (Te): Sai khiến nhẹ, đang làm)."
@@ -1309,10 +1421,12 @@
         },
         {
           "name": "ちょっと 待ってください (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất ちょっと 待ってください (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng ちょっと 待ってください (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền ちょっと 待ってください (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -1390,14 +1504,20 @@
     "summary": "Toàn diện Bài 15 Giáo trình Minna no Nihongo: Xin phép てもいい & Cấm đoán てはいけない. Trụ cột: Quy định & Xin phép.",
     "mindmap": {
       "center": "Bài 15: Xin phép てもいい & Cấm đoán てはいけない",
+      "mascotIcon": "📷",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 14 (Thể て (Te): Sai khiến nhẹ, đang làm)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 16 (Nối chuỗi hành động てから & Nối tính từ)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Quy định & Xin phép.",
       "tip": "Nắm chắc cấu trúc Bài 15 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "写真を 撮っても いいですか",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 15: 写真を 撮っても いいですか",
           "nuance": "Trụ cột Quy định & Xin phép: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 写真を 撮っても いいですか trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 写真を 撮っても いいですか trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 写真を 撮っても いいですか với ngữ cảnh trực quan.",
           "example": {
             "jp": "写真を 撮っても いいですか。",
             "vi": "Câu ví dụ chuẩn cho bài học 15 (Xin phép てもいい & Cấm đoán てはいけない)."
@@ -1405,10 +1525,12 @@
         },
         {
           "name": "写真を 撮っても いいですか (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 写真を 撮っても いいですか (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 写真を 撮っても いいですか (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 写真を 撮っても いいですか (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -1486,14 +1608,20 @@
     "summary": "Toàn diện Bài 16 Giáo trình Minna no Nihongo: Nối chuỗi hành động てから & Nối tính từ. Trụ cột: Nối chuỗi hành động.",
     "mindmap": {
       "center": "Bài 16: Nối chuỗi hành động てから & Nối tính từ",
+      "mascotIcon": "🏃",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 15 (Xin phép てもいい & Cấm đoán てはいけない)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 17 (Thể ない (Nai): Xin đừng, bắt buộc, không cần)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Nối chuỗi hành động.",
       "tip": "Nắm chắc cấu trúc Bài 16 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "朝起きて、ご飯を 食べます",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 16: 朝起きて、ご飯を 食べます",
           "nuance": "Trụ cột Nối chuỗi hành động: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 朝起きて、ご飯を 食べます trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 朝起きて、ご飯を 食べます trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 朝起きて、ご飯を 食べます với ngữ cảnh trực quan.",
           "example": {
             "jp": "朝起きて、ご飯を 食べます。",
             "vi": "Câu ví dụ chuẩn cho bài học 16 (Nối chuỗi hành động てから & Nối tính từ)."
@@ -1501,10 +1629,12 @@
         },
         {
           "name": "朝起きて、ご飯を 食べます (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 朝起きて、ご飯を 食べます (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 朝起きて、ご飯を 食べます (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 朝起きて、ご飯を 食べます (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -1582,14 +1712,20 @@
     "summary": "Toàn diện Bài 17 Giáo trình Minna no Nihongo: Thể ない (Nai): Xin đừng, bắt buộc, không cần. Trụ cột: Thể ない & Bắt buộc.",
     "mindmap": {
       "center": "Bài 17: Thể ない (Nai): Xin đừng, bắt buộc, không cần",
+      "mascotIcon": "⚠️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 16 (Nối chuỗi hành động てから & Nối tính từ)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 18 (Thể Từ điển (辞書形): Khả năng, sở thích, trước khi)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Thể ない & Bắt buộc.",
       "tip": "Nắm chắc cấu trúc Bài 17 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "忘れないで ください",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 17: 忘れないで ください",
           "nuance": "Trụ cột Thể ない & Bắt buộc: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 忘れないで ください trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 忘れないで ください trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 忘れないで ください với ngữ cảnh trực quan.",
           "example": {
             "jp": "忘れないで ください。",
             "vi": "Câu ví dụ chuẩn cho bài học 17 (Thể ない (Nai): Xin đừng, bắt buộc, không cần)."
@@ -1597,10 +1733,12 @@
         },
         {
           "name": "忘れないで ください (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 忘れないで ください (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 忘れないで ください (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 忘れないで ください (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -1678,14 +1816,20 @@
     "summary": "Toàn diện Bài 18 Giáo trình Minna no Nihongo: Thể Từ điển (辞書形): Khả năng, sở thích, trước khi. Trụ cột: Thể Từ Điển.",
     "mindmap": {
       "center": "Bài 18: Thể Từ điển (辞書形): Khả năng, sở thích, trước khi",
+      "mascotIcon": "⛷️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 17 (Thể ない (Nai): Xin đừng, bắt buộc, không cần)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 19 (Thể た (Ta): Kinh nghiệm, liệt kê たり~たり)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Thể Từ Điển.",
       "tip": "Nắm chắc cấu trúc Bài 18 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "スキーが できます",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 18: スキーが できます",
           "nuance": "Trụ cột Thể Từ Điển: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất スキーが できます trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng スキーが できます trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền スキーが できます với ngữ cảnh trực quan.",
           "example": {
             "jp": "スキーが できます。",
             "vi": "Câu ví dụ chuẩn cho bài học 18 (Thể Từ điển (辞書形): Khả năng, sở thích, trước khi)."
@@ -1693,10 +1837,12 @@
         },
         {
           "name": "スキーが できます (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất スキーが できます (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng スキーが できます (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền スキーが できます (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -1774,14 +1920,20 @@
     "summary": "Toàn diện Bài 19 Giáo trình Minna no Nihongo: Thể た (Ta): Kinh nghiệm, liệt kê たり~たり. Trụ cột: Thể た & Kinh nghiệm.",
     "mindmap": {
       "center": "Bài 19: Thể た (Ta): Kinh nghiệm, liệt kê たり~たり",
+      "mascotIcon": "🗻",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 18 (Thể Từ điển (辞書形): Khả năng, sở thích, trước khi)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 20 (Thể thông thường (普通形 - Futsuukei))",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Thể た & Kinh nghiệm.",
       "tip": "Nắm chắc cấu trúc Bài 19 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "富士山に 登ったことが あります",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 19: 富士山に 登ったことが あります",
           "nuance": "Trụ cột Thể た & Kinh nghiệm: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 富士山に 登ったことが あります trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 富士山に 登ったことが あります trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 富士山に 登ったことが あります với ngữ cảnh trực quan.",
           "example": {
             "jp": "富士山に 登ったことが あります。",
             "vi": "Câu ví dụ chuẩn cho bài học 19 (Thể た (Ta): Kinh nghiệm, liệt kê たり~たり)."
@@ -1789,10 +1941,12 @@
         },
         {
           "name": "富士山に 登ったことが あります (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 富士山に 登ったことが あります (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 富士山に 登ったことが あります (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 富士山に 登ったことが あります (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -1870,14 +2024,20 @@
     "summary": "Toàn diện Bài 20 Giáo trình Minna no Nihongo: Thể thông thường (普通形 - Futsuukei). Trụ cột: Thể Thông Thường.",
     "mindmap": {
       "center": "Bài 20: Thể thông thường (普通形 - Futsuukei)",
+      "mascotIcon": "💬",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 19 (Thể た (Ta): Kinh nghiệm, liệt kê たり~たり)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 21 (Bày tỏ quan điểm 思います & Trích dẫn 言いました)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Thể Thông Thường.",
       "tip": "Nắm chắc cấu trúc Bài 20 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "今日 暇？",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 20: 今日 暇？",
           "nuance": "Trụ cột Thể Thông Thường: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 今日 暇？ trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 今日 暇？ trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 今日 暇？ với ngữ cảnh trực quan.",
           "example": {
             "jp": "今日 暇？。",
             "vi": "Câu ví dụ chuẩn cho bài học 20 (Thể thông thường (普通形 - Futsuukei))."
@@ -1885,10 +2045,12 @@
         },
         {
           "name": "今日 暇？ (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 今日 暇？ (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 今日 暇？ (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 今日 暇？ (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -1966,14 +2128,20 @@
     "summary": "Toàn diện Bài 21 Giáo trình Minna no Nihongo: Bày tỏ quan điểm 思います & Trích dẫn 言いました. Trụ cột: Ý kiến & Trích dẫn.",
     "mindmap": {
       "center": "Bài 21: Bày tỏ quan điểm 思います & Trích dẫn 言いました",
+      "mascotIcon": "💭",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 20 (Thể thông thường (普通形 - Futsuukei))",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 22 (Bổ nghĩa mệnh đề danh từ (Định ngữ))",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Ý kiến & Trích dẫn.",
       "tip": "Nắm chắc cấu trúc Bài 21 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "明日は 雨が 降ると 思います",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 21: 明日は 雨が 降ると 思います",
           "nuance": "Trụ cột Ý kiến & Trích dẫn: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 明日は 雨が 降ると 思います trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 明日は 雨が 降ると 思います trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 明日は 雨が 降ると 思います với ngữ cảnh trực quan.",
           "example": {
             "jp": "明日は 雨が 降ると 思います。",
             "vi": "Câu ví dụ chuẩn cho bài học 21 (Bày tỏ quan điểm 思います & Trích dẫn 言いました)."
@@ -1981,10 +2149,12 @@
         },
         {
           "name": "明日は 雨が 降ると 思います (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 明日は 雨が 降ると 思います (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 明日は 雨が 降ると 思います (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 明日は 雨が 降ると 思います (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -2062,14 +2232,20 @@
     "summary": "Toàn diện Bài 22 Giáo trình Minna no Nihongo: Bổ nghĩa mệnh đề danh từ (Định ngữ). Trụ cột: Mệnh đề Bổ nghĩa.",
     "mindmap": {
       "center": "Bài 22: Bổ nghĩa mệnh đề danh từ (Định ngữ)",
+      "mascotIcon": "🎁",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 21 (Bày tỏ quan điểm 思います & Trích dẫn 言いました)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 23 (Khi làm gì とき & Điều kiện tự nhiên と)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Mệnh đề Bổ nghĩa.",
       "tip": "Nắm chắc cấu trúc Bài 22 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "私が 作った ケーキ",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 22: 私が 作った ケーキ",
           "nuance": "Trụ cột Mệnh đề Bổ nghĩa: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 私が 作った ケーキ trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 私が 作った ケーキ trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 私が 作った ケーキ với ngữ cảnh trực quan.",
           "example": {
             "jp": "私が 作った ケーキ。",
             "vi": "Câu ví dụ chuẩn cho bài học 22 (Bổ nghĩa mệnh đề danh từ (Định ngữ))."
@@ -2077,10 +2253,12 @@
         },
         {
           "name": "私が 作った ケーキ (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 私が 作った ケーキ (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 私が 作った ケーキ (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 私が 作った ケーキ (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -2158,14 +2336,20 @@
     "summary": "Toàn diện Bài 23 Giáo trình Minna no Nihongo: Khi làm gì とき & Điều kiện tự nhiên と. Trụ cột: Thời điểm & Điều kiện と.",
     "mindmap": {
       "center": "Bài 23: Khi làm gì とき & Điều kiện tự nhiên と",
+      "mascotIcon": "📚",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 22 (Bổ nghĩa mệnh đề danh từ (Định ngữ))",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 24 (Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます))",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Thời điểm & Điều kiện と.",
       "tip": "Nắm chắc cấu trúc Bài 23 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "図書館へ 行くとき、本を 借ります",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 23: 図書館へ 行くとき、本を 借ります",
           "nuance": "Trụ cột Thời điểm & Điều kiện と: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 図書館へ 行くとき、本を 借ります trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 図書館へ 行くとき、本を 借ります trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 図書館へ 行くとき、本を 借ります với ngữ cảnh trực quan.",
           "example": {
             "jp": "図書館へ 行くとき、本を 借ります。",
             "vi": "Câu ví dụ chuẩn cho bài học 23 (Khi làm gì とき & Điều kiện tự nhiên と)."
@@ -2173,10 +2357,12 @@
         },
         {
           "name": "図書館へ 行くとき、本を 借ります (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 図書館へ 行くとき、本を 借ります (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 図書館へ 行くとき、本を 借ります (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 図書館へ 行くとき、本を 借ります (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -2254,14 +2440,20 @@
     "summary": "Toàn diện Bài 24 Giáo trình Minna no Nihongo: Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます). Trụ cột: Cho - Nhận Hành Động.",
     "mindmap": {
       "center": "Bài 24: Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます)",
+      "mascotIcon": "🤝",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 23 (Khi làm gì とき & Điều kiện tự nhiên と)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 25 (Điều kiện giả định たら & Dù cho... nhưng ても)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Cho - Nhận Hành Động.",
       "tip": "Nắm chắc cấu trúc Bài 24 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "友達が 手伝って くれました",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 24: 友達が 手伝って くれました",
           "nuance": "Trụ cột Cho - Nhận Hành Động: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 友達が 手伝って くれました trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 友達が 手伝って くれました trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 友達が 手伝って くれました với ngữ cảnh trực quan.",
           "example": {
             "jp": "友達が 手伝って くれました。",
             "vi": "Câu ví dụ chuẩn cho bài học 24 (Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます))."
@@ -2269,10 +2461,12 @@
         },
         {
           "name": "友達が 手伝って くれました (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 友達が 手伝って くれました (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 友達が 手伝って くれました (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 友達が 手伝って くれました (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -2350,14 +2544,20 @@
     "summary": "Toàn diện Bài 25 Giáo trình Minna no Nihongo: Điều kiện giả định たら & Dù cho... nhưng ても. Trụ cột: Điều kiện たら & Dù cho.",
     "mindmap": {
       "center": "Bài 25: Điều kiện giả định たら & Dù cho... nhưng ても",
+      "mascotIcon": "☔",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 24 (Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます))",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 26 (Mẫu câu giải thích lý do & Mào đầu ~んです)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Điều kiện たら & Dù cho.",
       "tip": "Nắm chắc cấu trúc Bài 25 để làm bệ phóng vững vàng cho trình độ N4.",
       "branches": [
         {
           "name": "雨が 降ったら、行きません",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 25: 雨が 降ったら、行きません",
           "nuance": "Trụ cột Điều kiện たら & Dù cho: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 雨が 降ったら、行きません trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 雨が 降ったら、行きません trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 雨が 降ったら、行きません với ngữ cảnh trực quan.",
           "example": {
             "jp": "雨が 降ったら、行きません。",
             "vi": "Câu ví dụ chuẩn cho bài học 25 (Điều kiện giả định たら & Dù cho... nhưng ても)."
@@ -2365,10 +2565,12 @@
         },
         {
           "name": "雨が 降ったら、行きません (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 雨が 降ったら、行きません (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 雨が 降ったら、行きません (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 雨が 降ったら、行きません (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -2446,14 +2648,20 @@
     "summary": "Toàn diện Bài 26 Giáo trình Minna no Nihongo: Mẫu câu giải thích lý do & Mào đầu ~んです. Trụ cột: Giải thích & Nhấn mạnh.",
     "mindmap": {
       "center": "Bài 26: Mẫu câu giải thích lý do & Mào đầu ~んです",
+      "mascotIcon": "💡",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 25 (Điều kiện giả định たら & Dù cho... nhưng ても)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 27 (Thể Khả năng (可能形 - Kanoukei))",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Giải thích & Nhấn mạnh.",
       "tip": "Nắm chắc cấu trúc Bài 26 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "どうしたんですか",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 26: どうしたんですか",
           "nuance": "Trụ cột Giải thích & Nhấn mạnh: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất どうしたんですか trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng どうしたんですか trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền どうしたんですか với ngữ cảnh trực quan.",
           "example": {
             "jp": "どうしたんですか。",
             "vi": "Câu ví dụ chuẩn cho bài học 26 (Mẫu câu giải thích lý do & Mào đầu ~んです)."
@@ -2461,10 +2669,12 @@
         },
         {
           "name": "どうしたんですか (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất どうしたんですか (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng どうしたんですか (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền どうしたんですか (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -2542,14 +2752,20 @@
     "summary": "Toàn diện Bài 27 Giáo trình Minna no Nihongo: Thể Khả năng (可能形 - Kanoukei). Trụ cột: Thể Khả Năng.",
     "mindmap": {
       "center": "Bài 27: Thể Khả năng (可能形 - Kanoukei)",
+      "mascotIcon": "🎹",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 26 (Mẫu câu giải thích lý do & Mào đầu ~んです)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 28 (Vừa... vừa ながら & Liệt kê lý do し~し)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Thể Khả Năng.",
       "tip": "Nắm chắc cấu trúc Bài 27 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "Thể Khả Năng (可能形 - Kanoukei)",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Nhóm 1: Đổi đuôi [i] thành [e] + る (書く→書ける, 飲む→飲める)\nNhóm 2: Bỏ る + られる (食べる→食べられる, 見る→見られる)\nNhóm 3: する→できる, くる→こられる",
           "nuance": "Trong câu khả năng, tân ngữ chỉ đối tượng của hành động thường chuyển từ trợ từ を sang trợ từ が. Thể hiện năng lực của bản thân hoặc điều kiện hoàn cảnh cho phép.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất Thể Khả Năng (可能形 - Kanoukei) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng Thể Khả Năng (可能形 - Kanoukei) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền Thể Khả Năng (可能形 - Kanoukei) với ngữ cảnh trực quan.",
           "example": {
             "jp": "わたしは 日本語が 話せます。",
             "vi": "Tôi có thể nói được tiếng Nhật."
@@ -2557,10 +2773,12 @@
         },
         {
           "name": "Phân biệt 見える / 聞こえる vs 見られる / 聞ける",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "見える / 聞こえる: Tự nhiên lọt vào mắt/tai (không cần ý chí)\n見られる / 聞ける: Có điều kiện, có phương tiện để chủ động xem/nghe",
           "nuance": "Bẫy kinh điển trong JLPT: Nhìn cảnh núi Phú Sĩ ngoài cửa sổ dùng 富士山が見える; nhưng rạp chiếu phim có suất chiếu để xem thì dùng 映画が見られる.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất Phân biệt 見える / 聞こえる vs 見られる / 聞ける trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng Phân biệt 見える / 聞こえる vs 見られる / 聞ける trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền Phân biệt 見える / 聞こえる vs 見られる / 聞ける với ngữ cảnh trực quan.",
           "example": {
             "jp": "ここから 富士山が 見えます。",
             "vi": "Từ đây có thể nhìn thấy núi Phú Sĩ (tự nhiên hiện ra)."
@@ -2642,14 +2860,20 @@
     "summary": "Toàn diện Bài 28 Giáo trình Minna no Nihongo: Vừa... vừa ながら & Liệt kê lý do し~し. Trụ cột: Hành động đồng thời.",
     "mindmap": {
       "center": "Bài 28: Vừa... vừa ながら & Liệt kê lý do し~し",
+      "mascotIcon": "🎧",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 27 (Thể Khả năng (可能形 - Kanoukei))",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 29 (Tự động từ vs Tha động từ & Trạng thái ています)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Hành động đồng thời.",
       "tip": "Nắm chắc cấu trúc Bài 28 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "音楽を 聞きながら、勉強します",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 28: 音楽を 聞きながら、勉強します",
           "nuance": "Trụ cột Hành động đồng thời: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 音楽を 聞きながら、勉強します trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 音楽を 聞きながら、勉強します trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 音楽を 聞きながら、勉強します với ngữ cảnh trực quan.",
           "example": {
             "jp": "音楽を 聞きながら、勉強します。",
             "vi": "Câu ví dụ chuẩn cho bài học 28 (Vừa... vừa ながら & Liệt kê lý do し~し)."
@@ -2657,10 +2881,12 @@
         },
         {
           "name": "音楽を 聞きながら、勉強します (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 音楽を 聞きながら、勉強します (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 音楽を 聞きながら、勉強します (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 音楽を 聞きながら、勉強します (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -2738,14 +2964,20 @@
     "summary": "Toàn diện Bài 29 Giáo trình Minna no Nihongo: Tự động từ vs Tha động từ & Trạng thái ています. Trụ cột: Tự động từ & Tha động từ.",
     "mindmap": {
       "center": "Bài 29: Tự động từ vs Tha động từ & Trạng thái ています",
+      "mascotIcon": "🚪",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 28 (Vừa... vừa ながら & Liệt kê lý do し~し)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 30 (Kết quả có chủ đích てあります & Chuẩn bị trước ておきます)",
+      "trapRadar": "Bẫy cốt tử: ~ています (tự động từ trạng thái tự nhiên) vs ~てあります (tha động từ có chủ đích người làm).",
       "tip": "Nắm chắc cấu trúc Bài 29 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "窓が 開いています",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 29: 窓が 開いています",
           "nuance": "Trụ cột Tự động từ & Tha động từ: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 窓が 開いています trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 窓が 開いています trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 窓が 開いています với ngữ cảnh trực quan.",
           "example": {
             "jp": "窓が 開いています。",
             "vi": "Câu ví dụ chuẩn cho bài học 29 (Tự động từ vs Tha động từ & Trạng thái ています)."
@@ -2753,10 +2985,12 @@
         },
         {
           "name": "窓が 開いています (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 窓が 開いています (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 窓が 開いています (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 窓が 開いています (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -2834,14 +3068,20 @@
     "summary": "Toàn diện Bài 30 Giáo trình Minna no Nihongo: Kết quả có chủ đích てあります & Chuẩn bị trước ておきます. Trụ cột: Mục đích & Chuẩn bị.",
     "mindmap": {
       "center": "Bài 30: Kết quả có chủ đích てあります & Chuẩn bị trước ておきます",
+      "mascotIcon": "🗓️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 29 (Tự động từ vs Tha động từ & Trạng thái ています)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 31 (Thể Ý chí (意向形) & Dự định つもり)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Mục đích & Chuẩn bị.",
       "tip": "Nắm chắc cấu trúc Bài 30 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "カレンダーに 書いてあります",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 30: カレンダーに 書いてあります",
           "nuance": "Trụ cột Mục đích & Chuẩn bị: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất カレンダーに 書いてあります trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng カレンダーに 書いてあります trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền カレンダーに 書いてあります với ngữ cảnh trực quan.",
           "example": {
             "jp": "カレンダーに 書いてあります。",
             "vi": "Câu ví dụ chuẩn cho bài học 30 (Kết quả có chủ đích てあります & Chuẩn bị trước ておきます)."
@@ -2849,10 +3089,12 @@
         },
         {
           "name": "カレンダーに 書いてあります (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất カレンダーに 書いてあります (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng カレンダーに 書いてあります (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền カレンダーに 書いてあります (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -2930,14 +3172,20 @@
     "summary": "Toàn diện Bài 31 Giáo trình Minna no Nihongo: Thể Ý chí (意向形) & Dự định つもり. Trụ cột: Thể Ý Chí & Dự Định.",
     "mindmap": {
       "center": "Bài 31: Thể Ý chí (意向形) & Dự định つもり",
+      "mascotIcon": "🎬",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 30 (Kết quả có chủ đích てあります & Chuẩn bị trước ておきます)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 32 (Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Thể Ý Chí & Dự Định.",
       "tip": "Nắm chắc cấu trúc Bài 31 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "週末 映画を 見ようと 思います",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 31: 週末 映画を 見ようと 思います",
           "nuance": "Trụ cột Thể Ý Chí & Dự Định: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 週末 映画を 見ようと 思います trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 週末 映画を 見ようと 思います trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 週末 映画を 見ようと 思います với ngữ cảnh trực quan.",
           "example": {
             "jp": "週末 映画を 見ようと 思います。",
             "vi": "Câu ví dụ chuẩn cho bài học 31 (Thể Ý chí (意向形) & Dự định つもり)."
@@ -2945,10 +3193,12 @@
         },
         {
           "name": "週末 映画を 見ようと 思います (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 週末 映画を 見ようと 思います (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 週末 映画を 見ようと 思います (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 週末 映画を 見ようと 思います (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -3026,14 +3276,20 @@
     "summary": "Toàn diện Bài 32 Giáo trình Minna no Nihongo: Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません. Trụ cột: Lời khuyên & Phỏng đoán.",
     "mindmap": {
       "center": "Bài 32: Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません",
+      "mascotIcon": "💊",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 31 (Thể Ý chí (意向形) & Dự định つもり)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 33 (Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形))",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Lời khuyên & Phỏng đoán.",
       "tip": "Nắm chắc cấu trúc Bài 32 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "運動した ほうが いいです",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 32: 運動した ほうが いいです",
           "nuance": "Trụ cột Lời khuyên & Phỏng đoán: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 運動した ほうが いいです trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 運動した ほうが いいです trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 運動した ほうが いいです với ngữ cảnh trực quan.",
           "example": {
             "jp": "運動した ほうが いいです。",
             "vi": "Câu ví dụ chuẩn cho bài học 32 (Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません)."
@@ -3041,10 +3297,12 @@
         },
         {
           "name": "運動した ほうが いいです (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 運動した ほうが いいです (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 運動した ほうが いいです (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 運動した ほうが いいです (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -3122,14 +3380,20 @@
     "summary": "Toàn diện Bài 33 Giáo trình Minna no Nihongo: Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形). Trụ cột: Mệnh lệnh & Biển báo.",
     "mindmap": {
       "center": "Bài 33: Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形)",
+      "mascotIcon": "🛑",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 32 (Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 34 (Làm theo とおりに & Sau khi あとで)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Mệnh lệnh & Biển báo.",
       "tip": "Nắm chắc cấu trúc Bài 33 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "逃げろ！ 止まれ！",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 33: 逃げろ！ 止まれ！",
           "nuance": "Trụ cột Mệnh lệnh & Biển báo: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 逃げろ！ 止まれ！ trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 逃げろ！ 止まれ！ trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 逃げろ！ 止まれ！ với ngữ cảnh trực quan.",
           "example": {
             "jp": "逃げろ！ 止まれ！。",
             "vi": "Câu ví dụ chuẩn cho bài học 33 (Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形))."
@@ -3137,10 +3401,12 @@
         },
         {
           "name": "逃げろ！ 止まれ！ (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 逃げろ！ 止まれ！ (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 逃げろ！ 止まれ！ (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 逃げろ！ 止まれ！ (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -3218,14 +3484,20 @@
     "summary": "Toàn diện Bài 34 Giáo trình Minna no Nihongo: Làm theo とおりに & Sau khi あとで. Trụ cột: Trình tự & Làm theo.",
     "mindmap": {
       "center": "Bài 34: Làm theo とおりに & Sau khi あとで",
+      "mascotIcon": "📝",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 33 (Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形))",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 35 (Thể Điều kiện ば (Ba-kei) & なら)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Trình tự & Làm theo.",
       "tip": "Nắm chắc cấu trúc Bài 34 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "説明書の とおりに 作ります",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 34: 説明書の とおりに 作ります",
           "nuance": "Trụ cột Trình tự & Làm theo: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 説明書の とおりに 作ります trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 説明書の とおりに 作ります trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 説明書の とおりに 作ります với ngữ cảnh trực quan.",
           "example": {
             "jp": "説明書の とおりに 作ります。",
             "vi": "Câu ví dụ chuẩn cho bài học 34 (Làm theo とおりに & Sau khi あとで)."
@@ -3233,10 +3505,12 @@
         },
         {
           "name": "説明書の とおりに 作ります (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 説明書の とおりに 作ります (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 説明書の とおりに 作ります (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 説明書の とおりに 作ります (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -3314,14 +3588,20 @@
     "summary": "Toàn diện Bài 35 Giáo trình Minna no Nihongo: Thể Điều kiện ば (Ba-kei) & なら. Trụ cột: Thể Điều Kiện ば.",
     "mindmap": {
       "center": "Bài 35: Thể Điều kiện ば (Ba-kei) & なら",
+      "mascotIcon": "🌸",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 34 (Làm theo とおりに & Sau khi あとで)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 36 (Mục đích ように & Sự thay đổi thói quen)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Thể Điều Kiện ば.",
       "tip": "Nắm chắc cấu trúc Bài 35 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "春に なれば、桜が 咲きます",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 35: 春に なれば、桜が 咲きます",
           "nuance": "Trụ cột Thể Điều Kiện ば: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 春に なれば、桜が 咲きます trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 春に なれば、桜が 咲きます trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 春に なれば、桜が 咲きます với ngữ cảnh trực quan.",
           "example": {
             "jp": "春に なれば、桜が 咲きます。",
             "vi": "Câu ví dụ chuẩn cho bài học 35 (Thể Điều kiện ば (Ba-kei) & なら)."
@@ -3329,10 +3609,12 @@
         },
         {
           "name": "春に なれば、桜が 咲きます (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 春に なれば、桜が 咲きます (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 春に なれば、桜が 咲きます (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 春に なれば、桜が 咲きます (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -3410,14 +3692,20 @@
     "summary": "Toàn diện Bài 36 Giáo trình Minna no Nihongo: Mục đích ように & Sự thay đổi thói quen. Trụ cột: Mục đích & Biến đổi.",
     "mindmap": {
       "center": "Bài 36: Mục đích ように & Sự thay đổi thói quen",
+      "mascotIcon": "🏃‍♂️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 35 (Thể Điều kiện ば (Ba-kei) & なら)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 37 (Thể Bị động (受身形 - Ukemi-kei))",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Mục đích & Biến đổi.",
       "tip": "Nắm chắc cấu trúc Bài 36 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "早く 走れるように 練習します",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 36: 早く 走れるように 練習します",
           "nuance": "Trụ cột Mục đích & Biến đổi: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 早く 走れるように 練習します trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 早く 走れるように 練習します trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 早く 走れるように 練習します với ngữ cảnh trực quan.",
           "example": {
             "jp": "早く 走れるように 練習します。",
             "vi": "Câu ví dụ chuẩn cho bài học 36 (Mục đích ように & Sự thay đổi thói quen)."
@@ -3425,10 +3713,12 @@
         },
         {
           "name": "早く 走れるように 練習します (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 早く 走れるように 練習します (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 早く 走れるように 練習します (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 早く 走れるように 練習します (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -3506,14 +3796,20 @@
     "summary": "Toàn diện Bài 37 Giáo trình Minna no Nihongo: Thể Bị động (受身形 - Ukemi-kei). Trụ cột: Thể Bị Động.",
     "mindmap": {
       "center": "Bài 37: Thể Bị động (受身形 - Ukemi-kei)",
+      "mascotIcon": "🥺",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 36 (Mục đích ように & Sự thay đổi thói quen)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 38 (Danh từ hóa hành động (V-る + の))",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Thể Bị Động.",
       "tip": "Nắm chắc cấu trúc Bài 37 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "Thể Bị Động Trực Tiếp (受身形 - Ukemi)",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "N1 (Người bị tác động) は + N2 (Người tác động) に + Động từ Bị Động",
           "nuance": "Cách chia: Nhóm 1 đổi đuôi [i] thành [a] + れる (叱る→叱られる); Nhóm 2 bỏ る + られる (褒める→褒められる); Nhóm 3: する→される, くる→こられる. Nếu hành động mang lại lợi ích thì mang nghĩa 'được', phiền toái thì mang nghĩa 'bị'.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất Thể Bị Động Trực Tiếp (受身形 - Ukemi) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng Thể Bị Động Trực Tiếp (受身形 - Ukemi) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền Thể Bị Động Trực Tiếp (受身形 - Ukemi) với ngữ cảnh trực quan.",
           "example": {
             "jp": "わたしは 先生に 褒められました。",
             "vi": "Tôi được thầy giáo khen ngợi."
@@ -3521,10 +3817,12 @@
         },
         {
           "name": "Bị Động Gián Tiếp / Bị Động Bị Hại (迷惑の受身)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Chủ ngữ (Người gánh chịu) は + Người gây phiền に + Danh từ を + V-bị động",
           "nuance": "Đặc thù tiếng Nhật: Thường dùng với mưa rơi (雨に降られた), trộm đồ, giẫm vào chân. Luôn biểu lộ cảm xúc khó chịu, bị ảnh hưởng tiêu cực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất Bị Động Gián Tiếp / Bị Động Bị Hại (迷惑の受身) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng Bị Động Gián Tiếp / Bị Động Bị Hại (迷惑の受身) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền Bị Động Gián Tiếp / Bị Động Bị Hại (迷惑の受身) với ngữ cảnh trực quan.",
           "example": {
             "jp": "電車の中で 足を 踏まれました。",
             "vi": "Tôi bị ai đó giẫm vào chân trên tàu điện."
@@ -3606,14 +3904,20 @@
     "summary": "Toàn diện Bài 38 Giáo trình Minna no Nihongo: Danh từ hóa hành động (V-る + の). Trụ cột: Danh từ hóa mệnh đề.",
     "mindmap": {
       "center": "Bài 38: Danh từ hóa hành động (V-る + の)",
+      "mascotIcon": "🖼️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 37 (Thể Bị động (受身形 - Ukemi-kei))",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 39 (Nguyên nhân khách quan (て/なくて/で))",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Danh từ hóa mệnh đề.",
       "tip": "Nắm chắc cấu trúc Bài 38 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "絵を 見るのが 好きです",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 38: 絵を 見るのが 好きです",
           "nuance": "Trụ cột Danh từ hóa mệnh đề: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 絵を 見るのが 好きです trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 絵を 見るのが 好きです trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 絵を 見るのが 好きです với ngữ cảnh trực quan.",
           "example": {
             "jp": "絵を 見るのが 好きです。",
             "vi": "Câu ví dụ chuẩn cho bài học 38 (Danh từ hóa hành động (V-る + の))."
@@ -3621,10 +3925,12 @@
         },
         {
           "name": "絵を 見るのが 好きです (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 絵を 見るのが 好きです (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 絵を 見るのが 好きです (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 絵を 見るのが 好きです (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -3702,14 +4008,20 @@
     "summary": "Toàn diện Bài 39 Giáo trình Minna no Nihongo: Nguyên nhân khách quan (て/なくて/で). Trụ cột: Nguyên nhân khách quan.",
     "mindmap": {
       "center": "Bài 39: Nguyên nhân khách quan (て/なくて/で)",
+      "mascotIcon": "⚡",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 38 (Danh từ hóa hành động (V-る + の))",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 40 (Câu hỏi lồng ghép (~か / ~かどうか))",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Nguyên nhân khách quan.",
       "tip": "Nắm chắc cấu trúc Bài 39 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "事故で 電車が 止まりました",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 39: 事故で 電車が 止まりました",
           "nuance": "Trụ cột Nguyên nhân khách quan: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 事故で 電車が 止まりました trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 事故で 電車が 止まりました trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 事故で 電車が 止まりました với ngữ cảnh trực quan.",
           "example": {
             "jp": "事故で 電車が 止まりました。",
             "vi": "Câu ví dụ chuẩn cho bài học 39 (Nguyên nhân khách quan (て/なくて/で))."
@@ -3717,10 +4029,12 @@
         },
         {
           "name": "事故で 電車が 止まりました (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 事故で 電車が 止まりました (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 事故で 電車が 止まりました (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 事故で 電車が 止まりました (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -3798,14 +4112,20 @@
     "summary": "Toàn diện Bài 40 Giáo trình Minna no Nihongo: Câu hỏi lồng ghép (~か / ~かどうか). Trụ cột: Nghi vấn từ lồng ghép.",
     "mindmap": {
       "center": "Bài 40: Câu hỏi lồng ghép (~か / ~かどうか)",
+      "mascotIcon": "❓",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 39 (Nguyên nhân khách quan (て/なくて/で))",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 41 (Cho nhận nâng cao (やる/いただく/くださる))",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Nghi vấn từ lồng ghép.",
       "tip": "Nắm chắc cấu trúc Bài 40 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "何時か 教えて ください",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 40: 何時か 教えて ください",
           "nuance": "Trụ cột Nghi vấn từ lồng ghép: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 何時か 教えて ください trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 何時か 教えて ください trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 何時か 教えて ください với ngữ cảnh trực quan.",
           "example": {
             "jp": "何時か 教えて ください。",
             "vi": "Câu ví dụ chuẩn cho bài học 40 (Câu hỏi lồng ghép (~か / ~かどうか))."
@@ -3813,10 +4133,12 @@
         },
         {
           "name": "何時か 教えて ください (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 何時か 教えて ください (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 何時か 教えて ください (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 何時か 教えて ください (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -3894,14 +4216,20 @@
     "summary": "Toàn diện Bài 41 Giáo trình Minna no Nihongo: Cho nhận nâng cao (やる/いただく/くださる). Trụ cột: Cho Nhận Nâng Cao.",
     "mindmap": {
       "center": "Bài 41: Cho nhận nâng cao (やる/いただく/くださる)",
+      "mascotIcon": "🎁",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 40 (Câu hỏi lồng ghép (~か / ~かどうか))",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 42 (Mục đích ために vs Công dụng のに)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Cho Nhận Nâng Cao.",
       "tip": "Nắm chắc cấu trúc Bài 41 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "息子に お菓子を やりました",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 41: 息子に お菓子を やりました",
           "nuance": "Trụ cột Cho Nhận Nâng Cao: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 息子に お菓子を やりました trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 息子に お菓子を やりました trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 息子に お菓子を やりました với ngữ cảnh trực quan.",
           "example": {
             "jp": "息子に お菓子を やりました。",
             "vi": "Câu ví dụ chuẩn cho bài học 41 (Cho nhận nâng cao (やる/いただく/くださる))."
@@ -3909,10 +4237,12 @@
         },
         {
           "name": "息子に お菓子を やりました (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 息子に お菓子を やりました (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 息子に お菓子を やりました (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 息子に お菓子を やりました (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -3990,14 +4320,20 @@
     "summary": "Toàn diện Bài 42 Giáo trình Minna no Nihongo: Mục đích ために vs Công dụng のに. Trụ cột: Mục đích & Công dụng.",
     "mindmap": {
       "center": "Bài 42: Mục đích ために vs Công dụng のに",
+      "mascotIcon": "✈️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 41 (Cho nhận nâng cao (やる/いただく/くださる))",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 43 (Dấu hiệu có vẻ そうです & Đến rồi về てくる)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Mục đích & Công dụng.",
       "tip": "Nắm chắc cấu trúc Bài 42 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "留学の ために、貯金しています",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 42: 留学の ために、貯金しています",
           "nuance": "Trụ cột Mục đích & Công dụng: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 留学の ために、貯金しています trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 留学の ために、貯金しています trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 留学の ために、貯金しています với ngữ cảnh trực quan.",
           "example": {
             "jp": "留学の ために、貯金しています。",
             "vi": "Câu ví dụ chuẩn cho bài học 42 (Mục đích ために vs Công dụng のに)."
@@ -4005,10 +4341,12 @@
         },
         {
           "name": "留学の ために、貯金しています (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 留学の ために、貯金しています (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 留学の ために、貯金しています (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 留学の ために、貯金しています (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -4086,14 +4424,20 @@
     "summary": "Toàn diện Bài 43 Giáo trình Minna no Nihongo: Dấu hiệu có vẻ そうです & Đến rồi về てくる. Trụ cột: Phỏng đoán & Chuyển dịch.",
     "mindmap": {
       "center": "Bài 43: Dấu hiệu có vẻ そうです & Đến rồi về てくる",
+      "mascotIcon": "☁️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 42 (Mục đích ために vs Công dụng のに)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 44 (Làm quá mức すぎる, Dễ やすい, Khó にくい)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Phỏng đoán & Chuyển dịch.",
       "tip": "Nắm chắc cấu trúc Bài 43 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "雨が 降りそうです",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 43: 雨が 降りそうです",
           "nuance": "Trụ cột Phỏng đoán & Chuyển dịch: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 雨が 降りそうです trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 雨が 降りそうです trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 雨が 降りそうです với ngữ cảnh trực quan.",
           "example": {
             "jp": "雨が 降りそうです。",
             "vi": "Câu ví dụ chuẩn cho bài học 43 (Dấu hiệu có vẻ そうです & Đến rồi về てくる)."
@@ -4101,10 +4445,12 @@
         },
         {
           "name": "雨が 降りそうです (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 雨が 降りそうです (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 雨が 降りそうです (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 雨が 降りそうです (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -4182,14 +4528,20 @@
     "summary": "Toàn diện Bài 44 Giáo trình Minna no Nihongo: Làm quá mức すぎる, Dễ やすい, Khó にくい. Trụ cột: Mức độ & Tính chất.",
     "mindmap": {
       "center": "Bài 44: Làm quá mức すぎる, Dễ やすい, Khó にくい",
+      "mascotIcon": "🍰",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 43 (Dấu hiệu có vẻ そうです & Đến rồi về てくる)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 45 (Trường hợp 場合は & Trái ngược thất vọng のに)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Mức độ & Tính chất.",
       "tip": "Nắm chắc cấu trúc Bài 44 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "食べすぎました",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 44: 食べすぎました",
           "nuance": "Trụ cột Mức độ & Tính chất: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 食べすぎました trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 食べすぎました trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 食べすぎました với ngữ cảnh trực quan.",
           "example": {
             "jp": "食べすぎました。",
             "vi": "Câu ví dụ chuẩn cho bài học 44 (Làm quá mức すぎる, Dễ やすい, Khó にくい)."
@@ -4197,10 +4549,12 @@
         },
         {
           "name": "食べすぎました (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 食べすぎました (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 食べすぎました (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 食べすぎました (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -4278,14 +4632,20 @@
     "summary": "Toàn diện Bài 45 Giáo trình Minna no Nihongo: Trường hợp 場合は & Trái ngược thất vọng のに. Trụ cột: Tình huống & Thất vọng.",
     "mindmap": {
       "center": "Bài 45: Trường hợp 場合は & Trái ngược thất vọng のに",
+      "mascotIcon": "🌧️",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 44 (Làm quá mức すぎる, Dễ やすい, Khó にくい)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 46 (Thời điểm ところ & Vừa mới làm ばかり)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Tình huống & Thất vọng.",
       "tip": "Nắm chắc cấu trúc Bài 45 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "時間に 遅れた 場合は",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 45: 時間に 遅れた 場合は",
           "nuance": "Trụ cột Tình huống & Thất vọng: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 時間に 遅れた 場合は trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 時間に 遅れた 場合は trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 時間に 遅れた 場合は với ngữ cảnh trực quan.",
           "example": {
             "jp": "時間に 遅れた 場合は。",
             "vi": "Câu ví dụ chuẩn cho bài học 45 (Trường hợp 場合は & Trái ngược thất vọng のに)."
@@ -4293,10 +4653,12 @@
         },
         {
           "name": "時間に 遅れた 場合は (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 時間に 遅れた 場合は (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 時間に 遅れた 場合は (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 時間に 遅れた 場合は (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -4374,14 +4736,20 @@
     "summary": "Toàn diện Bài 46 Giáo trình Minna no Nihongo: Thời điểm ところ & Vừa mới làm ばかり. Trụ cột: Thời điểm & Độ mới.",
     "mindmap": {
       "center": "Bài 46: Thời điểm ところ & Vừa mới làm ばかり",
+      "mascotIcon": "🍕",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 45 (Trường hợp 場合は & Trái ngược thất vọng のに)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 47 (Truyền ngôn そうです & Dường như ようです)",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Thời điểm & Độ mới.",
       "tip": "Nắm chắc cấu trúc Bài 46 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "今から 食べるところです",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 46: 今から 食べるところです",
           "nuance": "Trụ cột Thời điểm & Độ mới: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 今から 食べるところです trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 今から 食べるところです trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 今から 食べるところです với ngữ cảnh trực quan.",
           "example": {
             "jp": "今から 食べるところです。",
             "vi": "Câu ví dụ chuẩn cho bài học 46 (Thời điểm ところ & Vừa mới làm ばかり)."
@@ -4389,10 +4757,12 @@
         },
         {
           "name": "今から 食べるところです (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 今から 食べるところです (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 今から 食べるところです (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 今から 食べるところです (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -4470,14 +4840,20 @@
     "summary": "Toàn diện Bài 47 Giáo trình Minna no Nihongo: Truyền ngôn そうです & Dường như ようです. Trụ cột: Truyền ngôn & Phỏng đoán.",
     "mindmap": {
       "center": "Bài 47: Truyền ngôn そうです & Dường như ようです",
+      "mascotIcon": "📻",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 46 (Thời điểm ところ & Vừa mới làm ばかり)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 48 (Thể Sai khiến (使役形 - Shieki-kei))",
+      "trapRadar": "Bẫy đề thi: Nhận diện chính xác quy tắc chia thể và trợ từ của Truyền ngôn & Phỏng đoán.",
       "tip": "Nắm chắc cấu trúc Bài 47 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "雨が 降るそうです",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 47: 雨が 降るそうです",
           "nuance": "Trụ cột Truyền ngôn & Phỏng đoán: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 雨が 降るそうです trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 雨が 降るそうです trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 雨が 降るそうです với ngữ cảnh trực quan.",
           "example": {
             "jp": "雨が 降るそうです。",
             "vi": "Câu ví dụ chuẩn cho bài học 47 (Truyền ngôn そうです & Dường như ようです)."
@@ -4485,10 +4861,12 @@
         },
         {
           "name": "雨が 降るそうです (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 雨が 降るそうです (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 雨が 降るそうです (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 雨が 降るそうです (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -4566,14 +4944,20 @@
     "summary": "Toàn diện Bài 48 Giáo trình Minna no Nihongo: Thể Sai khiến (使役形 - Shieki-kei). Trụ cột: Thể Sai Khiến.",
     "mindmap": {
       "center": "Bài 48: Thể Sai khiến (使役形 - Shieki-kei)",
+      "mascotIcon": "😿",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 47 (Truyền ngôn そうです & Dường như ようです)",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 49 (Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo))",
+      "trapRadar": "Bẫy ác mộng JLPT: 使役 (Bắt làm) vs 受身 (Bị mắng) vs 使役受身 (Bị ép làm điều đau khổ ngoài ý muốn).",
       "tip": "Nắm chắc cấu trúc Bài 48 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "Thể Sai Khiến (使役形 - Shieki)",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Cách chia: Nhóm 1 đổi [i] thành [a] + せる (書く→書かせる)\nNhóm 2: Bỏ る + させる (食べる→食べさせる)\nNhóm 3: する→させる, くる→こさせる",
           "nuance": "Nếu là nội động từ: Người bị sai khiến đi với を (子供を走らせる). Nếu là ngoại động từ: Người bị sai khiến đi với に (子供に野菜を食べさせる). Người trên nói với người dưới.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất Thể Sai Khiến (使役形 - Shieki) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng Thể Sai Khiến (使役形 - Shieki) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền Thể Sai Khiến (使役形 - Shieki) với ngữ cảnh trực quan.",
           "example": {
             "jp": "部長は 部下に レポートを 書かせました。",
             "vi": "Trưởng phòng bắt cấp dưới viết báo cáo."
@@ -4581,10 +4965,12 @@
         },
         {
           "name": "Thể Bị Động Sai Khiến (使役受身 - Shieki Ukemi)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "V-sai khiến + れる → V-(a)せられる / V-(a)される (行く→行かされる, 飲む→飲まされる, 食べる→食べさせられる)",
           "nuance": "ĐIỂM CỐT TỬ CỦA N4 LÊN N3! Xuất hiện dày đặc trong đề thi JLPT. Luôn thể hiện tâm trạng miễn cưỡng, bị người khác ép buộc làm điều mình không muốn.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất Thể Bị Động Sai Khiến (使役受身 - Shieki Ukemi) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng Thể Bị Động Sai Khiến (使役受身 - Shieki Ukemi) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền Thể Bị Động Sai Khiến (使役受身 - Shieki Ukemi) với ngữ cảnh trực quan.",
           "example": {
             "jp": "昨日 お酒を たくさん 飲まされました。",
             "vi": "Hôm qua tôi bị ép uống rất nhiều rượu."
@@ -4666,14 +5052,20 @@
     "summary": "Toàn diện Bài 49 Giáo trình Minna no Nihongo: Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo). Trụ cột: Tôn Kính Ngữ.",
     "mindmap": {
       "center": "Bài 49: Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo)",
+      "mascotIcon": "🙇",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 48 (Thể Sai khiến (使役形 - Shieki-kei))",
+      "nextLeap": "🔜 Chồi non: Bước đệm sang Bài 50 (Khiêm nhường ngữ công sở (謙譲語 - Kenjougo))",
+      "trapRadar": "Bẫy công sở: Nhầm lẫn giữa Tôn kính ngữ (Nâng đối phương lên) và Khiêm nhường ngữ (Hạ mình xuống).",
       "tip": "Nắm chắc cấu trúc Bài 49 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "先生が いらっしゃいました",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 49: 先生が いらっしゃいました",
           "nuance": "Trụ cột Tôn Kính Ngữ: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 先生が いらっしゃいました trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 先生が いらっしゃいました trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 先生が いらっしゃいました với ngữ cảnh trực quan.",
           "example": {
             "jp": "先生が いらっしゃいました。",
             "vi": "Câu ví dụ chuẩn cho bài học 49 (Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo))."
@@ -4681,10 +5073,12 @@
         },
         {
           "name": "先生が いらっしゃいました (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 先生が いらっしゃいました (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 先生が いらっしゃいました (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 先生が いらっしゃいました (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
@@ -4762,14 +5156,20 @@
     "summary": "Toàn diện Bài 50 Giáo trình Minna no Nihongo: Khiêm nhường ngữ công sở (謙譲語 - Kenjougo). Trụ cột: Khiêm Nhường Ngữ.",
     "mindmap": {
       "center": "Bài 50: Khiêm nhường ngữ công sở (謙譲語 - Kenjougo)",
+      "mascotIcon": "💼",
+      "rootConnection": "🔙 Rễ cây: Nối từ Bài 49 (Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo))",
+      "nextLeap": "🔜 Chồi non: Chuyển giao nòng cốt lên Trung cấp N3 (Bài 51: Thời gian & Đời sống Nhật)",
+      "trapRadar": "Bẫy công sở: Nhầm lẫn giữa Tôn kính ngữ (Nâng đối phương lên) và Khiêm nhường ngữ (Hạ mình xuống).",
       "tip": "Nắm chắc cấu trúc Bài 50 để làm bệ phóng vững vàng cho trình độ N3.",
       "branches": [
         {
           "name": "私が 参ります",
+          "icon": "🎯",
           "color": "#38bdf8",
           "formula": "Mẫu ngữ pháp trọng tâm Bài 50: 私が 参ります",
           "nuance": "Trụ cột Khiêm Nhường Ngữ: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 私が 参ります trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 私が 参ります trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 私が 参ります với ngữ cảnh trực quan.",
           "example": {
             "jp": "私が 参ります。",
             "vi": "Câu ví dụ chuẩn cho bài học 50 (Khiêm nhường ngữ công sở (謙譲語 - Kenjougo))."
@@ -4777,10 +5177,12 @@
         },
         {
           "name": "私が 参ります (Biến thể & Ứng dụng)",
+          "icon": "💡",
           "color": "#10b981",
           "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
           "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
-          "mnemonic": "Mẹo nhớ: Nắm chắc bản chất 私が 参ります (Biến thể & Ứng dụng) trong ngữ cảnh bài học.",
+          "metaphor": "Tình huống biểu tượng: Ứng dụng 私が 参ります (Biến thể & Ứng dụng) trong đời sống Nhật.",
+          "mnemonic": "Mẹo nhớ 3s: Gắn liền 私が 参ります (Biến thể & Ứng dụng) với ngữ cảnh trực quan.",
           "example": {
             "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
             "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
