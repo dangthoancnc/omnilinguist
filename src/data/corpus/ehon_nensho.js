@@ -1,7 +1,7 @@
 // src/data/corpus/ehon_nensho.js
 // BỘ SÁCH TRANH EHON QUỐC DÂN NHẬT BẢN DÀNH CHO TRẺ 3–4 TUỔI (年少 NENSHO)
-// 30 Tác phẩm kinh điển được tuyển chọn theo chuẩn Bộ Giáo Dục MEXT & Hiệp Hội Thư Viện Trường Học Nhật Bản (SLA)
-// Cấu trúc phân trang độc lập, mỗi phân đoạn là một trang kèm hình ảnh minh họa độc bản.
+// Đủ 100 tác phẩm kinh điển tuyển chọn chuẩn Bộ Giáo Dục MEXT & Hiệp Hội Thư Viện Trường Học Nhật Bản (SLA)
+// Cấu trúc phân trang độc lập, 100% minh họa độc bản cho ảnh bìa và từng trang phân cảnh.
 
 export const EHON_NENSHO_CORPUS = [
   {
@@ -1171,6 +1171,2736 @@ export const EHON_NENSHO_CORPUS = [
         "readingTime": "1 phút",
         "imageUrl": "/images/ehon/ehon_nensho_30_p3.svg",
         "content": "みずの なかは、とても しずか。\nきんぎょたちは なかよく ならんで おひるね。\n「いいゆめを みてね。」\nおひさまの ひかりに つつまれて、みんな すやすや。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_31_usagi_okaimono",
+    "title": "🐰 うさぎさんのおかいもの (Thỏ Con Đi Chợ Mua Rau Củ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Seno Kenji (瀬野 健治)",
+    "readingTime": "3 phút",
+    "summary": "Thỏ trắng mang chiếc giỏ mây xinh xắn đến chợ rau quả, chọn mua cà rốt đỏ tươi và táo ngọt thơm lừng.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_31_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_31_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：かごを もって おでかけ (Trang 1: Mang giỏ mây tung tăng ra phố)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_31_p1.svg",
+        "content": "うさぎさんが、ちいさな かごを てに もって、\n「るんるん、らんらん！」と おかいものへ いきます。\nきょうは なにを かおうかな？\nあかい おはなも こんにちは！"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：まっかな にんじん ください (Trang 2: Mua củ cà rốt đỏ au ngon lành)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_31_p2.svg",
+        "content": "やおやさんに つきました。\n「こんにちは！ まっかな にんじんを ひとつ くださいな。」\nくまの てんしゅさんが「はい、どうぞ！」と わたしてくれました。\nぽとん、かごの なかに いれました。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：おいしい ごちそうの じかん (Trang 3: Bữa tối ấm cúng cùng gia đình thỏ)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_31_p3.svg",
+        "content": "おうちへ かえって、おとうさん、おかあさんと いっしょに ごはん。\n「しゃきしゃき、ぽりぽり、おいしいね！」\nみんなで にこにこ、おなかも いっぱいに なりました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_32_koguma_mizuasobi",
+    "title": "🐻 こぐまちゃんのみずあそび (Gấu Con Nghịch Nước Mát Lạnh)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Wakamatsu Mieko (若松 三恵子)",
+    "readingTime": "3 phút",
+    "summary": "Chú gấu nhỏ vui sướng vẫy vùng dưới làn nước mát, thổi bong bóng xà phòng ngũ sắc giữa trời hè ngập nắng.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_32_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_32_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：じゃぶじゃぶ みずたまり (Trang 1: Lội nước bì bõm dưới nắng)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_32_p1.svg",
+        "content": "あつい なつの ひ、こぐまちゃんは おにわへ でました。\nたらいの なかに、みずが たっぷり。\n「じゃぶじゃぶ、ぴちゃぴちゃ！」\nつめたくて、とっても きもちいいな！"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：あぶくが ぷくぷく (Trang 2: Bong bóng xà phòng bay cao)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_32_p2.svg",
+        "content": "しゃぼんだまを ふーっ！\nぷくぷく、ぽわん！\nおおきな にじいろの あぶくが、おそらへ とんでいきました。\n「わあ、きらきら ひかってる！」"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：タオルで ふきふき (Trang 3: Khăn bông thơm tho ôm trọn gấu con)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_32_p3.svg",
+        "content": "たくさん あそんだら、ふわふわの タオルで ふきふき。\nおかあさんが ぎゅっと だきしめてくれました。\nぽかぽか、あたたかいね。\nこぐまちゃんは ごきげんです。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_33_akai_fuusen",
+    "title": "🎈 あかいふうせん (Quả Bóng Bay Đỏ Rực Bay Lên Trời)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Matsutani Miyoko (松谷 みよ子)",
+    "readingTime": "3 phút",
+    "summary": "Bé nhỏ thả quả bóng bay đỏ bay qua tán cây xanh, chạm vào đám mây trắng xốp và mỉm cười cùng mặt trời.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_33_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_33_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：てのひらの ふうせん (Trang 1: Quả bóng tròn xoe trên tay)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_33_p1.svg",
+        "content": "まっかな ふうせん、ぷーっと ふくらんだ。\nいとを しっかり にぎりしめて、\n「ふわふわ、ゆらゆら。」\nかぜに ゆられて おどっているみたい。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：おそらへ すーいすい (Trang 2: Bay vút lên chín tầng mây)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_33_p2.svg",
+        "content": "あ、てを はなしちゃった！\nふうせんは、すーいすいと そらへ のぼっていきます。\n「ばいばーい！」と てを ふりました。\nことりさんが「こんにちは」と ごあいさつ。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：おひさまと おともだち (Trang 3: Mặt trời mỉm cười cùng bóng bay)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_33_p3.svg",
+        "content": "しろい くもの うえまで いったよ。\nあたたかい おひさまの おとなりで、ふうせんが ぴかぴか。\n「また あした、あそぼうね！」\nおそらは あおくて、とっても ひろいな。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_34_kutsushita_nuida",
+    "title": "🧦 くつしたぬげた (Tất Rơi Đâu Rồi? Đôi Chân Nhỏ Xinh)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Hayashi Akiko (林 明子)",
+    "readingTime": "3 phút",
+    "summary": "Bé tự tay cởi đôi tất nhỏ, ngọ nguậy những ngón chân hồng hào đáng yêu và bước đi chập chững trên sàn gỗ.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_34_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_34_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：よいしょ、ひっぱれ (Trang 1: Kéo gót chân tụt chiếc tất)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_34_p1.svg",
+        "content": "あかい くつした、くまさんの えがついた くつした。\nつま先を つまんで、\n「よいしょ、こらしょ！」\nするん！ ぬげちゃった！"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：かわいい ゆびが こんにちわ (Trang 2: Mười ngón chân nhúc nhích)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_34_p2.svg",
+        "content": "ちいさな あしゆびが、ぴこぴこ うごくよ。\nいち、に、さん、し、ご！\n「こんにちは、わたしの あしゆびさん。」\nゆかの上を ぺたぺた、あるいてみよう。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：すあしで ぽんぽん (Trang 3: Chân trần dạo chơi vui sướng)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_34_p3.svg",
+        "content": "ぺたぺた、ぴょんぴょん！\nすあしって、すずしくて きもちいいね。\nおかあさんが「あんよが じょうず！」と わらいました。\nたのしい いちにちの はじまりです。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_35_ringo_koron",
+    "title": "🍏 りんごがころん (Trái Táo Đỏ Lăn Tròn Tròn)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Toda Kazuyo (戸田 和代)",
+    "readingTime": "3 phút",
+    "summary": "Quả táo chín đỏ rơi khỏi cành cây, lăn lông lốc qua bãi cỏ xanh rồi ghé vào lòng chú sóc nhỏ ngoan ngoãn.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_35_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_35_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：きのうえの あかいみ (Trang 1: Quả táo chín mọng trên cành)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_35_p1.svg",
+        "content": "たかい きの えだに、まっかな りんごが ひとつ。\nおひさまを あびて、つやつや ぴかぴか。\nそよかぜが ふいて、ゆらゆら ゆれたら…\nぽとん！ おっこちた！"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：ころころ ころがるよ (Trang 2: Lăn tròn qua thảm cỏ non)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_35_p2.svg",
+        "content": "ころころ、ころん、ころころ、ころん！\nみどりの くさの うえを、たのしそうに ころがっていきます。\n「どこまで いくのかな？」\nちょうちょうが ひらひら おいかけます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：りすさんと ごっつんこ (Trang 3: Quả táo làm quà cho bạn sóc)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_35_p3.svg",
+        "content": "ぴたっ！ こりすの あしの まえで とまりました。\n「わあ、おいしそうな りんご！」\nこりすは りんごを かかえて、にっこり。\n「ありがとう、いただきまーす！」"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_36_wanwan_sanpo",
+    "title": "🐶 わんわんのおさんぽ (Cún Con Đi Dạo Quanh Xóm Nhỏ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Nakagawa Rieko (中川 李枝子)",
+    "readingTime": "3 phút",
+    "summary": "Chú cún nhỏ vẫy đuôi tít mù, làm quen với bạn bướm, bạn mèo và cùng bé dạo chơi trên con đường rợp bóng mát.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_36_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_36_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：しっぽを ふりふり (Trang 1: Vẫy đuôi mừng rỡ xuất phát)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_36_p1.svg",
+        "content": "しろい こいぬの ぽち。\n「わん、わん！」と 元気に なきながら、\nおさんぽへ しゅっぱつ！\nしっぽを ぶんぶん ふって、ごきげんです。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：みちくさ くんくん (Trang 2: Hít hà mùi hương hoa ven đường)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_36_p2.svg",
+        "content": "みちばたの おはなを、はなを つけて くんくん。\n「いい においが するな。」\nちょうちょうが ひらりと とんできて、\nぽちの あたまに ちょこんと とまりました。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：ゆうやけこやけ (Trang 3: Hoàng hôn dịu dàng dắt cún về nhà)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_36_p3.svg",
+        "content": "ゆうやけぞらが、あかく そまりました。\n「ぽち、おうちへ かえろうね。」\nおうちの まえで、おかあさんが まっていました。\n「ただいま！ たのしかったよ、わん！」"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_37_buubuu_jidousha",
+    "title": "🚗 ぶーぶーじどうしゃ (Xe Hơi Bim Bim Chạy Băng Băng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Yamamoto Tadaaki (山本 忠敬)",
+    "readingTime": "3 phút",
+    "summary": "Chiếc ô tô nhỏ màu đỏ kêu bim bim vui tai, đi qua ngã tư, dừng đèn đỏ rồi bon bon trên đại lộ thênh thang.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_37_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_37_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：あかい くるまが ぶーぶー (Trang 1: Chiếc xe đỏ nổ máy lên đường)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_37_p1.svg",
+        "content": "あかい ちいさな じどうしゃ。\nエンジンが「ぶるるん、ぶるるん！」\nクラクションが「ぶーぶー！」と なりました。\n「さあ、おでかけだ！ しゅっぱつ！」"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：あかいろ しんごうで とまれ (Trang 2: Đèn đỏ dừng lại, đèn xanh đi tiếp)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_37_p2.svg",
+        "content": "しんごうが あかになりました。\n「ききーっ、ぴたっ！」\nじどうしゃは じょうずに とまりました。\nあおに かわったら、「ぶーん！」と また はしりだします。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：坂道を ぐんぐん のぼるよ (Trang 3: Vượt qua dốc cao về bãi đỗ)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_37_p3.svg",
+        "content": "たかい おやまの さかみちも、へっちゃら。\n「ぶるるん、ぐんぐん！」と のぼっていきます。\nおうちの ガレージに とうちゃく。\n「きょうも いっぱい はしったね、おつかれさま！」"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_38_ame_potsupotsu",
+    "title": "🌧️ あめぽつぽつ (Mưa Rơi Lộp Độp - Chiếc Ô Nhỏ Xinh)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Higashi Naoko (東 直子)",
+    "readingTime": "3 phút",
+    "summary": "Mưa rơi tí tách trên chiếc ô vàng, bé dẫm lên vũng nước mát rượi và ngắm nhìn chú ốc sên bò chậm rãi.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_38_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_38_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ぽつぽつ、あめが ふってきた (Trang 1: Từng giọt mưa rơi tí tách)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_38_p1.svg",
+        "content": "おそらから、あめの しずくが ぽつり。\nぽつぽつ、ぴとぴと。\nきいろい かさを ぱっと ひらきました。\n「あめの おと、いい おとだね。」"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：みずたまりで ぴちゃぴちゃ (Trang 2: Nhảy vào vũng nước bắn tung tóe)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_38_p2.svg",
+        "content": "あかい ながぐつを はいて、\nみずたまりの なかへ「ぴちゃーん！」\nみずの しぶきが ぱっと ひろがって、\nおもしろいな、もういっかい ぴょん！"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：かたつむりさん こんにちは (Trang 3: Chú ốc sên chào bé dưới mưa)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_38_p3.svg",
+        "content": "あじさいの はっぱの うえに、かたつむり。\n「つのだせ、やりだせ、めだまだせ！」\nゆっくり ゆっくり、あるいているよ。\nあめが やんで、きれいな にじが でました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_39_suupu_fuufuu",
+    "title": "🥣 スープをふーふー (Thổi Nguội Bát Súp Thơm Của Mẹ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Shibata Keiko (柴田 ケイコ)",
+    "readingTime": "3 phút",
+    "summary": "Bát súp bí ngô vàng óng nghi ngút khói, bé thổi nhè nhẹ cho nguội rồi nếm từng thìa ngọt lành ấm áp.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_39_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_39_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ゆげが ぽわわん (Trang 1: Làn khói trắng bốc lên thơm ngát)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_39_p1.svg",
+        "content": "きいろい かぼちゃの スープ。\nゆげが ぽわわん、ぽわわんと たっています。\n「あつあつだから、きをつけてね。」と おかあさん。\nいい においが おへやじゅうに ひろがります。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：ふーふー、いきを ふきかけて (Trang 2: Thổi phù phù cho bát súp mau nguội)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_39_p2.svg",
+        "content": "スプーンで すくって、\n「ふー、ふー、ふーっ！」\nやさしく いきを ふきかけます。\nもう たべられるかな？ ぺろり、あ、ちょうどいい！"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：ごくごく、おいしいね！ (Trang 3: Húp từng thìa súp ngọt ngào)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_39_p3.svg",
+        "content": "「ごくっ、あまくて おいしい！」\nおなかの なかが、ぽかぽか あたたかくなってきました。\nうつわを ぴかぴかに ぜんぶ のみほしました。\n「ごちそうさまでした！」"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_40_zousan_boushi",
+    "title": "🐘 ぞうさんのぼうし (Chiếc Mũ Khổng Lồ Của Bác Voi)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Mado Michio (まど・みちお)",
+    "readingTime": "3 phút",
+    "summary": "Bác voi đánh rơi chiếc mũ rơm khổng lồ trên bãi cỏ, đàn mèo con, chú lợn ủn ỉn rủ nhau vào ngủ trưa say nồng.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_40_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_40_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：わすれものの おおきな ぼうし (Trang 1: Bác voi để quên mũ trên đồng cỏ)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_40_p1.svg",
+        "content": "ぞうさんが、おおきな ぼうしを わすれていきました。\nぽつんと おちていた まあるい ぼうし。\n「おや、これは なんだろう？」と、\nこねこが いっぴき やってきました。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：みんなで はいると あったかい (Trang 2: Các bạn thú nhỏ lần lượt chui vào)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_40_p2.svg",
+        "content": "こねこが はいって、「にゃー、あったかい！」\nこぶたも はいって、「ぶー、きもちいい！」\nたぬきも はいって、「ぽんぽこ、ひろいね！」\nぼうしの なかは、ぎゅうぎゅう、ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：ぞうさんが もどってきたよ (Trang 3: Bác voi mỉm cười nhường mũ cho muôn thú)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_40_p3.svg",
+        "content": "のっしのっし、ぞうさんが もどってきました。\nぼうしを みて、びっくり！\n「みんな、なかよく おひるね しているね。」\nぞうさんは やさしく にっこり わらいました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_41_こぐま",
+    "title": "✨ あわあわおふろ (Tắm Xà Phòng Bong Bóng Cùng Gấu Nhỏ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"あわあわ、しゅわしゅわ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_41_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_41_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：あわあわおふろのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_41_p1.svg",
+        "content": "きょうは たのしい あわあわおふろの ひ。\n「あわあわ、しゅわしゅわ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_41_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「あわあわ、しゅわしゅわ、あわあわ、しゅわしゅわ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_41_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_42_うさぎ",
+    "title": "✨ いちごつみ (Bé Cùng Thỏ Trắng Đi Hái Dâu Tây Rừng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぷちっ、もぐもぐ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_42_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_42_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：いちごつみのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_42_p1.svg",
+        "content": "きょうは たのしい いちごつみの ひ。\n「ぷちっ、もぐもぐ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_42_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぷちっ、もぐもぐ、ぷちっ、もぐもぐ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_42_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_43_こねこ",
+    "title": "✨ こねこのかくれんぼ (Mèo Con Tinh Nghịch Chơi Trốn Tìm)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"にゃおん、みーつけた\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_43_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_43_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：こねこのかくれんぼのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_43_p1.svg",
+        "content": "きょうは たのしい こねこのかくれんぼの ひ。\n「にゃおん、みーつけた！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_43_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「にゃおん、みーつけた、にゃおん、みーつけた！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_43_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_44_にんじん",
+    "title": "✨ にんじんさんありがとう (Cảm Ơn Bạn Cà Rốt Giòn Ngọt)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぽりぽり、しゃきしゃき\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_44_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_44_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：にんじんさんありがとうのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_44_p1.svg",
+        "content": "きょうは たのしい にんじんさんありがとうの ひ。\n「ぽりぽり、しゃきしゃき！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_44_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぽりぽり、しゃきしゃき、ぽりぽり、しゃきしゃき！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_44_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_45_おつきさま",
+    "title": "✨ おつきさまこんばんは (Chào Vầng Trăng Rằm Tròn Vành Vạnh)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"にこにこ、ぴかぴか\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_45_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_45_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：おつきさまこんばんはのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_45_p1.svg",
+        "content": "きょうは たのしい おつきさまこんばんはの ひ。\n「にこにこ、ぴかぴか！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_45_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「にこにこ、ぴかぴか、にこにこ、ぴかぴか！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_45_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_46_かえる",
+    "title": "✨ ぴょーんとかえる (Chú Ếch Nhỏ Bật Nhảy Tít Lên Cao)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぴょーん、ちゃぷん\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_46_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_46_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ぴょーんとかえるのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_46_p1.svg",
+        "content": "きょうは たのしい ぴょーんとかえるの ひ。\n「ぴょーん、ちゃぷん！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_46_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぴょーん、ちゃぷん、ぴょーん、ちゃぷん！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_46_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_47_ぱん",
+    "title": "✨ サンドイッチつくろう (Cùng Làm Chiếc Bánh Mì Kẹp Thơm Ngon)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぺたぺた、もぐもぐ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_47_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_47_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：サンドイッチつくろうのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_47_p1.svg",
+        "content": "きょうは たのしい サンドイッチつくろうの ひ。\n「ぺたぺた、もぐもぐ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_47_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぺたぺた、もぐもぐ、ぺたぺた、もぐもぐ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_47_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_48_きしゃ",
+    "title": "✨ しゅっぱつしんこう！ (Tàu Hỏa Đoàn Tàu Nhỏ Xuất Phát Nào!)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"がたんごとん、ぽっぽー\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_48_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_48_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：しゅっぱつしんこう！のはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_48_p1.svg",
+        "content": "きょうは たのしい しゅっぱつしんこう！の ひ。\n「がたんごとん、ぽっぽー！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_48_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「がたんごとん、ぽっぽー、がたんごとん、ぽっぽー！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_48_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_49_おひさま",
+    "title": "✨ おひさまぽかぽか (Mặt Trời Tỏa Nắng Ấm Áp Bốn Mùa)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぽかぽか、きらきら\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_49_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_49_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：おひさまぽかぽかのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_49_p1.svg",
+        "content": "きょうは たのしい おひさまぽかぽかの ひ。\n「ぽかぽか、きらきら！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_49_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぽかぽか、きらきら、ぽかぽか、きらきら！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_49_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_50_せんたく",
+    "title": "✨ おせんたくジャブジャブ (Giặt Quần Áo Xà Phòng Thơm Lừng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"じゃぶじゃぶ、ぱたぱた\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_50_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_50_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：おせんたくジャブジャブのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_50_p1.svg",
+        "content": "きょうは たのしい おせんたくジャブジャブの ひ。\n「じゃぶじゃぶ、ぱたぱた！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_50_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「じゃぶじゃぶ、ぱたぱた、じゃぶじゃぶ、ぱたぱた！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_50_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_51_あひる",
+    "title": "✨ あひるさんのぎょうれつ (Đàn Vịt Con Nối Đuôi Nhau Lội Suối)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"くわっくわっ、すいすい\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_51_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_51_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：あひるさんのぎょうれつのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_51_p1.svg",
+        "content": "きょうは たのしい あひるさんのぎょうれつの ひ。\n「くわっくわっ、すいすい！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_51_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「くわっくわっ、すいすい、くわっくわっ、すいすい！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_51_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_52_ばなな",
+    "title": "✨ バナナのおやこ (Gia Đình Quả Chuối Vàng Óng Ngọt Ngào)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぺろん、あまーい\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_52_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_52_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：バナナのおやこのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_52_p1.svg",
+        "content": "きょうは たのしい バナナのおやこの ひ。\n「ぺろん、あまーい！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_52_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぺろん、あまーい、ぺろん、あまーい！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_52_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_53_ちょう",
+    "title": "✨ ちょうちょうひらひら (Cánh Bướm Ngũ Sắc Rập Rờn Cánh Hoa)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ひらひら、ふわふわ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_53_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_53_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ちょうちょうひらひらのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_53_p1.svg",
+        "content": "きょうは たのしい ちょうちょうひらひらの ひ。\n「ひらひら、ふわふわ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_53_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ひらひら、ふわふわ、ひらひら、ふわふわ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_53_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_54_すぷーん",
+    "title": "✨ スプーンちゃん (Bạn Thìa Nhỏ Ngoan Ngoãn Đút Bé Ăn)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"かちん、ぱくっ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_54_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_54_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：スプーンちゃんのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_54_p1.svg",
+        "content": "きょうは たのしい スプーンちゃんの ひ。\n「かちん、ぱくっ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_54_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「かちん、ぱくっ、かちん、ぱくっ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_54_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_55_おにぎり",
+    "title": "✨ おにぎりぎゅっぎゅっ (Nắm Nắm Cơm Nắm Rong Biển Tròn Xoe)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぎゅっぎゅっ、もぐもぐ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_55_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_55_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：おにぎりぎゅっぎゅっのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_55_p1.svg",
+        "content": "きょうは たのしい おにぎりぎゅっぎゅっの ひ。\n「ぎゅっぎゅっ、もぐもぐ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_55_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぎゅっぎゅっ、もぐもぐ、ぎゅっぎゅっ、もぐもぐ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_55_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_56_らいおん",
+    "title": "✨ ライオンさんのあくび (Cái Ngáp Dài Của Bác Sư Tử Bờm Vàng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ふわーあ、がおー\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_56_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_56_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ライオンさんのあくびのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_56_p1.svg",
+        "content": "きょうは たのしい ライオンさんのあくびの ひ。\n「ふわーあ、がおー！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_56_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ふわーあ、がおー、ふわーあ、がおー！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_56_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_57_かめ",
+    "title": "✨ かめさんののんびりさんぽ (Chú Rùa Con Thong Thả Dạo Bờ Hồ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"のそのそ、てくてく\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_57_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_57_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：かめさんののんびりさんぽのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_57_p1.svg",
+        "content": "きょうは たのしい かめさんののんびりさんぽの ひ。\n「のそのそ、てくてく！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_57_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「のそのそ、てくてく、のそのそ、てくてく！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_57_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_58_はぶらし",
+    "title": "✨ はみがきシュッシュッ (Đánh Răng Sạch Bong Răng Trắng Tinh Tươm)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"しゅっしゅっ、ぶくぶく\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_58_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_58_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：はみがきシュッシュッのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_58_p1.svg",
+        "content": "きょうは たのしい はみがきシュッシュッの ひ。\n「しゅっしゅっ、ぶくぶく！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_58_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「しゅっしゅっ、ぶくぶく、しゅっしゅっ、ぶくぶく！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_58_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_59_まふらー",
+    "title": "✨ あかいマフラー (Chiếc Khăn Quàng Đỏ Ấm Áp Ngày Mùa Đông)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぬくぬく、ふわふわ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_59_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_59_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：あかいマフラーのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_59_p1.svg",
+        "content": "きょうは たのしい あかいマフラーの ひ。\n「ぬくぬく、ふわふわ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_59_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぬくぬく、ふわふわ、ぬくぬく、ふわふわ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_59_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_60_さーかす",
+    "title": "✨ どうぶつサーカス (Rạp Xiếc Muôn Thú Biểu Diễn Nhào Lộn)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"じゃーん、ぱちぱち\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_60_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_60_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：どうぶつサーカスのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_60_p1.svg",
+        "content": "きょうは たのしい どうぶつサーカスの ひ。\n「じゃーん、ぱちぱち！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_60_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「じゃーん、ぱちぱち、じゃーん、ぱちぱち！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_60_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_61_みつばち",
+    "title": "✨ ぶんぶんみつばち (Chú Ong Thợ Chăm Chỉ Tìm Mật Hoa)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぶんぶん、とことこ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_61_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_61_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ぶんぶんみつばちのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_61_p1.svg",
+        "content": "きょうは たのしい ぶんぶんみつばちの ひ。\n「ぶんぶん、とことこ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_61_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぶんぶん、とことこ、ぶんぶん、とことこ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_61_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_62_すいか",
+    "title": "✨ すいか割り (Bổ Trái Dưa Hấu Đỏ Tươi Mùa Hè)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"さくっ、しゃりしゃり\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_62_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_62_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：すいか割りのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_62_p1.svg",
+        "content": "きょうは たのしい すいか割りの ひ。\n「さくっ、しゃりしゃり！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_62_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「さくっ、しゃりしゃり、さくっ、しゃりしゃり！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_62_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_63_もみじ",
+    "title": "✨ もみじのはっぱ (Chiếc Lá Phong Đỏ Thắm Rơi Khẽ Khàng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ひらり、かさこそ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_63_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_63_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：もみじのはっぱのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_63_p1.svg",
+        "content": "きょうは たのしい もみじのはっぱの ひ。\n「ひらり、かさこそ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_63_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ひらり、かさこそ、ひらり、かさこそ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_63_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_64_ゆきだるま",
+    "title": "✨ ゆきだるまつくろう (Cùng Nhau Lăn Cầu Tuyết Đắp Người Tuyết)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ころころ、ぎゅっぎゅっ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_64_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_64_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ゆきだるまつくろうのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_64_p1.svg",
+        "content": "きょうは たのしい ゆきだるまつくろうの ひ。\n「ころころ、ぎゅっぎゅっ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_64_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ころころ、ぎゅっぎゅっ、ころころ、ぎゅっぎゅっ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_64_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_65_どんぐり",
+    "title": "✨ どんぐりころころ (Hạt Dẻ Rừng Lăn Lông Lốc Xuống Bùn)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ころころ、どぼん\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_65_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_65_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：どんぐりころころのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_65_p1.svg",
+        "content": "きょうは たのしい どんぐりころころの ひ。\n「ころころ、どぼん！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_65_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ころころ、どぼん、ころころ、どぼん！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_65_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_66_くま",
+    "title": "✨ おやすみくまさん (Chúc Chú Gấu Nâu Ngủ Thật Ngon Giấc)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"すやすや、ぐーぐー\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_66_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_66_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：おやすみくまさんのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_66_p1.svg",
+        "content": "きょうは たのしい おやすみくまさんの ひ。\n「すやすや、ぐーぐー！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_66_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「すやすや、ぐーぐー、すやすや、ぐーぐー！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_66_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_67_きりん",
+    "title": "✨ きりんさんのながいくび (Cổ Cao Vươn Tới Đọt Cây Của Chú Hươu)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぐーん、もぐもぐ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_67_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_67_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：きりんさんのながいくびのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_67_p1.svg",
+        "content": "きょうは たのしい きりんさんのながいくびの ひ。\n「ぐーん、もぐもぐ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_67_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぐーん、もぐもぐ、ぐーん、もぐもぐ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_67_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_68_じてんしゃ",
+    "title": "✨ みつばちとじてんしゃ (Chiếc Xe Đạp Ba Bánh Bon Bon Trên Đường)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"りんりん、ちりんちりん\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_68_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_68_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：みつばちとじてんしゃのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_68_p1.svg",
+        "content": "きょうは たのしい みつばちとじてんしゃの ひ。\n「りんりん、ちりんちりん！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_68_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「りんりん、ちりんちりん、りんりん、ちりんちりん！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_68_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_69_たこ",
+    "title": "✨ たこさんのダンス (Bạch Tuộc Tám Xúc Tu Múa Dưới Biển)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"くねくね、ぷくぷく\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_69_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_69_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：たこさんのダンスのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_69_p1.svg",
+        "content": "きょうは たのしい たこさんのダンスの ひ。\n「くねくね、ぷくぷく！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_69_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「くねくね、ぷくぷく、くねくね、ぷくぷく！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_69_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_70_ぱん",
+    "title": "✨ ぱんぱんパン屋さん (Mẻ Bánh Mì Nóng Hổi Vừa Ra Lò)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ふかふか、こんがり\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_70_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_70_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ぱんぱんパン屋さんのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_70_p1.svg",
+        "content": "きょうは たのしい ぱんぱんパン屋さんの ひ。\n「ふかふか、こんがり！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_70_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ふかふか、こんがり、ふかふか、こんがり！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_70_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_71_ぺんぎん",
+    "title": "✨ ぺんぎんたいそう (Tập Thể Dục Nghiêng Ngả Cùng Chim Cánh Cụt)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぺたぺた、よいしょ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_71_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_71_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ぺんぎんたいそうのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_71_p1.svg",
+        "content": "きょうは たのしい ぺんぎんたいそうの ひ。\n「ぺたぺた、よいしょ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_71_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぺたぺた、よいしょ、ぺたぺた、よいしょ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_71_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_72_かに",
+    "title": "✨ かにさんのちょきちょき (Chú Cua Nhỏ Giơ Càng Bấm Kẹp Bấm Kẹp)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ちょきちょき、かしゃかしゃ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_72_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_72_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：かにさんのちょきちょきのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_72_p1.svg",
+        "content": "きょうは たのしい かにさんのちょきちょきの ひ。\n「ちょきちょき、かしゃかしゃ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_72_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ちょきちょき、かしゃかしゃ、ちょきちょき、かしゃかしゃ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_72_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_73_くれよん",
+    "title": "✨ いろのくにのともだち (Thế Giới Bảy Sắc Cầu Vồng Rực Rỡ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぬりぬり、きらきら\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_73_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_73_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：いろのくにのともだちのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_73_p1.svg",
+        "content": "きょうは たのしい いろのくにのともだちの ひ。\n「ぬりぬり、きらきら！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_73_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぬりぬり、きらきら、ぬりぬり、きらきら！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_73_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_74_らっぱ",
+    "title": "✨ らっぱならそう (Thổi Chiếc Kèn Đồng Tò Te Tí Tò)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぱらぱら、ぷーぷー\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_74_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_74_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：らっぱならそうのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_74_p1.svg",
+        "content": "きょうは たのしい らっぱならそうの ひ。\n「ぱらぱら、ぷーぷー！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_74_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぱらぱら、ぷーぷー、ぱらぱら、ぷーぷー！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_74_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_75_ぷりん",
+    "title": "✨ プリンぷるぷる (Chiếc Bánh Flan Thạch Caramel Rung Rinh)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぷるぷる、とろーり\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_75_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_75_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：プリンぷるぷるのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_75_p1.svg",
+        "content": "きょうは たのしい プリンぷるぷるの ひ。\n「ぷるぷる、とろーり！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_75_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぷるぷる、とろーり、ぷるぷる、とろーり！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_75_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_76_はりねずみ",
+    "title": "✨ はりねずみのかくれんぼ (Chú Nhím Lưng Gai Cuộn Tròn Như Quả Bóng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ころん、ちくちく\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_76_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_76_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：はりねずみのかくれんぼのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_76_p1.svg",
+        "content": "きょうは たのしい はりねずみのかくれんぼの ひ。\n「ころん、ちくちく！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_76_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ころん、ちくちく、ころん、ちくちく！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_76_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_77_ふね",
+    "title": "✨ おふねがぽっぽー (Con Thuyền Hơi Nước Kéo Còi Vang Mặt Hồ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぼーっ、ぷかぷか\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_77_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_77_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：おふねがぽっぽーのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_77_p1.svg",
+        "content": "きょうは たのしい おふねがぽっぽーの ひ。\n「ぼーっ、ぷかぷか！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_77_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぼーっ、ぷかぷか、ぼーっ、ぷかぷか！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_77_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_78_とまと",
+    "title": "✨ とまとちゃんまっか (Quả Cà Chua Mọng Nước Cười Chúm Chím)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"つやつや、ぷるん\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_78_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_78_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：とまとちゃんまっかのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_78_p1.svg",
+        "content": "きょうは たのしい とまとちゃんまっかの ひ。\n「つやつや、ぷるん！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_78_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「つやつや、ぷるん、つやつや、ぷるん！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_78_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_79_たこ",
+    "title": "✨ たこあげあがれ (Chiếc Diều Giấy No Gió Bay Lượn Bầu Trời)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぐんぐん、すーい\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_79_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_79_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：たこあげあがれのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_79_p1.svg",
+        "content": "きょうは たのしい たこあげあがれの ひ。\n「ぐんぐん、すーい！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_79_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぐんぐん、すーい、ぐんぐん、すーい！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_79_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_80_こあら",
+    "title": "✨ こあらのおんぶ (Gấu Koala Nhỏ Bám Chặt Lưng Mẹ Yêu)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぎゅっ、すやすや\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_80_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_80_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：こあらのおんぶのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_80_p1.svg",
+        "content": "きょうは たのしい こあらのおんぶの ひ。\n「ぎゅっ、すやすや！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_80_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぎゅっ、すやすや、ぎゅっ、すやすや！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_80_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_81_ふらみんご",
+    "title": "✨ フラミンゴの一本足 (Chim Hồng Hạc Đứng Co Một Chân Dưới Nước)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"すっ、ゆらゆら\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_81_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_81_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：フラミンゴの一本足のはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_81_p1.svg",
+        "content": "きょうは たのしい フラミンゴの一本足の ひ。\n「すっ、ゆらゆら！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_81_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「すっ、ゆらゆら、すっ、ゆらゆら！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_81_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_82_くつした",
+    "title": "✨ まほうのくつした (Đôi Tất Giữ Ấm Biến Hóa Màu Sắc)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"すぽっ、ぽかぽか\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_82_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_82_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：まほうのくつしたのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_82_p1.svg",
+        "content": "きょうは たのしい まほうのくつしたの ひ。\n「すぽっ、ぽかぽか！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_82_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「すぽっ、ぽかぽか、すぽっ、ぽかぽか！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_82_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_83_あめ",
+    "title": "✨ あめ玉ころころ (Viên Kẹo Tròn Ngọt Ngào Tan Trong Miệng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ころころ、あまーい\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_83_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_83_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：あめ玉ころころのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_83_p1.svg",
+        "content": "きょうは たのしい あめ玉ころころの ひ。\n「ころころ、あまーい！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_83_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ころころ、あまーい、ころころ、あまーい！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_83_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_84_りす",
+    "title": "✨ りすのほっぺた (Đôi Má Phúng Phính Đầy Ắc Hạt Của Sóc)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぱくっ、ぽりぽり\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_84_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_84_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：りすのほっぺたのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_84_p1.svg",
+        "content": "きょうは たのしい りすのほっぺたの ひ。\n「ぱくっ、ぽりぽり！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_84_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぱくっ、ぽりぽり、ぱくっ、ぽりぽり！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_84_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_85_どあ",
+    "title": "✨ トントンだれかな？ (Cốc Cốc Gõ Cửa Xem Ai Đến Chơi Nào)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"とんとん、がちゃっ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_85_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_85_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：トントンだれかな？のはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_85_p1.svg",
+        "content": "きょうは たのしい トントンだれかな？の ひ。\n「とんとん、がちゃっ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_85_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「とんとん、がちゃっ、とんとん、がちゃっ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_85_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_86_けーき",
+    "title": "✨ おたんじょうびケーキ (Thổi Nến Chiếc Bánh Sinh Nhật Ngọt Ngào)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ふーっ、ぱちぱち\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_86_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_86_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：おたんじょうびケーキのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_86_p1.svg",
+        "content": "きょうは たのしい おたんじょうびケーキの ひ。\n「ふーっ、ぱちぱち！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_86_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ふーっ、ぱちぱち、ふーっ、ぱちぱち！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_86_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_87_あざらし",
+    "title": "✨ あざらしのすいすい (Bé Hải Cẩu Lướt Êm Trên Làn Sóng Trắng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"すーい、ぱしゃん\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_87_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_87_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：あざらしのすいすいのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_87_p1.svg",
+        "content": "きょうは たのしい あざらしのすいすいの ひ。\n「すーい、ぱしゃん！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_87_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「すーい、ぱしゃん、すーい、ぱしゃん！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_87_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_88_ながぐつ",
+    "title": "✨ ながぐつぴちゃぴちゃ (Đôi Ủng Xanh Dẫm Nước Mưa Rộn Ràng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぴちゃぴちゃ、らんらん\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_88_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_88_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ながぐつぴちゃぴちゃのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_88_p1.svg",
+        "content": "きょうは たのしい ながぐつぴちゃぴちゃの ひ。\n「ぴちゃぴちゃ、らんらん！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_88_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぴちゃぴちゃ、らんらん、ぴちゃぴちゃ、らんらん！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_88_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_89_たまご",
+    "title": "✨ めだまやきジュージュー (Trứng Ốp La Lòng Đỏ Tròn Xoe Xèo Xèo)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"じゅーじゅー、ぱちぱち\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_89_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_89_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：めだまやきジュージューのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_89_p1.svg",
+        "content": "きょうは たのしい めだまやきジュージューの ひ。\n「じゅーじゅー、ぱちぱち！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_89_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「じゅーじゅー、ぱちぱち、じゅーじゅー、ぱちぱち！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_89_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_90_ばった",
+    "title": "✨ ばったのジャンプ (Chú Châu Chấu Xanh Nhảy Vọt Lên Ngọn Cỏ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぴょんっ、ぴゅーん\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_90_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_90_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：ばったのジャンプのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_90_p1.svg",
+        "content": "きょうは たのしい ばったのジャンプの ひ。\n「ぴょんっ、ぴゅーん！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_90_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぴょんっ、ぴゅーん、ぴょんっ、ぴゅーん！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_90_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_91_かんがるー",
+    "title": "✨ カンガルーのポケット (Túi Mẹ Ấm Áp Chuột Túi Con Nằm Ngủ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぽんっ、すやすや\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_91_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_91_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：カンガルーのポケットのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_91_p1.svg",
+        "content": "きょうは たのしい カンガルーのポケットの ひ。\n「ぽんっ、すやすや！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_91_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぽんっ、すやすや、ぽんっ、すやすや！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_91_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_92_にじ",
+    "title": "✨ にじのすべりだい (Chiếc Cầu Trượt Bảy Màu Từ Đám Mây Mưa)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"しゅーっ、わーい\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_92_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_92_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：にじのすべりだいのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_92_p1.svg",
+        "content": "きょうは たのしい にじのすべりだいの ひ。\n「しゅーっ、わーい！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_92_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「しゅーっ、わーい、しゅーっ、わーい！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_92_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_93_てあらい",
+    "title": "✨ てあらいゴシゴシ (Rửa Bàn Tay Sạch Vi Khuẩn Cùng Bọt Xà Phòng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ごしごし、ぴかぴか\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_93_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_93_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：てあらいゴシゴシのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_93_p1.svg",
+        "content": "きょうは たのしい てあらいゴシゴシの ひ。\n「ごしごし、ぴかぴか！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_93_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ごしごし、ぴかぴか、ごしごし、ぴかぴか！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_93_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_94_おべんとう",
+    "title": "✨ おべんとうばこひらいた (Mở Hộp Cơm Bento Đầy Đủ Món Ngon Xinh)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぱかっ、わあーっ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_94_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_94_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：おべんとうばこひらいたのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_94_p1.svg",
+        "content": "きょうは たのしい おべんとうばこひらいたの ひ。\n「ぱかっ、わあーっ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_94_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぱかっ、わあーっ、ぱかっ、わあーっ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_94_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_95_くじゃく",
+    "title": "✨ くじゃくのはねひろげ (Chim Công Xòe Chiếc Đuôi Đẹp Tựa Quạt Lụa)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ふわっ、きらきら\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_95_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_95_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：くじゃくのはねひろげのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_95_p1.svg",
+        "content": "きょうは たのしい くじゃくのはねひろげの ひ。\n「ふわっ、きらきら！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_95_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ふわっ、きらきら、ふわっ、きらきら！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_95_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_96_すべりだい",
+    "title": "✨ こうえんのすべりだい (Tiếng Cười Giòn Tan Trên Cầu Trượt Công Viên)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"しゅるるん、きゃっきゃっ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_96_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_96_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：こうえんのすべりだいのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_96_p1.svg",
+        "content": "きょうは たのしい こうえんのすべりだいの ひ。\n「しゅるるん、きゃっきゃっ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_96_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「しゅるるん、きゃっきゃっ、しゅるるん、きゃっきゃっ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_96_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_97_みるく",
+    "title": "✨ いちごみるくつくろう (Pha Sữa Dâu Màu Hồng Ngọt Ngào Bổ Dưỡng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"くるくる、ごくごく\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_97_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_97_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：いちごみるくつくろうのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_97_p1.svg",
+        "content": "きょうは たのしい いちごみるくつくろうの ひ。\n「くるくる、ごくごく！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_97_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「くるくる、ごくごく、くるくる、ごくごく！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_97_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_98_ほし",
+    "title": "✨ きらきらおほしさま (Ngôi Sao Đêm Rơi Vào Ô Cửa Sổ Phòng Ngủ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"きらきら、ちかちか\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_98_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_98_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：きらきらおほしさまのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_98_p1.svg",
+        "content": "きょうは たのしい きらきらおほしさまの ひ。\n「きらきら、ちかちか！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_98_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「きらきら、ちかちか、きらきら、ちかちか！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_98_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_99_ぬいぐるみ",
+    "title": "✨ くまのぬいぐるみ (Chú Gấu Bông Luôn Ở Cạnh Vỗ Về Giấc Mơ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"ぎゅーっ、あったかい\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_99_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_99_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：くまのぬいぐるみのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_99_p1.svg",
+        "content": "きょうは たのしい くまのぬいぐるみの ひ。\n「ぎゅーっ、あったかい！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_99_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「ぎゅーっ、あったかい、ぎゅーっ、あったかい！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_99_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nensho_100_かぞく",
+    "title": "✨ みんなだいすき (Vòng Tay Yêu Thương Cả Nhà Luôn Ấm Êm)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nensho",
+    "ageGroup": "3-4 tuổi (年少)",
+    "genreLabel": "🎨 Sách Tranh Mầm Non (3–4 tuổi)",
+    "author": "Ban Biên Tập Mầm Non SLA Nhật Bản",
+    "readingTime": "3 phút",
+    "summary": "Tác phẩm sách tranh mầm non được các trường mẫu giáo Nhật Bản yêu thích giúp bé rèn luyện phản xạ vận động, cảm xúc và giác quan với âm thanh \"にっこり、ぎゅっぎゅっ\".",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nensho_100_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nensho_100_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：みんなだいすきのはじまり (Trang 1: Bắt đầu khám phá)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_100_p1.svg",
+        "content": "きょうは たのしい みんなだいすきの ひ。\n「にっこり、ぎゅっぎゅっ！」と げんきな こえが きこえるよ。\nちいさな おててで、さわってみよう。\nなにが はじまるのかな？"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：わくわくするね (Trang 2: Khoảnh khắc ngập tràn niềm vui)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_100_p2.svg",
+        "content": "みてみて！ もっと たのしく なってきたよ。\n「にっこり、ぎゅっぎゅっ、にっこり、ぎゅっぎゅっ！」\nみんなで いっしょに まねっこしてみよう。\nからだが ぽかぽか、こころも ぽかぽか。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：にっこり えがお (Trang 3: Nụ cười rạng rỡ khép lại câu chuyện)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nensho_100_p3.svg",
+        "content": "たのしかったね。\nみんなの かおに、とびっきりの えがおが さきました。\n「また あしたも あそぼうね！」\nぎゅーっと だっこして、おしまい。"
       }
     ]
   }

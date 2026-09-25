@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <filter id="artTexture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.06 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </defs>
+
+  <!-- Nền mỹ thuật theo phong cách: ✨ Rối Bóng Thần Tiên (Kage-e) -->
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+
+  <!-- Yếu tố Minh Họa Trung Tâm -->
+  
+        <!-- Vầng trăng vàng rằm, ống tre phát sáng & Nàng tiên Kaguya -->
+        <g transform="translate(400, 270)">
+          <!-- Trăng tròn đại quang minh -->
+          <circle cx="0" cy="0" r="115" fill="#ffd166" stroke="#f4a261" stroke-width="6"/>
+          <circle cx="0" cy="0" r="100" fill="#ffeaa7"/>
+          <!-- Đôi mắt mỉm cười thanh tao -->
+          <path d="M-40,-10 Q-25,-25 -10,-10" stroke="#78350f" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <path d="M10,-10 Q25,-25 40,-10" stroke="#78350f" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <ellipse cx="-35" cy="15" rx="14" ry="8" fill="#ff7675" opacity="0.6"/>
+          <ellipse cx="35" cy="15" rx="14" ry="8" fill="#ff7675" opacity="0.6"/>
+          <path d="M-15,20 Q0,35 15,20" stroke="#78350f" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <!-- Rừng tre xanh rì rào bên dưới -->
+          <g transform="translate(0, 160)">
+            <rect x="-240" y="-40" width="30" height="240" fill="#55efc4" stroke="#00b894" stroke-width="4"/>
+            <rect x="-100" y="-70" width="35" height="270" fill="#81ecec" stroke="#00cec9" stroke-width="4"/>
+            <!-- Đốt tre phát sáng vàng kim -->
+            <rect x="-95" y="30" width="25" height="50" rx="6" fill="#fff" opacity="0.9"/>
+            <rect x="80" y="-50" width="30" height="250" fill="#55efc4" stroke="#00b894" stroke-width="4"/>
+            <rect x="200" y="-30" width="30" height="230" fill="#81ecec" stroke="#00cec9" stroke-width="4"/>
+          </g>
+          <!-- Dải lụa Hagoromo bay lượn -->
+          <path d="M-180,-60 Q0,-140 180,-70 Q100,20 -180,-60" fill="#fd79a8" opacity="0.5"/>
+        </g>
+      
+
+  <!-- Lớp phủ chất cảm chất liệu mỹ thuật thủ công -->
+  <rect width="800" height="600" fill="#ffffff" opacity="0.08" filter="url(#artTexture)" pointer-events="none" />
+
+  <!-- Triện đỏ nghệ nhân nếu là tranh truyền thống -->
+  
+
+  <!-- Khung viền tranh Ehon tiêu chuẩn -->
+  <rect x="16" y="16" width="768" height="568" rx="20" fill="none" stroke="#415a77" stroke-width="4" opacity="0.8" />
+
+  <!-- Nhãn phong cách nghệ thuật góc trên bên trái -->
+  <g transform="translate(36, 44)">
+    <rect x="0" y="-16" width="230" height="28" rx="14" fill="rgba(30, 41, 59, 0.85)" stroke="#475569" stroke-width="1.5"/>
+    <text x="12" y="3" font-size="12" font-weight="bold" fill="#94a3b8" font-family="'Zen Maru Gothic', sans-serif">
+      ✨ Rối Bóng Thần Tiên (Kage-e)
+    </text>
+  </g>
+
+  <!-- Bảng Thông Tin Tác Phẩm & Phân Cảnh Trang Nhã Ở Đáy Tranh -->
+  <g transform="translate(400, 545)">
+    <rect x="-330" y="-22" width="660" height="44" rx="22" fill="rgba(15, 23, 42, 0.88)" stroke="#334155" stroke-width="2" />
+    <text x="0" y="4" font-size="15" font-weight="bold" fill="#f8fafc" text-anchor="middle" font-family="'Zen Maru Gothic', 'Hiragino Sans', 'Meiryo', sans-serif">
+      おつきさまのオルゴール (Hộp Nhạc Mặt Trăng Ru Giấc Ngủ Bình Yên) — みんなで ちからを あわせて (Trang 2: Cùng nhau sẻ chia và vượt thử thách)
+    </text>
+  </g>
+</svg>

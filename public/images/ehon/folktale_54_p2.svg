@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff1f2" />
+      <stop offset="100%" stop-color="#fce7f3" />
+    </linearGradient>
+    <filter id="artTexture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.12 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </defs>
+
+  <!-- Nền mỹ thuật theo phong cách: 🖍️ Sáp Dầu & Pastel Crayon -->
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+
+  <!-- Yếu tố Minh Họa Trung Tâm -->
+  
+        <!-- Nàng Tiên Hạc Tuyết & Khung cửi dệt lụa -->
+        <g transform="translate(400, 310)">
+          <!-- Cánh hạc trắng xòe rộng bay lượn -->
+          <path d="M0,40 C-80,-40 -180,-80 -240,-50 C-200,20 -100,50 0,60 C100,50 200,20 240,-50 C180,-80 80,-40 0,40 Z" fill="#ffffff" stroke="#dfe6e9" stroke-width="4"/>
+          <path d="M-240,-50 Q-190,-10 -150,10" fill="#2d3436"/>
+          <path d="M240,-50 Q190,-10 150,10" fill="#2d3436"/>
+          <!-- Thân hạc thon dài và chỏm đầu đỏ son Tanchou -->
+          <ellipse cx="0" cy="10" rx="35" ry="60" fill="#ffffff" stroke="#dfe6e9" stroke-width="3"/>
+          <circle cx="0" cy="-60" r="22" fill="#ffffff"/>
+          <circle cx="0" cy="-75" r="9" fill="#d63031"/>
+          <!-- Mỏ vàng nhọn thanh nhã -->
+          <polygon points="-6,-60 6,-60 0,-100" fill="#fdcb6e"/>
+          <circle cx="-6" cy="-62" r="3" fill="#2d3436"/>
+          <circle cx="6" cy="-62" r="3" fill="#2d3436"/>
+          <!-- Những cuộn tơ lụa ngũ sắc lấp lánh -->
+          <path d="M-180,180 Q0,100 180,180" stroke="#74b9ff" stroke-width="12" fill="none" opacity="0.8"/>
+          <path d="M-150,195 Q0,120 150,195" stroke="#a29bfe" stroke-width="10" fill="none" opacity="0.8"/>
+        </g>
+      
+
+  <!-- Lớp phủ chất cảm chất liệu mỹ thuật thủ công -->
+  <rect width="800" height="600" fill="#ffffff" opacity="0.08" filter="url(#artTexture)" pointer-events="none" />
+
+  <!-- Triện đỏ nghệ nhân nếu là tranh truyền thống -->
+  
+
+  <!-- Khung viền tranh Ehon tiêu chuẩn -->
+  <rect x="16" y="16" width="768" height="568" rx="20" fill="none" stroke="#cbd5e1" stroke-width="4" opacity="0.8" />
+
+  <!-- Nhãn phong cách nghệ thuật góc trên bên trái -->
+  <g transform="translate(36, 44)">
+    <rect x="0" y="-16" width="230" height="28" rx="14" fill="rgba(255, 255, 255, 0.9)" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="12" y="3" font-size="12" font-weight="bold" fill="#64748b" font-family="'Zen Maru Gothic', sans-serif">
+      🖍️ Sáp Dầu & Pastel Crayon
+    </text>
+  </g>
+
+  <!-- Bảng Thông Tin Tác Phẩm & Phân Cảnh Trang Nhã Ở Đáy Tranh -->
+  <g transform="translate(400, 545)">
+    <rect x="-330" y="-22" width="660" height="44" rx="22" fill="rgba(255, 255, 255, 0.94)" stroke="#cbd5e1" stroke-width="2" />
+    <text x="0" y="4" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="'Zen Maru Gothic', 'Hiragino Sans', 'Meiryo', sans-serif">
+      三枚の羽根 (Ba Chiếc Lông Chim Phép Thuật Thử Thách Lòng Kiên Trì) — 試練と 勇気の 決断 (Trang 2: Thử thách cam go và lòng can đảm)
+    </text>
+  </g>
+</svg>

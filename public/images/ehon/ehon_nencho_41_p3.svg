@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffae0" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+    <filter id="artTexture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.06 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </defs>
+
+  <!-- Nền mỹ thuật theo phong cách: 🎨 Màu Nước (Chihiro Iwasaki) -->
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+
+  <!-- Yếu tố Minh Họa Trung Tâm -->
+  
+        <!-- Dũng sĩ Momotaro / Kintaro / Nhân vật cổ tích anh hùng -->
+        <g transform="translate(400, 310)">
+          <!-- Cờ phướn mặt trời / Quả đào -->
+          <circle cx="0" cy="-130" r="50" fill="#ff758f" stroke="#e63946" stroke-width="4"/>
+          <path d="M0,-180 Q20,-160 0,-130 Q-20,-160 0,-180" fill="#2d6a4f"/>
+          <!-- Dũng sĩ áo đỏ khăn buộc đầu -->
+          <circle cx="0" cy="-40" r="55" fill="#fdf0d5" stroke="#bc6c25" stroke-width="4"/>
+          <rect x="-60" y="-70" width="120" height="20" rx="8" fill="#ffffff" stroke="#e63946" stroke-width="3"/>
+          <circle cx="0" cy="-60" r="8" fill="#e63946"/>
+          <!-- Đôi mắt kiên định -->
+          <ellipse cx="-20" cy="-40" rx="6" ry="8" fill="#1b263b"/>
+          <ellipse cx="20" cy="-40" rx="6" ry="8" fill="#1b263b"/>
+          <path d="M-15,-20 Q0,-5 15,-20" stroke="#1b263b" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <!-- Áo giáp Kimono & Thanh kiếm gỗ -->
+          <polygon points="-80,120 80,120 50,10 -50,10" fill="#2a9d8f" stroke="#264653" stroke-width="5"/>
+          <polygon points="-30,30 30,30 20,80 -20,80" fill="#e76f51"/>
+          <!-- Bạn đồng hành: Chó và Khỉ nhỏ bên cạnh -->
+          <circle cx="-130" cy="70" r="35" fill="#e9c46a"/>
+          <circle cx="130" cy="70" r="35" fill="#bc6c25"/>
+        </g>
+      
+
+  <!-- Lớp phủ chất cảm chất liệu mỹ thuật thủ công -->
+  <rect width="800" height="600" fill="#ffffff" opacity="0.08" filter="url(#artTexture)" pointer-events="none" />
+
+  <!-- Triện đỏ nghệ nhân nếu là tranh truyền thống -->
+  
+
+  <!-- Khung viền tranh Ehon tiêu chuẩn -->
+  <rect x="16" y="16" width="768" height="568" rx="20" fill="none" stroke="#cbd5e1" stroke-width="4" opacity="0.8" />
+
+  <!-- Nhãn phong cách nghệ thuật góc trên bên trái -->
+  <g transform="translate(36, 44)">
+    <rect x="0" y="-16" width="230" height="28" rx="14" fill="rgba(255, 255, 255, 0.9)" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="12" y="3" font-size="12" font-weight="bold" fill="#64748b" font-family="'Zen Maru Gothic', sans-serif">
+      🎨 Màu Nước (Chihiro Iwasaki)
+    </text>
+  </g>
+
+  <!-- Bảng Thông Tin Tác Phẩm & Phân Cảnh Trang Nhã Ở Đáy Tranh -->
+  <g transform="translate(400, 545)">
+    <rect x="-330" y="-22" width="660" height="44" rx="22" fill="rgba(255, 255, 255, 0.94)" stroke="#cbd5e1" stroke-width="2" />
+    <text x="0" y="4" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="'Zen Maru Gothic', 'Hiragino Sans', 'Meiryo', sans-serif">
+      ピカピカのランドセル (Chiếc Cặp Randoseru Đỏ Rực Ngày Tựu Trường) — さくらの なみきみちを あるく日 (Trang 3: Bước đi kiêu hãnh dưới hàng hoa anh đào nở rộ)
+    </text>
+  </g>
+</svg>

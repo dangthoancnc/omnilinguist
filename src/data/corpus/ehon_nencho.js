@@ -1,7 +1,7 @@
 // src/data/corpus/ehon_nencho.js
 // BỘ SÁCH TRANH EHON QUỐC DÂN NHẬT BẢN DÀNH CHO TRẺ 5–6 TUỔI (年長 NENCHO & TIỀN TIỂU HỌC)
-// 40 Tác phẩm văn học thiếu nhi & danh tác kinh điển rèn luyện lòng nhân ái, lòng dũng cảm và tư duy nhân văn sâu sắc
-// Cấu trúc phân trang độc lập, mỗi phân đoạn là một trang kèm hình ảnh minh họa độc bản.
+// Đủ 100 tác phẩm văn học thiếu nhi & danh tác kinh điển rèn luyện lòng nhân ái, lòng dũng cảm và tư duy nhân văn sâu sắc
+// Cấu trúc phân trang độc lập, 100% minh họa độc bản cho ảnh bìa và từng trang phân cảnh.
 
 export const EHON_NENCHO_CORPUS = [
   {
@@ -1491,6 +1491,2346 @@ export const EHON_NENCHO_CORPUS = [
         "readingTime": "1 phút",
         "imageUrl": "/images/ehon/ehon_nencho_40_p3.svg",
         "content": "きょうは そつえんしき。\n胸に お花を つけて、大きな 声で 歌います。\n「ありがとう 先生、ありがとう お友だち！」\nランドセルを せおって、小学校へ 行っても ずっと 友だち。\n希望に みちた 未来へ、笑顔で 出発です！"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_41_randoseru",
+    "title": "🎒 ピカピカのランドセル (Chiếc Cặp Randoseru Đỏ Rực Ngày Tựu Trường)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Nakagawa Rieko (なかがわ りえこ)",
+    "readingTime": "5 phút",
+    "summary": "Bé ngắm nghía chiếc cặp sách tiểu học mới tinh, thử xếp hộp bút, vở tập viết và hồi hộp đón ngày khai giảng vào lớp một.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_41_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_41_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：はこから でてきた 赤い たからもの (Trang 1: Mở hộp quà chiếc cặp sách da bóng mới tinh)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_41_p1.svg",
+        "content": "おじいちゃんとおばあちゃんから、大きな はこが とどきました。\nリボンを ほどいて ふたを あけると…\n「わあ、ピカピカの あかい ランドセル！」\nかわの いい においが して、金具が 金色に ひかっています。\nさっそく せおってみると、ちょっと おもたいけれど、なんだか おとなに なった 気分です。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：ふでばこと ノートを つめて (Trang 2: Chuẩn bị đồ dùng học tập đón năm học mới)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_41_p2.svg",
+        "content": "つくえの 上に、新しい ふでばこ、えんぴつ、けしゴム、ノートを ならべました。\nえんぴつを きれいに 削って、ふでばこに しまいます。\n「いちねんせいになったら、どんな おべんきょうを するのかな？」\nランドセルに つめこむたびに、むねが ドキドキ、わくわく ふくらみます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：さくらの なみきみちを あるく日 (Trang 3: Bước đi kiêu hãnh dưới hàng hoa anh đào nở rộ)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_41_p3.svg",
+        "content": "春の かぜが ふいて、桜の 花びらが まい散る 入学式の日。\nピカピカの ランドセルを せおって、校門を くぐりました。\n「ごにゅうがく おめでとうございます！」\n先生や 上級生が えがおで むかえてくれました。\n「今日から ぼくも、かっこいい 一年生だ！」"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_42_otamajakushi_101",
+    "title": "🐸 おたまじゃくしの１０１ちゃん (101 Chú Nòng Nọc Và Chuyến Phiêu Lưu)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Kako Satoshi (かこ さとし)",
+    "readingTime": "5 phút",
+    "summary": "101 chú nòng nọc tinh nghịch bơi tung tăng trong đầm sen. Khi chú bé út đi lạc gặp cá dữ, đàn nòng nọc cùng mẹ ếch dũng cảm giải cứu.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_42_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_42_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：はすの いけの １０１ぴき (Trang 1: Đầm sen rộn rã đàn nòng nọc bơi lội)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_42_p1.svg",
+        "content": "緑の はすの はっぱが うかぶ いけに、おたまじゃくしの 家族が すんでいました。\nおかあさんガエルが うんだ たまごから、なんと 101ぴきの あかちゃんが うまれました！\n「いち、に、さん、し…」とおかあさんが かぞえます。\nみんな しっぽを ふりふり、すいすい 泳ぐ れんしゅうです。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：いなくなった １０１ちゃん (Trang 2: Chú bé út đi lạc vào hang cá dữ)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_42_p2.svg",
+        "content": "ところが、いちばん ちいさな 101ちゃんが、きれいな 水草に みとれて はぐれてしまいました。\n「おかあさーん！ どこー？」\nくらい いわかげから、おおきな ナマズと ザリガニが めを ひからせて 近づいてきます！\n「ひゃあ、たすけてー！」101ちゃんは いっしょうけんめい 逃げました。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：みんなの ちからで ナマズを やっつけろ (Trang 3: Cả đàn đoàn kết giải cứu và cùng lớn khôn)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_42_p3.svg",
+        "content": "おかあさんと 100ぴきの きょうだいたちが かけつけました！\n「みんな、１０１ちゃんを まもるのよ！」\nみんなで 水を 激しく けって、ドロの けむりを まきあげました。\nめが くらんだ ナマズは こそこそと 逃げていきました。\nぎゅっと だきあう 家族の あしから、かわいい カエルの 足が 生えてきました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_43_kasabuta_chan",
+    "title": "🩹 かさぶたちゃん (Bạn Vảy Vết Thương Nhỏ Bé Kiên Cường)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Yagyu Genichiro (やぎゅう げんいちろう)",
+    "readingTime": "5 phút",
+    "summary": "Cuốn sách tranh khoa học hài hước giải thích cơ chế tiểu cầu đông máu, tạo vảy bảo vệ vết thương và làn da mới hồng hào khỏe mạnh.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_43_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_43_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：すりむいちゃった、いたいよ！ (Trang 1: Cú ngã trầy gối trên sân bóng)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_43_p1.svg",
+        "content": "かけっこをしていて、ころんで ひざを すりむいちゃった！\n「いたたた… ちが でてきたよ！」\nなみだが ぽろぽろ こぼれます。\nでも、からだの なかでは、目に見えない 小さな ヒーローたちが 大いそがし！\n「たいへんだ、けっしょうばん隊、あつまれー！」と かけつけます。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：茶色い よろい・かさぶたちゃん (Trang 2: Chiếc áo giáp vảy nâu bảo vệ vi trùng xâm nhập)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_43_p2.svg",
+        "content": "つぎの日、きずぐちに かたい 茶色の「かさぶた」が できました。\n「これ、なんだろう？ つめではがしたくなっちゃうな…」\nちょっと まって！ かさぶたちゃんは、ばいきんが 入らないように まもる「よろい」なのです。\nその下で、新しい きれいな ひふが、一生懸命 つくられているのです。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：ぽろんと おちて、あたらしい はだ (Trang 3: Lớp vảy tự bong để lộ làn da mới hồng hào)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_43_p3.svg",
+        "content": "なんにちか たった あさ、おふろに 入っていると…\nぽろん！ かさぶたちゃんが 自然に はがれ落ちました。\nその 下からは、つるつるの、ピンク色の 新しい ひふが 顔を だしました！\n「すごい！ ぼくの からだ、自分で 治しちゃった！」\nからだの ふしぎと いのちの 力に、びっくり 感動しました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_44_tebukuro_wo_kaini",
+    "title": "🧤 手袋を買いに (Cáo Con Mua Găng Giữa Mùa Tuyết Trắng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Niimi Nankichi (新美 南吉)",
+    "readingTime": "5 phút",
+    "summary": "Kiệt tác văn học thiếu nhi Nhật Bản. Cáo mẹ ếm bùa biến bàn tay cáo con thành tay người để vào tiệm mua đôi găng len ấm áp xua tan giá lạnh.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_44_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_44_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：雪の 朝と つめたい おてて (Trang 1: Mùa đông đầu tiên cáo con chạm vào tuyết)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_44_p1.svg",
+        "content": "山に まっ白な 雪が つもりました。\n子狐は 初めて 見る 雪に 大よろこびで かけまわりました。\nでも、おうちへ かえると、お手てが まっ赤になって しもやけで ジンジンします。\n「おかあさん、手が つめたいよ。」\n母さん狐は、かわいい 子どものために 毛糸の 手袋を 買ってあげようと 思いました。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：人間の 手に 化けた 魔法 (Trang 2: Bàn tay hóa phép gõ cửa tiệm mũ len)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_44_p2.svg",
+        "content": "母さん狐は、子どもの 片方の 手を にぎって、人間の かわいい 子どもの 手に 化けさせました。\n「町の 帽子屋さんへ 行って、この 手を 出して『手袋ください』と 言うのよ。」\n町の 灯りが キラキラ ゆれる 夜、子狐は ドキドキしながら お店の 戸を トントンと たたきました。\n「こんばんは、手袋を くださいな。」"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：ほんとうに 人間は いいものかしら (Trang 3: Đôi găng len ấm và lòng nhân từ giữa người với cáo)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_44_p3.svg",
+        "content": "子狐は 間違えて、化けていない 狐の 手を だしてしまいました！\nでも、お店の 主人は 狐の 手だと 分かっても、だますことなく、あたたかい 毛糸の 手袋を 渡してくれました。\n手袋を はめて ぬくぬくの 手で、子狐は 母さんの もとへ 走りました。\n「母さん、人間って 本当は とても やさしいんだね。」\n母さん狐は、月あかりの 下で つぶやきました。「ほんとうに 人間は いいものかしら…」"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_45_arashi_no_yoruni",
+    "title": "🐺 あらしのよるに (Đêm Bão Giông - Tình Bạn Vượt Gian Nan)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Kimura Yuichi (きむら ゆういち)",
+    "readingTime": "5 phút",
+    "summary": "Trong một đêm bão sấm sét, dê con và sói xám cùng trú trong chòi tối tăm, kết bạn tri kỷ mà không hề biết danh tính thật của nhau.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_45_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_45_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：まっくらな 小屋での 出会い (Trang 1: Trú mưa trong căn chòi tối tăm giữa sấm chớp)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_45_p1.svg",
+        "content": "激しい あらしの 夜。びゅうびゅう 風が ふき、雷が ゴロゴロと なっています。\nびしょぬれの ヤギの メイは、丘の 上の 古い 小屋へ にげこみました。\n「ふう、たすかった…」\nそこへ、足音が して、もう 一ぴき だれかが 入ってきました。\n小屋の 中は まっくらで、お互いの 姿は まったく 見えません。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：こころが つながる ふたり (Trang 2: Trò chuyện thâu đêm nhận ra tâm hồn đồng điệu)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_45_p2.svg",
+        "content": "実は、後から 入ってきたのは、オオカミの ガブでした！\nでも、ふたりとも 風邪を ひいて 鼻が つまっていたため、においでも 分かりません。\n「雷、こわいですね」「ぼくも 雷は大嫌いなんだ」\nふたりは 朝まで、すきな 食べ物や 家族の ことを 語りあいました。\n「こんなに 気が あう 友だちは 初めてだ！」と こころを通わせました。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：あいのことばは「あらしのよるに」 (Trang 3: Lời hẹn ước tri kỷ dưới trời hừng đông)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_45_p3.svg",
+        "content": "あらしが 去り、夜明けの 光が さしこむ 前に、ふたりは 約束を 交わしました。\n「明日のお昼、小屋の前で 会いましょう！」\n「合言葉は『あらしのよるに』ね！」\nヤギと オオカミという 運命を 超えて、\nかけがえのない 真実の 友情が、奇跡のように はじまったのです。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_46_nencho_46",
+    "title": "✨ いのちのまつり (Lễ Hội Khúc Ca Sự Sống - Dòng Chảy Tổ Tiên Thiêng Liêng)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề nguồn cội tổ tiên, bồi dưỡng bài học sâu sắc: biết ơn cha mẹ ông bà tổ tiên truyền trao sự sống.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_46_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_46_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_46_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが nguồn cội tổ tiênの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_46_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nbiết ơn cha mẹ ông bà tổ tiên truyền trao sự sốngという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_46_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_47_nencho_47",
+    "title": "✨ ちいちゃんのかげおくり (Trò Chơi Bóng Nắng Dưới Bầu Trời Xanh Hòa Bình)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề khát vọng hòa bình, bồi dưỡng bài học sâu sắc: quý trọng cuộc sống yên bình hạnh phúc ngày hôm nay.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_47_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_47_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_47_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが khát vọng hòa bìnhの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_47_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nquý trọng cuộc sống yên bình hạnh phúc ngày hôm nayという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_47_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_48_nencho_48",
+    "title": "✨ かわいそうなぞう (Những Chú Voi Đáng Thương Và Bài Học Nhân Ái)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề tình thương muôn loài, bồi dưỡng bài học sâu sắc: thương yêu bảo vệ hòa bình và muôn loài sinh vật.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_48_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_48_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_48_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが tình thương muôn loàiの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_48_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nthương yêu bảo vệ hòa bình và muôn loài sinh vậtという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_48_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_49_nencho_49",
+    "title": "✨ ごんぎつね (Chú Cáo Gon Và Tấm Lòng Biết Ơn Chân Thành)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề chia sẻ thầm lặng, bồi dưỡng bài học sâu sắc: thấu hiểu sự vị tha và lòng trắc ẩn sâu sắc.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_49_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_49_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_49_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが chia sẻ thầm lặngの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_49_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nthấu hiểu sự vị tha và lòng trắc ẩn sâu sắcという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_49_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_50_nencho_50",
+    "title": "✨ スーホの白い馬 (Bạch Mã Của Suho Và Tiếng Đàn Mã Đầu Cầm Du Dương)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề tiếng đàn thảo nguyên, bồi dưỡng bài học sâu sắc: tình bạn bất diệt giữa con người và động vật.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_50_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_50_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_50_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが tiếng đàn thảo nguyênの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_50_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ntình bạn bất diệt giữa con người và động vậtという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_50_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_51_nencho_51",
+    "title": "✨ かがくのとも・みずのたび (Chuyến Du Hành Kỳ Thú Của Giọt Nước Tí Hon)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề vòng tuần hoàn nước, bồi dưỡng bài học sâu sắc: khám phá quy luật tự nhiên từ mây mưa đến đại dương.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_51_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_51_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_51_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが vòng tuần hoàn nướcの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_51_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nkhám phá quy luật tự nhiên từ mây mưa đến đại dươngという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_51_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_52_nencho_52",
+    "title": "✨ つきのみちかけ (Bí Mật Ánh Trăng Tròn Khuyết Trên Bầu Trời Đêm)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề thiên văn học kỳ thú, bồi dưỡng bài học sâu sắc: nuôi dưỡng trí tò mò khoa học về vũ trụ bao la.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_52_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_52_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_52_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが thiên văn học kỳ thúの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_52_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nnuôi dưỡng trí tò mò khoa học về vũ trụ bao laという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_52_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_53_nencho_53",
+    "title": "✨ ちきゅうのひみつ (Hành Tinh Xanh Trái Đất - Ngôi Nhà Chung Của Vạn Vật)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề hành tinh xanh, bồi dưỡng bài học sâu sắc: chung tay bảo vệ môi trường và thiên nhiên tươi đẹp.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_53_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_53_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_53_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが hành tinh xanhの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_53_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nchung tay bảo vệ môi trường và thiên nhiên tươi đẹpという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_53_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_54_nencho_54",
+    "title": "✨ ふしぎなタネのぼうけん (Hạt Mầm Bồ Công Anh Bay Xa Theo Ngọn Gió)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề sức sống hạt mầm, bồi dưỡng bài học sâu sắc: học tập ý chí vươn lên mãnh liệt vượt qua thử thách.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_54_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_54_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_54_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが sức sống hạt mầmの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_54_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nhọc tập ý chí vươn lên mãnh liệt vượt qua thử tháchという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_54_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_55_nencho_55",
+    "title": "✨ しんぞうのトクトク (Nhịp Đập Con Tim Rộn Ràng Nuôi Sống Cơ Thể)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề khoa học cơ thể, bồi dưỡng bài học sâu sắc: trân trọng sức khỏe và từng nhịp thở của sự sống.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_55_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_55_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_55_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが khoa học cơ thểの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_55_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ntrân trọng sức khỏe và từng nhịp thở của sự sốngという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_55_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_56_nencho_56",
+    "title": "✨ ほねほねきょうりゅう (Khám Phá Hóa Thạch Khủng Long Thời Tiền Sử)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề hóa thạch cổ sinh, bồi dưỡng bài học sâu sắc: mở rộng tầm nhìn về lịch sử trái đất hàng triệu năm.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_56_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_56_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_56_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが hóa thạch cổ sinhの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_56_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nmở rộng tầm nhìn về lịch sử trái đất hàng triệu nămという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_56_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_57_nencho_57",
+    "title": "✨ しんごうきのひみつ (Ba Màu Đèn Tín Hiệu Bảo Vệ An Toàn Giao Thông)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề luật lệ xã hội, bồi dưỡng bài học sâu sắc: hình thành ý thức tự giác tuân thủ an toàn giao thông.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_57_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_57_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_57_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが luật lệ xã hộiの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_57_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nhình thành ý thức tự giác tuân thủ an toàn giao thôngという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_57_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_58_nencho_58",
+    "title": "✨ おかねのたび (Đồng Xu Nhỏ Đi Vòng Quanh Đất Nước Giúp Đỡ Mọi Nhà)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề giá trị lao động, bồi dưỡng bài học sâu sắc: hiểu được giá trị của đồng tiền và sức lao động chân chính.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_58_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_58_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_58_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが giá trị lao độngの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_58_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nhiểu được giá trị của đồng tiền và sức lao động chân chínhという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_58_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_59_nencho_59",
+    "title": "✨ ごちそうさまでしたの心 (Lòng Biết Ơn Bát Cơm Dẻo Thơm Từ Người Nông Dân)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề lòng biết ơn ẩm thực, bồi dưỡng bài học sâu sắc: không lãng phí thức ăn và trân quý công sức người gieo trồng.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_59_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_59_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_59_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが lòng biết ơn ẩm thựcの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_59_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nkhông lãng phí thức ăn và trân quý công sức người gieo trồngという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_59_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_60_nencho_60",
+    "title": "✨ たなばたのねがいごと (Điều Ước Dưới Dải Ngân Hà Đêm Thất Tịch)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề ngày hội Tanabata, bồi dưỡng bài học sâu sắc: nuôi dưỡng ước mơ và nỗ lực học tập để thành hiện thực.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_60_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_60_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_60_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが ngày hội Tanabataの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_60_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nnuôi dưỡng ước mơ và nỗ lực học tập để thành hiện thựcという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_60_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_61_nencho_61",
+    "title": "✨ せつぶんのオニと豆 (Lễ Ném Đậu Trừ Tà Đuổi Quỷ Rước Phúc Lộc Đầu Xuân)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề phong tục Setsubun, bồi dưỡng bài học sâu sắc: dũng cảm xua tan tính xấu và đón nhận điều thiện lành.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_61_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_61_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_61_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが phong tục Setsubunの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_61_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ndũng cảm xua tan tính xấu và đón nhận điều thiện lànhという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_61_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_62_nencho_62",
+    "title": "✨ おしょうがつのたこあげ (Thả Diều No Gió Đón Mùa Xuân Mới An Khang)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề Tết Nhật Bản Oshogatsu, bồi dưỡng bài học sâu sắc: gắn kết gia đình ấm cúng trong những ngày đầu năm.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_62_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_62_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_62_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが Tết Nhật Bản Oshogatsuの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_62_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ngắn kết gia đình ấm cúng trong những ngày đầu nămという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_62_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_63_nencho_63",
+    "title": "✨ ひなまつりの十二単 (Búp Bê Hina Kiêu Sa Trong Áo Lễ Mười Hai Lớp)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề lễ hội búp bê Hina, bồi dưỡng bài học sâu sắc: chúc các bé gái luôn khỏe mạnh, duyên dáng và hiền hòa.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_63_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_63_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_63_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが lễ hội búp bê Hinaの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_63_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nchúc các bé gái luôn khỏe mạnh, duyên dáng và hiền hòaという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_63_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_64_nencho_64",
+    "title": "✨ こどものひのこいのぼり (Cờ Cá Chép Vượt Vũ Môn Vươn Mình Trong Gió)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề Tết Thiếu Nhi Tango, bồi dưỡng bài học sâu sắc: rèn luyện ý chí kiên cường vượt qua mọi sóng gió đường đời.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_64_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_64_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_64_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが Tết Thiếu Nhi Tangoの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_64_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nrèn luyện ý chí kiên cường vượt qua mọi sóng gió đường đờiという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_64_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_65_nencho_65",
+    "title": "✨ おつきみのすすきと団子 (Ngắm Trăng Rằm Thu Cùng Nhành Cỏ Lau Và Bánh Dẻo)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề Tết Trung Thu Tsukimi, bồi dưỡng bài học sâu sắc: thưởng ngoạn vẻ đẹp thiên nhiên và cảm tạ mùa màng bội thu.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_65_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_65_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_65_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが Tết Trung Thu Tsukimiの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_65_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nthưởng ngoạn vẻ đẹp thiên nhiên và cảm tạ mùa màng bội thuという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_65_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_66_nencho_66",
+    "title": "✨ まほうのじしょ (Cuốn Từ Điển Kỳ Diệu Mở Ra Kho Tàng Ngôn Ngữ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề kho tàng từ vựng, bồi dưỡng bài học sâu sắc: yêu thích việc đọc sách và trau dồi vốn từ phong phú.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_66_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_66_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_66_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが kho tàng từ vựngの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_66_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nyêu thích việc đọc sách và trau dồi vốn từ phong phúという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_66_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_67_nencho_67",
+    "title": "✨ おじいちゃんのメガネ (Chiếc Kính Lão Kể Về Những Kỷ Niệm Xưa Của Ông)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề tình cảm gia đình, bồi dưỡng bài học sâu sắc: kính yêu kính trọng người cao tuổi và ông bà cha mẹ.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_67_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_67_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_67_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが tình cảm gia đìnhの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_67_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nkính yêu kính trọng người cao tuổi và ông bà cha mẹという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_67_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_68_nencho_68",
+    "title": "✨ おばあちゃんのぬくぬく手編み (Khăn Len Mùa Đông Chứa Đựng Tình Thương Của Bà)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề áo ấm tình thương, bồi dưỡng bài học sâu sắc: cảm nhận hơi ấm gia đình qua từng đường kim mũi chỉ.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_68_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_68_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_68_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが áo ấm tình thươngの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_68_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ncảm nhận hơi ấm gia đình qua từng đường kim mũi chỉという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_68_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_69_nencho_69",
+    "title": "✨ ひとりでおとまりかい (Đêm Đầu Tiên Ngủ Lại Trường Mầm Non Cùng Bạn Bè)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề tự lập đầu đời, bồi dưỡng bài học sâu sắc: rèn luyện tính tự lập và tự tin khi xa vòng tay cha mẹ.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_69_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_69_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_69_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが tự lập đầu đờiの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_69_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nrèn luyện tính tự lập và tự tin khi xa vòng tay cha mẹという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_69_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_70_nencho_70",
+    "title": "✨ しょうがっこうのたいいくかん (Khám Phá Nhà Thể Thao Trường Tiểu Học Rộng Thênh)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề chuẩn bị vào lớp 1, bồi dưỡng bài học sâu sắc: háo hức chờ đón những hoạt động thể thao tiểu học.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_70_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_70_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_70_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが chuẩn bị vào lớp 1の すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_70_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nháo hức chờ đón những hoạt động thể thao tiểu họcという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_70_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_71_nencho_71",
+    "title": "✨ じぶんだけのえのぐばこ (Hộp Màu Vẽ Mười Hai Sắc Tô Đậm Ước Mơ Tuổi Thơ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề sáng tạo hội họa, bồi dưỡng bài học sâu sắc: tự do sáng tạo và thể hiện cảm xúc qua màu sắc.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_71_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_71_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_71_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが sáng tạo hội họaの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_71_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ntự do sáng tạo và thể hiện cảm xúc qua màu sắcという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_71_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_72_nencho_72",
+    "title": "✨ おおきなけやきの木 (Cây Dẻ Gai Cổ Thụ Chứng Kiến Bao Thế Hệ Trưởng Thành)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề cổ thụ trường làng, bồi dưỡng bài học sâu sắc: gắn bó tình cảm sâu đậm với mái trường thân yêu.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_72_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_72_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_72_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが cổ thụ trường làngの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_72_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ngắn bó tình cảm sâu đậm với mái trường thân yêuという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_72_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_73_nencho_73",
+    "title": "✨ ぼくのなまえのひみつ (Ý Nghĩa Tên Gọi Thiêng Liêng Bố Mẹ Gửi Gắm Tình Yêu)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề tên gọi yêu thương, bồi dưỡng bài học sâu sắc: tự hào về bản thân và trân trọng nguồn gốc cái tên mình.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_73_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_73_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_73_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが tên gọi yêu thươngの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_73_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ntự hào về bản thân và trân trọng nguồn gốc cái tên mìnhという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_73_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_74_nencho_74",
+    "title": "✨ もりの診療所 (Bác Sĩ Cú Mèo Tận Tụy Khám Bệnh Cho Muôn Thú)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề lương y nhân từ, bồi dưỡng bài học sâu sắc: biết quan tâm và chăm sóc người khác khi ốm đau.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_74_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_74_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_74_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが lương y nhân từの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_74_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nbiết quan tâm và chăm sóc người khác khi ốm đauという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_74_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_75_nencho_75",
+    "title": "✨ かぜのゆうびんやさん (Chú Chim Nhạn Chở Thư Xuân Gửi Về Mọi Miền)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề bồ câu đưa tin, bồi dưỡng bài học sâu sắc: lan tỏa tin vui và những lời chúc tốt lành tới mọi người.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_75_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_75_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_75_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが bồ câu đưa tinの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_75_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nlan tỏa tin vui và những lời chúc tốt lành tới mọi ngườiという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_75_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_76_nencho_76",
+    "title": "✨ まちのちずをつくろう (Cùng Bạn Vẽ Bản Đồ Thị Trấn Nhỏ Thân Thương)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề địa lý quê hương, bồi dưỡng bài học sâu sắc: yêu mến quê hương và biết quan sát môi trường xung quanh.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_76_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_76_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_76_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが địa lý quê hươngの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_76_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nyêu mến quê hương và biết quan sát môi trường xung quanhという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_76_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_77_nencho_77",
+    "title": "✨ こころのなかのモンスター (Lòng Dũng Cảm Chiến Thắng Nỗi Sợ Hãi Vô Cớ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề vượt qua sợ hãi, bồi dưỡng bài học sâu sắc: chiến thắng sự e dè để khám phá những điều mới lạ.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_77_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_77_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_77_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが vượt qua sợ hãiの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_77_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nchiến thắng sự e dè để khám phá những điều mới lạという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_77_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_78_nencho_78",
+    "title": "✨ なみだのあじ (Giọt Nước Mắt Trưởng Thành Khi Thất Bại Rồi Đứng Lên)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề nghị lực vươn lên, bồi dưỡng bài học sâu sắc: không bỏ cuộc trước khó khăn và giữ vững niềm tin.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_78_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_78_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_78_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが nghị lực vươn lênの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_78_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nkhông bỏ cuộc trước khó khăn và giữ vững niềm tinという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_78_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_79_nencho_79",
+    "title": "✨ ひろいせかいのともだち (Những Người Bạn Năm Châu Chung Tay Nối Vòng Tay Lớn)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề hòa bình quốc tế, bồi dưỡng bài học sâu sắc: mở rộng tầm nhìn đa văn hóa và tôn trọng sự khác biệt.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_79_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_79_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_79_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが hòa bình quốc tếの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_79_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nmở rộng tầm nhìn đa văn hóa và tôn trọng sự khác biệtという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_79_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_80_nencho_80",
+    "title": "✨ まいごのこいぬをたすけよう (Cùng Nhau Tìm Chủ Cho Chú Cún Lạc Đáng Yêu)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề tinh thần trách nhiệm, bồi dưỡng bài học sâu sắc: tinh thần hiệp lực cộng đồng giúp đỡ hoàn cảnh khó khăn.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_80_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_80_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_80_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが tinh thần trách nhiệmの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_80_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ntinh thần hiệp lực cộng đồng giúp đỡ hoàn cảnh khó khănという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_80_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_81_nencho_81",
+    "title": "✨ たいようのエネルギー (Năng Lượng Mặt Trời Thắp Sáng Thế Giới Tương Lai)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề năng lượng xanh, bồi dưỡng bài học sâu sắc: ý thức bảo vệ tài nguyên thiên nhiên và phát triển bền vững.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_81_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_81_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_81_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが năng lượng xanhの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_81_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ný thức bảo vệ tài nguyên thiên nhiên và phát triển bền vữngという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_81_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_82_nencho_82",
+    "title": "✨ ふるさとのおまつり (Tiếng Trống Taiko Rộn Rã Ngày Hội Làng Truyền Thống)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề văn hóa cội nguồn, bồi dưỡng bài học sâu sắc: gìn giữ và tự hào về bản sắc văn hóa dân tộc độc đáo.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_82_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_82_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_82_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが văn hóa cội nguồnの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_82_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ngìn giữ và tự hào về bản sắc văn hóa dân tộc độc đáoという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_82_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_83_nencho_83",
+    "title": "✨ うみのそこにしずむふね (Khám Phá Bí Mật Tàu Cổ Đáy Biển Và Kho Báu Lịch Sử)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề thám hiểm đáy biển, bồi dưỡng bài học sâu sắc: kích thích tinh thần tìm tòi khám phá khảo cổ học.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_83_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_83_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_83_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが thám hiểm đáy biểnの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_83_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nkích thích tinh thần tìm tòi khám phá khảo cổ họcという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_83_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_84_nencho_84",
+    "title": "✨ にじのふもとをさがして (Hành Trình Tìm Điểm Bắt Đầu Của Cầu Vồng Kỳ Diệu)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề hành trình ước mơ, bồi dưỡng bài học sâu sắc: tin tưởng vào những điều kỳ diệu và vẻ đẹp cuộc sống.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_84_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_84_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_84_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが hành trình ước mơの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_84_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ntin tưởng vào những điều kỳ diệu và vẻ đẹp cuộc sốngという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_84_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_85_nencho_85",
+    "title": "✨ きせつをめぐる木 (Bốn Mùa Xuân Hạ Thu Đông Kỳ Ảo Của Cây Cổ Thụ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề bốn mùa biến chuyển, bồi dưỡng bài học sâu sắc: cảm nhận sự tuần hoàn kỳ diệu của thời gian và tạo hóa.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_85_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_85_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_85_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが bốn mùa biến chuyểnの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_85_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ncảm nhận sự tuần hoàn kỳ diệu của thời gian và tạo hóaという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_85_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_86_nencho_86",
+    "title": "✨ あさやけの富士山 (Đỉnh Núi Phú Sĩ Hùng Vĩ Đỏ Rực Dưới Nắng Sớm)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề biểu tượng Phú Sĩ, bồi dưỡng bài học sâu sắc: bồi đắp tình yêu quê hương đất nước qua danh lam thắng cảnh.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_86_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_86_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_86_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが biểu tượng Phú Sĩの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_86_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nbồi đắp tình yêu quê hương đất nước qua danh lam thắng cảnhという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_86_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_87_nencho_87",
+    "title": "✨ おもいやりのはな (Bông Hoa Tương Trợ Nở Rộ Khi Biết Giúp Đỡ Mọi Người)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề tương thân tương ái, bồi dưỡng bài học sâu sắc: sống nhân ái, sẵn sàng sẻ chia giúp đỡ người khó khăn.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_87_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_87_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_87_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが tương thân tương áiの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_87_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nsống nhân ái, sẵn sàng sẻ chia giúp đỡ người khó khănという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_87_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_88_nencho_88",
+    "title": "✨ ぼくのたいせつなともだち (Người Bạn Tri Kỷ Cùng Chia Sẻ Buồn Vui Lớp Học)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề tình bạn tri kỷ, bồi dưỡng bài học sâu sắc: trân trọng người bạn luôn kề vai sát cánh cùng mình.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_88_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_88_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_88_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが tình bạn tri kỷの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_88_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ntrân trọng người bạn luôn kề vai sát cánh cùng mìnhという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_88_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_89_nencho_89",
+    "title": "✨ すいへいせんのむこうがわ (Chân Trời Xa Xôi Nơi Những Giấc Mơ Cất Cánh)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề chân trời tương lai, bồi dưỡng bài học sâu sắc: dám ước mơ lớn và khao khát vươn ra biển rộng.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_89_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_89_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_89_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが chân trời tương laiの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_89_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ndám ước mơ lớn và khao khát vươn ra biển rộngという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_89_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_90_nencho_90",
+    "title": "✨ まほうのメロディー (Giai Điệu Âm Nhạc Gắn Kết Trái Tim Con Người)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề ngôn ngữ âm nhạc, bồi dưỡng bài học sâu sắc: cảm thụ âm nhạc và lan tỏa niềm vui qua tiếng ca.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_90_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_90_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_90_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが ngôn ngữ âm nhạcの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_90_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ncảm thụ âm nhạc và lan tỏa niềm vui qua tiếng caという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_90_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_91_nencho_91",
+    "title": "✨ ほしのふるよる (Đêm Mưa Sao Băng Thắp Sáng Nguyện Ước Đẹp Đẽ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề nguyện ước sao băng, bồi dưỡng bài học sâu sắc: hướng tới tương lai tươi sáng bằng sự nỗ lực mỗi ngày.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_91_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_91_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_91_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが nguyện ước sao băngの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_91_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nhướng tới tương lai tươi sáng bằng sự nỗ lực mỗi ngàyという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_91_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_92_nencho_92",
+    "title": "✨ ゆうきをだして一歩前へ (Can Đảm Bước Lên Phía Trước Nhận Lỗi Và Thay Đổi)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề trung thực dũng cảm, bồi dưỡng bài học sâu sắc: sự thành thật nhận lỗi là đức tính cao đẹp nhất.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_92_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_92_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_92_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが trung thực dũng cảmの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_92_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nsự thành thật nhận lỗi là đức tính cao đẹp nhấtという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_92_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_93_nencho_93",
+    "title": "✨ おもいでのアルバム (Cuốn Kỷ Yếu Lưu Giữ Nụ Cười Tuổi Thơ Mầm Non)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề kỷ niệm tuổi thơ, bồi dưỡng bài học sâu sắc: khắc sâu những ký ức ngọt ngào bên cô giáo và bạn bè.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_93_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_93_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_93_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが kỷ niệm tuổi thơの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_93_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nkhắc sâu những ký ức ngọt ngào bên cô giáo và bạn bèという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_93_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_94_nencho_94",
+    "title": "✨ みらいのじぶんへ (Bức Thư Thời Gian Gửi Bản Thân Mười Năm Sau)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề thư gửi tương lai, bồi dưỡng bài học sâu sắc: định hình ước mơ nghề nghiệp và mục tiêu cuộc đời.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_94_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_94_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_94_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが thư gửi tương laiの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_94_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nđịnh hình ước mơ nghề nghiệp và mục tiêu cuộc đờiという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_94_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_95_nencho_95",
+    "title": "✨ まあるいちきゅうのまんなかで (Đứng Giữa Trái Đất Tròn Trao Gửi Ngàn Yêu Thương)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề công dân toàn cầu, bồi dưỡng bài học sâu sắc: tấm lòng rộng mở chan chứa yêu thương muôn người.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_95_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_95_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_95_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが công dân toàn cầuの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_95_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\ntấm lòng rộng mở chan chứa yêu thương muôn ngườiという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_95_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_96_nencho_96",
+    "title": "✨ ゆきの結晶のふしぎ (Vẻ Đẹp Đối Xứng Hoàn Hảo Của Tinh Thể Bông Tuyết)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề tinh thể tự nhiên, bồi dưỡng bài học sâu sắc: chiêm ngưỡng sự tinh tế kỳ công của thiên nhiên vạn vật.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_96_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_96_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_96_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが tinh thể tự nhiênの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_96_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nchiêm ngưỡng sự tinh tế kỳ công của thiên nhiên vạn vậtという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_96_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_97_nencho_97",
+    "title": "✨ もりのいのちのリレー (Vòng Tuần Hoàn Rừng Già Nuôi Dưỡng Những Chồi Non)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề hệ sinh thái rừng, bồi dưỡng bài học sâu sắc: hiểu về chuỗi thức ăn và sự tuần hoàn bất tận của tự nhiên.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_97_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_97_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_97_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが hệ sinh thái rừngの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_97_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nhiểu về chuỗi thức ăn và sự tuần hoàn bất tận của tự nhiênという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_97_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_98_nencho_98",
+    "title": "✨ ことばのちから (Sức Mạnh Của Những Lời Nói Tử Tế Ấm Áp Lòng Người)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề ngôn từ tích cực, bồi dưỡng bài học sâu sắc: biết dùng lời hay ý đẹp để động viên và yêu thương nhau.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_98_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_98_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_98_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが ngôn từ tích cựcの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_98_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nbiết dùng lời hay ý đẹp để động viên và yêu thương nhauという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_98_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_99_nencho_99",
+    "title": "✨ いっぽ一歩あるいていこう (Từng Bước Chân Vững Vàng Tự Tin Bước Vào Lớp Một)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề hành trang vào lớp 1, bồi dưỡng bài học sâu sắc: vững vàng tâm lý, háo hức đón nhận môi trường học đường mới.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_99_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_99_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_99_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが hành trang vào lớp 1の すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_99_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nvững vàng tâm lý, háo hức đón nhận môi trường học đường mớiという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_99_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
+      }
+    ]
+  },
+  {
+    "id": "ehon_nencho_100_nencho_100",
+    "title": "✨ みらいへのたびだち (Khúc Ca Khởi Hành Hướng Tới Tương Lai Rạng Rỡ)",
+    "level": "N5",
+    "genre": "ehon",
+    "subGenre": "ehon_nencho",
+    "ageGroup": "5-6 tuổi (年長)",
+    "genreLabel": "🎨 Sách Tranh Tiền Tiểu Học (5–6 tuổi)",
+    "author": "Ban Văn Học Thiếu Nhi & Giáo Dục Tiểu Học SLA Nhật Bản",
+    "readingTime": "5 phút",
+    "summary": "Tác phẩm danh tác rèn luyện trí tuệ và nhân cách cho trẻ 5-6 tuổi (tiền tiểu học), tập trung vào chủ đề chuyến đò tri thức, bồi dưỡng bài học sâu sắc: vươn cánh bay cao, tự tin tỏa sáng thành người có ích.",
+    "isPictureBook": true,
+    "isMultiChapter": true,
+    "coverArtwork": "/images/ehon/ehon_nencho_100_cover.svg",
+    "imageUrl": "/images/ehon/ehon_nencho_100_cover.svg",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1場面：出会いと 発見の はじまり (Trang 1: Khởi đầu nhận thức)",
+        "readingTime": "1 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_100_p1.svg",
+        "content": "青い 空が どこまでも 広がる 朝、新しい 冒険の 扉が 開きました。\n「みてごらん、これが chuyến đò tri thứcの すがただよ。」\n目を 輝かせながら、子どもたちは 心の 耳を すませました。\n世界は、まだ 知らない 不思議と 感動で あふれています。"
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2場面：心に ひびく たいせつな 気づき (Trang 2: Chiêm nghiệm và trưởng thành)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_100_p2.svg",
+        "content": "困難に 出会ったとき、仲間と 肩を ならべました。\n「あきらめないで、いっしょに 考えよう！」\nvươn cánh bay cao, tự tin tỏa sáng thành người có íchという 教えが、胸の おくに あたたかく 灯りました。\n一歩 踏み出す 勇気が、新しい 力へと かわっていきます。"
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3場面：未来へと つづく 希望の ひかり (Trang 3: Vươn tới tương lai ngập tràn niềm tin)",
+        "readingTime": "2 phút",
+        "imageUrl": "/images/ehon/ehon_nencho_100_p3.svg",
+        "content": "夕やけが 空を あざやかに そめ、星たちが またたきはじめました。\n手と 手を つなぎ、笑顔で 見上げる 夜空。\n「わたしたちの 未来は、きっと 輝いているね！」\n大きな 夢を むねに だき、明日へと 力強く 歩きはじめました。"
       }
     ]
   }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5ebe0" />
+      <stop offset="100%" stop-color="#e3d5ca" />
+    </linearGradient>
+    <filter id="artTexture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.06 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </defs>
+
+  <!-- Nền mỹ thuật theo phong cách: 🏮 Tranh Khắc Gỗ Nhật Bản (Hanga) -->
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+
+  <!-- Yếu tố Minh Họa Trung Tâm -->
+  
+        <g transform="translate(400, 320)">
+          <path d="M-35,180 L-15,-20 L15,-20 L35,180 Z" fill="#7f4f24"/>
+          <ellipse cx="0" cy="-70" rx="120" ry="140" fill="#2d6a4f" opacity="0.95"/>
+          <ellipse cx="-50" cy="-50" rx="90" ry="110" fill="#40916c" opacity="0.9"/>
+          <ellipse cx="55" cy="-40" rx="85" ry="100" fill="#52b788" opacity="0.85"/>
+          <circle cx="0" cy="-130" r="70" fill="#74c69d" opacity="0.8"/>
+          <!-- Hoa và quả chín nở trên tán cây -->
+          <circle cx="-60" cy="-80" r="14" fill="#ff4d6d"/>
+          <circle cx="40" cy="-90" r="16" fill="#ffb703"/>
+          <circle cx="10" cy="-30" r="15" fill="#ff758f"/>
+          <!-- Mặt trời / Cầu vồng rực rỡ -->
+          <g transform="translate(240, -160)">
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(0)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(45)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(90)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(135)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(180)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(225)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(270)" fill="#e85d04" opacity="0.9"/>
+            
+              <polygon points="0,0 -12,-65 12,-65" transform="rotate(315)" fill="#e85d04" opacity="0.9"/>
+            
+            <circle cx="0" cy="0" r="42" fill="#ffb703"/>
+            <circle cx="0" cy="0" r="32" fill="#fb8500"/>
+          </g>
+          <!-- Đồi cỏ uốn lượn -->
+          <path d="M-400,160 Q-200,90 0,130 T400,100 L400,280 L-400,280 Z" fill="#52b788"/>
+          <path d="M-400,190 Q-150,140 100,170 T400,150 L400,280 L-400,280 Z" fill="#40916c"/>
+        </g>
+      
+
+  <!-- Lớp phủ chất cảm chất liệu mỹ thuật thủ công -->
+  <rect width="800" height="600" fill="#ffffff" opacity="0.08" filter="url(#artTexture)" pointer-events="none" />
+
+  <!-- Triện đỏ nghệ nhân nếu là tranh truyền thống -->
+  
+    <g transform="translate(710, 60)">
+      <rect x="-18" y="-18" width="36" height="36" rx="6" fill="#ba181b" stroke="#780000" stroke-width="2"/>
+      <text x="0" y="7" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="'Zen Maru Gothic', 'Hiragino Sans', serif">印</text>
+    </g>
+  
+
+  <!-- Khung viền tranh Ehon tiêu chuẩn -->
+  <rect x="16" y="16" width="768" height="568" rx="20" fill="none" stroke="#cbd5e1" stroke-width="4" opacity="0.8" />
+
+  <!-- Nhãn phong cách nghệ thuật góc trên bên trái -->
+  <g transform="translate(36, 44)">
+    <rect x="0" y="-16" width="230" height="28" rx="14" fill="rgba(255, 255, 255, 0.9)" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="12" y="3" font-size="12" font-weight="bold" fill="#64748b" font-family="'Zen Maru Gothic', sans-serif">
+      🏮 Tranh Khắc Gỗ Nhật Bản (Hanga)
+    </text>
+  </g>
+
+  <!-- Bảng Thông Tin Tác Phẩm & Phân Cảnh Trang Nhã Ở Đáy Tranh -->
+  <g transform="translate(400, 545)">
+    <rect x="-330" y="-22" width="660" height="44" rx="22" fill="rgba(255, 255, 255, 0.94)" stroke="#cbd5e1" stroke-width="2" />
+    <text x="0" y="4" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="'Zen Maru Gothic', 'Hiragino Sans', 'Meiryo', sans-serif">
+      山彦のこたえ (Thần Núi Tiếng Vang Yamabiko Dạy Bé Nói Lời Tử Tế) — 平穏と 感謝の 祈り (Trang 3: Bình yên trở lại và khúc ca thái bình)
+    </text>
+  </g>
+</svg>

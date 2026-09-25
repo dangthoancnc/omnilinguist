@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5ebe0" />
+      <stop offset="100%" stop-color="#e3d5ca" />
+    </linearGradient>
+    <filter id="artTexture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.06 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </defs>
+
+  <!-- Nền mỹ thuật theo phong cách: 🏮 Tranh Khắc Gỗ Nhật Bản (Hanga) -->
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+
+  <!-- Yếu tố Minh Họa Trung Tâm -->
+  
+        <!-- Thỏ Trắng Tai Dài Tung Tăng -->
+        <g transform="translate(400, 330)">
+          <!-- Đôi tai dài hồng hào vểnh cao -->
+          <ellipse cx="-40" cy="-120" rx="22" ry="75" fill="#ffffff" stroke="#ced4da" stroke-width="4" transform="rotate(-8 -40 -120)"/>
+          <ellipse cx="-40" cy="-120" rx="12" ry="55" fill="#ffb4a2" transform="rotate(-8 -40 -120)"/>
+          <ellipse cx="40" cy="-120" rx="22" ry="75" fill="#ffffff" stroke="#ced4da" stroke-width="4" transform="rotate(8 40 -120)"/>
+          <ellipse cx="40" cy="-120" rx="12" ry="55" fill="#ffb4a2" transform="rotate(8 40 -120)"/>
+          <!-- Khuôn mặt thỏ trắng bầu bĩnh -->
+          <ellipse cx="0" cy="10" rx="90" ry="80" fill="#ffffff" stroke="#ced4da" stroke-width="5"/>
+          <!-- Mắt thỏ hạt đậu đen láy -->
+          <ellipse cx="-32" cy="0" rx="10" ry="14" fill="#212529"/>
+          <circle cx="-29" cy="-4" r="4" fill="#ffffff"/>
+          <ellipse cx="32" cy="0" rx="10" ry="14" fill="#212529"/>
+          <circle cx="35" cy="-4" r="4" fill="#ffffff"/>
+          <!-- Mũi hồng hình tam giác nhỏ & Râu thỏ -->
+          <polygon points="-6,22 6,22 0,30" fill="#ff758f"/>
+          <path d="M-40,25 L-70,20 M-40,32 L-75,35 M40,25 L70,20 M40,32 L75,35" stroke="#6c757d" stroke-width="3" stroke-linecap="round"/>
+          <!-- Củ cà rốt cam kẹp bên người -->
+          <g transform="translate(85, 30) rotate(25)">
+            <polygon points="-20,-10 20,-10 0,65" fill="#fb5607" stroke="#e85d04" stroke-width="3"/>
+            <path d="M-8,-10 Q-15,-35 0,-40 Q15,-35 8,-10" fill="#52b788"/>
+          </g>
+        </g>
+      
+
+  <!-- Lớp phủ chất cảm chất liệu mỹ thuật thủ công -->
+  <rect width="800" height="600" fill="#ffffff" opacity="0.08" filter="url(#artTexture)" pointer-events="none" />
+
+  <!-- Triện đỏ nghệ nhân nếu là tranh truyền thống -->
+  
+    <g transform="translate(710, 60)">
+      <rect x="-18" y="-18" width="36" height="36" rx="6" fill="#ba181b" stroke="#780000" stroke-width="2"/>
+      <text x="0" y="7" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="'Zen Maru Gothic', 'Hiragino Sans', serif">印</text>
+    </g>
+  
+
+  <!-- Khung viền tranh Ehon tiêu chuẩn -->
+  <rect x="16" y="16" width="768" height="568" rx="20" fill="none" stroke="#cbd5e1" stroke-width="4" opacity="0.8" />
+
+  <!-- Nhãn phong cách nghệ thuật góc trên bên trái -->
+  <g transform="translate(36, 44)">
+    <rect x="0" y="-16" width="230" height="28" rx="14" fill="rgba(255, 255, 255, 0.9)" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="12" y="3" font-size="12" font-weight="bold" fill="#64748b" font-family="'Zen Maru Gothic', sans-serif">
+      🏮 Tranh Khắc Gỗ Nhật Bản (Hanga)
+    </text>
+  </g>
+
+  <!-- Bảng Thông Tin Tác Phẩm & Phân Cảnh Trang Nhã Ở Đáy Tranh -->
+  <g transform="translate(400, 545)">
+    <rect x="-330" y="-22" width="660" height="44" rx="22" fill="rgba(255, 255, 255, 0.94)" stroke="#cbd5e1" stroke-width="2" />
+    <text x="0" y="4" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="'Zen Maru Gothic', 'Hiragino Sans', 'Meiryo', sans-serif">
+      おちばのプール (Nhảy Ùm Vào Bể Lá Vàng Mùa Thu Thơm Mát) — みんなで ちからを あわせて (Trang 2: Cùng nhau sẻ chia và vượt thử thách)
+    </text>
+  </g>
+</svg>
