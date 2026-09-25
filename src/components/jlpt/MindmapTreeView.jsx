@@ -95,6 +95,7 @@ export default function MindmapTreeView({
   const handleZoomOut = () => setZoom(z => Math.max(z - 0.15, 0.5));
   const handleResetZoom = () => setZoom(1);
 
+  const currentLessonInModal = selectedModalLesson || lesson;
   const currentLevel = selectedLevel || currentLessonInModal?.level || level;
   const accentColor = JLPT_LEVEL_COLORS[currentLevel] || '#3b82f6';
 
@@ -106,8 +107,6 @@ export default function MindmapTreeView({
       setSelectedModalLesson(targetLessons[0]);
     }
   };
-
-  const currentLessonInModal = selectedModalLesson || lesson;
 
   const levelLessons = useMemo(() => {
     const pool = (allLessons && allLessons.length > 0) ? allLessons : lessons;
