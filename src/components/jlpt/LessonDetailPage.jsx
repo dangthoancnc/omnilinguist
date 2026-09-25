@@ -310,12 +310,14 @@ export default function LessonDetailPage({
             </div>
           )}
 
-          {/* Standalone Mindmap Modal (1-Click Popup) */}
+          {/* Standalone Mindmap Modal (1-Click Popup with Dual View: Lesson & Level Tree) */}
           <MindmapTreeView
             lesson={lesson}
+            allLessons={allLessons}
             mode="modal"
             isOpen={showMindmapModal}
             onClose={() => setShowMindmapModal(false)}
+            onNavigateLesson={onNavigateLesson}
             onSelectGrammarPoint={scrollToPoint}
           />
 
