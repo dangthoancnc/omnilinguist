@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import CompactToolbar from './CompactToolbar';
 import GrammarPointView from './GrammarPointView';
+import FuriganaText from '../FuriganaText';
 import { speakJapanese } from './speechHelper';
 import { getLevelBadgeStyle } from '../../theme';
 
@@ -109,9 +110,9 @@ export default function ShinkanzenCombatView({
             ========================================================================= */}
         {activeSkill === 'grammar' && (
           <div style={{ display: 'flex', height: '100%', minHeight: 'calc(100vh - 104px)' }}>
-            {/* Left Sidebar: Chapter List (280px) */}
+            {/* Left Sidebar: Chapter List (260px) */}
             <aside style={{ 
-              width: '280px', 
+              width: '260px', 
               borderRight: '1px solid var(--border-default)', 
               background: 'var(--bg-surface)', 
               overflowY: 'auto',
@@ -199,7 +200,7 @@ export default function ShinkanzenCombatView({
           <div style={{ display: 'flex', height: '100%', minHeight: 'calc(100vh - 104px)' }}>
             {/* Left Sidebar: 5 Dokkai Units */}
             <aside style={{ 
-              width: '280px', 
+              width: '260px', 
               borderRight: '1px solid var(--border-default)', 
               background: 'var(--bg-surface)', 
               overflowY: 'auto',
@@ -290,7 +291,7 @@ export default function ShinkanzenCombatView({
                       </button>
                     </div>
                     <div className="jlpt-dokkai-passage-body">
-                      {currentReading.passage}
+                      <FuriganaText text={currentReading.passage} />
                     </div>
                   </div>
 
@@ -298,7 +299,7 @@ export default function ShinkanzenCombatView({
                   <div className="jlpt-dokkai-question-card">
                     <div className="jlpt-dokkai-question-title">
                       <HelpCircle size={15} style={{ color: 'var(--accent-primary, #3b82f6)' }} />
-                      <span>{currentReading.question}</span>
+                      <span><FuriganaText text={currentReading.question} /></span>
                     </div>
 
                     <div className="jlpt-dokkai-options-list">
@@ -324,7 +325,7 @@ export default function ShinkanzenCombatView({
                             }}
                           >
                             <span className="jlpt-dokkai-option-num">{oIdx + 1}</span>
-                            <span className="jlpt-dokkai-option-text">{opt}</span>
+                            <span className="jlpt-dokkai-option-text"><FuriganaText text={opt} /></span>
                             {userAns !== undefined && isCorrect && (
                               <CheckCircle2 size={16} className="jlpt-dokkai-option-icon jlpt-dokkai-option-icon--correct" />
                             )}
@@ -358,7 +359,7 @@ export default function ShinkanzenCombatView({
                           <span>Phân tích đáp án & Bẻ cạm bẫy câu hỏi</span>
                         </div>
                         <div style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-primary)' }}>
-                          {currentReading.explanation}
+                          <FuriganaText text={currentReading.explanation} />
                         </div>
                       </div>
                     )}
@@ -380,7 +381,7 @@ export default function ShinkanzenCombatView({
           <div style={{ display: 'flex', height: '100%', minHeight: 'calc(100vh - 104px)' }}>
             {/* Left Sidebar: 5 Choukai Mondai */}
             <aside style={{ 
-              width: '280px', 
+              width: '260px', 
               borderRight: '1px solid var(--border-default)', 
               background: 'var(--bg-surface)', 
               overflowY: 'auto',
@@ -489,8 +490,8 @@ export default function ShinkanzenCombatView({
                         <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-tertiary)', marginBottom: '8px' }}>
                           Kịch bản lời thoại (Transcript)
                         </div>
-                        <div style={{ fontSize: '14px', lineHeight: 1.8, color: 'var(--text-primary)', whiteSpace: 'pre-line', fontFamily: "'Noto Sans JP', sans-serif" }}>
-                          {currentListening.dialogue}
+                        <div style={{ fontSize: '14px', lineHeight: 2.0, color: 'var(--text-primary)', whiteSpace: 'pre-line', fontFamily: "'Noto Sans JP', sans-serif" }}>
+                          <FuriganaText text={currentListening.dialogue} />
                         </div>
                       </div>
                     )}
@@ -500,7 +501,7 @@ export default function ShinkanzenCombatView({
                   <div className="jlpt-dokkai-question-card">
                     <div className="jlpt-dokkai-question-title">
                       <HelpCircle size={15} style={{ color: 'var(--tint-violet-text, #6d28d9)' }} />
-                      <span>{currentListening.question}</span>
+                      <span><FuriganaText text={currentListening.question} /></span>
                     </div>
 
                     <div className="jlpt-dokkai-options-list">
@@ -525,7 +526,7 @@ export default function ShinkanzenCombatView({
                             }}
                           >
                             <span className="jlpt-dokkai-option-num">{oIdx + 1}</span>
-                            <span className="jlpt-dokkai-option-text">{opt}</span>
+                            <span className="jlpt-dokkai-option-text"><FuriganaText text={opt} /></span>
                             {userAns !== undefined && isCorrect && (
                               <CheckCircle2 size={16} className="jlpt-dokkai-option-icon jlpt-dokkai-option-icon--correct" />
                             )}
@@ -545,7 +546,7 @@ export default function ShinkanzenCombatView({
                           <span>Phân tích then chốt câu trả lời & Điểm lừa người nghe</span>
                         </div>
                         <div style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-primary)' }}>
-                          {currentListening.explanation}
+                          <FuriganaText text={currentListening.explanation} />
                         </div>
                       </div>
                     )}
@@ -621,10 +622,10 @@ export default function ShinkanzenCombatView({
                           {currentStage.trapsMatrix.map((item, tIdx) => (
                             <tr key={tIdx}>
                               <td className="jlpt-traps-td-pair">
-                                {item.pair}
+                                <FuriganaText text={item.pair} />
                               </td>
                               <td className="jlpt-traps-td-rule">
-                                {item.rule}
+                                <FuriganaText text={item.rule} />
                               </td>
                             </tr>
                           ))}
@@ -653,7 +654,7 @@ export default function ShinkanzenCombatView({
                             <div className="jlpt-milestone-quiz-q">
                               <span className="jlpt-milestone-quiz-badge">Câu {qIdx + 1}</span>
                               <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)' }}>
-                                {quiz.q}
+                                <FuriganaText text={quiz.q} />
                               </span>
                             </div>
 
@@ -678,7 +679,7 @@ export default function ShinkanzenCombatView({
                                     }}
                                   >
                                     <span style={{ fontWeight: 700 }}>{optIdx + 1}.</span>
-                                    <span>{opt}</span>
+                                    <span><FuriganaText text={opt} /></span>
                                   </button>
                                 );
                               })}
@@ -690,7 +691,7 @@ export default function ShinkanzenCombatView({
                                   {chosen === quiz.correct ? '✓ Chính xác!' : '✕ Chưa chính xác!'}
                                 </span>
                                 <span style={{ marginLeft: '8px', color: 'var(--text-secondary)' }}>
-                                  {quiz.explain}
+                                  <FuriganaText text={quiz.explain} />
                                 </span>
                               </div>
                             )}

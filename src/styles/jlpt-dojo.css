@@ -317,8 +317,198 @@
 }
 
 /* ==========================================================================
-   4. LESSON DETAIL PAGE (Textbook Single-Chapter Format)
+   4. LESSON DETAIL PAGE (2-Column Standard Textbook Layout)
    ========================================================================== */
+.jlpt-lesson-layout {
+  display: flex;
+  height: calc(100vh - 48px);
+  min-height: calc(100vh - 48px);
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.jlpt-lesson-sidebar {
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border-default);
+  background: var(--bg-surface);
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.jlpt-sidebar-overview-card {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm, 8px);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.jlpt-sidebar-overview-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gradient, linear-gradient(90deg, #3b82f6, #8b5cf6));
+}
+
+.jlpt-sidebar-section {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm, 8px);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.jlpt-sidebar-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.jlpt-sidebar-toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.jlpt-sidebar-toc-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  padding: 6px 8px;
+  border-radius: var(--radius-xs, 4px);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 12px;
+}
+
+.jlpt-sidebar-toc-item:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-default);
+}
+
+.jlpt-sidebar-toc-item--active {
+  background: var(--tint-sky-bg, #f0f9ff);
+  color: var(--tint-sky-text, #0284c7);
+  border-color: var(--tint-sky-border, #bae6fd);
+  font-weight: 600;
+}
+
+.jlpt-sidebar-toc-num {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.jlpt-sidebar-toc-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.4;
+}
+
+.jlpt-sidebar-vocab-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.jlpt-sidebar-vocab-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xs, 4px);
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.jlpt-sidebar-vocab-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.jlpt-sidebar-vocab-vi {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+.jlpt-lesson-main {
+  flex: 1;
+  padding: 16px 24px 32px;
+  overflow-y: auto;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.jlpt-lesson-summary-card {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md, 12px);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 840px) {
+  .jlpt-lesson-layout {
+    flex-direction: column;
+    overflow-y: auto;
+    height: auto;
+  }
+  .jlpt-lesson-sidebar {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-default);
+    max-height: 400px;
+  }
+}
+
 .jlpt-lesson-page {
   max-width: 920px;
   margin: 0 auto;
@@ -479,7 +669,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 18px;
+  padding: 12px 16px;
   background: var(--bg-surface-2);
   border-bottom: 1px solid var(--border-default);
   cursor: pointer;
@@ -512,13 +702,21 @@
   font-weight: 800;
   color: var(--text-primary);
   font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.8;
+}
+
+.jlpt-grammar-pattern ruby rt,
+.jlpt-formula-box ruby rt {
+  font-size: 0.6em;
+  color: var(--text-tertiary);
+  font-weight: 500;
 }
 
 .jlpt-grammar-body {
-  padding: var(--space-5, 20px);
+  padding: 14px 18px;
   display: flex;
   flex-direction: column;
-  gap: var(--space-4, 16px);
+  gap: 12px;
 }
 
 /* Section Block */
@@ -551,7 +749,7 @@
   font-size: 13px;
   font-weight: 600;
   color: var(--text-primary);
-  line-height: 1.5;
+  line-height: 2.0;
   white-space: pre-wrap;
   word-break: break-word;
 }

@@ -51,7 +51,7 @@ export default function GrammarPointView({
             {index + 1}
           </span>
           <span className="jlpt-grammar-pattern">
-            {point.pattern}
+            <FuriganaText text={point.pattern} />
           </span>
           {level && (
             <span style={{ ...badgeStyle, fontSize: '10px', padding: '1px 6px' }}>
@@ -79,7 +79,7 @@ export default function GrammarPointView({
                 <span>Cấu trúc / Công thức kết hợp</span>
               </div>
               <div className="jlpt-formula-box">
-                {point.formula}
+                <FuriganaText text={point.formula} />
               </div>
             </div>
           )}
@@ -92,13 +92,13 @@ export default function GrammarPointView({
                 <span>Ý nghĩa & Sắc thái sử dụng</span>
               </div>
               {point.meaning && (
-                <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.5 }}>
-                  {point.meaning}
+                <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.6 }}>
+                  <FuriganaText text={point.meaning} />
                 </div>
               )}
               {point.nuance && (
-                <div style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.5, marginTop: '4px' }}>
-                  {point.nuance}
+                <div style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6, marginTop: '4px' }}>
+                  <FuriganaText text={point.nuance} />
                 </div>
               )}
             </div>
@@ -121,7 +121,7 @@ export default function GrammarPointView({
                     title="Bấm để nghe phát âm"
                   >
                     <Volume2 size={12} />
-                    <span>{col}</span>
+                    <span><FuriganaText text={col} /></span>
                   </button>
                 ))}
               </div>
@@ -135,7 +135,7 @@ export default function GrammarPointView({
                 <ShieldAlert size={14} />
                 <span>Bẻ khóa cạm bẫy đề thi JLPT</span>
               </div>
-              <div>{point.trapBuster}</div>
+              <div style={{ lineHeight: 1.6 }}><FuriganaText text={point.trapBuster} /></div>
             </div>
           )}
 
@@ -150,10 +150,10 @@ export default function GrammarPointView({
                 {point.similarGrammar.map((sim, sIdx) => (
                   <div key={sIdx} className="jlpt-similar-card">
                     <span className="jlpt-similar-pattern">
-                      {sim.pattern || sim.target}
+                      <FuriganaText text={sim.pattern || sim.target} />
                     </span>
                     <span className="jlpt-similar-contrast">
-                      {sim.contrast || sim.diff}
+                      <FuriganaText text={sim.contrast || sim.diff} />
                     </span>
                   </div>
                 ))}
@@ -161,7 +161,7 @@ export default function GrammarPointView({
             </div>
           )}
 
-          {/* 4. Mnemonic / Metaphor (Mẹo ghi nhớ 3 giây) */}
+          {/* 6. Mnemonic / Metaphor (Mẹo ghi nhớ 3 giây) */}
           {(point.mnemonic || point.metaphor) && (
             <div className="jlpt-mnemonic-box">
               <div style={{ fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
@@ -170,11 +170,11 @@ export default function GrammarPointView({
               </div>
               {point.metaphor && (
                 <div style={{ fontStyle: 'italic', marginBottom: '4px' }}>
-                  💡 Ẩn dụ: {point.metaphor}
+                  💡 Ẩn dụ: <FuriganaText text={point.metaphor} />
                 </div>
               )}
               {point.mnemonic && (
-                <div>🧠 {point.mnemonic}</div>
+                <div>🧠 <FuriganaText text={point.mnemonic} /></div>
               )}
             </div>
           )}

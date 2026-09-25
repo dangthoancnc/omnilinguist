@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { ZoomIn, ZoomOut, RotateCcw, ChevronDown, ChevronRight, ArrowRight } from 'lucide-react';
+import FuriganaText from '../FuriganaText';
 import { JLPT_LEVEL_COLORS, getLevelBadgeStyle } from '../../theme';
 
 /**
@@ -66,7 +67,7 @@ export default function MindmapTreeView({
             <div className="jlpt-tree-root-badge" style={getLevelBadgeStyle(lesson.level)}>
               {lesson.level} • 第{lesson.lessonNumber}課
             </div>
-            <div className="jlpt-tree-root-title">{lesson.jpTitle}</div>
+            <div className="jlpt-tree-root-title"><FuriganaText text={lesson.jpTitle} /></div>
             <div className="jlpt-tree-root-sub">{lesson.pillar || lesson.viTitle}</div>
           </div>
 
@@ -98,22 +99,22 @@ export default function MindmapTreeView({
                       >
                         <div className="jlpt-tree-branch-header">
                           <span className="jlpt-tree-branch-dot" style={{ background: branchColor }} />
-                          <span className="jlpt-tree-branch-name">{b.name}</span>
+                          <span className="jlpt-tree-branch-name"><FuriganaText text={b.name} /></span>
                           {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
                         </div>
 
                         {isExpanded && (
                           <div className="jlpt-tree-branch-details">
                             {b.formula && (
-                              <div className="jlpt-tree-branch-formula">{b.formula}</div>
+                              <div className="jlpt-tree-branch-formula"><FuriganaText text={b.formula} /></div>
                             )}
                             {b.nuance && (
-                              <div className="jlpt-tree-branch-nuance">{b.nuance}</div>
+                              <div className="jlpt-tree-branch-nuance"><FuriganaText text={b.nuance} /></div>
                             )}
                             {b.example && (
                               <div className="jlpt-tree-branch-example">
                                 <div style={{ fontFamily: "'Noto Sans JP', sans-serif", fontSize: '13px', fontWeight: 600 }}>
-                                  {b.example.jp}
+                                  <FuriganaText text={b.example.jp} />
                                 </div>
                                 <div style={{ fontSize: '11px', color: 'var(--text-tertiary)' }}>
                                   {b.example.vi}
@@ -204,7 +205,7 @@ export default function MindmapTreeView({
                         lineHeight: 1.3, marginBottom: '2px',
                         display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden',
                       }}>
-                        {les.jpTitle}
+                        <FuriganaText text={les.jpTitle} />
                       </div>
                       <div style={{
                         fontSize: '11px', color: 'var(--text-secondary)',

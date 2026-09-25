@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle, XCircle, HelpCircle } from 'lucide-react';
+import FuriganaText from '../FuriganaText';
 
 /**
  * ReflexDrill — Interactive Multiple-Choice Drill Component
@@ -40,7 +41,7 @@ export default function ReflexDrill({
       </div>
 
       <div className="jlpt-drill-prompt">
-        {drill.q}
+        <FuriganaText text={drill.q} />
       </div>
 
       <div className="jlpt-drill-options">
@@ -77,7 +78,7 @@ export default function ReflexDrill({
               }}>
                 {optIdx + 1}
               </span>
-              <span style={{ flex: 1 }}>{opt}</span>
+              <span style={{ flex: 1 }}><FuriganaText text={opt} /></span>
             </button>
           );
         })}
@@ -86,7 +87,7 @@ export default function ReflexDrill({
       {isAnswered && drill.explain && (
         <div className="jlpt-drill-explain">
           <strong style={{ color: 'var(--text-primary)' }}>Giải thích sư phạm: </strong>
-          {drill.explain}
+          <FuriganaText text={drill.explain} />
         </div>
       )}
     </div>
