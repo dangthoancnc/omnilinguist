@@ -83,6 +83,10 @@ export default function MindmapTreeView({
   const [lessonDetailMode, setLessonDetailMode] = useState('rich'); // 'compact' | 'rich'
   const [collapsedTrunks, setCollapsedTrunks] = useState({});
 
+  const currentLessonInModal = selectedModalLesson || lesson;
+  const currentLevel = selectedLevel || currentLessonInModal?.level || level;
+  const accentColor = JLPT_LEVEL_COLORS[currentLevel] || '#3b82f6';
+
   const toggleTrunkCollapse = (trunkId) => {
     setCollapsedTrunks(prev => ({
       ...prev,
@@ -169,10 +173,6 @@ export default function MindmapTreeView({
   const handleZoomIn = () => setZoom(z => Math.min(z + 0.15, 1.5));
   const handleZoomOut = () => setZoom(z => Math.max(z - 0.15, 0.5));
   const handleResetZoom = () => setZoom(1);
-
-  const currentLessonInModal = selectedModalLesson || lesson;
-  const currentLevel = selectedLevel || currentLessonInModal?.level || level;
-  const accentColor = JLPT_LEVEL_COLORS[currentLevel] || '#3b82f6';
 
   const handleSwitchLevel = (lvl) => {
     savedScrollPosRef.current = null;
