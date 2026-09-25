@@ -1,0 +1,2743 @@
+[
+  {
+    "lessonNumber": 51,
+    "title": "第51課：時間に 追われる 現代人 (Thời gian & Tranh thủ cơ hội)",
+    "jpTitle": "時間に 追われる 現代人",
+    "viTitle": "Thời gian & Tranh thủ cơ hội",
+    "level": "N3",
+    "pillar": "Thời gian & Đồng thời",
+    "summary": "Toàn diện Bài 51 Bản Lề Trung Cấp N3: Thời gian & Tranh thủ cơ hội. Trụ cột: Thời gian & Đồng thời.",
+    "mindmap": {
+      "center": "Bài 51: Thời gian & Tranh thủ cơ hội",
+      "tip": "Chú ý phân biệt うちに (tranh thủ trước khi biến đổi) và あいだに (hành động ngắn chen ngang).",
+      "branches": [
+        {
+          "name": "～うちに",
+          "color": "#38bdf8",
+          "formula": "V-る / V-ている / V-ない / A-い / A-な / N-の + うちに",
+          "nuance": "Vế sau có sắc thái tranh thủ trước khi tình trạng thuận lợi mất đi, hoặc biến đổi tự nhiên không chủ đích.",
+          "mnemonic": "うちに = Trong nhà ấm thì tranh thủ thưởng thức ngay kẻo nguội!",
+          "example": {
+            "jp": "温かいうちに、どうぞ召し上がってください。",
+            "vi": "Mời bác dùng ngay trong lúc bánh/súp còn đang ấm nóng."
+          }
+        },
+        {
+          "name": "～あいだ / ～あいだに",
+          "color": "#10b981",
+          "formula": "V-る / V-ている / V-ない / N-の + あいだ (に)",
+          "nuance": "あいだ đi với trạng thái diễn ra liên tục. あいだに đi với hành động xảy ra tại một thời điểm nào đó.",
+          "mnemonic": "あいだ = Suốt đường dài; あいだに = Điểm rơi chớp nhoáng.",
+          "example": {
+            "jp": "留守のあいだに、泥棒が入った。",
+            "vi": "Trong lúc tôi vắng nhà, trộm đã lẻn vào."
+          }
+        },
+        {
+          "name": "～最中に",
+          "color": "#f59e0b",
+          "formula": "V-ている / N-の + 最中に (さいちゅうに)",
+          "nuance": "Thường mang lại cảm giác bị làm phiền, ngắt quãng ngoài ý muốn.",
+          "mnemonic": "最中 = Đang giữa tâm bão thì tai nạn ập tới!",
+          "example": {
+            "jp": "食事の最中に、地震が起きた。",
+            "vi": "Đúng lúc đang dùng bữa thì động đất xảy ra."
+          }
+        },
+        {
+          "name": "～たびに",
+          "color": "#8b5cf6",
+          "formula": "V-る / N-の + たびに",
+          "nuance": "Diễn tả tính quy luật lặp đi lặp lại: Hễ xảy ra A là chắc chắn dẫn tới cảm xúc hoặc trạng thái B.",
+          "mnemonic": "たびに = Mỗi chuyến đi lại mang về một kỷ niệm.",
+          "example": {
+            "jp": "この曲を聴くたびに、学生時代を思い出す。",
+            "vi": "Cứ mỗi lần nghe bản nhạc này, tôi lại nhớ về thời học sinh."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_51_1",
+        "pattern": "～うちに",
+        "formula": "V-る / V-ている / V-ない / A-い / A-な / N-の + うちに",
+        "meaning": "1. Trong lúc còn tranh thủ; 2. Trong lúc đang... thì sự việc ngoài dự kiến xảy ra",
+        "nuance": "Vế sau có sắc thái tranh thủ trước khi tình trạng thuận lợi mất đi, hoặc biến đổi tự nhiên không chủ đích.",
+        "trapBuster": "Nếu vế sau là hành động cố định theo giờ -> Dùng あいだに. Nếu vế sau mang ý tranh thủ trước khi muộn (trước khi nguội, trước khi tối) -> Dùng うちに!",
+        "mnemonic": "うちに = Trong nhà ấm thì tranh thủ thưởng thức ngay kẻo nguội!",
+        "examples": [
+          {
+            "jp": "温かいうちに、どうぞ召し上がってください。",
+            "vi": "Mời bác dùng ngay trong lúc bánh/súp còn đang ấm nóng."
+          },
+          {
+            "jp": "若いうちに、色々な経験をしておきたい。",
+            "vi": "Trong lúc còn trẻ, tôi muốn trải nghiệm thật nhiều điều."
+          }
+        ],
+        "drills": [
+          {
+            "q": "スープが 冷めない（　）、早く 飲んで ください。",
+            "options": [
+              "うちに",
+              "あいだに",
+              "さいちゅうに",
+              "たびに"
+            ],
+            "correct": 0,
+            "explain": "Tranh thủ lúc súp chưa nguội -> Chọn うちに."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_51_2",
+        "pattern": "～あいだ / ～あいだに",
+        "formula": "V-る / V-ている / V-ない / N-の + あいだ (に)",
+        "meaning": "あいだ: Suốt trong khoảng thời gian... (kéo dài); あいだに: Trong khi... thì một hành động ngắn xảy ra",
+        "nuance": "あいだ đi với trạng thái diễn ra liên tục. あいだに đi với hành động xảy ra tại một thời điểm nào đó.",
+        "trapBuster": "Động từ vế sau: Kéo dài liên tục (ngủ suốt, đọc sách suốt) -> あいだ. Khoảnh khắc (kẻ trộm vào, thức dậy) -> あいだに.",
+        "mnemonic": "あいだ = Suốt đường dài; あいだに = Điểm rơi chớp nhoáng.",
+        "examples": [
+          {
+            "jp": "留守のあいだに、泥棒が入った。",
+            "vi": "Trong lúc tôi vắng nhà, trộm đã lẻn vào."
+          },
+          {
+            "jp": "夏休みのあいだ、ずっと日本にいました。",
+            "vi": "Suốt kỳ nghỉ hè, tôi ở Nhật liên tục."
+          }
+        ],
+        "drills": [
+          {
+            "q": "母が 昼寝を している（　）、友達が 遊びに 来た。",
+            "options": [
+              "あいだ",
+              "あいだに",
+              "うちに",
+              "まえに"
+            ],
+            "correct": 1,
+            "explain": "Bạn đến là hành động tức thời xảy ra trong lúc mẹ đang ngủ -> Chọn あいだに."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_51_3",
+        "pattern": "～最中に",
+        "formula": "V-ている / N-の + 最中に (さいちゅうに)",
+        "meaning": "Đúng lúc đang cao trào làm gì thì có sự cố bất ngờ xen vào",
+        "nuance": "Thường mang lại cảm giác bị làm phiền, ngắt quãng ngoài ý muốn.",
+        "trapBuster": "Vế sau hầu như luôn là một sự việc bất ngờ mang tính gây trở ngại (mất điện, điện thoại reo, trời đổ mưa).",
+        "mnemonic": "最中 = Đang giữa tâm bão thì tai nạn ập tới!",
+        "examples": [
+          {
+            "jp": "食事の最中に、地震が起きた。",
+            "vi": "Đúng lúc đang dùng bữa thì động đất xảy ra."
+          },
+          {
+            "jp": "スピーチの最中に、突然マイクが切れてしまった。",
+            "vi": "Đúng lúc đang phát biểu thì micro bất ngờ bị mất tiếng."
+          }
+        ],
+        "drills": [
+          {
+            "q": "会議の（　）、携帯電話が 鳴って 焦った。",
+            "options": [
+              "うちに",
+              "最中に",
+              "たびに",
+              "ばかりに"
+            ],
+            "correct": 1,
+            "explain": "Điện thoại reo giữa lúc họp gây phiền toái -> Chọn 最中に."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_51_4",
+        "pattern": "～たびに",
+        "formula": "V-る / N-の + たびに",
+        "meaning": "Cứ mỗi lần... thì lại...",
+        "nuance": "Diễn tả tính quy luật lặp đi lặp lại: Hễ xảy ra A là chắc chắn dẫn tới cảm xúc hoặc trạng thái B.",
+        "trapBuster": "Không dùng cho hiện tượng diễn ra hiển nhiên hàng ngày (như sáng thức dậy). Phải có cảm xúc hoặc nét đặc thù.",
+        "mnemonic": "たびに = Mỗi chuyến đi lại mang về một kỷ niệm.",
+        "examples": [
+          {
+            "jp": "この曲を聴くたびに、学生時代を思い出す。",
+            "vi": "Cứ mỗi lần nghe bản nhạc này, tôi lại nhớ về thời học sinh."
+          },
+          {
+            "jp": "旅行のたびに、お土産をたくさん買ってしまう。",
+            "vi": "Cứ mỗi chuyến đi du lịch, tôi lại lỡ mua rất nhiều quà lưu niệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "故郷の 写真を 見る（　）、家族の ことを 思い出す。",
+            "options": [
+              "たびに",
+              "うちに",
+              "あいだに",
+              "最中に"
+            ],
+            "correct": 0,
+            "explain": "Cứ mỗi lần xem ảnh là lại nhớ gia đình -> Chọn たびに."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 52,
+    "title": "第52課：変化を 続ける 日本の 社会 (Khởi đầu, Kết thúc & Tiến trình chuyển đổi)",
+    "jpTitle": "変化を 続ける 日本の 社会",
+    "viTitle": "Khởi đầu, Kết thúc & Tiến trình chuyển đổi",
+    "level": "N3",
+    "pillar": "Tiến trình & Biến đổi",
+    "summary": "Toàn diện Bài 52 Bản Lề Trung Cấp N3: Khởi đầu, Kết thúc & Tiến trình chuyển đổi. Trụ cột: Tiến trình & Biến đổi.",
+    "mindmap": {
+      "center": "Bài 52: Khởi đầu, Kết thúc & Tiến trình chuyển đổi",
+      "tip": "Phân biệt ~つつある (đang dần dần biến đổi theo hướng lớn) với ~始める/~終わる.",
+      "branches": [
+        {
+          "name": "～つつある",
+          "color": "#38bdf8",
+          "formula": "V-ます (bỏ ます) + つつある",
+          "nuance": "Dùng trong văn viết, thời sự, diễn tả biến chuyển khách quan quy mô lớn.",
+          "mnemonic": "つつある = Con sóng ngầm đang dần dâng trào.",
+          "example": {
+            "jp": "景気は少しずつ回復しつつある。",
+            "vi": "Tình hình kinh tế đang dần dần phục hồi từng chút một."
+          }
+        },
+        {
+          "name": "～だす / ～はじめる",
+          "color": "#10b981",
+          "formula": "V-ます (bỏ ます) + だす / はじめる",
+          "nuance": "だす mang sắc thái bất thình lình bộc phát ngoài dự tính (khóc òa, đổ mưa).",
+          "mnemonic": "だす = Bật ra đột ngột như lò xo!",
+          "example": {
+            "jp": "空が暗くなったと思うと、突然雨が降りだした。",
+            "vi": "Trời vừa sầm lại thì bỗng nhiên mưa đổ ào ào."
+          }
+        },
+        {
+          "name": "～つづける",
+          "color": "#f59e0b",
+          "formula": "V-ます (bỏ ます) + つづける",
+          "nuance": "Nhấn mạnh sự kiên trì, bền bỉ hoặc một trạng thái tiếp diễn liên tục.",
+          "mnemonic": "つづける = Giữ ngọn lửa hành động cháy mãi.",
+          "example": {
+            "jp": "彼は20年間、小説を書き続けている。",
+            "vi": "Anh ấy đã viết tiểu thuyết miệt mài suốt 20 năm qua."
+          }
+        },
+        {
+          "name": "～おわる",
+          "color": "#8b5cf6",
+          "formula": "V-ます (bỏ ます) + おわる",
+          "nuance": "Hành động đã đạt tới điểm kết thúc trọn vẹn.",
+          "mnemonic": "おわる = Dấu chấm hết nhẹ nhàng của công việc.",
+          "example": {
+            "jp": "本を読み終わったら、図書館に返却してください。",
+            "vi": "Khi đọc xong sách, xin hãy đem trả lại cho thư viện."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_52_1",
+        "pattern": "～つつある",
+        "formula": "V-ます (bỏ ます) + つつある",
+        "meaning": "Đang dần dần biến đổi theo một hướng nào đó",
+        "nuance": "Dùng trong văn viết, thời sự, diễn tả biến chuyển khách quan quy mô lớn.",
+        "trapBuster": "Chỉ đi với động từ biểu thị sự biến đổi (暖かくなる, 回復する, 変化する...).",
+        "mnemonic": "つつある = Con sóng ngầm đang dần dâng trào.",
+        "examples": [
+          {
+            "jp": "景気は少しずつ回復しつつある。",
+            "vi": "Tình hình kinh tế đang dần dần phục hồi từng chút một."
+          },
+          {
+            "jp": "少子高齢化がさらに進みつつある。",
+            "vi": "Tình trạng già hóa dân số và giảm sinh đang ngày càng tiến triển."
+          }
+        ],
+        "drills": [
+          {
+            "q": "新しい 技術が 医療の 現場で 普及し（　）。",
+            "options": [
+              "つつある",
+              "たびに",
+              "最中だ",
+              "ばかりだ"
+            ],
+            "correct": 0,
+            "explain": "Công nghệ mới đang dần được phổ cập -> Dùng つつある."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_52_2",
+        "pattern": "～だす / ～はじめる",
+        "formula": "V-ます (bỏ ます) + だす / はじめる",
+        "meaning": "Bắt đầu... (~だす nhấn mạnh tính bất ngờ, đột ngột)",
+        "nuance": "だす mang sắc thái bất thình lình bộc phát ngoài dự tính (khóc òa, đổ mưa).",
+        "trapBuster": "Ý chí có chủ đích định sẵn -> dùng はじめる. Bất ngờ phát sinh -> dùng だす.",
+        "mnemonic": "だす = Bật ra đột ngột như lò xo!",
+        "examples": [
+          {
+            "jp": "空が暗くなったと思うと、突然雨が降りだした。",
+            "vi": "Trời vừa sầm lại thì bỗng nhiên mưa đổ ào ào."
+          },
+          {
+            "jp": "赤ちゃんが急に泣きだした。",
+            "vi": "Đứa bé đột nhiên òa khóc nức nở."
+          }
+        ],
+        "drills": [
+          {
+            "q": "赤ちゃんが 急に 泣き（　）ので 困った。",
+            "options": [
+              "だした",
+              "つつあった",
+              "おわった",
+              "たびだった"
+            ],
+            "correct": 0,
+            "explain": "Khóc bất ngờ đột ngột -> 泣きだした."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_52_3",
+        "pattern": "～つづける",
+        "formula": "V-ます (bỏ ます) + つづける",
+        "meaning": "Tiếp tục làm gì đó không ngừng nghỉ",
+        "nuance": "Nhấn mạnh sự kiên trì, bền bỉ hoặc một trạng thái tiếp diễn liên tục.",
+        "trapBuster": "Động từ phải có tính năng diễn tiến liên tục trong thời gian dài.",
+        "mnemonic": "つづける = Giữ ngọn lửa hành động cháy mãi.",
+        "examples": [
+          {
+            "jp": "彼は20年間、小説を書き続けている。",
+            "vi": "Anh ấy đã viết tiểu thuyết miệt mài suốt 20 năm qua."
+          },
+          {
+            "jp": "雨が三日間降り続いている。",
+            "vi": "Mưa đã rơi rả rích liên tục suốt ba ngày."
+          }
+        ],
+        "drills": [
+          {
+            "q": "諦めずに 夢を 追い（　）ことが 大切だ。",
+            "options": [
+              "つづける",
+              "つつある",
+              "だす",
+              "おわる"
+            ],
+            "correct": 0,
+            "explain": "Kiên trì theo đuổi ước mơ -> 追い続ける."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_52_4",
+        "pattern": "～おわる",
+        "formula": "V-ます (bỏ ます) + おわる",
+        "meaning": "Làm xong, hoàn thành toàn bộ hành động",
+        "nuance": "Hành động đã đạt tới điểm kết thúc trọn vẹn.",
+        "trapBuster": "Phân biệt với きる (làm triệt để đến cùng kiệt lực).",
+        "mnemonic": "おわる = Dấu chấm hết nhẹ nhàng của công việc.",
+        "examples": [
+          {
+            "jp": "本を読み終わったら、図書館に返却してください。",
+            "vi": "Khi đọc xong sách, xin hãy đem trả lại cho thư viện."
+          }
+        ],
+        "drills": [
+          {
+            "q": "レポートを 書き（　）ので、提出します。",
+            "options": [
+              "おわった",
+              "つつある",
+              "だした",
+              "たびだ"
+            ],
+            "correct": 0,
+            "explain": "Đã viết xong báo cáo -> 書き終わった."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 53,
+    "title": "第53課：失敗から 学ぶ 人生訓 (Nguyên nhân trực tiếp & Hậu quả không mong muốn)",
+    "jpTitle": "失敗から 学ぶ 人生訓",
+    "viTitle": "Nguyên nhân trực tiếp & Hậu quả không mong muốn",
+    "level": "N3",
+    "pillar": "Nguyên nhân & Hậu quả",
+    "summary": "Toàn diện Bài 53 Bản Lề Trung Cấp N3: Nguyên nhân trực tiếp & Hậu quả không mong muốn. Trụ cột: Nguyên nhân & Hậu quả.",
+    "mindmap": {
+      "center": "Bài 53: Nguyên nhân trực tiếp & Hậu quả không mong muốn",
+      "tip": "Phân biệt せいで (đổ lỗi tiêu cực) vs おかげで (biết ơn tích cực) vs ばかりに (chỉ vì một lý do nhỏ mà ôm hận).",
+      "branches": [
+        {
+          "name": "～せいで / ～せいか",
+          "color": "#38bdf8",
+          "formula": "V-thông thường / A-い / A-な / N-の + せいで",
+          "nuance": "Dùng khi kết quả vế sau là tiêu cực, đổ tội cho nguyên nhân vế trước.",
+          "mnemonic": "せいで = Sai lầm dẫn tới cay đắng.",
+          "example": {
+            "jp": "寝坊したせいで、飛行機に乗り遅れてしまった。",
+            "vi": "Tại ngủ quên mà tôi đã bị trễ chuyến bay."
+          }
+        },
+        {
+          "name": "～おかげで / ～おかげだ",
+          "color": "#10b981",
+          "formula": "V-thông thường / A-い / A-な / N-の + おかげで",
+          "nuance": "Chỉ kết quả tích cực, vinh danh nguyên nhân đã đem lại điều tốt lành.",
+          "mnemonic": "おかげで = Có thần linh phù hộ thì mọi việc hanh thông!",
+          "example": {
+            "jp": "先生のご指導のおかげで、合格することができました。",
+            "vi": "Nhờ có sự chỉ bảo của thầy cô mà em đã có thể thi đỗ."
+          }
+        },
+        {
+          "name": "～ばかりに",
+          "color": "#f59e0b",
+          "formula": "V-thông thường / A-い / A-な / N-である + ばかりに",
+          "nuance": "Thể hiện sự hối hận tột cùng, vì một nguyên nhân nhỏ hoặc sơ suất mà chịu kết cục lớn.",
+          "mnemonic": "ばかりに = Chỉ một hạt cát mà làm đổ cả tòa thành!",
+          "example": {
+            "jp": "お金がないばかりに、進学を諦めざるを得なかった。",
+            "vi": "Chỉ vì không có tiền mà tôi đành phải từ bỏ việc học lên."
+          }
+        },
+        {
+          "name": "～ものだから / ～もので",
+          "color": "#8b5cf6",
+          "formula": "V-thông thường / A-い / A-な / N-な + ものだから",
+          "nuance": "Hay dùng khi xin lỗi, thanh minh hoàn cảnh khó xử để người nghe thông cảm.",
+          "mnemonic": "ものだから = Mở lòng giãi bày để mong thứ tha.",
+          "example": {
+            "jp": "渋滞がひどかったものですから、遅れてすみません。",
+            "vi": "Vì đường kẹt xe khủng khiếp quá nên em xin lỗi vì đến muộn ạ."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_53_1",
+        "pattern": "～せいで / ～せいか",
+        "formula": "V-thông thường / A-い / A-な / N-の + せいで",
+        "meaning": "Do... tại... (dẫn đến kết quả xấu, mang tính trách móc, đổ lỗi)",
+        "nuance": "Dùng khi kết quả vế sau là tiêu cực, đổ tội cho nguyên nhân vế trước.",
+        "trapBuster": "Không dùng cho việc tốt. Nếu kết quả tốt, BẮT BUỘC dùng おかげで!",
+        "mnemonic": "せいで = Sai lầm dẫn tới cay đắng.",
+        "examples": [
+          {
+            "jp": "寝坊したせいで、飛行機に乗り遅れてしまった。",
+            "vi": "Tại ngủ quên mà tôi đã bị trễ chuyến bay."
+          },
+          {
+            "jp": "昨夜コーヒーを飲んだせいか、なかなか眠れなかった。",
+            "vi": "Chắc tại tối qua uống cà phê nên tôi mãi mới ngủ được."
+          }
+        ],
+        "drills": [
+          {
+            "q": "台風の（　）、電車が 運転を 見合わせている。",
+            "options": [
+              "せいで",
+              "おかげで",
+              "ために",
+              "ばかりで"
+            ],
+            "correct": 0,
+            "explain": "Tàu dừng vì bão (kết quả xấu) -> Chọn せいで."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_53_2",
+        "pattern": "～おかげで / ～おかげだ",
+        "formula": "V-thông thường / A-い / A-な / N-の + おかげで",
+        "meaning": "Nhờ có... (dẫn đến kết quả tốt, mang lòng biết ơn)",
+        "nuance": "Chỉ kết quả tích cực, vinh danh nguyên nhân đã đem lại điều tốt lành.",
+        "trapBuster": "Đôi khi dùng mỉa mai, nhưng trong bài thi chuẩn JLPT luôn mang nghĩa biết ơn.",
+        "mnemonic": "おかげで = Có thần linh phù hộ thì mọi việc hanh thông!",
+        "examples": [
+          {
+            "jp": "先生のご指導のおかげで、合格することができました。",
+            "vi": "Nhờ có sự chỉ bảo của thầy cô mà em đã có thể thi đỗ."
+          }
+        ],
+        "drills": [
+          {
+            "q": "薬を 飲んだ（　）、頭痛が すっかり 治りました。",
+            "options": [
+              "おかげで",
+              "せいで",
+              "ばかりに",
+              "ものだから"
+            ],
+            "correct": 0,
+            "explain": "Hết đau đầu (kết quả tốt) -> Chọn おかげで."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_53_3",
+        "pattern": "～ばかりに",
+        "formula": "V-thông thường / A-い / A-な / N-である + ばかりに",
+        "meaning": "Chỉ vì... mà chuốc lấy hậu quả tai hại cay đắng",
+        "nuance": "Thể hiện sự hối hận tột cùng, vì một nguyên nhân nhỏ hoặc sơ suất mà chịu kết cục lớn.",
+        "trapBuster": "Vế sau luôn là hậu quả tồi tệ ngoài ý muốn và có cảm xúc hối tiếc.",
+        "mnemonic": "ばかりに = Chỉ một hạt cát mà làm đổ cả tòa thành!",
+        "examples": [
+          {
+            "jp": "お金がないばかりに、進学を諦めざるを得なかった。",
+            "vi": "Chỉ vì không có tiền mà tôi đành phải từ bỏ việc học lên."
+          },
+          {
+            "jp": "嘘をついたばかりに、親友の信頼を失ってしまった。",
+            "vi": "Chỉ vì nói dối một câu mà tôi đã đánh mất niềm tin của bạn thân."
+          }
+        ],
+        "drills": [
+          {
+            "q": "道に 迷った（　）、大事な 面接に 遅刻して しまった。",
+            "options": [
+              "ばかりに",
+              "おかげで",
+              "たびに",
+              "つつある"
+            ],
+            "correct": 0,
+            "explain": "Chỉ vì lạc đường mà muộn phỏng vấn quan trọng -> Chọn ばかりに."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_53_4",
+        "pattern": "～ものだから / ～もので",
+        "formula": "V-thông thường / A-い / A-な / N-な + ものだから",
+        "meaning": "Tại vì... (phân trần, giải thích lý do cá nhân ngoài ý muốn)",
+        "nuance": "Hay dùng khi xin lỗi, thanh minh hoàn cảnh khó xử để người nghe thông cảm.",
+        "trapBuster": "Thường dùng trong hội thoại thân mật hoặc xin lỗi sếp, đồng nghiệp.",
+        "mnemonic": "ものだから = Mở lòng giãi bày để mong thứ tha.",
+        "examples": [
+          {
+            "jp": "渋滞がひどかったものですから、遅れてすみません。",
+            "vi": "Vì đường kẹt xe khủng khiếp quá nên em xin lỗi vì đến muộn ạ."
+          }
+        ],
+        "drills": [
+          {
+            "q": "あまりに 眠かった（　）、アラームを 止めて 二度寝して しまった。",
+            "options": [
+              "ものだから",
+              "おかげで",
+              "たびに",
+              "ばかりに"
+            ],
+            "correct": 0,
+            "explain": "Thanh minh lý do ngủ quên do buồn ngủ quá -> Chọn ものだから."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 54,
+    "title": "第54課：情報と 根拠の 確かさ (Căn cứ phán đoán & Dấu hiệu nhận biết)",
+    "jpTitle": "情報と 根拠の 確かさ",
+    "viTitle": "Căn cứ phán đoán & Dấu hiệu nhận biết",
+    "level": "N3",
+    "pillar": "Căn cứ & Lý do",
+    "summary": "Toàn diện Bài 54 Bản Lề Trung Cấp N3: Căn cứ phán đoán & Dấu hiệu nhận biết. Trụ cột: Căn cứ & Lý do.",
+    "mindmap": {
+      "center": "Bài 54: Căn cứ phán đoán & Dấu hiệu nhận biết",
+      "tip": "Phân biệt ことから (từ manh mối/nguyên do dẫn đến tên gọi hoặc phán đoán) vs につき (thông báo lý do trang trọng).",
+      "branches": [
+        {
+          "name": "～ことから",
+          "color": "#38bdf8",
+          "formula": "V-thông thường / A-い / A-な / N-である + ことから",
+          "nuance": "Nhấn mạnh căn cứ khách quan, sự thật có thật để suy luận.",
+          "mnemonic": "ことから = Từ cái cớ thực tế sinh ra tên gọi.",
+          "example": {
+            "jp": "富士山が見えることから、この町は富士見町と呼ばれている。",
+            "vi": "Từ việc nhìn thấy núi Phú Sĩ mà thị trấn này được gọi là Fujimi-cho."
+          }
+        },
+        {
+          "name": "～につき",
+          "color": "#10b981",
+          "formula": "N + につき",
+          "nuance": "Văn phong thông báo chính thức nơi công cộng (cửa hàng, nhà ga).",
+          "mnemonic": "につき = Niêm phong dán thông báo chính thức.",
+          "example": {
+            "jp": "本日、改装工事中につき休業いたします。",
+            "vi": "Hôm nay, do đang trong quá trình sửa chữa nên quán xin phép tạm nghỉ."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_54_1",
+        "pattern": "～ことから",
+        "formula": "V-thông thường / A-い / A-な / N-である + ことから",
+        "meaning": "Từ sự thật là... mà dẫn đến (tên gọi, phán đoán, nguồn gốc)",
+        "nuance": "Nhấn mạnh căn cứ khách quan, sự thật có thật để suy luận.",
+        "trapBuster": "Hay đi với các từ như 'được gọi là' (と呼ばれる), 'biết rằng' (とわかる).",
+        "mnemonic": "ことから = Từ cái cớ thực tế sinh ra tên gọi.",
+        "examples": [
+          {
+            "jp": "富士山が見えることから、この町は富士見町と呼ばれている。",
+            "vi": "Từ việc nhìn thấy núi Phú Sĩ mà thị trấn này được gọi là Fujimi-cho."
+          },
+          {
+            "jp": "道が濡れていることから、昨夜雨が降ったことがわかる。",
+            "vi": "Từ việc mặt đường ướt, ta biết rằng đêm qua trời đã mưa."
+          }
+        ],
+        "drills": [
+          {
+            "q": "声が 震えている（　）、彼女が ひどく 緊張しているのが わかった。",
+            "options": [
+              "ことから",
+              "せいで",
+              "おかげで",
+              "たびに"
+            ],
+            "correct": 0,
+            "explain": "Từ dấu hiệu giọng run mà nhận ra hồi hộp -> Chọn ことから."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_54_2",
+        "pattern": "～につき",
+        "formula": "N + につき",
+        "meaning": "Vì lý do... (thường thấy trong các bảng thông báo, biển báo trang trọng)",
+        "nuance": "Văn phong thông báo chính thức nơi công cộng (cửa hàng, nhà ga).",
+        "trapBuster": "Luôn đi trực tiếp sau danh từ (工事中につき, 清掃中につき).",
+        "mnemonic": "につき = Niêm phong dán thông báo chính thức.",
+        "examples": [
+          {
+            "jp": "本日、改装工事中につき休業いたします。",
+            "vi": "Hôm nay, do đang trong quá trình sửa chữa nên quán xin phép tạm nghỉ."
+          },
+          {
+            "jp": "店内禁煙につき、おタバコはご遠慮ください。",
+            "vi": "Vì trong quán cấm hút thuốc, xin quý khách vui lòng không hút."
+          }
+        ],
+        "drills": [
+          {
+            "q": "清掃中（　）、この お手洗いは ご利用になれません。",
+            "options": [
+              "につき",
+              "せいで",
+              "おかげで",
+              "ものだから"
+            ],
+            "correct": 0,
+            "explain": "Biển báo thông báo lý do lau dọn -> Chọn につき."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 55,
+    "title": "第55課：条件の 限界と 特別ルール (Giới hạn phạm vi & Trường hợp ngoại lệ đặc biệt)",
+    "jpTitle": "条件の 限界と 特別ルール",
+    "viTitle": "Giới hạn phạm vi & Trường hợp ngoại lệ đặc biệt",
+    "level": "N3",
+    "pillar": "Phạm vi & Giới hạn",
+    "summary": "Toàn diện Bài 55 Bản Lề Trung Cấp N3: Giới hạn phạm vi & Trường hợp ngoại lệ đặc biệt. Trụ cột: Phạm vi & Giới hạn.",
+    "mindmap": {
+      "center": "Bài 55: Giới hạn phạm vi & Trường hợp ngoại lệ đặc biệt",
+      "tip": "Phân biệt にかぎり (chỉ riêng đối tượng này) vs にかぎって (oái oăm thay, đúng lúc này lại...).",
+      "branches": [
+        {
+          "name": "～にかぎり / ～にかぎって",
+          "color": "#38bdf8",
+          "formula": "N + にかぎり / にかぎって",
+          "nuance": "にかぎり là quy định ưu đãi đặc biệt. にかぎって là sự trùng hợp trớ trêu làm thất vọng.",
+          "mnemonic": "にかぎり = Giới hạn vé vàng; にかぎって = Oái oăm đời trớ trêu!",
+          "example": {
+            "jp": "70歳以上の方に限り、入場料が無料となります。",
+            "vi": "Chỉ riêng người trên 70 tuổi mới được miễn phí vé vào cổng."
+          }
+        },
+        {
+          "name": "～かぎり / ～かぎりは",
+          "color": "#10b981",
+          "formula": "V-る / V-ている / V-ない + かぎり (は)",
+          "nuance": "Thiết lập điều kiện duy trì: Hễ điều kiện A còn tồn tại thì trạng thái B vẫn tiếp diễn.",
+          "mnemonic": "かぎり = Cột mốc ranh giới còn giữ thì cam kết còn nguyên.",
+          "example": {
+            "jp": "日本にいる限り、日本語を使う機会が多い。",
+            "vi": "Chừng nào còn ở Nhật Bản, thì cơ hội dùng tiếng Nhật còn nhiều."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_55_1",
+        "pattern": "～にかぎり / ～にかぎって",
+        "formula": "N + にかぎり / にかぎって",
+        "meaning": "にかぎり: Chỉ riêng, ngoại lệ chỉ dành cho; にかぎって: Oái oăm thay, đúng lúc... thì lại gặp xui",
+        "nuance": "にかぎり là quy định ưu đãi đặc biệt. にかぎって là sự trùng hợp trớ trêu làm thất vọng.",
+        "trapBuster": "Đề thi hay bẫy câu xui xẻo: 'Hôm nay quên mang ô thì đúng hôm nay trời mưa' -> BẮT BUỘC dùng にかぎって!",
+        "mnemonic": "にかぎり = Giới hạn vé vàng; にかぎって = Oái oăm đời trớ trêu!",
+        "examples": [
+          {
+            "jp": "70歳以上の方に限り、入場料が無料となります。",
+            "vi": "Chỉ riêng người trên 70 tuổi mới được miễn phí vé vào cổng."
+          },
+          {
+            "jp": "傘を持っていない日に限って、雨が降る。",
+            "vi": "Đúng vào cái ngày không mang theo ô thì trời lại đổ mưa."
+          }
+        ],
+        "drills": [
+          {
+            "q": "急いでいる 時（　）、電車が 遅れるものだ。",
+            "options": [
+              "にかぎって",
+              "にかぎり",
+              "うちに",
+              "たびに"
+            ],
+            "correct": 0,
+            "explain": "Oái oăm lúc đang vội thì tàu lại chậm -> Chọn にかぎって."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_55_2",
+        "pattern": "～かぎり / ～かぎりは",
+        "formula": "V-る / V-ている / V-ない + かぎり (は)",
+        "meaning": "Chừng nào mà còn... thì vẫn...",
+        "nuance": "Thiết lập điều kiện duy trì: Hễ điều kiện A còn tồn tại thì trạng thái B vẫn tiếp diễn.",
+        "trapBuster": "Vế trước là điều kiện tiền đề, vế sau là trạng thái kéo dài tương ứng.",
+        "mnemonic": "かぎり = Cột mốc ranh giới còn giữ thì cam kết còn nguyên.",
+        "examples": [
+          {
+            "jp": "日本にいる限り、日本語を使う機会が多い。",
+            "vi": "Chừng nào còn ở Nhật Bản, thì cơ hội dùng tiếng Nhật còn nhiều."
+          },
+          {
+            "jp": "生きている限り、希望を失ってはならない。",
+            "vi": "Chừng nào còn sống, chừng đó ta không được đánh mất hy vọng."
+          }
+        ],
+        "drills": [
+          {
+            "q": "体が 元気な（　）、働き 続けたいと 思っています。",
+            "options": [
+              "かぎり",
+              "たびに",
+              "最中に",
+              "せいで"
+            ],
+            "correct": 0,
+            "explain": "Chừng nào cơ thể còn khỏe -> Chọn かぎり."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 56,
+    "title": "第56課：追加と 累加の 表現 (Không chỉ... mà còn (Gia tăng mức độ))",
+    "jpTitle": "追加と 累加の 表現",
+    "viTitle": "Không chỉ... mà còn (Gia tăng mức độ)",
+    "level": "N3",
+    "pillar": "Gia tăng & Bổ sung",
+    "summary": "Toàn diện Bài 56 Bản Lề Trung Cấp N3: Không chỉ... mà còn (Gia tăng mức độ). Trụ cột: Gia tăng & Bổ sung.",
+    "mindmap": {
+      "center": "Bài 56: Không chỉ... mà còn (Gia tăng mức độ)",
+      "tip": "뿐만 아니라: ~だけでなく, ~ばかりでなく, ~にとどまらず.",
+      "branches": [
+        {
+          "name": "第56課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Gia tăng & Bổ sung\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、追加と 累加の 表現は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第56課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_56_1",
+        "pattern": "第56課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Không chỉ... mà còn (Gia tăng mức độ)",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Gia tăng & Bổ sung\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、追加と 累加の 表現は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_56_2",
+        "pattern": "第56課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 57,
+    "title": "第57課：対比と 二面性の 観察 (Tương phản hai mặt & Tính chất đối lập)",
+    "jpTitle": "対比と 二面性の 観察",
+    "viTitle": "Tương phản hai mặt & Tính chất đối lập",
+    "level": "N3",
+    "pillar": "Tương phản & Đối lập",
+    "summary": "Toàn diện Bài 57 Bản Lề Trung Cấp N3: Tương phản hai mặt & Tính chất đối lập. Trụ cột: Tương phản & Đối lập.",
+    "mindmap": {
+      "center": "Bài 57: Tương phản hai mặt & Tính chất đối lập",
+      "tip": "Mặt tốt và mặt xấu: ~にたいして, ~反面, ~一方で.",
+      "branches": [
+        {
+          "name": "第57課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Tương phản & Đối lập\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、対比と 二面性の 観察は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第57課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_57_1",
+        "pattern": "第57課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Tương phản hai mặt & Tính chất đối lập",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Tương phản & Đối lập\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、対比と 二面性の 観察は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_57_2",
+        "pattern": "第57課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 58,
+    "title": "第58課：選択と 優先の 価値観 (So sánh, Lựa chọn & Thà... còn hơn)",
+    "jpTitle": "選択と 優先の 価値観",
+    "viTitle": "So sánh, Lựa chọn & Thà... còn hơn",
+    "level": "N3",
+    "pillar": "So sánh & Ưu tiên",
+    "summary": "Toàn diện Bài 58 Bản Lề Trung Cấp N3: So sánh, Lựa chọn & Thà... còn hơn. Trụ cột: So sánh & Ưu tiên.",
+    "mindmap": {
+      "center": "Bài 58: So sánh, Lựa chọn & Thà... còn hơn",
+      "tip": "Thà chấp nhận cái tệ ít hơn: ~くらいなら, ~にくらべて.",
+      "branches": [
+        {
+          "name": "第58課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"So sánh & Ưu tiên\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、選択と 優先の 価値観は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第58課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_58_1",
+        "pattern": "第58課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề So sánh, Lựa chọn & Thà... còn hơn",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"So sánh & Ưu tiên\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、選択と 優先の 価値観は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_58_2",
+        "pattern": "第58課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 59,
+    "title": "第59課：仮定と 必須の 条件 (Giả định có điều kiện & Miễn là thỏa mãn)",
+    "jpTitle": "仮定と 必須の 条件",
+    "viTitle": "Giả định có điều kiện & Miễn là thỏa mãn",
+    "level": "N3",
+    "pillar": "Giả định & Điều kiện",
+    "summary": "Toàn diện Bài 59 Bản Lề Trung Cấp N3: Giả định có điều kiện & Miễn là thỏa mãn. Trụ cột: Giả định & Điều kiện.",
+    "mindmap": {
+      "center": "Bài 59: Giả định có điều kiện & Miễn là thỏa mãn",
+      "tip": "Chỉ cần... là đủ: ~さえ~ば, ~としたら.",
+      "branches": [
+        {
+          "name": "第59課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Giả định & Điều kiện\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、仮定と 必須の 条件は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第59課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_59_1",
+        "pattern": "第59課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Giả định có điều kiện & Miễn là thỏa mãn",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Giả định & Điều kiện\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、仮定と 必須の 条件は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_59_2",
+        "pattern": "第59課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 60,
+    "title": "第60課：逆接と 納得の いかない 事実 (Nghịch biện & Bất chấp sự thật diễn ra)",
+    "jpTitle": "逆接と 納得の いかない 事実",
+    "viTitle": "Nghịch biện & Bất chấp sự thật diễn ra",
+    "level": "N3",
+    "pillar": "Nghịch biện & Nhượng bộ",
+    "summary": "Toàn diện Bài 60 Bản Lề Trung Cấp N3: Nghịch biện & Bất chấp sự thật diễn ra. Trụ cột: Nghịch biện & Nhượng bộ.",
+    "mindmap": {
+      "center": "Bài 60: Nghịch biện & Bất chấp sự thật diễn ra",
+      "tip": "Dù thế mà lại: ~のに, ~くせに, ~としても.",
+      "branches": [
+        {
+          "name": "第60課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Nghịch biện & Nhượng bộ\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、逆接と 納得の いかない 事実は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第60課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_60_1",
+        "pattern": "第60課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Nghịch biện & Bất chấp sự thật diễn ra",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Nghịch biện & Nhượng bộ\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、逆接と 納得の いかない 事実は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_60_2",
+        "pattern": "第60課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 61,
+    "title": "第61課：未来への 目標と 指向 (Mục đích hướng đích & Kế hoạch tương lai)",
+    "jpTitle": "未来への 目標と 指向",
+    "viTitle": "Mục đích hướng đích & Kế hoạch tương lai",
+    "level": "N3",
+    "pillar": "Mục đích & Dự định",
+    "summary": "Toàn diện Bài 61 Bản Lề Trung Cấp N3: Mục đích hướng đích & Kế hoạch tương lai. Trụ cột: Mục đích & Dự định.",
+    "mindmap": {
+      "center": "Bài 61: Mục đích hướng đích & Kế hoạch tương lai",
+      "tip": "Hướng tới mục tiêu cao đẹp: ~ように, ~ために, ~にむけて.",
+      "branches": [
+        {
+          "name": "第61課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Mục đích & Dự định\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、未来への 目標と 指向は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第61課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_61_1",
+        "pattern": "第61課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Mục đích hướng đích & Kế hoạch tương lai",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Mục đích & Dự định\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、未来への 目標と 指向は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_61_2",
+        "pattern": "第61課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 62,
+    "title": "第62課：手段・媒体・拠点の 活用 (Phương tiện, Cầu nối trung gian & Nền tảng)",
+    "jpTitle": "手段・媒体・拠点の 活用",
+    "viTitle": "Phương tiện, Cầu nối trung gian & Nền tảng",
+    "level": "N3",
+    "pillar": "Phương tiện & Cách thức",
+    "summary": "Toàn diện Bài 62 Bản Lề Trung Cấp N3: Phương tiện, Cầu nối trung gian & Nền tảng. Trụ cột: Phương tiện & Cách thức.",
+    "mindmap": {
+      "center": "Bài 62: Phương tiện, Cầu nối trung gian & Nền tảng",
+      "tip": "Thông qua chiếc cầu nối: ~によって, ~を通じて, ~をもとに.",
+      "branches": [
+        {
+          "name": "第62課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Phương tiện & Cách thức\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、手段・媒体・拠点の 活用は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第62課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_62_1",
+        "pattern": "第62課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Phương tiện, Cầu nối trung gian & Nền tảng",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Phương tiện & Cách thức\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、手段・媒体・拠点の 活用は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_62_2",
+        "pattern": "第62課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 63,
+    "title": "第63課：持続する 状態と 放置 (Trạng thái kéo dài & Tình huống giữ nguyên)",
+    "jpTitle": "持続する 状態と 放置",
+    "viTitle": "Trạng thái kéo dài & Tình huống giữ nguyên",
+    "level": "N3",
+    "pillar": "Trạng thái & Duy trì",
+    "summary": "Toàn diện Bài 63 Bản Lề Trung Cấp N3: Trạng thái kéo dài & Tình huống giữ nguyên. Trụ cột: Trạng thái & Duy trì.",
+    "mindmap": {
+      "center": "Bài 63: Trạng thái kéo dài & Tình huống giữ nguyên",
+      "tip": "Bỏ mặc không tắt: ~たまま, ~っぱなし, ~きり.",
+      "branches": [
+        {
+          "name": "第63課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Trạng thái & Duy trì\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、持続する 状態と 放置は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第63課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_63_1",
+        "pattern": "第63課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Trạng thái kéo dài & Tình huống giữ nguyên",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Trạng thái & Duy trì\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、持続する 状態と 放置は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_63_2",
+        "pattern": "第63課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 64,
+    "title": "第64課：抑えきれない 感情と 欲望 (Cảm xúc bộc phát & Không thể kìm nén)",
+    "jpTitle": "抑えきれない 感情と 欲望",
+    "viTitle": "Cảm xúc bộc phát & Không thể kìm nén",
+    "level": "N3",
+    "pillar": "Tâm lý & Cảm xúc",
+    "summary": "Toàn diện Bài 64 Bản Lề Trung Cấp N3: Cảm xúc bộc phát & Không thể kìm nén. Trụ cột: Tâm lý & Cảm xúc.",
+    "mindmap": {
+      "center": "Bài 64: Cảm xúc bộc phát & Không thể kìm nén",
+      "tip": "Cảm xúc dâng trào khó kiềm: ~てたまらない, ~てしょうがない.",
+      "branches": [
+        {
+          "name": "第64課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Tâm lý & Cảm xúc\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、抑えきれない 感情と 欲望は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第64課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_64_1",
+        "pattern": "第64課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Cảm xúc bộc phát & Không thể kìm nén",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Tâm lý & Cảm xúc\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、抑えきれない 感情と 欲望は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_64_2",
+        "pattern": "第64課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 65,
+    "title": "第65課：助言・義務と 当然の 理 (Lời khuyên chân thành, Đạo lý & Lẽ thường)",
+    "jpTitle": "助言・義務と 当然の 理",
+    "viTitle": "Lời khuyên chân thành, Đạo lý & Lẽ thường",
+    "level": "N3",
+    "pillar": "Đạo lý & Lời khuyên",
+    "summary": "Toàn diện Bài 65 Bản Lề Trung Cấp N3: Lời khuyên chân thành, Đạo lý & Lẽ thường. Trụ cột: Đạo lý & Lời khuyên.",
+    "mindmap": {
+      "center": "Bài 65: Lời khuyên chân thành, Đạo lý & Lẽ thường",
+      "tip": "Nên làm theo lẽ tự nhiên: ~べきだ, ~ことだ, ~ものだ.",
+      "branches": [
+        {
+          "name": "第65課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Đạo lý & Lời khuyên\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、助言・義務と 当然の 理は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第65課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_65_1",
+        "pattern": "第65課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Lời khuyên chân thành, Đạo lý & Lẽ thường",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Đạo lý & Lời khuyên\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、助言・義務と 当然の 理は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_65_2",
+        "pattern": "第65課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 66,
+    "title": "第66課：禁止・強制と 不可避の 決断 (Quy định cấm chỉ, Bắt buộc & Đành phải làm)",
+    "jpTitle": "禁止・強制と 不可避の 決断",
+    "viTitle": "Quy định cấm chỉ, Bắt buộc & Đành phải làm",
+    "level": "N3",
+    "pillar": "Cấm đoán & Ép buộc",
+    "summary": "Toàn diện Bài 66 Bản Lề Trung Cấp N3: Quy định cấm chỉ, Bắt buộc & Đành phải làm. Trụ cột: Cấm đoán & Ép buộc.",
+    "mindmap": {
+      "center": "Bài 66: Quy định cấm chỉ, Bắt buộc & Đành phải làm",
+      "tip": "Không thể không làm: ~てはならない, ~ざるをえない.",
+      "branches": [
+        {
+          "name": "第66課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Cấm đoán & Ép buộc\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、禁止・強制と 不可避の 決断は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第66課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_66_1",
+        "pattern": "第66課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Quy định cấm chỉ, Bắt buộc & Đành phải làm",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Cấm đoán & Ép buộc\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、禁止・強制と 不可避の 決断は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_66_2",
+        "pattern": "第66課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 67,
+    "title": "第67課：リスク予測と 警戒の 視点 (Dự đoán rủi ro, Nguy cơ & Khả năng tiêu cực)",
+    "jpTitle": "リスク予測と 警戒の 視点",
+    "viTitle": "Dự đoán rủi ro, Nguy cơ & Khả năng tiêu cực",
+    "level": "N3",
+    "pillar": "Phỏng đoán & Rủi ro",
+    "summary": "Toàn diện Bài 67 Bản Lề Trung Cấp N3: Dự đoán rủi ro, Nguy cơ & Khả năng tiêu cực. Trụ cột: Phỏng đoán & Rủi ro.",
+    "mindmap": {
+      "center": "Bài 67: Dự đoán rủi ro, Nguy cơ & Khả năng tiêu cực",
+      "tip": "Nguy cơ tiềm ẩn: ~おそれがある, ~かねない.",
+      "branches": [
+        {
+          "name": "第67課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Phỏng đoán & Rủi ro\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、リスク予測と 警戒の 視点は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第67課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_67_1",
+        "pattern": "第67課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Dự đoán rủi ro, Nguy cơ & Khả năng tiêu cực",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Phỏng đoán & Rủi ro\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、リスク予測と 警戒の 視点は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_67_2",
+        "pattern": "第67課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 68,
+    "title": "第68課：全面否定と 強い 反論 (Bác bỏ hoàn toàn & Tuyệt đối không thể có chuyện)",
+    "jpTitle": "全面否定と 強い 反論",
+    "viTitle": "Bác bỏ hoàn toàn & Tuyệt đối không thể có chuyện",
+    "level": "N3",
+    "pillar": "Phủ định & Bác bỏ",
+    "summary": "Toàn diện Bài 68 Bản Lề Trung Cấp N3: Bác bỏ hoàn toàn & Tuyệt đối không thể có chuyện. Trụ cột: Phủ định & Bác bỏ.",
+    "mindmap": {
+      "center": "Bài 68: Bác bỏ hoàn toàn & Tuyệt đối không thể có chuyện",
+      "tip": "Làm gì có chuyện vô lý thế: ~わけがない, ~はずがない, ~っこない.",
+      "branches": [
+        {
+          "name": "第68課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Phủ định & Bác bỏ\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、全面否定と 強い 反論は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第68課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_68_1",
+        "pattern": "第68課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Bác bỏ hoàn toàn & Tuyệt đối không thể có chuyện",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Phủ định & Bác bỏ\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、全面否定と 強い 反論は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_68_2",
+        "pattern": "第68課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 69,
+    "title": "第69課：情報の 伝達と 噂の 真偽 (Truyền đạt nguồn tin, Tin đồn & Lời kể lại)",
+    "jpTitle": "情報の 伝達と 噂の 真偽",
+    "viTitle": "Truyền đạt nguồn tin, Tin đồn & Lời kể lại",
+    "level": "N3",
+    "pillar": "Truyền ngôn & Nguồn tin",
+    "summary": "Toàn diện Bài 69 Bản Lề Trung Cấp N3: Truyền đạt nguồn tin, Tin đồn & Lời kể lại. Trụ cột: Truyền ngôn & Nguồn tin.",
+    "mindmap": {
+      "center": "Bài 69: Truyền đạt nguồn tin, Tin đồn & Lời kể lại",
+      "tip": "Theo như lời kể: ~によると, ~とのことだ.",
+      "branches": [
+        {
+          "name": "第69課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Truyền ngôn & Nguồn tin\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、情報の 伝達と 噂の 真偽は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第69課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_69_1",
+        "pattern": "第69課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Truyền đạt nguồn tin, Tin đồn & Lời kể lại",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Truyền ngôn & Nguồn tin\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、情報の 伝達と 噂の 真偽は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_69_2",
+        "pattern": "第69課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 70,
+    "title": "第70課：対象への 感情と 配慮 (Hướng đến đối tượng & Tình cảm gửi gắm)",
+    "jpTitle": "対象への 感情と 配慮",
+    "viTitle": "Hướng đến đối tượng & Tình cảm gửi gắm",
+    "level": "N3",
+    "pillar": "Đối tượng & Thái độ",
+    "summary": "Toàn diện Bài 70 Bản Lề Trung Cấp N3: Hướng đến đối tượng & Tình cảm gửi gắm. Trụ cột: Đối tượng & Thái độ.",
+    "mindmap": {
+      "center": "Bài 70: Hướng đến đối tượng & Tình cảm gửi gắm",
+      "tip": "Dành trọn tấm lòng cho ai: ~にかんして, ~をこめて.",
+      "branches": [
+        {
+          "name": "第70課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Đối tượng & Thái độ\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、対象への 感情と 配慮は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第70課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_70_1",
+        "pattern": "第70課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Hướng đến đối tượng & Tình cảm gửi gắm",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Đối tượng & Thái độ\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、対象への 感情と 配慮は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_70_2",
+        "pattern": "第70課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 71,
+    "title": "第71課：基準との ギャップと 驚き (Đánh giá so với chuẩn mực & Bất ngờ trước thực tế)",
+    "jpTitle": "基準との ギャップと 驚き",
+    "viTitle": "Đánh giá so với chuẩn mực & Bất ngờ trước thực tế",
+    "level": "N3",
+    "pillar": "Đánh giá & So sánh",
+    "summary": "Toàn diện Bài 71 Bản Lề Trung Cấp N3: Đánh giá so với chuẩn mực & Bất ngờ trước thực tế. Trụ cột: Đánh giá & So sánh.",
+    "mindmap": {
+      "center": "Bài 71: Đánh giá so với chuẩn mực & Bất ngờ trước thực tế",
+      "tip": "So với tuổi tác thì quá cừ: ~わりには, ~にしては.",
+      "branches": [
+        {
+          "name": "第71課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Đánh giá & So sánh\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、基準との ギャップと 驚きは非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第71課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_71_1",
+        "pattern": "第71課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Đánh giá so với chuẩn mực & Bất ngờ trước thực tế",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Đánh giá & So sánh\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、基準との ギャップと 驚きは非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_71_2",
+        "pattern": "第71課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 72,
+    "title": "第72課：比例変化と 時代の うねり (Biến thiên tỷ lệ thuận & Hai vế cùng thay đổi)",
+    "jpTitle": "比例変化と 時代の うねり",
+    "viTitle": "Biến thiên tỷ lệ thuận & Hai vế cùng thay đổi",
+    "level": "N3",
+    "pillar": "Biến thiên tỷ lệ",
+    "summary": "Toàn diện Bài 72 Bản Lề Trung Cấp N3: Biến thiên tỷ lệ thuận & Hai vế cùng thay đổi. Trụ cột: Biến thiên tỷ lệ.",
+    "mindmap": {
+      "center": "Bài 72: Biến thiên tỷ lệ thuận & Hai vế cùng thay đổi",
+      "tip": "Tuổi càng cao trí càng sâu: ~にしたがって, ~につれて.",
+      "branches": [
+        {
+          "name": "第72課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Biến thiên tỷ lệ\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、比例変化と 時代の うねりは非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第72課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_72_1",
+        "pattern": "第72課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Biến thiên tỷ lệ thuận & Hai vế cùng thay đổi",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Biến thiên tỷ lệ\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、比例変化と 時代の うねりは非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_72_2",
+        "pattern": "第72課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 73,
+    "title": "第73課：習慣の 形成と 意思決定 (Quyết định cá nhân, Tập thể & Thói quen duy trì)",
+    "jpTitle": "習慣の 形成と 意思決定",
+    "viTitle": "Quyết định cá nhân, Tập thể & Thói quen duy trì",
+    "level": "N3",
+    "pillar": "Thói quen & Quy định",
+    "summary": "Toàn diện Bài 73 Bản Lề Trung Cấp N3: Quyết định cá nhân, Tập thể & Thói quen duy trì. Trụ cột: Thói quen & Quy định.",
+    "mindmap": {
+      "center": "Bài 73: Quyết định cá nhân, Tập thể & Thói quen duy trì",
+      "tip": "Quy ước tự giác: ~ことにする, ~ことになる.",
+      "branches": [
+        {
+          "name": "第73課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Thói quen & Quy định\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、習慣の 形成と 意思決定は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第73課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_73_1",
+        "pattern": "第73課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Quyết định cá nhân, Tập thể & Thói quen duy trì",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Thói quen & Quy định\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、習慣の 形成と 意思決定は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_73_2",
+        "pattern": "第73課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 74,
+    "title": "第74課：ビジネスの 敬語と 応対 (Kính ngữ trung cấp & Ứng xử đàm thoại nơi làm việc)",
+    "jpTitle": "ビジネスの 敬語と 応対",
+    "viTitle": "Kính ngữ trung cấp & Ứng xử đàm thoại nơi làm việc",
+    "level": "N3",
+    "pillar": "Kính ngữ công sở",
+    "summary": "Toàn diện Bài 74 Bản Lề Trung Cấp N3: Kính ngữ trung cấp & Ứng xử đàm thoại nơi làm việc. Trụ cột: Kính ngữ công sở.",
+    "mindmap": {
+      "center": "Bài 74: Kính ngữ trung cấp & Ứng xử đàm thoại nơi làm việc",
+      "tip": "Lịch thiệp với đối tác: お・ご~いただく, させていただけませんか.",
+      "branches": [
+        {
+          "name": "第74課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Kính ngữ công sở\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、ビジネスの 敬語と 応対は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第74課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_74_1",
+        "pattern": "第74課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Kính ngữ trung cấp & Ứng xử đàm thoại nơi làm việc",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Kính ngữ công sở\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、ビジネスの 敬語と 応対は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_74_2",
+        "pattern": "第74課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 75,
+    "title": "第75課：N3 総まとめと N2への 架け橋 (Đại Tổng Kết Bản Lề N3 & Bước Đệm Lên N2)",
+    "jpTitle": "N3 総まとめと N2への 架け橋",
+    "viTitle": "Đại Tổng Kết Bản Lề N3 & Bước Đệm Lên N2",
+    "level": "N3",
+    "pillar": "Tổng kết & Nâng cao",
+    "summary": "Toàn diện Bài 75 Bản Lề Trung Cấp N3: Đại Tổng Kết Bản Lề N3 & Bước Đệm Lên N2. Trụ cột: Tổng kết & Nâng cao.",
+    "mindmap": {
+      "center": "Bài 75: Đại Tổng Kết Bản Lề N3 & Bước Đệm Lên N2",
+      "tip": "Nắm vững toàn bộ 140 cấu trúc N3 sẵn sàng bước vào vũ đài N2.",
+      "branches": [
+        {
+          "name": "第75課 主力文型A",
+          "color": "#38bdf8",
+          "formula": "V-る / V-た / N-の + 表現A",
+          "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+          "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Tổng kết & Nâng cao\" để phản xạ trong 3 giây.",
+          "example": {
+            "jp": "日本の生活において、N3 総まとめと N2への 架け橋は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          }
+        },
+        {
+          "name": "第75課 発展文型B",
+          "color": "#10b981",
+          "formula": "V-ます / A-い / A-な + 表現B",
+          "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+          "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+          "example": {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n3_lesson_75_1",
+        "pattern": "第75課 主力文型A",
+        "formula": "V-る / V-た / N-の + 表現A",
+        "meaning": "Biểu đạt cốt lõi trong chủ đề Đại Tổng Kết Bản Lề N3 & Bước Đệm Lên N2",
+        "nuance": "Sắc thái chính xác dùng trong ngữ cảnh đàm thoại công xưởng và đời sống Nhật Bản.",
+        "trapBuster": "Bẫy đề thi JLPT N3: Nhận diện dấu hiệu trợ từ đi kèm để không chọn nhầm phương án nhiễu.",
+        "mnemonic": "Mẹo nhớ AI: Liên hệ từ khóa \"Tổng kết & Nâng cao\" để phản xạ trong 3 giây.",
+        "examples": [
+          {
+            "jp": "日本の生活において、N3 総まとめと N2への 架け橋は非常に重要な要素です。",
+            "vi": "Trong đời sống tại Nhật Bản, điều này là một yếu tố rất quan trọng."
+          },
+          {
+            "jp": "仕事の現場では、ルールを守ることが何より求められる。",
+            "vi": "Tại nơi làm việc, việc tuân thủ quy tắc được đòi hỏi hơn bất cứ điều gì."
+          }
+        ],
+        "drills": [
+          {
+            "q": "この 場面では、（　）表現を 使うのが 最も 適切だ。",
+            "options": [
+              "正しい文型",
+              "過去形",
+              "否定形",
+              "受身形"
+            ],
+            "correct": 0,
+            "explain": "Áp dụng mẫu ngữ pháp chuẩn theo chủ đề bài học."
+          }
+        ]
+      },
+      {
+        "id": "n3_lesson_75_2",
+        "pattern": "第75課 発展文型B",
+        "formula": "V-ます / A-い / A-な + 表現B",
+        "meaning": "Mẫu câu mở rộng nâng cao phản xạ giao tiếp trung cấp",
+        "nuance": "Hạn chế dùng khi nói với cấp trên nếu chưa chuyển sang dạng khiêm nhường.",
+        "trapBuster": "Cẩn thận với thì của động từ vế sau (quá khứ vs hiện tại tiếp diễn).",
+        "mnemonic": "Mẹo nhớ AI: Ghép đôi cặp trợ từ đặc trưng.",
+        "examples": [
+          {
+            "jp": "同僚と協力しながら、課題を着実に解決していく。",
+            "vi": "Vừa hợp tác với đồng nghiệp, vừa vững vàng giải quyết từng vấn đề."
+          }
+        ],
+        "drills": [
+          {
+            "q": "文脈に 合う（　）を 選びなさい。",
+            "options": [
+              "適切な助詞",
+              "名詞",
+              "副詞",
+              "接続詞"
+            ],
+            "correct": 0,
+            "explain": "Chọn trợ từ tương thích với cấu trúc ngữ pháp."
+          }
+        ]
+      }
+    ]
+  }
+]

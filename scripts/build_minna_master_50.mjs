@@ -309,6 +309,8 @@ function generateDetailedGrammarPoints(meta) {
 }
 
 const all50Lessons = LESSON_METAS.map((meta) => {
+  const gps = generateDetailedGrammarPoints(meta);
+  const colors = ['#38bdf8', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899'];
   return {
     lessonNumber: meta.num,
     title: `第${meta.num}課：${meta.jp} (${meta.vi})`,
@@ -319,14 +321,17 @@ const all50Lessons = LESSON_METAS.map((meta) => {
     summary: `Toàn diện Bài ${meta.num} Giáo trình Minna no Nihongo: ${meta.vi}. Trụ cột: ${meta.pillar}.`,
     mindmap: {
       center: `Bài ${meta.num}: ${meta.vi}`,
-      branches: [
-        `Công thức & Quy tắc chia: ${meta.pillar}`,
-        `Sắc thái & Bối cảnh đời sống Nhật`,
-        `Bẫy đề thi & Điểm cần tránh nhầm lẫn`
-      ],
-      tip: `Nắm chắc cấu trúc Bài ${meta.num} để làm bệ phóng vững vàng cho trình độ ${meta.level === 'N5' ? 'N4' : 'N3'}.`
+      tip: `Nắm chắc cấu trúc Bài ${meta.num} để làm bệ phóng vững vàng cho trình độ ${meta.level === 'N5' ? 'N4' : 'N3'}.`,
+      branches: gps.map((p, idx) => ({
+        name: p.pattern,
+        color: colors[idx % colors.length],
+        formula: p.formula,
+        nuance: p.nuance,
+        mnemonic: `Mẹo nhớ: Nắm chắc bản chất ${p.pattern} trong ngữ cảnh bài học.`,
+        example: p.examples?.[0] || { jp: meta.jp, vi: meta.vi }
+      }))
     },
-    grammarPoints: generateDetailedGrammarPoints(meta),
+    grammarPoints: gps,
     vocabCount: meta.level === 'N5' ? 35 : 45
   };
 });

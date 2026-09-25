@@ -1,0 +1,4327 @@
+[
+  {
+    "lessonNumber": 76,
+    "title": "第76課：電光石火の ビジネス判断 (Thời điểm tức thì & Tương quan chớp nhoáng)",
+    "jpTitle": "電光石火の ビジネス判断",
+    "viTitle": "Thời điểm tức thì & Tương quan chớp nhoáng",
+    "level": "N2",
+    "pillar": "Tức thì & Thời điểm",
+    "summary": "Toàn diện Bài 76 Bản Lề Cao Cấp N2: Thời điểm tức thì & Tương quan chớp nhoáng. Chuyên đề: Tức thì & Thời điểm.",
+    "mindmap": {
+      "center": "Bài 76: Thời điểm tức thì & Tương quan chớp nhoáng",
+      "tip": "Nắm vững các mẫu câu Tức thì & Thời điểm để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~次第",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~次第",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tức thì & Thời điểm\".",
+          "example": {
+            "jp": "ビジネスの実務において、~次第の正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~たとたん",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~たとたん",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tức thì & Thời điểm\".",
+          "example": {
+            "jp": "ビジネスの実務において、~たとたんの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~か~ないかのうちに",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~か~ないかのうちに",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tức thì & Thời điểm\".",
+          "example": {
+            "jp": "ビジネスの実務において、~か~ないかのうちにの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~やいなや",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~やいなや",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tức thì & Thời điểm\".",
+          "example": {
+            "jp": "ビジネスの実務において、~やいなやの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_76_1",
+        "pattern": "~次第",
+        "formula": "接続：V / Adj / N + ~次第",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Thời điểm tức thì & Tương quan chớp nhoáng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tức thì & Thời điểm\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~次第の正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~次第",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~次第 phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_76_2",
+        "pattern": "~たとたん",
+        "formula": "接続：V / Adj / N + ~たとたん",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Thời điểm tức thì & Tương quan chớp nhoáng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tức thì & Thời điểm\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~たとたんの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~たとたん",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~たとたん phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_76_3",
+        "pattern": "~か~ないかのうちに",
+        "formula": "接続：V / Adj / N + ~か~ないかのうちに",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Thời điểm tức thì & Tương quan chớp nhoáng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tức thì & Thời điểm\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~か~ないかのうちにの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~か~ないかのうちに",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~か~ないかのうちに phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_76_4",
+        "pattern": "~やいなや",
+        "formula": "接続：V / Adj / N + ~やいなや",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Thời điểm tức thì & Tương quan chớp nhoáng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tức thì & Thời điểm\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~やいなやの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~やいなや",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~やいなや phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 77,
+    "title": "第77課：市場の 広がりと 展開 (Phạm vi không gian - thời gian & Quy mô)",
+    "jpTitle": "市場の 広がりと 展開",
+    "viTitle": "Phạm vi không gian - thời gian & Quy mô",
+    "level": "N2",
+    "pillar": "Phạm vi & Quy mô",
+    "summary": "Toàn diện Bài 77 Bản Lề Cao Cấp N2: Phạm vi không gian - thời gian & Quy mô. Chuyên đề: Phạm vi & Quy mô.",
+    "mindmap": {
+      "center": "Bài 77: Phạm vi không gian - thời gian & Quy mô",
+      "tip": "Nắm vững các mẫu câu Phạm vi & Quy mô để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~をはじめ (として)",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~をはじめ (として)",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phạm vi & Quy mô\".",
+          "example": {
+            "jp": "ビジネスの実務において、~をはじめ (として)の正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~から~にかけて",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~から~にかけて",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phạm vi & Quy mô\".",
+          "example": {
+            "jp": "ビジネスの実務において、~から~にかけての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~にわたって",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~にわたって",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phạm vi & Quy mô\".",
+          "example": {
+            "jp": "ビジネスの実務において、~にわたっての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~を通じて",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~を通じて",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phạm vi & Quy mô\".",
+          "example": {
+            "jp": "ビジネスの実務において、~を通じての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_77_1",
+        "pattern": "~をはじめ (として)",
+        "formula": "接続：V / Adj / N + ~をはじめ (として)",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Phạm vi không gian - thời gian & Quy mô",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phạm vi & Quy mô\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~をはじめ (として)の正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~をはじめ (として)",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~をはじめ (として) phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_77_2",
+        "pattern": "~から~にかけて",
+        "formula": "接続：V / Adj / N + ~から~にかけて",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Phạm vi không gian - thời gian & Quy mô",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phạm vi & Quy mô\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~から~にかけての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~から~にかけて",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~から~にかけて phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_77_3",
+        "pattern": "~にわたって",
+        "formula": "接続：V / Adj / N + ~にわたって",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Phạm vi không gian - thời gian & Quy mô",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phạm vi & Quy mô\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~にわたっての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~にわたって",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~にわたって phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_77_4",
+        "pattern": "~を通じて",
+        "formula": "接続：V / Adj / N + ~を通じて",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Phạm vi không gian - thời gian & Quy mô",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phạm vi & Quy mô\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~を通じての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~を通じて",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~を通じて phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 78,
+    "title": "第78課：コンプライアンスと 規範 (Căn cứ pháp lý, Tiêu chuẩn & Quy chuẩn)",
+    "jpTitle": "コンプライアンスと 規範",
+    "viTitle": "Căn cứ pháp lý, Tiêu chuẩn & Quy chuẩn",
+    "level": "N2",
+    "pillar": "Tiêu chuẩn & Căn cứ",
+    "summary": "Toàn diện Bài 78 Bản Lề Cao Cấp N2: Căn cứ pháp lý, Tiêu chuẩn & Quy chuẩn. Chuyên đề: Tiêu chuẩn & Căn cứ.",
+    "mindmap": {
+      "center": "Bài 78: Căn cứ pháp lý, Tiêu chuẩn & Quy chuẩn",
+      "tip": "Nắm vững các mẫu câu Tiêu chuẩn & Căn cứ để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~にもとづいて",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~にもとづいて",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tiêu chuẩn & Căn cứ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~にもとづいての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~にそって",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~にそって",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tiêu chuẩn & Căn cứ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~にそっての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~のもとで",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~のもとで",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tiêu chuẩn & Căn cứ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~のもとでの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~に即して",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~に即して",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tiêu chuẩn & Căn cứ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~に即しての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_78_1",
+        "pattern": "~にもとづいて",
+        "formula": "接続：V / Adj / N + ~にもとづいて",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Căn cứ pháp lý, Tiêu chuẩn & Quy chuẩn",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tiêu chuẩn & Căn cứ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~にもとづいての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~にもとづいて",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~にもとづいて phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_78_2",
+        "pattern": "~にそって",
+        "formula": "接続：V / Adj / N + ~にそって",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Căn cứ pháp lý, Tiêu chuẩn & Quy chuẩn",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tiêu chuẩn & Căn cứ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~にそっての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~にそって",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~にそって phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_78_3",
+        "pattern": "~のもとで",
+        "formula": "接続：V / Adj / N + ~のもとで",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Căn cứ pháp lý, Tiêu chuẩn & Quy chuẩn",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tiêu chuẩn & Căn cứ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~のもとでの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~のもとで",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~のもとで phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_78_4",
+        "pattern": "~に即して",
+        "formula": "接続：V / Adj / N + ~に即して",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Căn cứ pháp lý, Tiêu chuẩn & Quy chuẩn",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tiêu chuẩn & Căn cứ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~に即しての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~に即して",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~に即して phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 79,
+    "title": "第79課：予期せぬ 事態の 原因究明 (Nguyên nhân sâu xa & Động cơ thái quá)",
+    "jpTitle": "予期せぬ 事態の 原因究明",
+    "viTitle": "Nguyên nhân sâu xa & Động cơ thái quá",
+    "level": "N2",
+    "pillar": "Nguyên nhân & Động cơ",
+    "summary": "Toàn diện Bài 79 Bản Lề Cao Cấp N2: Nguyên nhân sâu xa & Động cơ thái quá. Chuyên đề: Nguyên nhân & Động cơ.",
+    "mindmap": {
+      "center": "Bài 79: Nguyên nhân sâu xa & Động cơ thái quá",
+      "tip": "Nắm vững các mẫu câu Nguyên nhân & Động cơ để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~あまり",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~あまり",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nguyên nhân & Động cơ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~あまりの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~あまりの~に",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~あまりの~に",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nguyên nhân & Động cơ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~あまりの~にの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~ことだし",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~ことだし",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nguyên nhân & Động cơ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ことだしの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~わけだ",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~わけだ",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nguyên nhân & Động cơ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~わけだの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_79_1",
+        "pattern": "~あまり",
+        "formula": "接続：V / Adj / N + ~あまり",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Nguyên nhân sâu xa & Động cơ thái quá",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nguyên nhân & Động cơ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~あまりの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~あまり",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~あまり phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_79_2",
+        "pattern": "~あまりの~に",
+        "formula": "接続：V / Adj / N + ~あまりの~に",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Nguyên nhân sâu xa & Động cơ thái quá",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nguyên nhân & Động cơ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~あまりの~にの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~あまりの~に",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~あまりの~に phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_79_3",
+        "pattern": "~ことだし",
+        "formula": "接続：V / Adj / N + ~ことだし",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Nguyên nhân sâu xa & Động cơ thái quá",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nguyên nhân & Động cơ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ことだしの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ことだし",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ことだし phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_79_4",
+        "pattern": "~わけだ",
+        "formula": "接続：V / Adj / N + ~わけだ",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Nguyên nhân sâu xa & Động cơ thái quá",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nguyên nhân & Động cơ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~わけだの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~わけだ",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~わけだ phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 80,
+    "title": "第80課：譲歩と 慎重な 前置き (Thừa nhận một nửa, Nhượng bộ & Rào đón)",
+    "jpTitle": "譲歩と 慎重な 前置き",
+    "viTitle": "Thừa nhận một nửa, Nhượng bộ & Rào đón",
+    "level": "N2",
+    "pillar": "Nhượng bộ & Rào đón",
+    "summary": "Toàn diện Bài 80 Bản Lề Cao Cấp N2: Thừa nhận một nửa, Nhượng bộ & Rào đón. Chuyên đề: Nhượng bộ & Rào đón.",
+    "mindmap": {
+      "center": "Bài 80: Thừa nhận một nửa, Nhượng bộ & Rào đón",
+      "tip": "Nắm vững các mẫu câu Nhượng bộ & Rào đón để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~ものの",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~ものの",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nhượng bộ & Rào đón\".",
+          "example": {
+            "jp": "ビジネスの実務において、~もののの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~といっても",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~といっても",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nhượng bộ & Rào đón\".",
+          "example": {
+            "jp": "ビジネスの実務において、~といってもの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~からといって",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~からといって",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nhượng bộ & Rào đón\".",
+          "example": {
+            "jp": "ビジネスの実務において、~からといっての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~にしても",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~にしても",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nhượng bộ & Rào đón\".",
+          "example": {
+            "jp": "ビジネスの実務において、~にしてもの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_80_1",
+        "pattern": "~ものの",
+        "formula": "接続：V / Adj / N + ~ものの",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Thừa nhận một nửa, Nhượng bộ & Rào đón",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nhượng bộ & Rào đón\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~もののの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ものの",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ものの phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_80_2",
+        "pattern": "~といっても",
+        "formula": "接続：V / Adj / N + ~といっても",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Thừa nhận một nửa, Nhượng bộ & Rào đón",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nhượng bộ & Rào đón\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~といってもの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~といっても",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~といっても phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_80_3",
+        "pattern": "~からといって",
+        "formula": "接続：V / Adj / N + ~からといって",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Thừa nhận một nửa, Nhượng bộ & Rào đón",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nhượng bộ & Rào đón\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~からといっての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~からといって",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~からといって phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_80_4",
+        "pattern": "~にしても",
+        "formula": "接続：V / Adj / N + ~にしても",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Thừa nhận một nửa, Nhượng bộ & Rào đón",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Nhượng bộ & Rào đón\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~にしてもの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~にしても",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~にしても phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 81,
+    "title": "第81課：無差別と 公正の 原則 (Bất kể điều kiện, Đồng nhất mọi tình huống)",
+    "jpTitle": "無差別と 公正の 原則",
+    "viTitle": "Bất kể điều kiện, Đồng nhất mọi tình huống",
+    "level": "N2",
+    "pillar": "Bất kể điều kiện",
+    "summary": "Toàn diện Bài 81 Bản Lề Cao Cấp N2: Bất kể điều kiện, Đồng nhất mọi tình huống. Chuyên đề: Bất kể điều kiện.",
+    "mindmap": {
+      "center": "Bài 81: Bất kể điều kiện, Đồng nhất mọi tình huống",
+      "tip": "Nắm vững các mẫu câu Bất kể điều kiện để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~にしろ~にしろ",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~にしろ~にしろ",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bất kể điều kiện\".",
+          "example": {
+            "jp": "ビジネスの実務において、~にしろ~にしろの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~にせよ",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~にせよ",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bất kể điều kiện\".",
+          "example": {
+            "jp": "ビジネスの実務において、~にせよの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~を問わず",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~を問わず",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bất kể điều kiện\".",
+          "example": {
+            "jp": "ビジネスの実務において、~を問わずの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~にかかわらず",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~にかかわらず",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bất kể điều kiện\".",
+          "example": {
+            "jp": "ビジネスの実務において、~にかかわらずの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_81_1",
+        "pattern": "~にしろ~にしろ",
+        "formula": "接続：V / Adj / N + ~にしろ~にしろ",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Bất kể điều kiện, Đồng nhất mọi tình huống",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bất kể điều kiện\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~にしろ~にしろの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~にしろ~にしろ",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~にしろ~にしろ phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_81_2",
+        "pattern": "~にせよ",
+        "formula": "接続：V / Adj / N + ~にせよ",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Bất kể điều kiện, Đồng nhất mọi tình huống",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bất kể điều kiện\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~にせよの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~にせよ",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~にせよ phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_81_3",
+        "pattern": "~を問わず",
+        "formula": "接続：V / Adj / N + ~を問わず",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Bất kể điều kiện, Đồng nhất mọi tình huống",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bất kể điều kiện\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~を問わずの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~を問わず",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~を問わず phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_81_4",
+        "pattern": "~にかかわらず",
+        "formula": "接続：V / Adj / N + ~にかかわらず",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Bất kể điều kiện, Đồng nhất mọi tình huống",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bất kể điều kiện\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~にかかわらずの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~にかかわらず",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~にかかわらず phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 82,
+    "title": "第82課：揺るぎなき 確信と 結論 (Khẳng định đanh thép, Sự thật tất yếu)",
+    "jpTitle": "揺るぎなき 確信と 結論",
+    "viTitle": "Khẳng định đanh thép, Sự thật tất yếu",
+    "level": "N2",
+    "pillar": "Khẳng định tất yếu",
+    "summary": "Toàn diện Bài 82 Bản Lề Cao Cấp N2: Khẳng định đanh thép, Sự thật tất yếu. Chuyên đề: Khẳng định tất yếu.",
+    "mindmap": {
+      "center": "Bài 82: Khẳng định đanh thép, Sự thật tất yếu",
+      "tip": "Nắm vững các mẫu câu Khẳng định tất yếu để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~に相違ない",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~に相違ない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khẳng định tất yếu\".",
+          "example": {
+            "jp": "ビジネスの実務において、~に相違ないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~に決まっている",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~に決まっている",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khẳng định tất yếu\".",
+          "example": {
+            "jp": "ビジネスの実務において、~に決まっているの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~にほかならない",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~にほかならない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khẳng định tất yếu\".",
+          "example": {
+            "jp": "ビジネスの実務において、~にほかならないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~にすぎない",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~にすぎない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khẳng định tất yếu\".",
+          "example": {
+            "jp": "ビジネスの実務において、~にすぎないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_82_1",
+        "pattern": "~に相違ない",
+        "formula": "接続：V / Adj / N + ~に相違ない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Khẳng định đanh thép, Sự thật tất yếu",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khẳng định tất yếu\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~に相違ないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~に相違ない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~に相違ない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_82_2",
+        "pattern": "~に決まっている",
+        "formula": "接続：V / Adj / N + ~に決まっている",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Khẳng định đanh thép, Sự thật tất yếu",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khẳng định tất yếu\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~に決まっているの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~に決まっている",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~に決まっている phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_82_3",
+        "pattern": "~にほかならない",
+        "formula": "接続：V / Adj / N + ~にほかならない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Khẳng định đanh thép, Sự thật tất yếu",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khẳng định tất yếu\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~にほかならないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~にほかならない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~にほかならない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_82_4",
+        "pattern": "~にすぎない",
+        "formula": "接続：V / Adj / N + ~にすぎない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Khẳng định đanh thép, Sự thật tất yếu",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khẳng định tất yếu\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~にすぎないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~にすぎない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~にすぎない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 83,
+    "title": "第83課：使命感と 抑えきれぬ 義務 (Phủ định kép & Nghĩa vụ đạo đức bắt buộc)",
+    "jpTitle": "使命感と 抑えきれぬ 義務",
+    "viTitle": "Phủ định kép & Nghĩa vụ đạo đức bắt buộc",
+    "level": "N2",
+    "pillar": "Phủ định kép & Nghĩa vụ",
+    "summary": "Toàn diện Bài 83 Bản Lề Cao Cấp N2: Phủ định kép & Nghĩa vụ đạo đức bắt buộc. Chuyên đề: Phủ định kép & Nghĩa vụ.",
+    "mindmap": {
+      "center": "Bài 83: Phủ định kép & Nghĩa vụ đạo đức bắt buộc",
+      "tip": "Nắm vững các mẫu câu Phủ định kép & Nghĩa vụ để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~ないではいられない",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~ないではいられない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phủ định kép & Nghĩa vụ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ないではいられないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~ずにはすまない",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~ずにはすまない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phủ định kép & Nghĩa vụ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ずにはすまないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~ざるを得ない",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~ざるを得ない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phủ định kép & Nghĩa vụ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ざるを得ないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~ずにはいられない",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~ずにはいられない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phủ định kép & Nghĩa vụ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ずにはいられないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_83_1",
+        "pattern": "~ないではいられない",
+        "formula": "接続：V / Adj / N + ~ないではいられない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Phủ định kép & Nghĩa vụ đạo đức bắt buộc",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phủ định kép & Nghĩa vụ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ないではいられないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ないではいられない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ないではいられない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_83_2",
+        "pattern": "~ずにはすまない",
+        "formula": "接続：V / Adj / N + ~ずにはすまない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Phủ định kép & Nghĩa vụ đạo đức bắt buộc",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phủ định kép & Nghĩa vụ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ずにはすまないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ずにはすまない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ずにはすまない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_83_3",
+        "pattern": "~ざるを得ない",
+        "formula": "接続：V / Adj / N + ~ざるを得ない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Phủ định kép & Nghĩa vụ đạo đức bắt buộc",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phủ định kép & Nghĩa vụ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ざるを得ないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ざるを得ない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ざるを得ない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_83_4",
+        "pattern": "~ずにはいられない",
+        "formula": "接続：V / Adj / N + ~ずにはいられない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Phủ định kép & Nghĩa vụ đạo đức bắt buộc",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Phủ định kép & Nghĩa vụ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ずにはいられないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ずにはいられない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ずにはいられない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 84,
+    "title": "第84課：反論と 全面的な 打ち消し (Bác bỏ luận điểm, Phủ nhận khả năng)",
+    "jpTitle": "反論と 全面的な 打ち消し",
+    "viTitle": "Bác bỏ luận điểm, Phủ nhận khả năng",
+    "level": "N2",
+    "pillar": "Bác bỏ & Phủ nhận",
+    "summary": "Toàn diện Bài 84 Bản Lề Cao Cấp N2: Bác bỏ luận điểm, Phủ nhận khả năng. Chuyên đề: Bác bỏ & Phủ nhận.",
+    "mindmap": {
+      "center": "Bài 84: Bác bỏ luận điểm, Phủ nhận khả năng",
+      "tip": "Nắm vững các mẫu câu Bác bỏ & Phủ nhận để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~どころか",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~どころか",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bác bỏ & Phủ nhận\".",
+          "example": {
+            "jp": "ビジネスの実務において、~どころかの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~どころではない",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~どころではない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bác bỏ & Phủ nhận\".",
+          "example": {
+            "jp": "ビジネスの実務において、~どころではないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~っこない",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~っこない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bác bỏ & Phủ nhận\".",
+          "example": {
+            "jp": "ビジネスの実務において、~っこないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~わけがない",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~わけがない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bác bỏ & Phủ nhận\".",
+          "example": {
+            "jp": "ビジネスの実務において、~わけがないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_84_1",
+        "pattern": "~どころか",
+        "formula": "接続：V / Adj / N + ~どころか",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Bác bỏ luận điểm, Phủ nhận khả năng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bác bỏ & Phủ nhận\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~どころかの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~どころか",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~どころか phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_84_2",
+        "pattern": "~どころではない",
+        "formula": "接続：V / Adj / N + ~どころではない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Bác bỏ luận điểm, Phủ nhận khả năng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bác bỏ & Phủ nhận\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~どころではないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~どころではない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~どころではない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_84_3",
+        "pattern": "~っこない",
+        "formula": "接続：V / Adj / N + ~っこない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Bác bỏ luận điểm, Phủ nhận khả năng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bác bỏ & Phủ nhận\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~っこないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~っこない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~っこない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_84_4",
+        "pattern": "~わけがない",
+        "formula": "接続：V / Adj / N + ~わけがない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Bác bỏ luận điểm, Phủ nhận khả năng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Bác bỏ & Phủ nhận\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~わけがないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~わけがない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~わけがない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 85,
+    "title": "第85課：苦渋の 決断と 不可能の 壁 (Trăn trở từ chối & Năng lực bất khả kháng)",
+    "jpTitle": "苦渋の 決断と 不可能の 壁",
+    "viTitle": "Trăn trở từ chối & Năng lực bất khả kháng",
+    "level": "N2",
+    "pillar": "Khó khăn & Từ chối",
+    "summary": "Toàn diện Bài 85 Bản Lề Cao Cấp N2: Trăn trở từ chối & Năng lực bất khả kháng. Chuyên đề: Khó khăn & Từ chối.",
+    "mindmap": {
+      "center": "Bài 85: Trăn trở từ chối & Năng lực bất khả kháng",
+      "tip": "Nắm vững các mẫu câu Khó khăn & Từ chối để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~かねる",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~かねる",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khó khăn & Từ chối\".",
+          "example": {
+            "jp": "ビジネスの実務において、~かねるの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~がたい",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~がたい",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khó khăn & Từ chối\".",
+          "example": {
+            "jp": "ビジネスの実務において、~がたいの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~ようがない",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~ようがない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khó khăn & Từ chối\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ようがないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~かねない",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~かねない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khó khăn & Từ chối\".",
+          "example": {
+            "jp": "ビジネスの実務において、~かねないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_85_1",
+        "pattern": "~かねる",
+        "formula": "接続：V / Adj / N + ~かねる",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Trăn trở từ chối & Năng lực bất khả kháng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khó khăn & Từ chối\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~かねるの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~かねる",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~かねる phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_85_2",
+        "pattern": "~がたい",
+        "formula": "接続：V / Adj / N + ~がたい",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Trăn trở từ chối & Năng lực bất khả kháng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khó khăn & Từ chối\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~がたいの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~がたい",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~がたい phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_85_3",
+        "pattern": "~ようがない",
+        "formula": "接続：V / Adj / N + ~ようがない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Trăn trở từ chối & Năng lực bất khả kháng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khó khăn & Từ chối\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ようがないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ようがない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ようがない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_85_4",
+        "pattern": "~かねない",
+        "formula": "接続：V / Adj / N + ~かねない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Trăn trở từ chối & Năng lực bất khả kháng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Khó khăn & Từ chối\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~かねないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~かねない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~かねない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 86,
+    "title": "第86課：新たな 門出と 機会の 創出 (Thời điểm bước ngoặt & Cơ hội chuyển mình)",
+    "jpTitle": "新たな 門出と 機会の 創出",
+    "viTitle": "Thời điểm bước ngoặt & Cơ hội chuyển mình",
+    "level": "N2",
+    "pillar": "Thời điểm & Bước ngoặt",
+    "summary": "Toàn diện Bài 86 Bản Lề Cao Cấp N2: Thời điểm bước ngoặt & Cơ hội chuyển mình. Chuyên đề: Thời điểm & Bước ngoặt.",
+    "mindmap": {
+      "center": "Bài 86: Thời điểm bước ngoặt & Cơ hội chuyển mình",
+      "tip": "Nắm vững các mẫu câu Thời điểm & Bước ngoặt để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~に際して",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~に際して",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Thời điểm & Bước ngoặt\".",
+          "example": {
+            "jp": "ビジネスの実務において、~に際しての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~にあたって",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~にあたって",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Thời điểm & Bước ngoặt\".",
+          "example": {
+            "jp": "ビジネスの実務において、~にあたっての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~を契機に",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~を契機に",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Thời điểm & Bước ngoặt\".",
+          "example": {
+            "jp": "ビジネスの実務において、~を契機にの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~を機に",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~を機に",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Thời điểm & Bước ngoặt\".",
+          "example": {
+            "jp": "ビジネスの実務において、~を機にの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_86_1",
+        "pattern": "~に際して",
+        "formula": "接続：V / Adj / N + ~に際して",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Thời điểm bước ngoặt & Cơ hội chuyển mình",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Thời điểm & Bước ngoặt\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~に際しての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~に際して",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~に際して phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_86_2",
+        "pattern": "~にあたって",
+        "formula": "接続：V / Adj / N + ~にあたって",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Thời điểm bước ngoặt & Cơ hội chuyển mình",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Thời điểm & Bước ngoặt\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~にあたっての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~にあたって",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~にあたって phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_86_3",
+        "pattern": "~を契機に",
+        "formula": "接続：V / Adj / N + ~を契機に",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Thời điểm bước ngoặt & Cơ hội chuyển mình",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Thời điểm & Bước ngoặt\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~を契機にの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~を契機に",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~を契機に phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_86_4",
+        "pattern": "~を機に",
+        "formula": "接続：V / Adj / N + ~を機に",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Thời điểm bước ngoặt & Cơ hội chuyển mình",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Thời điểm & Bước ngoặt\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~を機にの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~を機に",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~を機に phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 87,
+    "title": "第87課：議論の 的と ターゲット設定 (Tâm điểm tranh luận & Đối tượng định hướng)",
+    "jpTitle": "議論の 的と ターゲット設定",
+    "viTitle": "Tâm điểm tranh luận & Đối tượng định hướng",
+    "level": "N2",
+    "pillar": "Mục tiêu & Tranh luận",
+    "summary": "Toàn diện Bài 87 Bản Lề Cao Cấp N2: Tâm điểm tranh luận & Đối tượng định hướng. Chuyên đề: Mục tiêu & Tranh luận.",
+    "mindmap": {
+      "center": "Bài 87: Tâm điểm tranh luận & Đối tượng định hướng",
+      "tip": "Nắm vững các mẫu câu Mục tiêu & Tranh luận để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~をめぐって",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~をめぐって",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Mục tiêu & Tranh luận\".",
+          "example": {
+            "jp": "ビジネスの実務において、~をめぐっての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~に向けて",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~に向けて",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Mục tiêu & Tranh luận\".",
+          "example": {
+            "jp": "ビジネスの実務において、~に向けての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~を対象に",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~を対象に",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Mục tiêu & Tranh luận\".",
+          "example": {
+            "jp": "ビジネスの実務において、~を対象にの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~にかかわる",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~にかかわる",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Mục tiêu & Tranh luận\".",
+          "example": {
+            "jp": "ビジネスの実務において、~にかかわるの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_87_1",
+        "pattern": "~をめぐって",
+        "formula": "接続：V / Adj / N + ~をめぐって",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Tâm điểm tranh luận & Đối tượng định hướng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Mục tiêu & Tranh luận\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~をめぐっての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~をめぐって",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~をめぐって phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_87_2",
+        "pattern": "~に向けて",
+        "formula": "接続：V / Adj / N + ~に向けて",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Tâm điểm tranh luận & Đối tượng định hướng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Mục tiêu & Tranh luận\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~に向けての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~に向けて",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~に向けて phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_87_3",
+        "pattern": "~を対象に",
+        "formula": "接続：V / Adj / N + ~を対象に",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Tâm điểm tranh luận & Đối tượng định hướng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Mục tiêu & Tranh luận\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~を対象にの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~を対象に",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~を対象に phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_87_4",
+        "pattern": "~にかかわる",
+        "formula": "接続：V / Adj / N + ~にかかわる",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Tâm điểm tranh luận & Đối tượng định hướng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Mục tiêu & Tranh luận\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~にかかわるの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~にかかわる",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~にかかわる phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 88,
+    "title": "第88課：悪化の 一途を たどる 傾向 (Biến thiên theo một chiều hướng xấu đi)",
+    "jpTitle": "悪化の 一途を たどる 傾向",
+    "viTitle": "Biến thiên theo một chiều hướng xấu đi",
+    "level": "N2",
+    "pillar": "Xu hướng & Chiều hướng",
+    "summary": "Toàn diện Bài 88 Bản Lề Cao Cấp N2: Biến thiên theo một chiều hướng xấu đi. Chuyên đề: Xu hướng & Chiều hướng.",
+    "mindmap": {
+      "center": "Bài 88: Biến thiên theo một chiều hướng xấu đi",
+      "tip": "Nắm vững các mẫu câu Xu hướng & Chiều hướng để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~一方だ",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~一方だ",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xu hướng & Chiều hướng\".",
+          "example": {
+            "jp": "ビジネスの実務において、~一方だの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~ばかりだ",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~ばかりだ",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xu hướng & Chiều hướng\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ばかりだの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~つつある",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~つつある",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xu hướng & Chiều hướng\".",
+          "example": {
+            "jp": "ビジネスの実務において、~つつあるの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~よりましだ",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~よりましだ",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xu hướng & Chiều hướng\".",
+          "example": {
+            "jp": "ビジネスの実務において、~よりましだの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_88_1",
+        "pattern": "~一方だ",
+        "formula": "接続：V / Adj / N + ~一方だ",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Biến thiên theo một chiều hướng xấu đi",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xu hướng & Chiều hướng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~一方だの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~一方だ",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~一方だ phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_88_2",
+        "pattern": "~ばかりだ",
+        "formula": "接続：V / Adj / N + ~ばかりだ",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Biến thiên theo một chiều hướng xấu đi",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xu hướng & Chiều hướng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ばかりだの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ばかりだ",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ばかりだ phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_88_3",
+        "pattern": "~つつある",
+        "formula": "接続：V / Adj / N + ~つつある",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Biến thiên theo một chiều hướng xấu đi",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xu hướng & Chiều hướng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~つつあるの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~つつある",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~つつある phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_88_4",
+        "pattern": "~よりましだ",
+        "formula": "接続：V / Adj / N + ~よりましだ",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Biến thiên theo một chiều hướng xấu đi",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xu hướng & Chiều hướng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~よりましだの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~よりましだ",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~よりましだ phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 89,
+    "title": "第89課：溢れる 謝意と 敬意の 表明 (Cảm xúc ngưỡng mộ, Biết ơn sâu sắc)",
+    "jpTitle": "溢れる 謝意と 敬意の 表明",
+    "viTitle": "Cảm xúc ngưỡng mộ, Biết ơn sâu sắc",
+    "level": "N2",
+    "pillar": "Cảm xúc & Ngưỡng mộ",
+    "summary": "Toàn diện Bài 89 Bản Lề Cao Cấp N2: Cảm xúc ngưỡng mộ, Biết ơn sâu sắc. Chuyên đề: Cảm xúc & Ngưỡng mộ.",
+    "mindmap": {
+      "center": "Bài 89: Cảm xúc ngưỡng mộ, Biết ơn sâu sắc",
+      "tip": "Nắm vững các mẫu câu Cảm xúc & Ngưỡng mộ để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~てやまない",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~てやまない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảm xúc & Ngưỡng mộ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~てやまないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~に堪えない",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~に堪えない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảm xúc & Ngưỡng mộ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~に堪えないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~を禁じ得ない",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~を禁じ得ない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảm xúc & Ngưỡng mộ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~を禁じ得ないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~に余る",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~に余る",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảm xúc & Ngưỡng mộ\".",
+          "example": {
+            "jp": "ビジネスの実務において、~に余るの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_89_1",
+        "pattern": "~てやまない",
+        "formula": "接続：V / Adj / N + ~てやまない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Cảm xúc ngưỡng mộ, Biết ơn sâu sắc",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảm xúc & Ngưỡng mộ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~てやまないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~てやまない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~てやまない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_89_2",
+        "pattern": "~に堪えない",
+        "formula": "接続：V / Adj / N + ~に堪えない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Cảm xúc ngưỡng mộ, Biết ơn sâu sắc",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảm xúc & Ngưỡng mộ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~に堪えないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~に堪えない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~に堪えない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_89_3",
+        "pattern": "~を禁じ得ない",
+        "formula": "接続：V / Adj / N + ~を禁じ得ない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Cảm xúc ngưỡng mộ, Biết ơn sâu sắc",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảm xúc & Ngưỡng mộ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~を禁じ得ないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~を禁じ得ない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~を禁じ得ない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_89_4",
+        "pattern": "~に余る",
+        "formula": "接続：V / Adj / N + ~に余る",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Cảm xúc ngưỡng mộ, Biết ơn sâu sắc",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảm xúc & Ngưỡng mộ\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~に余るの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~に余る",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~に余る phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 90,
+    "title": "第90課：警鐘と 批評の 視点 (Đánh giá chủ quan & Lời cảnh báo thận trọng)",
+    "jpTitle": "警鐘と 批評の 視点",
+    "viTitle": "Đánh giá chủ quan & Lời cảnh báo thận trọng",
+    "level": "N2",
+    "pillar": "Cảnh báo & Đánh giá",
+    "summary": "Toàn diện Bài 90 Bản Lề Cao Cấp N2: Đánh giá chủ quan & Lời cảnh báo thận trọng. Chuyên đề: Cảnh báo & Đánh giá.",
+    "mindmap": {
+      "center": "Bài 90: Đánh giá chủ quan & Lời cảnh báo thận trọng",
+      "tip": "Nắm vững các mẫu câu Cảnh báo & Đánh giá để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~ものがある",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~ものがある",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảnh báo & Đánh giá\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ものがあるの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~とは限らない",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~とは限らない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảnh báo & Đánh giá\".",
+          "example": {
+            "jp": "ビジネスの実務において、~とは限らないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~まい",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~まい",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảnh báo & Đánh giá\".",
+          "example": {
+            "jp": "ビジネスの実務において、~まいの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~おそれがある",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~おそれがある",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảnh báo & Đánh giá\".",
+          "example": {
+            "jp": "ビジネスの実務において、~おそれがあるの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_90_1",
+        "pattern": "~ものがある",
+        "formula": "接続：V / Adj / N + ~ものがある",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đánh giá chủ quan & Lời cảnh báo thận trọng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảnh báo & Đánh giá\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ものがあるの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ものがある",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ものがある phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_90_2",
+        "pattern": "~とは限らない",
+        "formula": "接続：V / Adj / N + ~とは限らない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đánh giá chủ quan & Lời cảnh báo thận trọng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảnh báo & Đánh giá\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~とは限らないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~とは限らない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~とは限らない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_90_3",
+        "pattern": "~まい",
+        "formula": "接続：V / Adj / N + ~まい",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đánh giá chủ quan & Lời cảnh báo thận trọng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảnh báo & Đánh giá\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~まいの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~まい",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~まい phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_90_4",
+        "pattern": "~おそれがある",
+        "formula": "接続：V / Adj / N + ~おそれがある",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đánh giá chủ quan & Lời cảnh báo thận trọng",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Cảnh báo & Đánh giá\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~おそれがあるの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~おそれがある",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~おそれがある phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 91,
+    "title": "第91課：プロフェッショナルの 倫理規範 (Đạo lý xử thế & Quy phạm chuẩn mực nghề)",
+    "jpTitle": "プロフェッショナルの 倫理規範",
+    "viTitle": "Đạo lý xử thế & Quy phạm chuẩn mực nghề",
+    "level": "N2",
+    "pillar": "Đạo đức nghề nghiệp",
+    "summary": "Toàn diện Bài 91 Bản Lề Cao Cấp N2: Đạo lý xử thế & Quy phạm chuẩn mực nghề. Chuyên đề: Đạo đức nghề nghiệp.",
+    "mindmap": {
+      "center": "Bài 91: Đạo lý xử thế & Quy phạm chuẩn mực nghề",
+      "tip": "Nắm vững các mẫu câu Đạo đức nghề nghiệp để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~べきではない",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~べきではない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đạo đức nghề nghiệp\".",
+          "example": {
+            "jp": "ビジネスの実務において、~べきではないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~ことだ",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~ことだ",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đạo đức nghề nghiệp\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ことだの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~ものだ",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~ものだ",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đạo đức nghề nghiệp\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ものだの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~ものではない",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~ものではない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đạo đức nghề nghiệp\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ものではないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_91_1",
+        "pattern": "~べきではない",
+        "formula": "接続：V / Adj / N + ~べきではない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đạo lý xử thế & Quy phạm chuẩn mực nghề",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đạo đức nghề nghiệp\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~べきではないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~べきではない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~べきではない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_91_2",
+        "pattern": "~ことだ",
+        "formula": "接続：V / Adj / N + ~ことだ",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đạo lý xử thế & Quy phạm chuẩn mực nghề",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đạo đức nghề nghiệp\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ことだの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ことだ",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ことだ phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_91_3",
+        "pattern": "~ものだ",
+        "formula": "接続：V / Adj / N + ~ものだ",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đạo lý xử thế & Quy phạm chuẩn mực nghề",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đạo đức nghề nghiệp\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ものだの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ものだ",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ものだ phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_91_4",
+        "pattern": "~ものではない",
+        "formula": "接続：V / Adj / N + ~ものではない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đạo lý xử thế & Quy phạm chuẩn mực nghề",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đạo đức nghề nghiệp\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ものではないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ものではない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ものではない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 92,
+    "title": "第92課：限界突破と 徹底の 精神 (Nỗ lực đến cùng & Trạng thái triệt để)",
+    "jpTitle": "限界突破と 徹底の 精神",
+    "viTitle": "Nỗ lực đến cùng & Trạng thái triệt để",
+    "level": "N2",
+    "pillar": "Triệt để & Đến cùng",
+    "summary": "Toàn diện Bài 92 Bản Lề Cao Cấp N2: Nỗ lực đến cùng & Trạng thái triệt để. Chuyên đề: Triệt để & Đến cùng.",
+    "mindmap": {
+      "center": "Bài 92: Nỗ lực đến cùng & Trạng thái triệt để",
+      "tip": "Nắm vững các mẫu câu Triệt để & Đến cùng để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~ぬく",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~ぬく",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Triệt để & Đến cùng\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ぬくの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~きる / きれない",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~きる / きれない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Triệt để & Đến cùng\".",
+          "example": {
+            "jp": "ビジネスの実務において、~きる / きれないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~かけ",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~かけ",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Triệt để & Đến cùng\".",
+          "example": {
+            "jp": "ビジネスの実務において、~かけの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~だらけ",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~だらけ",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Triệt để & Đến cùng\".",
+          "example": {
+            "jp": "ビジネスの実務において、~だらけの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_92_1",
+        "pattern": "~ぬく",
+        "formula": "接続：V / Adj / N + ~ぬく",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Nỗ lực đến cùng & Trạng thái triệt để",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Triệt để & Đến cùng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ぬくの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ぬく",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ぬく phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_92_2",
+        "pattern": "~きる / きれない",
+        "formula": "接続：V / Adj / N + ~きる / きれない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Nỗ lực đến cùng & Trạng thái triệt để",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Triệt để & Đến cùng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~きる / きれないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~きる / きれない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~きる / きれない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_92_3",
+        "pattern": "~かけ",
+        "formula": "接続：V / Adj / N + ~かけ",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Nỗ lực đến cùng & Trạng thái triệt để",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Triệt để & Đến cùng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~かけの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~かけ",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~かけ phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_92_4",
+        "pattern": "~だらけ",
+        "formula": "接続：V / Adj / N + ~だらけ",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Nỗ lực đến cùng & Trạng thái triệt để",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Triệt để & Đến cùng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~だらけの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~だらけ",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~だらけ phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 93,
+    "title": "第93課：組織連動と 相互の 変動 (Biến thiên phức hợp tỷ lệ thuận trong quản trị)",
+    "jpTitle": "組織連動と 相互の 変動",
+    "viTitle": "Biến thiên phức hợp tỷ lệ thuận trong quản trị",
+    "level": "N2",
+    "pillar": "Tỷ lệ thuận quản trị",
+    "summary": "Toàn diện Bài 93 Bản Lề Cao Cấp N2: Biến thiên phức hợp tỷ lệ thuận trong quản trị. Chuyên đề: Tỷ lệ thuận quản trị.",
+    "mindmap": {
+      "center": "Bài 93: Biến thiên phức hợp tỷ lệ thuận trong quản trị",
+      "tip": "Nắm vững các mẫu câu Tỷ lệ thuận quản trị để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~につれて",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~につれて",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tỷ lệ thuận quản trị\".",
+          "example": {
+            "jp": "ビジネスの実務において、~につれての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~にしたがって",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~にしたがって",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tỷ lệ thuận quản trị\".",
+          "example": {
+            "jp": "ビジネスの実務において、~にしたがっての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~に伴って",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~に伴って",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tỷ lệ thuận quản trị\".",
+          "example": {
+            "jp": "ビジネスの実務において、~に伴っての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~とともに",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~とともに",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tỷ lệ thuận quản trị\".",
+          "example": {
+            "jp": "ビジネスの実務において、~とともにの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_93_1",
+        "pattern": "~につれて",
+        "formula": "接続：V / Adj / N + ~につれて",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Biến thiên phức hợp tỷ lệ thuận trong quản trị",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tỷ lệ thuận quản trị\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~につれての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~につれて",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~につれて phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_93_2",
+        "pattern": "~にしたがって",
+        "formula": "接続：V / Adj / N + ~にしたがって",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Biến thiên phức hợp tỷ lệ thuận trong quản trị",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tỷ lệ thuận quản trị\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~にしたがっての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~にしたがって",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~にしたがって phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_93_3",
+        "pattern": "~に伴って",
+        "formula": "接続：V / Adj / N + ~に伴って",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Biến thiên phức hợp tỷ lệ thuận trong quản trị",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tỷ lệ thuận quản trị\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~に伴っての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~に伴って",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~に伴って phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_93_4",
+        "pattern": "~とともに",
+        "formula": "接続：V / Adj / N + ~とともに",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Biến thiên phức hợp tỷ lệ thuận trong quản trị",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tỷ lệ thuận quản trị\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~とともにの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~とともに",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~とともに phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 94,
+    "title": "第94課：不可欠な 条件と 厳格な 制約 (Điều kiện tiên quyết & Giả định ngặt nghèo)",
+    "jpTitle": "不可欠な 条件と 厳格な 制約",
+    "viTitle": "Điều kiện tiên quyết & Giả định ngặt nghèo",
+    "level": "N2",
+    "pillar": "Điều kiện tiên quyết",
+    "summary": "Toàn diện Bài 94 Bản Lề Cao Cấp N2: Điều kiện tiên quyết & Giả định ngặt nghèo. Chuyên đề: Điều kiện tiên quyết.",
+    "mindmap": {
+      "center": "Bài 94: Điều kiện tiên quyết & Giả định ngặt nghèo",
+      "tip": "Nắm vững các mẫu câu Điều kiện tiên quyết để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~とあれば",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~とあれば",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Điều kiện tiên quyết\".",
+          "example": {
+            "jp": "ビジネスの実務において、~とあればの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~としたら",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~としたら",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Điều kiện tiên quyết\".",
+          "example": {
+            "jp": "ビジネスの実務において、~としたらの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~とすると",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~とすると",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Điều kiện tiên quyết\".",
+          "example": {
+            "jp": "ビジネスの実務において、~とするとの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~ないことには",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~ないことには",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Điều kiện tiên quyết\".",
+          "example": {
+            "jp": "ビジネスの実務において、~ないことにはの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_94_1",
+        "pattern": "~とあれば",
+        "formula": "接続：V / Adj / N + ~とあれば",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Điều kiện tiên quyết & Giả định ngặt nghèo",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Điều kiện tiên quyết\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~とあればの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~とあれば",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~とあれば phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_94_2",
+        "pattern": "~としたら",
+        "formula": "接続：V / Adj / N + ~としたら",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Điều kiện tiên quyết & Giả định ngặt nghèo",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Điều kiện tiên quyết\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~としたらの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~としたら",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~としたら phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_94_3",
+        "pattern": "~とすると",
+        "formula": "接続：V / Adj / N + ~とすると",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Điều kiện tiên quyết & Giả định ngặt nghèo",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Điều kiện tiên quyết\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~とするとの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~とすると",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~とすると phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_94_4",
+        "pattern": "~ないことには",
+        "formula": "接続：V / Adj / N + ~ないことには",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Điều kiện tiên quyết & Giả định ngặt nghèo",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Điều kiện tiên quyết\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~ないことにはの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~ないことには",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~ないことには phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 95,
+    "title": "第95課：心理描写と 傾向の 把握 (Giả vờ, Cảm giác thoáng qua & Tính cách)",
+    "jpTitle": "心理描写と 傾向の 把握",
+    "viTitle": "Giả vờ, Cảm giác thoáng qua & Tính cách",
+    "level": "N2",
+    "pillar": "Tâm lý & Xu hướng",
+    "summary": "Toàn diện Bài 95 Bản Lề Cao Cấp N2: Giả vờ, Cảm giác thoáng qua & Tính cách. Chuyên đề: Tâm lý & Xu hướng.",
+    "mindmap": {
+      "center": "Bài 95: Giả vờ, Cảm giác thoáng qua & Tính cách",
+      "tip": "Nắm vững các mẫu câu Tâm lý & Xu hướng để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "~つもりで",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ~つもりで",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tâm lý & Xu hướng\".",
+          "example": {
+            "jp": "ビジネスの実務において、~つもりでの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~気味 (ぎみ)",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + ~気味 (ぎみ)",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tâm lý & Xu hướng\".",
+          "example": {
+            "jp": "ビジネスの実務において、~気味 (ぎみ)の正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~げ",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ~げ",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tâm lý & Xu hướng\".",
+          "example": {
+            "jp": "ビジネスの実務において、~げの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "~っぽい",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ~っぽい",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tâm lý & Xu hướng\".",
+          "example": {
+            "jp": "ビジネスの実務において、~っぽいの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_95_1",
+        "pattern": "~つもりで",
+        "formula": "接続：V / Adj / N + ~つもりで",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Giả vờ, Cảm giác thoáng qua & Tính cách",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tâm lý & Xu hướng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~つもりでの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~つもりで",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~つもりで phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_95_2",
+        "pattern": "~気味 (ぎみ)",
+        "formula": "接続：V / Adj / N + ~気味 (ぎみ)",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Giả vờ, Cảm giác thoáng qua & Tính cách",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tâm lý & Xu hướng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~気味 (ぎみ)の正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~気味 (ぎみ)",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~気味 (ぎみ) phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_95_3",
+        "pattern": "~げ",
+        "formula": "接続：V / Adj / N + ~げ",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Giả vờ, Cảm giác thoáng qua & Tính cách",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tâm lý & Xu hướng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~げの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~げ",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~げ phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_95_4",
+        "pattern": "~っぽい",
+        "formula": "接続：V / Adj / N + ~っぽい",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Giả vờ, Cảm giác thoáng qua & Tính cách",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tâm lý & Xu hướng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、~っぽいの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "~っぽい",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ~っぽい phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 96,
+    "title": "第96課：契約交渉と 合意形成の 言語 (Đàm phán thương mại & Soạn thảo thư từ)",
+    "jpTitle": "契約交渉と 合意形成の 言語",
+    "viTitle": "Đàm phán thương mại & Soạn thảo thư từ",
+    "level": "N2",
+    "pillar": "Đàm phán thương mại",
+    "summary": "Toàn diện Bài 96 Bản Lề Cao Cấp N2: Đàm phán thương mại & Soạn thảo thư từ. Chuyên đề: Đàm phán thương mại.",
+    "mindmap": {
+      "center": "Bài 96: Đàm phán thương mại & Soạn thảo thư từ",
+      "tip": "Nắm vững các mẫu câu Đàm phán thương mại để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "ご意向に沿いかねる",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + ご意向に沿いかねる",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đàm phán thương mại\".",
+          "example": {
+            "jp": "ビジネスの実務において、ご意向に沿いかねるの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "前向きに検討する",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + 前向きに検討する",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đàm phán thương mại\".",
+          "example": {
+            "jp": "ビジネスの実務において、前向きに検討するの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "つきましては",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + つきましては",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đàm phán thương mại\".",
+          "example": {
+            "jp": "ビジネスの実務において、つきましてはの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "ご了承のほど",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ご了承のほど",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đàm phán thương mại\".",
+          "example": {
+            "jp": "ビジネスの実務において、ご了承のほどの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_96_1",
+        "pattern": "ご意向に沿いかねる",
+        "formula": "接続：V / Adj / N + ご意向に沿いかねる",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đàm phán thương mại & Soạn thảo thư từ",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đàm phán thương mại\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、ご意向に沿いかねるの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "ご意向に沿いかねる",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ご意向に沿いかねる phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_96_2",
+        "pattern": "前向きに検討する",
+        "formula": "接続：V / Adj / N + 前向きに検討する",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đàm phán thương mại & Soạn thảo thư từ",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đàm phán thương mại\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、前向きに検討するの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "前向きに検討する",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là 前向きに検討する phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_96_3",
+        "pattern": "つきましては",
+        "formula": "接続：V / Adj / N + つきましては",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đàm phán thương mại & Soạn thảo thư từ",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đàm phán thương mại\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、つきましてはの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "つきましては",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là つきましては phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_96_4",
+        "pattern": "ご了承のほど",
+        "formula": "接続：V / Adj / N + ご了承のほど",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đàm phán thương mại & Soạn thảo thư từ",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đàm phán thương mại\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、ご了承のほどの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "ご了承のほど",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ご了承のほど phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 97,
+    "title": "第97課：戦略的 報連相と プレゼンテーション (Báo cáo Hou-Ren-So & Thuyết trình chiến lược)",
+    "jpTitle": "戦略的 報連相と プレゼンテーション",
+    "viTitle": "Báo cáo Hou-Ren-So & Thuyết trình chiến lược",
+    "level": "N2",
+    "pillar": "Báo cáo doanh nghiệp",
+    "summary": "Toàn diện Bài 97 Bản Lề Cao Cấp N2: Báo cáo Hou-Ren-So & Thuyết trình chiến lược. Chuyên đề: Báo cáo doanh nghiệp.",
+    "mindmap": {
+      "center": "Bài 97: Báo cáo Hou-Ren-So & Thuyết trình chiến lược",
+      "tip": "Nắm vững các mẫu câu Báo cáo doanh nghiệp để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "結論から申し上げますと",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + 結論から申し上げますと",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Báo cáo doanh nghiệp\".",
+          "example": {
+            "jp": "ビジネスの実務において、結論から申し上げますとの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "鑑みますと",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + 鑑みますと",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Báo cáo doanh nghiệp\".",
+          "example": {
+            "jp": "ビジネスの実務において、鑑みますとの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "背景といたしまして",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + 背景といたしまして",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Báo cáo doanh nghiệp\".",
+          "example": {
+            "jp": "ビジネスの実務において、背景といたしましての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "ご高覧ください",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + ご高覧ください",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Báo cáo doanh nghiệp\".",
+          "example": {
+            "jp": "ビジネスの実務において、ご高覧くださいの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_97_1",
+        "pattern": "結論から申し上げますと",
+        "formula": "接続：V / Adj / N + 結論から申し上げますと",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Báo cáo Hou-Ren-So & Thuyết trình chiến lược",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Báo cáo doanh nghiệp\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、結論から申し上げますとの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "結論から申し上げますと",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là 結論から申し上げますと phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_97_2",
+        "pattern": "鑑みますと",
+        "formula": "接続：V / Adj / N + 鑑みますと",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Báo cáo Hou-Ren-So & Thuyết trình chiến lược",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Báo cáo doanh nghiệp\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、鑑みますとの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "鑑みますと",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là 鑑みますと phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_97_3",
+        "pattern": "背景といたしまして",
+        "formula": "接続：V / Adj / N + 背景といたしまして",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Báo cáo Hou-Ren-So & Thuyết trình chiến lược",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Báo cáo doanh nghiệp\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、背景といたしましての正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "背景といたしまして",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là 背景といたしまして phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_97_4",
+        "pattern": "ご高覧ください",
+        "formula": "接続：V / Adj / N + ご高覧ください",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Báo cáo Hou-Ren-So & Thuyết trình chiến lược",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Báo cáo doanh nghiệp\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、ご高覧くださいの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "ご高覧ください",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ご高覧ください phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 98,
+    "title": "第98課：クレーム対応と 高度な 敬語表現 (Kính ngữ ngoại giao, Xử lý khiếu nại đối tác)",
+    "jpTitle": "クレーム対応と 高度な 敬語表現",
+    "viTitle": "Kính ngữ ngoại giao, Xử lý khiếu nại đối tác",
+    "level": "N2",
+    "pillar": "Xử lý khủng hoảng",
+    "summary": "Toàn diện Bài 98 Bản Lề Cao Cấp N2: Kính ngữ ngoại giao, Xử lý khiếu nại đối tác. Chuyên đề: Xử lý khủng hoảng.",
+    "mindmap": {
+      "center": "Bài 98: Kính ngữ ngoại giao, Xử lý khiếu nại đối tác",
+      "tip": "Nắm vững các mẫu câu Xử lý khủng hoảng để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "誠に遺憾に存じます",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + 誠に遺憾に存じます",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xử lý khủng hoảng\".",
+          "example": {
+            "jp": "ビジネスの実務において、誠に遺憾に存じますの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "重ねてお詫び申し上げます",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + 重ねてお詫び申し上げます",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xử lý khủng hoảng\".",
+          "example": {
+            "jp": "ビジネスの実務において、重ねてお詫び申し上げますの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "ご容赦いただけますよう",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + ご容赦いただけますよう",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xử lý khủng hoảng\".",
+          "example": {
+            "jp": "ビジネスの実務において、ご容赦いただけますようの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "早急に対応いたす所存です",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + 早急に対応いたす所存です",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xử lý khủng hoảng\".",
+          "example": {
+            "jp": "ビジネスの実務において、早急に対応いたす所存ですの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_98_1",
+        "pattern": "誠に遺憾に存じます",
+        "formula": "接続：V / Adj / N + 誠に遺憾に存じます",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Kính ngữ ngoại giao, Xử lý khiếu nại đối tác",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xử lý khủng hoảng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、誠に遺憾に存じますの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "誠に遺憾に存じます",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là 誠に遺憾に存じます phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_98_2",
+        "pattern": "重ねてお詫び申し上げます",
+        "formula": "接続：V / Adj / N + 重ねてお詫び申し上げます",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Kính ngữ ngoại giao, Xử lý khiếu nại đối tác",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xử lý khủng hoảng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、重ねてお詫び申し上げますの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "重ねてお詫び申し上げます",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là 重ねてお詫び申し上げます phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_98_3",
+        "pattern": "ご容赦いただけますよう",
+        "formula": "接続：V / Adj / N + ご容赦いただけますよう",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Kính ngữ ngoại giao, Xử lý khiếu nại đối tác",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xử lý khủng hoảng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、ご容赦いただけますようの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "ご容赦いただけますよう",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là ご容赦いただけますよう phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_98_4",
+        "pattern": "早急に対応いたす所存です",
+        "formula": "接続：V / Adj / N + 早急に対応いたす所存です",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Kính ngữ ngoại giao, Xử lý khiếu nại đối tác",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Xử lý khủng hoảng\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、早急に対応いたす所存ですの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "早急に対応いたす所存です",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là 早急に対応いたす所存です phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 99,
+    "title": "第99課：社内規程と プレスリリースの 読解 (Đọc hiểu tài liệu nội bộ & Quy chế doanh nghiệp)",
+    "jpTitle": "社内規程と プレスリリースの 読解",
+    "viTitle": "Đọc hiểu tài liệu nội bộ & Quy chế doanh nghiệp",
+    "level": "N2",
+    "pillar": "Đọc hiểu tài liệu",
+    "summary": "Toàn diện Bài 99 Bản Lề Cao Cấp N2: Đọc hiểu tài liệu nội bộ & Quy chế doanh nghiệp. Chuyên đề: Đọc hiểu tài liệu.",
+    "mindmap": {
+      "center": "Bài 99: Đọc hiểu tài liệu nội bộ & Quy chế doanh nghiệp",
+      "tip": "Nắm vững các mẫu câu Đọc hiểu tài liệu để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "本規程に定めるところにより",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + 本規程に定めるところにより",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đọc hiểu tài liệu\".",
+          "example": {
+            "jp": "ビジネスの実務において、本規程に定めるところによりの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "この限りではない",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + この限りではない",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đọc hiểu tài liệu\".",
+          "example": {
+            "jp": "ビジネスの実務において、この限りではないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "準拠するものとする",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + 準拠するものとする",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đọc hiểu tài liệu\".",
+          "example": {
+            "jp": "ビジネスの実務において、準拠するものとするの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "遅滞なく通知する",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + 遅滞なく通知する",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đọc hiểu tài liệu\".",
+          "example": {
+            "jp": "ビジネスの実務において、遅滞なく通知するの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_99_1",
+        "pattern": "本規程に定めるところにより",
+        "formula": "接続：V / Adj / N + 本規程に定めるところにより",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đọc hiểu tài liệu nội bộ & Quy chế doanh nghiệp",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đọc hiểu tài liệu\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、本規程に定めるところによりの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "本規程に定めるところにより",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là 本規程に定めるところにより phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_99_2",
+        "pattern": "この限りではない",
+        "formula": "接続：V / Adj / N + この限りではない",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đọc hiểu tài liệu nội bộ & Quy chế doanh nghiệp",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đọc hiểu tài liệu\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、この限りではないの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "この限りではない",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là この限りではない phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_99_3",
+        "pattern": "準拠するものとする",
+        "formula": "接続：V / Adj / N + 準拠するものとする",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đọc hiểu tài liệu nội bộ & Quy chế doanh nghiệp",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đọc hiểu tài liệu\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、準拠するものとするの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "準拠するものとする",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là 準拠するものとする phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_99_4",
+        "pattern": "遅滞なく通知する",
+        "formula": "接続：V / Adj / N + 遅滞なく通知する",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đọc hiểu tài liệu nội bộ & Quy chế doanh nghiệp",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Đọc hiểu tài liệu\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、遅滞なく通知するの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "遅滞なく通知する",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là 遅滞なく通知する phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonNumber": 100,
+    "title": "第100課：N2 総括：ビジネス日本語の 集大成 (Đại Tổng Kết Bản Lề N2 (Bách Khoa Doanh Nghiệp))",
+    "jpTitle": "N2 総括：ビジネス日本語の 集大成",
+    "viTitle": "Đại Tổng Kết Bản Lề N2 (Bách Khoa Doanh Nghiệp)",
+    "level": "N2",
+    "pillar": "Tổng kết N2 Toàn diện",
+    "summary": "Toàn diện Bài 100 Bản Lề Cao Cấp N2: Đại Tổng Kết Bản Lề N2 (Bách Khoa Doanh Nghiệp). Chuyên đề: Tổng kết N2 Toàn diện.",
+    "mindmap": {
+      "center": "Bài 100: Đại Tổng Kết Bản Lề N2 (Bách Khoa Doanh Nghiệp)",
+      "tip": "Nắm vững các mẫu câu Tổng kết N2 Toàn diện để làm chủ các tài liệu báo cáo và email doanh nghiệp.",
+      "branches": [
+        {
+          "name": "160 Mẫu ngữ pháp cốt lõi",
+          "color": "#8b5cf6",
+          "formula": "接続：V / Adj / N + 160 Mẫu ngữ pháp cốt lõi",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tổng kết N2 Toàn diện\".",
+          "example": {
+            "jp": "ビジネスの実務において、160 Mẫu ngữ pháp cốt lõiの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "Phản xạ bẻ bẫy trắc nghiệm",
+          "color": "#3b82f6",
+          "formula": "接続：V / Adj / N + Phản xạ bẻ bẫy trắc nghiệm",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tổng kết N2 Toàn diện\".",
+          "example": {
+            "jp": "ビジネスの実務において、Phản xạ bẻ bẫy trắc nghiệmの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "Đọc nhanh tài liệu kinh tế",
+          "color": "#10b981",
+          "formula": "接続：V / Adj / N + Đọc nhanh tài liệu kinh tế",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tổng kết N2 Toàn diện\".",
+          "example": {
+            "jp": "ビジネスの実務において、Đọc nhanh tài liệu kinh tếの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        },
+        {
+          "name": "Nghe đàm thoại thương trường",
+          "color": "#f59e0b",
+          "formula": "接続：V / Adj / N + Nghe đàm thoại thương trường",
+          "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+          "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tổng kết N2 Toàn diện\".",
+          "example": {
+            "jp": "ビジネスの実務において、Nghe đàm thoại thương trườngの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        }
+      ]
+    },
+    "grammarPoints": [
+      {
+        "id": "n2_lesson_100_1",
+        "pattern": "160 Mẫu ngữ pháp cốt lõi",
+        "formula": "接続：V / Adj / N + 160 Mẫu ngữ pháp cốt lõi",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đại Tổng Kết Bản Lề N2 (Bách Khoa Doanh Nghiệp)",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tổng kết N2 Toàn diện\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、160 Mẫu ngữ pháp cốt lõiの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "160 Mẫu ngữ pháp cốt lõi",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là 160 Mẫu ngữ pháp cốt lõi phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_100_2",
+        "pattern": "Phản xạ bẻ bẫy trắc nghiệm",
+        "formula": "接続：V / Adj / N + Phản xạ bẻ bẫy trắc nghiệm",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đại Tổng Kết Bản Lề N2 (Bách Khoa Doanh Nghiệp)",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tổng kết N2 Toàn diện\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、Phản xạ bẻ bẫy trắc nghiệmの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "Phản xạ bẻ bẫy trắc nghiệm",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là Phản xạ bẻ bẫy trắc nghiệm phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_100_3",
+        "pattern": "Đọc nhanh tài liệu kinh tế",
+        "formula": "接続：V / Adj / N + Đọc nhanh tài liệu kinh tế",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đại Tổng Kết Bản Lề N2 (Bách Khoa Doanh Nghiệp)",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tổng kết N2 Toàn diện\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、Đọc nhanh tài liệu kinh tếの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "Đọc nhanh tài liệu kinh tế",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là Đọc nhanh tài liệu kinh tế phù hợp ngữ cảnh bài học."
+          }
+        ]
+      },
+      {
+        "id": "n2_lesson_100_4",
+        "pattern": "Nghe đàm thoại thương trường",
+        "formula": "接続：V / Adj / N + Nghe đàm thoại thương trường",
+        "meaning": "Mẫu ngữ pháp chuyên sâu trong bối cảnh: Đại Tổng Kết Bản Lề N2 (Bách Khoa Doanh Nghiệp)",
+        "nuance": "Sử dụng chuẩn mực trong văn phong doanh nghiệp và đề thi thực tế JLPT N2.",
+        "trapBuster": "Bẫy đề thi: Chú ý phương án gây nhiễu mang ý nghĩa tương tự nhưng khác biệt về sắc thái ý chí.",
+        "mnemonic": "Mẹo nhớ AI: Liên tưởng đến văn cảnh đàm phán \"Tổng kết N2 Toàn diện\".",
+        "examples": [
+          {
+            "jp": "ビジネスの実務において、Nghe đàm thoại thương trườngの正しい使い分けが信頼を左右する。",
+            "vi": "Trong nghiệp vụ doanh nghiệp, việc dùng chuẩn xác cấu trúc này quyết định sự tín nhiệm."
+          }
+        ],
+        "drills": [
+          {
+            "q": "空欄に入る 最も 適切な 表現を 選びなさい。",
+            "options": [
+              "Nghe đàm thoại thương trường",
+              "不適切な選択肢1",
+              "不適切な選択肢2",
+              "不適切な選択肢3"
+            ],
+            "correct": 0,
+            "explain": "Đáp án đúng là Nghe đàm thoại thương trường phù hợp ngữ cảnh bài học."
+          }
+        ]
+      }
+    ]
+  }
+]
