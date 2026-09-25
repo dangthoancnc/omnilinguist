@@ -25,6 +25,26 @@ import pastExamsData from './data/curriculum/jlpt_past_exams_10yr.json';
 import MindmapCanvasModal from './components/jlpt/MindmapCanvasModal';
 import MindmapAtlasModal from './components/jlpt/MindmapAtlasModal';
 
+// Pedagogical branch palettes for Mindmap (soft, high-contrast visual anchors)
+const BRANCH_THEMES = [
+  { border: '#2563eb', bg: 'var(--tint-sky-bg)', borderSub: 'var(--tint-sky-border)', text: 'var(--tint-sky-text)' },
+  { border: '#7c3aed', bg: 'var(--tint-violet-bg)', borderSub: 'var(--tint-violet-border)', text: 'var(--tint-violet-text)' },
+  { border: '#059669', bg: 'var(--tint-matcha-bg)', borderSub: 'var(--tint-matcha-border)', text: 'var(--tint-matcha-text)' },
+  { border: '#d97706', bg: 'var(--tint-amber-bg)', borderSub: 'var(--tint-amber-border)', text: 'var(--tint-amber-text)' },
+  { border: '#e11d48', bg: 'var(--tint-sakura-bg)', borderSub: 'var(--tint-sakura-border)', text: 'var(--tint-sakura-text)' }
+];
+
+const getLevelBadgeStyle = (level) => {
+  switch (level) {
+    case 'N5': return { bg: 'var(--tint-matcha-bg)', border: 'var(--tint-matcha-border)', text: 'var(--tint-matcha-text)' };
+    case 'N4': return { bg: 'var(--tint-sky-bg)', border: 'var(--tint-sky-border)', text: 'var(--tint-sky-text)' };
+    case 'N3': return { bg: 'var(--tint-violet-bg)', border: 'var(--tint-violet-border)', text: 'var(--tint-violet-text)' };
+    case 'N2': return { bg: 'var(--tint-amber-bg)', border: 'var(--tint-amber-border)', text: 'var(--tint-amber-text)' };
+    case 'N1': return { bg: 'var(--tint-sakura-bg)', border: 'var(--tint-sakura-border)', text: 'var(--tint-sakura-text)' };
+    default:   return { bg: 'var(--bg-surface-2)', border: 'var(--border-default)', text: 'var(--text-primary)' };
+  }
+};
+
 export default function JlptMasterDojo() {
   // Navigation Tabs: 'minna' | 'n3' | 'n2' | 'n1' | 'exams'
   const [mainTab, setMainTab] = useState('minna');
@@ -279,13 +299,13 @@ export default function JlptMasterDojo() {
         flexWrap: 'wrap'
       }}>
         {/* Main Tabs */}
-        <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
           {[
-            { id: 'minna', label: 'Minna No Nihongo (1–50)' },
-            { id: 'n3', label: 'Lò Luyện N3' },
-            { id: 'n2', label: 'Lò Luyện N2' },
-            { id: 'n1', label: 'Lò Luyện N1' },
-            { id: 'exams', label: 'Đề Thi 10 Năm (2014–2024)' }
+            { id: 'minna', label: 'Minna No Nihongo', badge: 'Bài 1–50', style: getLevelBadgeStyle('N5') },
+            { id: 'n3', label: 'Lò Luyện N3', badge: '25 Bài', style: getLevelBadgeStyle('N3') },
+            { id: 'n2', label: 'Lò Luyện N2', badge: '25 Bài', style: getLevelBadgeStyle('N2') },
+            { id: 'n1', label: 'Lò Luyện N1', badge: '25 Bài', style: getLevelBadgeStyle('N1') },
+            { id: 'exams', label: 'Đề Thi 10 Năm', badge: '63 Đề', style: getLevelBadgeStyle('default') }
           ].map(tab => {
             const isActive = mainTab === tab.id;
             return (
@@ -299,22 +319,33 @@ export default function JlptMasterDojo() {
                   if (tab.id === 'n1') { setSelectedFoundationLessonNum(101); setSelectedChapterIdx(0); setSelectedPointId(null); }
                 }}
                 style={{
-                  padding: '5px 12px',
+                  padding: '6px 12px',
                   borderRadius: 6,
-                  border: isActive ? '1px solid var(--border-strong)' : '1px solid transparent',
+                  border: isActive ? `1.5px solid ${tab.style.border}` : '1.5px solid transparent',
                   background: isActive ? 'var(--bg-surface)' : 'transparent',
                   color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)',
                   fontWeight: isActive ? 700 : 500,
-                  fontSize: '0.8rem',
+                  fontSize: '0.82rem',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 6,
-                  boxShadow: isActive ? '0 1px 2px rgba(0,0,0,0.05)' : 'none',
-                  transition: 'all 0.12s ease'
+                  gap: 8,
+                  boxShadow: isActive ? '0 2px 6px rgba(0,0,0,0.05)' : 'none',
+                  transition: 'all 0.15s ease'
                 }}
               >
-                {tab.label}
+                <span>{tab.label}</span>
+                <span style={{
+                  fontSize: '0.68rem',
+                  fontWeight: 700,
+                  padding: '1px 6px',
+                  borderRadius: 4,
+                  background: tab.style.bg,
+                  color: tab.style.text,
+                  border: `1px solid ${tab.style.border}`
+                }}>
+                  {tab.badge}
+                </span>
               </button>
             );
           })}
@@ -479,52 +510,68 @@ export default function JlptMasterDojo() {
                       setLessonView('lesson');
                     }}
                   >
-                    {/* Top Row: Clean Neutral Badge & Count */}
+                    {/* Top Row: Clean Level Badge with soft tint & Count */}
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <span style={{
-                        background: 'var(--bg-surface-2)',
-                        color: 'var(--text-primary)',
-                        border: '1px solid var(--border-default)',
-                        fontSize: '0.68rem',
-                        fontWeight: 700,
-                        padding: '2px 7px',
-                        borderRadius: 4
-                      }}>
-                        {lesson.level} • 第{lesson.lessonNumber}課
-                      </span>
-                      <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                      {(() => {
+                        const lvlStyle = getLevelBadgeStyle(lesson.level);
+                        return (
+                          <span style={{
+                            background: lvlStyle.bg,
+                            color: lvlStyle.text,
+                            border: `1px solid ${lvlStyle.border}`,
+                            fontSize: '0.7rem',
+                            fontWeight: 700,
+                            padding: '2px 8px',
+                            borderRadius: 4
+                          }}>
+                            {lesson.level} • 第{lesson.lessonNumber}課
+                          </span>
+                        );
+                      })()}
+                      <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
                         {bCount} mẫu câu
                       </span>
                     </div>
 
                     {/* Titles */}
                     <div>
-                      <h3 style={{ fontSize: '0.96rem', fontWeight: 700, margin: '2px 0 1px', color: 'var(--text-primary)' }}>
+                      <h3 style={{ fontSize: '0.98rem', fontWeight: 700, margin: '3px 0 2px', color: 'var(--text-primary)' }}>
                         {lesson.jpTitle}
                       </h3>
-                      <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
+                      <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
                         {lesson.viTitle}
                       </div>
                     </div>
 
                     {/* Pillar */}
-                    <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                      Chủ điểm: <span style={{ color: 'var(--text-secondary)', fontWeight: 600 }}>{lesson.pillar}</span>
+                    <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                      <span>Trụ cột:</span>
+                      <span style={{
+                        background: 'var(--tint-amber-bg)',
+                        color: 'var(--tint-amber-text)',
+                        border: '1px solid var(--tint-amber-border)',
+                        padding: '1px 6px',
+                        borderRadius: 4,
+                        fontWeight: 600,
+                        fontSize: '0.72rem'
+                      }}>
+                        {lesson.pillar}
+                      </span>
                     </div>
 
-                    {/* Uniform Neutral Chips */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginTop: 2 }}>
+                    {/* Distinct Structured Chips */}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, marginTop: 3 }}>
                       {lesson.mindmap?.branches?.slice(0, 3).map((b, bIdx) => (
                         <span
                           key={bIdx}
                           style={{
-                            background: 'var(--bg-surface-2)',
-                            fontSize: '0.68rem',
+                            background: 'var(--tint-sky-bg)',
+                            fontSize: '0.7rem',
                             fontWeight: 600,
-                            padding: '2px 6px',
+                            padding: '2px 7px',
                             borderRadius: 4,
-                            color: 'var(--text-secondary)',
-                            border: '1px solid var(--border-default)',
+                            color: 'var(--tint-sky-text)',
+                            border: '1px solid var(--tint-sky-border)',
                             fontFamily: 'monospace'
                           }}
                         >
@@ -581,20 +628,21 @@ export default function JlptMasterDojo() {
             </div>
           </div>
         ) : (
-          /* MINNA DEDICATED LESSON VIEW (Clean, High-Readability Layout) */
+          /* MINNA DEDICATED LESSON VIEW (Rich Pedagogical Structure) */
           <div>
-            {/* Top Navigation & Controls */}
+            {/* Top Navigation & Breadcrumbs Toolbar */}
             <div style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
               background: 'var(--bg-surface)',
-              border: '1px solid var(--border-default)',
+              border: '1.5px solid var(--border-default)',
               borderRadius: 8,
-              padding: '7px 12px',
-              marginBottom: 12,
+              padding: '8px 14px',
+              marginBottom: 14,
               flexWrap: 'wrap',
-              gap: 8
+              gap: 10,
+              boxShadow: '0 1px 3px rgba(0,0,0,0.03)'
             }}>
               {/* Back Button & Breadcrumbs */}
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -603,36 +651,41 @@ export default function JlptMasterDojo() {
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 5,
+                    gap: 6,
                     background: 'var(--bg-surface-2)',
                     border: '1px solid var(--border-default)',
                     color: 'var(--text-primary)',
-                    padding: '4px 10px',
-                    borderRadius: 5,
-                    fontSize: '0.76rem',
+                    padding: '5px 12px',
+                    borderRadius: 6,
+                    fontSize: '0.78rem',
                     fontWeight: 600,
                     cursor: 'pointer'
                   }}
                 >
-                  <ArrowLeft size={13} /> Danh mục bài học
+                  <ArrowLeft size={14} /> Danh mục bài học
                 </button>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.82rem' }}>
-                  <span style={{
-                    background: 'var(--bg-surface-2)',
-                    color: 'var(--text-primary)',
-                    border: '1px solid var(--border-default)',
-                    padding: '1px 6px',
-                    borderRadius: 4,
-                    fontWeight: 700,
-                    fontSize: '0.7rem'
-                  }}>
-                    {activeLesson.level} • 第{activeLesson.lessonNumber}課
-                  </span>
-                  <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.88rem' }}>
+                  {(() => {
+                    const lvlStyle = getLevelBadgeStyle(activeLesson.level);
+                    return (
+                      <span style={{
+                        background: lvlStyle.bg,
+                        color: lvlStyle.text,
+                        border: `1px solid ${lvlStyle.border}`,
+                        padding: '2px 8px',
+                        borderRadius: 4,
+                        fontWeight: 700,
+                        fontSize: '0.74rem'
+                      }}>
+                        {activeLesson.level} • 第{activeLesson.lessonNumber}課
+                      </span>
+                    );
+                  })()}
+                  <span style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.96rem' }}>
                     {activeLesson.jpTitle}
                   </span>
-                  <span style={{ color: 'var(--text-muted)', fontSize: '0.76rem' }}>
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', fontWeight: 500 }}>
                     ({activeLesson.viTitle})
                   </span>
                 </div>
@@ -644,40 +697,40 @@ export default function JlptMasterDojo() {
                   disabled={selectedLessonNum <= 1}
                   onClick={() => goToAdjacentMinna(-1)}
                   style={{
-                    padding: '4px 8px',
-                    borderRadius: 5,
+                    padding: '5px 10px',
+                    borderRadius: 6,
                     border: '1px solid var(--border-default)',
                     background: 'var(--bg-surface-2)',
                     color: selectedLessonNum <= 1 ? 'var(--text-muted)' : 'var(--text-primary)',
                     cursor: selectedLessonNum <= 1 ? 'not-allowed' : 'pointer',
-                    fontSize: '0.75rem',
+                    fontSize: '0.76rem',
                     fontWeight: 600,
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 3
+                    gap: 4
                   }}
                 >
-                  <ChevronLeft size={13} /> Bài trước
+                  <ChevronLeft size={14} /> Bài trước
                 </button>
 
                 <button
                   disabled={selectedLessonNum >= 50}
                   onClick={() => goToAdjacentMinna(1)}
                   style={{
-                    padding: '4px 8px',
-                    borderRadius: 5,
+                    padding: '5px 10px',
+                    borderRadius: 6,
                     border: '1px solid var(--border-default)',
                     background: 'var(--bg-surface-2)',
                     color: selectedLessonNum >= 50 ? 'var(--text-muted)' : 'var(--text-primary)',
                     cursor: selectedLessonNum >= 50 ? 'not-allowed' : 'pointer',
-                    fontSize: '0.75rem',
+                    fontSize: '0.76rem',
                     fontWeight: 600,
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 3
+                    gap: 4
                   }}
                 >
-                  Bài tiếp <ChevronRight size={13} />
+                  Bài tiếp <ChevronRight size={14} />
                 </button>
 
                 <button
@@ -685,93 +738,226 @@ export default function JlptMasterDojo() {
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 5,
-                    background: 'var(--bg-surface)',
-                    color: 'var(--text-primary)',
-                    border: '1px solid var(--border-strong)',
-                    padding: '4px 10px',
-                    borderRadius: 5,
-                    fontSize: '0.75rem',
-                    fontWeight: 600,
-                    cursor: 'pointer'
+                    gap: 6,
+                    background: 'var(--accent-primary)',
+                    color: '#ffffff',
+                    border: 'none',
+                    padding: '5px 12px',
+                    borderRadius: 6,
+                    fontSize: '0.76rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    boxShadow: '0 1px 3px rgba(37,99,235,0.25)'
                   }}
                 >
-                  <Compass size={13} /> Sơ đồ tư duy đầy đủ
+                  <Compass size={14} /> Sơ đồ tư duy đầy đủ
                 </button>
               </div>
             </div>
 
-            {/* SƠ ĐỒ TƯ DUY TÓM TẮT BÀI HỌC (Neutral & High-Readability) */}
+            {/* SƠ ĐỒ TƯ DUY TÓM TẮT BÀI HỌC (Semantic Pedagogical Structure) */}
             <div style={{
               background: 'var(--bg-surface)',
-              border: '1px solid var(--border-default)',
-              borderRadius: 8,
-              padding: '12px 16px',
-              marginBottom: 14
+              border: '1.5px solid var(--border-default)',
+              borderTop: '3px solid var(--accent-primary)',
+              borderRadius: 10,
+              padding: '16px 18px',
+              marginBottom: 16,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.03)'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, flexWrap: 'wrap', gap: 6 }}>
-                <div style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.9rem' }}>
-                  Tổng kết sơ đồ tư duy: {activeLesson.jpTitle}
+              {/* Header */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12, flexWrap: 'wrap', gap: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <div style={{
+                    width: 28,
+                    height: 28,
+                    borderRadius: 6,
+                    background: 'var(--tint-sky-bg)',
+                    border: '1px solid var(--tint-sky-border)',
+                    color: 'var(--accent-primary)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <Layers size={16} />
+                  </div>
+                  <div>
+                    <h3 style={{ margin: 0, fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.98rem' }}>
+                      Sơ Đồ Tư Duy Bản Lề: {activeLesson.jpTitle}
+                    </h3>
+                    <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
+                      Tổng hợp cấu trúc cốt lõi và mối liên kết ngữ nghĩa
+                    </div>
+                  </div>
                 </div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                  Trụ cột: <strong style={{ color: 'var(--text-secondary)' }}>{activeLesson.pillar}</strong>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>Trụ cột bài học:</span>
+                  <span style={{
+                    background: 'var(--tint-amber-bg)',
+                    color: 'var(--tint-amber-text)',
+                    border: '1px solid var(--tint-amber-border)',
+                    padding: '2px 8px',
+                    borderRadius: 4,
+                    fontSize: '0.75rem',
+                    fontWeight: 700
+                  }}>
+                    {activeLesson.pillar}
+                  </span>
                 </div>
               </div>
 
-              {/* Root Connection */}
+              {/* Root Connection (Cội Nguồn) */}
               {activeLesson.mindmap?.rootConnection && (
                 <div style={{
-                  fontSize: '0.76rem',
-                  color: 'var(--text-secondary)',
-                  background: 'var(--bg-surface-2)',
-                  borderLeft: '3px solid var(--accent-primary)',
-                  padding: '4px 8px',
-                  borderRadius: '0 4px 4px 0',
-                  marginBottom: 8
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  fontSize: '0.78rem',
+                  color: 'var(--tint-sky-text)',
+                  background: 'var(--tint-sky-bg)',
+                  border: '1px solid var(--tint-sky-border)',
+                  borderLeft: '4px solid var(--accent-primary)',
+                  padding: '7px 12px',
+                  borderRadius: '0 6px 6px 0',
+                  marginBottom: 12
                 }}>
-                  <strong>Cội nguồn:</strong> {activeLesson.mindmap.rootConnection.replace(/^🔙 Rễ cây:\s*/, '')}
+                  <Compass size={15} style={{ flexShrink: 0 }} />
+                  <div>
+                    <strong>Cội nguồn tiền đề:</strong> {activeLesson.mindmap.rootConnection.replace(/^🔙 Rễ cây:\s*/, '')}
+                  </div>
                 </div>
               )}
 
-              {/* Branches Grid */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 8, marginBottom: 8 }}>
+              {/* Branches Grid (Mỗi nhánh là 1 Card có viền và Badge màu sắc riêng) */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: 12,
+                marginBottom: 12
+              }}>
                 {activeLesson.mindmap.branches?.map((branch, bIdx) => {
                   const bName = typeof branch === 'object' ? branch.name : branch;
                   const bFormula = typeof branch === 'object' ? branch.formula : null;
                   const bMetaphor = typeof branch === 'object' ? branch.metaphor : null;
+                  const theme = BRANCH_THEMES[bIdx % BRANCH_THEMES.length];
+
                   return (
-                    <div key={bIdx} style={{ background: 'var(--bg-surface-2)', border: '1px solid var(--border-default)', padding: '8px 10px', borderRadius: 6, display: 'flex', flexDirection: 'column', gap: 2 }}>
-                      <strong style={{ color: 'var(--text-primary)', fontSize: '0.84rem' }}>{bName}</strong>
-                      {bFormula && <div style={{ color: 'var(--text-muted)', fontSize: '0.72rem', fontFamily: 'monospace' }}>{bFormula}</div>}
-                      {bMetaphor && <div style={{ color: 'var(--text-secondary)', fontSize: '0.72rem' }}>{bMetaphor}</div>}
+                    <div
+                      key={bIdx}
+                      style={{
+                        background: 'var(--bg-surface-2)',
+                        border: '1px solid var(--border-default)',
+                        borderTop: `3px solid ${theme.border}`,
+                        padding: '12px 14px',
+                        borderRadius: 8,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 6,
+                        boxShadow: '0 1px 3px rgba(0,0,0,0.02)'
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <span style={{
+                          background: theme.bg,
+                          color: theme.text,
+                          border: `1px solid ${theme.borderSub}`,
+                          fontSize: '0.68rem',
+                          fontWeight: 700,
+                          padding: '1px 6px',
+                          borderRadius: 4
+                        }}>
+                          Nhánh {bIdx + 1}
+                        </span>
+                        <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                          Cấu trúc trọng tâm
+                        </span>
+                      </div>
+
+                      <strong style={{ color: 'var(--text-primary)', fontSize: '0.92rem', fontWeight: 700 }}>
+                        {bName}
+                      </strong>
+
+                      {bFormula && (
+                        <div style={{
+                          background: 'var(--bg-surface)',
+                          border: '1px dashed var(--border-strong)',
+                          padding: '4px 8px',
+                          borderRadius: 4,
+                          color: 'var(--text-primary)',
+                          fontSize: '0.76rem',
+                          fontFamily: 'monospace',
+                          fontWeight: 600
+                        }}>
+                          {bFormula}
+                        </div>
+                      )}
+
+                      {bMetaphor && (
+                        <div style={{
+                          color: 'var(--text-secondary)',
+                          fontSize: '0.76rem',
+                          lineHeight: 1.45,
+                          marginTop: 2
+                        }}>
+                          {bMetaphor}
+                        </div>
+                      )}
                     </div>
                   );
                 })}
               </div>
 
-              {/* Tip & Trap Footer */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+              {/* Tip & Trap Footer Callouts */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 {activeLesson.mindmap?.tip && (
-                  <div style={{ fontSize: '0.76rem', color: 'var(--text-secondary)', background: 'var(--bg-surface-2)', padding: '5px 8px', borderRadius: 4 }}>
-                    <strong>Ghi chú:</strong> {activeLesson.mindmap.tip}
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    fontSize: '0.78rem',
+                    color: 'var(--tint-amber-text)',
+                    background: 'var(--tint-amber-bg)',
+                    border: '1px solid var(--tint-amber-border)',
+                    padding: '7px 12px',
+                    borderRadius: 6
+                  }}>
+                    <Sparkles size={15} style={{ flexShrink: 0 }} />
+                    <div>
+                      <strong>Mẹo ghi nhớ sư phạm:</strong> {activeLesson.mindmap.tip}
+                    </div>
                   </div>
                 )}
                 {activeLesson.mindmap?.trapRadar && (
-                  <div style={{ fontSize: '0.76rem', color: 'var(--status-error-text)', background: 'var(--status-error-bg)', border: '1px solid var(--status-error)', padding: '5px 8px', borderRadius: 4 }}>
-                    <strong>Lưu ý bẫy đề thi:</strong> {activeLesson.mindmap.trapRadar}
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    fontSize: '0.78rem',
+                    color: 'var(--tint-sakura-text)',
+                    background: 'var(--tint-sakura-bg)',
+                    border: '1px solid var(--tint-sakura-border)',
+                    padding: '7px 12px',
+                    borderRadius: 6
+                  }}>
+                    <ShieldAlert size={15} style={{ flexShrink: 0 }} />
+                    <div>
+                      <strong>Lưu ý bẫy đề thi JLPT:</strong> {activeLesson.mindmap.trapRadar}
+                    </div>
                   </div>
                 )}
               </div>
             </div>
 
-            {/* GRAMMAR POINTS LIST (Crisp Monochromatic Hierarchy) */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <h3 style={{ margin: 0, fontSize: '0.98rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <BookOpen size={16} /> Các Mẫu Ngữ Pháp Trọng Tâm ({activeLesson.grammarPoints.length} Mẫu)
+            {/* CÁC MẪU NGỮ PHÁP TRỌNG TÂM (Clear Visual Separation & Interactive Drills) */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 2px' }}>
+                <h3 style={{ margin: 0, fontSize: '1.02rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 8, color: 'var(--text-primary)' }}>
+                  <BookOpen size={18} color="var(--accent-primary)" />
+                  Các Mẫu Ngữ Pháp Trọng Tâm ({activeLesson.grammarPoints.length} Mẫu)
                 </h3>
-                <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
-                  Lý thuyết bên trái • Trắc nghiệm phản xạ bên phải
+                <span style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>
+                  Lý thuyết & Ví dụ bên trái • Trắc nghiệm phản xạ bên phải
                 </span>
               </div>
 
@@ -780,67 +966,88 @@ export default function JlptMasterDojo() {
                   key={point.id}
                   style={{
                     background: 'var(--bg-surface)',
-                    border: '1px solid var(--border-default)',
-                    borderRadius: 8,
-                    padding: '14px 16px',
+                    border: '1.5px solid var(--border-default)',
+                    borderRadius: 10,
+                    padding: '16px 18px',
                     display: 'grid',
-                    gridTemplateColumns: point.drills && point.drills.length > 0 ? 'minmax(0, 1.3fr) minmax(0, 1fr)' : '1fr',
-                    gap: 16,
-                    alignItems: 'start'
+                    gridTemplateColumns: point.drills && point.drills.length > 0 ? 'minmax(0, 1.35fr) minmax(0, 1fr)' : '1fr',
+                    gap: 18,
+                    alignItems: 'start',
+                    boxShadow: '0 2px 6px rgba(0,0,0,0.03)'
                   }}
                 >
                   {/* Left Column: Theory, Formula, Examples */}
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    {/* Header */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 6 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                        <span style={{
+                          width: 24,
+                          height: 24,
+                          borderRadius: 6,
+                          background: 'var(--accent-primary)',
+                          color: '#ffffff',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '0.74rem',
+                          fontWeight: 800
+                        }}>
+                          {pIdx + 1}
+                        </span>
+                        <h4 style={{ margin: 0, fontSize: '1.08rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                          {point.pattern}
+                        </h4>
+                      </div>
+
                       <span style={{
-                        width: 22,
-                        height: 22,
-                        borderRadius: '50%',
-                        background: 'var(--bg-surface-2)',
-                        border: '1px solid var(--border-default)',
-                        color: 'var(--text-primary)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
+                        background: 'var(--tint-sky-bg)',
+                        color: 'var(--tint-sky-text)',
+                        border: '1px solid var(--tint-sky-border)',
+                        padding: '1px 8px',
+                        borderRadius: 4,
                         fontSize: '0.72rem',
                         fontWeight: 700
                       }}>
-                        {pIdx + 1}
+                        Mẫu {pIdx + 1}/{activeLesson.grammarPoints.length}
                       </span>
-                      <h4 style={{ margin: 0, fontSize: '1.02rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                        {point.pattern}
-                      </h4>
                     </div>
 
-                    {/* Formula */}
+                    {/* Formula Box */}
+                    <div style={{
+                      background: 'var(--tint-sky-bg)',
+                      border: '1px solid var(--tint-sky-border)',
+                      borderLeft: '4px solid var(--accent-primary)',
+                      padding: '8px 12px',
+                      borderRadius: '0 6px 6px 0'
+                    }}>
+                      <div style={{ fontSize: '0.68rem', fontWeight: 800, color: 'var(--tint-sky-text)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 2 }}>
+                        CÔNG THỨC KẾT HỢP
+                      </div>
+                      <div style={{ fontFamily: 'monospace', fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                        {point.formula}
+                      </div>
+                    </div>
+
+                    {/* Meaning & Nuance Card */}
                     <div style={{
                       background: 'var(--bg-surface-2)',
-                      borderLeft: '3px solid var(--accent-primary)',
-                      padding: '6px 10px',
-                      borderRadius: '0 4px 4px 0',
-                      marginBottom: 8,
-                      fontFamily: 'monospace',
-                      fontSize: '0.82rem',
-                      color: 'var(--text-primary)',
-                      fontWeight: 600
+                      border: '1px solid var(--border-default)',
+                      borderRadius: 6,
+                      padding: '10px 12px'
                     }}>
-                      {point.formula}
-                    </div>
-
-                    {/* Meaning & Nuance */}
-                    <div style={{ marginBottom: 8 }}>
-                      <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2 }}>
-                        Ý nghĩa: {point.meaning}
+                      <div style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 4 }}>
+                        Ý nghĩa: <span style={{ color: 'var(--accent-primary)' }}>{point.meaning}</span>
                       </div>
-                      <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.45 }}>
+                      <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                         {point.nuance}
                       </div>
                     </div>
 
                     {/* Examples with Audio */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
-                      <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-                        Ví Dụ Thực Tế:
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                      <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                        VÍ DỤ MINH HỌA:
                       </div>
                       {point.examples.map((ex, exIdx) => (
                         <div
@@ -848,30 +1055,36 @@ export default function JlptMasterDojo() {
                           style={{
                             background: 'var(--bg-surface-2)',
                             border: '1px solid var(--border-default)',
-                            padding: '6px 10px',
-                            borderRadius: 5,
+                            padding: '8px 12px',
+                            borderRadius: 6,
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'space-between',
-                            gap: 8
+                            gap: 10
                           }}
                         >
                           <div>
-                            <div style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2 }}>
+                            <div style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2 }}>
                               <FuriganaText text={ex.jp} />
                             </div>
-                            <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+                            <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
                               {ex.vi}
                             </div>
                           </div>
                           <button
                             onClick={() => speakJapanese(ex.jp)}
                             style={{
-                              background: 'transparent',
-                              border: 'none',
-                              color: 'var(--text-secondary)',
+                              background: 'var(--bg-surface)',
+                              border: '1px solid var(--border-default)',
+                              borderRadius: '50%',
+                              width: 30,
+                              height: 30,
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              color: 'var(--accent-primary)',
                               cursor: 'pointer',
-                              padding: 4
+                              flexShrink: 0
                             }}
                             title="Nghe phát âm"
                           >
@@ -885,57 +1098,141 @@ export default function JlptMasterDojo() {
                   {/* Right Column: Interactive Reflex Drills */}
                   {point.drills && point.drills.length > 0 && (
                     <div style={{
-                      background: 'var(--bg-surface-2)',
-                      border: '1px solid var(--border-default)',
-                      borderRadius: 6,
-                      padding: '10px 12px'
+                      background: 'var(--tint-violet-bg)',
+                      border: '1.5px solid var(--tint-violet-border)',
+                      borderRadius: 8,
+                      padding: '12px 14px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: 10
                     }}>
-                      <div style={{ fontSize: '0.76rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 5 }}>
-                        <Zap size={13} /> TRẮC NGHIỆM PHẢN XẠ NHANH:
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <span style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: 4,
+                          fontSize: '0.74rem',
+                          fontWeight: 800,
+                          color: 'var(--tint-violet-text)',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.5px'
+                        }}>
+                          <Zap size={14} /> TRẮC NGHIỆM PHẢN XẠ NHANH
+                        </span>
+                        <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                          Chọn 1 đáp án đúng
+                        </span>
                       </div>
+
                       {point.drills.map((drill, dIdx) => {
                         const answerKey = `${point.id}_${dIdx}`;
                         const selectedOpt = minnaQuizAnswer[answerKey];
                         const isCorrect = selectedOpt === drill.correct;
 
                         return (
-                          <div key={dIdx} style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
-                            <div style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                          <div key={dIdx} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                            {/* Question prompt in white elevated card */}
+                            <div style={{
+                              background: 'var(--bg-surface)',
+                              border: '1.5px solid var(--tint-violet-border)',
+                              borderRadius: 6,
+                              padding: '10px 12px',
+                              fontSize: '0.92rem',
+                              fontWeight: 700,
+                              color: 'var(--text-primary)',
+                              textAlign: 'center'
+                            }}>
                               {drill.q}
                             </div>
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 5, marginTop: 3 }}>
+
+                            {/* 4 Interactive option buttons */}
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8 }}>
                               {drill.options.map((opt, optIdx) => {
                                 const isChosen = selectedOpt === optIdx;
+                                let btnBg = 'var(--bg-surface)';
+                                let btnBorder = '1.5px solid var(--border-default)';
+                                let btnColor = 'var(--text-primary)';
+                                let badgeBg = 'var(--bg-surface-2)';
+                                let badgeColor = 'var(--text-secondary)';
+
+                                if (isChosen) {
+                                  if (isCorrect) {
+                                    btnBg = 'var(--status-success-bg)';
+                                    btnBorder = '2px solid var(--status-success)';
+                                    btnColor = 'var(--status-success-text)';
+                                    badgeBg = 'var(--status-success)';
+                                    badgeColor = '#ffffff';
+                                  } else {
+                                    btnBg = 'var(--status-error-bg)';
+                                    btnBorder = '2px solid var(--status-error)';
+                                    btnColor = 'var(--status-error-text)';
+                                    badgeBg = 'var(--status-error)';
+                                    badgeColor = '#ffffff';
+                                  }
+                                }
+
                                 return (
                                   <button
                                     key={optIdx}
                                     onClick={() => setMinnaQuizAnswer(prev => ({ ...prev, [answerKey]: optIdx }))}
                                     style={{
-                                      padding: '5px 8px',
-                                      borderRadius: 4,
-                                      border: isChosen 
-                                        ? (isCorrect ? '1px solid var(--status-success)' : '1px solid var(--status-error)') 
-                                        : '1px solid var(--border-default)',
-                                      background: isChosen 
-                                        ? (isCorrect ? 'var(--status-success-bg)' : 'var(--status-error-bg)') 
-                                        : 'var(--bg-surface)',
-                                      color: isChosen 
-                                        ? (isCorrect ? 'var(--status-success-text)' : 'var(--status-error-text)') 
-                                        : 'var(--text-primary)',
-                                      fontSize: '0.78rem',
-                                      fontWeight: 600,
+                                      display: 'flex',
+                                      alignItems: 'center',
+                                      gap: 8,
+                                      padding: '8px 10px',
+                                      borderRadius: 6,
+                                      border: btnBorder,
+                                      background: btnBg,
+                                      color: btnColor,
+                                      fontSize: '0.84rem',
+                                      fontWeight: 700,
                                       cursor: 'pointer',
-                                      textAlign: 'left'
+                                      textAlign: 'left',
+                                      transition: 'all 0.15s ease',
+                                      boxShadow: '0 1px 2px rgba(0,0,0,0.03)'
                                     }}
                                   >
-                                    {optIdx + 1}. {opt}
+                                    <span style={{
+                                      width: 20,
+                                      height: 20,
+                                      borderRadius: '50%',
+                                      background: badgeBg,
+                                      color: badgeColor,
+                                      display: 'flex',
+                                      alignItems: 'center',
+                                      justifyContent: 'center',
+                                      fontSize: '0.72rem',
+                                      fontWeight: 800,
+                                      flexShrink: 0
+                                    }}>
+                                      {optIdx + 1}
+                                    </span>
+                                    <span style={{ flex: 1 }}>{opt}</span>
+                                    {isChosen && (isCorrect ? <CheckCircle size={15} color="var(--status-success)" /> : <XCircle size={15} color="var(--status-error)" />)}
                                   </button>
                                 );
                               })}
                             </div>
+
+                            {/* Feedback Banner */}
                             {selectedOpt !== undefined && (
-                              <div style={{ fontSize: '0.75rem', color: isCorrect ? 'var(--status-success-text)' : 'var(--status-error-text)', marginTop: 3 }}>
-                                {isCorrect ? '✅ Chính xác! ' : '❌ Chưa đúng! '} {drill.explain}
+                              <div style={{
+                                background: isCorrect ? 'var(--status-success-bg)' : 'var(--status-error-bg)',
+                                border: `1px solid ${isCorrect ? 'var(--status-success-border)' : 'var(--status-error-border)'}`,
+                                borderRadius: 6,
+                                padding: '8px 10px',
+                                fontSize: '0.78rem',
+                                color: isCorrect ? 'var(--status-success-text)' : 'var(--status-error-text)',
+                                lineHeight: 1.4,
+                                display: 'flex',
+                                alignItems: 'flex-start',
+                                gap: 6
+                              }}>
+                                {isCorrect ? <CheckCircle size={15} style={{ flexShrink: 0, marginTop: 1 }} /> : <AlertCircle size={15} style={{ flexShrink: 0, marginTop: 1 }} />}
+                                <div>
+                                  <strong>{isCorrect ? 'Chính xác! ' : 'Chưa đúng! '}</strong>
+                                  {drill.explain}
+                                </div>
                               </div>
                             )}
                           </div>
@@ -1049,52 +1346,68 @@ export default function JlptMasterDojo() {
                         setLessonView('lesson');
                       }}
                     >
-                      {/* Top Row: Neutral Badge */}
+                      {/* Top Row: Clean Level Badge with soft tint & Count */}
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <span style={{
-                          background: 'var(--bg-surface-2)',
-                          color: 'var(--text-primary)',
-                          border: '1px solid var(--border-default)',
-                          fontSize: '0.68rem',
-                          fontWeight: 700,
-                          padding: '2px 7px',
-                          borderRadius: 4
-                        }}>
-                          {lesson.level} • 第{lesson.lessonNumber}課
-                        </span>
-                        <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                        {(() => {
+                          const lvlStyle = getLevelBadgeStyle(lesson.level);
+                          return (
+                            <span style={{
+                              background: lvlStyle.bg,
+                              color: lvlStyle.text,
+                              border: `1px solid ${lvlStyle.border}`,
+                              fontSize: '0.7rem',
+                              fontWeight: 700,
+                              padding: '2px 8px',
+                              borderRadius: 4
+                            }}>
+                              {lesson.level} • 第{lesson.lessonNumber}課
+                            </span>
+                          );
+                        })()}
+                        <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
                           {bCount} mẫu câu
                         </span>
                       </div>
 
                       {/* Titles */}
                       <div>
-                        <h3 style={{ fontSize: '0.96rem', fontWeight: 700, margin: '2px 0 1px', color: 'var(--text-primary)' }}>
+                        <h3 style={{ fontSize: '0.98rem', fontWeight: 700, margin: '3px 0 2px', color: 'var(--text-primary)' }}>
                           {lesson.jpTitle}
                         </h3>
-                        <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
+                        <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
                           {lesson.viTitle}
                         </div>
                       </div>
 
                       {/* Pillar */}
-                      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                        Chủ điểm: <span style={{ color: 'var(--text-secondary)', fontWeight: 600 }}>{lesson.pillar}</span>
+                      <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                        <span>Trụ cột:</span>
+                        <span style={{
+                          background: 'var(--tint-amber-bg)',
+                          color: 'var(--tint-amber-text)',
+                          border: '1px solid var(--tint-amber-border)',
+                          padding: '1px 6px',
+                          borderRadius: 4,
+                          fontWeight: 600,
+                          fontSize: '0.72rem'
+                        }}>
+                          {lesson.pillar}
+                        </span>
                       </div>
 
                       {/* Chips */}
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginTop: 2 }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, marginTop: 3 }}>
                         {lesson.mindmap?.branches?.slice(0, 3).map((b, bIdx) => (
                           <span
                             key={bIdx}
                             style={{
-                              background: 'var(--bg-surface-2)',
-                              fontSize: '0.68rem',
+                              background: 'var(--tint-sky-bg)',
+                              fontSize: '0.7rem',
                               fontWeight: 600,
-                              padding: '2px 6px',
+                              padding: '2px 7px',
                               borderRadius: 4,
-                              color: 'var(--text-secondary)',
-                              border: '1px solid var(--border-default)',
+                              color: 'var(--tint-sky-text)',
+                              border: '1px solid var(--tint-sky-border)',
                               fontFamily: 'monospace'
                             }}
                           >
@@ -1151,20 +1464,21 @@ export default function JlptMasterDojo() {
               </div>
             </div>
           ) : (
-            /* FOUNDATION DEDICATED LESSON VIEW */
+            /* FOUNDATION DEDICATED LESSON VIEW (Rich Pedagogical Structure) */
             <div>
-              {/* Top Navigation */}
+              {/* Top Navigation & Breadcrumbs Toolbar */}
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 background: 'var(--bg-surface)',
-                border: '1px solid var(--border-default)',
+                border: '1.5px solid var(--border-default)',
                 borderRadius: 8,
-                padding: '7px 12px',
-                marginBottom: 12,
+                padding: '8px 14px',
+                marginBottom: 14,
                 flexWrap: 'wrap',
-                gap: 8
+                gap: 10,
+                boxShadow: '0 1px 3px rgba(0,0,0,0.03)'
               }}>
                 {/* Back button */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -1173,36 +1487,41 @@ export default function JlptMasterDojo() {
                     style={{
                       display: 'flex',
                       alignItems: 'center',
-                      gap: 5,
+                      gap: 6,
                       background: 'var(--bg-surface-2)',
                       border: '1px solid var(--border-default)',
                       color: 'var(--text-primary)',
-                      padding: '4px 10px',
-                      borderRadius: 5,
-                      fontSize: '0.76rem',
+                      padding: '5px 12px',
+                      borderRadius: 6,
+                      fontSize: '0.78rem',
                       fontWeight: 600,
                       cursor: 'pointer'
                     }}
                   >
-                    <ArrowLeft size={13} /> Danh mục {activeFoundationLesson.level}
+                    <ArrowLeft size={14} /> Danh mục {activeFoundationLesson.level}
                   </button>
 
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.82rem' }}>
-                    <span style={{
-                      background: 'var(--bg-surface-2)',
-                      color: 'var(--text-primary)',
-                      border: '1px solid var(--border-default)',
-                      padding: '1px 6px',
-                      borderRadius: 4,
-                      fontWeight: 700,
-                      fontSize: '0.7rem'
-                    }}>
-                      {activeFoundationLesson.level} • 第{activeFoundationLesson.lessonNumber}課
-                    </span>
-                    <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.88rem' }}>
+                    {(() => {
+                      const lvlStyle = getLevelBadgeStyle(activeFoundationLesson.level);
+                      return (
+                        <span style={{
+                          background: lvlStyle.bg,
+                          color: lvlStyle.text,
+                          border: `1px solid ${lvlStyle.border}`,
+                          padding: '2px 8px',
+                          borderRadius: 4,
+                          fontWeight: 700,
+                          fontSize: '0.74rem'
+                        }}>
+                          {activeFoundationLesson.level} • 第{activeFoundationLesson.lessonNumber}課
+                        </span>
+                      );
+                    })()}
+                    <span style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.96rem' }}>
                       {activeFoundationLesson.jpTitle}
                     </span>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '0.76rem' }}>
+                    <span style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', fontWeight: 500 }}>
                       ({activeFoundationLesson.viTitle})
                     </span>
                   </div>
@@ -1213,39 +1532,39 @@ export default function JlptMasterDojo() {
                   <button
                     onClick={() => goToAdjacentFoundation(-1)}
                     style={{
-                      padding: '4px 8px',
-                      borderRadius: 5,
+                      padding: '5px 10px',
+                      borderRadius: 6,
                       border: '1px solid var(--border-default)',
                       background: 'var(--bg-surface-2)',
                       color: 'var(--text-primary)',
                       cursor: 'pointer',
-                      fontSize: '0.75rem',
+                      fontSize: '0.76rem',
                       fontWeight: 600,
                       display: 'flex',
                       alignItems: 'center',
-                      gap: 3
+                      gap: 4
                     }}
                   >
-                    <ChevronLeft size={13} /> Bài trước
+                    <ChevronLeft size={14} /> Bài trước
                   </button>
 
                   <button
                     onClick={() => goToAdjacentFoundation(1)}
                     style={{
-                      padding: '4px 8px',
-                      borderRadius: 5,
+                      padding: '5px 10px',
+                      borderRadius: 6,
                       border: '1px solid var(--border-default)',
                       background: 'var(--bg-surface-2)',
                       color: 'var(--text-primary)',
                       cursor: 'pointer',
-                      fontSize: '0.75rem',
+                      fontSize: '0.76rem',
                       fontWeight: 600,
                       display: 'flex',
                       alignItems: 'center',
-                      gap: 3
+                      gap: 4
                     }}
                   >
-                    Bài tiếp <ChevronRight size={13} />
+                    Bài tiếp <ChevronRight size={14} />
                   </button>
 
                   <button
@@ -1253,93 +1572,225 @@ export default function JlptMasterDojo() {
                     style={{
                       display: 'flex',
                       alignItems: 'center',
-                      gap: 5,
-                      background: 'var(--bg-surface)',
-                      color: 'var(--text-primary)',
-                      border: '1px solid var(--border-strong)',
-                      padding: '4px 10px',
-                      borderRadius: 5,
-                      fontSize: '0.75rem',
-                      fontWeight: 600,
-                      cursor: 'pointer'
+                      gap: 6,
+                      background: 'var(--accent-primary)',
+                      color: '#ffffff',
+                      border: 'none',
+                      padding: '5px 12px',
+                      borderRadius: 6,
+                      fontSize: '0.76rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                      boxShadow: '0 1px 3px rgba(37,99,235,0.25)'
                     }}
                   >
-                    <Compass size={13} /> Sơ đồ tư duy đầy đủ
+                    <Compass size={14} /> Sơ đồ tư duy đầy đủ
                   </button>
                 </div>
               </div>
 
-              {/* SƠ ĐỒ TƯ DUY TÓM TẮT BÀI HỌC (Neutral & Compact) */}
+              {/* SƠ ĐỒ TƯ DUY TÓM TẮT BÀI HỌC (Semantic Pedagogical Structure) */}
               <div style={{
                 background: 'var(--bg-surface)',
-                border: '1px solid var(--border-default)',
-                borderRadius: 8,
-                padding: '12px 16px',
-                marginBottom: 14
+                border: '1.5px solid var(--border-default)',
+                borderTop: '3px solid var(--accent-primary)',
+                borderRadius: 10,
+                padding: '16px 18px',
+                marginBottom: 16,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.03)'
               }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, flexWrap: 'wrap', gap: 6 }}>
-                  <div style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.9rem' }}>
-                    Tổng kết sơ đồ tư duy: {activeFoundationLesson.jpTitle}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12, flexWrap: 'wrap', gap: 8 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <div style={{
+                      width: 28,
+                      height: 28,
+                      borderRadius: 6,
+                      background: 'var(--tint-sky-bg)',
+                      border: '1px solid var(--tint-sky-border)',
+                      color: 'var(--accent-primary)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <Layers size={16} />
+                    </div>
+                    <div>
+                      <h3 style={{ margin: 0, fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.98rem' }}>
+                        Sơ Đồ Tư Duy Bản Lề: {activeFoundationLesson.jpTitle}
+                      </h3>
+                      <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
+                        Cấu trúc nền tảng và bước đệm chinh phục JLPT {activeFoundationLesson.level}
+                      </div>
+                    </div>
                   </div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                    Trụ cột: <strong style={{ color: 'var(--text-secondary)' }}>{activeFoundationLesson.pillar}</strong>
+
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>Trụ cột bài học:</span>
+                    <span style={{
+                      background: 'var(--tint-amber-bg)',
+                      color: 'var(--tint-amber-text)',
+                      border: '1px solid var(--tint-amber-border)',
+                      padding: '2px 8px',
+                      borderRadius: 4,
+                      fontSize: '0.75rem',
+                      fontWeight: 700
+                    }}>
+                      {activeFoundationLesson.pillar}
+                    </span>
                   </div>
                 </div>
 
                 {/* Root Connection */}
                 {activeFoundationLesson.mindmap?.rootConnection && (
                   <div style={{
-                    fontSize: '0.76rem',
-                    color: 'var(--text-secondary)',
-                    background: 'var(--bg-surface-2)',
-                    borderLeft: '3px solid var(--accent-primary)',
-                    padding: '4px 8px',
-                    borderRadius: '0 4px 4px 0',
-                    marginBottom: 8
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    fontSize: '0.78rem',
+                    color: 'var(--tint-sky-text)',
+                    background: 'var(--tint-sky-bg)',
+                    border: '1px solid var(--tint-sky-border)',
+                    borderLeft: '4px solid var(--accent-primary)',
+                    padding: '7px 12px',
+                    borderRadius: '0 6px 6px 0',
+                    marginBottom: 12
                   }}>
-                    <strong>Cội nguồn:</strong> {activeFoundationLesson.mindmap.rootConnection.replace(/^🔙 Rễ cây:\s*/, '')}
+                    <Compass size={15} style={{ flexShrink: 0 }} />
+                    <div>
+                      <strong>Cội nguồn tiền đề:</strong> {activeFoundationLesson.mindmap.rootConnection.replace(/^🔙 Rễ cây:\s*/, '')}
+                    </div>
                   </div>
                 )}
 
                 {/* Branches Grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 8, marginBottom: 8 }}>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                  gap: 12,
+                  marginBottom: 12
+                }}>
                   {activeFoundationLesson.mindmap.branches?.map((branch, bIdx) => {
                     const bName = typeof branch === 'object' ? branch.name : branch;
                     const bFormula = typeof branch === 'object' ? branch.formula : null;
                     const bMetaphor = typeof branch === 'object' ? branch.metaphor : null;
+                    const theme = BRANCH_THEMES[bIdx % BRANCH_THEMES.length];
+
                     return (
-                      <div key={bIdx} style={{ background: 'var(--bg-surface-2)', border: '1px solid var(--border-default)', padding: '8px 10px', borderRadius: 6, display: 'flex', flexDirection: 'column', gap: 2 }}>
-                        <strong style={{ color: 'var(--text-primary)', fontSize: '0.84rem' }}>{bName}</strong>
-                        {bFormula && <div style={{ color: 'var(--text-muted)', fontSize: '0.72rem', fontFamily: 'monospace' }}>{bFormula}</div>}
-                        {bMetaphor && <div style={{ color: 'var(--text-secondary)', fontSize: '0.72rem' }}>{bMetaphor}</div>}
+                      <div
+                        key={bIdx}
+                        style={{
+                          background: 'var(--bg-surface-2)',
+                          border: '1px solid var(--border-default)',
+                          borderTop: `3px solid ${theme.border}`,
+                          padding: '12px 14px',
+                          borderRadius: 8,
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: 6,
+                          boxShadow: '0 1px 3px rgba(0,0,0,0.02)'
+                        }}
+                      >
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                          <span style={{
+                            background: theme.bg,
+                            color: theme.text,
+                            border: `1px solid ${theme.borderSub}`,
+                            fontSize: '0.68rem',
+                            fontWeight: 700,
+                            padding: '1px 6px',
+                            borderRadius: 4
+                          }}>
+                            Nhánh {bIdx + 1}
+                          </span>
+                          <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                            Cấu trúc trọng tâm
+                          </span>
+                        </div>
+
+                        <strong style={{ color: 'var(--text-primary)', fontSize: '0.92rem', fontWeight: 700 }}>
+                          {bName}
+                        </strong>
+
+                        {bFormula && (
+                          <div style={{
+                            background: 'var(--bg-surface)',
+                            border: '1px dashed var(--border-strong)',
+                            padding: '4px 8px',
+                            borderRadius: 4,
+                            color: 'var(--text-primary)',
+                            fontSize: '0.76rem',
+                            fontFamily: 'monospace',
+                            fontWeight: 600
+                          }}>
+                            {bFormula}
+                          </div>
+                        )}
+
+                        {bMetaphor && (
+                          <div style={{
+                            color: 'var(--text-secondary)',
+                            fontSize: '0.76rem',
+                            lineHeight: 1.45,
+                            marginTop: 2
+                          }}>
+                            {bMetaphor}
+                          </div>
+                        )}
                       </div>
                     );
                   })}
                 </div>
 
                 {/* Tip & Trap Footer */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                   {activeFoundationLesson.mindmap?.tip && (
-                    <div style={{ fontSize: '0.76rem', color: 'var(--text-secondary)', background: 'var(--bg-surface-2)', padding: '5px 8px', borderRadius: 4 }}>
-                      <strong>Ghi chú:</strong> {activeFoundationLesson.mindmap.tip}
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 8,
+                      fontSize: '0.78rem',
+                      color: 'var(--tint-amber-text)',
+                      background: 'var(--tint-amber-bg)',
+                      border: '1px solid var(--tint-amber-border)',
+                      padding: '7px 12px',
+                      borderRadius: 6
+                    }}>
+                      <Sparkles size={15} style={{ flexShrink: 0 }} />
+                      <div>
+                        <strong>Mẹo ghi nhớ sư phạm:</strong> {activeFoundationLesson.mindmap.tip}
+                      </div>
                     </div>
                   )}
                   {activeFoundationLesson.mindmap?.trapRadar && (
-                    <div style={{ fontSize: '0.76rem', color: 'var(--status-error-text)', background: 'var(--status-error-bg)', border: '1px solid var(--status-error)', padding: '5px 8px', borderRadius: 4 }}>
-                      <strong>Lưu ý bẫy đề thi:</strong> {activeFoundationLesson.mindmap.trapRadar}
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 8,
+                      fontSize: '0.78rem',
+                      color: 'var(--tint-sakura-text)',
+                      background: 'var(--tint-sakura-bg)',
+                      border: '1px solid var(--tint-sakura-border)',
+                      padding: '7px 12px',
+                      borderRadius: 6
+                    }}>
+                      <ShieldAlert size={15} style={{ flexShrink: 0 }} />
+                      <div>
+                        <strong>Lưu ý bẫy đề thi JLPT:</strong> {activeFoundationLesson.mindmap.trapRadar}
+                      </div>
                     </div>
                   )}
                 </div>
               </div>
 
-              {/* GRAMMAR POINTS LIST */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <h3 style={{ margin: 0, fontSize: '0.98rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 6 }}>
-                    <BookOpen size={16} /> Các Mẫu Ngữ Pháp Trọng Tâm ({activeFoundationLesson.grammarPoints.length} Mẫu)
+              {/* CÁC MẪU NGỮ PHÁP TRỌNG TÂM */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 2px' }}>
+                  <h3 style={{ margin: 0, fontSize: '1.02rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 8, color: 'var(--text-primary)' }}>
+                    <BookOpen size={18} color="var(--accent-primary)" />
+                    Các Mẫu Ngữ Pháp Trọng Tâm ({activeFoundationLesson.grammarPoints.length} Mẫu)
                   </h3>
-                  <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
-                    Lý thuyết bên trái • Trắc nghiệm phản xạ bên phải
+                  <span style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>
+                    Lý thuyết & Ví dụ bên trái • Trắc nghiệm phản xạ bên phải
                   </span>
                 </div>
 
@@ -1348,59 +1799,79 @@ export default function JlptMasterDojo() {
                     key={point.id}
                     style={{
                       background: 'var(--bg-surface)',
-                      border: '1px solid var(--border-default)',
-                      borderRadius: 8,
-                      padding: '14px 16px',
+                      border: '1.5px solid var(--border-default)',
+                      borderRadius: 10,
+                      padding: '16px 18px',
                       display: 'grid',
-                      gridTemplateColumns: point.drills && point.drills.length > 0 ? 'minmax(0, 1.3fr) minmax(0, 1fr)' : '1fr',
-                      gap: 16,
-                      alignItems: 'start'
+                      gridTemplateColumns: point.drills && point.drills.length > 0 ? 'minmax(0, 1.35fr) minmax(0, 1fr)' : '1fr',
+                      gap: 18,
+                      alignItems: 'start',
+                      boxShadow: '0 2px 6px rgba(0,0,0,0.03)'
                     }}
                   >
                     {/* Left Column */}
-                    <div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 6 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                          <span style={{
+                            width: 24,
+                            height: 24,
+                            borderRadius: 6,
+                            background: 'var(--accent-primary)',
+                            color: '#ffffff',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: '0.74rem',
+                            fontWeight: 800
+                          }}>
+                            {pIdx + 1}
+                          </span>
+                          <h4 style={{ margin: 0, fontSize: '1.08rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                            {point.pattern}
+                          </h4>
+                        </div>
+
                         <span style={{
-                          width: 22,
-                          height: 22,
-                          borderRadius: '50%',
-                          background: 'var(--bg-surface-2)',
-                          border: '1px solid var(--border-default)',
-                          color: 'var(--text-primary)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
+                          background: 'var(--tint-sky-bg)',
+                          color: 'var(--tint-sky-text)',
+                          border: '1px solid var(--tint-sky-border)',
+                          padding: '1px 8px',
+                          borderRadius: 4,
                           fontSize: '0.72rem',
                           fontWeight: 700
                         }}>
-                          {pIdx + 1}
+                          Mẫu {pIdx + 1}/{activeFoundationLesson.grammarPoints.length}
                         </span>
-                        <h4 style={{ margin: 0, fontSize: '1.02rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                          {point.pattern}
-                        </h4>
                       </div>
 
                       {/* Formula */}
                       <div style={{
-                        background: 'var(--bg-surface-2)',
-                        borderLeft: '3px solid var(--accent-primary)',
-                        padding: '6px 10px',
-                        borderRadius: '0 4px 4px 0',
-                        marginBottom: 8,
-                        fontFamily: 'monospace',
-                        fontSize: '0.82rem',
-                        color: 'var(--text-primary)',
-                        fontWeight: 600
+                        background: 'var(--tint-sky-bg)',
+                        border: '1px solid var(--tint-sky-border)',
+                        borderLeft: '4px solid var(--accent-primary)',
+                        padding: '8px 12px',
+                        borderRadius: '0 6px 6px 0'
                       }}>
-                        {point.formula}
+                        <div style={{ fontSize: '0.68rem', fontWeight: 800, color: 'var(--tint-sky-text)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 2 }}>
+                          CÔNG THỨC KẾT HỢP
+                        </div>
+                        <div style={{ fontFamily: 'monospace', fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                          {point.formula}
+                        </div>
                       </div>
 
                       {/* Meaning & Nuance */}
-                      <div style={{ marginBottom: 8 }}>
-                        <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2 }}>
-                          Ý nghĩa: {point.meaning}
+                      <div style={{
+                        background: 'var(--bg-surface-2)',
+                        border: '1px solid var(--border-default)',
+                        borderRadius: 6,
+                        padding: '10px 12px'
+                      }}>
+                        <div style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 4 }}>
+                          Ý nghĩa: <span style={{ color: 'var(--accent-primary)' }}>{point.meaning}</span>
                         </div>
-                        <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.45 }}>
+                        <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                           {point.nuance}
                         </div>
                       </div>
@@ -1408,22 +1879,27 @@ export default function JlptMasterDojo() {
                       {/* Trap Buster */}
                       {point.trapBuster && (
                         <div style={{
-                          fontSize: '0.76rem',
-                          color: 'var(--status-error-text)',
-                          background: 'var(--status-error-bg)',
-                          border: '1px solid var(--status-error)',
-                          padding: '5px 8px',
-                          borderRadius: 4,
-                          marginBottom: 8
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 8,
+                          fontSize: '0.78rem',
+                          color: 'var(--tint-sakura-text)',
+                          background: 'var(--tint-sakura-bg)',
+                          border: '1px solid var(--tint-sakura-border)',
+                          padding: '7px 12px',
+                          borderRadius: 6
                         }}>
-                          <strong>Bẫy đề thi:</strong> {point.trapBuster}
+                          <ShieldAlert size={15} style={{ flexShrink: 0 }} />
+                          <div>
+                            <strong>Bẫy đề thi:</strong> {point.trapBuster}
+                          </div>
                         </div>
                       )}
 
                       {/* Examples */}
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
-                        <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-                          Ví Dụ Thực Tế:
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                        <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                          VÍ DỤ MINH HỌA:
                         </div>
                         {point.examples.map((ex, exIdx) => (
                           <div
@@ -1431,30 +1907,36 @@ export default function JlptMasterDojo() {
                             style={{
                               background: 'var(--bg-surface-2)',
                               border: '1px solid var(--border-default)',
-                              padding: '6px 10px',
-                              borderRadius: 5,
+                              padding: '8px 12px',
+                              borderRadius: 6,
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'space-between',
-                              gap: 8
+                              gap: 10
                             }}
                           >
                             <div>
-                              <div style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2 }}>
+                              <div style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2 }}>
                                 <FuriganaText text={ex.jp} />
                               </div>
-                              <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+                              <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
                                 {ex.vi}
                               </div>
                             </div>
                             <button
                               onClick={() => speakJapanese(ex.jp)}
                               style={{
-                                background: 'transparent',
-                                border: 'none',
-                                color: 'var(--text-secondary)',
+                                background: 'var(--bg-surface)',
+                                border: '1px solid var(--border-default)',
+                                borderRadius: '50%',
+                                width: 30,
+                                height: 30,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: 'var(--accent-primary)',
                                 cursor: 'pointer',
-                                padding: 4
+                                flexShrink: 0
                               }}
                               title="Nghe phát âm"
                             >
@@ -1468,57 +1950,141 @@ export default function JlptMasterDojo() {
                     {/* Right Column: Drills */}
                     {point.drills && point.drills.length > 0 && (
                       <div style={{
-                        background: 'var(--bg-surface-2)',
-                        border: '1px solid var(--border-default)',
-                        borderRadius: 6,
-                        padding: '10px 12px'
+                        background: 'var(--tint-violet-bg)',
+                        border: '1.5px solid var(--tint-violet-border)',
+                        borderRadius: 8,
+                        padding: '12px 14px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 10
                       }}>
-                        <div style={{ fontSize: '0.76rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 5 }}>
-                          <Zap size={13} /> TRẮC NGHIỆM PHẢN XẠ NHANH:
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                          <span style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: 4,
+                            fontSize: '0.74rem',
+                            fontWeight: 800,
+                            color: 'var(--tint-violet-text)',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.5px'
+                          }}>
+                            <Zap size={14} /> TRẮC NGHIỆM PHẢN XẠ NHANH
+                          </span>
+                          <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                            Chọn 1 đáp án đúng
+                          </span>
                         </div>
+
                         {point.drills.map((drill, dIdx) => {
                           const answerKey = `${point.id}_${dIdx}`;
                           const selectedOpt = foundationQuizAnswer[answerKey];
                           const isCorrect = selectedOpt === drill.correct;
 
                           return (
-                            <div key={dIdx} style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
-                              <div style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                            <div key={dIdx} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                              {/* Question prompt in white elevated card */}
+                              <div style={{
+                                background: 'var(--bg-surface)',
+                                border: '1.5px solid var(--tint-violet-border)',
+                                borderRadius: 6,
+                                padding: '10px 12px',
+                                fontSize: '0.92rem',
+                                fontWeight: 700,
+                                color: 'var(--text-primary)',
+                                textAlign: 'center'
+                              }}>
                                 {drill.q}
                               </div>
-                              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 5, marginTop: 3 }}>
+
+                              {/* 4 Interactive option buttons */}
+                              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8 }}>
                                 {drill.options.map((opt, optIdx) => {
                                   const isChosen = selectedOpt === optIdx;
+                                  let btnBg = 'var(--bg-surface)';
+                                  let btnBorder = '1.5px solid var(--border-default)';
+                                  let btnColor = 'var(--text-primary)';
+                                  let badgeBg = 'var(--bg-surface-2)';
+                                  let badgeColor = 'var(--text-secondary)';
+
+                                  if (isChosen) {
+                                    if (isCorrect) {
+                                      btnBg = 'var(--status-success-bg)';
+                                      btnBorder = '2px solid var(--status-success)';
+                                      btnColor = 'var(--status-success-text)';
+                                      badgeBg = 'var(--status-success)';
+                                      badgeColor = '#ffffff';
+                                    } else {
+                                      btnBg = 'var(--status-error-bg)';
+                                      btnBorder = '2px solid var(--status-error)';
+                                      btnColor = 'var(--status-error-text)';
+                                      badgeBg = 'var(--status-error)';
+                                      badgeColor = '#ffffff';
+                                    }
+                                  }
+
                                   return (
                                     <button
                                       key={optIdx}
                                       onClick={() => setFoundationQuizAnswer(prev => ({ ...prev, [answerKey]: optIdx }))}
                                       style={{
-                                        padding: '5px 8px',
-                                        borderRadius: 4,
-                                        border: isChosen 
-                                          ? (isCorrect ? '1px solid var(--status-success)' : '1px solid var(--status-error)') 
-                                          : '1px solid var(--border-default)',
-                                        background: isChosen 
-                                          ? (isCorrect ? 'var(--status-success-bg)' : 'var(--status-error-bg)') 
-                                          : 'var(--bg-surface)',
-                                        color: isChosen 
-                                          ? (isCorrect ? 'var(--status-success-text)' : 'var(--status-error-text)') 
-                                          : 'var(--text-primary)',
-                                        fontSize: '0.78rem',
-                                        fontWeight: 600,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: 8,
+                                        padding: '8px 10px',
+                                        borderRadius: 6,
+                                        border: btnBorder,
+                                        background: btnBg,
+                                        color: btnColor,
+                                        fontSize: '0.84rem',
+                                        fontWeight: 700,
                                         cursor: 'pointer',
-                                        textAlign: 'left'
+                                        textAlign: 'left',
+                                        transition: 'all 0.15s ease',
+                                        boxShadow: '0 1px 2px rgba(0,0,0,0.03)'
                                       }}
                                     >
-                                      {optIdx + 1}. {opt}
+                                      <span style={{
+                                        width: 20,
+                                        height: 20,
+                                        borderRadius: '50%',
+                                        background: badgeBg,
+                                        color: badgeColor,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontSize: '0.72rem',
+                                        fontWeight: 800,
+                                        flexShrink: 0
+                                      }}>
+                                        {optIdx + 1}
+                                      </span>
+                                      <span style={{ flex: 1 }}>{opt}</span>
+                                      {isChosen && (isCorrect ? <CheckCircle size={15} color="var(--status-success)" /> : <XCircle size={15} color="var(--status-error)" />)}
                                     </button>
                                   );
                                 })}
                               </div>
+
+                              {/* Feedback Banner */}
                               {selectedOpt !== undefined && (
-                                <div style={{ fontSize: '0.75rem', color: isCorrect ? 'var(--status-success-text)' : 'var(--status-error-text)', marginTop: 3 }}>
-                                  {isCorrect ? '✅ Chính xác! ' : '❌ Chưa đúng! '} {drill.explain}
+                                <div style={{
+                                  background: isCorrect ? 'var(--status-success-bg)' : 'var(--status-error-bg)',
+                                  border: `1px solid ${isCorrect ? 'var(--status-success-border)' : 'var(--status-error-border)'}`,
+                                  borderRadius: 6,
+                                  padding: '8px 10px',
+                                  fontSize: '0.78rem',
+                                  color: isCorrect ? 'var(--status-success-text)' : 'var(--status-error-text)',
+                                  lineHeight: 1.4,
+                                  display: 'flex',
+                                  alignItems: 'flex-start',
+                                  gap: 6
+                                }}>
+                                  {isCorrect ? <CheckCircle size={15} style={{ flexShrink: 0, marginTop: 1 }} /> : <AlertCircle size={15} style={{ flexShrink: 0, marginTop: 1 }} />}
+                                  <div>
+                                    <strong>{isCorrect ? 'Chính xác! ' : 'Chưa đúng! '}</strong>
+                                    {drill.explain}
+                                  </div>
                                 </div>
                               )}
                             </div>

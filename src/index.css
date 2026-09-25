@@ -4,6 +4,8 @@
 :root, [data-theme="light"] {
   --bg-main: #f8fafc;
   --bg-surface: #ffffff;
+  --bg-surface-2: #f1f5f9;
+  --bg-surface-3: #e2e8f0;
   --bg-secondary: #ffffff;
   --bg-card: rgba(255, 255, 255, 0.92);
   --bg-card-solid: #ffffff;
@@ -13,15 +15,42 @@
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-tertiary: #64748b;
+  --text-muted: #64748b;
   --accent-primary: #2563eb;
   --accent-hover: #1d4ed8;
   --accent-subtle: rgba(37, 99, 235, 0.08);
   --accent-success: #059669;
   --accent-warning: #d97706;
   --accent-danger: #dc2626;
+
+  --border-default: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-subtle: #f1f5f9;
   --glass-border: rgba(0, 0, 0, 0.08);
   --glass-border-strong: rgba(0, 0, 0, 0.14);
   --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+
+  /* Status Colors */
+  --status-success: #10b981;
+  --status-success-bg: #ecfdf5;
+  --status-success-border: #a7f3d0;
+  --status-success-text: #065f46;
+
+  --status-error: #ef4444;
+  --status-error-bg: #fef2f2;
+  --status-error-border: #fecaca;
+  --status-error-text: #991b1b;
+
+  --status-warning: #f59e0b;
+  --status-warning-bg: #fffbeb;
+  --status-warning-border: #fde68a;
+  --status-warning-text: #92400e;
+
+  --status-info: #0284c7;
+  --status-info-bg: #f0f9ff;
+  --status-info-border: #bae6fd;
+  --status-info-text: #0369a1;
+
   --sidebar-bg: rgba(255, 255, 255, 0.96);
   --sidebar-width: 240px;
   --sidebar-collapsed-width: 68px;
@@ -73,6 +102,8 @@
 [data-theme="dark"] {
   --bg-main: #0b1120;
   --bg-surface: #111827;
+  --bg-surface-2: #1e293b;
+  --bg-surface-3: #334155;
   --bg-secondary: #111827;
   --bg-card: rgba(30, 41, 59, 0.65);
   --bg-card-solid: #1e293b;
@@ -80,17 +111,44 @@
   --bg-hover: rgba(255, 255, 255, 0.04);
   --bg-active: rgba(59, 130, 246, 0.12);
   --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-tertiary: #64748b;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-muted: #94a3b8;
   --accent-primary: #3b82f6;
   --accent-hover: #2563eb;
   --accent-subtle: rgba(59, 130, 246, 0.12);
   --accent-success: #10b981;
   --accent-warning: #f59e0b;
   --accent-danger: #ef4444;
+
+  --border-default: #334155;
+  --border-strong: #475569;
+  --border-subtle: #1e293b;
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-border-strong: rgba(255, 255, 255, 0.14);
   --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+
+  /* Status Colors */
+  --status-success: #10b981;
+  --status-success-bg: rgba(16, 185, 129, 0.15);
+  --status-success-border: rgba(16, 185, 129, 0.35);
+  --status-success-text: #34d399;
+
+  --status-error: #ef4444;
+  --status-error-bg: rgba(239, 68, 68, 0.15);
+  --status-error-border: rgba(239, 68, 68, 0.35);
+  --status-error-text: #f87171;
+
+  --status-warning: #f59e0b;
+  --status-warning-bg: rgba(245, 158, 11, 0.15);
+  --status-warning-border: rgba(245, 158, 11, 0.35);
+  --status-warning-text: #fbbf24;
+
+  --status-info: #38bdf8;
+  --status-info-bg: rgba(56, 189, 248, 0.15);
+  --status-info-border: rgba(56, 189, 248, 0.35);
+  --status-info-text: #38bdf8;
+
   --sidebar-bg: rgba(15, 23, 42, 0.92);
 
   /* Spacing Tokens */
