@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { 
   LayoutDashboard, Map, Mic, Volume2, BookA, BookOpen, Search, PencilLine, 
   Settings, Film, ListChecks, Sun, Moon, X, ChevronLeft, LogOut, User, 
-  Database, Play, Newspaper, Pin, PinOff 
+  Database, Play, Newspaper, Pin, PinOff, Award
 } from 'lucide-react';
 import { useAuth } from './AuthContext';
 import { supabase } from './lib/supabaseClient';
@@ -14,6 +14,7 @@ const SECTIONS = [
     label: '学習ツール',
     items: [
       { jp:'ホーム', sub:'Dashboard', icon:<LayoutDashboard size={18}/>, path:'/', end:true },
+      { jp:'JLPT 特訓道場', sub:'Lò Luyện Shinkanzen', icon:<Award size={18}/>, path:'/jlpt-dojo' },
       { jp:'学習ロードマップ', sub:'Lộ trình Học', icon:<Map size={18}/>, path:'/roadmap' },
     ]
   },

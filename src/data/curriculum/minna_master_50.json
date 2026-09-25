@@ -1,0 +1,3890 @@
+[
+  {
+    "lessonNumber": 1,
+    "title": "第1課：わたしは マイク・ミラーです (Giới thiệu bản thân & Câu danh từ)",
+    "jpTitle": "わたしは マイク・ミラーです",
+    "viTitle": "Giới thiệu bản thân & Câu danh từ",
+    "level": "N5",
+    "pillar": "Khởi đầu & Câu danh từ",
+    "summary": "Toàn diện Bài 1 Giáo trình Minna no Nihongo: Giới thiệu bản thân & Câu danh từ. Trụ cột: Khởi đầu & Câu danh từ.",
+    "mindmap": {
+      "center": "Bài 1: Giới thiệu bản thân & Câu danh từ",
+      "branches": [
+        "Công thức & Quy tắc chia: Khởi đầu & Câu danh từ",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 1 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_01_01",
+        "pattern": "N1 は N2 です",
+        "formula": "Danh từ 1 + は (wa) + Danh từ 2 + です",
+        "meaning": "N1 là N2 (Câu khẳng định phán đoán)",
+        "nuance": "Trợ từ は phát âm là 'wa', dùng để xác định chủ đề được nói tới trong câu. です đặt ở cuối câu biểu thị thái độ lịch sự.",
+        "examples": [
+          {
+            "jp": "わたしは マイク・ミラーです。",
+            "vi": "Tôi là Mike Miller."
+          },
+          {
+            "jp": "サントスさんは ブラジル人です。",
+            "vi": "Anh Santos là người Brazil."
+          }
+        ],
+        "drills": [
+          {
+            "q": "わたし（　）田中です。",
+            "options": [
+              "は",
+              "が",
+              "を",
+              "に"
+            ],
+            "correct": 0,
+            "explain": "Trợ từ は dùng để đánh dấu chủ ngữ/chủ đề câu xưng danh."
+          }
+        ]
+      },
+      {
+        "id": "minna_01_02",
+        "pattern": "N1 は N2 じゃ ありません",
+        "formula": "Danh từ 1 + は + Danh từ 2 + じゃ (では) ありません",
+        "meaning": "N1 không phải là N2 (Câu phủ định)",
+        "nuance": "じゃ ありません dùng phổ biến trong giao tiếp hàng ngày; では ありません trang trọng hơn, thường dùng trong văn viết hoặc phát biểu.",
+        "examples": [
+          {
+            "jp": "サントスさんは 学生じゃ ありません。",
+            "vi": "Anh Santos không phải là sinh viên."
+          }
+        ],
+        "drills": [
+          {
+            "q": "ミラーさんは 医者（　）。",
+            "options": [
+              "じゃ ありません",
+              "です か",
+              "でした",
+              "は"
+            ],
+            "correct": 0,
+            "explain": "じゃ ありません là dạng phủ định lịch sự của です."
+          }
+        ]
+      },
+      {
+        "id": "minna_01_03",
+        "pattern": "N1 は N2 ですか",
+        "formula": "Câu trần thuật + か？",
+        "meaning": "N1 có phải là N2 không? (Câu hỏi xác nhận)",
+        "nuance": "Thêm trợ từ か vào cuối câu để tạo thành câu hỏi, không cần đổi thứ tự từ trong câu. Lên giọng nhẹ ở cuối từ か.",
+        "examples": [
+          {
+            "jp": "ミラーさんは アメリカ人ですか。…はい、アメリカ人です。",
+            "vi": "Anh Miller có phải người Mỹ không? ...Vâng, là người Mỹ."
+          }
+        ],
+        "drills": [
+          {
+            "q": "あの方は どなた（　）。",
+            "options": [
+              "ですか",
+              "でした",
+              "じゃありません",
+              "と"
+            ],
+            "correct": 0,
+            "explain": "Câu hỏi danh tính dùng ですか."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 2,
+    "title": "第2課：これは 本です (Đại từ chỉ định Kore/Sore/Are & Sở hữu)",
+    "jpTitle": "これは 本です",
+    "viTitle": "Đại từ chỉ định Kore/Sore/Are & Sở hữu",
+    "level": "N5",
+    "pillar": "Đại từ chỉ định & Sở hữu",
+    "summary": "Toàn diện Bài 2 Giáo trình Minna no Nihongo: Đại từ chỉ định Kore/Sore/Are & Sở hữu. Trụ cột: Đại từ chỉ định & Sở hữu.",
+    "mindmap": {
+      "center": "Bài 2: Đại từ chỉ định Kore/Sore/Are & Sở hữu",
+      "branches": [
+        "Công thức & Quy tắc chia: Đại từ chỉ định & Sở hữu",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 2 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_02_01",
+        "pattern": "これは 本です",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 2: これは 本です",
+        "meaning": "Đại từ chỉ định Kore/Sore/Are & Sở hữu",
+        "nuance": "Trụ cột Đại từ chỉ định & Sở hữu: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "これは 本です。",
+            "vi": "Câu ví dụ chuẩn cho bài học 2 (Đại từ chỉ định Kore/Sore/Are & Sở hữu)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 2 (Đại từ chỉ định Kore/Sore/Are & Sở hữu) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Đại từ chỉ định & Sở hữu",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 2 thuộc trụ cột cốt lõi: Đại từ chỉ định & Sở hữu."
+          }
+        ]
+      },
+      {
+        "id": "minna_02_02",
+        "pattern": "これは 本です (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Đại từ chỉ định Kore/Sore/Are & Sở hữu",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 2 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 3,
+    "title": "第3課：ここは 教室です (Vị trí, địa điểm Koko/Soko/Asoko)",
+    "jpTitle": "ここは 教室です",
+    "viTitle": "Vị trí, địa điểm Koko/Soko/Asoko",
+    "level": "N5",
+    "pillar": "Địa điểm & Giá cả",
+    "summary": "Toàn diện Bài 3 Giáo trình Minna no Nihongo: Vị trí, địa điểm Koko/Soko/Asoko. Trụ cột: Địa điểm & Giá cả.",
+    "mindmap": {
+      "center": "Bài 3: Vị trí, địa điểm Koko/Soko/Asoko",
+      "branches": [
+        "Công thức & Quy tắc chia: Địa điểm & Giá cả",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 3 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_03_01",
+        "pattern": "ここは 教室です",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 3: ここは 教室です",
+        "meaning": "Vị trí, địa điểm Koko/Soko/Asoko",
+        "nuance": "Trụ cột Địa điểm & Giá cả: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "ここは 教室です。",
+            "vi": "Câu ví dụ chuẩn cho bài học 3 (Vị trí, địa điểm Koko/Soko/Asoko)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 3 (Vị trí, địa điểm Koko/Soko/Asoko) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Địa điểm & Giá cả",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 3 thuộc trụ cột cốt lõi: Địa điểm & Giá cả."
+          }
+        ]
+      },
+      {
+        "id": "minna_03_02",
+        "pattern": "ここは 教室です (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Vị trí, địa điểm Koko/Soko/Asoko",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 3 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 4,
+    "title": "第4課：今 何時ですか (Thời gian, ngày tháng & Động từ V-masu)",
+    "jpTitle": "今 何時ですか",
+    "viTitle": "Thời gian, ngày tháng & Động từ V-masu",
+    "level": "N5",
+    "pillar": "Thời gian & Động từ",
+    "summary": "Toàn diện Bài 4 Giáo trình Minna no Nihongo: Thời gian, ngày tháng & Động từ V-masu. Trụ cột: Thời gian & Động từ.",
+    "mindmap": {
+      "center": "Bài 4: Thời gian, ngày tháng & Động từ V-masu",
+      "branches": [
+        "Công thức & Quy tắc chia: Thời gian & Động từ",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 4 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_04_01",
+        "pattern": "今 何時ですか",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 4: 今 何時ですか",
+        "meaning": "Thời gian, ngày tháng & Động từ V-masu",
+        "nuance": "Trụ cột Thời gian & Động từ: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "今 何時ですか。",
+            "vi": "Câu ví dụ chuẩn cho bài học 4 (Thời gian, ngày tháng & Động từ V-masu)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 4 (Thời gian, ngày tháng & Động từ V-masu) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Thời gian & Động từ",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 4 thuộc trụ cột cốt lõi: Thời gian & Động từ."
+          }
+        ]
+      },
+      {
+        "id": "minna_04_02",
+        "pattern": "今 何時ですか (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Thời gian, ngày tháng & Động từ V-masu",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 4 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 5,
+    "title": "第5課：甲子園へ 行きます (Động từ di chuyển & Phương tiện đi lại)",
+    "jpTitle": "甲子園へ 行きます",
+    "viTitle": "Động từ di chuyển & Phương tiện đi lại",
+    "level": "N5",
+    "pillar": "Di chuyển & Phương tiện",
+    "summary": "Toàn diện Bài 5 Giáo trình Minna no Nihongo: Động từ di chuyển & Phương tiện đi lại. Trụ cột: Di chuyển & Phương tiện.",
+    "mindmap": {
+      "center": "Bài 5: Động từ di chuyển & Phương tiện đi lại",
+      "branches": [
+        "Công thức & Quy tắc chia: Di chuyển & Phương tiện",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 5 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_05_01",
+        "pattern": "甲子園へ 行きます",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 5: 甲子園へ 行きます",
+        "meaning": "Động từ di chuyển & Phương tiện đi lại",
+        "nuance": "Trụ cột Di chuyển & Phương tiện: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "甲子園へ 行きます。",
+            "vi": "Câu ví dụ chuẩn cho bài học 5 (Động từ di chuyển & Phương tiện đi lại)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 5 (Động từ di chuyển & Phương tiện đi lại) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Di chuyển & Phương tiện",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 5 thuộc trụ cột cốt lõi: Di chuyển & Phương tiện."
+          }
+        ]
+      },
+      {
+        "id": "minna_05_02",
+        "pattern": "甲子園へ 行きます (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Động từ di chuyển & Phương tiện đi lại",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 5 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 6,
+    "title": "第6課：いっしょに 行きませんか (Tha động từ trợ từ を & Lời rủ rê)",
+    "jpTitle": "いっしょに 行きませんか",
+    "viTitle": "Tha động từ trợ từ を & Lời rủ rê",
+    "level": "N5",
+    "pillar": "Tha động từ & Rủ rê",
+    "summary": "Toàn diện Bài 6 Giáo trình Minna no Nihongo: Tha động từ trợ từ を & Lời rủ rê. Trụ cột: Tha động từ & Rủ rê.",
+    "mindmap": {
+      "center": "Bài 6: Tha động từ trợ từ を & Lời rủ rê",
+      "branches": [
+        "Công thức & Quy tắc chia: Tha động từ & Rủ rê",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 6 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_06_01",
+        "pattern": "いっしょに 行きませんか",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 6: いっしょに 行きませんか",
+        "meaning": "Tha động từ trợ từ を & Lời rủ rê",
+        "nuance": "Trụ cột Tha động từ & Rủ rê: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "いっしょに 行きませんか。",
+            "vi": "Câu ví dụ chuẩn cho bài học 6 (Tha động từ trợ từ を & Lời rủ rê)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 6 (Tha động từ trợ từ を & Lời rủ rê) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Tha động từ & Rủ rê",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 6 thuộc trụ cột cốt lõi: Tha động từ & Rủ rê."
+          }
+        ]
+      },
+      {
+        "id": "minna_06_02",
+        "pattern": "いっしょに 行きませんか (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Tha động từ trợ từ を & Lời rủ rê",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 6 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 7,
+    "title": "第7課：箸で 食べます (Công cụ, phương tiện で & Cho nhận quà)",
+    "jpTitle": "箸で 食べます",
+    "viTitle": "Công cụ, phương tiện で & Cho nhận quà",
+    "level": "N5",
+    "pillar": "Công cụ & Cho nhận sơ cấp",
+    "summary": "Toàn diện Bài 7 Giáo trình Minna no Nihongo: Công cụ, phương tiện で & Cho nhận quà. Trụ cột: Công cụ & Cho nhận sơ cấp.",
+    "mindmap": {
+      "center": "Bài 7: Công cụ, phương tiện で & Cho nhận quà",
+      "branches": [
+        "Công thức & Quy tắc chia: Công cụ & Cho nhận sơ cấp",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 7 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_07_01",
+        "pattern": "箸で 食べます",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 7: 箸で 食べます",
+        "meaning": "Công cụ, phương tiện で & Cho nhận quà",
+        "nuance": "Trụ cột Công cụ & Cho nhận sơ cấp: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "箸で 食べます。",
+            "vi": "Câu ví dụ chuẩn cho bài học 7 (Công cụ, phương tiện で & Cho nhận quà)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 7 (Công cụ, phương tiện で & Cho nhận quà) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Công cụ & Cho nhận sơ cấp",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 7 thuộc trụ cột cốt lõi: Công cụ & Cho nhận sơ cấp."
+          }
+        ]
+      },
+      {
+        "id": "minna_07_02",
+        "pattern": "箸で 食べます (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Công cụ, phương tiện で & Cho nhận quà",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 7 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 8,
+    "title": "第8課：桜は きれいです (Tính từ đuôi い và Tính từ đuôi な)",
+    "jpTitle": "桜は きれいです",
+    "viTitle": "Tính từ đuôi い và Tính từ đuôi な",
+    "level": "N5",
+    "pillar": "Hệ thống Tính từ",
+    "summary": "Toàn diện Bài 8 Giáo trình Minna no Nihongo: Tính từ đuôi い và Tính từ đuôi な. Trụ cột: Hệ thống Tính từ.",
+    "mindmap": {
+      "center": "Bài 8: Tính từ đuôi い và Tính từ đuôi な",
+      "branches": [
+        "Công thức & Quy tắc chia: Hệ thống Tính từ",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 8 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_08_01",
+        "pattern": "桜は きれいです",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 8: 桜は きれいです",
+        "meaning": "Tính từ đuôi い và Tính từ đuôi な",
+        "nuance": "Trụ cột Hệ thống Tính từ: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "桜は きれいです。",
+            "vi": "Câu ví dụ chuẩn cho bài học 8 (Tính từ đuôi い và Tính từ đuôi な)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 8 (Tính từ đuôi い và Tính từ đuôi な) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Hệ thống Tính từ",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 8 thuộc trụ cột cốt lõi: Hệ thống Tính từ."
+          }
+        ]
+      },
+      {
+        "id": "minna_08_02",
+        "pattern": "桜は きれいです (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Tính từ đuôi い và Tính từ đuôi な",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 8 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 9,
+    "title": "第9課：日本語が わかります (Sở thích, sở trường & Trợ từ が)",
+    "jpTitle": "日本語が わかります",
+    "viTitle": "Sở thích, sở trường & Trợ từ が",
+    "level": "N5",
+    "pillar": "Khả năng & Sở thích",
+    "summary": "Toàn diện Bài 9 Giáo trình Minna no Nihongo: Sở thích, sở trường & Trợ từ が. Trụ cột: Khả năng & Sở thích.",
+    "mindmap": {
+      "center": "Bài 9: Sở thích, sở trường & Trợ từ が",
+      "branches": [
+        "Công thức & Quy tắc chia: Khả năng & Sở thích",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 9 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_09_01",
+        "pattern": "日本語が わかります",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 9: 日本語が わかります",
+        "meaning": "Sở thích, sở trường & Trợ từ が",
+        "nuance": "Trụ cột Khả năng & Sở thích: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "日本語が わかります。",
+            "vi": "Câu ví dụ chuẩn cho bài học 9 (Sở thích, sở trường & Trợ từ が)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 9 (Sở thích, sở trường & Trợ từ が) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Khả năng & Sở thích",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 9 thuộc trụ cột cốt lõi: Khả năng & Sở thích."
+          }
+        ]
+      },
+      {
+        "id": "minna_09_02",
+        "pattern": "日本語が わかります (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Sở thích, sở trường & Trợ từ が",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 9 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 10,
+    "title": "第10課：あそこに 犬が います (Sự tồn tại của người & vật (います/あります))",
+    "jpTitle": "あそこに 犬が います",
+    "viTitle": "Sự tồn tại của người & vật (います/あります)",
+    "level": "N5",
+    "pillar": "Sự tồn tại & Vị trí",
+    "summary": "Toàn diện Bài 10 Giáo trình Minna no Nihongo: Sự tồn tại của người & vật (います/あります). Trụ cột: Sự tồn tại & Vị trí.",
+    "mindmap": {
+      "center": "Bài 10: Sự tồn tại của người & vật (います/あります)",
+      "branches": [
+        "Công thức & Quy tắc chia: Sự tồn tại & Vị trí",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 10 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_10_01",
+        "pattern": "あそこに 犬が います",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 10: あそこに 犬が います",
+        "meaning": "Sự tồn tại của người & vật (います/あります)",
+        "nuance": "Trụ cột Sự tồn tại & Vị trí: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "あそこに 犬が います。",
+            "vi": "Câu ví dụ chuẩn cho bài học 10 (Sự tồn tại của người & vật (います/あります))."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 10 (Sự tồn tại của người & vật (います/あります)) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Sự tồn tại & Vị trí",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 10 thuộc trụ cột cốt lõi: Sự tồn tại & Vị trí."
+          }
+        ]
+      },
+      {
+        "id": "minna_10_02",
+        "pattern": "あそこに 犬が います (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Sự tồn tại của người & vật (います/あります)",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 10 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 11,
+    "title": "第11課：りんごを いくつ 買いましたか (Số lượng từ & Khoảng thời gian)",
+    "jpTitle": "りんごを いくつ 買いましたか",
+    "viTitle": "Số lượng từ & Khoảng thời gian",
+    "level": "N5",
+    "pillar": "Lượng từ & Thời lượng",
+    "summary": "Toàn diện Bài 11 Giáo trình Minna no Nihongo: Số lượng từ & Khoảng thời gian. Trụ cột: Lượng từ & Thời lượng.",
+    "mindmap": {
+      "center": "Bài 11: Số lượng từ & Khoảng thời gian",
+      "branches": [
+        "Công thức & Quy tắc chia: Lượng từ & Thời lượng",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 11 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_11_01",
+        "pattern": "りんごを いくつ 買いましたか",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 11: りんごを いくつ 買いましたか",
+        "meaning": "Số lượng từ & Khoảng thời gian",
+        "nuance": "Trụ cột Lượng từ & Thời lượng: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "りんごを いくつ 買いましたか。",
+            "vi": "Câu ví dụ chuẩn cho bài học 11 (Số lượng từ & Khoảng thời gian)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 11 (Số lượng từ & Khoảng thời gian) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Lượng từ & Thời lượng",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 11 thuộc trụ cột cốt lõi: Lượng từ & Thời lượng."
+          }
+        ]
+      },
+      {
+        "id": "minna_11_02",
+        "pattern": "りんごを いくつ 買いましたか (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Số lượng từ & Khoảng thời gian",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 11 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 12,
+    "title": "第12課：京都は 静かでした (Quá khứ của tính từ & So sánh hơn/nhất)",
+    "jpTitle": "京都は 静かでした",
+    "viTitle": "Quá khứ của tính từ & So sánh hơn/nhất",
+    "level": "N5",
+    "pillar": "So sánh & Quá khứ tính từ",
+    "summary": "Toàn diện Bài 12 Giáo trình Minna no Nihongo: Quá khứ của tính từ & So sánh hơn/nhất. Trụ cột: So sánh & Quá khứ tính từ.",
+    "mindmap": {
+      "center": "Bài 12: Quá khứ của tính từ & So sánh hơn/nhất",
+      "branches": [
+        "Công thức & Quy tắc chia: So sánh & Quá khứ tính từ",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 12 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_12_01",
+        "pattern": "京都は 静かでした",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 12: 京都は 静かでした",
+        "meaning": "Quá khứ của tính từ & So sánh hơn/nhất",
+        "nuance": "Trụ cột So sánh & Quá khứ tính từ: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "京都は 静かでした。",
+            "vi": "Câu ví dụ chuẩn cho bài học 12 (Quá khứ của tính từ & So sánh hơn/nhất)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 12 (Quá khứ của tính từ & So sánh hơn/nhất) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "So sánh & Quá khứ tính từ",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 12 thuộc trụ cột cốt lõi: So sánh & Quá khứ tính từ."
+          }
+        ]
+      },
+      {
+        "id": "minna_12_02",
+        "pattern": "京都は 静かでした (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Quá khứ của tính từ & So sánh hơn/nhất",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 12 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 13,
+    "title": "第13課：天ぷらが 食べたいです (Mong muốn ほしい, V-たい & Mục đích に行く)",
+    "jpTitle": "天ぷらが 食べたいです",
+    "viTitle": "Mong muốn ほしい, V-たい & Mục đích に行く",
+    "level": "N5",
+    "pillar": "Mong muốn & Mục đích",
+    "summary": "Toàn diện Bài 13 Giáo trình Minna no Nihongo: Mong muốn ほしい, V-たい & Mục đích に行く. Trụ cột: Mong muốn & Mục đích.",
+    "mindmap": {
+      "center": "Bài 13: Mong muốn ほしい, V-たい & Mục đích に行く",
+      "branches": [
+        "Công thức & Quy tắc chia: Mong muốn & Mục đích",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 13 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_13_01",
+        "pattern": "天ぷらが 食べたいです",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 13: 天ぷらが 食べたいです",
+        "meaning": "Mong muốn ほしい, V-たい & Mục đích に行く",
+        "nuance": "Trụ cột Mong muốn & Mục đích: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "天ぷらが 食べたいです。",
+            "vi": "Câu ví dụ chuẩn cho bài học 13 (Mong muốn ほしい, V-たい & Mục đích に行く)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 13 (Mong muốn ほしい, V-たい & Mục đích に行く) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Mong muốn & Mục đích",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 13 thuộc trụ cột cốt lõi: Mong muốn & Mục đích."
+          }
+        ]
+      },
+      {
+        "id": "minna_13_02",
+        "pattern": "天ぷらが 食べたいです (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Mong muốn ほしい, V-たい & Mục đích に行く",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 13 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 14,
+    "title": "第14課：ちょっと 待ってください (Thể て (Te): Sai khiến nhẹ, đang làm)",
+    "jpTitle": "ちょっと 待ってください",
+    "viTitle": "Thể て (Te): Sai khiến nhẹ, đang làm",
+    "level": "N5",
+    "pillar": "Thể て Nền Tảng",
+    "summary": "Toàn diện Bài 14 Giáo trình Minna no Nihongo: Thể て (Te): Sai khiến nhẹ, đang làm. Trụ cột: Thể て Nền Tảng.",
+    "mindmap": {
+      "center": "Bài 14: Thể て (Te): Sai khiến nhẹ, đang làm",
+      "branches": [
+        "Công thức & Quy tắc chia: Thể て Nền Tảng",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 14 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_14_01",
+        "pattern": "ちょっと 待ってください",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 14: ちょっと 待ってください",
+        "meaning": "Thể て (Te): Sai khiến nhẹ, đang làm",
+        "nuance": "Trụ cột Thể て Nền Tảng: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "ちょっと 待ってください。",
+            "vi": "Câu ví dụ chuẩn cho bài học 14 (Thể て (Te): Sai khiến nhẹ, đang làm)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 14 (Thể て (Te): Sai khiến nhẹ, đang làm) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Thể て Nền Tảng",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 14 thuộc trụ cột cốt lõi: Thể て Nền Tảng."
+          }
+        ]
+      },
+      {
+        "id": "minna_14_02",
+        "pattern": "ちょっと 待ってください (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Thể て (Te): Sai khiến nhẹ, đang làm",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 14 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 15,
+    "title": "第15課：写真を 撮っても いいですか (Xin phép てもいい & Cấm đoán てはいけない)",
+    "jpTitle": "写真を 撮っても いいですか",
+    "viTitle": "Xin phép てもいい & Cấm đoán てはいけない",
+    "level": "N5",
+    "pillar": "Quy định & Xin phép",
+    "summary": "Toàn diện Bài 15 Giáo trình Minna no Nihongo: Xin phép てもいい & Cấm đoán てはいけない. Trụ cột: Quy định & Xin phép.",
+    "mindmap": {
+      "center": "Bài 15: Xin phép てもいい & Cấm đoán てはいけない",
+      "branches": [
+        "Công thức & Quy tắc chia: Quy định & Xin phép",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 15 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_15_01",
+        "pattern": "写真を 撮っても いいですか",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 15: 写真を 撮っても いいですか",
+        "meaning": "Xin phép てもいい & Cấm đoán てはいけない",
+        "nuance": "Trụ cột Quy định & Xin phép: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "写真を 撮っても いいですか。",
+            "vi": "Câu ví dụ chuẩn cho bài học 15 (Xin phép てもいい & Cấm đoán てはいけない)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 15 (Xin phép てもいい & Cấm đoán てはいけない) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Quy định & Xin phép",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 15 thuộc trụ cột cốt lõi: Quy định & Xin phép."
+          }
+        ]
+      },
+      {
+        "id": "minna_15_02",
+        "pattern": "写真を 撮っても いいですか (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Xin phép てもいい & Cấm đoán てはいけない",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 15 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 16,
+    "title": "第16課：朝起きて、ご飯を 食べます (Nối chuỗi hành động てから & Nối tính từ)",
+    "jpTitle": "朝起きて、ご飯を 食べます",
+    "viTitle": "Nối chuỗi hành động てから & Nối tính từ",
+    "level": "N5",
+    "pillar": "Nối chuỗi hành động",
+    "summary": "Toàn diện Bài 16 Giáo trình Minna no Nihongo: Nối chuỗi hành động てから & Nối tính từ. Trụ cột: Nối chuỗi hành động.",
+    "mindmap": {
+      "center": "Bài 16: Nối chuỗi hành động てから & Nối tính từ",
+      "branches": [
+        "Công thức & Quy tắc chia: Nối chuỗi hành động",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 16 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_16_01",
+        "pattern": "朝起きて、ご飯を 食べます",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 16: 朝起きて、ご飯を 食べます",
+        "meaning": "Nối chuỗi hành động てから & Nối tính từ",
+        "nuance": "Trụ cột Nối chuỗi hành động: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "朝起きて、ご飯を 食べます。",
+            "vi": "Câu ví dụ chuẩn cho bài học 16 (Nối chuỗi hành động てから & Nối tính từ)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 16 (Nối chuỗi hành động てから & Nối tính từ) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Nối chuỗi hành động",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 16 thuộc trụ cột cốt lõi: Nối chuỗi hành động."
+          }
+        ]
+      },
+      {
+        "id": "minna_16_02",
+        "pattern": "朝起きて、ご飯を 食べます (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Nối chuỗi hành động てから & Nối tính từ",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 16 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 17,
+    "title": "第17課：忘れないで ください (Thể ない (Nai): Xin đừng, bắt buộc, không cần)",
+    "jpTitle": "忘れないで ください",
+    "viTitle": "Thể ない (Nai): Xin đừng, bắt buộc, không cần",
+    "level": "N5",
+    "pillar": "Thể ない & Bắt buộc",
+    "summary": "Toàn diện Bài 17 Giáo trình Minna no Nihongo: Thể ない (Nai): Xin đừng, bắt buộc, không cần. Trụ cột: Thể ない & Bắt buộc.",
+    "mindmap": {
+      "center": "Bài 17: Thể ない (Nai): Xin đừng, bắt buộc, không cần",
+      "branches": [
+        "Công thức & Quy tắc chia: Thể ない & Bắt buộc",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 17 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_17_01",
+        "pattern": "忘れないで ください",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 17: 忘れないで ください",
+        "meaning": "Thể ない (Nai): Xin đừng, bắt buộc, không cần",
+        "nuance": "Trụ cột Thể ない & Bắt buộc: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "忘れないで ください。",
+            "vi": "Câu ví dụ chuẩn cho bài học 17 (Thể ない (Nai): Xin đừng, bắt buộc, không cần)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 17 (Thể ない (Nai): Xin đừng, bắt buộc, không cần) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Thể ない & Bắt buộc",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 17 thuộc trụ cột cốt lõi: Thể ない & Bắt buộc."
+          }
+        ]
+      },
+      {
+        "id": "minna_17_02",
+        "pattern": "忘れないで ください (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Thể ない (Nai): Xin đừng, bắt buộc, không cần",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 17 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 18,
+    "title": "第18課：スキーが できます (Thể Từ điển (辞書形): Khả năng, sở thích, trước khi)",
+    "jpTitle": "スキーが できます",
+    "viTitle": "Thể Từ điển (辞書形): Khả năng, sở thích, trước khi",
+    "level": "N5",
+    "pillar": "Thể Từ Điển",
+    "summary": "Toàn diện Bài 18 Giáo trình Minna no Nihongo: Thể Từ điển (辞書形): Khả năng, sở thích, trước khi. Trụ cột: Thể Từ Điển.",
+    "mindmap": {
+      "center": "Bài 18: Thể Từ điển (辞書形): Khả năng, sở thích, trước khi",
+      "branches": [
+        "Công thức & Quy tắc chia: Thể Từ Điển",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 18 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_18_01",
+        "pattern": "スキーが できます",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 18: スキーが できます",
+        "meaning": "Thể Từ điển (辞書形): Khả năng, sở thích, trước khi",
+        "nuance": "Trụ cột Thể Từ Điển: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "スキーが できます。",
+            "vi": "Câu ví dụ chuẩn cho bài học 18 (Thể Từ điển (辞書形): Khả năng, sở thích, trước khi)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 18 (Thể Từ điển (辞書形): Khả năng, sở thích, trước khi) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Thể Từ Điển",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 18 thuộc trụ cột cốt lõi: Thể Từ Điển."
+          }
+        ]
+      },
+      {
+        "id": "minna_18_02",
+        "pattern": "スキーが できます (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Thể Từ điển (辞書形): Khả năng, sở thích, trước khi",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 18 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 19,
+    "title": "第19課：富士山に 登ったことが あります (Thể た (Ta): Kinh nghiệm, liệt kê たり~たり)",
+    "jpTitle": "富士山に 登ったことが あります",
+    "viTitle": "Thể た (Ta): Kinh nghiệm, liệt kê たり~たり",
+    "level": "N5",
+    "pillar": "Thể た & Kinh nghiệm",
+    "summary": "Toàn diện Bài 19 Giáo trình Minna no Nihongo: Thể た (Ta): Kinh nghiệm, liệt kê たり~たり. Trụ cột: Thể た & Kinh nghiệm.",
+    "mindmap": {
+      "center": "Bài 19: Thể た (Ta): Kinh nghiệm, liệt kê たり~たり",
+      "branches": [
+        "Công thức & Quy tắc chia: Thể た & Kinh nghiệm",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 19 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_19_01",
+        "pattern": "富士山に 登ったことが あります",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 19: 富士山に 登ったことが あります",
+        "meaning": "Thể た (Ta): Kinh nghiệm, liệt kê たり~たり",
+        "nuance": "Trụ cột Thể た & Kinh nghiệm: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "富士山に 登ったことが あります。",
+            "vi": "Câu ví dụ chuẩn cho bài học 19 (Thể た (Ta): Kinh nghiệm, liệt kê たり~たり)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 19 (Thể た (Ta): Kinh nghiệm, liệt kê たり~たり) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Thể た & Kinh nghiệm",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 19 thuộc trụ cột cốt lõi: Thể た & Kinh nghiệm."
+          }
+        ]
+      },
+      {
+        "id": "minna_19_02",
+        "pattern": "富士山に 登ったことが あります (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Thể た (Ta): Kinh nghiệm, liệt kê たり~たり",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 19 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 20,
+    "title": "第20課：今日 暇？ (Thể thông thường (普通形 - Futsuukei))",
+    "jpTitle": "今日 暇？",
+    "viTitle": "Thể thông thường (普通形 - Futsuukei)",
+    "level": "N5",
+    "pillar": "Thể Thông Thường",
+    "summary": "Toàn diện Bài 20 Giáo trình Minna no Nihongo: Thể thông thường (普通形 - Futsuukei). Trụ cột: Thể Thông Thường.",
+    "mindmap": {
+      "center": "Bài 20: Thể thông thường (普通形 - Futsuukei)",
+      "branches": [
+        "Công thức & Quy tắc chia: Thể Thông Thường",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 20 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_20_01",
+        "pattern": "今日 暇？",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 20: 今日 暇？",
+        "meaning": "Thể thông thường (普通形 - Futsuukei)",
+        "nuance": "Trụ cột Thể Thông Thường: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "今日 暇？。",
+            "vi": "Câu ví dụ chuẩn cho bài học 20 (Thể thông thường (普通形 - Futsuukei))."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 20 (Thể thông thường (普通形 - Futsuukei)) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Thể Thông Thường",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 20 thuộc trụ cột cốt lõi: Thể Thông Thường."
+          }
+        ]
+      },
+      {
+        "id": "minna_20_02",
+        "pattern": "今日 暇？ (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Thể thông thường (普通形 - Futsuukei)",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 20 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 21,
+    "title": "第21課：明日は 雨が 降ると 思います (Bày tỏ quan điểm 思います & Trích dẫn 言いました)",
+    "jpTitle": "明日は 雨が 降ると 思います",
+    "viTitle": "Bày tỏ quan điểm 思います & Trích dẫn 言いました",
+    "level": "N5",
+    "pillar": "Ý kiến & Trích dẫn",
+    "summary": "Toàn diện Bài 21 Giáo trình Minna no Nihongo: Bày tỏ quan điểm 思います & Trích dẫn 言いました. Trụ cột: Ý kiến & Trích dẫn.",
+    "mindmap": {
+      "center": "Bài 21: Bày tỏ quan điểm 思います & Trích dẫn 言いました",
+      "branches": [
+        "Công thức & Quy tắc chia: Ý kiến & Trích dẫn",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 21 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_21_01",
+        "pattern": "明日は 雨が 降ると 思います",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 21: 明日は 雨が 降ると 思います",
+        "meaning": "Bày tỏ quan điểm 思います & Trích dẫn 言いました",
+        "nuance": "Trụ cột Ý kiến & Trích dẫn: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "明日は 雨が 降ると 思います。",
+            "vi": "Câu ví dụ chuẩn cho bài học 21 (Bày tỏ quan điểm 思います & Trích dẫn 言いました)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 21 (Bày tỏ quan điểm 思います & Trích dẫn 言いました) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Ý kiến & Trích dẫn",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 21 thuộc trụ cột cốt lõi: Ý kiến & Trích dẫn."
+          }
+        ]
+      },
+      {
+        "id": "minna_21_02",
+        "pattern": "明日は 雨が 降ると 思います (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Bày tỏ quan điểm 思います & Trích dẫn 言いました",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 21 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 22,
+    "title": "第22課：私が 作った ケーキ (Bổ nghĩa mệnh đề danh từ (Định ngữ))",
+    "jpTitle": "私が 作った ケーキ",
+    "viTitle": "Bổ nghĩa mệnh đề danh từ (Định ngữ)",
+    "level": "N5",
+    "pillar": "Mệnh đề Bổ nghĩa",
+    "summary": "Toàn diện Bài 22 Giáo trình Minna no Nihongo: Bổ nghĩa mệnh đề danh từ (Định ngữ). Trụ cột: Mệnh đề Bổ nghĩa.",
+    "mindmap": {
+      "center": "Bài 22: Bổ nghĩa mệnh đề danh từ (Định ngữ)",
+      "branches": [
+        "Công thức & Quy tắc chia: Mệnh đề Bổ nghĩa",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 22 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_22_01",
+        "pattern": "私が 作った ケーキ",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 22: 私が 作った ケーキ",
+        "meaning": "Bổ nghĩa mệnh đề danh từ (Định ngữ)",
+        "nuance": "Trụ cột Mệnh đề Bổ nghĩa: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "私が 作った ケーキ。",
+            "vi": "Câu ví dụ chuẩn cho bài học 22 (Bổ nghĩa mệnh đề danh từ (Định ngữ))."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 22 (Bổ nghĩa mệnh đề danh từ (Định ngữ)) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Mệnh đề Bổ nghĩa",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 22 thuộc trụ cột cốt lõi: Mệnh đề Bổ nghĩa."
+          }
+        ]
+      },
+      {
+        "id": "minna_22_02",
+        "pattern": "私が 作った ケーキ (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Bổ nghĩa mệnh đề danh từ (Định ngữ)",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 22 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 23,
+    "title": "第23課：図書館へ 行くとき、本を 借ります (Khi làm gì とき & Điều kiện tự nhiên と)",
+    "jpTitle": "図書館へ 行くとき、本を 借ります",
+    "viTitle": "Khi làm gì とき & Điều kiện tự nhiên と",
+    "level": "N5",
+    "pillar": "Thời điểm & Điều kiện と",
+    "summary": "Toàn diện Bài 23 Giáo trình Minna no Nihongo: Khi làm gì とき & Điều kiện tự nhiên と. Trụ cột: Thời điểm & Điều kiện と.",
+    "mindmap": {
+      "center": "Bài 23: Khi làm gì とき & Điều kiện tự nhiên と",
+      "branches": [
+        "Công thức & Quy tắc chia: Thời điểm & Điều kiện と",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 23 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_23_01",
+        "pattern": "図書館へ 行くとき、本を 借ります",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 23: 図書館へ 行くとき、本を 借ります",
+        "meaning": "Khi làm gì とき & Điều kiện tự nhiên と",
+        "nuance": "Trụ cột Thời điểm & Điều kiện と: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "図書館へ 行くとき、本を 借ります。",
+            "vi": "Câu ví dụ chuẩn cho bài học 23 (Khi làm gì とき & Điều kiện tự nhiên と)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 23 (Khi làm gì とき & Điều kiện tự nhiên と) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Thời điểm & Điều kiện と",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 23 thuộc trụ cột cốt lõi: Thời điểm & Điều kiện と."
+          }
+        ]
+      },
+      {
+        "id": "minna_23_02",
+        "pattern": "図書館へ 行くとき、本を 借ります (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Khi làm gì とき & Điều kiện tự nhiên と",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 23 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 24,
+    "title": "第24課：友達が 手伝って くれました (Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます))",
+    "jpTitle": "友達が 手伝って くれました",
+    "viTitle": "Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます)",
+    "level": "N5",
+    "pillar": "Cho - Nhận Hành Động",
+    "summary": "Toàn diện Bài 24 Giáo trình Minna no Nihongo: Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます). Trụ cột: Cho - Nhận Hành Động.",
+    "mindmap": {
+      "center": "Bài 24: Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます)",
+      "branches": [
+        "Công thức & Quy tắc chia: Cho - Nhận Hành Động",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 24 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_24_01",
+        "pattern": "友達が 手伝って くれました",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 24: 友達が 手伝って くれました",
+        "meaning": "Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます)",
+        "nuance": "Trụ cột Cho - Nhận Hành Động: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "友達が 手伝って くれました。",
+            "vi": "Câu ví dụ chuẩn cho bài học 24 (Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます))."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 24 (Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます)) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Cho - Nhận Hành Động",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 24 thuộc trụ cột cốt lõi: Cho - Nhận Hành Động."
+          }
+        ]
+      },
+      {
+        "id": "minna_24_02",
+        "pattern": "友達が 手伝って くれました (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Nhóm Cho - Nhận hành động cơ bản (くれます/もらいます)",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 24 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 25,
+    "title": "第25課：雨が 降ったら、行きません (Điều kiện giả định たら & Dù cho... nhưng ても)",
+    "jpTitle": "雨が 降ったら、行きません",
+    "viTitle": "Điều kiện giả định たら & Dù cho... nhưng ても",
+    "level": "N5",
+    "pillar": "Điều kiện たら & Dù cho",
+    "summary": "Toàn diện Bài 25 Giáo trình Minna no Nihongo: Điều kiện giả định たら & Dù cho... nhưng ても. Trụ cột: Điều kiện たら & Dù cho.",
+    "mindmap": {
+      "center": "Bài 25: Điều kiện giả định たら & Dù cho... nhưng ても",
+      "branches": [
+        "Công thức & Quy tắc chia: Điều kiện たら & Dù cho",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 25 để làm bệ phóng vững vàng cho trình độ N4."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_25_01",
+        "pattern": "雨が 降ったら、行きません",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 25: 雨が 降ったら、行きません",
+        "meaning": "Điều kiện giả định たら & Dù cho... nhưng ても",
+        "nuance": "Trụ cột Điều kiện たら & Dù cho: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "雨が 降ったら、行きません。",
+            "vi": "Câu ví dụ chuẩn cho bài học 25 (Điều kiện giả định たら & Dù cho... nhưng ても)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 25 (Điều kiện giả định たら & Dù cho... nhưng ても) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Điều kiện たら & Dù cho",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 25 thuộc trụ cột cốt lõi: Điều kiện たら & Dù cho."
+          }
+        ]
+      },
+      {
+        "id": "minna_25_02",
+        "pattern": "雨が 降ったら、行きません (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Điều kiện giả định たら & Dù cho... nhưng ても",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N5",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 25 được chuẩn hóa cho trình độ N5."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 35
+  },
+  {
+    "lessonNumber": 26,
+    "title": "第26課：どうしたんですか (Mẫu câu giải thích lý do & Mào đầu ~んです)",
+    "jpTitle": "どうしたんですか",
+    "viTitle": "Mẫu câu giải thích lý do & Mào đầu ~んです",
+    "level": "N4",
+    "pillar": "Giải thích & Nhấn mạnh",
+    "summary": "Toàn diện Bài 26 Giáo trình Minna no Nihongo: Mẫu câu giải thích lý do & Mào đầu ~んです. Trụ cột: Giải thích & Nhấn mạnh.",
+    "mindmap": {
+      "center": "Bài 26: Mẫu câu giải thích lý do & Mào đầu ~んです",
+      "branches": [
+        "Công thức & Quy tắc chia: Giải thích & Nhấn mạnh",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 26 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_26_01",
+        "pattern": "どうしたんですか",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 26: どうしたんですか",
+        "meaning": "Mẫu câu giải thích lý do & Mào đầu ~んです",
+        "nuance": "Trụ cột Giải thích & Nhấn mạnh: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "どうしたんですか。",
+            "vi": "Câu ví dụ chuẩn cho bài học 26 (Mẫu câu giải thích lý do & Mào đầu ~んです)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 26 (Mẫu câu giải thích lý do & Mào đầu ~んです) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Giải thích & Nhấn mạnh",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 26 thuộc trụ cột cốt lõi: Giải thích & Nhấn mạnh."
+          }
+        ]
+      },
+      {
+        "id": "minna_26_02",
+        "pattern": "どうしたんですか (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Mẫu câu giải thích lý do & Mào đầu ~んです",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 26 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 27,
+    "title": "第27課：ピアノが 弾けます (Thể Khả năng (可能形 - Kanoukei))",
+    "jpTitle": "ピアノが 弾けます",
+    "viTitle": "Thể Khả năng (可能形 - Kanoukei)",
+    "level": "N4",
+    "pillar": "Thể Khả Năng",
+    "summary": "Toàn diện Bài 27 Giáo trình Minna no Nihongo: Thể Khả năng (可能形 - Kanoukei). Trụ cột: Thể Khả Năng.",
+    "mindmap": {
+      "center": "Bài 27: Thể Khả năng (可能形 - Kanoukei)",
+      "branches": [
+        "Công thức & Quy tắc chia: Thể Khả Năng",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 27 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_27_01",
+        "pattern": "Thể Khả Năng (可能形 - Kanoukei)",
+        "formula": "Nhóm 1: Đổi đuôi [i] thành [e] + る (書く→書ける, 飲む→飲める)\nNhóm 2: Bỏ る + られる (食べる→食べられる, 見る→見られる)\nNhóm 3: する→できる, くる→こられる",
+        "meaning": "Có thể làm gì / Biết làm gì",
+        "nuance": "Trong câu khả năng, tân ngữ chỉ đối tượng của hành động thường chuyển từ trợ từ を sang trợ từ が. Thể hiện năng lực của bản thân hoặc điều kiện hoàn cảnh cho phép.",
+        "examples": [
+          {
+            "jp": "わたしは 日本語が 話せます。",
+            "vi": "Tôi có thể nói được tiếng Nhật."
+          },
+          {
+            "jp": "この 銀行で ドルが 換えられます。",
+            "vi": "Có thể đổi đô la ở ngân hàng này."
+          }
+        ],
+        "drills": [
+          {
+            "q": "わたしは 漢字（　）あまり 読めません。",
+            "options": [
+              "が",
+              "を",
+              "に",
+              "で"
+            ],
+            "correct": 0,
+            "explain": "Động từ khả năng 読める đi với trợ từ が để chỉ đối tượng có thể/không thể làm."
+          }
+        ]
+      },
+      {
+        "id": "minna_27_02",
+        "pattern": "Phân biệt 見える / 聞こえる vs 見られる / 聞ける",
+        "formula": "見える / 聞こえる: Tự nhiên lọt vào mắt/tai (không cần ý chí)\n見られる / 聞ける: Có điều kiện, có phương tiện để chủ động xem/nghe",
+        "meaning": "Nhìn thấy / Nghe thấy vs Có thể xem / Có thể nghe",
+        "nuance": "Bẫy kinh điển trong JLPT: Nhìn cảnh núi Phú Sĩ ngoài cửa sổ dùng 富士山が見える; nhưng rạp chiếu phim có suất chiếu để xem thì dùng 映画が見られる.",
+        "examples": [
+          {
+            "jp": "ここから 富士山が 見えます。",
+            "vi": "Từ đây có thể nhìn thấy núi Phú Sĩ (tự nhiên hiện ra)."
+          },
+          {
+            "jp": "インターネットで 日本の ニュースが 見られます。",
+            "vi": "Có thể xem tin tức Nhật Bản qua Internet (nhờ có mạng)."
+          }
+        ],
+        "drills": [
+          {
+            "q": "隣の 部屋から ピアノの 音が（　）。",
+            "options": [
+              "聞こえます",
+              "聞けます",
+              "聞きます",
+              "聞かせます"
+            ],
+            "correct": 0,
+            "explain": "Âm thanh tự nhiên lọt vào tai dùng 聞こえます."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 28,
+    "title": "第28課：音楽を 聞きながら、勉強します (Vừa... vừa ながら & Liệt kê lý do し~し)",
+    "jpTitle": "音楽を 聞きながら、勉強します",
+    "viTitle": "Vừa... vừa ながら & Liệt kê lý do し~し",
+    "level": "N4",
+    "pillar": "Hành động đồng thời",
+    "summary": "Toàn diện Bài 28 Giáo trình Minna no Nihongo: Vừa... vừa ながら & Liệt kê lý do し~し. Trụ cột: Hành động đồng thời.",
+    "mindmap": {
+      "center": "Bài 28: Vừa... vừa ながら & Liệt kê lý do し~し",
+      "branches": [
+        "Công thức & Quy tắc chia: Hành động đồng thời",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 28 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_28_01",
+        "pattern": "音楽を 聞きながら、勉強します",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 28: 音楽を 聞きながら、勉強します",
+        "meaning": "Vừa... vừa ながら & Liệt kê lý do し~し",
+        "nuance": "Trụ cột Hành động đồng thời: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "音楽を 聞きながら、勉強します。",
+            "vi": "Câu ví dụ chuẩn cho bài học 28 (Vừa... vừa ながら & Liệt kê lý do し~し)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 28 (Vừa... vừa ながら & Liệt kê lý do し~し) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Hành động đồng thời",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 28 thuộc trụ cột cốt lõi: Hành động đồng thời."
+          }
+        ]
+      },
+      {
+        "id": "minna_28_02",
+        "pattern": "音楽を 聞きながら、勉強します (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Vừa... vừa ながら & Liệt kê lý do し~し",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 28 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 29,
+    "title": "第29課：窓が 開いています (Tự động từ vs Tha động từ & Trạng thái ています)",
+    "jpTitle": "窓が 開いています",
+    "viTitle": "Tự động từ vs Tha động từ & Trạng thái ています",
+    "level": "N4",
+    "pillar": "Tự động từ & Tha động từ",
+    "summary": "Toàn diện Bài 29 Giáo trình Minna no Nihongo: Tự động từ vs Tha động từ & Trạng thái ています. Trụ cột: Tự động từ & Tha động từ.",
+    "mindmap": {
+      "center": "Bài 29: Tự động từ vs Tha động từ & Trạng thái ています",
+      "branches": [
+        "Công thức & Quy tắc chia: Tự động từ & Tha động từ",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 29 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_29_01",
+        "pattern": "窓が 開いています",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 29: 窓が 開いています",
+        "meaning": "Tự động từ vs Tha động từ & Trạng thái ています",
+        "nuance": "Trụ cột Tự động từ & Tha động từ: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "窓が 開いています。",
+            "vi": "Câu ví dụ chuẩn cho bài học 29 (Tự động từ vs Tha động từ & Trạng thái ています)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 29 (Tự động từ vs Tha động từ & Trạng thái ています) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Tự động từ & Tha động từ",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 29 thuộc trụ cột cốt lõi: Tự động từ & Tha động từ."
+          }
+        ]
+      },
+      {
+        "id": "minna_29_02",
+        "pattern": "窓が 開いています (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Tự động từ vs Tha động từ & Trạng thái ています",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 29 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 30,
+    "title": "第30課：カレンダーに 書いてあります (Kết quả có chủ đích てあります & Chuẩn bị trước ておきます)",
+    "jpTitle": "カレンダーに 書いてあります",
+    "viTitle": "Kết quả có chủ đích てあります & Chuẩn bị trước ておきます",
+    "level": "N4",
+    "pillar": "Mục đích & Chuẩn bị",
+    "summary": "Toàn diện Bài 30 Giáo trình Minna no Nihongo: Kết quả có chủ đích てあります & Chuẩn bị trước ておきます. Trụ cột: Mục đích & Chuẩn bị.",
+    "mindmap": {
+      "center": "Bài 30: Kết quả có chủ đích てあります & Chuẩn bị trước ておきます",
+      "branches": [
+        "Công thức & Quy tắc chia: Mục đích & Chuẩn bị",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 30 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_30_01",
+        "pattern": "カレンダーに 書いてあります",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 30: カレンダーに 書いてあります",
+        "meaning": "Kết quả có chủ đích てあります & Chuẩn bị trước ておきます",
+        "nuance": "Trụ cột Mục đích & Chuẩn bị: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "カレンダーに 書いてあります。",
+            "vi": "Câu ví dụ chuẩn cho bài học 30 (Kết quả có chủ đích てあります & Chuẩn bị trước ておきます)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 30 (Kết quả có chủ đích てあります & Chuẩn bị trước ておきます) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Mục đích & Chuẩn bị",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 30 thuộc trụ cột cốt lõi: Mục đích & Chuẩn bị."
+          }
+        ]
+      },
+      {
+        "id": "minna_30_02",
+        "pattern": "カレンダーに 書いてあります (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Kết quả có chủ đích てあります & Chuẩn bị trước ておきます",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 30 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 31,
+    "title": "第31課：週末 映画を 見ようと 思います (Thể Ý chí (意向形) & Dự định つもり)",
+    "jpTitle": "週末 映画を 見ようと 思います",
+    "viTitle": "Thể Ý chí (意向形) & Dự định つもり",
+    "level": "N4",
+    "pillar": "Thể Ý Chí & Dự Định",
+    "summary": "Toàn diện Bài 31 Giáo trình Minna no Nihongo: Thể Ý chí (意向形) & Dự định つもり. Trụ cột: Thể Ý Chí & Dự Định.",
+    "mindmap": {
+      "center": "Bài 31: Thể Ý chí (意向形) & Dự định つもり",
+      "branches": [
+        "Công thức & Quy tắc chia: Thể Ý Chí & Dự Định",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 31 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_31_01",
+        "pattern": "週末 映画を 見ようと 思います",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 31: 週末 映画を 見ようと 思います",
+        "meaning": "Thể Ý chí (意向形) & Dự định つもり",
+        "nuance": "Trụ cột Thể Ý Chí & Dự Định: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "週末 映画を 見ようと 思います。",
+            "vi": "Câu ví dụ chuẩn cho bài học 31 (Thể Ý chí (意向形) & Dự định つもり)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 31 (Thể Ý chí (意向形) & Dự định つもり) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Thể Ý Chí & Dự Định",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 31 thuộc trụ cột cốt lõi: Thể Ý Chí & Dự Định."
+          }
+        ]
+      },
+      {
+        "id": "minna_31_02",
+        "pattern": "週末 映画を 見ようと 思います (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Thể Ý chí (意向形) & Dự định つもり",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 31 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 32,
+    "title": "第32課：運動した ほうが いいです (Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません)",
+    "jpTitle": "運動した ほうが いいです",
+    "viTitle": "Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません",
+    "level": "N4",
+    "pillar": "Lời khuyên & Phỏng đoán",
+    "summary": "Toàn diện Bài 32 Giáo trình Minna no Nihongo: Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません. Trụ cột: Lời khuyên & Phỏng đoán.",
+    "mindmap": {
+      "center": "Bài 32: Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません",
+      "branches": [
+        "Công thức & Quy tắc chia: Lời khuyên & Phỏng đoán",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 32 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_32_01",
+        "pattern": "運動した ほうが いいです",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 32: 運動した ほうが いいです",
+        "meaning": "Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません",
+        "nuance": "Trụ cột Lời khuyên & Phỏng đoán: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "運動した ほうが いいです。",
+            "vi": "Câu ví dụ chuẩn cho bài học 32 (Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 32 (Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Lời khuyên & Phỏng đoán",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 32 thuộc trụ cột cốt lõi: Lời khuyên & Phỏng đoán."
+          }
+        ]
+      },
+      {
+        "id": "minna_32_02",
+        "pattern": "運動した ほうが いいです (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Lời khuyên ほうがいい & Phán đoán でしょう/かもしれません",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 32 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 33,
+    "title": "第33課：逃げろ！ 止まれ！ (Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形))",
+    "jpTitle": "逃げろ！ 止まれ！",
+    "viTitle": "Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形)",
+    "level": "N4",
+    "pillar": "Mệnh lệnh & Biển báo",
+    "summary": "Toàn diện Bài 33 Giáo trình Minna no Nihongo: Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形). Trụ cột: Mệnh lệnh & Biển báo.",
+    "mindmap": {
+      "center": "Bài 33: Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形)",
+      "branches": [
+        "Công thức & Quy tắc chia: Mệnh lệnh & Biển báo",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 33 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_33_01",
+        "pattern": "逃げろ！ 止まれ！",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 33: 逃げろ！ 止まれ！",
+        "meaning": "Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形)",
+        "nuance": "Trụ cột Mệnh lệnh & Biển báo: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "逃げろ！ 止まれ！。",
+            "vi": "Câu ví dụ chuẩn cho bài học 33 (Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形))."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 33 (Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形)) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Mệnh lệnh & Biển báo",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 33 thuộc trụ cột cốt lõi: Mệnh lệnh & Biển báo."
+          }
+        ]
+      },
+      {
+        "id": "minna_33_02",
+        "pattern": "逃げろ！ 止まれ！ (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Thể Mệnh lệnh (命令形) & Thể Cấm chỉ (禁止形)",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 33 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 34,
+    "title": "第34課：説明書の とおりに 作ります (Làm theo とおりに & Sau khi あとで)",
+    "jpTitle": "説明書の とおりに 作ります",
+    "viTitle": "Làm theo とおりに & Sau khi あとで",
+    "level": "N4",
+    "pillar": "Trình tự & Làm theo",
+    "summary": "Toàn diện Bài 34 Giáo trình Minna no Nihongo: Làm theo とおりに & Sau khi あとで. Trụ cột: Trình tự & Làm theo.",
+    "mindmap": {
+      "center": "Bài 34: Làm theo とおりに & Sau khi あとで",
+      "branches": [
+        "Công thức & Quy tắc chia: Trình tự & Làm theo",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 34 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_34_01",
+        "pattern": "説明書の とおりに 作ります",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 34: 説明書の とおりに 作ります",
+        "meaning": "Làm theo とおりに & Sau khi あとで",
+        "nuance": "Trụ cột Trình tự & Làm theo: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "説明書の とおりに 作ります。",
+            "vi": "Câu ví dụ chuẩn cho bài học 34 (Làm theo とおりに & Sau khi あとで)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 34 (Làm theo とおりに & Sau khi あとで) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Trình tự & Làm theo",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 34 thuộc trụ cột cốt lõi: Trình tự & Làm theo."
+          }
+        ]
+      },
+      {
+        "id": "minna_34_02",
+        "pattern": "説明書の とおりに 作ります (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Làm theo とおりに & Sau khi あとで",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 34 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 35,
+    "title": "第35課：春に なれば、桜が 咲きます (Thể Điều kiện ば (Ba-kei) & なら)",
+    "jpTitle": "春に なれば、桜が 咲きます",
+    "viTitle": "Thể Điều kiện ば (Ba-kei) & なら",
+    "level": "N4",
+    "pillar": "Thể Điều Kiện ば",
+    "summary": "Toàn diện Bài 35 Giáo trình Minna no Nihongo: Thể Điều kiện ば (Ba-kei) & なら. Trụ cột: Thể Điều Kiện ば.",
+    "mindmap": {
+      "center": "Bài 35: Thể Điều kiện ば (Ba-kei) & なら",
+      "branches": [
+        "Công thức & Quy tắc chia: Thể Điều Kiện ば",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 35 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_35_01",
+        "pattern": "春に なれば、桜が 咲きます",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 35: 春に なれば、桜が 咲きます",
+        "meaning": "Thể Điều kiện ば (Ba-kei) & なら",
+        "nuance": "Trụ cột Thể Điều Kiện ば: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "春に なれば、桜が 咲きます。",
+            "vi": "Câu ví dụ chuẩn cho bài học 35 (Thể Điều kiện ば (Ba-kei) & なら)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 35 (Thể Điều kiện ば (Ba-kei) & なら) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Thể Điều Kiện ば",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 35 thuộc trụ cột cốt lõi: Thể Điều Kiện ば."
+          }
+        ]
+      },
+      {
+        "id": "minna_35_02",
+        "pattern": "春に なれば、桜が 咲きます (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Thể Điều kiện ば (Ba-kei) & なら",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 35 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 36,
+    "title": "第36課：早く 走れるように 練習します (Mục đích ように & Sự thay đổi thói quen)",
+    "jpTitle": "早く 走れるように 練習します",
+    "viTitle": "Mục đích ように & Sự thay đổi thói quen",
+    "level": "N4",
+    "pillar": "Mục đích & Biến đổi",
+    "summary": "Toàn diện Bài 36 Giáo trình Minna no Nihongo: Mục đích ように & Sự thay đổi thói quen. Trụ cột: Mục đích & Biến đổi.",
+    "mindmap": {
+      "center": "Bài 36: Mục đích ように & Sự thay đổi thói quen",
+      "branches": [
+        "Công thức & Quy tắc chia: Mục đích & Biến đổi",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 36 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_36_01",
+        "pattern": "早く 走れるように 練習します",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 36: 早く 走れるように 練習します",
+        "meaning": "Mục đích ように & Sự thay đổi thói quen",
+        "nuance": "Trụ cột Mục đích & Biến đổi: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "早く 走れるように 練習します。",
+            "vi": "Câu ví dụ chuẩn cho bài học 36 (Mục đích ように & Sự thay đổi thói quen)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 36 (Mục đích ように & Sự thay đổi thói quen) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Mục đích & Biến đổi",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 36 thuộc trụ cột cốt lõi: Mục đích & Biến đổi."
+          }
+        ]
+      },
+      {
+        "id": "minna_36_02",
+        "pattern": "早く 走れるように 練習します (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Mục đích ように & Sự thay đổi thói quen",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 36 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 37,
+    "title": "第37課：先生に 褒められました (Thể Bị động (受身形 - Ukemi-kei))",
+    "jpTitle": "先生に 褒められました",
+    "viTitle": "Thể Bị động (受身形 - Ukemi-kei)",
+    "level": "N4",
+    "pillar": "Thể Bị Động",
+    "summary": "Toàn diện Bài 37 Giáo trình Minna no Nihongo: Thể Bị động (受身形 - Ukemi-kei). Trụ cột: Thể Bị Động.",
+    "mindmap": {
+      "center": "Bài 37: Thể Bị động (受身形 - Ukemi-kei)",
+      "branches": [
+        "Công thức & Quy tắc chia: Thể Bị Động",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 37 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_37_01",
+        "pattern": "Thể Bị Động Trực Tiếp (受身形 - Ukemi)",
+        "formula": "N1 (Người bị tác động) は + N2 (Người tác động) に + Động từ Bị Động",
+        "meaning": "N1 bị / được N2 tác động làm gì",
+        "nuance": "Cách chia: Nhóm 1 đổi đuôi [i] thành [a] + れる (叱る→叱られる); Nhóm 2 bỏ る + られる (褒める→褒められる); Nhóm 3: する→される, くる→こられる. Nếu hành động mang lại lợi ích thì mang nghĩa 'được', phiền toái thì mang nghĩa 'bị'.",
+        "examples": [
+          {
+            "jp": "わたしは 先生に 褒められました。",
+            "vi": "Tôi được thầy giáo khen ngợi."
+          },
+          {
+            "jp": "わたしは 泥棒に お金を 盗まれました。",
+            "vi": "Tôi bị trộm lấy mất tiền."
+          }
+        ],
+        "drills": [
+          {
+            "q": "弟は 母（　）叱られました。",
+            "options": [
+              "に",
+              "を",
+              "が",
+              "で"
+            ],
+            "correct": 0,
+            "explain": "Người thực hiện hành động tác động lên chủ ngữ trong câu bị động đi với trợ từ に."
+          }
+        ]
+      },
+      {
+        "id": "minna_37_02",
+        "pattern": "Bị Động Gián Tiếp / Bị Động Bị Hại (迷惑の受身)",
+        "formula": "Chủ ngữ (Người gánh chịu) は + Người gây phiền に + Danh từ を + V-bị động",
+        "meaning": "Chủ ngữ bị người khác làm một việc gây phiền toái/thiệt hại",
+        "nuance": "Đặc thù tiếng Nhật: Thường dùng với mưa rơi (雨に降られた), trộm đồ, giẫm vào chân. Luôn biểu lộ cảm xúc khó chịu, bị ảnh hưởng tiêu cực.",
+        "examples": [
+          {
+            "jp": "電車の中で 足を 踏まれました。",
+            "vi": "Tôi bị ai đó giẫm vào chân trên tàu điện."
+          },
+          {
+            "jp": "雨に 降られて、服が ぬれて しまいました。",
+            "vi": "Bị mưa rơi ướt hết cả quần áo."
+          }
+        ],
+        "drills": [
+          {
+            "q": "雨（　）降られて、風邪を ひきました。",
+            "options": [
+              "に",
+              "を",
+              "で",
+              "が"
+            ],
+            "correct": 0,
+            "explain": "Hiện tượng tự nhiên gây phiền toái trong bị động gián tiếp đi với に (雨に降られる)."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 38,
+    "title": "第38課：絵を 見るのが 好きです (Danh từ hóa hành động (V-る + の))",
+    "jpTitle": "絵を 見るのが 好きです",
+    "viTitle": "Danh từ hóa hành động (V-る + の)",
+    "level": "N4",
+    "pillar": "Danh từ hóa mệnh đề",
+    "summary": "Toàn diện Bài 38 Giáo trình Minna no Nihongo: Danh từ hóa hành động (V-る + の). Trụ cột: Danh từ hóa mệnh đề.",
+    "mindmap": {
+      "center": "Bài 38: Danh từ hóa hành động (V-る + の)",
+      "branches": [
+        "Công thức & Quy tắc chia: Danh từ hóa mệnh đề",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 38 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_38_01",
+        "pattern": "絵を 見るのが 好きです",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 38: 絵を 見るのが 好きです",
+        "meaning": "Danh từ hóa hành động (V-る + の)",
+        "nuance": "Trụ cột Danh từ hóa mệnh đề: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "絵を 見るのが 好きです。",
+            "vi": "Câu ví dụ chuẩn cho bài học 38 (Danh từ hóa hành động (V-る + の))."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 38 (Danh từ hóa hành động (V-る + の)) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Danh từ hóa mệnh đề",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 38 thuộc trụ cột cốt lõi: Danh từ hóa mệnh đề."
+          }
+        ]
+      },
+      {
+        "id": "minna_38_02",
+        "pattern": "絵を 見るのが 好きです (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Danh từ hóa hành động (V-る + の)",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 38 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 39,
+    "title": "第39課：事故で 電車が 止まりました (Nguyên nhân khách quan (て/なくて/で))",
+    "jpTitle": "事故で 電車が 止まりました",
+    "viTitle": "Nguyên nhân khách quan (て/なくて/で)",
+    "level": "N4",
+    "pillar": "Nguyên nhân khách quan",
+    "summary": "Toàn diện Bài 39 Giáo trình Minna no Nihongo: Nguyên nhân khách quan (て/なくて/で). Trụ cột: Nguyên nhân khách quan.",
+    "mindmap": {
+      "center": "Bài 39: Nguyên nhân khách quan (て/なくて/で)",
+      "branches": [
+        "Công thức & Quy tắc chia: Nguyên nhân khách quan",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 39 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_39_01",
+        "pattern": "事故で 電車が 止まりました",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 39: 事故で 電車が 止まりました",
+        "meaning": "Nguyên nhân khách quan (て/なくて/で)",
+        "nuance": "Trụ cột Nguyên nhân khách quan: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "事故で 電車が 止まりました。",
+            "vi": "Câu ví dụ chuẩn cho bài học 39 (Nguyên nhân khách quan (て/なくて/で))."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 39 (Nguyên nhân khách quan (て/なくて/で)) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Nguyên nhân khách quan",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 39 thuộc trụ cột cốt lõi: Nguyên nhân khách quan."
+          }
+        ]
+      },
+      {
+        "id": "minna_39_02",
+        "pattern": "事故で 電車が 止まりました (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Nguyên nhân khách quan (て/なくて/で)",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 39 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 40,
+    "title": "第40課：何時か 教えて ください (Câu hỏi lồng ghép (~か / ~かどうか))",
+    "jpTitle": "何時か 教えて ください",
+    "viTitle": "Câu hỏi lồng ghép (~か / ~かどうか)",
+    "level": "N4",
+    "pillar": "Nghi vấn từ lồng ghép",
+    "summary": "Toàn diện Bài 40 Giáo trình Minna no Nihongo: Câu hỏi lồng ghép (~か / ~かどうか). Trụ cột: Nghi vấn từ lồng ghép.",
+    "mindmap": {
+      "center": "Bài 40: Câu hỏi lồng ghép (~か / ~かどうか)",
+      "branches": [
+        "Công thức & Quy tắc chia: Nghi vấn từ lồng ghép",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 40 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_40_01",
+        "pattern": "何時か 教えて ください",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 40: 何時か 教えて ください",
+        "meaning": "Câu hỏi lồng ghép (~か / ~かどうか)",
+        "nuance": "Trụ cột Nghi vấn từ lồng ghép: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "何時か 教えて ください。",
+            "vi": "Câu ví dụ chuẩn cho bài học 40 (Câu hỏi lồng ghép (~か / ~かどうか))."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 40 (Câu hỏi lồng ghép (~か / ~かどうか)) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Nghi vấn từ lồng ghép",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 40 thuộc trụ cột cốt lõi: Nghi vấn từ lồng ghép."
+          }
+        ]
+      },
+      {
+        "id": "minna_40_02",
+        "pattern": "何時か 教えて ください (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Câu hỏi lồng ghép (~か / ~かどうか)",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 40 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 41,
+    "title": "第41課：息子に お菓子を やりました (Cho nhận nâng cao (やる/いただく/くださる))",
+    "jpTitle": "息子に お菓子を やりました",
+    "viTitle": "Cho nhận nâng cao (やる/いただく/くださる)",
+    "level": "N4",
+    "pillar": "Cho Nhận Nâng Cao",
+    "summary": "Toàn diện Bài 41 Giáo trình Minna no Nihongo: Cho nhận nâng cao (やる/いただく/くださる). Trụ cột: Cho Nhận Nâng Cao.",
+    "mindmap": {
+      "center": "Bài 41: Cho nhận nâng cao (やる/いただく/くださる)",
+      "branches": [
+        "Công thức & Quy tắc chia: Cho Nhận Nâng Cao",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 41 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_41_01",
+        "pattern": "息子に お菓子を やりました",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 41: 息子に お菓子を やりました",
+        "meaning": "Cho nhận nâng cao (やる/いただく/くださる)",
+        "nuance": "Trụ cột Cho Nhận Nâng Cao: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "息子に お菓子を やりました。",
+            "vi": "Câu ví dụ chuẩn cho bài học 41 (Cho nhận nâng cao (やる/いただく/くださる))."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 41 (Cho nhận nâng cao (やる/いただく/くださる)) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Cho Nhận Nâng Cao",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 41 thuộc trụ cột cốt lõi: Cho Nhận Nâng Cao."
+          }
+        ]
+      },
+      {
+        "id": "minna_41_02",
+        "pattern": "息子に お菓子を やりました (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Cho nhận nâng cao (やる/いただく/くださる)",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 41 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 42,
+    "title": "第42課：留学の ために、貯金しています (Mục đích ために vs Công dụng のに)",
+    "jpTitle": "留学の ために、貯金しています",
+    "viTitle": "Mục đích ために vs Công dụng のに",
+    "level": "N4",
+    "pillar": "Mục đích & Công dụng",
+    "summary": "Toàn diện Bài 42 Giáo trình Minna no Nihongo: Mục đích ために vs Công dụng のに. Trụ cột: Mục đích & Công dụng.",
+    "mindmap": {
+      "center": "Bài 42: Mục đích ために vs Công dụng のに",
+      "branches": [
+        "Công thức & Quy tắc chia: Mục đích & Công dụng",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 42 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_42_01",
+        "pattern": "留学の ために、貯金しています",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 42: 留学の ために、貯金しています",
+        "meaning": "Mục đích ために vs Công dụng のに",
+        "nuance": "Trụ cột Mục đích & Công dụng: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "留学の ために、貯金しています。",
+            "vi": "Câu ví dụ chuẩn cho bài học 42 (Mục đích ために vs Công dụng のに)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 42 (Mục đích ために vs Công dụng のに) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Mục đích & Công dụng",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 42 thuộc trụ cột cốt lõi: Mục đích & Công dụng."
+          }
+        ]
+      },
+      {
+        "id": "minna_42_02",
+        "pattern": "留学の ために、貯金しています (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Mục đích ために vs Công dụng のに",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 42 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 43,
+    "title": "第43課：雨が 降りそうです (Dấu hiệu có vẻ そうです & Đến rồi về てくる)",
+    "jpTitle": "雨が 降りそうです",
+    "viTitle": "Dấu hiệu có vẻ そうです & Đến rồi về てくる",
+    "level": "N4",
+    "pillar": "Phỏng đoán & Chuyển dịch",
+    "summary": "Toàn diện Bài 43 Giáo trình Minna no Nihongo: Dấu hiệu có vẻ そうです & Đến rồi về てくる. Trụ cột: Phỏng đoán & Chuyển dịch.",
+    "mindmap": {
+      "center": "Bài 43: Dấu hiệu có vẻ そうです & Đến rồi về てくる",
+      "branches": [
+        "Công thức & Quy tắc chia: Phỏng đoán & Chuyển dịch",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 43 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_43_01",
+        "pattern": "雨が 降りそうです",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 43: 雨が 降りそうです",
+        "meaning": "Dấu hiệu có vẻ そうです & Đến rồi về てくる",
+        "nuance": "Trụ cột Phỏng đoán & Chuyển dịch: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "雨が 降りそうです。",
+            "vi": "Câu ví dụ chuẩn cho bài học 43 (Dấu hiệu có vẻ そうです & Đến rồi về てくる)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 43 (Dấu hiệu có vẻ そうです & Đến rồi về てくる) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Phỏng đoán & Chuyển dịch",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 43 thuộc trụ cột cốt lõi: Phỏng đoán & Chuyển dịch."
+          }
+        ]
+      },
+      {
+        "id": "minna_43_02",
+        "pattern": "雨が 降りそうです (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Dấu hiệu có vẻ そうです & Đến rồi về てくる",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 43 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 44,
+    "title": "第44課：食べすぎました (Làm quá mức すぎる, Dễ やすい, Khó にくい)",
+    "jpTitle": "食べすぎました",
+    "viTitle": "Làm quá mức すぎる, Dễ やすい, Khó にくい",
+    "level": "N4",
+    "pillar": "Mức độ & Tính chất",
+    "summary": "Toàn diện Bài 44 Giáo trình Minna no Nihongo: Làm quá mức すぎる, Dễ やすい, Khó にくい. Trụ cột: Mức độ & Tính chất.",
+    "mindmap": {
+      "center": "Bài 44: Làm quá mức すぎる, Dễ やすい, Khó にくい",
+      "branches": [
+        "Công thức & Quy tắc chia: Mức độ & Tính chất",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 44 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_44_01",
+        "pattern": "食べすぎました",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 44: 食べすぎました",
+        "meaning": "Làm quá mức すぎる, Dễ やすい, Khó にくい",
+        "nuance": "Trụ cột Mức độ & Tính chất: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "食べすぎました。",
+            "vi": "Câu ví dụ chuẩn cho bài học 44 (Làm quá mức すぎる, Dễ やすい, Khó にくい)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 44 (Làm quá mức すぎる, Dễ やすい, Khó にくい) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Mức độ & Tính chất",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 44 thuộc trụ cột cốt lõi: Mức độ & Tính chất."
+          }
+        ]
+      },
+      {
+        "id": "minna_44_02",
+        "pattern": "食べすぎました (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Làm quá mức すぎる, Dễ やすい, Khó にくい",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 44 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 45,
+    "title": "第45課：時間に 遅れた 場合は (Trường hợp 場合は & Trái ngược thất vọng のに)",
+    "jpTitle": "時間に 遅れた 場合は",
+    "viTitle": "Trường hợp 場合は & Trái ngược thất vọng のに",
+    "level": "N4",
+    "pillar": "Tình huống & Thất vọng",
+    "summary": "Toàn diện Bài 45 Giáo trình Minna no Nihongo: Trường hợp 場合は & Trái ngược thất vọng のに. Trụ cột: Tình huống & Thất vọng.",
+    "mindmap": {
+      "center": "Bài 45: Trường hợp 場合は & Trái ngược thất vọng のに",
+      "branches": [
+        "Công thức & Quy tắc chia: Tình huống & Thất vọng",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 45 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_45_01",
+        "pattern": "時間に 遅れた 場合は",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 45: 時間に 遅れた 場合は",
+        "meaning": "Trường hợp 場合は & Trái ngược thất vọng のに",
+        "nuance": "Trụ cột Tình huống & Thất vọng: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "時間に 遅れた 場合は。",
+            "vi": "Câu ví dụ chuẩn cho bài học 45 (Trường hợp 場合は & Trái ngược thất vọng のに)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 45 (Trường hợp 場合は & Trái ngược thất vọng のに) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Tình huống & Thất vọng",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 45 thuộc trụ cột cốt lõi: Tình huống & Thất vọng."
+          }
+        ]
+      },
+      {
+        "id": "minna_45_02",
+        "pattern": "時間に 遅れた 場合は (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Trường hợp 場合は & Trái ngược thất vọng のに",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 45 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 46,
+    "title": "第46課：今から 食べるところです (Thời điểm ところ & Vừa mới làm ばかり)",
+    "jpTitle": "今から 食べるところです",
+    "viTitle": "Thời điểm ところ & Vừa mới làm ばかり",
+    "level": "N4",
+    "pillar": "Thời điểm & Độ mới",
+    "summary": "Toàn diện Bài 46 Giáo trình Minna no Nihongo: Thời điểm ところ & Vừa mới làm ばかり. Trụ cột: Thời điểm & Độ mới.",
+    "mindmap": {
+      "center": "Bài 46: Thời điểm ところ & Vừa mới làm ばかり",
+      "branches": [
+        "Công thức & Quy tắc chia: Thời điểm & Độ mới",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 46 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_46_01",
+        "pattern": "今から 食べるところです",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 46: 今から 食べるところです",
+        "meaning": "Thời điểm ところ & Vừa mới làm ばかり",
+        "nuance": "Trụ cột Thời điểm & Độ mới: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "今から 食べるところです。",
+            "vi": "Câu ví dụ chuẩn cho bài học 46 (Thời điểm ところ & Vừa mới làm ばかり)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 46 (Thời điểm ところ & Vừa mới làm ばかり) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Thời điểm & Độ mới",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 46 thuộc trụ cột cốt lõi: Thời điểm & Độ mới."
+          }
+        ]
+      },
+      {
+        "id": "minna_46_02",
+        "pattern": "今から 食べるところです (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Thời điểm ところ & Vừa mới làm ばかり",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 46 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 47,
+    "title": "第47課：雨が 降るそうです (Truyền ngôn そうです & Dường như ようです)",
+    "jpTitle": "雨が 降るそうです",
+    "viTitle": "Truyền ngôn そうです & Dường như ようです",
+    "level": "N4",
+    "pillar": "Truyền ngôn & Phỏng đoán",
+    "summary": "Toàn diện Bài 47 Giáo trình Minna no Nihongo: Truyền ngôn そうです & Dường như ようです. Trụ cột: Truyền ngôn & Phỏng đoán.",
+    "mindmap": {
+      "center": "Bài 47: Truyền ngôn そうです & Dường như ようです",
+      "branches": [
+        "Công thức & Quy tắc chia: Truyền ngôn & Phỏng đoán",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 47 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_47_01",
+        "pattern": "雨が 降るそうです",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 47: 雨が 降るそうです",
+        "meaning": "Truyền ngôn そうです & Dường như ようです",
+        "nuance": "Trụ cột Truyền ngôn & Phỏng đoán: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "雨が 降るそうです。",
+            "vi": "Câu ví dụ chuẩn cho bài học 47 (Truyền ngôn そうです & Dường như ようです)."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 47 (Truyền ngôn そうです & Dường như ようです) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Truyền ngôn & Phỏng đoán",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 47 thuộc trụ cột cốt lõi: Truyền ngôn & Phỏng đoán."
+          }
+        ]
+      },
+      {
+        "id": "minna_47_02",
+        "pattern": "雨が 降るそうです (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Truyền ngôn そうです & Dường như ようです",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 47 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 48,
+    "title": "第48課：子供に 勉強させます (Thể Sai khiến (使役形 - Shieki-kei))",
+    "jpTitle": "子供に 勉強させます",
+    "viTitle": "Thể Sai khiến (使役形 - Shieki-kei)",
+    "level": "N4",
+    "pillar": "Thể Sai Khiến",
+    "summary": "Toàn diện Bài 48 Giáo trình Minna no Nihongo: Thể Sai khiến (使役形 - Shieki-kei). Trụ cột: Thể Sai Khiến.",
+    "mindmap": {
+      "center": "Bài 48: Thể Sai khiến (使役形 - Shieki-kei)",
+      "branches": [
+        "Công thức & Quy tắc chia: Thể Sai Khiến",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 48 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_48_01",
+        "pattern": "Thể Sai Khiến (使役形 - Shieki)",
+        "formula": "Cách chia: Nhóm 1 đổi [i] thành [a] + せる (書く→書かせる)\nNhóm 2: Bỏ る + させる (食べる→食べさせる)\nNhóm 3: する→させる, くる→こさせる",
+        "meaning": "Bắt / Cho phép ai đó làm việc gì",
+        "nuance": "Nếu là nội động từ: Người bị sai khiến đi với を (子供を走らせる). Nếu là ngoại động từ: Người bị sai khiến đi với に (子供に野菜を食べさせる). Người trên nói với người dưới.",
+        "examples": [
+          {
+            "jp": "部長は 部下に レポートを 書かせました。",
+            "vi": "Trưởng phòng bắt cấp dưới viết báo cáo."
+          },
+          {
+            "jp": "母は 子供に 好きな 本を 読ませました。",
+            "vi": "Mẹ cho phép con đọc cuốn sách yêu thích."
+          }
+        ],
+        "drills": [
+          {
+            "q": "先生は 生徒（　）漢字を 練習させました。",
+            "options": [
+              "に",
+              "を",
+              "で",
+              "から"
+            ],
+            "correct": 0,
+            "explain": "Có tân ngữ 漢字を thì đối tượng bị sai khiến đi với trợ từ に."
+          }
+        ]
+      },
+      {
+        "id": "minna_48_02",
+        "pattern": "Thể Bị Động Sai Khiến (使役受身 - Shieki Ukemi)",
+        "formula": "V-sai khiến + れる → V-(a)せられる / V-(a)される (行く→行かされる, 飲む→飲まされる, 食べる→食べさせられる)",
+        "meaning": "Bị bắt buộc phải làm việc gì (ngoài ý muốn)",
+        "nuance": "ĐIỂM CỐT TỬ CỦA N4 LÊN N3! Xuất hiện dày đặc trong đề thi JLPT. Luôn thể hiện tâm trạng miễn cưỡng, bị người khác ép buộc làm điều mình không muốn.",
+        "examples": [
+          {
+            "jp": "昨日 お酒を たくさん 飲まされました。",
+            "vi": "Hôm qua tôi bị ép uống rất nhiều rượu."
+          },
+          {
+            "jp": "子供の とき、毎日 ピアノを 練習させられました。",
+            "vi": "Hồi bé ngày nào tôi cũng bị bắt tập đàn piano."
+          }
+        ],
+        "drills": [
+          {
+            "q": "嫌いな ピーマンを 無理やり（　）。",
+            "options": [
+              "食べさせられました",
+              "食べました",
+              "食べさせました",
+              "食べられました"
+            ],
+            "correct": 0,
+            "explain": "Bị ép ăn món mình ghét dùng thể bị động sai khiến 食べさせられました."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 49,
+    "title": "第49課：先生が いらっしゃいました (Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo))",
+    "jpTitle": "先生が いらっしゃいました",
+    "viTitle": "Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo)",
+    "level": "N4",
+    "pillar": "Tôn Kính Ngữ",
+    "summary": "Toàn diện Bài 49 Giáo trình Minna no Nihongo: Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo). Trụ cột: Tôn Kính Ngữ.",
+    "mindmap": {
+      "center": "Bài 49: Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo)",
+      "branches": [
+        "Công thức & Quy tắc chia: Tôn Kính Ngữ",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 49 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_49_01",
+        "pattern": "先生が いらっしゃいました",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 49: 先生が いらっしゃいました",
+        "meaning": "Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo)",
+        "nuance": "Trụ cột Tôn Kính Ngữ: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "先生が いらっしゃいました。",
+            "vi": "Câu ví dụ chuẩn cho bài học 49 (Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo))."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 49 (Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo)) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Tôn Kính Ngữ",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 49 thuộc trụ cột cốt lõi: Tôn Kính Ngữ."
+          }
+        ]
+      },
+      {
+        "id": "minna_49_02",
+        "pattern": "先生が いらっしゃいました (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Tôn kính ngữ thực chiến (尊敬語 - Sonkeigo)",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 49 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  },
+  {
+    "lessonNumber": 50,
+    "title": "第50課：私が 参ります (Khiêm nhường ngữ công sở (謙譲語 - Kenjougo))",
+    "jpTitle": "私が 参ります",
+    "viTitle": "Khiêm nhường ngữ công sở (謙譲語 - Kenjougo)",
+    "level": "N4",
+    "pillar": "Khiêm Nhường Ngữ",
+    "summary": "Toàn diện Bài 50 Giáo trình Minna no Nihongo: Khiêm nhường ngữ công sở (謙譲語 - Kenjougo). Trụ cột: Khiêm Nhường Ngữ.",
+    "mindmap": {
+      "center": "Bài 50: Khiêm nhường ngữ công sở (謙譲語 - Kenjougo)",
+      "branches": [
+        "Công thức & Quy tắc chia: Khiêm Nhường Ngữ",
+        "Sắc thái & Bối cảnh đời sống Nhật",
+        "Bẫy đề thi & Điểm cần tránh nhầm lẫn"
+      ],
+      "tip": "Nắm chắc cấu trúc Bài 50 để làm bệ phóng vững vàng cho trình độ N3."
+    },
+    "grammarPoints": [
+      {
+        "id": "minna_50_01",
+        "pattern": "私が 参ります",
+        "formula": "Mẫu ngữ pháp trọng tâm Bài 50: 私が 参ります",
+        "meaning": "Khiêm nhường ngữ công sở (謙譲語 - Kenjougo)",
+        "nuance": "Trụ cột Khiêm Nhường Ngữ: Giúp người học làm chủ cấu trúc câu thực chiến theo chương trình Minna no Nihongo chuẩn mực.",
+        "examples": [
+          {
+            "jp": "私が 参ります。",
+            "vi": "Câu ví dụ chuẩn cho bài học 50 (Khiêm nhường ngữ công sở (謙譲語 - Kenjougo))."
+          },
+          {
+            "jp": "毎日 日本語の 勉強を つづけます。",
+            "vi": "Mỗi ngày tôi đều kiên trì học tiếng Nhật thật vững chắc."
+          }
+        ],
+        "drills": [
+          {
+            "q": "Bài 50 (Khiêm nhường ngữ công sở (謙譲語 - Kenjougo)) tập trung vào chủ điểm nào sau đây?",
+            "options": [
+              "Khiêm Nhường Ngữ",
+              "Đếm số sơ cấp",
+              "Chào hỏi cơ bản",
+              "Viết chữ cái"
+            ],
+            "correct": 0,
+            "explain": "Bài 50 thuộc trụ cột cốt lõi: Khiêm Nhường Ngữ."
+          }
+        ]
+      },
+      {
+        "id": "minna_50_02",
+        "pattern": "私が 参ります (Biến thể & Ứng dụng)",
+        "formula": "Ứng dụng thực chiến giao tiếp & luyện thi",
+        "meaning": "Mở rộng ngữ cảnh sử dụng của Khiêm nhường ngữ công sở (謙譲語 - Kenjougo)",
+        "nuance": "Giúp người học nhận diện chính xác cấu trúc này khi bước vào các bài đọc và bài nghe JLPT.",
+        "examples": [
+          {
+            "jp": "しっかり 復習して、次の レベルへ 進みましょう。",
+            "vi": "Hãy ôn tập kỹ càng để tự tin bước lên cấp độ tiếp theo!"
+          }
+        ],
+        "drills": [
+          {
+            "q": "Cấu trúc thuộc cấp độ nào trong khung tham chiếu JLPT?",
+            "options": [
+              "N4",
+              "N1",
+              "N2",
+              "Chưa xếp loại"
+            ],
+            "correct": 0,
+            "explain": "Bài 50 được chuẩn hóa cho trình độ N4."
+          }
+        ]
+      }
+    ],
+    "vocabCount": 45
+  }
+]

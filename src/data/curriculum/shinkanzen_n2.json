@@ -1,0 +1,53 @@
+{
+  "level": "N2",
+  "title": "新完全マスター N2 (Shin Kanzen Master N2 Special Edition)",
+  "description": "Xương sống luyện thi N2 thực chiến cho môi trường doanh nghiệp: 150 mẫu ngữ pháp nâng cao, bóc tách luận điểm phức hợp, nghe hiểu tốc độ đàm thoại người bản xứ.",
+  "stats": {
+    "grammarChapters": 8,
+    "grammarPoints": 150,
+    "kanjiChapters": 20,
+    "kanjiCount": 1000,
+    "vocabChapters": 15,
+    "vocabCount": 6000,
+    "readingUnits": 5,
+    "listeningUnits": 5
+  },
+  "skills": {
+    "grammar": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1章：こと・もの・わけ・はず (Cụm danh từ trừu tượng & Phán đoán)",
+        "summary": "Phân biệt các sắc thái ~わけがない, ~はずがない, ~ものだ, ~ことだ.",
+        "points": [
+          {
+            "id": "n2_g_01_wake_ga_nai",
+            "pattern": "～わけがない vs ～はずがない",
+            "formula": "Thể thông thường (Naな/である / Nの/である) + わけがない / はずがない",
+            "meaning": "Tuyệt đối không thể nào có chuyện... (Phủ định chắc nịch 100%)",
+            "nuance": "わけがない: Dựa trên lập luận logic, lý lẽ hiển nhiên. はずがない: Dựa trên kỳ vọng, căn cứ suy đoán cá nhân của người nói.",
+            "trapBuster": "Bẫy đề thi: Khi câu văn nhấn mạnh vào quy luật tự nhiên hoặc sự phi lý không thể chấp nhận được, わけがない mang tính thuyết phục cao hơn!",
+            "examples": [
+              {
+                "jp": "あんなに真面目な彼が、嘘をつくわけがない。",
+                "vi": "Người sống đàng hoàng trung thực như anh ấy thì đời nào lại đi nói dối!"
+              }
+            ],
+            "quiz": [
+              {
+                "q": "こんな 難しい 問題、小学生に 解ける（　）。",
+                "options": [
+                  "わけがない",
+                  "べきではない",
+                  "にすぎない",
+                  "ほかない"
+                ],
+                "correct": 0,
+                "explain": "Bài toán khó thế này học sinh tiểu học tuyệt đối không thể giải nổi -> Dùng わけがない."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

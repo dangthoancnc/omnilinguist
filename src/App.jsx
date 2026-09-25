@@ -20,6 +20,7 @@ const Dictionary = lazy(() => import('./Dictionary'));
 const GrammarStudio = lazy(() => import('./GrammarStudio'));
 const Roadmap = lazy(() => import('./Roadmap'));
 const MockTestStudio = lazy(() => import('./MockTestStudio'));
+const JlptMasterDojo = lazy(() => import('./JlptMasterDojo'));
 const ImmersionReader = lazy(() => import('./ImmersionReader'));
 const KanjiStudio = lazy(() => import('./KanjiStudio'));
 const MediaStudio = lazy(() => import('./MediaStudio'));
@@ -207,6 +208,7 @@ function App() {
                       <Route path="/email" element={<GrammarStudio/>} />
                       <Route path="/mocktest" element={<MockTestStudio/>} />
                       <Route path="/mock-test" element={<MockTestStudio/>} />
+                      <Route path="/jlpt-dojo" element={<JlptMasterDojo/>} />
                       <Route path="/kanji" element={<KanjiStudio/>} />
                       <Route path="/media" element={<MediaStudio/>} />
                       <Route path="/anki-import" element={<AnkiImportStudio/>} />

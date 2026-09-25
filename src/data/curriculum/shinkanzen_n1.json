@@ -1,0 +1,53 @@
+{
+  "level": "N1",
+  "title": "新完全マスター N1 (Shin Kanzen Master N1 Master Edition)",
+  "description": "Cấp độ thượng thừa tiếng Nhật: Thấu triệt 180 cấu trúc ngữ pháp cổ điển, xã luận, thành thạo văn phong học thuật và bài nghe đàm phán cấp cao.",
+  "stats": {
+    "grammarChapters": 8,
+    "grammarPoints": 180,
+    "kanjiChapters": 25,
+    "kanjiCount": 2136,
+    "vocabChapters": 20,
+    "vocabCount": 10000,
+    "readingUnits": 5,
+    "listeningUnits": 5
+  },
+  "skills": {
+    "grammar": [
+      {
+        "chapterNumber": 1,
+        "chapterTitle": "第1章：極限・強調・立場 (Cực hạn, Nhấn mạnh & Cương vị)",
+        "summary": "Phân biệt ~たるもの, ~ともあろうものが, ~をおいて~ない, ~ならでは.",
+        "points": [
+          {
+            "id": "n1_g_01_tarumono",
+            "pattern": "～たるもの",
+            "formula": "Danh từ (chỉ thân phận, địa vị, nghề nghiệp) + たるもの",
+            "meaning": "Đã ở trên cương vị là... thì phải có phẩm chất / hành vi tương xứng",
+            "nuance": "Dùng cho các chức danh trang trọng (bác sĩ, chính trị gia, nhà giáo, người lãnh đạo). Vế sau đi với nghĩa vụ, tư cách chuẩn mực đạo đức.",
+            "trapBuster": "Bẫy đề thi: Phân biệt với ～ともあろうものが: たるもの nói về bổn phận nên làm; trong khi ともあろうものが thể hiện sự thất vọng khi người ở vị thế cao lại làm việc sai trái bất xứng!",
+            "examples": [
+              {
+                "jp": "一国の指導者たるものは、常に国民の幸福を第一に考えるべきだ。",
+                "vi": "Đã là người lãnh đạo của một quốc gia thì phải luôn coi hạnh phúc của nhân dân là ưu tiên số một."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "医者（　）もの、患者の 命を 最優先に 救うべきだ。",
+                "options": [
+                  "たる",
+                  "ともあろう",
+                  "とした",
+                  "ならではの"
+                ],
+                "correct": 0,
+                "explain": "Đã ở cương vị bác sĩ thì phải ưu tiên cứu mạng bệnh nhân -> Chọn たるもの."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
