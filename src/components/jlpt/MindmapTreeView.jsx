@@ -75,17 +75,32 @@ export default function MindmapTreeView({
   const [zoom, setZoom] = useState(1);
   const [expandedBranches, setExpandedBranches] = useState({});
   const [internalModalOpen, setInternalModalOpen] = useState(false);
-  const [modalView, setModalView] = useState('lesson'); // 'lesson' | 'level'
+  const [modalView, setModalView] = useState(mode === 'level' ? 'level' : 'lesson'); // 'lesson' | 'level'
   const [selectedModalLesson, setSelectedModalLesson] = useState(null);
-  const [selectedLevel, setSelectedLevel] = useState(null);
+  const [selectedLevel, setSelectedLevel] = useState(level || 'N5');
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [viewDensity, setViewDensity] = useState('structure'); // 'compact' | 'structure' | 'full'
   const [lessonDetailMode, setLessonDetailMode] = useState('rich'); // 'compact' | 'rich'
   const [collapsedTrunks, setCollapsedTrunks] = useState({});
 
-  const currentLessonInModal = selectedModalLesson || lesson;
-  const currentLevel = selectedLevel || currentLessonInModal?.level || level;
+  useEffect(() => {
+    if (level) {
+      setSelectedLevel(level);
+    }
+  }, [level]);
+
+  const currentLevel = selectedLevel || level || 'N5';
   const accentColor = JLPT_LEVEL_COLORS[currentLevel] || '#3b82f6';
+
+  const levelLessons = useMemo(() => {
+    const pool = (allLessons && allLessons.length > 0) ? allLessons : lessons;
+    if (pool && pool.length > 0) {
+      return pool.filter(l => l.level === currentLevel);
+    }
+    return [];
+  }, [lessons, allLessons, currentLevel]);
+
+  const currentLessonInModal = selectedModalLesson || lesson || (levelLessons && levelLessons.length > 0 ? levelLessons[0] : null);
 
   const toggleTrunkCollapse = (trunkId) => {
     setCollapsedTrunks(prev => ({
@@ -198,18 +213,7 @@ export default function MindmapTreeView({
     if (onNavigateLesson) {
       onNavigateLesson(Number(targetNum));
     }
-    if (onSelectLesson && target) {
-      onSelectLesson(target);
-    }
   };
-
-  const levelLessons = useMemo(() => {
-    const pool = (allLessons && allLessons.length > 0) ? allLessons : lessons;
-    if (pool && pool.length > 0) {
-      return pool.filter(l => l.level === currentLevel);
-    }
-    return [];
-  }, [lessons, allLessons, currentLevel]);
 
   const branches = useMemo(() => {
     const target = currentLessonInModal;
@@ -470,7 +474,7 @@ export default function MindmapTreeView({
   };
 
   // ── MODAL CONTENT RENDERER ──────────────────────────────────
-  const renderModalContent = () => {
+  const renderModalContent = ({ isEmbedded = false } = {}) => {
     const modalRootTarget = currentLessonInModal?.mindmap?.rootConnection 
       ? parseLessonTarget(currentLessonInModal.mindmap.rootConnection, 'root', currentLessonInModal.lessonNumber)
       : null;
@@ -481,11 +485,15 @@ export default function MindmapTreeView({
       : null;
     const modalLeapLabel = modalLeapTarget ? formatLessonChipLabel(modalLeapTarget, currentLessonInModal.mindmap.nextLeap) : '';
 
-    return (
-      <div className={`jlpt-mindmap-modal-backdrop ${isFullscreen ? 'jlpt-mindmap-modal-backdrop--fullscreen' : ''}`} onClick={closeModal}>
-        <div className={`jlpt-mindmap-modal-content ${isFullscreen ? 'jlpt-mindmap-modal-content--fullscreen' : ''}`} onClick={(e) => e.stopPropagation()}>
-          {/* Modal Header Bar with View Switcher */}
-          <div className="jlpt-mindmap-modal-header">
+    const isFullscreenActive = isFullscreen;
+
+    const innerContent = (
+      <div
+        className={`jlpt-mindmap-modal-content ${isFullscreenActive ? 'jlpt-mindmap-modal-content--fullscreen' : ''} ${isEmbedded && !isFullscreenActive ? 'jlpt-mindmap-modal-content--embedded' : ''}`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Modal Header Bar with View Switcher */}
+        <div className="jlpt-mindmap-modal-header">
           {/* Level Switcher (N5, N4, N3, N2, N1) */}
           <div className="jlpt-modal-level-switcher">
             {['N5', 'N4', 'N3', 'N2', 'N1'].map((lvl) => {
@@ -556,7 +564,7 @@ export default function MindmapTreeView({
           ) : (
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 'fit-content' }}>
               <span style={{ fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)' }}>
-                Cây Bản Đồ Toàn Cấp Độ {currentLevel}
+                Sơ đồ tư duy toàn cấp độ {currentLevel}
               </span>
             </div>
           )}
@@ -677,30 +685,34 @@ export default function MindmapTreeView({
               {isFullscreen ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
             </button>
 
-            {/* If viewed lesson in modal is different from current page lesson */}
-            {selectedModalLesson && selectedModalLesson.lessonNumber !== lesson?.lessonNumber && onNavigateLesson && (
+            {/* Direct Learn Lesson button if viewing a specific lesson */}
+            {modalView === 'lesson' && currentLessonInModal && (onSelectLesson || onNavigateLesson) && (
               <button
                 type="button"
                 className="ods-btn ods-btn-primary"
                 style={{ padding: '3px 8px', fontSize: '11px' }}
                 onClick={() => {
-                  onNavigateLesson(selectedModalLesson.lessonNumber);
-                  closeModal();
+                  if (onSelectLesson) onSelectLesson(currentLessonInModal);
+                  else if (onNavigateLesson) onNavigateLesson(currentLessonInModal.lessonNumber);
+                  if (!isEmbedded) closeModal();
                 }}
+                title={`Vào học bài ${currentLessonInModal.lessonNumber} với đầy đủ từ vựng & bài tập`}
               >
-                Học bài {selectedModalLesson.lessonNumber} →
+                Học bài {currentLessonInModal.lessonNumber} →
               </button>
             )}
 
-            <button
-              type="button"
-              className="jlpt-icon-btn"
-              onClick={closeModal}
-              title="Đóng toàn cảnh"
-              aria-label="Close modal"
-            >
-              <X size={18} />
-            </button>
+            {!isEmbedded && (
+              <button
+                type="button"
+                className="jlpt-icon-btn"
+                onClick={closeModal}
+                title="Đóng toàn cảnh"
+                aria-label="Close modal"
+              >
+                <X size={18} />
+              </button>
+            )}
           </div>
         </div>
 
@@ -944,14 +956,35 @@ export default function MindmapTreeView({
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+
+    if (isFullscreenActive) {
+      return (
+        <div className="jlpt-mindmap-modal-backdrop jlpt-mindmap-modal-backdrop--fullscreen" onClick={isEmbedded ? () => setIsFullscreen(false) : closeModal}>
+          {innerContent}
+        </div>
+      );
+    }
+
+    if (!isEmbedded) {
+      return (
+        <div className="jlpt-mindmap-modal-backdrop" onClick={closeModal}>
+          {innerContent}
+        </div>
+      );
+    }
+
+    return (
+      <div className="jlpt-mindmap-embedded-wrapper">
+        {innerContent}
+      </div>
+    );
+  };
 
   // ── 0. STANDALONE MODAL MODE ─────────────────────────────────
   if (mode === 'modal') {
     if (!isModalVisible) return null;
-    return renderModalContent();
+    return renderModalContent({ isEmbedded: false });
   }
 
   // ── 1. SIDEBAR VERTICAL SPINE TREE MODE ──────────────────────
@@ -1026,7 +1059,7 @@ export default function MindmapTreeView({
         </div>
 
         {/* Canvas Fullscreen Modal */}
-        {isModalVisible && renderModalContent()}
+        {isModalVisible && renderModalContent({ isEmbedded: false })}
       </div>
     );
   }
@@ -1169,86 +1202,9 @@ export default function MindmapTreeView({
     );
   }
 
-  // ── 3. LEVEL OVERVIEW MODE ──────────────────────────────────
-  if (mode === 'level' && lessons && lessons.length > 0) {
-    const rows = [];
-    for (let i = 0; i < lessons.length; i += 5) {
-      rows.push(lessons.slice(i, i + 5));
-    }
-
-    return (
-      <div className="jlpt-mindmap-wrapper" style={{ minHeight: Math.max(height, 400) }}>
-        <div
-          className="jlpt-tree-canvas"
-          style={{
-            transform: `scale(${zoom})`,
-            transformOrigin: 'top center',
-            transition: 'transform 0.2s ease',
-          }}
-        >
-          <div className="jlpt-tree-root-node" style={{ '--node-accent': accentColor }}>
-            <div className="jlpt-tree-root-title" style={{ fontSize: '16px' }}>
-              JLPT {level} — Cây Bản Đồ Toàn Cấp Độ
-            </div>
-            <div className="jlpt-tree-root-sub">
-              {lessons.length} bài học bản lề • Bấm vào bài để mở giáo trình chi tiết
-            </div>
-          </div>
-
-          <div className="jlpt-tree-vline" style={{ '--line-color': accentColor }} />
-
-          <div className="jlpt-tree-level-grid">
-            {rows.map((row, rIdx) => (
-              <div key={rIdx} className="jlpt-tree-level-row">
-                <div className="jlpt-tree-row-label" style={{ color: accentColor }}>
-                  Bài {row[0].lessonNumber}–{row[row.length - 1].lessonNumber}
-                </div>
-
-                <div className="jlpt-tree-level-cards">
-                  {row.map((les) => (
-                    <div
-                      key={les.lessonNumber}
-                      className="jlpt-tree-level-card"
-                      style={{ '--branch-color': accentColor }}
-                      onClick={() => onSelectLesson && onSelectLesson(les)}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-                        <span style={{ fontSize: '10px', fontWeight: 700, color: accentColor }}>
-                          第{les.lessonNumber}課
-                        </span>
-                        <span style={{ fontSize: '10px', color: 'var(--text-tertiary)' }}>
-                          {les.grammarPoints?.length || les.mindmap?.branches?.length || 0} mẫu
-                        </span>
-                      </div>
-                      <div style={{
-                        fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)',
-                        fontFamily: "'Noto Sans JP', sans-serif",
-                        lineHeight: 1.3, marginBottom: '2px',
-                        display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden',
-                      }}>
-                        <FuriganaText text={les.jpTitle} />
-                      </div>
-                      <div style={{
-                        fontSize: '11px', color: 'var(--text-secondary)',
-                        overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                      }}>
-                        {les.viTitle}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="jlpt-mindmap-controls">
-          <button type="button" className="jlpt-icon-btn" onClick={handleZoomIn} title="Phóng to"><ZoomIn size={14} /></button>
-          <button type="button" className="jlpt-icon-btn" onClick={handleZoomOut} title="Thu nhỏ"><ZoomOut size={14} /></button>
-          <button type="button" className="jlpt-icon-btn" onClick={handleResetZoom} title="Mặc định"><RotateCcw size={14} /></button>
-        </div>
-      </div>
-    );
+  // ── 3. LEVEL OVERVIEW MODE (EMBEDDED ORGANIC MIND MAP) ─────
+  if (mode === 'level') {
+    return renderModalContent({ isEmbedded: true });
   }
 
   return null;

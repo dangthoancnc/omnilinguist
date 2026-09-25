@@ -87,7 +87,7 @@ export default function JlptMasterDojo() {
     { id: 'n2', label: 'Lò Luyện N2', badge: '25 Bài' },
     { id: 'n1', label: 'Lò Luyện N1', badge: '20 Bài' },
     { id: 'exams', label: 'Đề Thi 10 Năm', badge: '63 Đề' },
-    { id: 'mindmap', label: 'Bách Khoa Mindmap', badge: '120 Sơ đồ' },
+    { id: 'mindmap', label: 'Sơ đồ tư duy', badge: '120 Sơ đồ' },
   ];
 
   // Navigation handlers
@@ -137,7 +137,8 @@ export default function JlptMasterDojo() {
     if (isNaN(num)) return;
     const target = all120Lessons.find(l => l.lessonNumber === num);
     if (!target) return;
-    const tab = (target.level === 'N5' || target.level === 'N4') ? 'minna' :
+    const tab = currentTab === 'mindmap' ? 'mindmap' :
+                (target.level === 'N5' || target.level === 'N4') ? 'minna' :
                 target.level === 'N3' ? 'n3' :
                 target.level === 'N2' ? 'n2' : 'n1';
     setSearchParams({

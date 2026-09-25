@@ -61,7 +61,7 @@ export default function MindmapExplorerView({
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflowY: 'auto' }}>
       {/* 1. Compact Sticky Toolbar (48px) */}
       <CompactToolbar
-        title="Bách Khoa Sơ Đồ Tư Duy"
+        title="Sơ đồ tư duy"
         subtitle="120 Bài Bản Lề N5–N1"
         onBack={onBack}
         actions={[
@@ -157,9 +157,10 @@ export default function MindmapExplorerView({
         <div style={{ padding: '16px 20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
           <MindmapTreeView
             lessons={currentLevelLessons}
+            allLessons={allLessons}
             level={selectedLevel}
             mode="level"
-            height={600}
+            height={650}
             onSelectLesson={onSelectLesson}
           />
         </div>
