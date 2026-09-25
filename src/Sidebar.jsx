@@ -26,6 +26,7 @@ const SECTIONS = [
           { label: 'Lò Luyện N2', param: 'tab=n2' },
           { label: 'Lò Luyện N1', param: 'tab=n1' },
           { label: 'Đề Thi 10 Năm', param: 'tab=exams' },
+          { label: 'Bách Khoa Mindmap', param: 'tab=mindmap' },
         ]
       },
       { jp:'学習ロードマップ', sub:'Lộ trình Học', icon:<Map size={18}/>, path:'/roadmap' },

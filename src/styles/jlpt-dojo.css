@@ -1,0 +1,791 @@
+/* src/styles/jlpt-dojo.css
+ * JLPT Master Dojo v2.0 — Modern Japanese Pedagogical Design System
+ * Tuân thủ OmniLinguist Design System (ODS 3.0)
+ * BEM-lite conventions, Content-First, Compact Chrome, High Information Density
+ */
+
+/* ==========================================================================
+   1. COMPACT TOOLBAR (48px Sticky Word/CAD Style)
+   ========================================================================== */
+.jlpt-compact-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4, 16px);
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-default);
+  backdrop-filter: blur(12px);
+  gap: var(--space-3, 12px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.jlpt-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  min-width: 0;
+  flex: 1;
+}
+
+.jlpt-toolbar-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+
+.jlpt-toolbar-subtitle {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.jlpt-toolbar-center {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  flex-shrink: 0;
+}
+
+.jlpt-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  flex-shrink: 0;
+}
+
+.jlpt-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-xs, 6px);
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface-2);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.jlpt-icon-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--accent-primary, #3b82f6);
+}
+
+.jlpt-icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.jlpt-icon-btn--active {
+  background: var(--accent-primary, #3b82f6);
+  color: #ffffff !important;
+  border-color: var(--accent-primary, #3b82f6);
+}
+
+/* ==========================================================================
+   2. VIEW MODE TOGGLE (Grid, List, Tree, Mindmap)
+   ========================================================================== */
+.jlpt-view-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xs, 6px);
+  padding: 2px;
+  gap: 2px;
+}
+
+.jlpt-view-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 4px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.jlpt-view-toggle-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-surface-3);
+}
+
+.jlpt-view-toggle-btn--active {
+  background: var(--bg-surface);
+  color: var(--accent-primary, #3b82f6);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   3. LESSON CARDS (Grid, List, Tree Views)
+   ========================================================================== */
+/* Grid Card */
+.jlpt-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-4, 16px);
+  padding: var(--space-4, 16px);
+}
+
+.jlpt-lesson-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md, 12px);
+  padding: var(--space-4, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 12px);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.jlpt-lesson-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-accent, var(--accent-primary, #3b82f6));
+}
+
+.jlpt-lesson-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent-primary, #3b82f6);
+}
+
+.jlpt-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2, 8px);
+}
+
+.jlpt-card-title-jp {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.jlpt-card-title-vi {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.jlpt-card-pillar {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--tint-amber-text, #b45309);
+  background: var(--tint-amber-bg, #fffbeb);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs, 6px);
+  align-self: flex-start;
+}
+
+.jlpt-card-patterns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.jlpt-card-pattern-chip {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
+
+.jlpt-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-2, 8px);
+  border-top: 1px solid var(--border-subtle, var(--bg-surface-2));
+}
+
+/* List View */
+.jlpt-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--space-4, 16px);
+}
+
+.jlpt-lesson-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm, 8px);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  gap: var(--space-3, 12px);
+}
+
+.jlpt-lesson-row:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent-primary, #3b82f6);
+}
+
+.jlpt-lesson-row-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+  min-width: 0;
+  flex: 1;
+}
+
+.jlpt-lesson-row-title-jp {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.jlpt-lesson-row-title-vi {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Tree View */
+.jlpt-tree-container {
+  padding: var(--space-4, 16px);
+}
+
+.jlpt-tree-group {
+  margin-bottom: var(--space-4, 16px);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+}
+
+.jlpt-tree-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--bg-surface-2);
+  border-bottom: 1px solid var(--border-default);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.jlpt-tree-group-items {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   4. LESSON DETAIL PAGE (Textbook Single-Chapter Format)
+   ========================================================================== */
+.jlpt-lesson-page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: var(--space-5, 20px) var(--space-4, 16px) var(--space-8, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5, 20px);
+}
+
+/* Chapter Overview Box */
+.jlpt-chapter-overview {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md, 12px);
+  padding: var(--space-5, 20px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.jlpt-chapter-overview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-gradient, linear-gradient(90deg, #3b82f6, #8b5cf6));
+}
+
+.jlpt-chapter-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+  margin-bottom: var(--space-2, 8px);
+}
+
+.jlpt-chapter-title-jp {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0 0 4px;
+}
+
+.jlpt-chapter-title-vi {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-3, 12px);
+}
+
+.jlpt-chapter-summary-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  background: var(--bg-surface-2);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm, 8px);
+  margin-bottom: var(--space-3, 12px);
+}
+
+.jlpt-pedagogy-connections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3, 12px);
+}
+
+.jlpt-pedagogy-box {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm, 8px);
+  font-size: 12px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.jlpt-pedagogy-box--root {
+  background: var(--tint-sky-bg);
+  border: 1px solid var(--tint-sky-border);
+  color: var(--tint-sky-text);
+}
+
+.jlpt-pedagogy-box--leap {
+  background: var(--tint-matcha-bg);
+  border: 1px solid var(--tint-matcha-border);
+  color: var(--tint-matcha-text);
+}
+
+.jlpt-pedagogy-box-label {
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Quick TOC Navigation */
+.jlpt-chapter-toc {
+  position: sticky;
+  top: 48px;
+  z-index: 30;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm, 8px);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  overflow-x: auto;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.jlpt-toc-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-xs, 6px);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-surface-2);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.jlpt-toc-item:hover {
+  color: var(--text-primary);
+  border-color: var(--border-default);
+}
+
+.jlpt-toc-item--active {
+  background: var(--tint-sky-bg);
+  color: var(--tint-sky-text);
+  border-color: var(--tint-sky-border);
+}
+
+/* ==========================================================================
+   5. GRAMMAR POINT VIEW (Standard Textbook Pedagogical Depth)
+   ========================================================================== */
+.jlpt-grammar-point {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.2s ease;
+}
+
+.jlpt-grammar-point:hover {
+  border-color: var(--border-strong, #94a3b8);
+}
+
+.jlpt-grammar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: var(--bg-surface-2);
+  border-bottom: 1px solid var(--border-default);
+  cursor: pointer;
+  user-select: none;
+}
+
+.jlpt-grammar-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+  min-width: 0;
+}
+
+.jlpt-grammar-idx-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-primary, #3b82f6);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.jlpt-grammar-pattern {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.jlpt-grammar-body {
+  padding: var(--space-5, 20px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 16px);
+}
+
+/* Section Block */
+.jlpt-grammar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 12px;
+  border-left: 3px solid var(--section-color, var(--accent-primary, #3b82f6));
+}
+
+.jlpt-grammar-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Formula Box */
+.jlpt-formula-box {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm, 8px);
+  padding: 10px 14px;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Trap Callout */
+.jlpt-trap-callout {
+  background: var(--tint-sakura-bg, #fff1f2);
+  border: 1px solid var(--tint-sakura-border, #fecdd3);
+  border-radius: var(--radius-sm, 8px);
+  padding: 12px 14px;
+  color: var(--tint-sakura-text, #e11d48);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.jlpt-trap-title {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+/* Mnemonic Box */
+.jlpt-mnemonic-box {
+  background: var(--tint-amber-bg, #fffbeb);
+  border: 1px solid var(--tint-amber-border, #fde68a);
+  border-radius: var(--radius-sm, 8px);
+  padding: 10px 14px;
+  color: var(--tint-amber-text, #b45309);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Examples Section */
+.jlpt-example-item {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle, var(--border-default));
+  border-radius: var(--radius-sm, 8px);
+  padding: 10px 14px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3, 12px);
+}
+
+.jlpt-example-text-jp {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.8;
+}
+
+.jlpt-example-text-vi {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   6. REFLEX DRILL (Quick Multiple Choice)
+   ========================================================================== */
+.jlpt-drill-card {
+  background: var(--tint-violet-bg, #f5f3ff);
+  border: 1px solid var(--tint-violet-border, #ddd6fe);
+  border-radius: var(--radius-md, 12px);
+  padding: var(--space-4, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 12px);
+}
+
+.jlpt-drill-prompt {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+}
+
+.jlpt-drill-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2, 8px);
+}
+
+.jlpt-drill-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-xs, 6px);
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.jlpt-drill-btn:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: var(--accent-primary, #3b82f6);
+}
+
+.jlpt-drill-btn--correct {
+  background: var(--tint-matcha-bg, #ecfdf5) !important;
+  border-color: var(--tint-matcha-border, #a7f3d0) !important;
+  color: var(--tint-matcha-text, #047857) !important;
+  font-weight: 700;
+}
+
+.jlpt-drill-btn--wrong {
+  background: var(--tint-sakura-bg, #fff1f2) !important;
+  border-color: var(--tint-sakura-border, #fecdd3) !important;
+  color: var(--tint-sakura-text, #e11d48) !important;
+}
+
+.jlpt-drill-explain {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xs, 6px);
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   7. INTERACTIVE SVG MINDMAP (Pure CSS + SVG Bezier)
+   ========================================================================== */
+.jlpt-mindmap-wrapper {
+  position: relative;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.jlpt-mindmap-canvas {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  overflow: auto;
+  user-select: none;
+}
+
+.jlpt-mindmap-svg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.jlpt-mindmap-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--node-border, var(--border-default));
+  border-radius: var(--radius-sm, 8px);
+  padding: 8px 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.jlpt-mindmap-node:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  z-index: 20;
+}
+
+.jlpt-mindmap-node--center {
+  background: var(--accent-gradient, linear-gradient(135deg, #2563eb, #7c3aed));
+  color: #ffffff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: var(--radius-md, 12px);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.jlpt-mindmap-node--branch {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.jlpt-mindmap-node--leaf {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--bg-surface-3);
+}
+
+/* Mindmap Controls */
+.jlpt-mindmap-controls {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  gap: 4px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xs, 6px);
+  padding: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 30;
+}
+
+/* ==========================================================================
+   8. E-BOOK EXPORT PREVIEW & PRINT STYLES
+   ========================================================================== */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .sidebar-rail-wrapper,
+  .jlpt-compact-toolbar,
+  .jlpt-view-toggle,
+  .jlpt-icon-btn,
+  .jlpt-drill-card {
+    display: none !important;
+  }
+  .jlpt-lesson-page {
+    max-width: 100% !important;
+    padding: 0 !important;
+    page-break-after: always;
+  }
+}
