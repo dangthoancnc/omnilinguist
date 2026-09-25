@@ -1,33 +1,37 @@
 import React, { useState, useMemo } from 'react';
-import { ZoomIn, ZoomOut, RotateCcw, ChevronDown, ChevronRight, ArrowRight } from 'lucide-react';
+import { 
+  ZoomIn, ZoomOut, RotateCcw, ChevronDown, ChevronRight, 
+  ArrowRight, Maximize2, X, ExternalLink, Sparkles 
+} from 'lucide-react';
 import FuriganaText from '../FuriganaText';
 import { JLPT_LEVEL_COLORS, getLevelBadgeStyle } from '../../theme';
 
 /**
- * MindmapTreeView v2 — Pure HTML/CSS Hierarchical Tree
+ * MindmapTreeView v3 — Dual Mode Architecture
  * 
- * DESIGN RULES:
- * 1. NO SVG overlay — use CSS ::before/::after pseudo-elements for connectors
- * 2. NO position:absolute for nodes — use flexbox/grid for natural flow
- * 3. Tree expands vertically from root, branches spread horizontally
- * 4. Each node is a clickable card with hover effects
- * 5. Connector lines use CSS borders (solid, reliable, theme-aware)
+ * 1. 'sidebar-tree': Adaptive Vertical Spine Tree (Cột sống tri thức cho Sidebar)
+ *    - 100% responsive, không bị cắt xén hay tràn ngang
+ *    - Hiển thị đầy đủ Pattern, Công thức tóm tắt, Sắc thái
+ *    - Bấm vào nhánh nhảy ngay đến điểm ngữ pháp tương ứng trong bài
  * 
- * Modes:
- * - 'lesson': Center → Branches with formula/nuance details
- * - 'level': Level root → grouped rows of lesson cards
+ * 2. 'lesson' / 'canvas': Sơ đồ Canvas ngang mở rộng với Zoom/Pan
+ *    - Dùng trong Modal phóng to toàn cảnh hoặc trang độc lập
+ * 
+ * 3. 'level': Cây bản đồ toàn cấp độ
  */
 export default function MindmapTreeView({
   lesson,
   lessons = [],
   level = 'N5',
-  mode = 'lesson',
-  height = 420,
+  mode = 'sidebar-tree',
+  height = 360,
   onSelectLesson,
   onSelectGrammarPoint,
+  onOpenFullscreen,
 }) {
   const [zoom, setZoom] = useState(1);
   const [expandedBranches, setExpandedBranches] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   const toggleBranch = (id) => {
     setExpandedBranches(prev => ({ ...prev, [id]: !prev[id] }));
@@ -39,19 +43,196 @@ export default function MindmapTreeView({
 
   const accentColor = JLPT_LEVEL_COLORS[level] || '#3b82f6';
 
-  // ── LESSON MODE ──────────────────────────────────────────────
-  if (mode === 'lesson' && lesson) {
-    const branches = lesson.mindmap?.branches ||
+  const branches = useMemo(() => {
+    if (!lesson) return [];
+    return lesson.mindmap?.branches ||
       (lesson.grammarPoints || []).map((gp, i) => ({
         name: gp.pattern,
-        color: ['#3b82f6', '#8b5cf6', '#10b981', '#f59e0b', '#ef4444'][i % 5],
+        color: ['#3b82f6', '#8b5cf6', '#10b981', '#f59e0b', '#06b6d4'][i % 5],
         formula: gp.formula,
         nuance: gp.nuance,
         metaphor: gp.metaphor,
         mnemonic: gp.mnemonic,
         example: gp.examples?.[0],
       }));
+  }, [lesson]);
 
+  const handleBranchClick = (idx) => {
+    if (onSelectGrammarPoint) {
+      onSelectGrammarPoint(idx);
+    } else {
+      const el = document.getElementById(`gp-${lesson?.grammarPoints?.[idx]?.id || idx}`);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    if (showModal) setShowModal(false);
+  };
+
+  // ── 1. SIDEBAR VERTICAL SPINE TREE MODE ──────────────────────
+  if (mode === 'sidebar-tree' && lesson) {
+    return (
+      <div className="jlpt-spine-tree-container">
+        {/* Fullscreen Modal trigger button */}
+        <div className="jlpt-spine-tree-header">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <Sparkles size={12} style={{ color: 'var(--accent-primary, #3b82f6)' }} />
+            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-tertiary)' }}>
+              Cột sống tư duy bài học ({branches.length} nhánh)
+            </span>
+          </div>
+          <button
+            type="button"
+            className="jlpt-view-toggle-btn"
+            style={{ padding: '2px 8px', fontSize: '11px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+            onClick={() => onOpenFullscreen ? onOpenFullscreen() : setShowModal(true)}
+            title="Mở sơ đồ tư duy toàn màn hình"
+          >
+            <Maximize2 size={11} />
+            <span>Toàn cảnh</span>
+          </button>
+        </div>
+
+        {/* Vertical Spine Flow */}
+        <div className="jlpt-spine-flow">
+          {branches.map((b, idx) => {
+            const branchColor = b.color || accentColor;
+            return (
+              <div 
+                key={idx} 
+                className="jlpt-spine-node"
+                onClick={() => handleBranchClick(idx)}
+                title="Bấm để cuộn đến ngữ pháp này"
+              >
+                {/* Vertical Rail Marker */}
+                <div className="jlpt-spine-rail">
+                  <div className="jlpt-spine-bullet" style={{ background: branchColor }}>
+                    {idx + 1}
+                  </div>
+                  {idx < branches.length - 1 && (
+                    <div className="jlpt-spine-line" style={{ background: branchColor }} />
+                  )}
+                </div>
+
+                {/* Node Content Card */}
+                <div className="jlpt-spine-content" style={{ '--node-color': branchColor }}>
+                  <div className="jlpt-spine-title-row">
+                    <span className="jlpt-spine-pattern">
+                      <FuriganaText text={b.name} />
+                    </span>
+                    <ArrowRight size={12} className="jlpt-spine-arrow" />
+                  </div>
+
+                  {b.formula && (
+                    <div className="jlpt-spine-formula">
+                      <FuriganaText text={b.formula} />
+                    </div>
+                  )}
+
+                  {b.nuance && (
+                    <div className="jlpt-spine-nuance">
+                      <FuriganaText text={b.nuance} />
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Canvas Fullscreen Modal */}
+        {showModal && (
+          <div className="jlpt-mindmap-modal-backdrop" onClick={() => setShowModal(false)}>
+            <div className="jlpt-mindmap-modal-content" onClick={(e) => e.stopPropagation()}>
+              <div className="jlpt-mindmap-modal-header">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={getLevelBadgeStyle(lesson.level)}>
+                    {lesson.level} • 第{lesson.lessonNumber}課
+                  </span>
+                  <span style={{ fontSize: '15px', fontWeight: 800, color: 'var(--text-primary)' }}>
+                    <FuriganaText text={lesson.jpTitle} />
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  className="jlpt-icon-btn"
+                  onClick={() => setShowModal(false)}
+                  title="Đóng toàn cảnh"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+
+              <div className="jlpt-mindmap-modal-body">
+                <div
+                  className="jlpt-tree-canvas"
+                  style={{
+                    transform: `scale(${zoom})`,
+                    transformOrigin: 'top center',
+                    transition: 'transform 0.2s ease',
+                  }}
+                >
+                  {/* Center Root Node */}
+                  <div className="jlpt-tree-root-node" style={{ '--node-accent': accentColor }}>
+                    <div className="jlpt-tree-root-badge" style={getLevelBadgeStyle(lesson.level)}>
+                      {lesson.level} • 第{lesson.lessonNumber}課
+                    </div>
+                    <div className="jlpt-tree-root-title"><FuriganaText text={lesson.jpTitle} /></div>
+                    <div className="jlpt-tree-root-sub">{lesson.pillar || lesson.viTitle}</div>
+                  </div>
+
+                  <div className="jlpt-tree-vline" style={{ '--line-color': accentColor }} />
+
+                  {/* Horizontal Branches */}
+                  <div className="jlpt-tree-branch-rail">
+                    <div className="jlpt-tree-hline" style={{ '--line-color': accentColor }} />
+                    <div className="jlpt-tree-branches">
+                      {branches.map((b, idx) => {
+                        const branchColor = b.color || accentColor;
+                        return (
+                          <div key={idx} className="jlpt-tree-branch-col">
+                            <div className="jlpt-tree-vline jlpt-tree-vline--short" style={{ '--line-color': branchColor }} />
+                            <div
+                              className="jlpt-tree-branch-card"
+                              style={{ '--branch-color': branchColor }}
+                              onClick={() => handleBranchClick(idx)}
+                            >
+                              <div className="jlpt-tree-branch-header">
+                                <span className="jlpt-tree-branch-dot" style={{ background: branchColor }} />
+                                <span className="jlpt-tree-branch-name"><FuriganaText text={b.name} /></span>
+                              </div>
+                              <div className="jlpt-tree-branch-details">
+                                {b.formula && (
+                                  <div className="jlpt-tree-branch-formula"><FuriganaText text={b.formula} /></div>
+                                )}
+                                {b.nuance && (
+                                  <div className="jlpt-tree-branch-nuance"><FuriganaText text={b.nuance} /></div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Zoom Controls */}
+                <div className="jlpt-mindmap-controls">
+                  <button type="button" className="jlpt-icon-btn" onClick={handleZoomIn} title="Phóng to"><ZoomIn size={14} /></button>
+                  <button type="button" className="jlpt-icon-btn" onClick={handleZoomOut} title="Thu nhỏ"><ZoomOut size={14} /></button>
+                  <button type="button" className="jlpt-icon-btn" onClick={handleResetZoom} title="Mặc định"><RotateCcw size={14} /></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // ── 2. LESSON HORIZONTAL CANVAS MODE ─────────────────────────
+  if (mode === 'lesson' && lesson) {
     return (
       <div className="jlpt-mindmap-wrapper" style={{ height, minHeight: 280 }}>
         <div
@@ -71,27 +252,19 @@ export default function MindmapTreeView({
             <div className="jlpt-tree-root-sub">{lesson.pillar || lesson.viTitle}</div>
           </div>
 
-          {/* Vertical connector from root */}
           <div className="jlpt-tree-vline" style={{ '--line-color': accentColor }} />
 
-          {/* Horizontal branch rail */}
           {branches.length > 0 && (
             <div className="jlpt-tree-branch-rail">
-              {/* Horizontal line connecting all branches */}
               <div className="jlpt-tree-hline" style={{ '--line-color': accentColor }} />
-
-              {/* Branch Nodes */}
               <div className="jlpt-tree-branches">
                 {branches.map((b, idx) => {
                   const branchColor = b.color || accentColor;
-                  const isExpanded = expandedBranches[`b-${idx}`] !== false; // default expanded
+                  const isExpanded = expandedBranches[`b-${idx}`] !== false;
 
                   return (
                     <div key={idx} className="jlpt-tree-branch-col">
-                      {/* Vertical connector to branch */}
                       <div className="jlpt-tree-vline jlpt-tree-vline--short" style={{ '--line-color': branchColor }} />
-
-                      {/* Branch card */}
                       <div
                         className="jlpt-tree-branch-card"
                         style={{ '--branch-color': branchColor }}
@@ -142,9 +315,8 @@ export default function MindmapTreeView({
     );
   }
 
-  // ── LEVEL OVERVIEW MODE ──────────────────────────────────────
+  // ── 3. LEVEL OVERVIEW MODE ──────────────────────────────────
   if (mode === 'level' && lessons && lessons.length > 0) {
-    // Group lessons into rows of 5
     const rows = [];
     for (let i = 0; i < lessons.length; i += 5) {
       rows.push(lessons.slice(i, i + 5));
@@ -160,7 +332,6 @@ export default function MindmapTreeView({
             transition: 'transform 0.2s ease',
           }}
         >
-          {/* Level Root Node */}
           <div className="jlpt-tree-root-node" style={{ '--node-accent': accentColor }}>
             <div className="jlpt-tree-root-title" style={{ fontSize: '16px' }}>
               JLPT {level} — Cây Bản Đồ Toàn Cấp Độ
@@ -170,19 +341,15 @@ export default function MindmapTreeView({
             </div>
           </div>
 
-          {/* Vertical connector */}
           <div className="jlpt-tree-vline" style={{ '--line-color': accentColor }} />
 
-          {/* Lesson Grid Rows */}
           <div className="jlpt-tree-level-grid">
             {rows.map((row, rIdx) => (
               <div key={rIdx} className="jlpt-tree-level-row">
-                {/* Row label */}
                 <div className="jlpt-tree-row-label" style={{ color: accentColor }}>
                   Bài {row[0].lessonNumber}–{row[row.length - 1].lessonNumber}
                 </div>
 
-                {/* Lesson cards in this row */}
                 <div className="jlpt-tree-level-cards">
                   {row.map((les) => (
                     <div
@@ -221,7 +388,6 @@ export default function MindmapTreeView({
           </div>
         </div>
 
-        {/* Zoom Controls */}
         <div className="jlpt-mindmap-controls">
           <button type="button" className="jlpt-icon-btn" onClick={handleZoomIn} title="Phóng to"><ZoomIn size={14} /></button>
           <button type="button" className="jlpt-icon-btn" onClick={handleZoomOut} title="Thu nhỏ"><ZoomOut size={14} /></button>

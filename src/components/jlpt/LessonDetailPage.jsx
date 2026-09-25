@@ -161,7 +161,11 @@ export default function LessonDetailPage({
             </div>
             {showMindmap && (
               <div style={{ marginTop: '4px' }}>
-                <MindmapTreeView lesson={lesson} mode="lesson" height={220} />
+                <MindmapTreeView 
+                  lesson={lesson} 
+                  mode="sidebar-tree" 
+                  onSelectGrammarPoint={scrollToPoint} 
+                />
               </div>
             )}
           </div>

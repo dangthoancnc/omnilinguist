@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   ChevronDown, ChevronUp, Volume2, ShieldAlert, Sparkles, 
-  Lightbulb, BookOpen, Layers, CheckCircle2, GitCompare, Bookmark 
+  Lightbulb, BookOpen, Layers, CheckCircle2, GitCompare, Bookmark, Star 
 } from 'lucide-react';
 import FuriganaText from '../FuriganaText';
 import ReflexDrill from './ReflexDrill';
@@ -9,15 +9,24 @@ import { speakJapanese } from './speechHelper';
 import { getLevelBadgeStyle } from '../../theme';
 
 /**
- * GrammarPointView — Textbook-Depth Pedagogical Grammar Point
- * Features:
- * - Accordion expand / collapse
- * - Combination formula (Monospace)
- * - Meaning & In-depth Nuance
- * - JLPT Trap Buster (Cạm bẫy thi thật)
- * - 3-Second Memory Anchor / Mnemonic
- * - Rich illustrative examples with Furigana & Audio
- * - Embedded Reflex Drills
+ * GrammarPointView — 4-Tier Visual Hierarchy Pedagogical Architecture
+ * 
+ * TẦNG 1: TỔ HỢP NGỮ PHÁP TRỌNG TÂM (Core Grammar Hero Bundle - Ưu tiên cao nhất)
+ * - Mẫu câu + Phát âm + Cấp độ
+ * - Cấu trúc / Công thức kết hợp (Monospace sắc nét)
+ * - Ý nghĩa cốt lõi & Sắc thái sử dụng
+ * - Ví dụ mẫu mực cốt lõi (Anchor Sentence) gắn liền với công thức
+ * 
+ * TẦNG 2: MỞ RỘNG & QUÁN NGỮ (Deepening & Collocations)
+ * - Cụm từ cố định / Quán ngữ thường gặp (Collocations)
+ * - Phân biệt cấu trúc tương đồng / dễ nhầm lẫn (Similar Grammar)
+ * - Ví dụ thực tế bổ sung (Additional Examples)
+ * 
+ * TẦNG 3: CẨM NANG THI THẬT & MẸO NHỚ (Exam Strategy & Mnemonics - Nhã nhặn, không chói mắt)
+ * - Bẻ khóa cạm bẫy đề thi JLPT (Thẻ Slate/Navy học thuật chuyên nghiệp)
+ * - Mẹo ghi nhớ sư phạm 3 giây
+ * 
+ * TẦNG 4: LUYỆN TẬP PHẢN XẠ (Reflex Drills)
  */
 export default function GrammarPointView({
   point,
@@ -35,6 +44,9 @@ export default function GrammarPointView({
     setIsPlayingAudio(idx);
     speakJapanese(text, () => setIsPlayingAudio(null));
   };
+
+  const anchorExample = point.examples?.[0];
+  const additionalExamples = point.examples?.slice(1) || [];
 
   return (
     <article className="jlpt-grammar-point" id={`gp-${point.id || index}`}>
@@ -61,6 +73,18 @@ export default function GrammarPointView({
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <button
+            type="button"
+            className="jlpt-icon-btn jlpt-icon-btn--sm"
+            onClick={(e) => {
+              e.stopPropagation();
+              speakJapanese(point.pattern);
+            }}
+            title="Nghe phát âm mẫu câu"
+            aria-label="Play pattern audio"
+          >
+            <Volume2 size={13} />
+          </button>
           <span style={{ fontSize: '12px', color: 'var(--text-tertiary)', fontWeight: 500 }}>
             {expanded ? 'Thu gọn' : 'Chi tiết'}
           </span>
@@ -71,40 +95,78 @@ export default function GrammarPointView({
       {/* Accordion Body */}
       {expanded && (
         <div className="jlpt-grammar-body">
-          {/* 1. Combination Formula */}
-          {point.formula && (
-            <div className="jlpt-grammar-section" style={{ '--section-color': 'var(--tint-sky-border, #38bdf8)' }}>
-              <div className="jlpt-grammar-section-title">
-                <Layers size={13} />
-                <span>Cấu trúc / Công thức kết hợp</span>
-              </div>
-              <div className="jlpt-formula-box">
-                <FuriganaText text={point.formula} />
-              </div>
-            </div>
-          )}
-
-          {/* 2. Meaning & Nuance */}
-          {(point.meaning || point.nuance) && (
-            <div className="jlpt-grammar-section" style={{ '--section-color': 'var(--tint-matcha-border, #34d399)' }}>
-              <div className="jlpt-grammar-section-title">
-                <Lightbulb size={13} />
-                <span>Ý nghĩa & Sắc thái sử dụng</span>
-              </div>
-              {point.meaning && (
-                <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.6 }}>
-                  <FuriganaText text={point.meaning} />
+          {/* =========================================================================
+              TẦNG 1: TỔ HỢP NGỮ PHÁP TRỌNG TÂM (CORE GRAMMAR HERO BUNDLE)
+              Tâm điểm thị giác cao nhất: Công thức + Ý nghĩa + Ví dụ mẫu mực
+              ========================================================================= */}
+          <div className="jlpt-grammar-hero-bundle">
+            {/* 1.1 Formula Bar */}
+            {point.formula && (
+              <div className="jlpt-hero-formula-wrap">
+                <div className="jlpt-hero-label">
+                  <Layers size={13} style={{ color: 'var(--accent-primary, #3b82f6)' }} />
+                  <span>Công thức kết hợp</span>
                 </div>
-              )}
-              {point.nuance && (
-                <div style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6, marginTop: '4px' }}>
-                  <FuriganaText text={point.nuance} />
+                <div className="jlpt-hero-formula-box">
+                  <FuriganaText text={point.formula} />
                 </div>
-              )}
-            </div>
-          )}
+              </div>
+            )}
 
-          {/* 3. Collocations / Typical Combinations */}
+            {/* 1.2 Meaning & Nuance */}
+            {(point.meaning || point.nuance) && (
+              <div className="jlpt-hero-meaning-wrap">
+                <div className="jlpt-hero-label">
+                  <Lightbulb size={13} style={{ color: 'var(--tint-matcha-text, #047857)' }} />
+                  <span>Ý nghĩa & Sắc thái</span>
+                </div>
+                {point.meaning && (
+                  <div className="jlpt-hero-meaning-text">
+                    <FuriganaText text={point.meaning} />
+                  </div>
+                )}
+                {point.nuance && (
+                  <div className="jlpt-hero-nuance-text">
+                    <FuriganaText text={point.nuance} />
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* 1.3 Core Anchor Example (Gắn liền tạo phản xạ liên hoàn) */}
+            {anchorExample && (
+              <div className="jlpt-hero-anchor-example">
+                <div className="jlpt-hero-anchor-header">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <Star size={13} style={{ color: 'var(--tint-amber-text, #b45309)' }} />
+                    <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--tint-amber-text, #b45309)' }}>
+                      Ví dụ mẫu mực cốt lõi
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    className="jlpt-icon-btn jlpt-icon-btn--sm"
+                    onClick={() => handlePlayAudio(anchorExample.jp, 0)}
+                    title="Nghe phát âm ví dụ cốt lõi"
+                  >
+                    <Volume2 size={13} />
+                  </button>
+                </div>
+
+                <div className="jlpt-hero-anchor-jp">
+                  <FuriganaText text={anchorExample.jp} />
+                </div>
+                <div className="jlpt-hero-anchor-vi">
+                  {anchorExample.vi}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* =========================================================================
+              TẦNG 2: MỞ RỘNG & QUÁN NGỮ (DEEPENING & COLLOCATIONS)
+              ========================================================================= */}
+          {/* Collocations */}
           {point.collocations && point.collocations.length > 0 && (
             <div className="jlpt-grammar-section" style={{ '--section-color': 'var(--tint-amber-border, #f59e0b)' }}>
               <div className="jlpt-grammar-section-title">
@@ -128,18 +190,45 @@ export default function GrammarPointView({
             </div>
           )}
 
-          {/* 4. JLPT Trap Buster (Cạm bẫy thi thật) */}
-          {point.trapBuster && (
-            <div className="jlpt-trap-callout">
-              <div className="jlpt-trap-title">
-                <ShieldAlert size={14} />
-                <span>Bẻ khóa cạm bẫy đề thi JLPT</span>
+          {/* Additional Examples (if more than 1) */}
+          {additionalExamples.length > 0 && (
+            <div className="jlpt-grammar-section" style={{ '--section-color': 'var(--accent-primary, #3b82f6)' }}>
+              <div className="jlpt-grammar-section-title">
+                <BookOpen size={13} />
+                <span>Ví dụ mở rộng ({additionalExamples.length} câu)</span>
               </div>
-              <div style={{ lineHeight: 1.6 }}><FuriganaText text={point.trapBuster} /></div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {additionalExamples.map((ex, exIdx) => {
+                  const actualIdx = exIdx + 1;
+                  return (
+                    <div key={actualIdx} className="jlpt-example-item">
+                      <div style={{ flex: 1 }}>
+                        <div className="jlpt-example-text-jp">
+                          <FuriganaText text={ex.jp} />
+                        </div>
+                        <div className="jlpt-example-text-vi">
+                          {ex.vi}
+                        </div>
+                      </div>
+
+                      <button
+                        type="button"
+                        className={`jlpt-icon-btn ${isPlayingAudio === actualIdx ? 'jlpt-icon-btn--active' : ''}`}
+                        onClick={() => handlePlayAudio(ex.jp, actualIdx)}
+                        title="Nghe phát âm"
+                        aria-label="Play audio"
+                      >
+                        <Volume2 size={14} />
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           )}
 
-          {/* 5. Similar Grammar & Nuance Distinction */}
+          {/* Similar Grammar & Nuance Distinction */}
           {point.similarGrammar && point.similarGrammar.length > 0 && (
             <div className="jlpt-grammar-section" style={{ '--section-color': 'var(--tint-violet-border, #8b5cf6)' }}>
               <div className="jlpt-grammar-section-title">
@@ -161,12 +250,29 @@ export default function GrammarPointView({
             </div>
           )}
 
-          {/* 6. Mnemonic / Metaphor (Mẹo ghi nhớ 3 giây) */}
+          {/* =========================================================================
+              TẦNG 3: CẨM NANG THI THẬT & MẸO NHỚ (EXAM STRATEGY - NHÃ NHẶN, HỌC THUẬT)
+              Không dùng màu đỏ chói gây phân tán mắt!
+              ========================================================================= */}
+          {/* JLPT Trap Buster (Pro Card - Nhã nhặn, sang trọng) */}
+          {point.trapBuster && (
+            <div className="jlpt-trap-pro-card">
+              <div className="jlpt-trap-pro-header">
+                <ShieldAlert size={14} style={{ color: 'var(--text-secondary)' }} />
+                <span>Cẩm nang bẻ bẫy thi thật & Lưu ý điểm mù</span>
+              </div>
+              <div className="jlpt-trap-pro-body">
+                <FuriganaText text={point.trapBuster} />
+              </div>
+            </div>
+          )}
+
+          {/* Pedagogical Mnemonic Anchor */}
           {(point.mnemonic || point.metaphor) && (
             <div className="jlpt-mnemonic-box">
               <div style={{ fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
                 <Sparkles size={14} />
-                <span>Mẹo ghi nhớ sư phạm</span>
+                <span>Mẹo ghi nhớ sư phạm 3 giây</span>
               </div>
               {point.metaphor && (
                 <div style={{ fontStyle: 'italic', marginBottom: '4px' }}>
@@ -179,44 +285,11 @@ export default function GrammarPointView({
             </div>
           )}
 
-          {/* 5. Illustrative Examples with Furigana & Audio */}
-          {point.examples && point.examples.length > 0 && (
-            <div className="jlpt-grammar-section" style={{ '--section-color': 'var(--tint-amber-border, #f59e0b)' }}>
-              <div className="jlpt-grammar-section-title">
-                <BookOpen size={13} />
-                <span>Ví dụ minh họa ({point.examples.length} câu)</span>
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {point.examples.map((ex, exIdx) => (
-                  <div key={exIdx} className="jlpt-example-item">
-                    <div style={{ flex: 1 }}>
-                      <div className="jlpt-example-text-jp">
-                        <FuriganaText text={ex.jp} />
-                      </div>
-                      <div className="jlpt-example-text-vi">
-                        {ex.vi}
-                      </div>
-                    </div>
-
-                    <button
-                      type="button"
-                      className={`jlpt-icon-btn ${isPlayingAudio === exIdx ? 'jlpt-icon-btn--active' : ''}`}
-                      onClick={() => handlePlayAudio(ex.jp, exIdx)}
-                      title="Nghe phát âm"
-                      aria-label="Play audio"
-                    >
-                      <Volume2 size={14} />
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* 6. Embedded Reflex Drills / Quizzes */}
+          {/* =========================================================================
+              TẦNG 4: LUYỆN TẬP PHẢN XẠ NHANH (REFLEX DRILL)
+              ========================================================================= */}
           {((point.drills && point.drills.length > 0) || (point.quiz && point.quiz.length > 0)) && (
-            <div style={{ marginTop: '8px' }}>
+            <div style={{ marginTop: '4px' }}>
               {(point.drills || point.quiz).map((drill, dIdx) => (
                 <ReflexDrill
                   key={dIdx}
