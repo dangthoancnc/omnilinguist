@@ -132,6 +132,22 @@ export default function JlptMasterDojo() {
     });
   };
 
+  const handleNavigateToLessonNumber = (targetNum) => {
+    const num = parseInt(targetNum, 10);
+    if (isNaN(num)) return;
+    const target = all120Lessons.find(l => l.lessonNumber === num);
+    if (!target) return;
+    const tab = (target.level === 'N5' || target.level === 'N4') ? 'minna' :
+                target.level === 'N3' ? 'n3' :
+                target.level === 'N2' ? 'n2' : 'n1';
+    setSearchParams({
+      tab,
+      view: 'lesson',
+      lesson: num,
+      mode: 'foundation',
+    });
+  };
+
   const handleToggleCombatMode = (mode) => {
     setSearchParams({
       tab: currentTab,
@@ -230,9 +246,11 @@ export default function JlptMasterDojo() {
           <LessonDetailPage
             lesson={currentLesson}
             totalLessons={all120Lessons.length}
+            allLessons={all120Lessons}
             onBack={handleBackToCatalog}
             onPrev={handlePrevLesson}
             onNext={handleNextLesson}
+            onNavigateLesson={handleNavigateToLessonNumber}
             hasPrev={currentLesson.lessonNumber > 1}
             hasNext={currentLesson.lessonNumber < all120Lessons.length}
             quizAnswers={quizAnswers}

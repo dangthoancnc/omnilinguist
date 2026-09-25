@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { 
   Network, BookOpen, CheckCircle, ChevronDown, ChevronUp, 
-  Printer, Sparkles, Languages, Volume2 
+  Printer, Sparkles, Languages, Volume2, Maximize2, ExternalLink 
 } from 'lucide-react';
 import CompactToolbar from './CompactToolbar';
 import GrammarPointView from './GrammarPointView';
@@ -11,24 +11,75 @@ import { speakJapanese } from './speechHelper';
 import { getLevelBadgeStyle } from '../../theme';
 
 /**
+ * Helper to render connection text with clickable 'Bài X' links
+ */
+function renderPedagogyConnectionWithLinks(text, onNavigateLesson) {
+  if (!text) return null;
+  const parts = [];
+  const regex = /(Bài\s*(\d+))/gi;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    const lessonNum = parseInt(match[2], 10);
+    parts.push(
+      <button
+        key={match.index}
+        type="button"
+        className="jlpt-pedagogy-link-btn"
+        onClick={(e) => {
+          e.stopPropagation();
+          if (onNavigateLesson) onNavigateLesson(lessonNum);
+        }}
+        title={`Bấm để chuyển tới Bài ${lessonNum}`}
+      >
+        Bài {lessonNum} ↗
+      </button>
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : text;
+}
+
+/**
+ * Extract first referenced lesson number from connection text for card click fallback
+ */
+function extractFirstLessonNumber(text) {
+  if (!text) return null;
+  const match = /Bài\s*(\d+)/i.exec(text);
+  return match ? parseInt(match[1], 10) : null;
+}
+
+/**
  * LessonDetailPage — 2-Column Standard Textbook Layout
  * Features:
- * - Left Sidebar (260px): Chapter overview, inline mindmap (default open), vertical TOC, vocab accordion
+ * - Left Sidebar (340px): Chapter overview, Smart Expandable TOC (integrated mini-mindmap), interactive connections, vocab
  * - Main Area (flex: 1): Direct full-focus Grammar Points from top of page, Zero wasted vertical space
  */
 export default function LessonDetailPage({
   lesson,
   totalLessons = 50,
+  allLessons = [],
   onBack,
   onPrev,
   onNext,
+  onNavigateLesson,
   hasPrev = false,
   hasNext = false,
   quizAnswers = {},
   onAnswerQuiz,
 }) {
-  const [showMindmap, setShowMindmap] = useState(true); // Default open per user request
   const [showVocab, setShowVocab] = useState(false);
+  const [showMindmapModal, setShowMindmapModal] = useState(false);
+  const [expandedTocItems, setExpandedTocItems] = useState({});
   const [expandedPoints, setExpandedPoints] = useState(() => {
     // Mặc định mở điểm ngữ pháp đầu tiên
     return { 0: true };
@@ -41,14 +92,32 @@ export default function LessonDetailPage({
     }));
   };
 
-  const expandAll = () => {
+  const expandAllPoints = () => {
     const all = {};
     (lesson.grammarPoints || []).forEach((_, i) => { all[i] = true; });
     setExpandedPoints(all);
   };
 
-  const collapseAll = () => {
+  const collapseAllPoints = () => {
     setExpandedPoints({});
+  };
+
+  const toggleTocItem = (idx, e) => {
+    if (e) e.stopPropagation();
+    setExpandedTocItems(prev => ({
+      ...prev,
+      [idx]: !prev[idx],
+    }));
+  };
+
+  const expandAllToc = () => {
+    const all = {};
+    (lesson.grammarPoints || []).forEach((_, i) => { all[i] = true; });
+    setExpandedTocItems(all);
+  };
+
+  const collapseAllToc = () => {
+    setExpandedTocItems({});
   };
 
   const scrollToPoint = (idx) => {
@@ -63,13 +132,16 @@ export default function LessonDetailPage({
   const rootConn = lesson.mindmap?.rootConnection;
   const nextLeap = lesson.mindmap?.nextLeap;
 
+  const rootTarget = extractFirstLessonNumber(rootConn);
+  const leapTarget = extractFirstLessonNumber(nextLeap);
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflowY: 'hidden' }}>
-      {/* 1. Compact Sticky Toolbar (48px) */}
+      {/* 1. Compact Sticky Toolbar (38px sleek bar, eliminated duplicate long title) */}
       <CompactToolbar
         level={lesson.level}
-        title={`第${lesson.lessonNumber}課: ${lesson.jpTitle}`}
-        subtitle={lesson.viTitle}
+        title={`Bài ${lesson.lessonNumber}`}
+        subtitle={null}
         onBack={onBack}
         onPrev={onPrev}
         onNext={onNext}
@@ -77,28 +149,28 @@ export default function LessonDetailPage({
         hasNext={hasNext}
         actions={[
           ...(lesson.vocabulary?.length ? [{
-            icon: <Languages size={16} />,
+            icon: <Languages size={15} />,
             title: showVocab ? 'Ẩn từ vựng' : 'Hiện từ vựng trọng tâm',
             active: showVocab,
             onClick: () => setShowVocab(v => !v),
           }] : []),
           {
-            icon: <Network size={16} />,
-            title: showMindmap ? 'Ẩn sơ đồ tư duy' : 'Hiện sơ đồ tư duy',
-            active: showMindmap,
-            onClick: () => setShowMindmap(s => !s),
+            icon: <Network size={15} />,
+            title: 'Sơ đồ tư duy toàn cảnh',
+            active: showMindmapModal,
+            onClick: () => setShowMindmapModal(true),
           },
           {
-            icon: <Printer size={16} />,
+            icon: <Printer size={15} />,
             title: 'In / Xuất PDF chương này',
             onClick: () => window.print(),
           }
         ]}
       />
 
-      {/* 2. Two-Column Layout (Sidebar 260px + Main Content) */}
+      {/* 2. Two-Column Layout (Sidebar 340px + Main Content) */}
       <div className="jlpt-lesson-layout">
-        {/* Left Sidebar: 260px (Overview, Mindmap, TOC, Vocab) */}
+        {/* Left Sidebar: 340px (Overview, Smart TOC, Vocab) */}
         <aside className="jlpt-lesson-sidebar">
           {/* Chapter Overview Box (Compact) */}
           <div className="jlpt-sidebar-overview-card">
@@ -126,81 +198,126 @@ export default function LessonDetailPage({
               </div>
             )}
 
-            {/* Root & Next Leap Connections (Compact) */}
+            {/* Root & Next Leap Connections (Interactive Clickable Links) */}
             {(rootConn || nextLeap) && (
               <div className="jlpt-pedagogy-connections" style={{ gridTemplateColumns: '1fr', gap: '6px' }}>
                 {rootConn && (
-                  <div className="jlpt-pedagogy-box jlpt-pedagogy-box--root" style={{ padding: '6px 8px', fontSize: '11px' }}>
+                  <div 
+                    className={`jlpt-pedagogy-box jlpt-pedagogy-box--root ${rootTarget ? 'jlpt-pedagogy-box--clickable' : ''}`}
+                    style={{ padding: '6px 8px', fontSize: '11px', cursor: rootTarget ? 'pointer' : 'default' }}
+                    onClick={() => rootTarget && onNavigateLesson && onNavigateLesson(rootTarget)}
+                    title={rootTarget ? `Bấm để chuyển tới Bài ${rootTarget}` : undefined}
+                  >
                     <span className="jlpt-pedagogy-box-label">🌿 Cội Nguồn Tiền Đề</span>
-                    <span>{rootConn}</span>
+                    <span>{renderPedagogyConnectionWithLinks(rootConn, onNavigateLesson)}</span>
                   </div>
                 )}
                 {nextLeap && (
-                  <div className="jlpt-pedagogy-box jlpt-pedagogy-box--leap" style={{ padding: '6px 8px', fontSize: '11px' }}>
+                  <div 
+                    className={`jlpt-pedagogy-box jlpt-pedagogy-box--leap ${leapTarget ? 'jlpt-pedagogy-box--clickable' : ''}`}
+                    style={{ padding: '6px 8px', fontSize: '11px', cursor: leapTarget ? 'pointer' : 'default' }}
+                    onClick={() => leapTarget && onNavigateLesson && onNavigateLesson(leapTarget)}
+                    title={leapTarget ? `Bấm để chuyển tới Bài ${leapTarget}` : undefined}
+                  >
                     <span className="jlpt-pedagogy-box-label">🚀 Bước Nhảy Tiếp Theo</span>
-                    <span>{nextLeap}</span>
+                    <span>{renderPedagogyConnectionWithLinks(nextLeap, onNavigateLesson)}</span>
                   </div>
                 )}
               </div>
             )}
           </div>
 
-          {/* Sơ đồ tư duy nhánh (Mindmap inline trong sidebar, default mở) */}
-          <div className="jlpt-sidebar-section">
-            <div 
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '6px 0', cursor: 'pointer' }}
-              onClick={() => setShowMindmap(s => !s)}
-            >
-              <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <Network size={13} style={{ color: 'var(--accent-primary)' }} />
-                <span>Sơ đồ tư duy</span>
-              </div>
-              <span style={{ fontSize: '11px', color: 'var(--text-tertiary)' }}>
-                {showMindmap ? 'Thu nhỏ' : 'Mở rộng'}
-              </span>
-            </div>
-            {showMindmap && (
-              <div style={{ marginTop: '4px' }}>
-                <MindmapTreeView 
-                  lesson={lesson} 
-                  mode="sidebar-tree" 
-                  onSelectGrammarPoint={scrollToPoint} 
-                />
-              </div>
-            )}
-          </div>
-
-          {/* Quick Vertical TOC in Sidebar */}
+          {/* Smart Expandable TOC (Sơ đồ tư duy thu nhỏ tích hợp vào mục lục) */}
           {grammarPoints.length > 0 && (
             <div className="jlpt-sidebar-section">
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '6px 0', marginBottom: '4px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '4px 0 6px', borderBottom: '1px solid var(--border-default)', marginBottom: '6px' }}>
                 <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase' }}>
-                  Mục lục ({grammarPoints.length})
+                  Mục lục & Sơ đồ ({grammarPoints.length})
                 </span>
-                <div style={{ display: 'flex', gap: '4px' }}>
-                  <button type="button" className="jlpt-view-toggle-btn" style={{ padding: '2px 6px', fontSize: '10px' }} onClick={expandAll}>
-                    Mở hết
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <button
+                    type="button"
+                    className="jlpt-view-toggle-btn"
+                    style={{ padding: '2px 6px', fontSize: '10px', display: 'inline-flex', alignItems: 'center', gap: '3px' }}
+                    onClick={() => setShowMindmapModal(true)}
+                    title="Mở toàn cảnh sơ đồ tư duy"
+                  >
+                    <Network size={11} />
+                    <span>Toàn cảnh</span>
                   </button>
-                  <button type="button" className="jlpt-view-toggle-btn" style={{ padding: '2px 6px', fontSize: '10px' }} onClick={collapseAll}>
-                    Thu hết
+                  <button 
+                    type="button" 
+                    className="jlpt-view-toggle-btn" 
+                    style={{ padding: '2px 5px', fontSize: '10px' }} 
+                    onClick={Object.keys(expandedTocItems).length > 0 ? collapseAllToc : expandAllToc}
+                    title="Mở/Thu công thức và ý nghĩa"
+                  >
+                    {Object.keys(expandedTocItems).length > 0 ? 'Thu gọn' : 'Chi tiết'}
                   </button>
                 </div>
               </div>
-              <div className="jlpt-sidebar-toc-list">
-                {grammarPoints.map((gp, idx) => (
-                  <button
-                    key={gp.id || idx}
-                    type="button"
-                    className={`jlpt-sidebar-toc-item ${expandedPoints[idx] ? 'jlpt-sidebar-toc-item--active' : ''}`}
-                    onClick={() => scrollToPoint(idx)}
-                  >
-                    <span className="jlpt-sidebar-toc-num">{idx + 1}</span>
-                    <span className="jlpt-sidebar-toc-text"><FuriganaText text={gp.pattern} /></span>
-                  </button>
-                ))}
+
+              {/* Smart Expandable List */}
+              <div className="jlpt-smart-toc-list">
+                {grammarPoints.map((gp, idx) => {
+                  const isExpanded = !!expandedTocItems[idx];
+                  const isActive = !!expandedPoints[idx];
+
+                  return (
+                    <div 
+                      key={gp.id || idx}
+                      className={`jlpt-smart-toc-item ${isActive ? 'jlpt-smart-toc-item--active' : ''}`}
+                    >
+                      <div 
+                        className="jlpt-smart-toc-header"
+                        onClick={() => scrollToPoint(idx)}
+                        title="Bấm để cuộn tới ngữ pháp này"
+                      >
+                        <span className="jlpt-smart-toc-num">{idx + 1}</span>
+                        <span className="jlpt-smart-toc-title">
+                          <FuriganaText text={gp.pattern} />
+                        </span>
+                        <button
+                          type="button"
+                          className="jlpt-smart-toc-expand-btn"
+                          onClick={(e) => toggleTocItem(idx, e)}
+                          title={isExpanded ? 'Thu gọn công thức' : 'Trải xuống xem công thức'}
+                          aria-label="Toggle details"
+                        >
+                          {isExpanded ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
+                        </button>
+                      </div>
+
+                      {/* Expandable Drawer: Mini-Mindmap Formula & Nuance */}
+                      {isExpanded && (
+                        <div className="jlpt-smart-toc-drawer">
+                          {gp.formula && (
+                            <div className="jlpt-smart-toc-formula">
+                              <FuriganaText text={gp.formula} />
+                            </div>
+                          )}
+                          {(gp.nuance || gp.meaning) && (
+                            <div className="jlpt-smart-toc-nuance">
+                              <FuriganaText text={gp.nuance || gp.meaning} />
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           )}
+
+          {/* Standalone Mindmap Modal (1-Click Popup) */}
+          <MindmapTreeView
+            lesson={lesson}
+            mode="modal"
+            isOpen={showMindmapModal}
+            onClose={() => setShowMindmapModal(false)}
+            onSelectGrammarPoint={scrollToPoint}
+          />
 
           {/* Vocabulary Section in Sidebar */}
           {lesson.vocabulary && lesson.vocabulary.length > 0 && (

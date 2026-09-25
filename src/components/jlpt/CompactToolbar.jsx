@@ -30,10 +30,14 @@ export default function CompactToolbar({
             onClick={onBack}
             title="Quay lại danh mục"
             aria-label="Back"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', padding: '3px 8px', fontSize: '12px', fontWeight: 600 }}
           >
-            <ArrowLeft size={16} />
+            <ArrowLeft size={14} />
+            <span className="hide-on-mobile">Danh mục</span>
           </button>
         )}
+
+        <div className="jlpt-toolbar-divider" />
 
         {level && (
           <span style={badgeStyle}>
@@ -41,14 +45,16 @@ export default function CompactToolbar({
           </span>
         )}
 
-        <div className="jlpt-toolbar-title">
-          <span>{title}</span>
-          {subtitle && (
-            <span className="jlpt-toolbar-subtitle">
-              • {subtitle}
-            </span>
-          )}
-        </div>
+        {title && (
+          <div className="jlpt-toolbar-title">
+            <span>{title}</span>
+            {subtitle && (
+              <span className="jlpt-toolbar-subtitle">
+                • {subtitle}
+              </span>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="jlpt-toolbar-center">

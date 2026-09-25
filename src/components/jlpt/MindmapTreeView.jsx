@@ -25,13 +25,25 @@ export default function MindmapTreeView({
   level = 'N5',
   mode = 'sidebar-tree',
   height = 360,
+  isOpen,
+  onClose,
   onSelectLesson,
   onSelectGrammarPoint,
   onOpenFullscreen,
 }) {
   const [zoom, setZoom] = useState(1);
   const [expandedBranches, setExpandedBranches] = useState({});
-  const [showModal, setShowModal] = useState(false);
+  const [internalModalOpen, setInternalModalOpen] = useState(false);
+
+  const isModalVisible = isOpen !== undefined ? isOpen : internalModalOpen;
+  const closeModal = () => {
+    if (onClose) onClose();
+    setInternalModalOpen(false);
+  };
+  const openModal = () => {
+    if (onOpenFullscreen) onOpenFullscreen();
+    else setInternalModalOpen(true);
+  };
 
   const toggleBranch = (id) => {
     setExpandedBranches(prev => ({ ...prev, [id]: !prev[id] }));
@@ -66,8 +78,99 @@ export default function MindmapTreeView({
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
-    if (showModal) setShowModal(false);
+    if (isModalVisible) closeModal();
   };
+
+  // ── 0. STANDALONE MODAL MODE ─────────────────────────────────
+  if (mode === 'modal') {
+    if (!isModalVisible || !lesson) return null;
+    return (
+      <div className="jlpt-mindmap-modal-backdrop" onClick={closeModal}>
+        <div className="jlpt-mindmap-modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="jlpt-mindmap-modal-header">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={getLevelBadgeStyle(lesson.level)}>
+                {lesson.level} • 第{lesson.lessonNumber}課
+              </span>
+              <span style={{ fontSize: '15px', fontWeight: 800, color: 'var(--text-primary)' }}>
+                <FuriganaText text={lesson.jpTitle} />
+              </span>
+            </div>
+            <button
+              type="button"
+              className="jlpt-icon-btn"
+              onClick={closeModal}
+              title="Đóng toàn cảnh"
+            >
+              <X size={18} />
+            </button>
+          </div>
+
+          <div className="jlpt-mindmap-modal-body">
+            <div
+              className="jlpt-tree-canvas"
+              style={{
+                transform: `scale(${zoom})`,
+                transformOrigin: 'top center',
+                transition: 'transform 0.2s ease',
+              }}
+            >
+              {/* Center Root Node */}
+              <div className="jlpt-tree-root-node" style={{ '--node-accent': accentColor }}>
+                <div className="jlpt-tree-root-badge" style={getLevelBadgeStyle(lesson.level)}>
+                  {lesson.level} • 第{lesson.lessonNumber}課
+                </div>
+                <div className="jlpt-tree-root-title"><FuriganaText text={lesson.jpTitle} /></div>
+                <div className="jlpt-tree-root-sub">{lesson.pillar || lesson.viTitle}</div>
+              </div>
+
+              <div className="jlpt-tree-vline" style={{ '--line-color': accentColor }} />
+
+              {/* Horizontal Branches */}
+              <div className="jlpt-tree-branch-rail">
+                <div className="jlpt-tree-hline" style={{ '--line-color': accentColor }} />
+                <div className="jlpt-tree-branches">
+                  {branches.map((b, idx) => {
+                    const branchColor = b.color || accentColor;
+                    return (
+                      <div key={idx} className="jlpt-tree-branch-col">
+                        <div className="jlpt-tree-vline jlpt-tree-vline--short" style={{ '--line-color': branchColor }} />
+                        <div
+                          className="jlpt-tree-branch-card"
+                          style={{ '--branch-color': branchColor }}
+                          onClick={() => handleBranchClick(idx)}
+                        >
+                          <div className="jlpt-tree-branch-header">
+                            <span className="jlpt-tree-branch-dot" style={{ background: branchColor }} />
+                            <span className="jlpt-tree-branch-name"><FuriganaText text={b.name} /></span>
+                          </div>
+                          <div className="jlpt-tree-branch-details">
+                            {b.formula && (
+                              <div className="jlpt-tree-branch-formula"><FuriganaText text={b.formula} /></div>
+                            )}
+                            {b.nuance && (
+                              <div className="jlpt-tree-branch-nuance"><FuriganaText text={b.nuance} /></div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* Zoom Controls */}
+            <div className="jlpt-mindmap-controls">
+              <button type="button" className="jlpt-icon-btn" onClick={handleZoomIn} title="Phóng to"><ZoomIn size={14} /></button>
+              <button type="button" className="jlpt-icon-btn" onClick={handleZoomOut} title="Thu nhỏ"><ZoomOut size={14} /></button>
+              <button type="button" className="jlpt-icon-btn" onClick={handleResetZoom} title="Mặc định"><RotateCcw size={14} /></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   // ── 1. SIDEBAR VERTICAL SPINE TREE MODE ──────────────────────
   if (mode === 'sidebar-tree' && lesson) {
@@ -85,7 +188,7 @@ export default function MindmapTreeView({
             type="button"
             className="jlpt-view-toggle-btn"
             style={{ padding: '2px 8px', fontSize: '11px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
-            onClick={() => onOpenFullscreen ? onOpenFullscreen() : setShowModal(true)}
+            onClick={openModal}
             title="Mở sơ đồ tư duy toàn màn hình"
           >
             <Maximize2 size={11} />
@@ -141,8 +244,8 @@ export default function MindmapTreeView({
         </div>
 
         {/* Canvas Fullscreen Modal */}
-        {showModal && (
-          <div className="jlpt-mindmap-modal-backdrop" onClick={() => setShowModal(false)}>
+        {isModalVisible && (
+          <div className="jlpt-mindmap-modal-backdrop" onClick={closeModal}>
             <div className="jlpt-mindmap-modal-content" onClick={(e) => e.stopPropagation()}>
               <div className="jlpt-mindmap-modal-header">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -156,7 +259,7 @@ export default function MindmapTreeView({
                 <button
                   type="button"
                   className="jlpt-icon-btn"
-                  onClick={() => setShowModal(false)}
+                  onClick={closeModal}
                   title="Đóng toàn cảnh"
                 >
                   <X size={18} />

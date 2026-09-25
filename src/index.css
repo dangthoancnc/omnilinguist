@@ -715,6 +715,12 @@ rt {
   padding: 10px 14px;
 }
 
+/* Studio Mode (JLPT Master Dojo, Immersive Reader): Zero outer padding & overflow contained */
+.app-content:has(.page-shell-studio) {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
 /* Zen Mode: Full Focus Reading (Hides app topbar, sidebar, and maximizes reader canvas) */
 body.zen-mode .app-topbar,
 body.zen-mode .sidebar-rail-wrapper,

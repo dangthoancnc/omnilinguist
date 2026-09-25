@@ -11,29 +11,47 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  height: 48px;
-  min-height: 48px;
+  height: 38px;
+  min-height: 38px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--space-4, 16px);
+  padding: 0 14px;
   background: var(--bg-surface);
   border-bottom: 1px solid var(--border-default);
   backdrop-filter: blur(12px);
   gap: var(--space-3, 12px);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 .jlpt-toolbar-left {
   display: flex;
   align-items: center;
-  gap: var(--space-2, 8px);
+  gap: 8px;
   min-width: 0;
   flex: 1;
 }
 
+.jlpt-toolbar-divider {
+  width: 1px;
+  height: 16px;
+  background: var(--border-default);
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+.jlpt-toolbar-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
 .jlpt-toolbar-title {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--text-primary);
   white-space: nowrap;
@@ -321,8 +339,9 @@
    ========================================================================== */
 .jlpt-lesson-layout {
   display: flex;
-  height: calc(100vh - 48px);
-  min-height: calc(100vh - 48px);
+  height: calc(100% - 38px);
+  min-height: calc(100% - 38px);
+  flex: 1;
   overflow: hidden;
   background: var(--bg-surface);
 }
@@ -379,6 +398,122 @@
   justify-content: space-between;
   cursor: pointer;
   user-select: none;
+}
+
+/* ==========================================================================
+   SMART EXPANDABLE TOC (Sơ đồ tư duy thu nhỏ tích hợp vào mục lục)
+   ========================================================================== */
+.jlpt-smart-toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.jlpt-smart-toc-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm, 6px);
+  overflow: hidden;
+  transition: all 0.15s ease;
+}
+
+.jlpt-smart-toc-item:hover {
+  border-color: var(--border-strong, #94a3b8);
+}
+
+.jlpt-smart-toc-item--active {
+  border-color: var(--accent-primary, #3b82f6);
+  background: rgba(59, 130, 246, 0.02);
+}
+
+.jlpt-smart-toc-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.jlpt-smart-toc-num {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.jlpt-smart-toc-item--active .jlpt-smart-toc-num {
+  background: var(--accent-primary, #3b82f6);
+  color: #ffffff;
+  border-color: var(--accent-primary, #3b82f6);
+}
+
+.jlpt-smart-toc-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Noto Sans JP', sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.jlpt-smart-toc-expand-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  padding: 2px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.jlpt-smart-toc-expand-btn:hover {
+  background: var(--bg-surface-2);
+  color: var(--text-primary);
+}
+
+.jlpt-smart-toc-drawer {
+  padding: 6px 8px 8px;
+  border-top: 1px dashed var(--border-default);
+  background: var(--bg-surface-2);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.jlpt-smart-toc-formula {
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #3b5bdb;
+  background: rgba(59, 91, 219, 0.08);
+  padding: 3px 6px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.jlpt-smart-toc-nuance {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
 }
 
 .jlpt-sidebar-toc-list {
@@ -603,6 +738,39 @@
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+.jlpt-pedagogy-box--clickable {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.jlpt-pedagogy-box--clickable:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.jlpt-pedagogy-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid currentColor;
+  background: rgba(255, 255, 255, 0.6);
+  color: inherit;
+  transition: all 0.15s ease;
+  vertical-align: middle;
+  margin: 0 2px;
+  line-height: 1.4;
+}
+
+.jlpt-pedagogy-link-btn:hover {
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transform: scale(1.04);
 }
 
 /* Quick TOC Navigation */
