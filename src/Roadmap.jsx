@@ -7,13 +7,14 @@ import {
   Clock, Check, Sparkles, Award, ArrowUpRight, Flame, Calendar, RefreshCw, Zap
 } from 'lucide-react';
 import { saveUserProfile, getUserProfile, advancePhase, getTodayStats } from './studyStore.js';
+import { JLPT_LEVEL_COLORS } from './theme';
 
 export const GOALS = [
-  { id: 'N5', label: 'N5', sub: 'Sơ cấp Khởi đầu', months: 2, hours: 1.5, color: '#10b981', desc: 'Chữ cái Kana, 200 từ vựng nền tảng, 40 Kanji cơ bản, đọc truyện Ehon có Furigana.' },
-  { id: 'N4', label: 'N4', sub: 'Sơ cấp Hoàn chỉnh', months: 3, hours: 2, color: '#3b82f6', desc: 'Ngữ pháp liên kết, 350 từ vựng N4, giao tiếp đời thường, đọc tin NHK News Web Easy.' },
-  { id: 'N3', label: 'N3', sub: 'Trung cấp', months: 3, hours: 2, color: '#f59e0b', desc: 'Đọc báo đơn giản, giao tiếp cơ bản công sở, viết email ngắn và tài liệu phổ thông.' },
-  { id: 'N2', label: 'N2', sub: 'Cao cấp', months: 6, hours: 2, color: '#8b5cf6', desc: 'Làm việc độc lập bằng tiếng Nhật, đọc tài liệu chuyên ngành, viết báo cáo kinh doanh.' },
-  { id: 'N1', label: 'N1', sub: 'Thành thạo', months: 12, hours: 2, color: '#ef4444', desc: 'Thành thạo gần như người bản xứ, đọc hiểu văn học xã luận, thuyết trình chuyên sâu.' },
+  { id: 'N5', label: 'N5', sub: 'Sơ cấp Khởi đầu', months: 2, hours: 1.5, color: JLPT_LEVEL_COLORS.N5, desc: 'Chữ cái Kana, 200 từ vựng nền tảng, 40 Kanji cơ bản, đọc truyện Ehon có Furigana.' },
+  { id: 'N4', label: 'N4', sub: 'Sơ cấp Hoàn chỉnh', months: 3, hours: 2, color: JLPT_LEVEL_COLORS.N4, desc: 'Ngữ pháp liên kết, 350 từ vựng N4, giao tiếp đời thường, đọc tin NHK News Web Easy.' },
+  { id: 'N3', label: 'N3', sub: 'Trung cấp', months: 3, hours: 2, color: JLPT_LEVEL_COLORS.N3, desc: 'Đọc báo đơn giản, giao tiếp cơ bản công sở, viết email ngắn và tài liệu phổ thông.' },
+  { id: 'N2', label: 'N2', sub: 'Cao cấp', months: 6, hours: 2, color: JLPT_LEVEL_COLORS.N2, desc: 'Làm việc độc lập bằng tiếng Nhật, đọc tài liệu chuyên ngành, viết báo cáo kinh doanh.' },
+  { id: 'N1', label: 'N1', sub: 'Thành thạo', months: 12, hours: 2, color: JLPT_LEVEL_COLORS.N1, desc: 'Thành thạo gần như người bản xứ, đọc hiểu văn học xã luận, thuyết trình chuyên sâu.' },
 ];
 
 export const ROADMAP = {
@@ -683,14 +684,11 @@ const Roadmap = () => {
   const progressPercent = Math.min(100, Math.round((daysActive / totalDays) * 100)) || 0;
 
   return (
-    <div style={{ 
+    <div className="page-shell-content" style={{ 
       display: 'flex', 
       flexDirection: 'column', 
       gap: 18, 
-      paddingBottom: 40, 
-      maxWidth: 1380, 
-      margin: '0 auto', 
-      width: '100%' 
+      paddingBottom: 40
     }}>
       
       {/* ═══════════════════════════════════════════════════════════════ */}

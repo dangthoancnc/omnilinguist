@@ -3,7 +3,8 @@
 // Thiết kế: Chuyên nghiệp, Tinh gọn (High Density), Hạn chế màu mè, Chuẩn mực Sư phạm Nhật Bản.
 // Hỗ trợ: Toàn chiều ngang màn hình rộng, Trang danh mục thẻ bài (Catalog) & Trang bài học riêng (Dedicated Lesson View).
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { 
   BookOpen, Target, Award, Timer, CheckCircle, XCircle, Search, 
   HelpCircle, Volume2, ShieldAlert, Sparkles, ChevronRight, ChevronLeft, Filter, 
@@ -11,6 +12,7 @@ import {
 } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 import ExamSimulatorModal from './components/jlpt/ExamSimulatorModal';
+import { JLPT_LEVEL_COLORS, getLevelBadgeStyle } from './theme';
 
 // Nạp dữ liệu giáo trình chuẩn hóa
 import minnaCorpus from './data/curriculum/minna_master_50.json';
@@ -34,20 +36,22 @@ const BRANCH_THEMES = [
   { border: '#e11d48', bg: 'var(--tint-sakura-bg)', borderSub: 'var(--tint-sakura-border)', text: 'var(--tint-sakura-text)' }
 ];
 
-const getLevelBadgeStyle = (level) => {
-  switch (level) {
-    case 'N5': return { bg: 'var(--tint-matcha-bg)', border: 'var(--tint-matcha-border)', text: 'var(--tint-matcha-text)' };
-    case 'N4': return { bg: 'var(--tint-sky-bg)', border: 'var(--tint-sky-border)', text: 'var(--tint-sky-text)' };
-    case 'N3': return { bg: 'var(--tint-violet-bg)', border: 'var(--tint-violet-border)', text: 'var(--tint-violet-text)' };
-    case 'N2': return { bg: 'var(--tint-amber-bg)', border: 'var(--tint-amber-border)', text: 'var(--tint-amber-text)' };
-    case 'N1': return { bg: 'var(--tint-sakura-bg)', border: 'var(--tint-sakura-border)', text: 'var(--tint-sakura-text)' };
-    default:   return { bg: 'var(--bg-surface-2)', border: 'var(--border-default)', text: 'var(--text-primary)' };
-  }
-};
-
 export default function JlptMasterDojo() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   // Navigation Tabs: 'minna' | 'n3' | 'n2' | 'n1' | 'exams'
-  const [mainTab, setMainTab] = useState('minna');
+  const [mainTab, setMainTab] = useState(() => {
+    const tabParam = new URLSearchParams(window.location.search).get('tab');
+    return tabParam && ['minna', 'n3', 'n2', 'n1', 'exams'].includes(tabParam) ? tabParam : 'minna';
+  });
+
+  // Sync mainTab from URL query params
+  useEffect(() => {
+    const tabParam = searchParams.get('tab');
+    if (tabParam && ['minna', 'n3', 'n2', 'n1', 'exams'].includes(tabParam) && tabParam !== mainTab) {
+      setMainTab(tabParam);
+    }
+  }, [searchParams]);
 
   // View Mode: 'catalog' (Danh mục thẻ bài lưới rộng) | 'lesson' (Trang bài học riêng biệt toàn màn hình)
   const [lessonView, setLessonView] = useState('catalog');
@@ -179,11 +183,9 @@ export default function JlptMasterDojo() {
   };
 
   return (
-    <div style={{
-      width: '100%',
-      maxWidth: '100%',
-      padding: '12px 18px',
-      boxSizing: 'border-box',
+    <div className="page-shell-studio" style={{
+      padding: '12px 20px',
+      overflowY: 'auto',
       color: 'var(--text-primary)',
       fontFamily: `'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif`
     }}>
@@ -313,6 +315,7 @@ export default function JlptMasterDojo() {
                 key={tab.id}
                 onClick={() => {
                   setMainTab(tab.id);
+                  setSearchParams({ tab: tab.id });
                   setLessonView('catalog');
                   if (tab.id === 'n3') { setSelectedFoundationLessonNum(51); setSelectedChapterIdx(0); setSelectedPointId(null); }
                   if (tab.id === 'n2') { setSelectedFoundationLessonNum(76); setSelectedChapterIdx(0); setSelectedPointId(null); }

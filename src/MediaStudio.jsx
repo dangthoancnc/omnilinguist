@@ -210,7 +210,7 @@ const MediaStudio = () => {
   const selectStyle = { padding:'6px 10px', borderRadius:8, background:'rgba(0,0,0,0.3)', border:'1px solid var(--glass-border)', color:'white', fontSize:'0.8rem' };
 
   return (
-    <div style={{ display:'flex', flexDirection:'column', gap: 12, height:'85vh' }}>
+    <div className="page-shell-studio" style={{ gap: 12, padding: '12px 20px', overflowY: 'auto' }}>
       {/* Header */}
       <div className="glass-panel" style={{ padding:'12px 20px', display:'flex', justifyContent:'space-between', alignItems:'center', flexShrink:0 }}>
         <div style={{ display:'flex', alignItems:'center', gap: 12 }}>

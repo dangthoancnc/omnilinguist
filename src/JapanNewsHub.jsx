@@ -36,13 +36,7 @@ const JLPT_LEVEL_FILTERS = [
   { id: 'HARD', label: 'N2-N1 Báo chí & Chuyên sâu', levels: ['N2', 'N1'] }
 ];
 
-const JLPT_LEVEL_COLORS = {
-  N5: '#10b981',
-  N4: '#3b82f6',
-  N3: '#f59e0b',
-  N2: '#8b5cf6',
-  N1: '#ef4444'
-};
+import { JLPT_LEVEL_COLORS } from './theme';
 
 const TRENDING_TOPICS = [
   { id: 'news_tokutei_ginou_2026', title: 'Visa Kỹ năng đặc định Tokutei 2 nới lỏng', tag: 'Visa', color: '#3b82f6' },
@@ -381,7 +375,7 @@ const JapanNewsHub = () => {
     const levelColor = JLPT_LEVEL_COLORS[artLevel] || '#3b82f6';
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 16, minHeight: '88vh', maxWidth: 1360, margin: '0 auto', paddingBottom: 60 }}>
+      <div className="page-shell-content" style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingBottom: 60 }}>
         
         {/* STICKY TOP ACTION TOOLBAR */}
         <div 
@@ -721,7 +715,7 @@ const JapanNewsHub = () => {
     : `${Math.round(numInput / JPY_VND_RATE).toLocaleString('ja-JP')} ¥`;
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, minHeight: '88vh', maxWidth: 1360, margin: '0 auto', paddingBottom: 60 }}>
+    <div className="page-shell-content" style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingBottom: 60 }}>
       
       {/* 🔴 1. BREAKING NEWS TICKER (速報 · ĐIỂM TIN NÓNG LIÊN TỤC) */}
       <div 

@@ -5,13 +5,15 @@ import { db } from './db.js';
 import { Rating } from './fsrs.js';
 import { getCard, reviewRoadmapCard, reviewFreeStudyCard, getDueCards, getStats, getNextDueInfo, getCustomCards, isBookmarked, toggleBookmark, getUserProfile, getFreeStudyHistory, getTodayReviewedCardIds } from './studyStore.js';
 import { syncMasterData } from './syncMasterData.js';
-import { Eye, EyeOff, Volume2, ChevronLeft, ChevronRight, Brain, CheckCircle2, AlertCircle, RotateCcw, Target, Bookmark, Filter, Shuffle, ListOrdered, Zap, BookOpen, List, X, Settings, FastForward, Play, Pause, Hand, UserPlus, Flame } from 'lucide-react';
+import { Eye, EyeOff, Volume2, ChevronLeft, ChevronRight, Brain, CheckCircle2, AlertCircle, RotateCcw, Target, Bookmark, Filter, Shuffle, ListOrdered, Zap, BookOpen, List, X, Settings, FastForward, Play, Pause, Hand, UserPlus, Flame, Clock } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 import localMasterDb from './data/jlpt_master_db.json';
 import { isGuest, checkGuestQuota } from './identityManager.js';
 
+import { JLPT_LEVEL_COLORS } from './theme';
+
 const LEVELS = ['N5','N4','N3','N2','N1'];
-const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
+const LEVEL_COLORS = JLPT_LEVEL_COLORS;
 
 const speak = (t) => {
   window.speechSynthesis.cancel();
@@ -21,10 +23,16 @@ const speak = (t) => {
 };
 
 const StatsBar = ({ stats, levelColor }) => (
-  <div style={{ display:'flex', gap:12, padding:'10px 14px', background:'rgba(0,0,0,0.2)', borderRadius:8, marginBottom:16, fontSize:'0.83rem' }}>
-    <span style={{ color:'#60a5fa' }}>📘 Mới: <strong>{stats.newCount}</strong></span>
-    <span style={{ color:'#f59e0b' }}>⏰ Đến hạn: <strong>{stats.dueCount}</strong></span>
-    <span style={{ color:'#10b981' }}>✅ Đã học: <strong>{stats.learnedCount}</strong></span>
+  <div style={{ display:'flex', gap:12, padding:'10px 14px', background:'rgba(0,0,0,0.2)', borderRadius:8, marginBottom:16, fontSize:'0.83rem', alignItems: 'center' }}>
+    <span style={{ color:'#60a5fa', display: 'flex', alignItems: 'center', gap: 4 }}>
+      <BookOpen size={13}/> Mới: <strong>{stats.newCount}</strong>
+    </span>
+    <span style={{ color:'#f59e0b', display: 'flex', alignItems: 'center', gap: 4 }}>
+      <Clock size={13}/> Đến hạn: <strong>{stats.dueCount}</strong>
+    </span>
+    <span style={{ color:'#10b981', display: 'flex', alignItems: 'center', gap: 4 }}>
+      <CheckCircle2 size={13}/> Đã học: <strong>{stats.learnedCount}</strong>
+    </span>
     <span style={{ color:'var(--text-secondary)', marginLeft:'auto' }}>Tổng: {stats.total}</span>
   </div>
 );
@@ -671,7 +679,7 @@ const VocabularyFlashcards = () => {
   const lc = LEVEL_COLORS[level] || 'var(--accent-primary)';
 
   return (
-    <div style={{ padding: '20px clamp(16px, 3vw, 40px)', maxWidth: 1600, margin: '0 auto', height: '100%', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
+    <div className="page-shell-studio" style={{ padding: '20px clamp(16px, 3vw, 40px)', overflowY: 'auto' }}>
       {/* Header Controls */}
       <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:20, flexWrap:'wrap', gap:14 }}>
         <div style={{ display:'flex', gap:8, alignItems: 'center' }}>

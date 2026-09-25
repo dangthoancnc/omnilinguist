@@ -515,7 +515,7 @@ const AnkiSandboxMode = () => {
   };
 
   return (
-    <div style={{ padding: '20px 40px', maxWidth: 1600, margin: '0 auto', height: '100%', overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
+    <div className="page-shell-studio" style={{ padding: '20px clamp(16px, 3vw, 40px)', overflowY: 'auto' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 20 }}>
         <Book size={32} color="#8b5cf6"/>
         <div>

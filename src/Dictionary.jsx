@@ -5,7 +5,9 @@ import { Search, BookA, Bookmark, ArrowRight, LayoutGrid, Type, Globe } from 'lu
 
 import localMasterDb from './data/jlpt_master_db.json';
 
-const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
+import { JLPT_LEVEL_COLORS } from './theme';
+
+const LEVEL_COLORS = JLPT_LEVEL_COLORS;
 const API_BASE_URL = typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:5000` : '';
 
 const removeDiacritics = (str) => {
@@ -633,7 +635,7 @@ const Dictionary = () => {
   const totalResults = results.vocab.length + results.kanji.length + results.grammar.length;
 
   return (
-    <div style={{ maxWidth: 900, margin: '0 auto', height: 'calc(100vh - 100px)', display: 'flex', flexDirection: 'column' }}>
+    <div className="page-shell-content" style={{ display: 'flex', flexDirection: 'column', height: '100%', paddingBottom: 24 }}>
       
       {/* Search Header */}
       <div className="glass-panel" style={{ padding: '24px', marginBottom: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>

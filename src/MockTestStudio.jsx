@@ -5,7 +5,9 @@ import questionBank from './data/questionBank.json';
 import { Timer, CheckCircle, XCircle, Play, FileText, Target, ShieldAlert, ChevronRight } from 'lucide-react';
 import FuriganaText from './components/FuriganaText';
 
-const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
+import { JLPT_LEVEL_COLORS } from './theme';
+
+const LEVEL_COLORS = JLPT_LEVEL_COLORS;
 
 const ExamBankStudio = () => {
   const [tab, setTab] = useState('drill'); // 'drill' | 'weakness' | 'mock'
@@ -110,7 +112,7 @@ const ExamBankStudio = () => {
 
   // ---------------- RENDER ----------------
   return (
-    <div style={{ maxWidth: 840, margin: '0 auto', height: 'calc(100vh - 100px)', display: 'flex', flexDirection: 'column' }}>
+    <div className="page-shell-content" style={{ display: 'flex', flexDirection: 'column', height: '100%', paddingBottom: 24 }}>
       
       {/* TABS */}
       {mockView === 'list' && (
@@ -122,8 +124,8 @@ const ExamBankStudio = () => {
           ].map(t => (
             <button 
               key={t.id} onClick={() => setTab(t.id)}
-              className={`btn ${tab === t.id ? 'btn-primary' : 'btn-outline'}`}
-              style={{ flex: 1, padding: '12px', fontSize: '0.9rem', display: 'flex', justifyContent: 'center', gap: 8, border: tab !== t.id ? '1px solid var(--glass-border)' : 'none' }}
+              className={`ods-btn ${tab === t.id ? 'ods-btn-primary' : 'ods-btn-secondary'}`}
+              style={{ flex: 1, height: 38, fontSize: '0.85rem', display: 'flex', justifyContent: 'center', gap: 8 }}
             >
               {t.icon} {t.label}
             </button>

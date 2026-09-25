@@ -4,11 +4,13 @@ import writingData from './data/writingPrompts.json';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
 import { analyzeEmail } from './keigoChecker.js';
-import { Send, FileText, CheckCircle, AlertTriangle, Info, MessageSquare, Copy, BrainCircuit } from 'lucide-react';
+import { Send, FileText, CheckCircle, AlertTriangle, Info, MessageSquare, Copy, BrainCircuit, Pencil } from 'lucide-react';
 
-const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
+import { JLPT_LEVEL_COLORS } from './theme';
 
-const WritingStudio = () => {
+const LEVEL_COLORS = JLPT_LEVEL_COLORS;
+
+const GrammarStudio = () => {
   const vocabData = useLiveQuery(() => db.vocab.toArray()) || [];
   const [selectedId, setSelectedId] = useState(() => (Array.isArray(writingData) && writingData.length > 0) ? writingData[0].id : null);
   const [inputText, setInputText] = useState('');
@@ -71,7 +73,7 @@ const WritingStudio = () => {
   };
 
   return (
-    <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', height: 'calc(100vh - 100px)' }}>
+    <div className="page-shell-studio" style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '12px 20px', overflowY: 'auto' }}>
       {/* LEFT: Template List */}
       <div className="glass-panel" style={{ width: '100%', maxWidth: 320, display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
         <h3 style={{ marginBottom: 16, fontSize: '1.05rem', display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -114,11 +116,19 @@ const WritingStudio = () => {
               <strong style={{ fontSize: '1.2rem' }}>{template?.title || 'Chủ đề luyện viết'}</strong>
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
-              <button onClick={() => setViewMode('write')} style={{ padding: '6px 12px', borderRadius: 6, border: 'none', cursor: 'pointer', background: viewMode === 'write' ? 'var(--accent-primary)' : 'rgba(255,255,255,0.08)', color: 'white', fontSize: '0.85rem' }}>
-                ✏️ Viết bài
+              <button 
+                onClick={() => setViewMode('write')} 
+                className={`ods-btn ${viewMode === 'write' ? 'ods-btn-primary' : 'ods-btn-secondary'}`}
+                style={{ padding: '4px 12px', fontSize: '0.82rem', height: 32 }}
+              >
+                <Pencil size={13} /> Viết bài
               </button>
-              <button onClick={() => setViewMode('template')} style={{ padding: '6px 12px', borderRadius: 6, border: 'none', cursor: 'pointer', background: viewMode === 'template' ? '#10b981' : 'rgba(255,255,255,0.08)', color: 'white', fontSize: '0.85rem' }}>
-                📄 Xem bài mẫu
+              <button 
+                onClick={() => setViewMode('template')} 
+                className={`ods-btn ${viewMode === 'template' ? 'ods-btn-primary' : 'ods-btn-secondary'}`}
+                style={{ padding: '4px 12px', fontSize: '0.82rem', height: 32 }}
+              >
+                <FileText size={13} /> Xem bài mẫu
               </button>
             </div>
           </div>
@@ -215,4 +225,4 @@ const WritingStudio = () => {
   );
 };
 
-export default WritingStudio;
+export default GrammarStudio;

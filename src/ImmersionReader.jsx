@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { 
   BookOpen, PlusCircle, Search, FileText, CheckCircle, UploadCloud, 
   Volume2, Loader, Globe, Link as LinkIcon, ExternalLink, Cpu,
@@ -20,8 +20,9 @@ import { ensureSegmentsHaveTranslation, batchTranslateSentences, getCachedTransl
 import { getStorySceneArtwork } from './data/mangaArtworks.jsx';
 import { groupStoriesIntoSeries, findSeriesForStory } from './utils/seriesGrouper.js';
 import StoryLibraryModal from './components/StoryLibraryModal.jsx';
+import { JLPT_LEVEL_COLORS, getLevelBadgeStyle } from './theme';
 
-const LEVEL_COLORS = { N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
+const LEVEL_COLORS = JLPT_LEVEL_COLORS;
 
 // Tách tiêu đề truyện thành 2 tầng: Tên tiếng Nhật chính & Phụ đề tiếng Việt
 const parseStoryTitle = (rawTitle) => {
@@ -108,6 +109,18 @@ const ImmersionReader = () => {
   }, [isCatalogPinned]);
 
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
+  // Sync genre, mode, tab from URL search parameters (Sidebar Sub-Navigation)
+  useEffect(() => {
+    const genre = searchParams.get('genre');
+    const mode = searchParams.get('mode');
+    const tab = searchParams.get('tab');
+    if (genre) setGenreFilter(genre);
+    if (mode && ['prose', 'manga', 'theater'].includes(mode)) setReaderMode(mode);
+    if (tab && ['classics', 'corpus_stream', 'custom'].includes(tab)) setLeftTab(tab);
+  }, [searchParams]);
+
   const [readerFontSize, setReaderFontSize] = useState(1.25); // rem
   const [readerMode, setReaderMode] = useState(() => localStorage.getItem('omni_reader_mode') || 'prose'); // 'prose' | 'manga' | 'theater'
   const { showFurigana, toggleFurigana } = useFurigana();
@@ -2202,7 +2215,7 @@ const ImmersionReader = () => {
   );
 
   return (
-    <div style={{ display: 'flex', gap: 14, height: 'calc(100vh - 90px)', position: 'relative', overflow: 'hidden' }}>
+    <div className="page-shell-studio" style={{ display: 'flex', flexDirection: 'row', gap: 14, position: 'relative', overflow: 'hidden' }}>
       
       {/* MAIN CONTENT: Reader / Editor / Corpus Stream (Starts cleanly from left edge) */}
       <div className="glass-panel" style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', minWidth: 0 }}>

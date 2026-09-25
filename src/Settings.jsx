@@ -70,15 +70,21 @@ const Settings = () => {
   };
 
   return (
-    <div className="view-container">
-      <div className="view-header">
-        <div className="view-title">
-          <SettingsIcon className="view-icon" />
-          <h1>Cài đặt Hệ thống</h1>
+    <div className="page-shell-content" style={{ padding: '20px var(--space-6) 40px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
+        <div style={{
+          width: 36, height: 36, borderRadius: 10,
+          background: 'linear-gradient(135deg, #2563eb, #8b5cf6)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff'
+        }}>
+          <SettingsIcon size={20} />
         </div>
+        <h1 style={{ fontSize: '1.4rem', fontWeight: 800, margin: 0, color: 'var(--text-primary)' }}>
+          Cài đặt Hệ thống
+        </h1>
       </div>
 
-      <div style={{ padding: 24, maxWidth: 800 }}>
+      <div style={{ maxWidth: 960, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 24 }}>
         {/* Cấu hình AI API Keys */}
         <div style={{ background: 'var(--bg-secondary)', borderRadius: 12, padding: 24, border: '1px solid var(--glass-border)' }}>
           <h2 style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 0 }}>

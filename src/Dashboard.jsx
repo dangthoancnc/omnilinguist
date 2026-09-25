@@ -72,8 +72,10 @@ const QUICK_ACTIONS = [
   { icon: <Play size={17} />, label: 'Anki Sandbox', sub: 'Anki Deck Offline', route: '/sandbox', color: '#06b6d4' },
 ];
 
+import { JLPT_LEVEL_COLORS, getLevelBadgeStyle } from './theme';
+
 const JLPT_LEVELS = ['N5', 'N4', 'N3', 'N2', 'N1'];
-const LEVEL_COLORS = { N5: '#10b981', N4: '#3b82f6', N3: '#f59e0b', N2: '#8b5cf6', N1: '#ef4444' };
+const LEVEL_COLORS = JLPT_LEVEL_COLORS;
 
 const Dashboard = () => {
   const vocabData = useLiveQuery(() => db.vocab.toArray()) || [];
@@ -209,7 +211,7 @@ const Dashboard = () => {
   }, [vocabData]);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 18, paddingBottom: 40, maxWidth: 1380, margin: '0 auto' }}>
+    <div className="page-shell-content" style={{ display: 'flex', flexDirection: 'column', gap: 18, paddingBottom: 40 }}>
       
       {/* ═══════════════════════════════════════════════════════════════ */}
       {/* 1. EXECUTIVE HEADER STRIP: ACCOUNT STATUS & QUICK LAUNCH */}
@@ -242,12 +244,13 @@ const Dashboard = () => {
                 OmniLinguist Command Center
               </h2>
               {isGuest ? (
-                <span style={{ fontSize: '0.7rem', fontWeight: 700, background: 'rgba(16,185,129,0.15)', color: '#10b981', padding: '1px 8px', borderRadius: 6, border: '1px solid rgba(16,185,129,0.3)' }}>
-                  🟢 Guest Mode (Offline DB)
+                <span style={{ fontSize: '0.7rem', fontWeight: 700, background: 'rgba(16,185,129,0.15)', color: '#10b981', padding: '2px 8px', borderRadius: 6, border: '1px solid rgba(16,185,129,0.3)', display: 'inline-flex', alignItems: 'center' }}>
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#10b981', display: 'inline-block', marginRight: 5 }}/>
+                  Guest Mode (Offline DB)
                 </span>
               ) : (
-                <span style={{ fontSize: '0.7rem', fontWeight: 700, background: 'rgba(59,130,246,0.15)', color: '#3b82f6', padding: '1px 8px', borderRadius: 6, border: '1px solid rgba(59,130,246,0.3)' }}>
-                  ⚡ Cloud Synced ({user?.email || 'Active User'})
+                <span style={{ fontSize: '0.7rem', fontWeight: 700, background: 'rgba(59,130,246,0.15)', color: '#3b82f6', padding: '2px 8px', borderRadius: 6, border: '1px solid rgba(59,130,246,0.3)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                  <Zap size={11} /> Cloud Synced ({user?.email || 'Active User'})
                 </span>
               )}
             </div>
@@ -260,17 +263,17 @@ const Dashboard = () => {
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           {isGuest && (
             <button 
-              className="btn btn-primary btn-sm"
+              className="ods-btn ods-btn-primary"
               onClick={() => setShowAuthModal(true)}
-              style={{ fontSize: '0.78rem', padding: '6px 12px', display: 'flex', alignItems: 'center', gap: 6 }}
+              style={{ fontSize: '0.78rem', padding: '6px 12px', height: 32, display: 'flex', alignItems: 'center', gap: 6 }}
             >
               <UserPlus size={14} /> Đồng Bộ Cloud
             </button>
           )}
           <button 
-            className="btn btn-outline btn-sm"
+            className="ods-btn ods-btn-secondary"
             onClick={() => navigate('/roadmap')}
-            style={{ fontSize: '0.78rem', padding: '6px 12px', display: 'flex', alignItems: 'center', gap: 6 }}
+            style={{ fontSize: '0.78rem', padding: '6px 12px', height: 32, display: 'flex', alignItems: 'center', gap: 6 }}
           >
             <MapIcon size={14} /> Quản Lý Lộ Trình <ChevronRight size={14} />
           </button>

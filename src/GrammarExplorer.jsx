@@ -12,8 +12,10 @@ import FuriganaText from './components/FuriganaText';
 
 import localMasterDb from './data/jlpt_master_db.json';
 
+import { JLPT_LEVEL_COLORS } from './theme';
+
 const LEVELS = ['ALL', 'N5', 'N4', 'N3', 'N2', 'N1'];
-const LEVEL_COLORS = { N5: '#10b981', N4: '#3b82f6', N3: '#f59e0b', N2: '#8b5cf6', N1: '#ef4444' };
+const LEVEL_COLORS = JLPT_LEVEL_COLORS;
 
 const ROMAJI_TO_KANA = {
   kya:'きゃ', kyu:'きゅ', kyo:'きょ', sha:'しゃ', shu:'しゅ', sho:'しょ', cha:'ちゃ', chu:'ちゅ', cho:'ちょ',
@@ -358,7 +360,7 @@ const GrammarExplorer = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, height: '88vh' }}>
+    <div className="page-shell-studio" style={{ gap: 16, padding: '12px 20px', overflowY: 'auto' }}>
       
       {/* TOP BAR: NAVIGATION TABS & BUNPRO BADGE */}
       <div className="glass-panel" style={{ padding: '12px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>

@@ -1,10 +1,11 @@
-// v11.0.0 - Auto-collapsing & Hover-expanding Sidebar with Pinning Support
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+// v12.0.0 - Auto-collapsing & Hover-expanding Sidebar with Hierarchical Sub-navigation & Pinning
+import React, { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import { 
   LayoutDashboard, Map, Mic, Volume2, BookA, BookOpen, Search, PencilLine, 
   Settings, Film, ListChecks, Sun, Moon, X, ChevronLeft, LogOut, User, 
-  Database, Play, Newspaper, Pin, PinOff, Award
+  Database, Play, Newspaper, Pin, PinOff, Award, ChevronDown, ChevronRight,
+  Palette, Landmark, BookMarked, Zap, Swords
 } from 'lucide-react';
 import { useAuth } from './AuthContext';
 import { supabase } from './lib/supabaseClient';
@@ -14,7 +15,19 @@ const SECTIONS = [
     label: '学習ツール',
     items: [
       { jp:'ホーム', sub:'Dashboard', icon:<LayoutDashboard size={18}/>, path:'/', end:true },
-      { jp:'JLPT 特訓道場', sub:'Lò Luyện Shinkanzen', icon:<Award size={18}/>, path:'/jlpt-dojo' },
+      { 
+        jp:'JLPT 特訓道場', 
+        sub:'Lò Luyện Shinkanzen', 
+        icon:<Swords size={18}/>, 
+        path:'/jlpt-dojo',
+        children: [
+          { label: 'Minna N5-N4 (1-50)', param: 'tab=minna' },
+          { label: 'Lò Luyện N3', param: 'tab=n3' },
+          { label: 'Lò Luyện N2', param: 'tab=n2' },
+          { label: 'Lò Luyện N1', param: 'tab=n1' },
+          { label: 'Đề Thi 10 Năm', param: 'tab=exams' },
+        ]
+      },
       { jp:'学習ロードマップ', sub:'Lộ trình Học', icon:<Map size={18}/>, path:'/roadmap' },
     ]
   },
@@ -22,7 +35,19 @@ const SECTIONS = [
     label: 'インプット',
     items: [
       { jp:'ニュース Hub', sub:'Tin tức & Đời sống Nhật', icon:<Newspaper size={18}/>, path:'/news' },
-      { jp:'多読 (Immersion)', sub:'Tắm ngôn ngữ', icon:<BookOpen size={18}/>, path:'/reading' },
+      { 
+        jp:'多読 (Immersion)', 
+        sub:'Tắm ngôn ngữ', 
+        icon:<BookOpen size={18}/>, 
+        path:'/reading',
+        children: [
+          { label: 'Sách Tranh Ehon', param: 'genre=ehon', icon: <Palette size={13} /> },
+          { label: 'Cổ Tích Dân Gian', param: 'genre=folktale', icon: <Landmark size={13} /> },
+          { label: 'Văn Học Cổ Điển', param: 'genre=literature', icon: <BookMarked size={13} /> },
+          { label: 'Rạp Phim Ehon', param: 'mode=theater', icon: <Film size={13} /> },
+          { label: 'Dòng Chảy Tri Thức', param: 'tab=corpus_stream', icon: <Zap size={13} /> },
+        ]
+      },
       { jp:'シャドーイング', sub:'Shadowing', icon:<Volume2 size={18}/>, path:'/shadowing' },
     ]
   },
@@ -55,12 +80,42 @@ const SECTIONS = [
 
 const Sidebar = ({ isOpen, onClose, theme, onToggleTheme }) => {
   const { user } = useAuth();
+  const location = useLocation();
   
   // Tự động thu gọn, mở rộng khi hover (mặc định unpinned)
   const [isPinned, setIsPinned] = useState(() => {
     return localStorage.getItem('omni_sidebar_pinned') === 'true';
   });
   const [isHovered, setIsHovered] = useState(false);
+
+  // Phân cấp danh mục (Expand / Collapse)
+  const [expandedItems, setExpandedItems] = useState(() => {
+    try {
+      const saved = localStorage.getItem('omni_sidebar_expanded');
+      return saved ? JSON.parse(saved) : ['/jlpt-dojo', '/reading'];
+    } catch {
+      return ['/jlpt-dojo', '/reading'];
+    }
+  });
+
+  // Tự động mở rộng khi người dùng đang ở trang tương ứng
+  useEffect(() => {
+    if (location.pathname === '/jlpt-dojo' || location.pathname === '/reading') {
+      setExpandedItems(prev => prev.includes(location.pathname) ? prev : [...prev, location.pathname]);
+    }
+  }, [location.pathname]);
+
+  const toggleExpand = (path, e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    setExpandedItems(prev => {
+      const next = prev.includes(path) ? prev.filter(p => p !== path) : [...prev, path];
+      localStorage.setItem('omni_sidebar_expanded', JSON.stringify(next));
+      return next;
+    });
+  };
 
   const togglePin = () => {
     setIsPinned(p => {
@@ -117,22 +172,85 @@ const Sidebar = ({ isOpen, onClose, theme, onToggleTheme }) => {
             {SECTIONS.map((section, si) => (
               <div key={si} className="sidebar-section-block">
                 <div className="sidebar-section-label">{section.label}</div>
-                {section.items.map(item => (
-                  <NavLink
-                    key={item.path}
-                    to={item.path}
-                    end={item.end}
-                    title={`${item.jp} (${item.sub})`}
-                    className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
-                    onClick={() => { if (window.innerWidth < 1024) onClose(); }}
-                  >
-                    <div className="sidebar-link-icon">{item.icon}</div>
-                    <div className="sidebar-link-text">
-                      <div style={{ fontSize: '0.82rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} className="jp-text">{item.jp}</div>
-                      <div style={{ fontSize: '0.66rem', opacity: 0.6, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.sub}</div>
+                {section.items.map(item => {
+                  const hasChildren = item.children && item.children.length > 0;
+                  const isExpanded = expandedItems.includes(item.path);
+                  const isParentActive = location.pathname === item.path;
+
+                  return (
+                    <div key={item.path} className="sidebar-item-group">
+                      <NavLink
+                        to={item.path}
+                        end={item.end}
+                        title={`${item.jp} (${item.sub})`}
+                        className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+                        onClick={() => {
+                          if (hasChildren && !isExpanded) {
+                            setExpandedItems(prev => [...prev, item.path]);
+                          }
+                          if (window.innerWidth < 1024 && !hasChildren) onClose();
+                        }}
+                      >
+                        <div className="sidebar-link-icon">{item.icon}</div>
+                        <div className="sidebar-link-text" style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ fontSize: '0.82rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} className="jp-text">{item.jp}</div>
+                          <div style={{ fontSize: '0.66rem', opacity: 0.6, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.sub}</div>
+                        </div>
+                        {hasChildren && (
+                          <button
+                            type="button"
+                            className="sidebar-chevron-btn"
+                            onClick={(e) => toggleExpand(item.path, e)}
+                            title={isExpanded ? "Thu gọn mục con" : "Mở rộng mục con"}
+                            style={{
+                              background: 'transparent',
+                              border: 'none',
+                              color: 'inherit',
+                              cursor: 'pointer',
+                              padding: '2px 4px',
+                              display: 'flex',
+                              alignItems: 'center',
+                              borderRadius: 4
+                            }}
+                          >
+                            {isExpanded ? <ChevronDown size={14}/> : <ChevronRight size={14}/>}
+                          </button>
+                        )}
+                      </NavLink>
+
+                      {/* Hierarchical Sub-Navigation */}
+                      {hasChildren && isExpanded && (
+                        <div className="sidebar-subnav">
+                          {item.children.map(child => {
+                            const childUrl = `${item.path}?${child.param}`;
+                            const isChildActive = isParentActive && location.search.includes(child.param);
+                            return (
+                              <NavLink
+                                key={child.param}
+                                to={childUrl}
+                                className={`sidebar-sublink ${isChildActive ? 'active' : ''}`}
+                                onClick={() => { if (window.innerWidth < 1024) onClose(); }}
+                              >
+                                {child.icon ? (
+                                  <span style={{ display: 'inline-flex', opacity: 0.85, flexShrink: 0 }}>{child.icon}</span>
+                                ) : (
+                                  <span style={{
+                                    width: 5, height: 5, borderRadius: '50%',
+                                    background: isChildActive ? 'var(--accent-primary)' : 'var(--text-tertiary)',
+                                    flexShrink: 0
+                                  }}/>
+                                )}
+                                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                  {child.label}
+                                </span>
+                              </NavLink>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
-                  </NavLink>
-                ))}
+                  );
+                })}
               </div>
             ))}
           </nav>

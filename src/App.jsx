@@ -65,6 +65,25 @@ class ChunkErrorBoundary extends React.Component {
   }
 }
 
+const PageSkeleton = () => (
+  <div style={{
+    padding: '24px 20px', display: 'flex', flexDirection: 'column', gap: 16,
+    maxWidth: 1380, margin: '0 auto', width: '100%',
+    animation: 'shimmer 1.5s infinite ease-in-out'
+  }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <div style={{ width: 36, height: 36, borderRadius: 10, background: 'var(--bg-surface-2)' }} />
+      <div style={{ height: 24, background: 'var(--bg-surface-2)', borderRadius: 6, width: 220 }} />
+    </div>
+    <div style={{ height: 160, background: 'var(--bg-surface-2)', borderRadius: 12, border: '1px solid var(--glass-border)' }} />
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
+      {[1, 2, 3].map(i => (
+        <div key={i} style={{ height: 120, background: 'var(--bg-surface-2)', borderRadius: 12, border: '1px solid var(--glass-border)' }} />
+      ))}
+    </div>
+  </div>
+);
+
 function App() {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 1024);
@@ -178,12 +197,7 @@ function App() {
                 <h3 style={{ color: 'var(--text-secondary)' }}>Đang tải Master Data từ Cloud...</h3>
               </div>
             ) : (
-              <Suspense fallback={
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', gap: 12 }}>
-                  <Loader className="spin" size={32} color="var(--accent-primary)" />
-                  <span style={{ color: 'var(--text-tertiary)', fontSize: '0.85rem' }}>Đang tải giao diện...</span>
-                </div>
-              }>
+              <Suspense fallback={<PageSkeleton />}>
               <ChunkErrorBoundary>
                 {/* P0-1 FIX: Hybrid routing — ShadowingStudio giữ display:none để bảo toàn state phát media,
                    các page khác dùng Routes để unmount khi không hiển thị → giảm memory ~80% */}

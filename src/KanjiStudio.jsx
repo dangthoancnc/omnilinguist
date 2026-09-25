@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { Edit3, RefreshCw, Eye, EyeOff, CheckCircle2, XCircle, ChevronLeft, ChevronRight, Image, X, ThumbsUp, ThumbsDown, Minus, Filter } from 'lucide-react';
+import { Edit3, RefreshCw, Eye, EyeOff, CheckCircle2, XCircle, ChevronLeft, ChevronRight, Image, X, ThumbsUp, ThumbsDown, Minus, Filter, Landmark } from 'lucide-react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db.js';
 import { reviewRoadmapCard, reviewFreeStudyCard, getCard, getDueCards, getStats, getUserProfile } from './studyStore.js';
@@ -287,8 +287,10 @@ const SessionReview = ({ sessionLog, onClose, onGrade }) => {
   );
 };
 
+import { JLPT_LEVEL_COLORS } from './theme';
+
 const LEVELS = ['Bộ Thủ', 'N5', 'N4', 'N3', 'N2', 'N1'];
-const LEVEL_COLORS = { 'Bộ Thủ': '#ec4899', N5:'#10b981', N4:'#3b82f6', N3:'#f59e0b', N2:'#8b5cf6', N1:'#ef4444' };
+const LEVEL_COLORS = { 'Bộ Thủ': '#ec4899', ...JLPT_LEVEL_COLORS };
 
 const KanjiStudio = () => {
   const kanjiData = useLiveQuery(() => db.kanji.toArray()) || [];
@@ -428,7 +430,7 @@ const KanjiStudio = () => {
 
   if (!currentKanji && kanjiList.length === 0) {
     return (
-      <div style={{ padding: '20px 40px', maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
+      <div className="page-shell-content" style={{ padding: '20px clamp(16px, 3vw, 40px)', textAlign: 'center' }}>
         {/* Top Level Bar */}
         <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginBottom: 24 }}>
           {LEVELS.map(lvl => (
@@ -440,10 +442,14 @@ const KanjiStudio = () => {
                 if (p && p.currentLevel === lvl) setLearningMode('roadmap');
                 else setLearningMode('freestudy');
               }}
-              className={`btn ${level === lvl ? 'btn-primary' : 'btn-outline'}`}
-              style={{ padding: '8px 18px', fontSize: '0.9rem', fontWeight: 700 }}
+              className={`ods-btn ${level === lvl ? 'ods-btn-primary' : 'ods-btn-secondary'}`}
+              style={{ padding: '8px 18px', fontSize: '0.88rem', fontWeight: 700 }}
             >
-              {lvl === 'Bộ Thủ' ? '⛩️ Bộ Thủ' : lvl} ({kanjiByLevel[lvl] || 0})
+              {lvl === 'Bộ Thủ' ? (
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}>
+                  <Landmark size={14} /> Bộ Thủ
+                </span>
+              ) : lvl} ({kanjiByLevel[lvl] || 0})
             </button>
           ))}
         </div>
@@ -474,7 +480,7 @@ const KanjiStudio = () => {
   }
 
   return (
-    <div style={{ padding: '20px 40px', maxWidth: 1600, margin: '0 auto', height: '100%', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
+    <div className="page-shell-studio" style={{ padding: '20px clamp(16px, 3vw, 40px)', overflowY: 'auto' }}>
       
       {/* Top Stats Bar */}
       <div style={{ display:'flex', gap:12, padding:'10px 14px', background:'rgba(0,0,0,0.2)', borderRadius:8, marginBottom:16, fontSize:'0.85rem', flexWrap: 'wrap' }}>
