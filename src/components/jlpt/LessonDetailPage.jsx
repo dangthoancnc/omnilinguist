@@ -248,7 +248,7 @@ export default function LessonDetailPage({
         {/* Right Main Pane: Full Grammar Points (Top-priority visual focus) */}
         <main className="jlpt-lesson-main">
           {/* Full Grammar Points List */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {grammarPoints.map((point, idx) => (
               <GrammarPointView
                 key={point.id || idx}
