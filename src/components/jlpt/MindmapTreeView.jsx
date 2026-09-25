@@ -161,102 +161,102 @@ export default function MindmapTreeView({
   const renderTrunk = (trunk, direction) => (
     <div
       key={trunk.id}
-      className={`jlpt-organic-trunk jlpt-organic-trunk--${direction}`}
+      className={`jlpt-mindmap-branch-group jlpt-mindmap-branch-group--${direction}`}
       style={{
-        '--trunk-color': trunk.palette.border,
-        background: trunk.palette.bg,
+        '--branch-color': trunk.palette.border,
       }}
     >
-      <div className="jlpt-organic-trunk-header">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span className="jlpt-organic-trunk-badge">
-            TRỤC {trunk.roman}
-          </span>
-          <span style={{ fontSize: '13px', fontWeight: 800, color: trunk.palette.border }}>
-            {trunk.title}
-          </span>
+      {/* 1. Branch Root Node (Trunk Label) */}
+      <div className="jlpt-mindmap-branch-root" style={{ background: trunk.palette.bg }}>
+        <div className="jlpt-mindmap-branch-root-badge">
+          TRỤC {trunk.roman}
         </div>
-        <span style={{ fontSize: '11px', color: 'var(--text-tertiary)', fontWeight: 600 }}>
+        <div className="jlpt-mindmap-branch-root-title">
+          {trunk.title}
+        </div>
+        <div className="jlpt-mindmap-branch-root-meta" style={{ marginTop: '4px', fontSize: '10px', color: 'var(--text-tertiary)', fontWeight: 600 }}>
           {trunk.rangeLabel} • {trunk.grammarCount} mẫu
-        </span>
+        </div>
       </div>
 
-      <div className="jlpt-organic-lessons-list">
+      {/* 2. Lessons Leaves Container */}
+      <div className="jlpt-mindmap-leaves-container">
         {trunk.lessons.map((les) => {
           const isCurrentLesson = les.lessonNumber === lesson?.lessonNumber;
           return (
-            <div
-              key={les.lessonNumber}
-              id={`mindmap-lesson-${les.lessonNumber}`}
-              className={`jlpt-organic-lesson-card ${isCurrentLesson ? 'jlpt-organic-lesson-card--active' : ''}`}
-              style={{ '--trunk-color': trunk.palette.border }}
-              onClick={() => {
-                setSelectedModalLesson(les);
-                setModalView('lesson');
-              }}
-              title="Bấm để xem sơ đồ tư duy chi tiết bài này"
-            >
-              <div className="jlpt-organic-lesson-header">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span className="jlpt-organic-lesson-num">
-                    第{les.lessonNumber}課
-                  </span>
-                  {isCurrentLesson && (
-                    <span className="jlpt-tree-level-active-badge">
-                      Đang học
+            <div key={les.lessonNumber} className="jlpt-mindmap-leaf-wrapper">
+              <div
+                id={`mindmap-lesson-${les.lessonNumber}`}
+                className={`jlpt-organic-lesson-card ${isCurrentLesson ? 'jlpt-organic-lesson-card--active' : ''}`}
+                style={{ '--trunk-color': trunk.palette.border, minWidth: '260px' }}
+                onClick={() => {
+                  setSelectedModalLesson(les);
+                  setModalView('lesson');
+                }}
+                title="Bấm để xem sơ đồ tư duy chi tiết bài này"
+              >
+                <div className="jlpt-organic-lesson-header">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span className="jlpt-organic-lesson-num">
+                      第{les.lessonNumber}課
                     </span>
-                  )}
-                </div>
+                    {isCurrentLesson && (
+                      <span className="jlpt-tree-level-active-badge">
+                        Đang học
+                      </span>
+                    )}
+                  </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ fontSize: '10px', color: 'var(--text-tertiary)' }}>
-                    {les.grammarPoints?.length || 0} mẫu
-                  </span>
-                  {onNavigateLesson && (
-                    <button
-                      type="button"
-                      className="jlpt-pedagogy-link-btn"
-                      style={{ fontSize: '10px', padding: '1px 6px' }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onNavigateLesson(les.lessonNumber);
-                        closeModal();
-                      }}
-                      title="Chuyển ngay tới bài này để học"
-                    >
-                      Học bài này ↗
-                    </button>
-                  )}
-                </div>
-              </div>
-
-              <div className="jlpt-organic-lesson-title-jp">
-                <FuriganaText text={les.jpTitle} />
-              </div>
-
-              <div className="jlpt-organic-lesson-title-vi">
-                {les.viTitle}
-              </div>
-
-              {/* Grammar Leaf Pills (Mầm lá mẫu câu) */}
-              {les.grammarPoints && les.grammarPoints.length > 0 && (
-                <div className="jlpt-organic-leaves-row">
-                  {les.grammarPoints.map((gp, pIdx) => (
-                    <span
-                      key={pIdx}
-                      className="jlpt-organic-leaf-chip"
-                      title={`${gp.pattern}${gp.meaning ? `: ${gp.meaning}` : ''}`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedModalLesson(les);
-                        setModalView('lesson');
-                      }}
-                    >
-                      {gp.pattern}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span style={{ fontSize: '10px', color: 'var(--text-tertiary)' }}>
+                      {les.grammarPoints?.length || 0} mẫu
                     </span>
-                  ))}
+                    {onNavigateLesson && (
+                      <button
+                        type="button"
+                        className="jlpt-pedagogy-link-btn"
+                        style={{ fontSize: '10px', padding: '1px 6px' }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onNavigateLesson(les.lessonNumber);
+                          closeModal();
+                        }}
+                        title="Chuyển ngay tới bài này để học"
+                      >
+                        Học bài này ↗
+                      </button>
+                    )}
+                  </div>
                 </div>
-              )}
+
+                <div className="jlpt-organic-lesson-title-jp">
+                  <FuriganaText text={les.jpTitle} />
+                </div>
+
+                <div className="jlpt-organic-lesson-title-vi">
+                  {les.viTitle}
+                </div>
+
+                {/* Grammar Leaf Pills (Mầm lá mẫu câu) */}
+                {les.grammarPoints && les.grammarPoints.length > 0 && (
+                  <div className="jlpt-organic-leaves-row">
+                    {les.grammarPoints.map((gp, pIdx) => (
+                      <span
+                        key={pIdx}
+                        className="jlpt-organic-leaf-chip"
+                        title={`${gp.pattern}${gp.meaning ? `: ${gp.meaning}` : ''}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedModalLesson(les);
+                          setModalView('lesson');
+                        }}
+                      >
+                        {gp.pattern}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           );
         })}

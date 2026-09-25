@@ -99,12 +99,17 @@ export default function GrammarPointView({
               TẦNG 1: TỔ HỢP NGỮ PHÁP TRỌNG TÂM (CORE GRAMMAR HERO BUNDLE)
               Tâm điểm thị giác cao nhất: Công thức + Ý nghĩa + Ví dụ mẫu mực
               ========================================================================= */}
-          <div className="jlpt-grammar-hero-bundle">
+          <div className="jlpt-grammar-hero-bundle" style={{ position: 'relative' }}>
+            <div className="jlpt-grammar-hero-badge">
+              <Sparkles size={12} />
+              TRỌNG TÂM CỐT LÕI
+            </div>
+            
             {/* 1.1 Formula Bar */}
             {point.formula && (
               <div className="jlpt-hero-formula-wrap">
-                <div className="jlpt-hero-label">
-                  <Layers size={13} style={{ color: 'var(--accent-primary, #3b82f6)' }} />
+                <div className="jlpt-hero-label-badge jlpt-hero-label-badge--formula">
+                  <Layers size={13} />
                   <span>Công thức kết hợp</span>
                 </div>
                 <div className="jlpt-hero-formula-box">
@@ -116,8 +121,8 @@ export default function GrammarPointView({
             {/* 1.2 Meaning & Nuance */}
             {(point.meaning || point.nuance) && (
               <div className="jlpt-hero-meaning-wrap">
-                <div className="jlpt-hero-label">
-                  <Lightbulb size={13} style={{ color: 'var(--tint-matcha-text, #047857)' }} />
+                <div className="jlpt-hero-label-badge jlpt-hero-label-badge--meaning">
+                  <Lightbulb size={13} />
                   <span>Ý nghĩa & Sắc thái</span>
                 </div>
                 {point.meaning && (
@@ -137,11 +142,9 @@ export default function GrammarPointView({
             {anchorExample && (
               <div className="jlpt-hero-anchor-example">
                 <div className="jlpt-hero-anchor-header">
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <Star size={13} style={{ color: 'var(--tint-amber-text, #b45309)' }} />
-                    <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--tint-amber-text, #b45309)' }}>
-                      Ví dụ mẫu mực cốt lõi
-                    </span>
+                  <div className="jlpt-hero-label-badge jlpt-hero-label-badge--example">
+                    <Star size={13} />
+                    <span>Ví dụ mẫu mực cốt lõi</span>
                   </div>
                   <button
                     type="button"
