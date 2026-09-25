@@ -171,16 +171,24 @@ export default function JlptMasterDojo() {
                     padding: '6px 12px',
                     fontSize: '12px',
                     fontWeight: isActive ? 700 : 500,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    whiteSpace: 'nowrap',
+                    flexShrink: 0,
                   }}
                 >
                   <span>{t.label}</span>
                   <span style={{ 
                     fontSize: '10px', 
-                    opacity: 0.75, 
-                    padding: '1px 4px', 
+                    opacity: 0.85, 
+                    padding: '1px 6px', 
                     borderRadius: '4px',
                     background: isActive ? 'var(--accent-primary)' : 'var(--bg-surface-3)',
-                    color: isActive ? '#fff' : 'inherit'
+                    color: isActive ? '#fff' : 'inherit',
+                    whiteSpace: 'nowrap',
+                    lineHeight: '16px',
+                    flexShrink: 0,
                   }}>
                     {t.badge}
                   </span>

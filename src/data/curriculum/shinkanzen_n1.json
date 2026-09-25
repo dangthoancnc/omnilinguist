@@ -1,50 +1,1169 @@
 {
   "level": "N1",
   "title": "新完全マスター N1 (Shin Kanzen Master N1 Master Edition)",
-  "description": "Cấp độ thượng thừa tiếng Nhật: Thấu triệt 180 cấu trúc ngữ pháp cổ điển, xã luận, thành thạo văn phong học thuật và bài nghe đàm phán cấp cao.",
+  "description": "Cấp độ thượng thừa tiếng Nhật: 15 chương ngữ pháp chính luận & cổ điển, làm chủ các cấu trúc xã luận, 5 bài đọc hiểu triết học trừu tượng và 5 bài nghe hiểu đàm phán cao cấp.",
   "stats": {
-    "grammarChapters": 8,
-    "grammarPoints": 180,
-    "kanjiChapters": 25,
-    "kanjiCount": 2136,
-    "vocabChapters": 20,
-    "vocabCount": 10000,
+    "grammarChapters": 15,
+    "grammarPoints": 150,
     "readingUnits": 5,
-    "listeningUnits": 5
+    "listeningUnits": 5,
+    "stageReviews": 3
   },
   "skills": {
     "grammar": [
       {
         "chapterNumber": 1,
-        "chapterTitle": "第1章：極限・強調・立場 (Cực hạn, Nhấn mạnh & Cương vị)",
-        "summary": "Phân biệt ~たるもの, ~ともあろうものが, ~をおいて~ない, ~ならでは.",
+        "chapterTitle": "第1章：時間・緊急性・即時性 (Tức thì, Chớp nhoáng & Liên hoàn)",
+        "summary": "Các cấu trúc thời gian thần tốc văn phong chính luận N1: ~そばから, ~が早いか, ~や / ~や否や, ~なり, ~が最後.",
         "points": [
           {
-            "id": "n1_g_01_tarumono",
-            "pattern": "～たるもの",
-            "formula": "Danh từ (chỉ thân phận, địa vị, nghề nghiệp) + たるもの",
-            "meaning": "Đã ở trên cương vị là... thì phải có phẩm chất / hành vi tương xứng",
-            "nuance": "Dùng cho các chức danh trang trọng (bác sĩ, chính trị gia, nhà giáo, người lãnh đạo). Vế sau đi với nghĩa vụ, tư cách chuẩn mực đạo đức.",
-            "trapBuster": "Bẫy đề thi: Phân biệt với ～ともあろうものが: たるもの nói về bổn phận nên làm; trong khi ともあろうものが thể hiện sự thất vọng khi người ở vị thế cao lại làm việc sai trái bất xứng!",
+            "id": "n1_g_01_soba_kara",
+            "pattern": "～そばから",
+            "formula": "V-る / V-た + そばから",
+            "meaning": "Vừa mới làm A xong... thì cái xấu B lại tái diễn ngay tức khắc",
+            "nuance": "Diễn tả hành động diễn ra lặp đi lặp lại nhiều lần mang lại cảm giác ngán ngẩm, bất lực (ví dụ: vừa dọn xong thì con lại bày bừa, vừa học xong từ mới lại quên sạch).",
+            "trapBuster": "BẪY TIÊU CỰC: Sau 〜そばから HẦU NHƯ LUÔN LÀ KẾT QUẢ TIÊU CỰC, gây bực bội, bất lực. Không dùng cho việc vui vẻ.",
+            "mnemonic": "Mẹo nhớ: 'Soba kara' = Vừa mới bên cạnh đó là đã trôi mất tiêu!",
+            "similarGrammar": [
+              {
+                "pattern": "〜たしりから",
+                "contrast": "Ý nghĩa tương đương trong văn nói."
+              }
+            ],
+            "collocations": [
+              "片づけるそばから散らかす",
+              "覚えるそばから忘れる",
+              "直すそばから間違える"
+            ],
             "examples": [
               {
-                "jp": "一国の指導者たるものは、常に国民の幸福を第一に考えるべきだ。",
-                "vi": "Đã là người lãnh đạo của một quốc gia thì phải luôn coi hạnh phúc của nhân dân là ưu tiên số một."
+                "jp": "掃除する そばから、子供が 部屋を 散らかしてしまう。",
+                "vi": "Vừa mới dọn dẹp xong thì đứa con lại bày bừa đồ chơi ra khắp phòng (bất lực)."
+              },
+              {
+                "jp": "新しい 単語を 覚える そばから、次々と 忘れていく。",
+                "vi": "Vừa mới học xong từ vựng mới thì lại quên sạch từng từ một."
               }
             ],
             "quiz": [
               {
-                "q": "医者（　）もの、患者の 命を 最優先に 救うべきだ。",
+                "q": "母が 洗濯物を 干す（　）、雨が 降り出した。",
                 "options": [
-                  "たる",
-                  "ともあろう",
-                  "とした",
-                  "ならではの"
+                  "そばから",
+                  "なり",
+                  "が早いか",
+                  "や否や"
                 ],
                 "correct": 0,
-                "explain": "Đã ở cương vị bác sĩ thì phải ưu tiên cứu mạng bệnh nhân -> Chọn たるもの."
+                "explain": "Vừa mới phơi đồ ra thì trời lại đổ mưa (bất lực phiền toái) -> Chọn そばから."
               }
             ]
+          },
+          {
+            "id": "n1_g_02_ga_hayaika",
+            "pattern": "～が早いか (がはやいか)",
+            "formula": "V-る / V-た + が早いか",
+            "meaning": "Vừa mới... là lập tức hành động kế tiếp xảy ra trong chớp mắt",
+            "nuance": "Nhấn mạnh tốc độ chớp nhoáng: Hành động vế sau diễn ra gần như đồng thời với vế trước mà không có bất kỳ khoảng trễ nào.",
+            "trapBuster": "Vế sau là hành động tức thời, không dùng câu phỏng đoán hay mệnh lệnh.",
+            "mnemonic": "Mẹo nhớ: 'Hayai' = Nhanh như một tia chớp!",
+            "similarGrammar": [
+              {
+                "pattern": "〜や否や",
+                "contrast": "Mang tính miêu tả sự việc khách quan."
+              }
+            ],
+            "collocations": [
+              "ベルが鳴るが早いか",
+              "ドアが開くが早いか",
+              "合図を見るが早いか"
+            ],
+            "examples": [
+              {
+                "jp": "終業の ベルが 鳴るが 早いか、彼は かばんを 持って 席を 立った。",
+                "vi": "Chuông hết giờ vừa mới reng là anh ta đã chộp lấy cặp đứng phắt dậy rời bàn trong chớp mắt."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "彼は ドアが 開く（　）早いか、部屋へ 飛び込んできた。",
+                "options": [
+                  "が",
+                  "と",
+                  "を",
+                  "に"
+                ],
+                "correct": 0,
+                "explain": "Cấu trúc kinh điển N1: V-る が早いか."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 2,
+        "chapterTitle": "第2章：限界・極限・極度 (Cực độ, Tuyệt đỉnh & Tột cùng)",
+        "summary": "Biểu đạt mức độ cao nhất trong văn học và xã luận: ~極まる・極まりない, ~に至る・に至るまで, ~の至り.",
+        "points": [
+          {
+            "id": "n1_g_03_kiwamaru",
+            "pattern": "～極まる / ～極まりない (きわまる / きわまりない)",
+            "formula": "Aな (bỏ な) + 極まる\nAな + こと + 極まりない",
+            "meaning": "Vô cùng... / Cực kỳ... đến mức tột cùng!",
+            "nuance": "Văn phong trang trọng đỉnh cao dùng để miêu tả trạng thái tiêu cực hoặc bất bình đạt đến mức giới hạn chịu đựng (vô lễ tột cùng, nguy hiểm tột độ, bất công cùng cực).",
+            "trapBuster": "BẪY KẾT HỢP: Nếu dùng 極まる thì đi trực tiếp với gốc tính từ đuôi な (失礼極まる). Nếu dùng 極まりない thì phải thêm こと: '失礼なこと 極まりない'.",
+            "mnemonic": "Mẹo nhớ: 極 (cực) = Đạt đến đỉnh điểm cùng cực!",
+            "similarGrammar": [
+              {
+                "pattern": "〜の至り (のいたり)",
+                "contrast": "Dùng cho cảm xúc tích cực vinh dự (光栄の至り - Vô cùng vinh hạnh)."
+              }
+            ],
+            "collocations": [
+              "失礼極まる態度",
+              "危険極まりない行為",
+              "不快極まる"
+            ],
+            "examples": [
+              {
+                "jp": "挨拶も せずに 立ち去るとは、失礼 極まる 態度だ。",
+                "vi": "Bỏ đi mà không thèm chào hỏi một câu, quả là thái độ vô lễ tột cùng."
+              },
+              {
+                "jp": "命綱も つけずに 高所で 作業するとは、危険 極まりない。",
+                "vi": "Làm việc trên cao mà không thắt dây an toàn, quả là hành vi nguy hiểm tột độ."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "そのような 無責任な 発言は、不誠実（　）極まる。",
+                "options": [
+                  "（không điền gì）",
+                  "な",
+                  "の",
+                  "に"
+                ],
+                "correct": 0,
+                "explain": "Tính từ đuôi な đi trực tiếp với 極まる: 不誠実極まる."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 3,
+        "chapterTitle": "第3章：否定・全面否定 (Tuyệt đối không thể & Đâu phải)",
+        "summary": "Các cấu trúc phủ định tuyệt đối N1: ~てやまない, ~にたえない, ~まじき, ~べくもない, ~なくしては.",
+        "points": [
+          {
+            "id": "n1_g_04_bekumo_nai",
+            "pattern": "～べくもない",
+            "formula": "V-る (Thể từ điển) + べくもない (Động từ する -> すべくもない)",
+            "meaning": "Làm sao mà có thể... được cơ chứ! (Hoàn toàn không thể tưởng tượng hay so sánh nổi)",
+            "nuance": "Văn phong cổ xưa trang nghiêm: Khẳng định một điều là bất khả thi, vượt quá mọi khả năng của con người.",
+            "trapBuster": "Thường đi kèm với các động từ nhận thức như: 疑う (nghi ngờ), 知る (biết), 想像する (tưởng tượng), 望む (mong ước).",
+            "mnemonic": "Mẹo nhớ: 'Beku mo nai' = Không có bất cứ tia hy vọng nào để làm được!",
+            "similarGrammar": [
+              {
+                "pattern": "〜わけがない",
+                "contrast": "N3 đời thường. べくもない mang đậm âm hưởng văn chương học thuật cổ."
+              }
+            ],
+            "collocations": [
+              "疑うべくもない事実",
+              "想像すべくもない苦難",
+              "知るべくもない"
+            ],
+            "examples": [
+              {
+                "jp": "彼が 今回の 事件の 首謀者であることは、疑うべくもない。",
+                "vi": "Việc anh ta chính là kẻ chủ mưu vụ án lần này là sự thật hiển nhiên không còn gì phải bàn cãi."
+              },
+              {
+                "jp": "当時の 人々の 苦労は、現代の 私たちには 想像すべくもない。",
+                "vi": "Những gian khổ của con người thời bấy giờ, chúng ta ngày nay làm sao có thể tưởng tượng hết được."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "優勝できるとは、当時は 望む（　）もなかった。",
+                "options": [
+                  "べく",
+                  "はず",
+                  "わけ",
+                  "ところ"
+                ],
+                "correct": 0,
+                "explain": "Mẫu phủ định cổ điển: V-る べくもない."
+              }
+            ]
+          },
+          {
+            "id": "n1_g_05_majiki",
+            "pattern": "～まじき",
+            "formula": "V-る + まじき + N (Động từ する -> すまじき / するまじき)",
+            "meaning": "Không thể chấp nhận được ở cương vị... (Hành vi không được phép có)",
+            "nuance": "Chỉ trích gay gắt một hành vi vi phạm đạo đức nghiêm trọng từ người đang giữ một chức trách, cương vị cao quý (bác sĩ, giáo viên, thẩm phán).",
+            "trapBuster": "Luôn đi kèm cấu trúc: [Thân phận/Chức vụ] として あるまじき [Hành vi xấu] (Ví dụ: 医者として あるまじき 行為).",
+            "mnemonic": "Mẹo nhớ: Không xứng đáng với vị thế đang mang!",
+            "similarGrammar": [
+              {
+                "pattern": "〜たるもの",
+                "contrast": "Đã ở cương vị đó thì phải cư xử chuẩn mực."
+              }
+            ],
+            "collocations": [
+              "許すまじき暴挙",
+              "医者としてあるまじき行為",
+              "教師にあるまじき暴言"
+            ],
+            "examples": [
+              {
+                "jp": "患者の 秘密を 外部に 漏らすとは、医師として あるまじき 行為だ。",
+                "vi": "Làm lộ bí mật của bệnh nhân ra ngoài là hành vi tuyệt đối không thể tha thứ đối với một bác sĩ."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "プロの 選手として、ある（　）無気力な プレーだった。",
+                "options": [
+                  "まじき",
+                  "べき",
+                  "はずの",
+                  "ことの"
+                ],
+                "correct": 0,
+                "explain": "Hành vi không thể tha thứ ở cương vị chuyên nghiệp: あるまじき."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 4,
+        "chapterTitle": "第4章：理由・根拠・契機 (Căn nguyên sâu xa, Duyên cớ & Liên đới)",
+        "summary": "Phân tích nguyên nhân tầng sâu trong xã luận N1: ~ゆえに, ~とあって, ~手前, ~と相まって, ~にかこつけて.",
+        "points": [
+          {
+            "id": "n1_g_06_yueni",
+            "pattern": "～ゆえ (に) / ～ゆえの",
+            "formula": "Thể thông thường (Aな + がゆえ / であるがゆえ / N + がゆえ / であるがゆえ) + ゆえ(に)",
+            "meaning": "Chính vì nguyên nhân... nên dẫn tới hệ quả...",
+            "nuance": "Văn phong trang trọng cổ kính: Chỉ nguyên nhân sâu xa hoặc bản chất cố hữu của sự vật, số phận.",
+            "trapBuster": "Bổ nghĩa cho danh từ: '〜ゆえの N' (Ví dụ: 若さゆえの 過ち - Lỗi lầm do tuổi trẻ bồng bột gây ra).",
+            "mnemonic": "Mẹo nhớ: 'Yue' (duyên) = Do căn duyên cội rễ!",
+            "similarGrammar": [
+              {
+                "pattern": "〜から",
+                "contrast": "Đời thường. ゆえに trang trọng triết lý."
+              }
+            ],
+            "collocations": [
+              "若さゆえの過ち",
+              "貧しさゆえに",
+              "有名人であるがゆえの悩み"
+            ],
+            "examples": [
+              {
+                "jp": "若さ ゆえの 失敗は、今後の 人生の 貴重な 糧と なる。",
+                "vi": "Những thất bại do sự bồng bột của tuổi trẻ sẽ là hành trang vô giá cho cuộc đời sau này."
+              },
+              {
+                "jp": "貧しさの ゆえに、学校に 通えない 子供たちが まだ 大勢いる。",
+                "vi": "Chính vì sự nghèo khó mà vẫn còn biết bao đứa trẻ không được cắp sách tới trường."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "女性（　）ゆえに、差別されるようなことが あっては ならない。",
+                "options": [
+                  "が",
+                  "を",
+                  "に",
+                  "で"
+                ],
+                "correct": 0,
+                "explain": "Đi liền với danh từ: N がゆえに."
+              }
+            ]
+          },
+          {
+            "id": "n1_g_07_to_aimatte",
+            "pattern": "～と相まって (とあいまって)",
+            "formula": "N + と相まって",
+            "meaning": "Cùng kết hợp với... tạo nên hiệu ứng nhân đôi vượt trội",
+            "nuance": "Hai yếu tố thuận lợi (hoặc cùng tiêu cực) cộng hưởng vào nhau tạo ra một kết quả mạnh mẽ hơn nhiều lần.",
+            "trapBuster": "Thường đi kèm với cấu trúc: 'A は B と相まって、C' (Yếu tố A kết hợp cộng hưởng cùng yếu tố B).",
+            "mnemonic": "Mẹo nhớ: 相 (tương) = Hai bên hòa vào làm một, tạo sức mạnh kép!",
+            "similarGrammar": [
+              {
+                "pattern": "〜も加わって",
+                "contrast": "Thêm vào đó."
+              }
+            ],
+            "collocations": [
+              "努力と才能が相まって",
+              "不況と円高が相まって",
+              "美しさと知性が相まって"
+            ],
+            "examples": [
+              {
+                "jp": "天気の 良さと 日曜日の 休日が 相まって、行楽地は 多くの 人で 賑わった。",
+                "vi": "Thời tiết đẹp cộng hưởng cùng ngày nghỉ chủ nhật đã khiến khu du lịch đông nghẹt người."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "彼の 天性の 才能は、たゆまぬ 努力（　）相まって、素晴らしい 成果を 生んだ。",
+                "options": [
+                  "と",
+                  "に",
+                  "を",
+                  "へ"
+                ],
+                "correct": 0,
+                "explain": "Cụm cố định N1: N と相まって."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 5,
+        "chapterTitle": "第5章：逆接・譲歩・対比 (Dù thế nào chăng nữa & Giá như)",
+        "summary": "Biểu đạt tâm trạng tiếc nuối và tương phản đỉnh cao: ~ものを, ~とはいえ, ~と思いきや, ~ならいざ知らず.",
+        "points": [
+          {
+            "id": "n1_g_08_monowo",
+            "pattern": "～ものを",
+            "formula": "Thể thông thường (Aな + な) + ものを",
+            "meaning": "Giá mà... thì đã tốt biết bao! (Vậy mà thực tế lại đáng tiếc)",
+            "nuance": "Bày tỏ sự tiếc nuối, bất mãn hoặc trách móc sâu sắc vì sự việc đã không diễn ra như mong đợi.",
+            "trapBuster": "Đứng ở cuối câu: 'ひとこと 相談してくれれば よかったものを…' (Giá mà chịu bàn bạc một câu thì đâu đến nỗi này...).",
+            "mnemonic": "Mẹo nhớ: 'Mono wo' = Than ôi, tiếc thay!",
+            "similarGrammar": [
+              {
+                "pattern": "〜のに",
+                "contrast": "ものを mang âm điệu văn học trữ tình sâu lắng và tiếc nuối nhiều hơn."
+              }
+            ],
+            "collocations": [
+              "連絡してくれればよかったものを",
+              "早く病院に行けば助かったものを"
+            ],
+            "examples": [
+              {
+                "jp": "事前に 一言 知らせてくれれば、手伝いに 行ったものを。",
+                "vi": "Giá mà báo trước một tiếng thì tôi đã đến giúp rồi, đằng này lại chả nói gì (tiếc nuối trách móc)."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "もっと 早く 病院へ 行けば 助かった（　）、手遅れに なってしまった。",
+                "options": [
+                  "ものを",
+                  "ものの",
+                  "ことに",
+                  "ばかりに"
+                ],
+                "correct": 0,
+                "explain": "Giá mà đi bệnh viện sớm thì đã cứu được rồi, tiếc thay -> 助かったものを."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 6,
+        "chapterTitle": "第6章：衝動・心境・抑制 (Cảm xúc dâng trào khó kìm & Bị ép buộc)",
+        "summary": "Biểu đạt xung động nội tâm mạnh mẽ: ~を禁じ得ない, ~を余儀なくされる, ~に耐えない.",
+        "points": [
+          {
+            "id": "n1_g_09_kinjienai",
+            "pattern": "～を禁じ得ない (をきんじえない)",
+            "formula": "N (Chỉ cảm xúc) + を禁じ得ない",
+            "meaning": "Không thể nào kìm nén được cảm xúc...",
+            "nuance": "Cảm xúc tự nhiên (nước mắt, sự tức giận, niềm thương cảm, nỗi nghi ngờ) trào dâng mãnh liệt không cách nào đè nén được.",
+            "trapBuster": "Chỉ đi với danh từ chỉ cảm xúc: 涙 (nước mắt), 怒り (tức giận), 同情 (thương cảm), 疑問 (nghi ngờ).",
+            "mnemonic": "Mẹo nhớ: 禁 (cấm) + 得ない (không thể) = Không tài nào cấm đoán kìm giữ nổi!",
+            "similarGrammar": [
+              {
+                "pattern": "〜ずにはいられない",
+                "contrast": "N2: Hành động vật lý (cười, nói). を禁じ得ない là cảm xúc nội tâm cao quý."
+              }
+            ],
+            "collocations": [
+              "涙を禁じ得ない",
+              "怒りを禁じ得ない",
+              "同情を禁じ得ない"
+            ],
+            "examples": [
+              {
+                "jp": "戦争で 親を 失った 子供たちの 姿を 見て、涙を 禁じ得なかった。",
+                "vi": "Chứng kiến cảnh những đứa trẻ mất cha mẹ trong chiến tranh, tôi không tài nào cầm được nước mắt."
+              },
+              {
+                "jp": "相次ぐ 政治家の 汚職事件に、国民は 強い 怒りを 禁じ得ない。",
+                "vi": "Trước hàng loạt bê bối tham nhũng của các chính khách, người dân không thể nén nổi cơn thịnh nộ."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "被災地の 惨状を 目の当たりにして、深い 悲しみ（　）禁じ得ない。",
+                "options": [
+                  "を",
+                  "に",
+                  "で",
+                  "と"
+                ],
+                "correct": 0,
+                "explain": "Cụm cố định N1: 悲しみを 禁じ得ない."
+              }
+            ]
+          },
+          {
+            "id": "n1_g_10_yoginaku",
+            "pattern": "～を余儀なくされる / ～を余儀なくさせる",
+            "formula": "N + を余儀なくされる (Bị buộc phải chịu đựng)\nN + を余儀なくさせる (Bắt buộc người khác phải)",
+            "meaning": "Bị đẩy vào tình thế buộc phải...",
+            "nuance": "Do hoàn cảnh khách quan tàn khốc ép buộc, dù không hề muốn nhưng không còn lựa chọn nào khác ngoài việc phải làm điều đó (chấm dứt hoạt động, thay đổi kế hoạch).",
+            "trapBuster": "BẪY THỂ CHỦ ĐỘNG VS BỊ ĐỘNG: 〜余儀なくされる (Chủ ngữ là người bị ép). 〜余儀なくさせる (Chủ ngữ là nguyên nhân gây ra ép buộc).",
+            "mnemonic": "Mẹo nhớ: 余儀 (kế hoạch khác) + 無く (không có) = Không còn phương án nào khác!",
+            "similarGrammar": [
+              {
+                "pattern": "〜ざるを得ない",
+                "contrast": "N2: Buộc phải làm. 余儀なくされる mang tầm vĩ mô và tính chính luận nghiêm trọng hơn."
+              }
+            ],
+            "collocations": [
+              "計画の変更を余儀なくされた",
+              "避難を余儀なくされた",
+              "撤退を余儀なくされる"
+            ],
+            "examples": [
+              {
+                "jp": "突然の 豪雨により、登山隊は 登頂の 断念を 余儀なくされた。",
+                "vi": "Do cơn mưa lớn bất ngờ, đoàn leo núi đã buộc phải ngậm ngùi từ bỏ việc chinh phục đỉnh núi."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "大地震の 影響で、多くの 住民が 避難生活を 余儀なく（　）。",
+                "options": [
+                  "された",
+                  "させた",
+                  "した",
+                  "あった"
+                ],
+                "correct": 0,
+                "explain": "Người dân phải chịu cảnh sơ tán (thể bị động) -> 余儀なくされた."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 7,
+        "chapterTitle": "第7章：立場・責任・役割 (Cương vị, Bổn phận & Nhờ có)",
+        "summary": "Đạo đức và trách nhiệm trên cương vị xã hội: ~たるもの, ~あっての.",
+        "points": [
+          {
+            "id": "n1_g_11_tarumono",
+            "pattern": "～たるもの (は)",
+            "formula": "N (Địa vị / Cương vị cao) + たるもの(は)",
+            "meaning": "Đã ở vào cương vị... thì phải hành xử xứng đáng!",
+            "nuance": "Nêu lên trách nhiệm, phẩm cách và đạo đức nghề nghiệp bắt buộc phải có đối với những người giữ vị thế cao trong xã hội (lãnh đạo, giáo viên, bác sĩ).",
+            "trapBuster": "Vế sau luôn đi kèm các từ chỉ bổn phận, ý thức: 〜べきだ, 〜なければならない.",
+            "mnemonic": "Mẹo nhớ: 'Taru mono' = Người đứng ở đỉnh cao danh dự!",
+            "similarGrammar": [
+              {
+                "pattern": "〜として",
+                "contrast": "N3: Với tư cách là (trung tính). たるもの đòi hỏi chuẩn mực đạo đức cực kỳ khắt khe."
+              }
+            ],
+            "collocations": [
+              "指導者たるもの",
+              "政治家たるもの",
+              "医者たるもの"
+            ],
+            "examples": [
+              {
+                "jp": "指導者たるものは、常に 広い 視野と 公平な 心を 持たなければ ならない。",
+                "vi": "Đã là một người lãnh đạo thì luôn luôn phải có tầm nhìn rộng mở và tấm lòng công tâm."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "教育者（　）もの、生徒の 模範と なるべきだ。",
+                "options": [
+                  "たる",
+                  "なる",
+                  "ある",
+                  "いる"
+                ],
+                "correct": 0,
+                "explain": "Cương vị nhà giáo dục mẫu mực: 教育者たるもの."
+              }
+            ]
+          },
+          {
+            "id": "n1_g_12_atteno",
+            "pattern": "～あっての",
+            "formula": "N1 + あっての + N2",
+            "meaning": "Chính nhờ có N1 thì mới có thể tồn tại N2",
+            "nuance": "N1 là điều kiện nền tảng sinh tử, nếu không có N1 thì N2 hoàn toàn vô nghĩa và không thể tồn tại được.",
+            "trapBuster": "Cụm danh từ bất hủ: 'お客様あっての 店' (Có khách hàng thì mới có cửa tiệm), '健康あっての 人生' (Có sức khỏe thì mới có cuộc đời).",
+            "mnemonic": "Mẹo nhớ: 'Atteno' = Nhờ có gốc rễ thì mới có cành hoa!",
+            "similarGrammar": [
+              {
+                "pattern": "〜なくしては",
+                "contrast": "Nếu không có... thì không thể có được."
+              }
+            ],
+            "collocations": [
+              "お客様あってのビジネス",
+              "健康あっての人生",
+              "ファンあってのプロ野球"
+            ],
+            "examples": [
+              {
+                "jp": "お客様 あっての 私たちの 仕事ですから、サービスの 向上を 怠っては ならない。",
+                "vi": "Chính vì nhờ có khách hàng thì mới có công việc của chúng ta, nên tuyệt đối không được lơ là nâng cao chất lượng dịch vụ."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "社員（　）あっての 会社であることを、経営陣は 忘れては ならない。",
+                "options": [
+                  "（không điền gì）",
+                  "に",
+                  "で",
+                  "と"
+                ],
+                "correct": 0,
+                "explain": "Cụm danh từ: N1 + あっての + N2 -> 社員あっての 会社."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 8,
+        "chapterTitle": "第8章：状態・様態・充満 (Trạng thái đặc thù & Tràn ngập)",
+        "summary": "Miêu tả hình thái và trạng thái ngập tràn N1: ~んばかりに, ~ずくめ, ~まみれ, ~ぐるみ.",
+        "points": [
+          {
+            "id": "n1_g_13_nbakarini",
+            "pattern": "～んばかりに / ～んばかりの",
+            "formula": "V-ない (bỏ ない) + んばかりに / んばかりの + N (Động từ する -> せんばかり)",
+            "meaning": "Tưởng chừng như sắp... đến nơi (Mặc dù thực tế chưa tới mức đó)",
+            "nuance": "Miêu tả thái độ, cử chỉ sống động như thể sắp sửa bùng nổ hành động đó ngay lập tức.",
+            "trapBuster": "Động từ する biến đổi thành: 'せんばかりに'.",
+            "mnemonic": "Mẹo nhớ: Tựa hồ như sắp nhảy bổ vào mặt người ta!",
+            "similarGrammar": [
+              {
+                "pattern": "〜そうに",
+                "contrast": "Miêu tả dáng vẻ thông thường. んばかりに mang tính thậm xưng phóng đại trong văn học."
+              }
+            ],
+            "collocations": [
+              "泣き出さんばかりに",
+              "殴りかからんばかりの勢い",
+              "割れんばかりの拍手"
+            ],
+            "examples": [
+              {
+                "jp": "会場からは、割れんばかりの 拍手と 歓声が 湧き起こった。",
+                "vi": "Từ khán phòng vang lên tràng pháo tay và tiếng reo hò tưởng chừng như muốn vỡ tung cả hội trường."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "今にも 飛び出さ（　）ばかりの 勢いだった。",
+                "options": [
+                  "ん",
+                  "う",
+                  "る",
+                  "ない"
+                ],
+                "correct": 0,
+                "explain": "Cấu trúc thậm xưng: V-ない bỏ ない + んばかり -> 飛び出さんばかり."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 9,
+        "chapterTitle": "第9章：古典的表現・厳禁 (Cổ ngữ chính luận & Cấm đoán nghiêm ngặt)",
+        "summary": "Cổ ngữ trong văn bản pháp quy: ~べからず, ~ごとき, ~に忍びない.",
+        "points": [
+          {
+            "id": "n1_g_14_bekarazu",
+            "pattern": "～べからず / ～べからざる",
+            "formula": "V-る + べからず (Động từ する -> すべからず / するべからず)",
+            "meaning": "Cấm được... / Tuyệt đối không được phép làm...",
+            "nuance": "Văn phong cổ ngữ trang trọng dùng trên các biển báo cấm quy định nơi tôn nghiêm, công cộng hoặc thông cáo pháp luật.",
+            "trapBuster": "Bổ nghĩa danh từ: '〜べからざる N' (Ví dụ: 許すべからざる 行為 - Hành vi cấm được tha thứ).",
+            "mnemonic": "Mẹo nhớ: 'Bekarazu' = Lệnh cấm thiêng liêng cổ điển!",
+            "similarGrammar": [
+              {
+                "pattern": "〜てはならない",
+                "contrast": "Quy định cấm thông thường."
+              }
+            ],
+            "collocations": [
+              "立ち入るべからず",
+              "初心忘るべからず",
+              "許すべからざる罪"
+            ],
+            "examples": [
+              {
+                "jp": "芝生に 入るべからず。",
+                "vi": "Cấm giẫm chân lên bãi cỏ. (Biển báo trang nghiêm)"
+              },
+              {
+                "jp": "初心 忘るべからず。",
+                "vi": "Chớ bao giờ được phép quên đi tâm nguyện thuở ban đầu. (Thành ngữ kinh điển)"
+              }
+            ],
+            "quiz": [
+              {
+                "q": "ここに ゴミを 捨てる（　）。",
+                "options": [
+                  "べからず",
+                  "べきだ",
+                  "まい",
+                  "ざる"
+                ],
+                "correct": 0,
+                "explain": "Biển báo cấm cổ điển trang nghiêm: 捨てるべからず."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 10,
+        "chapterTitle": "第10章：語気・文末表現 (Văn phong xã luận & Bình phẩm chính luận)",
+        "summary": "Văn phong bình luận thời sự: ~きらいがある, ~始末だ (しまつだ).",
+        "points": [
+          {
+            "id": "n1_g_15_kirai_ga_aru",
+            "pattern": "～きらいがある",
+            "formula": "V-る / V-ない / Nの + きらいがある",
+            "meaning": "Có tật xấu... / Hay có xu hướng thiên về điều không tốt",
+            "nuance": "Nhận xét, phê phán nhẹ nhàng một thói quen cố hữu, tật xấu hoặc khuynh hướng tiêu cực trong tính cách của con người hoặc xã hội.",
+            "trapBuster": "BẪY TIÊU CỰC: 'きらいがある' LUÔN LUÔN DÙNG CHO KHUYNH HƯỚNG XẤU (hay lo bò trắng răng, hay áp đặt suy nghĩ, phiến diện). Tuyệt đối không dùng cho điều tốt đẹp.",
+            "mnemonic": "Mẹo nhớ: 嫌い (ghét) = Có một nét tật xấu đáng ghét!",
+            "similarGrammar": [
+              {
+                "pattern": "〜傾向がある",
+                "contrast": "Xu hướng trung tính khách quan. きらいがある luôn mang ý chê bai tật xấu."
+              }
+            ],
+            "collocations": [
+              "独断で決めるきらいがある",
+              "物事を悲観的に考えるきらいがある"
+            ],
+            "examples": [
+              {
+                "jp": "彼は 物事を 少し 悲観的に 考えすぎる きらいが ある。",
+                "vi": "Cậu ấy hay có cái tật xấu là nhìn nhận sự việc hơi quá bi quan."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "現代人は 他人の 意見に 左右されやすい（　）が ある。",
+                "options": [
+                  "きらい",
+                  "つもり",
+                  "わけ",
+                  "ところ"
+                ],
+                "correct": 0,
+                "explain": "Tật xấu hay bị thao túng bởi ý kiến người khác: きらいが ある."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 11,
+        "chapterTitle": "第11章：仮定・極端な条件 (Giả định cực đoan & Dù là chuyện gì)",
+        "summary": "Cấu trúc giả định N1: ~とあれば, ~ないまでも, ~ならいざ知らず.",
+        "points": [
+          {
+            "id": "n1_g_16_toareba",
+            "pattern": "～とあれば",
+            "formula": "Thể thông thường + とあれば",
+            "meaning": "Nếu quả thực là trong trường hợp đặc biệt đó... thì sẵn sàng làm tất cả!",
+            "nuance": "Vì một lý do đặc biệt cao quý (vì con cái, vì tổ quốc, vì khách hàng), người nói sẵn lòng hy sinh hoặc làm những việc phi thường.",
+            "trapBuster": "Vế sau luôn là hành động quyết tâm, không tiếc công sức: 'どんな 苦労も いとわない'.",
+            "mnemonic": "Mẹo nhớ: Nếu là vì người ấy thì gian khổ mấy cũng cam lòng!",
+            "similarGrammar": [
+              {
+                "pattern": "〜なら",
+                "contrast": "Điều kiện thường. とあれば là điều kiện cực đoan sẵn sàng xả thân."
+              }
+            ],
+            "collocations": [
+              "子供のためとあれば",
+              "頼まれれば",
+              "必要とあれば"
+            ],
+            "examples": [
+              {
+                "jp": "子供の ためと あれば、親は どんな 苦労でも 耐えられる。",
+                "vi": "Nếu là vì con cái thì bậc cha mẹ bất kỳ gian khổ nào cũng có thể cam chịu."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "愛する 家族の ため（　）あれば、命も 惜しくない。",
+                "options": [
+                  "と",
+                  "に",
+                  "で",
+                  "を"
+                ],
+                "correct": 0,
+                "explain": "Cấu trúc quyết tâm hi sinh: N + のためとあれば."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 12,
+        "chapterTitle": "第12章：比較・同列・無差別 (So sánh đồng đẳng & Cả hai đều)",
+        "summary": "Các mẫu liên đới song hành: ~であれ~であれ, ~といい~といい, ~かれ~かれ.",
+        "points": [
+          {
+            "id": "n1_g_17_to_ii_to_ii",
+            "pattern": "～といい～といい",
+            "formula": "N1 + といい + N2 + といい",
+            "meaning": "Cả N1 lẫn N2 đều... (khen ngợi hoặc chê bai toàn diện)",
+            "nuance": "Đưa ra 2 ví dụ tiêu biểu để chứng minh cả toàn thể sự vật đều tuyệt vời (hoặc đều tồi tệ).",
+            "trapBuster": "Cả 2 vế đánh giá phải CÙNG TÍNH CHẤT: hoặc cùng khen ngợi, hoặc cùng chê trách.",
+            "mnemonic": "Mẹo nhớ: Kể cả cái này lẫn cái kia đều...",
+            "similarGrammar": [
+              {
+                "pattern": "〜につけ〜につけ",
+                "contrast": "Cứ mỗi khi nhìn thấy."
+              }
+            ],
+            "collocations": [
+              "デザインといい色といい",
+              "味といいサービスといい"
+            ],
+            "examples": [
+              {
+                "jp": "この レストランは、料理の 味といい 接客態度といい、申し分ない。",
+                "vi": "Nhà hàng này từ mùi vị món ăn cho tới thái độ phục vụ đều hoàn hảo không có chỗ chê."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "部屋の 広さ（　）いい、景色の 良さといい、最高だ。",
+                "options": [
+                  "と",
+                  "に",
+                  "で",
+                  "も"
+                ],
+                "correct": 0,
+                "explain": "Cặp so sánh: N1 といい N2 といい."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 13,
+        "chapterTitle": "第13章：不可避・必然 (Sự tất yếu & Diễn tiến xấu)",
+        "summary": "Các cấu trúc tất yếu: ~始末だ, ~嫌いがある, ~羽目になる.",
+        "points": [
+          {
+            "id": "n1_g_18_shimatsu_da",
+            "pattern": "～始末だ (しまつだ)",
+            "formula": "V-る / この / その / あの + 始末だ",
+            "meaning": "Rốt cuộc chuốc lấy kết cục tồi tệ đến nông nỗi này...",
+            "nuance": "Sau một chuỗi sai lầm hoặc buông thả kéo dài, kết quả cuối cùng dẫn tới một tình cảnh thảm hại, đáng xấu hổ.",
+            "trapBuster": "Vế trước thường liệt kê các hành vi sai phạm, vế sau là kết cục bi đát.",
+            "mnemonic": "Mẹo nhớ: 始末 = Kết cục thảm hại sau một hồi quậy phá.",
+            "similarGrammar": [
+              {
+                "pattern": "〜結果",
+                "contrast": "Kết quả trung tính. 始末だ luôn là kết cục bi đát, đáng hổ thẹn."
+              }
+            ],
+            "collocations": [
+              "クビになる始末だ",
+              "警察に捕まる始末だ",
+              "この始末だ"
+            ],
+            "examples": [
+              {
+                "jp": "お酒を 飲みすぎて 喧嘩を し、とうとう 警察に 捕まる 始末だ。",
+                "vi": "Uống rượu say xỉn rồi ẩu đả đánh nhau, rốt cuộc chuốc lấy kết cục bị cảnh sát còng tay."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "怠けてばかりいた 結果、退学させられる（　）となった。",
+                "options": [
+                  "始末",
+                  "つもり",
+                  "わけ",
+                  "ところ"
+                ],
+                "correct": 0,
+                "explain": "Kết cục bi đát bị đuổi học: 退学させられる 始末となった."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 14,
+        "chapterTitle": "第14章：最高峰ビジネス・外交敬語 (Kính ngữ ngoại giao & Lễ nghi trang trọng)",
+        "summary": "Kính ngữ cấp nhà nước, diễn văn đại hội cổ đông và hiệp định thương mại.",
+        "points": [
+          {
+            "id": "n1_g_19_diplomatic_keigo",
+            "pattern": "～申し上げます / ～賜りますよう / ～に堪えません",
+            "formula": "お・ご + Danh từ + 賜りますよう (たまわりますよう) お願い申し上げます",
+            "meaning": "Kính cẩn khẩn cầu quý vị ban cho ân huệ...",
+            "nuance": "Đỉnh cao lễ nghi ngoại giao và thông điệp gửi tới đại hội đồng cổ đông.",
+            "trapBuster": "Dùng từ ngữ cổ điển Hán tự sang trọng: 賜る (ban tặng), 幸甚 (vô cùng may mắn).",
+            "mnemonic": "Mẹo nhớ: Ngôn từ cung kính tuyệt đối của bậc đại sứ ngoại giao.",
+            "similarGrammar": [
+              {
+                "pattern": "ビジネス敬語 N2",
+                "contrast": "N1 nâng tầm lên diễn văn nghi lễ cấp quốc gia."
+              }
+            ],
+            "collocations": [
+              "ご愛顧を賜りますよう",
+              "深謝申し上げます",
+              "感謝に堪えません"
+            ],
+            "examples": [
+              {
+                "jp": "今後とも 倍旧の ご支援を 賜りますよう、心より お願い申し上げます。",
+                "vi": "Chúng tôi xin kính cẩn cầu mong tiếp tục nhận được sự hỗ trợ gấp bội phần từ quý vị trong tương lai."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "格別の ご高配を（　）、厚く 御礼申し上げます。",
+                "options": [
+                  "賜り",
+                  "いただき",
+                  "くださり",
+                  "もらい"
+                ],
+                "correct": 0,
+                "explain": "Thư tín ngoại giao cao cấp: ご高配を 賜り (たまわり)."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 15,
+        "chapterTitle": "第15章：総まとめ・神速対策 (Tổng kết ma trận bẻ bẫy Shinkanzen N1)",
+        "summary": "Tổng hợp toàn diện 15 chương ngữ pháp N1, bẻ gãy mọi câu hỏi đánh đố điểm liệt và chiến thuật đạt điểm tối đa.",
+        "points": [
+          {
+            "id": "n1_g_20_n1_master_matrix",
+            "pattern": "Ma trận bẻ bẫy N1 toàn diện",
+            "formula": "そばから vs が早いか | 極まる vs べくもない | ゆえに vs と相まって | を禁じ得ない vs を余儀なくされる",
+            "meaning": "Hóa giải toàn bộ cạm bẫy trong đề thi thật JLPT N1",
+            "nuance": "Rèn luyện bản lĩnh phản xạ chính xác 100% trong phòng thi.",
+            "trapBuster": "N1 đòi hỏi cảm nhận tinh tế về văn phong (văn phong chính luận, ngữ cảnh cổ điển, hay cảm xúc bi thương).",
+            "mnemonic": "Mẹo nhớ: Bản lĩnh thượng thừa N1!",
+            "similarGrammar": [
+              {
+                "pattern": "JLPT N1 Grand Master",
+                "contrast": "Về đích kỳ thi N1 với điểm số xuất sắc."
+              }
+            ],
+            "collocations": [
+              "満点対策",
+              "最終特訓"
+            ],
+            "examples": [
+              {
+                "jp": "彼こそは、新時代の リーダーたる 人物である。",
+                "vi": "Chính anh ấy mới là nhân vật xứng đáng với cương vị người lãnh đạo thời đại mới."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "困難に（　）めげず、夢に 向かって 突き進むべきだ。",
+                "options": [
+                  "も",
+                  "に",
+                  "を",
+                  "と"
+                ],
+                "correct": 0,
+                "explain": "Cụm thành ngữ N1: 困難にも めげず (không nản lòng trước khó khăn)."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "unit": 1,
+        "title": "Kỹ năng 1: Bóc tách đoản văn N1 (短文 - Văn chính luận & Xã luận báo chí)",
+        "strategy": "Văn bản N1 thường sử dụng cách hành văn gián tiếp và từ ngữ Hán học phức hợp. Đọc kỹ câu kết để bắt luận điểm then chốt của học giả.",
+        "passage": "科学技術の進歩は、かつて神の領域とされた生命の根源にまで手を伸ばしつつある。遺伝子編集技術によって病の根絶が期待される一方で、「命を人間が意図的に設計してよいのか」という重い倫理的問いが突きつけられている。\n利便性や経済的合理性を優先するあまり、生命の不可侵性という人類共通の規範を軽視するならば、私たちは取り返しのつかないディストピアに足を踏み入れることになるだろう。科学の暴走に歯止めをかけるのは、技術者個人の良心だけでなく、社会全体による不断の哲学的対話にほかならない。",
+        "question": "筆者が最も強く訴えていることは何ですか。",
+        "options": [
+          "遺伝子編集技術は危険すぎるため、世界中で研究を即座に禁止すべきだ。",
+          "生命倫理の危機を防ぐため、社会全体で絶えざる哲学的対話を行い、技術の暴走を抑えるべきだ。",
+          "経済的利益を最優先して、あらゆる病気を遺伝子技術で根絶するべきだ。",
+          "技術者個人の良心さえあれば、法律や社会的なルールは必要ない。"
+        ],
+        "correctIndex": 1,
+        "explanation": "Câu cuối cùng khẳng định rõ luận điểm: '科学の暴走に歯止めをかけるのは... 社会全体による不断の哲学的対話にほかならない' -> Đáp án 2 chuẩn xác."
+      },
+      {
+        "unit": 2,
+        "title": "Kỹ năng 2: Trung văn N1 (中文 - Triết học nhận thức & Ngôn ngữ học)",
+        "strategy": "Bóc tách các mệnh đề trừu tượng: Tác giả đặt nghi vấn về một quan niệm thông thường -> Đảo ngược góc nhìn -> Thiết lập định nghĩa mới.",
+        "passage": "言葉とは、あらかじめ存在する思考を伝達するための単なる「容器」なのだろうか。言語学の進展は、むしろその逆であることを示唆している。私たちは言葉を持つことによって初めて、混沌とした世界を分節し、思考を形作ることができるのだ。\n例えば、雪を表す言葉を数十種類持つ言語文化では、雪の微細な質感や状態の差異が認知される。言葉が世界を切り取る枠組みを決定づけているのだとするならば、異なる言語を学ぶということは、単に辞書の単語を置き換える作業ではない。それは、世界を認識するためのもう一つの全く新しい「眼」を手に入れる精神の冒険にほかならない。",
+        "question": "筆者の「外国語を学ぶこと」に対する見解はどれですか。",
+        "options": [
+          "単語の日本語訳を丸暗記して、情報伝達を効率化すること。",
+          "言葉という容器に、あらかじめ決まった思考を詰め込む技術を習得すること。",
+          "世界を新しく認識するための枠組み（視点）を手に入れる精神の冒険であること。",
+          "雪の種類の多さを競い合って、母語の優位性を証明すること。"
+        ],
+        "correctIndex": 2,
+        "explanation": "Tác giả kết luận ở câu cuối: '異なる言語を学ぶということは... 世界を認識するためのもう一つの全く新しい「眼」を手に入れる精神の冒険にほかならない' -> Đáp án 3 là cách diễn giải chính xác nhất."
+      },
+      {
+        "unit": 3,
+        "title": "Kỹ năng 3: Trường văn N1 (長文 - Phê bình văn hóa & Bản sắc thời hiện đại)",
+        "strategy": "Đọc xuyên suốt 4 tầng lập luận: Đoạn 1 nêu bối cảnh toàn cầu hóa -> Đoạn 2 chỉ ra sự suy kiệt bản sắc địa phương -> Đoạn 3 phản biện mô hình bảo tồn giả tạo -> Đoạn 4 xác lập hướng đi văn hóa sống.",
+        "passage": "均質化するグローバル社会において、「地域固有の伝統」が観光資源として過剰に消費される現象が見受けられる。古き良き町並みがテーマパーク化され、生活感を失った「見せるための伝統」が量産されていく。\nしかし、真の伝統とは博物館のガラスケースの中に厳重に保管される死物ではないはずだ。それは時代の変化という荒波に晒され、人々の生活様式に合わせて柔軟に姿を変えながらも、その奥底にある精神の芯を失わない「生きている営み」である。\n伝統を単なる観光の道具として固定化するのではなく、現代の課題と摩擦を起こしながら新陳代謝を繰り返すことこそが、文化に持続可能な生命力を吹き込む道ではないだろうか。",
+        "question": "筆者が考える「真の伝統」とはどのようなものですか。",
+        "options": [
+          "博物館のガラスケースに厳重に保管され、一切の変更が許されないもの。",
+          "観光客を呼び寄せるために、外見だけをテーマパークのように美しく整えたもの。",
+          "時代の変化に応じて姿を変えながらも、精神の芯を失わずに生き続ける営みであること。",
+          "過去の歴史をすべて否定し、最新のグローバルスタンダードに統一すること。"
+        ],
+        "correctIndex": 2,
+        "explanation": "Đoạn 2 định nghĩa rõ: '時代の変化という荒波に晒され、人々の生活様式に合わせて柔軟に姿を変えながらも、その奥底にある精神の芯を失わない「生きている営み」である' -> Đáp án 3."
+      },
+      {
+        "unit": 4,
+        "title": "Kỹ năng 4: Tích hợp đối chiếu N1 (統合理解 - Xã hội học & Tương lai lao động)",
+        "strategy": "So sánh 2 trường phái tư tưởng kinh tế đối lập: Tác giả A bảo vệ mô hình doanh nghiệp kiểu Nhật truyền thống (trọn đời, gắn kết), Tác giả B bảo vệ mô hình thị trường linh hoạt (Job-based, tự do).",
+        "passage": "【論者A】\n終身雇用や年功序列といった日本型雇用慣行は、非効率の象徴として批判されてきた。しかし、社員を短期のコストではなく「長期の資本」と捉え、組織全体で人を育てる仕組みは、不確実な時代における企業の強靭なレジリエンス（回復力）を生み出す。共同体としての信頼関係こそが、画期的なイノベーションの揺籃となるのだ。\n\n【論者B】\n一つの組織に人生を預ける時代は終焉を迎えた。自らのスキルを市場価値に照らし合わせ、プロジェクトごとに最適なチームを組み替える「ジョブ型」雇用こそが、個人の自律と市場全体の生産性を最大化する。会社への盲従を美徳とする共同体意識は、変化の激しい現代では個人の成長を縛る足枷にしかならない。",
+        "question": "雇用と個人の関係について、論者Aと論者Bの対立点は何ですか。",
+        "options": [
+          "Aは社員を長期的に育てる共同体の価値を重んじ、Bは個人の自律と市場価値に基づく柔軟な働き方を重んじている。",
+          "Aは若者を解雇することを勧め、Bは定年退職まで全員を雇い続けることを主張している。",
+          "AもBも、日本型雇用慣行を直ちに廃止すべきだと合意している。",
+          "Aは給与の削減を求め、Bは税金の引き上げを求めている。"
+        ],
+        "correctIndex": 0,
+        "explanation": "A coi trọng tính gắn kết và nuôi dưỡng dài hạn ('長期の資本', '共同体としての信頼関係'), còn B coi trọng tự do cá nhân và giá trị thị trường linh hoạt ('ジョブ型', '個人の自律') -> Đáp án 1 nắm bắt trọn vẹn điểm đối lập."
+      },
+      {
+        "unit": 5,
+        "title": "Kỹ năng 5: Tìm kiếm thông tin N1 (情報検索 - Quy chế sở hữu trí tuệ & Bằng phát minh)",
+        "strategy": "Bóc tách các điều khoản pháp lý khắt khe, bảng biểu phân hạng ưu tiên và ngoại lệ miễn trừ bản quyền.",
+        "passage": "【大学発ベンチャー 知的財産権および特許出願規程】\n第4条（職務発明の帰属）\n大学の施設または研究資金を用いて創出された発明等の知的財産権は、原則として大学に帰属するものとする。\n※ただし、以下のいずれかに該当する場合は、発明者（研究者）個人に権利が帰属する。\n　(1) 大学の資金を用いず、休職期間中かつ学外の施設のみで完成された発明。\n　(2) 企業との共同研究契約において、相手方企業との間で単独出願が合意されている場合。\n第7条（特許出願費用の負担）\n大学が権利を承継した発明については、国内外の出願費用を大学が全額負担する。\n※出願後3年以内に企業への技術移転（ライセンス供与）が成立しなかった場合、特許維持費用は研究室の裁量経費より拠出するものとする。",
+        "question": "特許の権利および費用負担について、規程と一致するものはどれですか。",
+        "options": [
+          "大学の研究資金を用いて行われた発明は、いかなる場合も研究者個人のものとなる。",
+          "企業との共同研究において単独出願の合意がある場合、権利は研究者個人に帰属する例外がある。",
+          "大学が権利を承継した場合、特許出願費用は初めから研究室が全額負担しなければならない。",
+          "出願後10年間は、いかなる場合も大学が維持費用を永久に支払い続ける。"
+        ],
+        "correctIndex": 1,
+        "explanation": "Căn cứ khoản điều kiện miễn trừ (2) của Điều 4: '企業との共同研究契約において、相手方企業との間で単独出願が合意されている場合... 発明者（研究者）個人に権利が帰属する' -> Đáp án 2 chuẩn xác với văn bản pháp lý."
+      }
+    ],
+    "listening": [
+      {
+        "mondai": 1,
+        "title": "Mondai 1: Hiểu nhiệm vụ N1 (課題理解 - Khủng hoảng truyền thông)",
+        "strategy": "Hội thoại cấp quản lý xử lý khủng hoảng truyền thông -> Bắt thứ tự ưu tiên xử lý trong 30 phút đầu tiên.",
+        "dialogue": "女（広報部長）：社長、先ほど自社製アプリでユーザーの個人情報が一時的に外部から閲覧可能な状態になっていたことが判明しました。\n男（社長）：何だって！被害の規模は？二次被害の報告はあるのか？\n女：現在エンジニアがアクセスログを緊急解析中ですが、最大で約5万人分のアカウントが影響を受けた可能性があります。公式ウェブサイトにお詫びとお知らせのプレスリリースを出す準備は整っております。\n男：いや、リリースを出す前に、まず該当サーバーの通信を即刻遮断して、これ以上の流出を完全に防ぐのが先決だ。それから監督官庁への第一報を入れなさい。マスコミへの公表はそのログ解析の確定数値を待ってからだ。\n女：かしこまりました。直ちにサーバーを隔離し、主管省庁へ連絡いたします。",
+        "question": "広報部長はこのあと、まず何を指示しなければなりませんか。",
+        "options": [
+          "マスコミ各社へ謝罪のプレスリリースを配信する",
+          "該当サーバーの通信を遮断し、システムを隔離する",
+          "5万人全員に電話で謝罪する",
+          "アクセスログの確定数値を記者会見で発表する"
+        ],
+        "correctIndex": 1,
+        "explanation": "Chỉ thị quyết liệt của Giám đốc: 'まず該当サーバーの通信を即刻遮断して、これ以上の流出を完全に防ぐのが先決だ' -> Đáp án 2."
+      },
+      {
+        "mondai": 2,
+        "title": "Mondai 2: Hiểu điểm mấu chốt N1 (ポイント理解 - Chiến lược tái cấu trúc)",
+        "strategy": "Bắt luận điểm cốt lõi đằng sau sự từ chối mua lại thương hiệu đối thủ.",
+        "dialogue": "男：わが社が競合A社の買収交渉から撤退したと聞いて驚いたよ。シェア拡大の絶好のチャンスだったんじゃないのか？\n女：確かに売上規模だけを見れば魅力的でした。財務諸表上の数字も悪くありませんでしたしね。\n男：じゃあ、簿外債務でも見つかったのかい？それとも独占禁止法上の問題？\n女：いいえ。デューデリジェンス（資産査定）の最終段階で、彼らの企業風土があまりにも官僚的で、わが社の俊敏な開発カルチャーと到底融合できないことが明白になったんです。無理に統合すれば、わが社の優秀なエンジニアが大量に離職するリスクが高すぎると経営陣が判断したのです。",
+        "question": "買収を断念した決定的な理由は何ですか。",
+        "options": [
+          "相手企業の巨額の借金が発覚したから",
+          "独占禁止法に抵触して政府から警告を受けたから",
+          "企業カルチャーの違いが大きく、自社の優秀な人材が流出する恐れがあったから",
+          "買収金額が当初の予算を10倍以上超過したから"
+        ],
+        "correctIndex": 2,
+        "explanation": "Lý do then chốt được đưa ra: Sự xung đột văn hóa doanh nghiệp đe dọa làm chảy máu chất xám của đội ngũ kỹ sư tinh hoa -> Đáp án 3."
+      },
+      {
+        "mondai": 3,
+        "title": "Mondai 3: Hiểu khái quát N1 (概要理解 - Diễn văn triết lý giáo dục)",
+        "strategy": "Bài phát biểu của hiệu trưởng trường đại học hàng đầu về tư duy phản biện.",
+        "dialogue": "男（大学学長）：現代は、AIが瞬時に正解らしきものを提示してくれる時代です。しかし、大学という知の府において私たちが真に培うべき力とは、容易な答えに飛びつくことではありません。むしろ、『問いそのものの妥当性を疑う力』、すなわち常識とされている前提を覆し、誰も気づかなかった新たな課題を発見する知的体力こそが求められているのです。知性とは知識の量ではなく、問いを立てる深さにほかなりません。",
+        "question": "学長が学生に最も伝えたいメッセージは何ですか。",
+        "options": [
+          "AIを使いこなして、誰よりも早く正解を見つける技術を磨くこと",
+          "既存の知識を疑い、自ら深い問いを発見する力を身につけること",
+          "大学の図書館にあるすべての本を読破して、知識の量を増やすこと",
+          "常識に従って、社会のルールを厳格に守ること"
+        ],
+        "correctIndex": 1,
+        "explanation": "Thông điệp cốt lõi: '問いそのものの妥当性を疑う力... 知性とは知識の量ではなく、問いを立てる深さにほかなりません' -> Rèn luyện năng lực đặt câu hỏi sâu sắc và phản biện lại các định kiến có sẵn -> Đáp án 2."
+      },
+      {
+        "mondai": 4,
+        "title": "Mondai 4: Phản xạ tức thì N1 (即時応答 - Hội nghị ngoại giao)",
+        "strategy": "Nghe câu thoại ngoại giao cực kỳ lịch thiệp -> Phản xạ đối đáp tương xứng.",
+        "dialogue": "女：本日のシンポジウムにご登壇賜り、誠に光栄に存じます。",
+        "question": "男の人の最も適切な返答はどれですか。",
+        "options": [
+          "滅相もございません。こちらこそ、貴重な機会をいただき感謝申し上げます。",
+          "ええ、私としても光栄に思ってあげますよ。",
+          "どういたしまして、もっと褒めていただいて構いません。"
+        ],
+        "correctIndex": 0,
+        "explanation": "Đáp lại lời khen ngợi cung kính ngoại giao: '滅相もございません（めっそうもございません）。こちらこそ、貴重な機会をいただき感謝申し上げます' (Dạ không dám đâu ạ. Phía chúng tôi mới là người vô cùng biết ơn cơ hội quý báu này) -> Đáp án 1."
+      },
+      {
+        "mondai": 5,
+        "title": "Mondai 5: Nghe tổng hợp N1 (統合理解 - Chiến lược đầu tư năng lượng mới)",
+        "strategy": "Hội thảo phân bổ quỹ đầu tư nghìn tỷ yên giữa 4 công nghệ năng lượng tương lai.",
+        "dialogue": "男A：わが社の脱炭素戦略として、100億円の特別研究開発枠をどの技術に集中投下すべきか検討したい。\n男B：候補は4つ。1は洋上風力、2は次世代ペロブスカイト太陽電池、3は水素燃料電池、4はアンモニア混焼発電だ。\n女：ペロブスカイト太陽電池は軽量でビルの壁面にも設置できるため、都市型発電の本命として海外からの引き合いも急増しています。実用化までの期間も一番短いです。\n男B：しかし、水素燃料電池も大型トラックや船舶の脱炭素化には不可欠ですよ。\n男A：だが水素はサプライチェーンの構築にあと15年はかかる。今回の100億円枠は『5年以内に商業ベースに乗せ、世界市場の主導権を握る』ことが至上命題だ。\n女：それならば、ビル壁面設置の実証実験がすでに最終段階に入っている太陽電池一択ですね。\n男A：よし、ペロブスカイト太陽電池に全額集中投資しよう！",
+        "question": "会社はどの次世代エネルギー技術に投資することを決定しましたか。",
+        "options": [
+          "洋上風力発電",
+          "次世代ペロブスカイト太陽電池",
+          "水素燃料電池",
+          "アンモニア混焼発電"
+        ],
+        "correctIndex": 1,
+        "explanation": "Tiêu chí sống còn là '5 năm tới phải thương mại hóa thành công và chiếm lĩnh thị trường'. Công nghệ pin mặt trời perovskite (候補 2) thỏa mãn việc ứng dụng ngay trên tường cao ốc và đang ở giai đoạn thử nghiệm cuối cùng -> Đáp án 2."
+      }
+    ],
+    "stageReviews": [
+      {
+        "stageNumber": 1,
+        "title": "Cột Mốc 1: Tổng Kết Giai Đoạn 1 N1 (Chương 1–5)",
+        "description": "Bảng ma trận đối chiếu cạm bẫy Tức thì thần tốc, Cực độ và Căn nguyên sâu xa N1.",
+        "trapsMatrix": [
+          {
+            "pair": "そばから vs が早いか",
+            "rule": "そばから = Vừa làm xong lại bị tái diễn thói xấu (bực bội bất lực). が早いか = Tức thì trong chớp mắt (nhanh như chớp)."
+          },
+          {
+            "pair": "極まる vs 極まりない",
+            "rule": "Aな + 極まる. Aなこと + 極まりない. Cả 2 đều nhấn mạnh sự việc tiêu cực tột độ."
+          },
+          {
+            "pair": "べくもない vs わけがない",
+            "rule": "べくもない = Văn phong cổ kính tuyệt đối không thể tưởng tượng, hoài nghi nổi."
+          },
+          {
+            "pair": "ゆえに vs と相まって",
+            "rule": "ゆえに = Nguyên nhân cội rễ định mệnh. と相まって = Hiệu ứng cộng hưởng nhân đôi."
+          }
+        ],
+        "milestoneQuiz": [
+          {
+            "q": "覚える（　）、次から次へと 忘れてしまう。",
+            "options": [
+              "そばから",
+              "なり",
+              "が早いか",
+              "や否や"
+            ],
+            "correct": 0,
+            "explain": "Học xong lại quên ngay (bất lực tiêu cực) -> 覚えるそばから."
+          }
+        ]
+      },
+      {
+        "stageNumber": 2,
+        "title": "Cột Mốc 2: Tổng Kết Giai Đoạn 2 N1 (Chương 6–10)",
+        "description": "Bảng ma trận cạm bẫy Cảm xúc trào dâng, Cương vị đạo đức và Trạng thái thậm xưng.",
+        "trapsMatrix": [
+          {
+            "pair": "を禁じ得ない vs を余儀なくされる",
+            "rule": "を禁じ得ない = Cảm xúc nội tâm không kìm được (nước mắt, tức giận). を余儀なくされる = Bị hoàn cảnh ép buộc không còn cách nào khác."
+          },
+          {
+            "pair": "たるもの vs あっての",
+            "rule": "たるもの = Cương vị người lãnh đạo/thầy giáo thì phải có đạo đức. あっての = Có N1 thì mới có thể sinh ra N2."
+          },
+          {
+            "pair": "んばかりに vs べからず",
+            "rule": "んばかりに = Thậm xưng tưởng như sắp vỡ tung. べからず = Lệnh cấm trang nghiêm cổ điển."
+          }
+        ],
+        "milestoneQuiz": [
+          {
+            "q": "あまりの 悲惨さに、涙を（　）得なかった。",
+            "options": [
+              "禁じ",
+              "止め",
+              "許し",
+              "控え"
+            ],
+            "correct": 0,
+            "explain": "Không thể cầm được nước mắt: 涙を禁じ得なかった."
+          }
+        ]
+      },
+      {
+        "stageNumber": 3,
+        "title": "Cột Mốc 3: Tổng Kết Về Đích Toàn Diện N1 (Chương 11–15)",
+        "description": "Bộ đề thi thử thượng cấp 35 câu then chốt chuẩn format JLPT N1.",
+        "trapsMatrix": [
+          {
+            "pair": "とあれば vs ならいざ知らず",
+            "rule": "とあれば = Nếu là vì lý do đặc biệt thì sẵn lòng xả thân. ならいざ知らず = Nếu là A thì còn châm chước được, đằng này..."
+          },
+          {
+            "pair": "始末だ vs きらいがある",
+            "rule": "始末だ = Rốt cuộc chuốc lấy kết cục thảm hại. きらいがある = Có cái tật xấu hay thiên về hướng tiêu cực."
+          }
+        ],
+        "milestoneQuiz": [
+          {
+            "q": "愛する 家族の ため（　）あれば、どんな 苦労も いとわない。",
+            "options": [
+              "と",
+              "に",
+              "で",
+              "を"
+            ],
+            "correct": 0,
+            "explain": "Sẵn sàng chịu khổ vì gia đình: ためとあれば."
           }
         ]
       }

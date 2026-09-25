@@ -684,73 +684,229 @@
 }
 
 /* ==========================================================================
-   7. INTERACTIVE SVG MINDMAP (Pure CSS + SVG Bezier)
+   7. PURE CSS TREE LAYOUT (Replaces broken SVG mindmap)
+   RULES:
+   - NO position:absolute for nodes — natural document flow only
+   - Connectors use CSS borders/pseudo-elements, not SVG
+   - Flexbox for horizontal branch layouts
+   - All nodes respect text overflow with ellipsis
    ========================================================================== */
 .jlpt-mindmap-wrapper {
   position: relative;
   background: var(--bg-surface-2);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-md, 12px);
-  overflow: hidden;
+  overflow: auto;
   box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
-.jlpt-mindmap-canvas {
-  position: relative;
-  width: 100%;
-  min-height: 380px;
-  overflow: auto;
-  user-select: none;
+.jlpt-tree-canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 40px;
+  min-width: fit-content;
 }
 
-.jlpt-mindmap-svg-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.jlpt-mindmap-node {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  background: var(--bg-surface);
-  border: 1.5px solid var(--node-border, var(--border-default));
-  border-radius: var(--radius-sm, 8px);
-  padding: 8px 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  white-space: nowrap;
-  z-index: 10;
-}
-
-.jlpt-mindmap-node:hover {
-  transform: translate(-50%, -50%) scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  z-index: 20;
-}
-
-.jlpt-mindmap-node--center {
-  background: var(--accent-gradient, linear-gradient(135deg, #2563eb, #7c3aed));
+/* Root Node (Central topic) */
+.jlpt-tree-root-node {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: #ffffff;
-  border: none;
-  padding: 12px 18px;
   border-radius: var(--radius-md, 12px);
-  font-weight: 800;
-  font-size: 15px;
+  padding: 14px 24px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);
+  max-width: 400px;
 }
 
-.jlpt-mindmap-node--branch {
+.jlpt-tree-root-badge {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.jlpt-tree-root-title {
+  font-size: 15px;
+  font-weight: 800;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.3;
+}
+
+.jlpt-tree-root-sub {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* Vertical connector line */
+.jlpt-tree-vline {
+  width: 2px;
+  height: 24px;
+  background: var(--line-color, var(--border-default));
+  flex-shrink: 0;
+}
+
+.jlpt-tree-vline--short {
+  height: 16px;
+}
+
+/* Branch rail: horizontal line + branch columns */
+.jlpt-tree-branch-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Horizontal connector line spanning all branches */
+.jlpt-tree-hline {
+  height: 2px;
+  background: var(--line-color, var(--border-default));
+  align-self: stretch;
+  margin: 0 40px;
+}
+
+/* Branch container: horizontal row of branch columns */
+.jlpt-tree-branches {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 8px;
+}
+
+/* Individual branch column */
+.jlpt-tree-branch-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 1 260px;
+  min-width: 200px;
+  max-width: 320px;
+}
+
+/* Branch card */
+.jlpt-tree-branch-card {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--branch-color, var(--border-default));
+  border-radius: var(--radius-sm, 8px);
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.jlpt-tree-branch-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.jlpt-tree-branch-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--bg-surface-2);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.jlpt-tree-branch-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.jlpt-tree-branch-name {
   font-size: 13px;
   font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Noto Sans JP', sans-serif;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.jlpt-mindmap-node--leaf {
+.jlpt-tree-branch-details {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.jlpt-tree-branch-formula {
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
   font-size: 11px;
-  font-family: 'JetBrains Mono', monospace;
-  background: var(--bg-surface-3);
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-surface-2);
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-default);
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.jlpt-tree-branch-nuance {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.jlpt-tree-branch-example {
+  background: var(--bg-surface-2);
+  padding: 6px 8px;
+  border-radius: 4px;
+  border-left: 3px solid var(--branch-color, #3b82f6);
+}
+
+/* ── Level Overview Mode ── */
+.jlpt-tree-level-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1200px;
+}
+
+.jlpt-tree-level-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.jlpt-tree-row-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-left: 4px;
+}
+
+.jlpt-tree-level-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px;
+}
+
+.jlpt-tree-level-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm, 8px);
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border-top: 3px solid var(--branch-color, var(--accent-primary, #3b82f6));
+}
+
+.jlpt-tree-level-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--branch-color, var(--accent-primary, #3b82f6));
 }
 
 /* Mindmap Controls */
@@ -789,3 +945,495 @@
     page-break-after: always;
   }
 }
+
+/* ==========================================================================
+   9. COLLOCATIONS & SIMILAR GRAMMAR POINTS
+   ========================================================================== */
+.jlpt-collocations-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.jlpt-collocation-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs, 6px);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.jlpt-collocation-chip:hover {
+  background: var(--tint-amber-bg, #fffbeb);
+  border-color: var(--tint-amber-border, #f59e0b);
+  color: var(--tint-amber-text, #b45309);
+}
+
+.jlpt-similar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.jlpt-similar-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--bg-surface-2);
+  border-left: 3px solid var(--tint-violet-border, #8b5cf6);
+  padding: 8px 12px;
+  border-radius: 0 var(--radius-xs, 6px) var(--radius-xs, 6px) 0;
+}
+
+.jlpt-similar-pattern {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tint-violet-text, #6d28d9);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.jlpt-similar-contrast {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   10. LESSON VOCABULARY SECTION & CARDS
+   ========================================================================== */
+.jlpt-lesson-vocab-section {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+}
+
+.jlpt-lesson-vocab-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--bg-surface-2);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.jlpt-lesson-vocab-header:hover {
+  background: var(--bg-hover);
+}
+
+.jlpt-lesson-vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  padding: 16px;
+  border-top: 1px solid var(--border-default);
+}
+
+.jlpt-vocab-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xs, 6px);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.jlpt-vocab-card:hover {
+  border-color: var(--accent-primary, #3b82f6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.jlpt-vocab-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.jlpt-vocab-word {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.jlpt-vocab-kanji {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.jlpt-vocab-kana {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.jlpt-vocab-meaning {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.jlpt-vocab-type-tag {
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--tint-matcha-text, #047857);
+  background: var(--tint-matcha-bg, #ecfdf5);
+  border: 1px solid var(--tint-matcha-border, #a7f3d0);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.jlpt-icon-btn--sm {
+  width: 24px;
+  height: 24px;
+}
+
+/* ==========================================================================
+   11. SHINKANZEN DOKKAI (READING COMPREHENSION)
+   ========================================================================== */
+.jlpt-dokkai-strategy-box {
+  background: var(--tint-matcha-bg, #ecfdf5);
+  border: 1px solid var(--tint-matcha-border, #a7f3d0);
+  border-radius: var(--radius-sm, 8px);
+  padding: 12px 16px;
+}
+
+.jlpt-dokkai-passage-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.jlpt-dokkai-passage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--bg-surface-2);
+  border-bottom: 1px solid var(--border-default);
+  color: var(--text-secondary);
+}
+
+.jlpt-dokkai-passage-body {
+  padding: 20px;
+  font-size: 15px;
+  line-height: 2;
+  font-family: 'Noto Sans JP', 'Meiryo', sans-serif;
+  color: var(--text-primary);
+  white-space: pre-line;
+  letter-spacing: 0.03em;
+}
+
+.jlpt-dokkai-question-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md, 12px);
+  padding: 18px 20px;
+}
+
+.jlpt-dokkai-question-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.jlpt-dokkai-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.jlpt-dokkai-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm, 8px);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.jlpt-dokkai-option:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent-primary, #3b82f6);
+}
+
+.jlpt-dokkai-option-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  font-weight: 700;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.jlpt-dokkai-option-text {
+  flex: 1;
+}
+
+.jlpt-dokkai-option-icon {
+  flex-shrink: 0;
+}
+
+.jlpt-dokkai-option-icon--correct {
+  color: var(--tint-matcha-text, #047857);
+}
+
+.jlpt-dokkai-option-icon--wrong {
+  color: var(--tint-sakura-text, #be123c);
+}
+
+.jlpt-dokkai-option--correct {
+  background: var(--tint-matcha-bg, #ecfdf5) !important;
+  border-color: var(--tint-matcha-border, #10b981) !important;
+  color: var(--tint-matcha-text, #047857) !important;
+  font-weight: 600;
+}
+
+.jlpt-dokkai-option--wrong {
+  background: var(--tint-sakura-bg, #fff1f2) !important;
+  border-color: var(--tint-sakura-border, #f43f5e) !important;
+  color: var(--tint-sakura-text, #be123c) !important;
+}
+
+/* ==========================================================================
+   12. SHINKANZEN CHOUKAI (LISTENING COMPREHENSION)
+   ========================================================================== */
+.jlpt-choukai-strategy-box {
+  background: var(--tint-violet-bg, #f5f3ff);
+  border: 1px solid var(--tint-violet-border, #c4b5fd);
+  border-radius: var(--radius-sm, 8px);
+  padding: 12px 16px;
+}
+
+.jlpt-choukai-audio-station {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md, 12px);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.jlpt-choukai-audio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.jlpt-choukai-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm, 8px);
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--tint-violet-text, #6d28d9);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(109, 40, 217, 0.25);
+}
+
+.jlpt-choukai-play-btn:hover {
+  background: #5b21b6;
+  transform: translateY(-1px);
+}
+
+.jlpt-choukai-play-btn--playing {
+  background: var(--tint-amber-text, #b45309) !important;
+  box-shadow: 0 2px 6px rgba(180, 83, 9, 0.25) !important;
+}
+
+.jlpt-choukai-transcript-box {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm, 8px);
+  padding: 14px 16px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* ==========================================================================
+   13. STAGE REVIEWS, TRAPS MATRIX TABLE & MILESTONE QUIZ
+   ========================================================================== */
+.jlpt-stage-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.jlpt-stage-section-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jlpt-traps-table-wrapper {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.jlpt-traps-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.jlpt-traps-table th {
+  background: var(--bg-surface-2);
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-default);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.jlpt-traps-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-subtle, var(--border-default));
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.jlpt-traps-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.jlpt-traps-td-pair {
+  font-weight: 700;
+  color: var(--tint-amber-text, #b45309);
+  font-family: 'Noto Sans JP', monospace;
+  background: var(--tint-amber-bg, #fffbeb);
+}
+
+.jlpt-traps-td-rule {
+  color: var(--text-primary);
+}
+
+.jlpt-milestone-quiz-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md, 12px);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.jlpt-milestone-quiz-q {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.jlpt-milestone-quiz-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-primary, #3b82f6);
+  background: var(--tint-sky-bg, #f0f9ff);
+  border: 1px solid var(--tint-sky-border, #bae6fd);
+  padding: 2px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.jlpt-milestone-quiz-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.jlpt-milestone-opt-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xs, 6px);
+  font-size: 13px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.jlpt-milestone-opt-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent-primary, #3b82f6);
+}
+
+.jlpt-milestone-opt-btn--correct {
+  background: var(--tint-matcha-bg, #ecfdf5) !important;
+  border-color: var(--tint-matcha-border, #10b981) !important;
+  color: var(--tint-matcha-text, #047857) !important;
+  font-weight: 700;
+}
+
+.jlpt-milestone-opt-btn--wrong {
+  background: var(--tint-sakura-bg, #fff1f2) !important;
+  border-color: var(--tint-sakura-border, #f43f5e) !important;
+  color: var(--tint-sakura-text, #be123c) !important;
+}
+
+.jlpt-milestone-quiz-explain {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xs, 6px);
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+

@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import { Network, BookOpen, CheckCircle, ChevronDown, ChevronUp, Printer, Sparkles } from 'lucide-react';
+import { Network, BookOpen, CheckCircle, ChevronDown, ChevronUp, Printer, Sparkles, Languages, Volume2 } from 'lucide-react';
 import CompactToolbar from './CompactToolbar';
 import GrammarPointView from './GrammarPointView';
 import MindmapTreeView from './MindmapTreeView';
+import { speakJapanese } from './speechHelper';
 import { getLevelBadgeStyle } from '../../theme';
 
 /**
@@ -27,6 +28,7 @@ export default function LessonDetailPage({
   onAnswerQuiz,
 }) {
   const [showMindmap, setShowMindmap] = useState(true);
+  const [showVocab, setShowVocab] = useState(false);
   const [expandedPoints, setExpandedPoints] = useState(() => {
     // Mặc định mở điểm ngữ pháp đầu tiên
     return { 0: true };
@@ -74,6 +76,12 @@ export default function LessonDetailPage({
         hasPrev={hasPrev}
         hasNext={hasNext}
         actions={[
+          ...(lesson.vocabulary?.length ? [{
+            icon: <Languages size={16} />,
+            title: showVocab ? 'Ẩn từ vựng' : 'Hiện từ vựng trọng tâm',
+            active: showVocab,
+            onClick: () => setShowVocab(v => !v),
+          }] : []),
           {
             icon: <Network size={16} />,
             title: showMindmap ? 'Ẩn sơ đồ tư duy' : 'Hiện sơ đồ tư duy',
@@ -151,7 +159,75 @@ export default function LessonDetailPage({
                 Thu nhỏ
               </button>
             </div>
-            <MindmapTreeView lesson={lesson} mode="lesson" height={380} />
+            <MindmapTreeView lesson={lesson} mode="lesson" height={280} />
+          </section>
+        )}
+
+        {/* 3b. Collapsible Key Vocabulary Section */}
+        {lesson.vocabulary && lesson.vocabulary.length > 0 && (
+          <section className="jlpt-lesson-vocab-section">
+            <div 
+              className="jlpt-lesson-vocab-header"
+              onClick={() => setShowVocab(v => !v)}
+              role="button"
+              tabIndex={0}
+              aria-expanded={showVocab}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Languages size={15} style={{ color: 'var(--tint-matcha-text, #047857)' }} />
+                <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)' }}>
+                  Từ vựng trọng tâm bài học ({lesson.vocabulary.length} từ)
+                </span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <span style={{ fontSize: '11px', color: 'var(--text-tertiary)' }}>
+                  {showVocab ? 'Thu gọn' : 'Xem chi tiết'}
+                </span>
+                {showVocab ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+              </div>
+            </div>
+
+            {showVocab && (
+              <div className="jlpt-lesson-vocab-grid">
+                {lesson.vocabulary.map((vocab, vIdx) => (
+                  <div key={vIdx} className="jlpt-vocab-card">
+                    <div className="jlpt-vocab-card-top">
+                      <div className="jlpt-vocab-word">
+                        {vocab.kanji && vocab.kanji !== vocab.jp ? (
+                          <>
+                            <span className="jlpt-vocab-kanji">{vocab.kanji}</span>
+                            <span className="jlpt-vocab-kana">【{vocab.jp}】</span>
+                          </>
+                        ) : (
+                          <span className="jlpt-vocab-kanji">{vocab.jp}</span>
+                        )}
+                      </div>
+                      <button
+                        type="button"
+                        className="jlpt-icon-btn jlpt-icon-btn--sm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          speakJapanese(vocab.kanji || vocab.jp);
+                        }}
+                        title="Nghe phát âm"
+                      >
+                        <Volume2 size={12} />
+                      </button>
+                    </div>
+
+                    <div className="jlpt-vocab-meaning">
+                      {vocab.vi}
+                    </div>
+
+                    {vocab.type && (
+                      <span className="jlpt-vocab-type-tag">
+                        {vocab.type}
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
           </section>
         )}
 

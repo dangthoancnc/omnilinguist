@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   ChevronDown, ChevronUp, Volume2, ShieldAlert, Sparkles, 
-  Lightbulb, BookOpen, Layers, CheckCircle2 
+  Lightbulb, BookOpen, Layers, CheckCircle2, GitCompare, Bookmark 
 } from 'lucide-react';
 import FuriganaText from '../FuriganaText';
 import ReflexDrill from './ReflexDrill';
@@ -104,7 +104,31 @@ export default function GrammarPointView({
             </div>
           )}
 
-          {/* 3. JLPT Trap Buster (Cạm bẫy thi thật) */}
+          {/* 3. Collocations / Typical Combinations */}
+          {point.collocations && point.collocations.length > 0 && (
+            <div className="jlpt-grammar-section" style={{ '--section-color': 'var(--tint-amber-border, #f59e0b)' }}>
+              <div className="jlpt-grammar-section-title">
+                <Bookmark size={13} />
+                <span>Cụm từ cố định & Quán ngữ hay gặp ({point.collocations.length})</span>
+              </div>
+              <div className="jlpt-collocations-chips">
+                {point.collocations.map((col, cIdx) => (
+                  <button
+                    key={cIdx}
+                    type="button"
+                    className="jlpt-collocation-chip"
+                    onClick={() => speakJapanese(col)}
+                    title="Bấm để nghe phát âm"
+                  >
+                    <Volume2 size={12} />
+                    <span>{col}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* 4. JLPT Trap Buster (Cạm bẫy thi thật) */}
           {point.trapBuster && (
             <div className="jlpt-trap-callout">
               <div className="jlpt-trap-title">
@@ -112,6 +136,28 @@ export default function GrammarPointView({
                 <span>Bẻ khóa cạm bẫy đề thi JLPT</span>
               </div>
               <div>{point.trapBuster}</div>
+            </div>
+          )}
+
+          {/* 5. Similar Grammar & Nuance Distinction */}
+          {point.similarGrammar && point.similarGrammar.length > 0 && (
+            <div className="jlpt-grammar-section" style={{ '--section-color': 'var(--tint-violet-border, #8b5cf6)' }}>
+              <div className="jlpt-grammar-section-title">
+                <GitCompare size={13} />
+                <span>Phân biệt cấu trúc tương đồng & Dễ nhầm lẫn ({point.similarGrammar.length})</span>
+              </div>
+              <div className="jlpt-similar-list">
+                {point.similarGrammar.map((sim, sIdx) => (
+                  <div key={sIdx} className="jlpt-similar-card">
+                    <span className="jlpt-similar-pattern">
+                      {sim.pattern || sim.target}
+                    </span>
+                    <span className="jlpt-similar-contrast">
+                      {sim.contrast || sim.diff}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 

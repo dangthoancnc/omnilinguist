@@ -1,35 +1,49 @@
 {
   "level": "N3",
   "title": "新完全マスター N3 (Shin Kanzen Master N3 Special Edition)",
-  "description": "Bộ giáo trình luyện thi N3 số 1 thế giới: Phân loại ngữ pháp theo nhóm nghĩa tương đồng, bẻ khóa các bẫy đề thi hiểm hóc và rèn luyện tư duy đọc hiểu logic.",
+  "description": "Bộ giáo trình luyện thi N3 số 1 thế giới: 15 chương ngữ pháp chuẩn mực, bẻ khóa các bẫy đề thi hiểm hóc, luyện đọc hiểu 5 dạng bài thực tế và nghe hiểu 5 Mondai kèm kịch bản thoại.",
   "stats": {
-    "grammarChapters": 8,
-    "grammarPoints": 130,
-    "kanjiChapters": 15,
-    "kanjiCount": 650,
-    "vocabChapters": 12,
-    "vocabCount": 3000,
+    "grammarChapters": 15,
+    "grammarPoints": 125,
     "readingUnits": 5,
-    "listeningUnits": 5
+    "listeningUnits": 5,
+    "stageReviews": 3
   },
   "skills": {
     "grammar": [
       {
         "chapterNumber": 1,
         "chapterTitle": "第1章：時間・同時・順序 (Thời gian, Đồng thời & Trình tự)",
-        "summary": "Phân biệt các mẫu câu chỉ khoảng thời gian, hành động diễn ra đồng thời hoặc kế tiếp.",
+        "summary": "Phân biệt các mẫu câu chỉ khoảng thời gian, hành động diễn ra đồng thời hoặc kế tiếp: ~うちに, ~あいだ・あいだに, ~最中に, ~たびに, ~とたん・たとたん.",
         "points": [
           {
             "id": "n3_g_01_uchi_ni",
             "pattern": "～うちに",
             "formula": "V-る / V-ている / V-ない + うちに\nA-い / A-な / N-の + うちに",
-            "meaning": "1. Trong lúc tranh thủ (khi trạng thái chưa thay đổi)\n2. Trong lúc đang... thì biến chuyển tự nhiên xảy ra",
-            "nuance": "Khác với あいだに: うちに hàm ý nếu không làm ngay thì điều kiện thuận lợi sẽ mất đi; hoặc trong quá trình làm A thì một sự biến đổi B tự nhiên phát sinh ngoài tầm kiểm soát.",
-            "trapBuster": "Bẫy đề thi: Nếu vế sau là hành động có ý chí tức thời theo thời điểm cố định, dùng あいだに. Nếu vế sau có sắc thái tranh thủ trước khi muộn (trước khi trời tối, trước khi trà nguội), BẮT BUỘC dùng うちに!",
+            "meaning": "1. Trong lúc tranh thủ (khi trạng thái thuận lợi chưa mất đi)\n2. Trong lúc đang... thì sự biến chuyển tự nhiên phát sinh ngoài ý muốn",
+            "nuance": "Khác với あいだに: うちに hàm ý áp lực thời gian, nếu không tranh thủ làm ngay thì điều kiện thuận lợi sẽ biến mất.",
+            "trapBuster": "Bẫy đề thi: Nếu vế sau là hành động cố định theo giờ -> dùng あいだに. Nếu vế sau là hành động tranh thủ trước khi muộn (trước khi trà nguội, trời tối) -> BẮT BUỘC dùng うちに!",
+            "mnemonic": "Mẹo nhớ 3s: 'Uchi' = Ở bên trong khoảng thời gian vàng, không chớp thời cơ là mất!",
+            "similarGrammar": [
+              {
+                "pattern": "～あいだに",
+                "contrast": "Chỉ thời điểm xảy ra hành động ngắn chen ngang, không có sắc thái tranh thủ chớp thời cơ."
+              },
+              {
+                "pattern": "～最中に",
+                "contrast": "Hành động bất ngờ chen ngang phá đám việc đang làm dang dở."
+              }
+            ],
+            "collocations": [
+              "温かいうちに",
+              "若いうちに",
+              "雨が降らないうちに",
+              "忘れないうちに"
+            ],
             "examples": [
               {
                 "jp": "温かいうちに、どうぞ召し上がってください。",
-                "vi": "Mời bác dùng ngay trong lúc bánh/súp còn đang ấm nóng."
+                "vi": "Mời bác dùng ngay trong lúc súp còn đang ấm nóng."
               },
               {
                 "jp": "本を読んでいるうちに、いつの間にか眠ってしまった。",
@@ -46,7 +60,7 @@
                   "たびに"
                 ],
                 "correct": 0,
-                "explain": "Tranh thủ lúc súp chưa nguội -> Dùng うちに."
+                "explain": "Tranh thủ lúc súp chưa nguội -> Chọn うちに."
               }
             ]
           },
@@ -54,30 +68,42 @@
             "id": "n3_g_02_aida_ni",
             "pattern": "～あいだ / ～あいだに",
             "formula": "V-る / V-ている / V-ない + あいだ (に)\nN-の + あいだ (に)",
-            "meaning": "あいだ: Suốt trong khoảng thời gian... (hành động vế sau diễn ra liên tục)\nあいだに: Trong khi... thì một hành động ngắn/khoảnh khắc xảy ra",
+            "meaning": "あいだ: Suốt trong khoảng thời gian... (hành động liên tục)\nあいだに: Trong khi... thì một hành động ngắn khoảnh khắc xảy ra",
             "nuance": "あいだ đi với hành động kéo dài liên tục suốt khoảng thời gian vế trước. あいだに đi với hành động xảy ra tại một thời điểm nào đó trong khoảng đó.",
-            "trapBuster": "Bẫy đề thi: Nhìn kỹ động từ vế sau. Nếu là hành động tức thời như 'kẻ trộm đột nhập', 'bạn đến chơi', 'thức dậy' -> Chọn あいだに. Nếu là 'ngủ suốt', 'chờ suốt' -> Chọn あいだ (không có に).",
+            "trapBuster": "Bẫy đề thi: Nhìn kỹ động từ vế sau. Nếu là hành động tức thời như 'kẻ trộm đột nhập', 'bạn đến chơi' -> Chọn あいだに. Nếu là 'ngủ suốt', 'chờ suốt' -> Chọn あいだ (không có に).",
+            "mnemonic": "Mẹo nhớ: 'に' là cây kim đâm vào một điểm thời gian khoảnh khắc!",
+            "similarGrammar": [
+              {
+                "pattern": "～ながら",
+                "contrast": "Cùng 1 chủ ngữ thực hiện 2 việc song song. Còn あいだに có thể 2 chủ ngữ khác nhau."
+              }
+            ],
+            "collocations": [
+              "留守のあいだに",
+              "夏休みのあいだ",
+              "寝ているあいだに"
+            ],
             "examples": [
               {
-                "jp": "留守のあいだに、泥棒が入った。",
-                "vi": "Trong lúc tôi vắng nhà, trộm đã lẻn vào."
+                "jp": "夏休みのあいだ、ずっと 北海道に いました。",
+                "vi": "Suốt trong kỳ nghỉ hè, tôi ở Hokkaido."
               },
               {
-                "jp": "夏休みのあいだ、ずっと日本にいました。",
-                "vi": "Suốt kỳ nghỉ hè, tôi ở suốt Nhật Bản."
+                "jp": "留守のあいだに、泥棒が 入りました。",
+                "vi": "Trong lúc tôi vắng nhà, kẻ trộm đã đột nhập vào."
               }
             ],
             "quiz": [
               {
-                "q": "お母さんが 昼寝を している（　）、子供たちは 静かに 本を 読んでいた。",
+                "q": "お風呂に 入っている（　）、電話が 鳴りました。",
                 "options": [
-                  "あいだ",
                   "あいだに",
+                  "あいだ",
                   "うちに",
-                  "さいちゅう"
+                  "最中に"
                 ],
                 "correct": 0,
-                "explain": "Đọc sách yên lặng suốt thời gian mẹ ngủ (hành động liên tục) -> Chọn あいだ."
+                "explain": "Điện thoại reo là hành động khoảnh khắc chen ngang việc tắm -> Dùng あいだに."
               }
             ]
           },
@@ -85,26 +111,85 @@
             "id": "n3_g_03_saichuu_ni",
             "pattern": "～最中に (さいちゅうに)",
             "formula": "V-ている + 最中に\nN-の + 最中に",
-            "meaning": "Đúng vào lúc đang cao điểm làm gì thì có sự việc bất ngờ chen ngang",
-            "nuance": "Vế sau luôn là một sự việc bất ngờ, phiền toái, chen ngang vào làm gián đoạn hành động đang diễn ra (mất điện, điện thoại reo, động đất).",
-            "trapBuster": "Bẫy đề thi: Không dùng 最中に cho những việc thường nhật lặp đi lặp lại hay việc có chủ định từ trước. Vế sau phải là sự cố ngoài ý muốn!",
+            "meaning": "Đúng vào lúc đang cao trào... thì có sự cố bất ngờ chen ngang",
+            "nuance": "Nhấn mạnh vào thời điểm hành động đang diễn ra tập trung nhất thì có sự việc ngoài ý muốn phá đám.",
+            "trapBuster": "Vế sau của 最中に luôn là sự cố phiền toái, bất ngờ (động đất, mất điện, mưa rào, sếp gọi). Tuyệt đối không dùng cho việc vui vẻ dự định trước.",
+            "mnemonic": "Mẹo nhớ: 最中 (tối trung) = Ngay chính giữa tâm điểm!",
+            "similarGrammar": [
+              {
+                "pattern": "〜ところに",
+                "contrast": "Chỉ thời điểm vừa đúng lúc (không nhất thiết là sự cố phá đám phiền toái như 最中に)."
+              }
+            ],
+            "collocations": [
+              "会議の最中に",
+              "食事の最中に",
+              "試合の最中に"
+            ],
             "examples": [
               {
-                "jp": "会議の最中に、突然停電になった。",
-                "vi": "Đúng vào lúc đang giữa cuộc họp thì đột nhiên mất điện."
+                "jp": "スピーチの 最中に、突然 停電しました。",
+                "vi": "Đúng lúc đang phát biểu thì đột nhiên bị cúp điện."
+              },
+              {
+                "jp": "シャワーを 浴びている 最中に、誰かが ドアを ノックした。",
+                "vi": "Đúng lúc đang tắm thì có ai đó gõ cửa phòng."
               }
             ],
             "quiz": [
               {
-                "q": "食事の（　）に、電話が 鳴って 困った。",
+                "q": "大事な 会議の（　）、携帯電話が 鳴ってしまった。",
                 "options": [
-                  "最中",
-                  "うち",
+                  "最中に",
+                  "うちに",
                   "あいだ",
-                  "たび"
+                  "たびに"
                 ],
                 "correct": 0,
-                "explain": "Đang giữa bữa ăn thì điện thoại reo chen ngang -> Dùng 最中に."
+                "explain": "Đúng lúc cuộc họp quan trọng đang cao trào thì điện thoại reo phá đám -> Chọn 最中に."
+              }
+            ]
+          },
+          {
+            "id": "n3_g_04_tabi_ni",
+            "pattern": "～たびに",
+            "formula": "V-る + たびに\nN-の + たびに",
+            "meaning": "Mỗi lần... thì đều... (100 lần như một)",
+            "nuance": "Nhấn mạnh tính quy luật: Cứ mỗi khi sự việc A xảy ra thì hệ quả B lại luôn luôn tái diễn.",
+            "trapBuster": "Không dùng cho các hiện tượng tự nhiên thường nhật như 'Mỗi sáng thức dậy' (vì không có gì bất ngờ hay đặc sắc để nhấn mạnh).",
+            "mnemonic": "Mẹo nhớ: 度 (độ) = Mỗi lần, mỗi lượt lặp lại.",
+            "similarGrammar": [
+              {
+                "pattern": "〜ごとに",
+                "contrast": "Chỉ chu kỳ cố định: 2時間ごとに (cứ 2 tiếng một lần). たびに chỉ sự việc ngẫu nhiên lặp lại."
+              }
+            ],
+            "collocations": [
+              "会うたびに",
+              "写真を見るたびに",
+              "旅行のたびに"
+            ],
+            "examples": [
+              {
+                "jp": "この 曲を 聞くたびに、故郷を 思い出す。",
+                "vi": "Mỗi lần nghe bản nhạc này, tôi lại nhớ về quê hương."
+              },
+              {
+                "jp": "父は 出張の たびに、お土産を 買ってきてくれる。",
+                "vi": "Mỗi lần đi công tác, bố đều mua quà về cho tôi."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "あの 人は 会う（　）、新しい 服を 着ている。",
+                "options": [
+                  "たびに",
+                  "うちに",
+                  "あいだに",
+                  "最中に"
+                ],
+                "correct": 0,
+                "explain": "Mỗi lần gặp đều mặc đồ mới (quy luật lặp lại) -> Chọn たびに."
               }
             ]
           }
@@ -112,37 +197,92 @@
       },
       {
         "chapterNumber": 2,
-        "chapterTitle": "第2章：原因・理由 (Nguyên nhân & Lý do)",
-        "summary": "Phân biệt các sắc thái lý do: Khách quan, chủ quan, đổ lỗi, biết ơn và nguyên cớ.",
+        "chapterTitle": "第2章：変化・進行・傾向 (Biến đổi, Tiến trình & Xu hướng)",
+        "summary": "Nắm vững các mẫu câu miêu tả xu hướng biến đổi của xã hội và tự nhiên: ~つつある, ~一方だ, ~ばかりだ, ~ていく・てくる.",
         "points": [
           {
-            "id": "n3_g_04_okage_sei",
-            "pattern": "～おかげで vs ～せいで",
-            "formula": "Thể thông thường (Na/N-の) + おかげで / せいで",
-            "meaning": "おかげで: Nhờ có... (kết quả tích cực, biết ơn)\nせいで: Do tại vì... (kết quả tiêu cực, đổ lỗi trách móc)",
-            "nuance": "おかげで mang hàm ý mang ơn. せいで mang hàm ý bực bội, trút trách nhiệm cho người/hoàn cảnh khác.",
-            "trapBuster": "Bẫy mỉa mai: Đôi khi おかげで được dùng trong câu mỉa mai (ví dụ: 'Nhờ có mày mà tao bị mắng!'), nhưng trong đề thi JLPT tiêu chuẩn, luôn tuân thủ nguyên tắc おかげで = tích cực, せいで = tiêu cực.",
+            "id": "n3_g_05_tsutsu_aru",
+            "pattern": "～つつある",
+            "formula": "V(bỏ ます) + つつある",
+            "meaning": "Đang dần dần biến đổi theo hướng...",
+            "nuance": "Văn phong trang trọng, báo chí xã luận miêu tả một xu hướng biến chuyển đang liên tục diễn ra từng ngày.",
+            "trapBuster": "Chỉ đi với động từ chỉ sự biến đổi (暖かくなる, 回復する, 変化する, 普及する). Không đi với động từ hành động đơn thuần như 食べる, 飲む.",
+            "mnemonic": "Mẹo nhớ: 'Tsutsu' = Dần dần từng bước một.",
+            "similarGrammar": [
+              {
+                "pattern": "〜てきている",
+                "contrast": "Văn nói đời thường. 〜つつある trang trọng hơn rất nhiều."
+              }
+            ],
+            "collocations": [
+              "回復しつつある",
+              "広まりつつある",
+              "暖かくなりつつある"
+            ],
             "examples": [
               {
-                "jp": "先生のご指導のおかげで、合格できました。",
-                "vi": "Nhờ sự chỉ bảo tận tình của thầy giáo mà em đã thi đỗ."
+                "jp": "景気は 少しずつ 回復しつつある。",
+                "vi": "Nền kinh tế đang dần dần có dấu hiệu hồi phục."
               },
               {
-                "jp": "バスが遅れたせいで、試験に遅刻してしまった。",
-                "vi": "Tại xe buýt đến trễ mà tôi bị muộn giờ thi."
+                "jp": "スマートフォンの 利用者は 増えつつある。",
+                "vi": "Người sử dụng điện thoại thông minh đang ngày càng tăng lên."
               }
             ],
             "quiz": [
               {
-                "q": "あなたの（　）で、計画が 全部 台無しに なったじゃないか！",
+                "q": "地球の 温暖化は ますます 進み（　）。",
                 "options": [
-                  "せい",
-                  "おかげ",
-                  "ため",
-                  "わけ"
+                  "つつある",
+                  "一方だ",
+                  "ばかりだ",
+                  "てたまらない"
                 ],
                 "correct": 0,
-                "explain": "Trách móc vì kế hoạch bị hỏng bét -> Dùng せいで."
+                "explain": "Xu hướng biến đổi toàn cầu đang dần tiếp diễn -> Chọn 進みつつある."
+              }
+            ]
+          },
+          {
+            "id": "n3_g_06_ippou_da",
+            "pattern": "～一方だ / ～ばかりだ",
+            "formula": "V-る (Động từ biến đổi) + 一方だ / ばかりだ",
+            "meaning": "Càng ngày càng... theo một chiều hướng duy nhất (không ngừng)",
+            "nuance": "一方だ có thể dùng cho cả chiều hướng tích cực lẫn tiêu cực. ばかりだ hầu như CHỈ DÙNG CHO CHIỀU HƯỚNG XẤU/TIÊU CỰC.",
+            "trapBuster": "Bẫy đề thi: Nếu chiều hướng là XẤU (giá cả leo thang, bệnh nặng thêm, dân số già đi) -> cả 2 đều dùng được. Nếu chiều hướng TỐT (tiếng Nhật tiến bộ) -> BẮT BUỘC dùng 一方だ, KHÔNG ĐƯỢC dùng ばかりだ!",
+            "mnemonic": "Mẹo nhớ: 一方 = Một phương hướng duy nhất thẳng tiến!",
+            "similarGrammar": [
+              {
+                "pattern": "〜ていく",
+                "contrast": "Tiếp tục biến đổi trong tương lai, nhưng không nhấn mạnh vào tính chất một chiều như 一方だ."
+              }
+            ],
+            "collocations": [
+              "物価は 上がる一方だ",
+              "悪くなるばかりだ",
+              "減る一方だ"
+            ],
+            "examples": [
+              {
+                "jp": "物価は 上がる一方だ。",
+                "vi": "Giá cả hàng hóa thì cứ ngày một leo thang không ngừng."
+              },
+              {
+                "jp": "祖父の 病気は 悪くなるばかりだ。",
+                "vi": "Bệnh tình của ông tôi cứ ngày một xấu đi (tiêu cực)."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "最近、仕事が 忙しくて、ストレスが たまる（　）。",
+                "options": [
+                  "一方だ",
+                  "つつある",
+                  "うちに",
+                  "最中だ"
+                ],
+                "correct": 0,
+                "explain": "Stress cứ ngày một tích tụ theo một chiều -> Chọn 一方だ (hoặc ばかりだ)."
               }
             ]
           }
@@ -150,37 +290,92 @@
       },
       {
         "chapterNumber": 3,
-        "chapterTitle": "第3章：逆接・対比 (Trái ngược, Bất ngờ & Đối chiếu)",
-        "summary": "Phân biệt ~わりに, ~にしては, ~反面, ~くせに.",
+        "chapterTitle": "第3章：限界・範囲・起点 (Giới hạn, Phạm vi & Điểm khởi phát)",
+        "summary": "Các cấu trúc chỉ giới hạn không gian thời gian: ~から~にかけて, ~をはじめ(として), ~にわたって, ~において.",
         "points": [
           {
-            "id": "n3_g_05_wari_ni_shite_wa",
-            "pattern": "～わりに vs ～にしては",
-            "formula": "Thể thông thường (Na/N-の) + わりに(は)\nThể thông thường (Na/N không の) + にしては",
-            "meaning": "Dù là... nhưng mức độ thực tế không tương xứng với tiêu chuẩn thông thường",
-            "nuance": "わりに: So với mức độ/tỷ lệ chung (so với tuổi tác, so với giá tiền). にしては: Đi với mốc cụ thể rõ ràng (ví dụ: dù là người nước ngoài mới học 1 năm, dù là tháng 8 mà trời lạnh).",
-            "trapBuster": "Bẫy kết nối: Danh từ đi với わりに phải có の (子供のわりに), còn にしては đi trực tiếp với danh từ không có の (子供にしては).",
+            "id": "n3_g_07_kara_ni_kakete",
+            "pattern": "～から～にかけて",
+            "formula": "N1 + から + N2 + にかけて",
+            "meaning": "Từ khoảng N1 đến khoảng N2 (Phạm vi mơ hồ)",
+            "nuance": "Khác với から~まで (ranh giới điểm đầu điểm cuối rõ ràng dứt khoát), にかけて chỉ một dải phạm vi trải dài không rõ biên giới chính xác.",
+            "trapBuster": "Bẫy đề thi: Nếu là giờ mở cửa chính xác (9:00 đến 17:00) -> Dùng から〜まで. Nếu là thời tiết mưa bão (từ đêm nay tới sáng mai) -> BẮT BUỘC dùng から〜にかけて!",
+            "mnemonic": "Mẹo nhớ: 掛ける = Phủ lên một dải không gian/thời gian.",
+            "similarGrammar": [
+              {
+                "pattern": "〜から〜まで",
+                "contrast": "Ranh giới thời gian/không gian tuyệt đối chuẩn xác."
+              }
+            ],
+            "collocations": [
+              "今夜から明日にかけて",
+              "関東から東北にかけて",
+              "春から夏にかけて"
+            ],
             "examples": [
               {
-                "jp": "このレストランは、値段のわりに料理がとてもおいしい。",
-                "vi": "Nhà hàng này so với giá cả thì món ăn ngon hơn hẳn."
+                "jp": "今夜から 明日の 朝にかけて、大雨が 降る見込みです。",
+                "vi": "Dự báo từ đêm nay trải dài tới sáng mai sẽ có mưa lớn."
               },
               {
-                "jp": "彼は日本語を勉強してまだ半年だそうだが、それにしてはとても流暢だ。",
-                "vi": "Nghe nói anh ấy mới học tiếng Nhật 6 tháng, thế mà nói lưu loát bất ngờ."
+                "jp": "九州から 四国にかけて、台風が 通過しました。",
+                "vi": "Cơn bão đã quét qua dải khu vực từ Kyushu trải tới Shikoku."
               }
             ],
             "quiz": [
               {
-                "q": "この靴は、値段の（　）とても 丈夫で 長持ちする。",
+                "q": "明日は 明け方から 昼（　）、雷雨と なるでしょう。",
                 "options": [
-                  "わりに",
-                  "にしては",
-                  "くせに",
-                  "反面"
+                  "にかけて",
+                  "まで",
+                  "について",
+                  "にとって"
                 ],
                 "correct": 0,
-                "explain": "Có trợ từ の (値段の) -> Phải chọn わりに."
+                "explain": "Thời tiết diễn ra trong dải thời gian mơ hồ -> Chọn にかけて."
+              }
+            ]
+          },
+          {
+            "id": "n3_g_08_wo_hajime",
+            "pattern": "～をはじめ / ～をはじめとして",
+            "formula": "N + をはじめ (として)",
+            "meaning": "Trước tiên phải kể đến là... (Đại diện tiêu biểu nhất)",
+            "nuance": "Nêu ra ví dụ tiêu biểu hàng đầu, sau đó ngầm hiểu hoặc liệt kê các đối tượng tương tự khác trong cùng nhóm.",
+            "trapBuster": "Đối tượng đứng trước をはじめ phải là nhân vật hoặc sự vật quan trọng nhất, nổi bật nhất trong tập thể.",
+            "mnemonic": "Mẹo nhớ: 始め = Khởi đầu, đứng đầu danh sách!",
+            "similarGrammar": [
+              {
+                "pattern": "〜をはじめとする + N",
+                "contrast": "Dạng bổ nghĩa trực tiếp cho danh từ phía sau."
+              }
+            ],
+            "collocations": [
+              "富士山をはじめ",
+              "校長先生をはじめ",
+              "アジア諸国をはじめ"
+            ],
+            "examples": [
+              {
+                "jp": "日本には 富士山を はじめ、有名な 山が たくさん ある。",
+                "vi": "Ở Nhật Bản có rất nhiều ngọn núi nổi tiếng mà tiêu biểu đầu tiên phải kể đến là núi Phú Sĩ."
+              },
+              {
+                "jp": "社長を はじめ、社員全員が 参加した。",
+                "vi": "Đứng đầu là giám đốc, và toàn thể nhân viên đều đã tham gia."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "この 町には 日本料理を（　）、世界各国の レストランが ある。",
+                "options": [
+                  "はじめ",
+                  "通して",
+                  "めぐって",
+                  "もとにして"
+                ],
+                "correct": 0,
+                "explain": "Món ăn Nhật là đại diện tiêu biểu hàng đầu -> Chọn をはじめ."
               }
             ]
           }
@@ -188,37 +383,96 @@
       },
       {
         "chapterNumber": 4,
-        "chapterTitle": "第4章：条件・仮定 (Điều kiện & Giả định)",
-        "summary": "Phân biệt ~さえ~ば, ~たとえ~ても, ~ば~ほど.",
+        "chapterTitle": "第4章：関連・対象・関心 (Liên quan, Đối tượng & Quan điểm)",
+        "summary": "Phân biệt bộ ba trợ từ liên quan kinh điển: ~について, ~に対して, ~にとって, ~に関する.",
         "points": [
           {
-            "id": "n3_g_06_sae_ba",
-            "pattern": "～さえ～ば",
-            "formula": "N + さえ + Động từ thể Ba / Danh từ + なら",
-            "meaning": "Chỉ cần... là đủ (các yếu tố khác không quan trọng)",
-            "nuance": "Nhấn mạnh điều kiện tối thiểu cốt tử nhất. Một khi đáp ứng được điều kiện đó thì mọi vấn đề khác đều giải quyết xong.",
-            "trapBuster": "Bẫy trợ từ: Trợ từ を, が biến mất khi đi kèm さえ (ví dụ: お金さえあれば, chứ không nói お金をさえあれば).",
-            "examples": [
+            "id": "n3_g_09_tai_shite",
+            "pattern": "～に対して (たいして)",
+            "formula": "N + に対して / に対する + N\nVế 1 (Thể thông thường / な/である) + のに対して、+ Vế 2",
+            "meaning": "1. Đối với (thái độ hướng tới ai)\n2. Ngược lại với (so sánh tương phản 2 chủ thể)",
+            "nuance": "1. Hướng hành vi/thái độ: Khách hàng, giáo viên, đối phương.\n2. So sánh đối chiếu 2 sự vật có tính chất trái ngược nhau hoàn toàn.",
+            "trapBuster": "Phân biệt に対して (thái độ hướng tới đối tượng) với について (nói/nghĩ/nghiên cứu VỀ một chủ đề).",
+            "mnemonic": "Mẹo nhớ: 対 = Đối diện, đối mặt trực tiếp.",
+            "similarGrammar": [
               {
-                "jp": "体さえ健康なら、どんな困難も乗り越えられる。",
-                "vi": "Chỉ cần cơ thể khỏe mạnh thì khó khăn nào cũng vượt qua được."
+                "pattern": "〜について",
+                "contrast": "Nội dung chủ đề: 日本文化について 発表する (Thuyết trình VỀ văn hóa Nhật)."
               },
               {
-                "jp": "あなたさえいれば、他には何もいらない。",
-                "vi": "Chỉ cần có em bên cạnh, anh chẳng cần gì khác trên đời."
+                "pattern": "〜にとって",
+                "contrast": "Từ góc độ quan điểm của ai đánh giá: 私にとって 大切だ (ĐỐI VỚI tôi thì quan trọng)."
+              }
+            ],
+            "collocations": [
+              "お客様に対して",
+              "目上の人に対して",
+              "兄が活発なのに対して弟は静かだ"
+            ],
+            "examples": [
+              {
+                "jp": "お客様に 対して、失礼な 言葉を 使っては いけない。",
+                "vi": "Đối với khách hàng, tuyệt đối không được dùng lời lẽ thất lễ."
+              },
+              {
+                "jp": "兄が スポーツが 好きなのに 対して、弟は 読書が 好きだ。",
+                "vi": "Trái ngược với người anh thích thể thao, người em lại thích đọc sách."
               }
             ],
             "quiz": [
               {
-                "q": "パスポート（　）あれば、いつでも 海外旅行に 行ける。",
+                "q": "先生（　）対しては、敬語を 使わなければ ならない。",
                 "options": [
-                  "さえ",
-                  "こそ",
-                  "でも",
-                  "ほど"
+                  "に",
+                  "を",
+                  "で",
+                  "と"
                 ],
                 "correct": 0,
-                "explain": "Cấu trúc 'Chỉ cần có hộ chiếu là...' -> Chọn さえ...あれば."
+                "explain": "Cụm cố định: N に対して (đối với ai đó)."
+              }
+            ]
+          },
+          {
+            "id": "n3_g_10_ni_totte",
+            "pattern": "～にとって",
+            "formula": "N (Người / Tổ chức) + にとって / にとっての + N",
+            "meaning": "Đối với [Góc độ của ai] mà nói thì...",
+            "nuance": "Đưa ra đánh giá, nhận định từ lập trường, quan điểm riêng của người đó (thường đi với các từ đánh giá: quan trọng, khó khăn, cần thiết).",
+            "trapBuster": "Vế sau của にとって KHÔNG ĐƯỢC LÀ HÀNH ĐỘNG CÓ Ý CHÍ (như 'Tôi đối với bố thì tôi chào'). Vế sau bắt buộc là câu nhận định, phán đoán tính chất!",
+            "mnemonic": "Mẹo nhớ: 'Tot-te' = Đứng từ góc nhìn cá nhân.",
+            "similarGrammar": [
+              {
+                "pattern": "〜に対して",
+                "contrast": "Chỉ thái độ cư xử hướng đến đối phương."
+              }
+            ],
+            "collocations": [
+              "私にとって",
+              "留学生にとって",
+              "若者にとって"
+            ],
+            "examples": [
+              {
+                "jp": "健康は 人間にとって 何よりも 大切な ものだ。",
+                "vi": "Sức khỏe đối với con người là thứ quan trọng hơn bất cứ điều gì."
+              },
+              {
+                "jp": "外国人にとって、漢字を 覚えるのは 大変だ。",
+                "vi": "Đối với người nước ngoài, việc ghi nhớ chữ Hán là rất vất vả."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "わたし（　）とって、家族が 一番 大切です。",
+                "options": [
+                  "に",
+                  "を",
+                  "で",
+                  "へ"
+                ],
+                "correct": 0,
+                "explain": "Góc nhìn đánh giá của bản thân: わたしにとって."
               }
             ]
           }
@@ -226,37 +480,92 @@
       },
       {
         "chapterNumber": 5,
-        "chapterTitle": "第5章：変化・比較・比例 (Biến đổi, So sánh & Tỷ lệ)",
-        "summary": "Phân biệt ~につれて, ~にしたがって, ~とともに.",
+        "chapterTitle": "第5章：理由・原因・根拠 (Nguyên nhân, Lý do & Căn cứ)",
+        "summary": "Làm chủ các mẫu câu nguyên nhân chuyên sâu: ~おかげで, ~せいで, ~によって, ~からには, ~以上は.",
         "points": [
           {
-            "id": "n3_g_07_tsurete_shitagatte",
-            "pattern": "～につれて vs ～にしたがって",
-            "formula": "V-る / N + につれて / にしたがって",
-            "meaning": "Cùng với sự biến đổi của A kéo theo sự biến đổi của B (Càng... càng...)",
-            "nuance": "につれて: Biến đổi tự nhiên một chiều theo hướng tăng/giảm dần. にしたがって: Trang trọng hơn, có thể dùng cho cả biến đổi quy mô lớn hoặc 'tuân theo chỉ thị/mệnh lệnh'.",
-            "trapBuster": "Bẫy hai nghĩa: にしたがって còn có nghĩa thứ hai là 'Tuân theo quy tắc/hướng dẫn' (ví dụ: 指示にしたがって), trong khi につれて KHÔNG CÓ nghĩa này!",
+            "id": "n3_g_11_okage_sei",
+            "pattern": "～おかげで / ～せいで",
+            "formula": "Thể thông thường (Aな + な / N + の) + おかげで (Tốt)\nThể thông thường (Aな + な / N + の) + せいで (Xấu)",
+            "meaning": "おかげで: Nhờ có... (kết quả may mắn, biết ơn)\nせいで: Do tại vì... (kết quả tồi tệ, đổ lỗi, trách móc)",
+            "nuance": "おかげで mang sắc thái cảm kích tích cực. せいで mang sắc thái oán trách, đổ lỗi cho nguyên nhân gây ra hậu quả xấu.",
+            "trapBuster": "Chỉ có 1 ngoại lệ mỉa mai châm biếm: 'Dùng おかげで trong câu mỉa mai' nhưng trong đề thi JLPT luôn tuân thủ quy tắc: おかげで = TỐT, せいで = XẤU!",
+            "mnemonic": "Mẹo nhớ: おかげ (Ơn trời ban phước) >< せい (Tại cái tội...)",
+            "similarGrammar": [
+              {
+                "pattern": "〜ために",
+                "contrast": "Nguyên nhân trung tính, không chứa sắc thái biết ơn hay đổ lỗi."
+              }
+            ],
+            "collocations": [
+              "先生のおかげで合格した",
+              "台風のせいで遅刻した",
+              "薬のおかげで治った"
+            ],
             "examples": [
               {
-                "jp": "年をとるにつれて、物忘れが多くなった。",
-                "vi": "Càng có tuổi thì việc hay quên càng xuất hiện nhiều hơn."
+                "jp": "先生の おかげで、N3に 合格できました。",
+                "vi": "Nhờ có thầy giáo tận tình mà em đã thi đỗ N3."
               },
               {
-                "jp": "係員の指示にしたがって、避難してください。",
-                "vi": "Hãy tuân theo sự hướng dẫn của nhân viên mà sơ tán an toàn."
+                "jp": "寝坊した せいで、飛行機に 乗り遅れてしまった。",
+                "vi": "Tại vì ngủ quên mà tôi đã lỡ mất chuyến bay."
               }
             ],
             "quiz": [
               {
-                "q": "先生の アドバイスに（　）勉強したら、成績が 上がった。",
+                "q": "毎日 練習した（　）、試合に 勝つことが できた。",
                 "options": [
-                  "したがって",
-                  "つれて",
-                  "ともなって",
-                  "たいして"
+                  "おかげで",
+                  "せいで",
+                  "くせに",
+                  "わりに"
                 ],
                 "correct": 0,
-                "explain": "Làm theo lời khuyên của giáo viên -> Chỉ có にしたがって mới mang nghĩa tuân theo."
+                "explain": "Chiến thắng trận đấu là kết quả tốt -> Dùng おかげで."
+              }
+            ]
+          },
+          {
+            "id": "n3_g_12_kara_niwa",
+            "pattern": "～からには / ～以上は (いじょうは)",
+            "formula": "V (Thể thông thường) + からには / 以上は\nN / Aな + である + 以上は",
+            "meaning": "Một khi đã... thì đương nhiên phải...",
+            "nuance": "Vế trước đưa ra một quyết tâm hoặc sự thật đã rồi. Vế sau thể hiện ý chí đanh thép, nghĩa vụ hoặc mệnh lệnh bắt buộc phải làm tới cùng.",
+            "trapBuster": "Vế sau luôn luôn chứa đuôi câu mang tính ý chí, quyết tâm hoặc nghĩa vụ: 〜べきだ, 〜つもりだ, 〜なければならない, 〜てください.",
+            "mnemonic": "Mẹo nhớ: Đã đâm lao thì phải theo lao!",
+            "similarGrammar": [
+              {
+                "pattern": "〜上は (うえは)",
+                "contrast": "N2: Dạng văn phong trang trọng hơn của からには."
+              }
+            ],
+            "collocations": [
+              "約束したからには",
+              "引き受けた以上は",
+              "日本に来たからには"
+            ],
+            "examples": [
+              {
+                "jp": "一度 約束した からには、絶対に 守らなければ ならない。",
+                "vi": "Một khi đã hứa thì nhất định phải giữ lời."
+              },
+              {
+                "jp": "留学する 以上は、しっかり 勉強して 帰国する つもりだ。",
+                "vi": "Một khi đã đi du học thì tôi quyết tâm học hành đàng hoàng rồi mới về nước."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "自分で やると 決めた（　）、最後まで 諦めない。",
+                "options": [
+                  "からには",
+                  "せいで",
+                  "おかげで",
+                  "うちに"
+                ],
+                "correct": 0,
+                "explain": "Một khi đã tự mình quyết định thì không bỏ cuộc -> Chọn からには."
               }
             ]
           }
@@ -264,37 +573,49 @@
       },
       {
         "chapterNumber": 6,
-        "chapterTitle": "第6章：義務・助言・禁止 (Nghĩa vụ, Lời khuyên & Cấm đoán)",
-        "summary": "Phân biệt ~べきだ, ~ことだ, ~わけにはいかない.",
+        "chapterTitle": "第6章：逆接・対比・不満 (Trái ngược, Tương phản & Bất mãn)",
+        "summary": "Phân biệt các mẫu câu trái ngược: ~反面, ~わりに(は), ~くせに, ~にもかかわらず.",
         "points": [
           {
-            "id": "n3_g_08_beki_da",
-            "pattern": "～べきだ / ～べきではない",
-            "formula": "V-る + べきだ (đặc biệt する→すべきだ / するべきだ)",
-            "meaning": "Nên / Phải làm gì (dưới góc độ đạo đức, chuẩn mực xã hội)",
-            "nuance": "Không phải là quy định pháp luật ép buộc (なければならない), mà là đạo lý thông thường con người nên làm. Không nên dùng trực tiếp khuyên người trên tuổi.",
-            "trapBuster": "Bẫy động từ: Động từ する có thể chia thành すべき hoặc するべき. Cả hai đều được chấp nhận trong đề thi!",
+            "id": "n3_g_13_warini_kuseni",
+            "pattern": "～わりに(は) vs ～くせに",
+            "formula": "Thể thông thường (Aな + な / N + の) + わりに(は)\nThể thông thường (Aな + な / N + の) + くせに",
+            "meaning": "わりに: So với tiêu chuẩn... thì kết quả lại bất ngờ\nくせに: Thế mà lại... (Khinh miệt, trách móc nặng nề)",
+            "nuance": "わりに: Đánh giá khách quan, ngạc nhiên (Tuổi già nhưng chạy nhanh, Giá rẻ nhưng ăn ngon).\nくせに: Chỉ trích, coi thường hành vi của đối phương (Biết mà giả vờ không biết, Là đàn ông mà lại khóc lóc).",
+            "trapBuster": "BẪY CẤM KỴ: TUYỆT ĐỐI KHÔNG DÙNG 'くせに' CHO BẢN THÂN MÌNH (Không nói: わたしは くせに...). くせに mang sắc thái khinh miệt nên chỉ dùng cho người khác.",
+            "mnemonic": "Mẹo nhớ: 'Kuse' = Thói hư tật xấu đáng trách!",
+            "similarGrammar": [
+              {
+                "pattern": "〜のに",
+                "contrast": "Bất mãn bình thường; くせに mang sắc thái châm chọc, coi thường sâu sắc."
+              }
+            ],
+            "collocations": [
+              "値段のわりに おいしい",
+              "年のわりに 若い",
+              "知らないくせに 知っていると言う"
+            ],
             "examples": [
               {
-                "jp": "約束は守るべきだ。",
-                "vi": "Đã là lời hứa thì đạo lý là phải giữ gìn."
+                "jp": "この 料理は 値段の わりに、量も 多くて おいしい。",
+                "vi": "Món ăn này so với mức giá tiền thì lượng nhiều mà lại ngon nữa (khách quan khen)."
               },
               {
-                "jp": "学生はもっと勉強すべきだ。",
-                "vi": "Là học sinh thì đương nhiên phải chăm chỉ học tập."
+                "jp": "彼は 何も できない くせに、文句ばかり 言っている。",
+                "vi": "Hắn ta chả làm được tích sự gì thế mà chỉ toàn mở mồm kêu ca (chỉ trích gay gắt)."
               }
             ],
             "quiz": [
               {
-                "q": "困っている 人が いたら、助ける（　）だ。",
+                "q": "お金が ない（　）、高い 車を 買った。",
                 "options": [
-                  "べき",
-                  "こと",
-                  "もの",
-                  "わけ"
+                  "くせに",
+                  "わりに",
+                  "おかげで",
+                  "うちに"
                 ],
                 "correct": 0,
-                "explain": "Chuẩn mực đạo lý tương trợ người gặp nạn -> Dùng べきだ."
+                "explain": "Hành vi đáng trách móc (không có tiền mà bày đặt mua xe đắt tiền) -> Chọn くせに."
               }
             ]
           }
@@ -302,24 +623,86 @@
       },
       {
         "chapterNumber": 7,
-        "chapterTitle": "第7章：心情・感覚 (Cảm xúc & Tâm trạng không cưỡng lại được)",
-        "summary": "Phân biệt ~たまらない, ~しょうがない, ~てならない.",
+        "chapterTitle": "第7章：条件・仮定 (Điều kiện cần thiết & Giả định)",
+        "summary": "Các cấu trúc giả định N3: ~さえ~ば, ~たとえ~ても, ~ば~ほど, ~としたら.",
         "points": [
           {
-            "id": "n3_g_09_tamaranai",
-            "pattern": "～てたまらない / ～てしょうがない",
-            "formula": "V-て / A-くて / Na-で + たまらない (しょうがない)",
-            "meaning": "Rất... đến mức không thể kìm nén hay chịu đựng nổi",
-            "nuance": "Biểu lộ cảm xúc bản năng tự phát (đói, khát, nhớ nhà, lo lắng, muốn gặp người yêu). たまらない nhấn mạnh vào sự chịu đựng; しょうがない nhấn mạnh vào sự bất lực không biết làm sao.",
-            "trapBuster": "Bẫy ngôi thứ: Trong câu trần thuật, chỉ dùng cho cảm xúc của ngôi thứ nhất (bản thân). Nếu nói về người khác, phải thêm ~ようだ, ~そうだ hoặc ~がっている.",
+            "id": "n3_g_14_sae_ba",
+            "pattern": "～さえ～ば",
+            "formula": "N + さえ + V-ば / A-ければ / A-なら / N-なら\nV(bỏ ます) + さえ すれば",
+            "meaning": "Chỉ cần... là đủ (những thứ khác không quan trọng)",
+            "nuance": "Nhấn mạnh điều kiện tối thiểu duy nhất: Chỉ cần đáp ứng được một điều này thôi thì mọi vấn đề đều được giải quyết êm đẹp.",
+            "trapBuster": "Vị trí của さえ: Thay thế các trợ từ は, が, を. Đối với các trợ từ に, で thì đứng sau: 'ここにさえ 来れば'.",
+            "mnemonic": "Mẹo nhớ: 'Sae... ba' = Cặp bài trùng 'Chỉ cần... là ok'.",
+            "similarGrammar": [
+              {
+                "pattern": "〜だけ",
+                "contrast": "だけ chỉ số lượng đơn thuần; さえ nhấn mạnh điều kiện cốt tử."
+              }
+            ],
+            "collocations": [
+              "お金さえあれば",
+              "元気でさえあれば",
+              "薬を飲みさえすれば"
+            ],
             "examples": [
               {
-                "jp": "故郷の家族に会いたくてたまらない。",
+                "jp": "体さえ 丈夫なら、どんな 苦労にも 耐えられる。",
+                "vi": "Chỉ cần cơ thể khỏe mạnh thì bất kỳ gian khổ nào tôi cũng chịu đựng được."
+              },
+              {
+                "jp": "給料さえ 高ければ、仕事は 大変でも 構わない。",
+                "vi": "Chỉ cần lương cao thì công việc có vất vả mấy tôi cũng không màng."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "パスポート（　）あれば、ホテルに 泊まれます。",
+                "options": [
+                  "さえ",
+                  "こそ",
+                  "すら",
+                  "ばかり"
+                ],
+                "correct": 0,
+                "explain": "Chỉ cần có hộ chiếu là đủ: パスポートさえ あれば."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 8,
+        "chapterTitle": "第8章：心情・感覚 (Cảm xúc & Tâm trạng không kìm nén được)",
+        "summary": "Phân biệt các mẫu cảm xúc tự nhiên: ~てたまらない, ~てしょうがない, ~てならない.",
+        "points": [
+          {
+            "id": "n3_g_15_tamaranai_naranai",
+            "pattern": "～てたまらない / ～てしょうがない / ～てならない",
+            "formula": "V-て / A-くて / Na-で + たまらない / しょうがない / ならない",
+            "meaning": "Rất... đến mức không thể kìm nén hay chịu đựng nổi",
+            "nuance": "Biểu lộ cảm xúc bản năng tự phát (đói, khát, nhớ nhà, lo lắng, muốn gặp người yêu).\n- たまらない: Cảm giác sinh lý chịu đựng (đau, ngứa, muốn uống nước).\n- しょうがない: Cảm xúc bất lực không biết làm sao cho nguôi.\n- ならない: Cảm xúc lo âu từ trong tâm khảm tự trào dâng.",
+            "trapBuster": "BẪY NGÔI THỨ: Trong câu trần thuật, chỉ dùng cho cảm xúc của ngôi thứ nhất (bản thân). Nếu nói về người khác, bắt buộc thêm ~ようだ, ~そうだ hoặc ~がっている.",
+            "mnemonic": "Mẹo nhớ: Không chịu nổi nữa rồi!",
+            "similarGrammar": [
+              {
+                "pattern": "〜てやまない",
+                "contrast": "N1: Luôn hằng cầu chúc, mong mỏi từ tận đáy lòng."
+              }
+            ],
+            "collocations": [
+              "会いたくてたまらない",
+              "心配でならない",
+              "暑くてしょうがない"
+            ],
+            "examples": [
+              {
+                "jp": "故郷の 家族に 会いたくて たまらない。",
                 "vi": "Tôi nhớ và muốn gặp lại gia đình ở quê nhà khôn xiết."
               },
               {
-                "jp": "合格するかどうか、心配でたまらない。",
-                "vi": "Không biết có đỗ hay không, trong lòng bồn chồn lo lắng không yên."
+                "jp": "合格するか どうか、心配で ならない。",
+                "vi": "Không biết có đỗ hay không, trong lòng tôi bồn chồn lo lắng không nguôi."
               }
             ],
             "quiz": [
@@ -339,24 +722,314 @@
         ]
       },
       {
-        "chapterNumber": 8,
-        "chapterTitle": "第8章：敬語表現・待遇 (Kính ngữ & Thể tôn ty thực chiến)",
-        "summary": "Kính ngữ chuyên sâu Shinkanzen: Tôn kính ngữ, Khiêm nhường ngữ và cách nói gián tiếp lịch sự.",
+        "chapterNumber": 9,
+        "chapterTitle": "第9章：推量・確信・主張 (Phán đoán, Khẳng định & Đương nhiên)",
+        "summary": "Phân biệt bộ ba khẳng định chắc nịch: ~に違いない, ~はずだ, ~わけだ, ~わけがない.",
         "points": [
           {
-            "id": "n3_g_10_keigo_master",
+            "id": "n3_g_16_ni_chigainai",
+            "pattern": "～に違いない",
+            "formula": "Thể thông thường (Aな/N bỏ だ) + に違いない",
+            "meaning": "Chắc chắn là... không thể sai được",
+            "nuance": "Người nói dựa vào trực giác hoặc bằng chứng trước mắt để đưa ra phán đoán có độ tin cậy tuyệt đối.",
+            "trapBuster": "Bỏ 'だ': Danh từ và tính từ đuôi な đi trực tiếp: '犯人に 違いない' (Chắc chắn là thủ phạm).",
+            "mnemonic": "Mẹo nhớ: 違いがない = Không có gì sai lệch cả!",
+            "similarGrammar": [
+              {
+                "pattern": "〜はずだ",
+                "contrast": "Dựa trên logic/quy luật để suy ra. に違いない dựa vào trực giác/suy đoán mạnh mẽ."
+              }
+            ],
+            "collocations": [
+              "犯人に違いない",
+              "疲れているに違いない",
+              "おいしいに違いない"
+            ],
+            "examples": [
+              {
+                "jp": "鍵が 開いている。誰か 家に いるに 違いない。",
+                "vi": "Cửa đang mở khóa. Chắc chắn có ai đó đang ở trong nhà."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "あんなに 練習したのだから、彼らが 勝つ（　）。",
+                "options": [
+                  "に違いない",
+                  "にすぎない",
+                  "はずがない",
+                  "わけがない"
+                ],
+                "correct": 0,
+                "explain": "Tập luyện nhiều đến thế chắc chắn sẽ thắng -> Chọn に違いない."
+              }
+            ]
+          },
+          {
+            "id": "n3_g_17_wake_ga_nai",
+            "pattern": "～わけがない / ～はずがない",
+            "formula": "Thể thông thường (Aな + な / N + の) + わけがない / はずがない",
+            "meaning": "Làm sao mà... được! / Tuyệt đối không thể nào có chuyện...",
+            "nuance": "Phủ định hoàn toàn khả năng xảy ra của một sự việc dựa trên căn cứ lý luận hoặc thực tế hiển nhiên.",
+            "trapBuster": "Phủ định đanh thép 100%: 'あんな 真面目な 人が 嘘をつく わけがない' (Người nghiêm chỉnh thế làm sao mà nói dối được!).",
+            "mnemonic": "Mẹo nhớ: Không có lý nào lại như thế!",
+            "similarGrammar": [
+              {
+                "pattern": "〜わけではない",
+                "contrast": "Không hẳn là... (phủ định một phần, không gay gắt như わけがない)."
+              }
+            ],
+            "collocations": [
+              "できるわけがない",
+              "勝てるはずがない",
+              "本当のわけがない"
+            ],
+            "examples": [
+              {
+                "jp": "こんな 難しい 問題、小学生に 解ける わけが ない。",
+                "vi": "Bài toán khó nhường này, làm sao học sinh tiểu học giải được!"
+              }
+            ],
+            "quiz": [
+              {
+                "q": "あんなに 優しい 先生が、生徒を 殴る（　）。",
+                "options": [
+                  "わけがない",
+                  "わけだ",
+                  "に違いない",
+                  "はずだ"
+                ],
+                "correct": 0,
+                "explain": "Tuyệt đối không có chuyện thầy giáo hiền từ đánh học sinh -> Chọn わけがない."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 10,
+        "chapterTitle": "第10章：忠告・義務・必要性 (Khuyên nhủ, Đương nhiên & Nghĩa vụ)",
+        "summary": "Phân biệt các mẫu câu khuyên nhủ và bổn phận: ~べきだ / ~べきではない, ~ことだ, ~わけにはいかない.",
+        "points": [
+          {
+            "id": "n3_g_18_beki_da",
+            "pattern": "～べきだ / ～べきではない",
+            "formula": "V-る + べきだ / べきではない (Động từ する có thể chia là: すべきだ / するべきだ)",
+            "meaning": "Nên làm / Không nên làm (Đạo đức, lương tâm, lẽ đương nhiên)",
+            "nuance": "Lời khuyên mang tính nguyên tắc xã hội, đạo đức con người hoặc bổn phận công dân.",
+            "trapBuster": "Không dùng để ra lệnh cho người trên. Động từ する có 2 cách nói: 'すべきだ' (chuẩn văn viết) hoặc 'するべきだ'.",
+            "mnemonic": "Mẹo nhớ: 'Beki' = Bổn phận đạo đức con người!",
+            "similarGrammar": [
+              {
+                "pattern": "〜たほうがいい",
+                "contrast": "Lời khuyên thực dụng thông thường. べきだ mang tính quy chuẩn đạo đức cao hơn."
+              }
+            ],
+            "collocations": [
+              "約束は守るべきだ",
+              "親に感謝すべきだ",
+              "嘘をつくべきではない"
+            ],
+            "examples": [
+              {
+                "jp": "借りた お金は すぐに 返すべきだ。",
+                "vi": "Tiền đã vay thì đương nhiên nên trả lại ngay."
+              },
+              {
+                "jp": "子供に そんな 乱暴な 言葉を 使うべきではない。",
+                "vi": "Không nên dùng những từ ngữ thô lỗ như thế với con trẻ."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "学生は もっと 勉強（　）だ。",
+                "options": [
+                  "すべ",
+                  "するべ",
+                  "し",
+                  "され"
+                ],
+                "correct": 0,
+                "explain": "Động từ する chia dạng ngắn trước べきだ là すべきだ."
+              }
+            ]
+          },
+          {
+            "id": "n3_g_19_wake_niwa_ikanai",
+            "pattern": "～わけにはいかない",
+            "formula": "V-る + わけにはいかない (Không thể làm)\nV-ない + わけにはいかない (Bắt buộc phải làm)",
+            "meaning": "Không thể làm V (vì rào cản đạo đức/tâm lý) / Không thể không làm (buộc phải làm)",
+            "nuance": "Người nói rất muốn làm nhưng vì lương tâm, đạo đức, ánh mắt xã hội ngăn cấm nên không thể làm; hoặc không muốn làm nhưng vì trách nhiệm nên không thể không làm.",
+            "trapBuster": "BẪY HAI DẠNG: V-る わけにはいかない (KHÔNG ĐƯỢC LÀM). V-ない わけにはいかない (PHẢI LÀM - phủ định của phủ định).",
+            "mnemonic": "Mẹo nhớ: Lương tâm cắn rứt không cho phép!",
+            "similarGrammar": [
+              {
+                "pattern": "〜なければならない",
+                "contrast": "Quy định bắt buộc khách quan. わけにはいかない là rào cản tâm lý đạo đức."
+              }
+            ],
+            "collocations": [
+              "休むわけにはいかない",
+              "行かないわけにはいかない",
+              "諦めるわけにはいかない"
+            ],
+            "examples": [
+              {
+                "jp": "明日は 大事な 試験が あるから、風邪でも 休むわけにはいかない。",
+                "vi": "Ngày mai có kỳ thi quan trọng nên dù bị cảm tôi cũng không thể nghỉ được."
+              },
+              {
+                "jp": "親友の 頼みだから、断る わけにはいかない。",
+                "vi": "Vì là lời nhờ của bạn thân nên tôi không thể nào từ chối được."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "車を 運転するから、お酒を 飲む（　）。",
+                "options": [
+                  "わけにはいかない",
+                  "わけがない",
+                  "はずがない",
+                  "に違いない"
+                ],
+                "correct": 0,
+                "explain": "Vì phải lái xe nên về mặt pháp luật và an toàn không thể uống rượu -> 飲むわけにはいかない."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 11,
+        "chapterTitle": "第11章：非限定・累加 (Không chỉ... mà còn & Mức độ)",
+        "summary": "Cấu trúc không chỉ dừng lại ở đó: ~ばかりか, ~だけでなく, ~はもちろん, ~どころか.",
+        "points": [
+          {
+            "id": "n3_g_20_dokoroka",
+            "pattern": "～どころか",
+            "formula": "N / Thể thông thường + どころか",
+            "meaning": "Đâu chỉ có thế, mà thực tế còn tệ hơn/ngược lại hoàn toàn...",
+            "nuance": "Bác bỏ vế trước để đưa ra một thực tế ở vế sau chênh lệch gấp bội phần.",
+            "trapBuster": "Thường đi kèm với kết quả trái ngược hoặc tồi tệ hơn hẳn mức tưởng tượng: 'Đừng nói là đi du lịch, đến tiền ăn còn không có'.",
+            "mnemonic": "Mẹo nhớ: 'Dokoro ka' = Đâu có cửa ở mức đó!",
+            "similarGrammar": [
+              {
+                "pattern": "〜ばかりか",
+                "contrast": "Không những A mà còn B (đồng thuận tiến lên). どころか mang tính phản bác đối lập."
+              }
+            ],
+            "collocations": [
+              "独身どころか孫までいる",
+              "治るどころか悪化した",
+              "漢字どころかひらがなも読めない"
+            ],
+            "examples": [
+              {
+                "jp": "彼は 漢字どころか、ひらがなも 読めない。",
+                "vi": "Cậu ấy đâu chỉ không đọc được chữ Hán, ngay cả Hiragana còn chả đọc nổi kìa."
+              },
+              {
+                "jp": "風邪は 治るどころか、ますます ひどく なった。",
+                "vi": "Bệnh cảm đâu có khỏi, trái lại còn ngày một nặng hơn."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "貯金（　）、借金が たくさん ある。",
+                "options": [
+                  "どころか",
+                  "ばかりか",
+                  "だけでなく",
+                  "はもちろん"
+                ],
+                "correct": 0,
+                "explain": "Đâu chỉ có tiền tiết kiệm, thực tế ngược lại nợ nần ngập đầu -> Chọn どころか."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 12,
+        "chapterTitle": "第12章：評価・基準・立場 (Tiêu chuẩn đánh giá & Tư cách)",
+        "summary": "Phân biệt lập trường và tiêu chuẩn: ~として, ~にしては, ~だけのことはある.",
+        "points": [
+          {
+            "id": "n3_g_21_toshite",
+            "pattern": "～として",
+            "formula": "N + として / としての + N",
+            "meaning": "Với tư cách là... / Với danh nghĩa là...",
+            "nuance": "Xác định rõ vai trò, vị thế, chức năng hoặc tư cách đại diện của người/sự vật.",
+            "trapBuster": "Bẫy trợ từ: Dạng bổ nghĩa cho danh từ phía sau là 'N1 としての N2' (Ví dụ: 留学生としての 責任 - Trách nhiệm với tư cách là du học sinh).",
+            "mnemonic": "Mẹo nhớ: 'Toshite' = Đội vương miện tư cách lên đầu.",
+            "similarGrammar": [
+              {
+                "pattern": "〜としては",
+                "contrast": "Đưa tư cách lên làm chủ đề để so sánh."
+              }
+            ],
+            "collocations": [
+              "留学生として",
+              "医者として",
+              "代表として"
+            ],
+            "examples": [
+              {
+                "jp": "彼は 留学生として 日本へ 来ました。",
+                "vi": "Anh ấy đến Nhật Bản với tư cách là một lưu học sinh."
+              },
+              {
+                "jp": "京都は 観光地として 世界的に 有名だ。",
+                "vi": "Kyoto nổi tiếng trên toàn thế giới với tư cách là một điểm du lịch."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "先輩（　）アドバイスを します。",
+                "options": [
+                  "として",
+                  "にとって",
+                  "に対して",
+                  "について"
+                ],
+                "correct": 0,
+                "explain": "Với tư cách là đàn anh đi trước -> 先輩として."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 13,
+        "chapterTitle": "第13章：敬語表現・待遇 (Kính ngữ & Thể tôn ty thực chiến)",
+        "summary": "Kính ngữ chuyên sâu Shinkanzen: Tôn kính ngữ, Khiêm nhường ngữ và cách nói gián tiếp lịch sự công sở.",
+        "points": [
+          {
+            "id": "n3_g_22_keigo_combat",
             "pattern": "Kính ngữ đặc biệt (Tôn kính vs Khiêm nhường)",
             "formula": "Tôn kính: いらっしゃる, おっしゃる, なさる, ご覧になる, 召し上がる\nKhiêm nhường: 参る, 申す, いたす, 拝見する, いただく",
             "meaning": "Nâng hành động của đối phương lên (Tôn kính) vs Hạ mình để bày tỏ sự tôn trọng (Khiêm nhường)",
             "nuance": "Nguyên tắc sống còn: Tuyệt đối không dùng Tôn kính ngữ cho hành động của bản thân, và không dùng Khiêm nhường ngữ cho hành động của khách hàng/cấp trên!",
             "trapBuster": "Bẫy đề thi kinh điển: Trong đề thi hay lừa chọn '先生が参りました' (SAI vì 参る là khiêm nhường ngữ), phải dùng '先生がいらっしゃいました' mới đúng!",
+            "mnemonic": "Mẹo nhớ: Nâng khách lên mây, dìm mình xuống đất!",
+            "similarGrammar": [
+              {
+                "pattern": "お/ご 〜 になる (Tôn kính) vs お/ご 〜 する (Khiêm nhường)",
+                "contrast": "Cặp công thức phổ quát áp dụng cho các động từ thường."
+              }
+            ],
+            "collocations": [
+              "社長はお帰りになりました",
+              "私からご連絡いたします",
+              "拝見しました"
+            ],
             "examples": [
               {
-                "jp": "社長はもうお帰りになりました。",
+                "jp": "社長は もう お帰りになりました。",
                 "vi": "Giám đốc đã ra về rồi ạ. (Tôn kính ngữ)"
               },
               {
-                "jp": "明日、私からご連絡いたします。",
+                "jp": "明日、私から ご連絡いたします。",
                 "vi": "Ngày mai tôi xin phép sẽ chủ động liên hệ lại ạ. (Khiêm nhường ngữ)"
               }
             ],
@@ -375,60 +1048,375 @@
             ]
           }
         ]
+      },
+      {
+        "chapterNumber": 14,
+        "chapterTitle": "第14章：目的・手段・媒介 (Mục đích, Biện pháp & Qua trung gian)",
+        "summary": "Biểu đạt cách thức và trung gian: ~を通して, ~によって, ~を通じて.",
+        "points": [
+          {
+            "id": "n3_g_23_wo_tooshite",
+            "pattern": "～をとおして / ～をつうじて",
+            "formula": "N + を通して (とおして) / を通じて (つうじて)",
+            "meaning": "Thông qua... (Phương tiện trung gian / Suốt cả kỳ thời gian)",
+            "nuance": "1. Thông qua người, sách báo, mạng internet làm cầu nối trung gian.\n2. Suốt cả một khoảng thời gian dài liên tục (四季を通じて - Suốt bốn mùa).",
+            "trapBuster": "Không dùng cho công cụ trực tiếp cầm tay như đũa, kéo (dùng で). Phải là phương tiện gián tiếp, trung gian trừu tượng.",
+            "mnemonic": "Mẹo nhớ: 通 (thông) = Xuyên qua chiếc cầu nối trung gian.",
+            "similarGrammar": [
+              {
+                "pattern": "〜によって",
+                "contrast": "Nhấn mạnh vào phương pháp, công cụ kỹ thuật."
+              }
+            ],
+            "collocations": [
+              "友人を通して",
+              "インターネットを通じて",
+              "一年を通して"
+            ],
+            "examples": [
+              {
+                "jp": "友人を 通して、彼と 知り合いました。",
+                "vi": "Thông qua một người bạn làm cầu nối mà tôi đã quen biết anh ấy."
+              },
+              {
+                "jp": "この 地域は 一年を 通して 温暖な 気候です。",
+                "vi": "Khu vực này có khí hậu ấm áp suốt cả năm trời."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "ボランティア活動を（　）、多くの ことを 学んだ。",
+                "options": [
+                  "通して",
+                  "対して",
+                  "にとって",
+                  "ついて"
+                ],
+                "correct": 0,
+                "explain": "Học được nhiều điều thông qua hoạt động tình nguyện -> Chọn を通して."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapterNumber": 15,
+        "chapterTitle": "第15章：総合整理・総まとめ (Tổng kết ma trận bẻ bẫy Shinkanzen N3)",
+        "summary": "Tổng hợp toàn diện 15 chương, phân loại các cặp bẫy dễ nhầm lẫn nhất trong đề thi thật JLPT N3 và chiến thuật phản xạ 10 giây/câu.",
+        "points": [
+          {
+            "id": "n3_g_24_soumatome",
+            "pattern": "Bảng ma trận phân biệt cạm bẫy N3 kinh điển",
+            "formula": "うちに vs あいだに | おかげで vs せいで | わりに vs くせに | べきだ vs わけにはいかない",
+            "meaning": "Hệ thống hóa toàn bộ các cặp cấu trúc đối lập nhau",
+            "nuance": "Trang bị phản xạ nhận diện từ khóa (Keyword) trong câu đề thi để loại trừ đáp án bẫy trong 10 giây.",
+            "trapBuster": "Khi làm bài thi ngữ pháp N3: Luôn nhìn đuôi câu trước để xác định sắc thái (ý chí, mệnh lệnh, phán đoán hay cảm xúc) để loại 2 đáp án sai ngay lập tức.",
+            "mnemonic": "Mẹo nhớ: 'Nhìn trước ngó sau, bắt từ khóa, loại đáp án bẫy!'",
+            "similarGrammar": [
+              {
+                "pattern": "JLPT Combat Tactics",
+                "contrast": "Chiến thuật làm đề tốc độ cao."
+              }
+            ],
+            "collocations": [
+              "総まとめ問題",
+              "合格確実対策"
+            ],
+            "examples": [
+              {
+                "jp": "熱が あるなら、無理を して 働くべきではない。",
+                "vi": "Nếu đang bị sốt thì không nên cố sức đi làm làm gì."
+              }
+            ],
+            "quiz": [
+              {
+                "q": "一度 引き受けた（　）、最後まで 責任を 持って やるべきだ。",
+                "options": [
+                  "以上は",
+                  "せいで",
+                  "おかげで",
+                  "わりに"
+                ],
+                "correct": 0,
+                "explain": "Một khi đã nhận lời thì phải có trách nhiệm làm đến cùng -> Chọn 以上は."
+              }
+            ]
+          }
+        ]
       }
     ],
     "reading": [
       {
         "unit": 1,
-        "title": "Kỹ năng 1: Bóc tách đoản văn (短文 - Email, Thông báo, Chỉ dẫn)",
-        "strategy": "Đọc câu hỏi trước $\\rightarrow$ Bắt từ khóa $\\rightarrow$ Đọc câu mở đầu và câu kết luận của đoạn $\\rightarrow$ Loại trừ đáp án bẫy."
+        "title": "Kỹ năng 1: Bóc tách đoản văn (短文 - Email, Thông báo công việc)",
+        "strategy": "Đọc câu hỏi trước -> Bắt từ khóa -> Đọc câu mở đầu và câu kết luận của đoạn văn -> Loại trừ đáp án bẫy.",
+        "passage": "社員の皆様へ\n来週月曜日（10月15日）の午前9時から、社内ネットワークの定期点検を行います。\n点検中は社内システムおよび電子メールの送受信が一時的にご利用いただけません。\n業務上、至急メールを送る必要がある方は、前週金曜日の18時までに送信を完了させてください。\nご不便をおかけしますが、ご協力のほどよろしくお願いいたします。\n総務部",
+        "question": "社内ネットワークの点検について、正しいものはどれですか。",
+        "options": [
+          "月曜日の午前9時以降も、至急のメールなら送信できる。",
+          "点検中も社内システムは通常通り利用可能である。",
+          "至急のメールがある場合は、金曜日の18時までに送らなければならない。",
+          "点検は来週金曜日の午前中に行われる。"
+        ],
+        "correctIndex": 2,
+        "explanation": "Trong thông báo ghi rõ: '至急メールを送る必要がある方は、前週金曜日の18時までに送信を完了させてください' (Ai cần gửi thư gấp phải hoàn thành trước 18h thứ sáu tuần trước) -> Đáp án 3 là chính xác."
       },
       {
         "unit": 2,
         "title": "Kỹ năng 2: Trung văn (中文 - Lập luận & Nguyên nhân hiện tượng)",
-        "strategy": "Tìm các liên từ chuyển hướng (`しかし`, `ところが`) và từ kết luận (`つまり`, `したがって`). Đại từ chỉ định (`これ, それ`) luôn quy chiếu về ý phía trước."
+        "strategy": "Tìm các liên từ chuyển hướng (しかし, ところが) và từ kết luận (つまり, したがって). Quan điểm của tác giả thường nằm ngay sau liên từ chuyển hướng.",
+        "passage": "最近、スマートフォンの普及により、いつでもどこでも本が読める「電子書籍」を利用する人が増えている。重い本を持ち歩く必要がなく、文字の大きさを自由に変えられるなど、多くの利点がある。\nしかし、紙の本には電子書籍にはない独特の魅力がある。ページをめくる感触や紙の匂い、本棚に並べたときの達成感などは、読書の喜びをより深いものにしてくれる。便利さだけを求めるのではなく、紙の本ならではの価値も大切にしたいものである。",
+        "question": "筆者がこの文章で最も言いたいことは何ですか。",
+        "options": [
+          "電子書籍は便利なので、紙の本はもう必要ない。",
+          "紙の本のほうが電子書籍よりも値段が安い。",
+          "便利さだけでなく、紙の本ならではの魅力や価値も大切にすべきだ。",
+          "スマートフォンの普及によって、本を読む人が減ってしまった。"
+        ],
+        "correctIndex": 2,
+        "explanation": "Sau từ chuyển hướng 'しかし', tác giả nêu bật các giá trị độc đáo của sách giấy và kết luận '紙の本ならではの価値も大切にしたいものである' -> Đáp án 3 thể hiện đúng ý tác giả."
       },
       {
         "unit": 3,
-        "title": "Kỹ năng 3: Trường văn (長文 - Luận văn & Triết lý tác giả)",
-        "strategy": "Tóm tắt ý đồ từng đoạn. Quan điểm cá nhân của tác giả thường nằm ở 2 đoạn cuối, nhận diện qua đuôi câu: `〜のではないだろうか`, `〜と思う`."
+        "title": "Kỹ năng 3: Trường văn (長文 - Luận văn & Triết lý cuộc sống)",
+        "strategy": "Tóm tắt ý đồ từng đoạn. Quan điểm cá nhân của tác giả thường nằm ở 2 đoạn cuối, nhận diện qua đuôi câu: 〜のではないだろうか, 〜と思う.",
+        "passage": "失敗を極度に恐れる若者が増えていると言われる。SNSなどの影響で、他人の成功ばかりが目に入り、「自分も完璧でなければならない」と思い込んでしまうのだろう。\nだが、人間の成長において最も貴重な経験とは何だろうか。それは順風満帆に物事が進んだときではなく、思い通りにいかず、挫折を味わったときではないだろうか。失敗したときにこそ、何が足りなかったのかを深く考え、新たな工夫が生まれるのである。\n失敗を避けて何もしない人生よりも、たくさん挑戦して失敗を重ね、それを糧にして前に進む人生のほうが、はるかに豊かではないだろうか。",
+        "question": "筆者の考えに合っているものはどれですか。",
+        "options": [
+          "SNSをよく使う若者は、絶対に失敗しない。",
+          "失敗を恐れて何もしないより、失敗から学んで前進するほうが人生は豊かになる。",
+          "一度失敗した人間は、二度と成功することはできない。",
+          "他人の成功を真似していれば、完璧な人生を送ることができる。"
+        ],
+        "correctIndex": 1,
+        "explanation": "Câu cuối cùng của đoạn văn khẳng định rõ: 'たくさん挑戦して失敗を重ね、それを糧にして前に進む人生のほうが、はるかに豊かではないだろうか' -> Đáp án 2 chuẩn xác."
       },
       {
         "unit": 4,
         "title": "Kỹ năng 4: Tích hợp đối chiếu (統合理解 - So sánh 2 văn bản)",
-        "strategy": "Xác định chủ đề chung giữa văn bản A và B $\\rightarrow$ Lập bảng: Tác giả A nghĩ gì? Tác giả B nghĩ gì? $\\rightarrow$ Trả lời câu hỏi điểm khác biệt."
+        "strategy": "Xác định chủ đề chung giữa văn bản A và B -> Lập bảng so sánh quan điểm tác giả A vs tác giả B -> Bắt điểm tương đồng và dị biệt.",
+        "passage": "【Aさんの意見】\n新入社員の教育では、まず基本のルールやマニュアルを徹底的に覚えさせることが重要だ。基礎がしっかりしていなければ、いくら自由な発想を求めても独りよがりな仕事になってしまうからだ。\n\n【Bさんの意見】\n現代のビジネスでは、マニュアル通りに動くだけの社員は求められない。入社当初から自分で考え、失敗を恐れずに新しいアイデアを提案させる自由な環境を与えるべきだ。",
+        "question": "新入社員の教育について、AさんとBさんの考えの違いは何ですか。",
+        "options": [
+          "Aさんはマニュアルの徹底を重視し、Bさんは自由な発想と提案を重視している。",
+          "Aさんは失敗を勧め、Bさんは失敗を絶対に許さないと考えている。",
+          "AさんもBさんも、新入社員は何も学ばなくてよいと考えている。",
+          "Aさんはアイデアを重視し、Bさんはルールの暗記を重視している。"
+        ],
+        "correctIndex": 0,
+        "explanation": "A chú trọng quy tắc cơ bản và cẩm nang quy chuẩn ('マニュアルを徹底的に覚えさせる'), trong khi B chú trọng tự do tư duy và đề xuất ý tưởng ('新しいアイデアを提案させる') -> Đáp án 1."
       },
       {
         "unit": 5,
-        "title": "Kỹ năng 5: Tìm kiếm thông tin (情報検索 - Poster, Bảng biểu)",
-        "strategy": "Đọc kỹ điều kiện của người hỏi (độ tuổi, ngày đi, mức giá) $\\rightarrow$ Đọc phần chú thích dấu sao (*) dưới chân bảng giá để loại trừ phương án sai trong 60 giây."
+        "title": "Kỹ năng 5: Tìm kiếm thông tin (情報検索 - Poster & Bảng quy chế)",
+        "strategy": "Đọc kỹ yêu cầu đề bài -> Soi bảng giá/quy định -> ĐẶC BIỆT CHÚ Ý CÁC CHÚ THÍCH DẤU SAO (*) để loại trừ phương án bẫy trong 60 giây.",
+        "passage": "【市民スポーツセンター 利用案内】\n・開館時間：午前9時〜午後9時（月曜休館）\n・利用料金：大人 500円／高校生以下 200円\n※毎週水曜日は「レディースデイ」につき、女性は全館300円で利用可能。\n※市内在住・在勤の方は身分証明書提示で上記料金より100円引き。\n※夜間（午後7時以降）の利用は一律300円（他の割引との併用は不可）。",
+        "question": "市内在住の会社員の女性（大人）が、水曜日の午後2時に利用する場合、料金はいくらになりますか。",
+        "options": [
+          "500円",
+          "400円",
+          "300円",
+          "200円"
+        ],
+        "correctIndex": 3,
+        "explanation": "Ngày thứ tư là ngày Ladies Day, giá cho phụ nữ là 300円. Khách hàng này lại là người sinh sống trong thành phố nên được giảm thêm 100円 (300 - 100 = 200円) -> Đáp án 4 là 200円."
       }
     ],
     "listening": [
       {
         "mondai": 1,
-        "title": "Mondai 1: Hiểu nhiệm vụ (課題理解)",
-        "pattern": "Nghe câu hỏi trước $\\rightarrow$ Nghe hội thoại $\\rightarrow$ Xác định 'Người phụ nữ/nam sẽ làm gì TIẾP THEO NGAY BÂY GIỜ'."
+        "title": "Mondai 1: Hiểu nhiệm vụ (課題理解 - Người phụ nữ/nam sẽ làm gì tiếp theo)",
+        "strategy": "Nghe câu hỏi trước -> Bắt đối tượng ('Người phụ nữ sẽ làm gì NGAY BÂY GIỜ') -> Chú ý các từ bẻ hướng đi ('じゃあ、まず〜').",
+        "dialogue": "男：山田さん、明日の会議の準備、どこまで終わった？\n女：資料の印刷はもう終わりました。あとは会議室の机の配置と、プロジェクターの用意です。\n男：プロジェクターはさっき田中君が運んでくれたよ。\n女：あ、そうなんですか。ありがとうございます。\n男：じゃあ、机の配置をお願いできるかな。あ、その前に、参加者の名札を作って受付に置いてきてほしいんだ。\n女：わかりました。すぐ名札を作って持って行きます。",
+        "question": "女の人は、このあとまず何をしますか。",
+        "options": [
+          "会議の資料を印刷する",
+          "プロジェクターを用意する",
+          "会議室の机を並べる",
+          "名札を作って受付に置く"
+        ],
+        "correctIndex": 3,
+        "explanation": "Người nam ban đầu bảo xếp bàn ghế, nhưng ngay sau đó bẻ lại bằng câu 'その前に、参加者の名札を作って受付に置いてきてほしい' -> Việc người nữ phải làm ĐẦU TIÊN là làm bảng tên và đặt ở quầy tiếp tân -> Đáp án 4."
       },
       {
         "mondai": 2,
-        "title": "Mondai 2: Hiểu điểm mấu chốt (ポイント理解)",
-        "pattern": "Có 20 giây đọc đề $\\rightarrow$ Bắt lý do cốt lõi tại sao chọn hoặc không chọn $\\rightarrow$ Chú ý các từ bẻ cua (`でも`, `実は`, `ただ`)."
+        "title": "Mondai 2: Hiểu điểm mấu chốt (ポイント理解 - Bắt lý do cốt lõi)",
+        "strategy": "Có 20 giây đọc phương án trước -> Bắt lý do vì sao chọn hoặc không chọn -> Chú ý các liên từ bẻ cua ('実は', 'でも', 'やっぱり').",
+        "dialogue": "男：鈴木さん、新しいアパートに引っ越したんだって？駅からは近い？\n女：ううん、駅から歩いて20分もかかるの。\n男：えっ、それはちょっと遠いね。家賃が安かったの？\n女：ううん、新築だから家賃もそれなりにするよ。\n男：へえ、じゃあ何でその部屋に決めたの？\n女：実はね、近くに大きな公園があって、窓からの景色が緑いっぱいで最高だったの。静かに暮らしたかったから、これだ！って思ったのよ。",
+        "question": "女の人がこのアパートに決めた一番の理由は何ですか。",
+        "options": [
+          "駅から近くて通勤に便利だから",
+          "家賃がとても安かったから",
+          "新築で部屋が広かったから",
+          "静かで窓からの景色が良かったから"
+        ],
+        "correctIndex": 3,
+        "explanation": "Người nữ giải thích lý do cốt lõi sau từ '実は': gần công viên lớn, cửa sổ nhìn ra cây cối xanh mát và không gian yên tĩnh -> Đáp án 4."
       },
       {
         "mondai": 3,
-        "title": "Mondai 3: Hiểu khái quát (概要理解)",
-        "pattern": "Không có câu hỏi in trước $\\rightarrow$ Phải ghi chép chủ đề người nói muốn truyền đạt là gì."
+        "title": "Mondai 3: Hiểu khái quát (概要理解 - Ý đồ người nói)",
+        "strategy": "Không có câu hỏi in sẵn trong đề -> Lắng nghe toàn bộ bài nói để nắm chủ đề chính người nói muốn truyền đạt là gì.",
+        "dialogue": "男（アナウンサー）：最近、睡眠の質を高めるための様々な工夫が注目されています。お風呂の温度をぬるめにしてリラックスすることや、寝る前のスマートフォンの使用を控えることなどがよく勧められます。しかし、何よりも大切なのは、毎朝同じ時間に起きて太陽の光を浴びることです。これにより体内時計がリセットされ、夜自然と良い眠りにつくことができるのです。",
+        "question": "話し手は何について話していますか。",
+        "options": [
+          "良い睡眠をとるために最も大切な習慣について",
+          "スマートフォンの最新機能について",
+          "朝早く起きるのが苦手な人の特徴について",
+          "ぬるいお風呂の健康効果について"
+        ],
+        "correctIndex": 0,
+        "explanation": "Người nói bàn về các thói quen cải thiện giấc ngủ và nhấn mạnh điều quan trọng nhất là thức dậy đúng giờ đón ánh mặt trời để có giấc ngủ ngon -> Đáp án 1."
       },
       {
         "mondai": 4,
-        "title": "Mondai 4: Phản xạ tức thì (即時応答)",
-        "pattern": "Nghe 1 câu đối thoại ngắn $\\rightarrow$ Phản xạ chọn 1 trong 3 câu đáp lại phù hợp trong 1.5 giây."
+        "title": "Mondai 4: Phản xạ tức thì (即時応答 - Hội thoại 1 câu)",
+        "strategy": "Nghe câu thoại ngắn -> Phản xạ chọn 1 trong 3 câu đáp lại trong 1.5 giây.",
+        "dialogue": "男：田中さん、昨日のレポート、明日までに直していただけませんか。",
+        "question": "女の人の正しい返答はどれですか。",
+        "options": [
+          "はい、承知いたしました。すぐに直します。",
+          "いいえ、直してあげませんよ。",
+          "どういたしまして、お疲れ様でした。"
+        ],
+        "correctIndex": 0,
+        "explanation": "Người nam đưa ra lời nhờ vả lịch sự '〜ていただけませんか', câu trả lời nhận lời chuẩn mực công sở là 'はい、承知いたしました' -> Đáp án 1."
       },
       {
         "mondai": 5,
-        "title": "Mondai 5: Nghe tổng hợp (統合理解)",
-        "pattern": "Hội thoại dài thảo luận lựa chọn 1 trong 4 phương án $\\rightarrow$ Vẽ bảng ma trận so sánh các tiêu chí."
+        "title": "Mondai 5: Nghe tổng hợp (統合理解 - Lựa chọn phương án)",
+        "strategy": "Hội thoại dài thảo luận 4 phương án -> Vẽ bảng ma trận so sánh ưu nhược điểm -> Nghe kết luận của người quyết định.",
+        "dialogue": "男：来月の社員旅行の行き先だけど、4つの候補があるよ。1番は温泉旅館でゆっくりコース、2番は遊園地でアクティブコース、3番は歴史ある京都散策コース、4番は海辺でBBQコースだ。\n女A：私は日頃の疲れを癒やしたいから、温泉がいいな。\n女B：若い社員が多いから、遊園地か海辺のBBQが盛り上がるんじゃない？\n男：でもアンケートを取ったら、社員の7割が『とにかくのんびり温泉に入って美味しい料理が食べたい』って答えてたんだ。\n女B：それなら、みんなの意見を優先したほうがいいね。\n女A：そうね、決まりね！",
+        "question": "社員旅行の行き先はどこになりましたか。",
+        "options": [
+          "1番の温泉旅館コース",
+          "2番の遊園地コース",
+          "3番の京都散策コース",
+          "4番の海辺でBBQコース"
+        ],
+        "correctIndex": 0,
+        "explanation": "Dù ban đầu có nhiều ý kiến, nhưng kết quả khảo sát 70% nhân viên chọn suối nước nóng và mọi người đều đồng thuận theo số đông -> Đáp án 1."
+      }
+    ],
+    "stageReviews": [
+      {
+        "stageNumber": 1,
+        "title": "Cột Mốc 1: Tổng Kết Giai Đoạn 1 (Chương 1–5)",
+        "description": "Bảng ma trận đối chiếu các cạm bẫy dễ nhầm lẫn nhất về Thời gian, Biến đổi và Giới hạn.",
+        "trapsMatrix": [
+          {
+            "pair": "うちに vs あいだに",
+            "rule": "うちに = Tranh thủ chớp thời cơ kẻo muộn. あいだに = Thời điểm khoảnh khắc chen ngang."
+          },
+          {
+            "pair": "一方だ vs ばかりだ",
+            "rule": "一方だ = Cả tốt lẫn xấu đều được. ばかりだ = Hầu như CHỈ DÙNG CHO CHIỀU HƯỚNG XẤU."
+          },
+          {
+            "pair": "から〜まで vs から〜にかけて",
+            "rule": "から〜まで = Mốc dứt khoát chính xác. から〜にかけて = Dải thời gian/không gian mơ hồ."
+          },
+          {
+            "pair": "に対して vs にとって",
+            "rule": "に対して = Hướng thái độ tới ai. にとって = Đứng từ góc độ nhận định của ai."
+          },
+          {
+            "pair": "おかげで vs せいで",
+            "rule": "おかげで = Kết quả may mắn tốt đẹp. せいで = Kết quả tồi tệ oán trách."
+          }
+        ],
+        "milestoneQuiz": [
+          {
+            "q": "温かい（　）、早く 召し上がってください。",
+            "options": [
+              "うちに",
+              "あいだに",
+              "最中に",
+              "たびに"
+            ],
+            "correct": 0,
+            "explain": "Tranh thủ lúc còn ấm nóng -> Dùng うちに."
+          },
+          {
+            "q": "景気は 悪く なる（　）だ。",
+            "options": [
+              "一方",
+              "うちに",
+              "最中",
+              "ところ"
+            ],
+            "correct": 0,
+            "explain": "Càng ngày càng xấu đi một chiều -> Dùng 一方だ (hoặc ばかりだ)."
+          }
+        ]
+      },
+      {
+        "stageNumber": 2,
+        "title": "Cột Mốc 2: Tổng Kết Giai Đoạn 2 (Chương 6–10)",
+        "description": "Bảng ma trận đối chiếu cạm bẫy Tương phản, Điều kiện và Đánh giá tâm lý.",
+        "trapsMatrix": [
+          {
+            "pair": "わりに vs くせに",
+            "rule": "わりに = Đánh giá ngạc nhiên khách quan (dùng cho cả bản thân). くせに = Khinh miệt chỉ trích (CẤM dùng cho bản thân)."
+          },
+          {
+            "pair": "さえ〜ば vs だけ",
+            "rule": "さえ〜ば = Điều kiện tối thiểu cần thiết để thành công. だけ = Chỉ số lượng đơn thuần."
+          },
+          {
+            "pair": "てたまらない vs てならない",
+            "rule": "てたまらない = Cảm giác sinh lý không chịu nổi. てならない = Lo âu từ tận đáy lòng."
+          },
+          {
+            "pair": "に違いない vs わけがない",
+            "rule": "に違いない = Khẳng định chắc chắn 100%. わけがない = Phủ định sạch trơn 100% không thể nào."
+          }
+        ],
+        "milestoneQuiz": [
+          {
+            "q": "彼は 何も 知らない（　）、知っているような 顔を している。",
+            "options": [
+              "くせに",
+              "わりに",
+              "おかげで",
+              "せいで"
+            ],
+            "correct": 0,
+            "explain": "Chỉ trích thái độ giả tạo -> Dùng くせに."
+          }
+        ]
+      },
+      {
+        "stageNumber": 3,
+        "title": "Cột Mốc 3: Tổng Kết Về Đích Toàn Diện (Chương 11–15)",
+        "description": "Bộ đề kiểm tra năng lực ngữ pháp tổng hợp N3 mô phỏng đề thi thật JLPT.",
+        "trapsMatrix": [
+          {
+            "pair": "どころか vs ばかりか",
+            "rule": "どころか = Đâu có thế, ngược lại tệ hơn hẳn. ばかりか = Không những A mà còn B cùng chiều."
+          },
+          {
+            "pair": "べきだ vs わけにはいかない",
+            "rule": "べきだ = Lời khuyên chuẩn mực đạo đức. わけにはいかない = Rào cản tâm lý không cho phép làm."
+          },
+          {
+            "pair": "を通して vs によって",
+            "rule": "を通して = Phương tiện cầu nối trung gian gián tiếp. によって = Phương pháp kỹ thuật trực tiếp."
+          }
+        ],
+        "milestoneQuiz": [
+          {
+            "q": "一度 引き受けた（　）、責任を 持って 最後まで やるべきだ。",
+            "options": [
+              "以上は",
+              "せいで",
+              "くせに",
+              "うちに"
+            ],
+            "correct": 0,
+            "explain": "Một khi đã nhận lời thì phải có trách nhiệm làm đến cùng -> Chọn 以上は."
+          }
+        ]
       }
     ]
   }
