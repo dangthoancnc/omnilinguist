@@ -17,8 +17,18 @@ import { JLPT_LEVEL_COLORS, getLevelBadgeStyle } from '../../theme';
  * 2. 'lesson' / 'canvas': Sơ đồ Canvas ngang mở rộng với Zoom/Pan
  *    - Dùng trong Modal phóng to toàn cảnh hoặc trang độc lập
  * 
- * 3. 'level': Cây bản đồ toàn cấp độ
+ * 3. 'level': Sơ đồ tư duy hữu cơ tỏa nhánh 2 bên (Bilateral Organic Radial Mind Map)
  */
+const ROMAN_NUMERALS = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
+
+const TRUNK_PALETTES = [
+  { color: '#2563eb', bg: 'rgba(37, 99, 235, 0.05)', border: '#3b82f6', defaultName: 'Thời gian & Tiến trình' },
+  { color: '#8b5cf6', bg: 'rgba(139, 92, 246, 0.05)', border: '#8b5cf6', defaultName: 'Nguyên nhân & Căn cứ' },
+  { color: '#059669', bg: 'rgba(16, 185, 129, 0.05)', border: '#10b981', defaultName: 'Điều kiện & Giả định' },
+  { color: '#d97706', bg: 'rgba(217, 119, 6, 0.05)', border: '#f59e0b', defaultName: 'Phạm vi & Mức độ' },
+  { color: '#db2777', bg: 'rgba(219, 39, 119, 0.05)', border: '#ec4899', defaultName: 'Tâm lý & Kính ngữ' },
+];
+
 export default function MindmapTreeView({
   lesson,
   lessons = [],
@@ -97,25 +107,162 @@ export default function MindmapTreeView({
     if (isModalVisible) closeModal();
   };
 
-  // Helper to group lessons by pillar or in groups of 5
-  const groupedLevelLessons = useMemo(() => {
-    if (!levelLessons || levelLessons.length === 0) return [];
-    const groups = [];
-    const pillarMap = new Map();
+  // Thematic trunks grouping for Bilateral Organic Mindmap
+  const thematicTrunks = useMemo(() => {
+    if (!levelLessons || levelLessons.length === 0) {
+      return { allTrunks: [], leftTrunks: [], rightTrunks: [], totalGrammarCount: 0 };
+    }
 
-    levelLessons.forEach(l => {
-      const pillarKey = l.pillar || `Bài ${Math.floor((l.lessonNumber - 1) / 5) * 5 + 1}–${Math.floor((l.lessonNumber - 1) / 5) * 5 + 5}`;
-      if (!pillarMap.has(pillarKey)) {
-        pillarMap.set(pillarKey, []);
-      }
-      pillarMap.get(pillarKey).push(l);
-    });
+    const sorted = [...levelLessons].sort((a, b) => a.lessonNumber - b.lessonNumber);
+    const totalGrammarCount = sorted.reduce((sum, l) => sum + (l.grammarPoints?.length || 0), 0);
 
-    pillarMap.forEach((items, title) => {
-      groups.push({ title, lessons: items });
-    });
-    return groups;
+    const desiredTrunks = sorted.length >= 20 ? 5 : Math.max(2, Math.ceil(sorted.length / 5));
+    const chunkSize = Math.ceil(sorted.length / desiredTrunks);
+
+    const trunks = [];
+    for (let i = 0; i < desiredTrunks; i++) {
+      const chunk = sorted.slice(i * chunkSize, (i + 1) * chunkSize);
+      if (chunk.length === 0) continue;
+
+      const palette = TRUNK_PALETTES[i % TRUNK_PALETTES.length];
+      const uniquePillars = Array.from(new Set(chunk.map(l => l.pillar).filter(Boolean)));
+      const themeTitle = uniquePillars.length > 0 
+        ? uniquePillars.slice(0, 2).join(' • ') 
+        : palette.defaultName;
+
+      const chunkGrammarCount = chunk.reduce((acc, l) => acc + (l.grammarPoints?.length || 0), 0);
+      const startNum = chunk[0].lessonNumber;
+      const endNum = chunk[chunk.length - 1].lessonNumber;
+
+      trunks.push({
+        id: `trunk-${i}`,
+        index: i,
+        roman: ROMAN_NUMERALS[i] || `${i + 1}`,
+        title: themeTitle,
+        rangeLabel: startNum === endNum ? `Bài ${startNum}` : `Bài ${startNum}–${endNum}`,
+        lessons: chunk,
+        grammarCount: chunkGrammarCount,
+        palette,
+      });
+    }
+
+    const splitIdx = Math.floor(trunks.length / 2);
+    const leftTrunks = trunks.slice(0, splitIdx);
+    const rightTrunks = trunks.slice(splitIdx);
+
+    return {
+      allTrunks: trunks,
+      leftTrunks,
+      rightTrunks,
+      totalGrammarCount,
+    };
   }, [levelLessons]);
+
+  const renderTrunk = (trunk, direction) => (
+    <div
+      key={trunk.id}
+      className={`jlpt-organic-trunk jlpt-organic-trunk--${direction}`}
+      style={{
+        '--trunk-color': trunk.palette.border,
+        background: trunk.palette.bg,
+      }}
+    >
+      <div className="jlpt-organic-trunk-header">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span className="jlpt-organic-trunk-badge">
+            TRỤC {trunk.roman}
+          </span>
+          <span style={{ fontSize: '13px', fontWeight: 800, color: trunk.palette.border }}>
+            {trunk.title}
+          </span>
+        </div>
+        <span style={{ fontSize: '11px', color: 'var(--text-tertiary)', fontWeight: 600 }}>
+          {trunk.rangeLabel} • {trunk.grammarCount} mẫu
+        </span>
+      </div>
+
+      <div className="jlpt-organic-lessons-list">
+        {trunk.lessons.map((les) => {
+          const isCurrentLesson = les.lessonNumber === lesson?.lessonNumber;
+          return (
+            <div
+              key={les.lessonNumber}
+              id={`mindmap-lesson-${les.lessonNumber}`}
+              className={`jlpt-organic-lesson-card ${isCurrentLesson ? 'jlpt-organic-lesson-card--active' : ''}`}
+              style={{ '--trunk-color': trunk.palette.border }}
+              onClick={() => {
+                setSelectedModalLesson(les);
+                setModalView('lesson');
+              }}
+              title="Bấm để xem sơ đồ tư duy chi tiết bài này"
+            >
+              <div className="jlpt-organic-lesson-header">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span className="jlpt-organic-lesson-num">
+                    第{les.lessonNumber}課
+                  </span>
+                  {isCurrentLesson && (
+                    <span className="jlpt-tree-level-active-badge">
+                      Đang học
+                    </span>
+                  )}
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span style={{ fontSize: '10px', color: 'var(--text-tertiary)' }}>
+                    {les.grammarPoints?.length || 0} mẫu
+                  </span>
+                  {onNavigateLesson && (
+                    <button
+                      type="button"
+                      className="jlpt-pedagogy-link-btn"
+                      style={{ fontSize: '10px', padding: '1px 6px' }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onNavigateLesson(les.lessonNumber);
+                        closeModal();
+                      }}
+                      title="Chuyển ngay tới bài này để học"
+                    >
+                      Học bài này ↗
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              <div className="jlpt-organic-lesson-title-jp">
+                <FuriganaText text={les.jpTitle} />
+              </div>
+
+              <div className="jlpt-organic-lesson-title-vi">
+                {les.viTitle}
+              </div>
+
+              {/* Grammar Leaf Pills (Mầm lá mẫu câu) */}
+              {les.grammarPoints && les.grammarPoints.length > 0 && (
+                <div className="jlpt-organic-leaves-row">
+                  {les.grammarPoints.map((gp, pIdx) => (
+                    <span
+                      key={pIdx}
+                      className="jlpt-organic-leaf-chip"
+                      title={`${gp.pattern}${gp.meaning ? `: ${gp.meaning}` : ''}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedModalLesson(les);
+                        setModalView('lesson');
+                      }}
+                    >
+                      {gp.pattern}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 
   // ── MODAL CONTENT RENDERER ──────────────────────────────────
   const renderModalContent = () => (
@@ -266,124 +413,73 @@ export default function MindmapTreeView({
               )}
             </div>
           ) : (
-            /* 2. LEVEL KNOWLEDGE TREE (Toàn cảnh cấp độ & Cội nguồn) */
+            /* 2. ORGANIC BILATERAL MIND MAP (Toàn cảnh cấp độ & Cội nguồn hữu cơ) */
             <div
-              className="jlpt-tree-canvas"
+              className="jlpt-organic-mindmap-container"
               style={{
                 transform: `scale(${zoom})`,
                 transformOrigin: 'top center',
                 transition: 'transform 0.2s ease',
               }}
             >
-              {/* Macro Level Root Node */}
-              <div className="jlpt-tree-root-node" style={{ '--node-accent': accentColor, maxWidth: '500px' }}>
-                <div className="jlpt-tree-root-badge" style={getLevelBadgeStyle(currentLevel)}>
-                  JLPT {currentLevel} • {levelLessons.length} BÀI HỌC BẢN LỀ
+              <div className="jlpt-organic-mindmap">
+                {/* Cánh Trái (Left Wing) */}
+                <div className="jlpt-organic-wing jlpt-organic-wing--left">
+                  {thematicTrunks.leftTrunks.map(t => renderTrunk(t, 'left'))}
                 </div>
-                <div className="jlpt-tree-root-title" style={{ fontSize: '18px' }}>
-                  Cây Bản Đồ Tri Thức & Gốc Rễ Ngữ Pháp
-                </div>
-                <div className="jlpt-tree-root-sub" style={{ opacity: 0.9 }}>
-                  Hệ thống trụ cột và mạng lưới tiến hóa từ căn bản đến chuyên sâu
-                </div>
-              </div>
 
-              <div className="jlpt-tree-vline" style={{ '--line-color': accentColor }} />
-
-              {/* Grouped Pillars of the Level */}
-              <div className="jlpt-tree-level-grid">
-                {groupedLevelLessons.map((grp, gIdx) => (
-                  <div key={gIdx} className="jlpt-tree-level-row">
-                    <div className="jlpt-tree-row-label" style={{ color: accentColor, display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <Sparkles size={11} />
-                      <span>{grp.title} ({grp.lessons.length} bài)</span>
-                    </div>
-
-                    <div className="jlpt-tree-level-cards">
-                      {grp.lessons.map((les) => {
-                        const isCurrentLesson = les.lessonNumber === lesson?.lessonNumber;
-                        const isModalSelected = les.lessonNumber === currentLessonInModal?.lessonNumber;
-
-                        return (
-                          <div
-                            key={les.lessonNumber}
-                            className={`jlpt-tree-level-card ${isCurrentLesson ? 'jlpt-tree-level-card--active' : ''}`}
-                            style={{ '--branch-color': accentColor }}
-                            onClick={() => {
-                              setSelectedModalLesson(les);
-                              setModalView('lesson');
-                            }}
-                            title="Bấm để xem sơ đồ tư duy chi tiết của bài này"
-                          >
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                              <span style={{ fontSize: '11px', fontWeight: 800, color: accentColor }}>
-                                第{les.lessonNumber}課
-                              </span>
-                              {isCurrentLesson && (
-                                <span className="jlpt-tree-level-active-badge">
-                                  Đang học
-                                </span>
-                              )}
-                            </div>
-
-                            <div style={{
-                              fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)',
-                              fontFamily: "'Noto Sans JP', sans-serif",
-                              lineHeight: 1.3, margin: '2px 0',
-                            }}>
-                              <FuriganaText text={les.jpTitle} />
-                            </div>
-
-                            <div style={{
-                              fontSize: '11px', color: 'var(--text-secondary)',
-                              overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                            }}>
-                              {les.viTitle}
-                            </div>
-
-                            {/* Mini Grammar Point Chips */}
-                            {les.grammarPoints && les.grammarPoints.length > 0 && (
-                              <div className="jlpt-tree-level-chips">
-                                {les.grammarPoints.slice(0, 4).map((gp, pIdx) => (
-                                  <span key={pIdx} className="jlpt-tree-level-chip">
-                                    {gp.pattern}
-                                  </span>
-                                ))}
-                                {les.grammarPoints.length > 4 && (
-                                  <span className="jlpt-tree-level-chip" style={{ opacity: 0.7 }}>
-                                    +{les.grammarPoints.length - 4}
-                                  </span>
-                                )}
-                              </div>
-                            )}
-
-                            {/* Action Row */}
-                            <div className="jlpt-tree-level-actions">
-                              <span style={{ fontSize: '10px', color: 'var(--text-tertiary)' }}>
-                                {les.grammarPoints?.length || 0} cấu trúc
-                              </span>
-                              {onNavigateLesson && (
-                                <button
-                                  type="button"
-                                  className="jlpt-pedagogy-link-btn"
-                                  style={{ fontSize: '10px', padding: '1px 5px' }}
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    onNavigateLesson(les.lessonNumber);
-                                    closeModal();
-                                  }}
-                                  title="Chuyển tới bài này để học"
-                                >
-                                  Học bài này ↗
-                                </button>
-                              )}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
+                {/* Trọng Tâm Cốt Lõi (Central Root Hub) */}
+                <div className="jlpt-organic-center-hub" style={{ '--accent-primary': accentColor }}>
+                  <div className="jlpt-tree-root-badge" style={getLevelBadgeStyle(currentLevel)}>
+                    JLPT {currentLevel}
                   </div>
-                ))}
+                  <div className="jlpt-organic-center-title">
+                    BẢN ĐỒ TRI THỨC NGỮ PHÁP
+                  </div>
+                  <div className="jlpt-organic-center-sub">
+                    {levelLessons.length} bài học bản lề • {thematicTrunks.totalGrammarCount} mẫu ngữ pháp
+                  </div>
+
+                  <div style={{
+                    marginTop: '12px',
+                    paddingTop: '10px',
+                    borderTop: '1px solid rgba(255, 255, 255, 0.12)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '6px',
+                    width: '100%',
+                  }}>
+                    <div style={{ fontSize: '10px', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 700 }}>
+                      {thematicTrunks.allTrunks?.length || 5} Trục Chuyên Đề Hữu Cơ
+                    </div>
+
+                    {lesson && (
+                      <div 
+                        style={{
+                          fontSize: '11px',
+                          color: '#e2e8f0',
+                          background: 'rgba(59, 130, 246, 0.2)',
+                          border: '1px solid rgba(59, 130, 246, 0.4)',
+                          borderRadius: '6px',
+                          padding: '4px 8px',
+                          cursor: 'pointer',
+                        }}
+                        onClick={() => {
+                          const el = document.getElementById(`mindmap-lesson-${lesson.lessonNumber}`);
+                          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }}
+                        title="Bấm để cuộn đến vị trí bài đang học"
+                      >
+                        📍 Đang học: <strong>第{lesson.lessonNumber}課</strong>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Cánh Phải (Right Wing) */}
+                <div className="jlpt-organic-wing jlpt-organic-wing--right">
+                  {thematicTrunks.rightTrunks.map(t => renderTrunk(t, 'right'))}
+                </div>
               </div>
             </div>
           )}
